@@ -1,0 +1,527 @@
+/*--------------------------------------
+  ブログのデザイン
+--------------------------------------*/
+/* ### ヘッダーの背景色 ### */
+#blog-title{
+  background: #FFCC99 !important;
+}
+/* ### ブログタイトルの文字色 ### */
+#title a{
+  color: #000000 !important;
+}
+/* ### ブログ説明の文字 ### */
+#blog-description{
+  color      : #000000 !important;
+  font-family: 'Meiryo UI',
+               'メイリオ',
+               Meiryo,
+               -apple-system,
+               BlinkMacSystemFont,
+               'Helvetica Neue',
+               'Hiragino Sans',
+               'Hiragino Kaku Gothic ProN',
+               '游ゴシック Medium',
+               sans-serif;
+}
+
+/*--------------------------------------
+  見出しのデザイン
+--------------------------------------*/
+/* h3 */
+.entry-content h3 {
+  padding         : 4px 10px;
+  color           : #111;
+  background-color: #f0f0f0;
+  border-left     : 8px solid #1056a2;
+  border-bottom   : 1px solid #1056a2;
+}
+
+/* h4 */
+.entry-content h4 {
+  padding      : 4px 10px;
+  color        : #111;
+  border-top   : 2px solid #2d70a4;
+  border-bottom: 2px solid #2d70a4;
+}
+
+/* h5 */
+/* https://saruwakakun.com/html-css/reference/border#section4 */
+.entry-content h5 {
+  font-size    : 120%;
+  padding      : 2px 10px;
+  color        : #111;
+  border-top   : 1.5px dashed #a8eaff;
+  border-bottom: 1.5px dashed #a8eaff;
+}
+
+/* h6 */
+.entry-content h6 {
+  font-size: 112%;
+}
+
+/*--------------------------------------
+  目次の表示・非表示
+--------------------------------------*/
+.table-of-contents{
+    display: none;
+}
+.show-area{
+    display      : inline-block;
+    padding      : 0px;
+    border-radius: 5px;
+    cursor       : pointer;
+    margin-bottom: 0;
+    color        : blue;
+}
+
+/*--------------------------------------
+  目次のデザイン
+--------------------------------------*/
+.table-of-contents:before{
+  line-height: 100%;
+  content    : "Contents";
+  font-size  : 15px;
+}
+
+.table-of-contents ul{
+  line-height: 15%;
+  font-size  : 10px;
+  margin-left: 0;
+}
+
+/*--------------------------------------
+  記事のフォント
+--------------------------------------*/
+.entry-content {
+  line-height: 180%;
+  font-size  : 16px;
+  color      : #000000;
+  font-family: 'Noto Sans CJK JP Regular',
+               'Meiryo UI',
+               'メイリオ',
+               'Meiryo',
+               '游ゴシック Medium',
+               '游ゴシック体',
+               'Yu Gothic Medium',
+               'YuGothic',
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
+               'ＭＳ Ｐゴシック',
+               'MS PGothic',
+               'sans-serif';
+}
+
+/*--------------------------------------
+  文字サイズいろいろ
+--------------------------------------*/
+.note {
+  font-size  :  80%;
+  line-height: 120%;
+  color      : #d32f2f;
+}
+
+.additional-note {
+  font-size  :  80%;
+  line-height: 120%;
+  color      : #d32f2f;
+  font-weight: bold;
+}
+
+.small-chars {
+  font-size  :  80%;
+  line-height: 120%;
+}
+
+.large-chars {
+  font-size: 120%;
+}
+
+/*--------------------------------------
+  改行をレスポンシブに(?)
+--------------------------------------*/
+/*
+  https://wemo.tech/1224
+*/
+@media screen and (min-width: 768) {
+  .resp_break{
+    display: none;
+  }
+}
+
+/*--------------------------------------
+  <kbd>タグ
+--------------------------------------*/
+/*
+https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-style-by-nrjmadan.html
+*/
+.mac-key {
+  /* ----Box Properties---- */
+  display      : inline-block;
+  padding      : 0.05em 0.6em;
+  margin       : 0px 4px;
+  background   : #fff;
+  border-radius: 4px;
+  box-shadow   : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  
+  /* ----Text Properties---- */
+  font-family: Helvetica, serif;
+  text-align : center;
+  color      : #666;
+}
+
+/*
+https://saruwakakun.com/html-css/reference/buttons
+*/
+
+.btn-square-emboss {
+  display        : inline-block;
+  padding        : 0.05em 0.6em;
+  margin         : 0px 4px;
+  text-decoration: none;
+  background     : #f0f0f0; /*ボタン色*/
+  color          : #666666; /*ボタン色より暗く*/
+  box-shadow     : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border-bottom  : solid 3px rgba(0, 0, 0, 0.3);
+  border-radius  : 3px;
+  font-size      : 90%;
+  text-shadow    : 1px 1px 1px #ffffff;
+
+/* テキスト選択はOff */
+/* https://its-office.jp/blog/css/2017/04/30/user-select.html */
+
+  -webkit-user-select: none;
+     -moz-user-select: none;
+	  -ms-user-select: none;
+	      user-select: none;
+}
+
+.btn-square-emboss:active  {
+  -webkit-transform: translateY(4px);
+  transform        : translateY(4px);
+  box-shadow       : 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-bottom    : solid 3px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------
+  <code>タグ（文中のコード）
+--------------------------------------*/
+.entry-content code {
+  border-radius   :  3px;
+  vertical-align  : middle;
+  font-size       : 90%;
+  font-family     : Consolas,
+                    'Meiryo UI',
+                    'メイリオ',
+                    Meiryo,
+                    '游ゴシック Medium',
+                    '游ゴシック体',
+                    'Yu Gothic Medium',
+                    YuGothic,
+                    'ヒラギノ角ゴ ProN',
+                    'Hiragino Kaku Gothic ProN',
+                    'ＭＳ Ｐゴシック',
+                    'MS PGothic',
+                    sans-serif;
+  color           : #ffffff; /* 文字色 white */
+  background-color: #666666; /* 背景 black */
+}
+
+/*--------------------------------------
+  コードブロック
+--------------------------------------*/
+/*左上に言語名を表示*/
+/*
+  https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
+ */
+pre.code:before {
+    content    : attr(data-lang);
+    display    : inline-block;
+    background : white;
+    color      : black;
+    padding    : 3px;
+    position   : absolute;
+    margin-left: -20px;
+    margin-top : -30px;
+}
+
+pre.code {
+    padding-top: 30px !important;
+}
+
+/*フォント・メインカラーを変更*/
+.entry-content pre.code {
+  line-height     : 150%;
+  font-size       : 85%;
+  font-family     : Consolas,
+                    'Meiryo UI',
+                    'メイリオ',
+                    Meiryo,
+                    '游ゴシック Medium',
+                    '游ゴシック体',
+                    'Yu Gothic Medium',
+                    YuGothic,
+                    'ヒラギノ角ゴ ProN',
+                    'Hiragino Kaku Gothic ProN',
+                    'ＭＳ Ｐゴシック',
+                    'MS PGothic',
+                    sans-serif;
+  color           : #ffffff; /* 文字色 white */
+  background-color: #000000; /* 背景 black */
+}
+
+/*シンタックス・ハイライト*/
+.synSpecial    { color: white; }   /* 特殊文字・記号（←変数名とか） white */
+.synType       { color: #66FFFF; } /* 型 (水色) */
+.synComment    { color: #FF33CC; } /* コメント (ピンク) */
+.synPreProc    { color: white; }   /* プリプロセッサ White */
+.synIdentifier { color: #FFD700; } /* 識別子 Gold */
+.synConstant   { color: #F0E68C; } /* 定数 Khaki */
+.synStatement  { color: #00CCCC; } /* ステートメント DarkTurquouse */
+
+/*--------------------------------------
+  テーブルの表示
+--------------------------------------*/
+.entry-content td {
+  font-size  :  90%;
+  line-height: 130%;
+}
+/*--------------------------------------
+  テーブルにスクロールバーを付ける
+--------------------------------------*/
+/* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
+  https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
+*/
+@media (max-width: 640px) {
+  .table-scroll {
+    overflow-x: scroll;
+  }
+}
+
+/*--------------------------------------
+  ヨメレバ・カエレバ（レスポンシブ）
+--------------------------------------*/
+.booklink-box,
+.kaerebalink-box {
+    padding      : 25px;
+    margin-bottom: 10px;
+    border       : double #CCC;
+    overflow     : hidden;
+    font-size    : small;
+}
+
+.booklink-image,
+.kaerebalink-image {
+    margin    : 0 15px 0 0;
+    float     : left;
+    min-width : 160px;
+    text-align: center;
+}
+
+.booklink-image img,
+.kaerebalink-image img {
+    margin    : 0 auto;
+    text-align: center;
+}
+
+.booklink-info,
+.kaerebalink-info {
+    margin     : 0;
+    line-height: 120%;
+    overflow   : hidden;
+}
+
+.booklink-name,
+.kaerebalink-name {
+    margin-bottom: 24px;
+    line-height  : 1.5em;
+}
+
+.booklink-powered-date,
+.kaerebalink-powered-date {
+     font-size  :  8px;
+     margin-top : 10px;
+     font-family: verdana;
+     line-height: 120%;
+}
+
+.booklink-detail,
+.kaerebalink-detail {
+  font-size: 12px;
+}
+
+.booklink-powered-date,
+.kaerebalink-detail {
+  margin-bottom: 15px;
+}
+
+.booklink-link2,
+.kaerebalink-link1 {
+  margin-top: 10px;
+}
+
+.booklink-link2 a,
+.kaerebalink-link1 a {
+  width                : 30%;
+  -moz-border-radius   : 5px;
+  -webkit-border-radius: 5px;
+  border-radius        : 5px;
+  display              : inline-block;
+  margin               : 5px 2px 0 0;
+  padding              : 10px 1px;
+  text-align           : center;
+  float                : left;
+  text-decoration      : none;
+  font-weight          : 800;
+  text-shadow          : 1px 1px 1px #dcdcdc;
+  font-size            : 12px;
+  color                : #fff !important;
+}
+
+.booklink-link2 a : hover, .kaerebalink-link1 a: hover {
+  opacity: 0.6;
+}
+
+.booklink-link2 a : active, .kaerebalink-link1 a: active {
+  position: relative;
+  top     : 1px;
+}
+
+/*-------ボタンを変えるときはここから-------*/
+.shoplinkamazon a {
+  color : #FF9901 !important;
+  border: 1px solid
+          #FF9901 !important;
+}
+.shoplinkrakuten a {
+  color : #c20004 !important;
+  border: 1px solid
+          #c20004 !important;
+}
+.shoplinkkindle a {
+  color : #007dcd !important;
+  border: 1px solid
+          #007dcd !important;
+}
+.shoplinkkakakucom a {
+  color : #314995 !important;
+  border: 1px solid
+          #314995;
+}
+.shoplinkyahoo a {
+  color : #7b0099 !important;
+  border: 1px solid
+          #7b0099 !important;
+}
+
+/* 追加 */
+.shoplinkrakukobo a {
+  color : #c20004 !important;
+  border: 1px solid
+          #c20004 !important;
+}
+.shoplinkseven a {
+  color : #006e54 !important;
+  border: 1px solid
+          #006e54 !important;
+}
+.shoplinktoshokan a {
+  color : #888e7e !important;
+  border: 1px solid
+          #888e7e !important;
+}
+
+/*------------ここまでを変更------------*/
+
+.shoplinkyahoo img { display  : none; }
+.shoplinkyahoo a   { font-size: 10px; }
+.booklink-footer   { display  : none; }
+
+@media screen and (max-width: 680px) {
+  .booklink-box,
+  .kaerebalink-box {
+    padding: 15px;
+  }
+
+  .booklink-image,
+  .kaerebalink-image {
+    width    : 100px !important;
+    min-width: initial;
+  }
+
+  .booklink-name > a,
+  .kaerebalink-name > a {
+      font-size  : 15px;
+      font-weight: bold;
+  }
+
+  .booklink-name,
+  .kaerebalink-name {
+    margin-bottom: 12px;
+  }
+
+  .booklink-powered-date,
+  .kaerebalink-powered-date {
+    margin-top: 5px;
+  }
+
+  .booklink-link2 a,
+  .kaerebalink-link1 a {
+    width                : calc(100% - 4px);
+    -moz-border-radius   :  5px;
+    -webkit-border-radius:  5px;
+    border-radius        :  5px;
+    margin               :  2px 0px;
+    padding              : 10px 0px;
+  }
+}
+
+/*--------------------------------------
+  コメント欄に「ブログ主」の表示
+  https://www.foxism.jp/entry/2017/06/30/193115
+--------------------------------------*/
+.comment-nickname[data-user-name="yuricks7"]::after{
+   content      : 'Author!'; /* 表示する言葉 */
+   display      : inline-block;
+   background   : #00008b; /* 背景色 */
+   color        : #ffffff; /* 文字色 */
+   border-radius: 2px;  /* 角丸 */
+   font-size    : 0.65rem;
+   margin       : 0 0 0 3px;
+   padding      : 0 3px;
+   line-height  : 1.8;
+}
+
+/*--------------------------------------
+  「コメントを書く」ボタンを拡大
+  https://blog.minimal-green.com/entry/2016/08/08/210000
+--------------------------------------*/
+.leave-comment-title {
+  *zoom           : 1;
+  padding         : 1%;
+  margin          : 0.3% 10px 10px 0.3%;
+  line-height     : 200%;
+  color           : #ffffff;
+  background-color: #dc143c;
+  text-align      : center;
+  vertical-align  : middle;
+  border-radius   : 4px;
+  background-clip : padding-box;
+  cursor          : pointer;
+  font-size       : 16px;
+  text-decoration : none;
+  font-weight     : bold;
+  border          : 1.5px solid #000000;
+  text-decoration : none !important;
+}
+
+.leave-comment-title::before {
+  font-family  : "blogicon";
+  content      : "\f01d";
+  padding-right: 5px;
+}
+
+.leave-comment-title:hover {
+  color           : #000000;
+  background-color: #fff0f5;
+  text-decoration : none !important;
+}
