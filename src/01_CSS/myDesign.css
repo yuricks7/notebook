@@ -388,11 +388,13 @@ pre.code {
   color                : #fff !important;
 }
 
-.booklink-link2 a : hover, .kaerebalink-link1 a: hover {
+.booklink-link2 a : hover,
+.kaerebalink-link1 a: hover {
   opacity: 0.6;
 }
 
-.booklink-link2 a : active, .kaerebalink-link1 a: active {
+.booklink-link2 a : active,
+.kaerebalink-link1 a: active {
   position: relative;
   top     : 1px;
 }
