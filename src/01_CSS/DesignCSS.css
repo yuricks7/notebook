@@ -162,7 +162,7 @@ https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-styl
   background   : #fff;
   border-radius: 4px;
   box-shadow   : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-  
+
   /* ----Text Properties---- */
   font-family: Helvetica, serif;
   text-align : center;
@@ -295,6 +295,17 @@ pre.code {
   .table-scroll {
     overflow-x: scroll;
   }
+}
+
+/*--------------------------------------
+  テキストボックス
+--------------------------------------*/
+.text-box-dashed {
+  margin       : 10px;
+  padding      : 10px;
+  text-align   : center;
+  border       : 1px dashed;
+  border-radius: 5px;
 }
 
 /*--------------------------------------
