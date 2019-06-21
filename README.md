@@ -8,23 +8,29 @@
 
 ## My Blog
 
-このリポジトリは、下記のブログのカスタマイズ用です。<br>
+このリポジトリは、下記ブログのカスタマイズ用です。<br>
+良かったらご訪問ください。
+
 [Eng] This repogitory is written for this Blog (Japanese Only) below.<br>
+I will appreciate you if you visit.
+
 Blog URL: https://www.yuru-wota.com/
 
 ### デザインテーマ
 
-下記のデザインテーマ「Minimalism」を元に、操作を行っています。
+下記のデザインテーマ「Minimalism」を元にしています。
 
 ※Minimalismについては、下記をご参照ください。<br>
 Theme URL: https://hitsuzi.hatenablog.com/entry/minimalism
 
 ### GitHub Pages
 
-カスタマイズのサンプルです。
+カスタマイズのサンプル（になる予定）です。<br>
 GitHub Pages URL: https://yuricks7.github.io/HatenaBlogCustmize/
 
 ## 適用手順
+
+※**デザインCSSで「Minimalism」を適用していることを前提**に、説明します。
 
 1. このリポジトリを「GitHub Pages」として公開する（＝[このページ](#GitHub-Pages)）。
 
@@ -34,7 +40,8 @@ GitHub Pages URL: https://yuricks7.github.io/HatenaBlogCustmize/
 ```
 ※出来るだけ下の方へ。
 
+※デザインCSSだと適用されないみたいです…
+
 3.  表示に問題がなければ、「変更」をクリック。
 
-I will appreciate if you check it.
-Thank you.
+Thank you!👋
