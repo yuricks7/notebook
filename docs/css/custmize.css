@@ -2,15 +2,18 @@
   ブログのデザイン
 --------------------------------------*/
 /* ### ヘッダーの背景色 ### */
-#blog-title{
+/* https://hitsuzi.hatenablog.com/entry/minimalism */
+#blog-title {
   background: #FFCC99 !important;
 }
+
 /* ### ブログタイトルの文字色 ### */
-#title a{
+#title a {
   color: #000000 !important;
 }
+
 /* ### ブログ説明の文字 ### */
-#blog-description{
+#blog-description {
   color      : #000000 !important;
   font-family: 'Meiryo UI',
                'メイリオ',
@@ -26,6 +29,7 @@
 
 /*--------------------------------------
   見出しのデザイン
+  https://hitsuzi.hatenablog.com/entry/minimalism
 --------------------------------------*/
 /* h3 */
 .entry-content h3 {
@@ -62,10 +66,11 @@
 /*--------------------------------------
   目次の表示・非表示
 --------------------------------------*/
-.table-of-contents{
+.table-of-contents {
     display: none;
 }
-.show-area{
+
+.show-area {
     display      : inline-block;
     padding      : 0px;
     border-radius: 5px;
@@ -77,13 +82,14 @@
 /*--------------------------------------
   目次のデザイン
 --------------------------------------*/
-.table-of-contents:before{
+.table-of-contents:before {
   line-height: 100%;
+  text-align : center;
   content    : "Contents";
   font-size  : 15px;
 }
 
-.table-of-contents ul{
+.table-of-contents ul {
   line-height: 15%;
   font-size  : 10px;
   margin-left: 0;
@@ -153,7 +159,7 @@
 /*
   https://wemo.tech/1224
 */
-@media screen and (min-width: 768) {
+@media screen and (max-width: 680px) {
   .resp_break{
     display: none;
   }
@@ -197,13 +203,15 @@ https://saruwakakun.com/html-css/reference/buttons
   font-size      : 90%;
   text-shadow    : 1px 1px 1px #ffffff;
 
-/* テキスト選択はOff */
-/* https://its-office.jp/blog/css/2017/04/30/user-select.html */
+/*
+  テキスト選択はOffに。
+  https://its-office.jp/blog/css/2017/04/30/user-select.html
+*/
 
   -webkit-user-select: none;
      -moz-user-select: none;
-	  -ms-user-select: none;
-	      user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 .btn-square-emboss:active  {
@@ -281,10 +289,10 @@ pre.code {
 }
 
 /*シンタックス・ハイライト*/
-.synSpecial    { color: white; }   /* 特殊文字・記号（←変数名とか） white */
+.synSpecial    { color: #ffffff; } /* 特殊文字・記号（←変数名とか） white */
 .synType       { color: #66FFFF; } /* 型 (水色) */
 .synComment    { color: #FF33CC; } /* コメント (ピンク) */
-.synPreProc    { color: white; }   /* プリプロセッサ White */
+.synPreProc    { color: #ffffff; } /* プリプロセッサ White */
 .synIdentifier { color: #FFD700; } /* 識別子 Gold */
 .synConstant   { color: #F0E68C; } /* 定数 Khaki */
 .synStatement  { color: #00CCCC; } /* ステートメント DarkTurquouse */
@@ -302,7 +310,7 @@ pre.code {
 /* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
   https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
 */
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .table-scroll {
     overflow-x: scroll;
   }
