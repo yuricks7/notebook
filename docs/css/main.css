@@ -1,0 +1,8 @@
+@import url(sanitize.css);
+@import url("https://blog.hatena.ne.jp/-/theme/8599973812270629022.css");
+@import url(custmize.css);
+
+/* このページ用のCSS */
+.content {
+  padding: 30px;
+}
