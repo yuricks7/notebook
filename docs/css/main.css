@@ -4,5 +4,6 @@
 
 /* このページ用のCSS */
 .content {
-  padding: 30px;
+  padding   : 30px;
+  text-align: center;
 }
