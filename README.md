@@ -48,22 +48,13 @@ Theme URL: https://hitsuzi.hatenablog.com/entry/minimalism
 
 1. このリポジトリを「GitHub Pages」として公開する（＝[このページ](#GitHub-Pages)）。
 
-<<<<<<< HEAD
 2. [はてなブログ] > [設定] > [詳細設定] > [ヘッダー]へ、下記を入力。
-=======
-2. はてなブログ > 設定 > 詳細設定 > ヘッダーへ、下記を入力。
->>>>>>> master
 
 ```html
 <link rel="stylesheet" href="//yuricks7.github.io/note/css/custmize.css">
 ```
-<<<<<<< HEAD
 ※出来るだけ下の方に書くこと。<br>
 （デザインCSSだと適用されないみたいですね…）
-=======
-※出来るだけ下の方に書くこと。
-※デザインCSSだと適用されないみたいですね…
->>>>>>> master
 
 3.  表示に問題がなければ、「変更」をクリック。
 
