@@ -11,7 +11,7 @@
 ## このリポジトリについて
 
 このリポジトリは、ブログの下書き置き場です。<br>
-[Eng] This repogitory is darfts written for the Blog (Japanese Only) below.
+[Eng] This repogitory is darfts for the Blog (Japanese Only) below.
 
 ### GitHub Pages
 
@@ -34,8 +34,8 @@ Blog URL: https://www.yuru-wota.com/
 
 ### デザインテーマ
 
-上記ブログでは、デザインテーマ「Minimalism」を使用しています。
-Minimalismについては、下記をご参照ください。<br>
+上記ブログでは、デザインテーマ「Minimalism」を使用しています。<br>
+Minimalismについては、下記をご参照ください。
 
 [Eng] My Blog use the Design Theme, Minimalism for Hatena Blog.<br>
 If you have a question about the theme, visit the URL below, please.
@@ -48,11 +48,12 @@ Theme URL: https://hitsuzi.hatenablog.com/entry/minimalism
 
 1. このリポジトリを「GitHub Pages」として公開する（＝[このページ](#GitHub-Pages)）。
 
-2. はてなブログ > 設定 > 詳細設定 > ヘッダーへ、下記を入力。<br>
+2. はてなブログ > 設定 > 詳細設定 > ヘッダーへ、下記を入力。
+
 ```html
 <link rel="stylesheet" href="//yuricks7.github.io/note/css/custmize.css">
-```<br>
-※出来るだけ下の方に書くこと。<br>
+```
+※出来るだけ下の方に書くこと。
 ※デザインCSSだと適用されないみたいですね…
 
 3.  表示に問題がなければ、「変更」をクリック。
