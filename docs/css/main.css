@@ -5,7 +5,7 @@
 .header {
   background-color: rgba(215, 245, 250, 0.8);
   margin          : auto;
-  padding         : 20px;
+  padding         : 20px 20px 20px 20px;
   text-align      : center;
 }
 
