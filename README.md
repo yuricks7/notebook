@@ -1,46 +1,59 @@
 # Design CSS Customize for Hatena Blog.
 
 - [Design CSS Customize for Hatena Blog.](#Design-CSS-Customize-for-Hatena-Blog)
-  - [My Blog](#My-Blog)
-    - [デザインテーマ](#%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%86%E3%83%BC%E3%83%9E)
+  - [このリポジトリについて](#%E3%81%93%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
     - [GitHub Pages](#GitHub-Pages)
-  - [適用手順](#%E9%81%A9%E7%94%A8%E6%89%8B%E9%A0%86)
+    - [ブログ](#%E3%83%96%E3%83%AD%E3%82%B0)
+  - [ブログ・デザイン](#%E3%83%96%E3%83%AD%E3%82%B0%E3%83%BB%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3)
+    - [デザインテーマ](#%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%86%E3%83%BC%E3%83%9E)
+    - [カスタマイズ適用手順（Japanese Only）](#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E9%81%A9%E7%94%A8%E6%89%8B%E9%A0%86Japanese-Only)
 
-## My Blog
+## このリポジトリについて
 
-このリポジトリは、下記ブログのカスタマイズ用です。<br>
+このリポジトリは、ブログの下書き置き場です。<br>
+[Eng] This repogitory is darfts written for the Blog (Japanese Only) below.
+
+### GitHub Pages
+
+下記のURLにて公開しています。<br>
+[Eng] GitHub Pages is available on the URL below.
+
+GitHub Pages URL: https://yuricks7.github.io/note/
+
+### ブログ
+
+下記のURLにて、ブログも公開しています。<br>
 良かったらご訪問ください。
 
-[Eng] This repogitory is written for this Blog (Japanese Only) below.<br>
+[Eng] My Blog is available on the URL below.<br>
 I will appreciate you if you visit.
 
 Blog URL: https://www.yuru-wota.com/
 
+## ブログ・デザイン
+
 ### デザインテーマ
 
-下記のデザインテーマ「Minimalism」を元にしています。
+上記ブログでは、デザインテーマ「Minimalism」を使用しています。
+Minimalismについては、下記をご参照ください。<br>
 
-※Minimalismについては、下記をご参照ください。<br>
+[Eng] My Blog use the Design Theme, Minimalism for Hatena Blog.<br>
+If you have a question about the theme, visit the URL below, please.
+
 Theme URL: https://hitsuzi.hatenablog.com/entry/minimalism
 
-### GitHub Pages
+### カスタマイズ適用手順（Japanese Only）
 
-カスタマイズのサンプル（になる予定）です。<br>
-GitHub Pages URL: https://yuricks7.github.io/HatenaBlogCustmize/
-
-## 適用手順
-
-※**デザインCSSで「Minimalism」を適用していることを前提**に、説明します。
+※このカスタマイズは、**デザインCSSで「Minimalism」を適用していることを前提**に作成しています。
 
 1. このリポジトリを「GitHub Pages」として公開する（＝[このページ](#GitHub-Pages)）。
 
-2. はてなブログ > 設定 > 詳細設定 > ヘッダーへ、下記を入力。
+2. はてなブログ > 設定 > 詳細設定 > ヘッダーへ、下記を入力。<br>
 ```html
-<link rel="stylesheet" href="//yuricks7.github.io/HatenaBlogCustmize/css/custmize.css">
-```
-※出来るだけ下の方へ。
-
-※デザインCSSだと適用されないみたいです…
+<link rel="stylesheet" href="//yuricks7.github.io/note/css/custmize.css">
+```<br>
+※出来るだけ下の方に書くこと。<br>
+※デザインCSSだと適用されないみたいですね…
 
 3.  表示に問題がなければ、「変更」をクリック。
 
