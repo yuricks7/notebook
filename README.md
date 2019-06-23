@@ -18,7 +18,7 @@
 下記のURLにて公開しています。<br>
 [Eng] GitHub Pages is available on the URL below.
 
-GitHub Pages URL: https://yuricks7.github.io/note/
+GitHub Pages URL: https://yuricks7.github.io/notebook/
 
 ### ブログ
 
