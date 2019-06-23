@@ -1,3 +1,10 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../css/custmize.css" />
+  <title>ページ一覧</title>
+</head>
+
 | 名前 | 効果 | Link | 備考 |
 | :--- | :--- | :--: | :--- |
 | File Icon for GitHub, GitLab and Bitbucket | GitHubのファイルアイコンを変更 | [chrome](https://chrome.google.com/webstore/detail/github-file-icon/ficfmibkjjnpogdcfhfokmihanoldbfe), [GitHub](https://github.com/xxhomey19/github-file-icon) |
