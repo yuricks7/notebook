@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono:500&display=swap&subset=japanese')
+/*--------------------------------------
+  フォントのダウンロード
+--------------------------------------*/
+/* Noto Sans CJK JP */
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+/* ??? */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+/* Kosugi Maru / Roboto Mono */
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono:500&display=swap&subset=japanese');
 
 /*--------------------------------------
   ブログのデザイン
@@ -104,7 +112,7 @@
   line-height: 180%;
   font-size  : 16px;
   color      : #000000;
-  font-family: 'Kosugi Maru',
+  font-family: 'Kosugi Maru'; /*,
                'Noto Sans CJK JP Regular',
                'Meiryo UI',
                'メイリオ',
@@ -117,7 +125,7 @@
                'Hiragino Kaku Gothic ProN',
                'ＭＳ Ｐゴシック',
                'MS PGothic',
-               'sans-serif';
+               'sans-serif'; */
 }
 
 /*--------------------------------------
