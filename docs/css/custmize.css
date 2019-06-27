@@ -110,7 +110,7 @@
   line-height: 180%;
   font-size  : 16px;
   color      : #000000;
-  font-family: 'Kosugi Maru'; /*,
+  font-family: 'Kosugi Maru',
                'Noto Sans CJK JP Regular',
                'Meiryo UI',
                'メイリオ',
@@ -123,7 +123,7 @@
                'Hiragino Kaku Gothic ProN',
                'ＭＳ Ｐゴシック',
                'MS PGothic',
-               'sans-serif'; */
+               'sans-serif';
 }
 
 /*--------------------------------------
@@ -277,8 +277,8 @@ pre.code {
 .entry-content pre.code {
   line-height     : 150%;
   font-size       : 85%;
-  font-family     : 'Roboto Mono',
-                    Consolas,
+  font-family     : Consolas,
+                    'Roboto Mono',
                     'Meiryo UI',
                     'メイリオ',
                     Meiryo,
