@@ -15,12 +15,12 @@
   background: #FFCC99 !important;
 }
 
-/* ### ブログタイトルの文字色 ### */
+/* ### h1（ブログタイトル）の文字色 ### */
 #title a {
   color: #000000 !important;
 }
 
-/* ### ブログ説明の文字 ### */
+/* ### h2（ブログ説明）の文字 ### */
 #blog-description {
   color      : #000000 !important;
   font-family: 'Meiryo UI',
@@ -31,7 +31,6 @@
                'Helvetica Neue',
                'Hiragino Sans',
                'Hiragino Kaku Gothic ProN',
-               '游ゴシック Medium',
                sans-serif;
 }
 
@@ -50,7 +49,7 @@
 
 /* h4 */
 .entry-content h4 {
-  padding      : 4px 10px;
+  padding      : 6px 10px;
   color        : #111;
   border-top   : 2px solid #2d70a4;
   border-bottom: 2px solid #2d70a4;
@@ -60,15 +59,15 @@
 /* https://saruwakakun.com/html-css/reference/border#section4 */
 .entry-content h5 {
   font-size    : 120%;
-  padding      : 2px 10px;
+  padding      : 4px 10px;
   color        : #111;
-  border-top   : 1.5px dashed #a8eaff;
-  border-bottom: 1.5px dashed #a8eaff;
+  border-top   : 1.4px dashed #a8dfff;
+  border-bottom: 1.4px dashed #a8dfff;
 }
 
 /* h6 */
 .entry-content h6 {
-  font-size: 112%;
+  font-size: 120%;
 }
 
 /*--------------------------------------
@@ -84,7 +83,7 @@
     border-radius: 5px;
     cursor       : pointer;
     margin-bottom: 0;
-    color        : blue;
+    color        : #0000ff; /* blue */
 }
 
 /*--------------------------------------
@@ -98,9 +97,14 @@
 }
 
 .table-of-contents ul {
-  line-height: 15%;
+  line-height: 14%;
   font-size  : 10px;
   margin-left: 0;
+}
+
+.table-of-contents li {
+  line-height: 12%;
+  font-size  : 8px;
 }
 
 /*--------------------------------------
