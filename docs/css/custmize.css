@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono:500&display=swap&subset=japanese')
+
 /*--------------------------------------
   ブログのデザイン
 --------------------------------------*/
@@ -102,7 +104,8 @@
   line-height: 180%;
   font-size  : 16px;
   color      : #000000;
-  font-family: 'Noto Sans CJK JP Regular',
+  font-family: 'Kosugi Maru',
+               'Noto Sans CJK JP Regular',
                'Meiryo UI',
                'メイリオ',
                'Meiryo',
@@ -228,7 +231,8 @@ https://saruwakakun.com/html-css/reference/buttons
   border-radius   :  3px;
   vertical-align  : middle;
   font-size       : 90%;
-  font-family     : Consolas,
+  font-family     : 'Roboto Mono',
+                    Consolas,
                     'Meiryo UI',
                     'メイリオ',
                     Meiryo,
