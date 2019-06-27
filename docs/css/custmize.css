@@ -107,7 +107,7 @@
   記事のフォント
 --------------------------------------*/
 .entry-content {
-  line-height: 180%;
+  line-height: 200%;
   font-size  : 16px;
   color      : #000000;
   font-family: 'Kosugi Maru',
@@ -115,10 +115,6 @@
                'Meiryo UI',
                'メイリオ',
                'Meiryo',
-               '游ゴシック Medium',
-               '游ゴシック体',
-               'Yu Gothic Medium',
-               'YuGothic',
                'ヒラギノ角ゴ ProN',
                'Hiragino Kaku Gothic ProN',
                'ＭＳ Ｐゴシック',
@@ -237,8 +233,8 @@ https://saruwakakun.com/html-css/reference/buttons
   border-radius   :  3px;
   vertical-align  : middle;
   font-size       : 90%;
-  font-family     : Consolas,
-                    'Roboto Mono',
+  font-family     : 'Roboto Mono',
+                    Consolas,
                     'Meiryo UI',
                     'メイリオ',
                     Meiryo,
@@ -277,15 +273,11 @@ pre.code {
 .entry-content pre.code {
   line-height     : 150%;
   font-size       : 85%;
-  font-family     : Consolas,
-                    'Roboto Mono',
+  font-family     : 'Roboto Mono',
+                    Consolas,
                     'Meiryo UI',
                     'メイリオ',
                     Meiryo,
-                    '游ゴシック Medium',
-                    '游ゴシック体',
-                    'Yu Gothic Medium',
-                    YuGothic,
                     'ヒラギノ角ゴ ProN',
                     'Hiragino Kaku Gothic ProN',
                     'ＭＳ Ｐゴシック',
