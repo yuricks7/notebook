@@ -3,8 +3,6 @@
 --------------------------------------*/
 /* Noto Sans CJK JP */
 @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
-/* ??? */
-@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 /* Kosugi Maru / Roboto Mono */
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono:500&display=swap&subset=japanese');
 
@@ -239,15 +237,11 @@ https://saruwakakun.com/html-css/reference/buttons
   border-radius   :  3px;
   vertical-align  : middle;
   font-size       : 90%;
-  font-family     : 'Roboto Mono',
-                    Consolas,
+  font-family     : Consolas,
+                    'Roboto Mono',
                     'Meiryo UI',
                     'メイリオ',
                     Meiryo,
-                    '游ゴシック Medium',
-                    '游ゴシック体',
-                    'Yu Gothic Medium',
-                    YuGothic,
                     'ヒラギノ角ゴ ProN',
                     'Hiragino Kaku Gothic ProN',
                     'ＭＳ Ｐゴシック',
@@ -283,7 +277,8 @@ pre.code {
 .entry-content pre.code {
   line-height     : 150%;
   font-size       : 85%;
-  font-family     : Consolas,
+  font-family     : 'Roboto Mono',
+                    Consolas,
                     'Meiryo UI',
                     'メイリオ',
                     Meiryo,
@@ -297,7 +292,7 @@ pre.code {
                     'MS PGothic',
                     sans-serif;
   color           : #ffffff; /* 文字色 white */
-  background-color: #000000; /* 背景 black */
+  background-color: #000000ce; /* 背景 black */
 }
 
 /*シンタックス・ハイライト*/
@@ -411,7 +406,7 @@ pre.code {
   margin               : 5px 2px 0 0;
   padding              : 10px 1px;
   text-align           : center;
-  float                : left;
+/*  float                : left; */
   text-decoration      : none;
   font-weight          : 800;
   text-shadow          : 1px 1px 1px #dcdcdc;
