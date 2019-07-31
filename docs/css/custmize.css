@@ -293,13 +293,13 @@ pre.code {
 }
 
 /*シンタックス・ハイライト*/
-.synSpecial    { color: #00CCCC; } /* 特殊文字・記号（←変数名とか？） */
+.synSpecial    { color: #66FFFF; } /* 特殊文字・記号（←変数名とか？）(明るめの水色)  */
 .synType       { color: #66FFFF; } /* 型 (明るめの水色) */
 .synComment    { color: #FF33CC; } /* コメント (ピンク) */
 .synPreProc    { color: #ffffff; } /* プリプロセッサ White */
 .synIdentifier { color: #FFD700; } /* 識別子 Gold */
 .synConstant   { color: #F0E68C; } /* 定数 Khaki */
-.synStatement  { color: #66FFFF; } /* ステートメント DarkTurquouse */
+.synStatement  { color: #00CCCC; } /* ステートメント DarkTurquouse */
 
 /*--------------------------------------
   テーブルの表示
