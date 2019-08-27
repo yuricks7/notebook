@@ -13,6 +13,8 @@
 /* https://hitsuzi.hatenablog.com/entry/minimalism */
 #blog-title {
   background: #FFCC99 !important;
+  font-family: -apple-system,
+               'Kosugi Maru',;
 }
 
 /* ### h1（ブログタイトル）の文字色 ### */
@@ -93,19 +95,19 @@
   line-height: 100%;
   text-align : center;
   content    : "Contents";
-  font-size  : 15px;
+  font-size  : 14px;
 }
 
 .table-of-contents ul {
   line-height: 12%;
-  font-size  : 13px;
+  font-size  : 12px;
   margin-left: 0;
   position   : center;
 }
 
 .table-of-contents li {
   line-height: 8%;
-  font-size  : 8px;
+  font-size  : 10px;
 }
 
 /*--------------------------------------
@@ -308,6 +310,7 @@ pre.code {
   font-size  :  90%;
   line-height: 130%;
 }
+
 /*--------------------------------------
   テーブルにスクロールバーを付ける
 --------------------------------------*/
@@ -509,6 +512,27 @@ pre.code {
     margin               :  2px 0px;
     padding              : 10px 0px;
   }
+}
+
+/*--------------------------------------
+  プロフィール欄
+--------------------------------------*/
+.profile-description {
+/*
+  line-height: 200%;
+  font-size  : 16px;
+  color      : #000000;
+*/
+  font-family: 'Kosugi Maru',
+               'Noto Sans CJK JP Regular',
+               'Meiryo UI',
+               'メイリオ',
+               'Meiryo',
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
+               'ＭＳ Ｐゴシック',
+               'MS PGothic',
+               'sans-serif';
 }
 
 /*--------------------------------------
