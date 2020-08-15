@@ -894,6 +894,11 @@ footer .comment-box {
   /*--------------------------------------
     テーブルの表示
   --------------------------------------*/
+  /*--------------------------------------
+    キリトリ線
+    CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
+    https://switch-box.net/css-hr-decorations.html
+  --------------------------------------*/
 }
 
 .entry-content a:link {
@@ -1172,6 +1177,31 @@ footer .comment-box {
   line-height: 130%;
 }
 
+.entry-content hr {
+  /* 一旦リセット */
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* キリトリ線 */
+  height: 1em;
+  border-top: 1px dashed rgba(5, 5, 5, 0.4);
+  text-align: center;
+  overflow: visible;
+}
+
+.entry-content hr:after {
+  display: inline-block;
+  position: relative;
+  height: 2em;
+  top: -1em;
+  padding: 0 0.5em;
+  content: "\002702";
+  /* ハサミ記号✂（機種依存？） */
+  line-height: 2em;
+  color: #050505;
+}
+
 /*--------------------------------------
   ヨメレバ・カエレバ（レスポンシブ対応用）
 --------------------------------------*/
@@ -1225,7 +1255,11 @@ footer .comment-box {
   margin-top: 10px;
 }
 
-.kaerebalink-link1 a a {
+.kaerebalink-link1 {
+  /* ボタン化 */
+}
+
+.kaerebalink-link1 a {
   width: 30%;
   border-radius: 5px;
   display: inline-block;
@@ -1240,16 +1274,20 @@ footer .comment-box {
   color: #fff !important;
 }
 
-.kaerebalink-link1 a:hover {
+.kaerebalink-link1:hover {
   opacity: 0.6;
 }
 
-.kaerebalink-link1 a:active {
+.kaerebalink-link1:active {
   position: relative;
   top: 1px;
 }
 
-.booklink-link2 a a {
+.booklink-link2 {
+  /* ボタン化 */
+}
+
+.booklink-link2 a {
   width: 30%;
   border-radius: 5px;
   display: inline-block;
@@ -1264,11 +1302,11 @@ footer .comment-box {
   color: #fff !important;
 }
 
-.booklink-link2 a:hover {
+.booklink-link2:hover {
   opacity: 0.6;
 }
 
-.booklink-link2 a:active {
+.booklink-link2:active {
   position: relative;
   top: 1px;
 }
@@ -1380,35 +1418,5 @@ footer .comment-box {
   text-decoration: none !important;
   color: #050505;
   background-color: rgba(20, 33, 220, 0.1);
-}
-
-/*--------------------------------------
-  キリトリ線
-  CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
-  https://switch-box.net/css-hr-decorations.html
---------------------------------------*/
-hr {
-  /* 一旦リセット */
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  /* キリトリ線 */
-  height: 1em;
-  border-top: 1px dashed rgba(5, 5, 5, 0.4);
-  text-align: center;
-  overflow: visible;
-}
-
-hr:after {
-  display: inline-block;
-  position: relative;
-  height: 2em;
-  top: -1em;
-  padding: 0 0.5em;
-  content: "\002702";
-  /* ハサミ記号✂（機種依存？） */
-  line-height: 2em;
-  color: #050505;
 }
 /*# sourceMappingURL=style.css.map */

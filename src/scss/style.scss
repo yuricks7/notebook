@@ -442,7 +442,7 @@ footer {
       左上に言語名を表示
       https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
     */
-  &:before {
+    &:before {
       content:     attr(data-lang);
       display:     inline-block;
       background: white;
@@ -460,6 +460,37 @@ footer {
   td {
     font-size  :  90%;
     line-height: 130%;
+  }
+
+  /*--------------------------------------
+    キリトリ線
+    CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
+    https://switch-box.net/css-hr-decorations.html
+  --------------------------------------*/
+  hr {
+    /* 一旦リセット */
+    height:  0;
+    margin:  0;
+    padding: 0;
+    border:  0;
+
+    /* キリトリ線 */
+    height:     1em;
+    border-top: 1px dashed charBlack(.4);
+    text-align: center;
+    overflow:   visible;
+
+    &:after {
+      display:  inline-block;
+      position: relative;
+      height:   2em;
+      top:     -1em;
+      padding:  0 0.5em;
+
+      content:     "\002702"; /* ハサミ記号✂（機種依存？） */
+      line-height: 2em;
+      color:       charBlack(1);
+    }
   }
 }
 
@@ -517,6 +548,7 @@ footer {
 }
 
 @mixin kaereba() {
+  /* ボタン化 */
   a {
     width                : 30%;
     -moz-border-radius   : 5px;
@@ -543,9 +575,8 @@ footer {
     top     : 1px;
   }
 }
-
-.kaerebalink-link1 a { @include kaereba(); }
-.booklink-link2    a { @include kaereba(); }
+.kaerebalink-link1 { @include kaereba(); }
+.booklink-link2    { @include kaereba(); }
 
 /*-------ボタンを変えるときはここから-------*/
 .shoplinkamazon a {
@@ -658,36 +689,5 @@ footer {
     text-decoration : none !important;
     color           : charBlack(1);
     background-color: rgba(20, 33, 220, .1);
-  }
-}
-
-/*--------------------------------------
-  キリトリ線
-  CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
-  https://switch-box.net/css-hr-decorations.html
---------------------------------------*/
-hr {
-  /* 一旦リセット */
-  height:  0;
-  margin:  0;
-  padding: 0;
-  border:  0;
-
-  /* キリトリ線 */
-  height:     1em;
-  border-top: 1px dashed charBlack(.4);
-  text-align: center;
-  overflow:   visible;
-
-  &:after {
-    display:  inline-block;
-    position: relative;
-    height:   2em;
-    top:     -1em;
-    padding:  0 0.5em;
-
-    content:     "\002702"; /* ハサミ記号✂（機種依存？） */
-    line-height: 2em;
-    color:       charBlack(1);
   }
 }
