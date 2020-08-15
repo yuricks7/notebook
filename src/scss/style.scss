@@ -1,44 +1,693 @@
-// test
 @import "sanitize";
-@import url("https://blog.hatena.ne.jp/-/theme/8599973812270629022.css");
-@import "custmize";
 @import "responsive";
+@import "variables";
 
-// $background-color-header: rgba(215, 245, 250, 0.8);
-// $background-color-content: rgba(250, 235, 215, 0.8);
+/*--------------------------------------
+  フォントのダウンロード
+--------------------------------------*/
+/* Kosugi Maru / Roboto Mono */
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono&display=swap&subset=japanese');
+// /* Noto Sans CJK JP */
+//  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 
-// .header {
-//   background-color: $background-color-header;
-//   margin          : auto;
-//   padding         : 20px 20px 20px 20px;
-//   text-align      : center;
-// }
+/*--------------------------------------
+  ブログ全体のレイアウト
+--------------------------------------*/
+/* ページ全体 */
+body {
+  margin: 0 auto;
+  width: 100%;
 
-// .content {
-//   background-color: $background-color-content;
-//   margin          : 10px 10px;
-//   padding         : 30px;
-//   text-align      : center;
-//   border-radius   : 10px;
-// }
+  background-color: rgba(1, 1, 1, .1);
+  @include standardFonts();
+}
 
-// .category {
-//   display         : inline-block;
-//   vertical-align  : top;
-//   background-color: $background-color-content;
-//   /* 3で割るとはみ出る…？ */
-//   width           : calc(100% / 2);
-//   padding         : 10px 20px;
-//   margin          : 0;
-//   border          : 2px dashed rgba(255, 255, 255, 1);
-//   border-radius   : 10px;
-// }
+/* ヘッダー */
+/* https://hitsuzi.hatenablog.com/entry/minimalism */
+#blog-title {
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px;
 
-// .category-index {
-//   font-size: 24px;
-//   border   : 1px rgba(255, 255, 255, 0.8);
-// }
+  @include titleFonts(bold);
+  background-color: themeColor(1) !important;
+}
 
-// .category-contents {
-//   text-align: left;
-// }
+/* ブログタイトル */
+#title a {
+  color: $char-white !important;
+}
+
+/* ブログ説明 */
+#blog-description {
+  color: $char-white !important;
+  @include siteDescriptionFonts();
+}
+
+/* ナビゲーション */
+#gnav {
+  background-color: bodyColor(.9);
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  margin: 10px 0 !important;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+
+  @include linkColors();
+
+  .breadcrumb-innner {
+    margin: 0 !important;
+    padding: 0;
+  }
+}
+
+/* ブログ本体 */
+#container {
+  margin-bottom: 0;
+  border: 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
+
+  background-color: bodyColor(.5);
+}
+
+#content {
+  margin-top: 20px;
+}
+
+/* 記事タイトル */
+header {
+  padding: 10px;
+  background-color: bodyColor(.9);
+
+  .entry-header {
+    border-radius: 8px !important;
+    padding: 10px !important;
+  }
+}
+
+/* 本文 */
+.entry-content {
+  padding: 10px;
+  background-color: bodyColor(.9);
+  border-radius: 8px;
+}
+
+/* 注釈 */
+.footnote {
+  margin-top: 0;
+  padding-top: 0;
+  border-radius: 8px;
+}
+
+/* フッター */
+.entry-footer-section {
+  margin-bottom: 0;
+  padding: 10px 10px 0;
+  background-color: bodyColor(.7);
+  border-top-left-radius:  8px;
+  border-top-right-radius: 8px;
+}
+
+.hatena-star-container {
+  margin-top: 0;
+  padding: 0 10px 10px;
+  border-bottom-left-radius:  8px;
+  border-bottom-right-radius: 8px;
+  background-color: bodyColor(.7);
+}
+
+footer {
+  margin: 0px;
+  padding: 0px;
+
+  .entry-footer-modules {
+    .hatena-module-related-entries {
+      margin: 0px;
+      padding: 10px;
+      background-color: bodyColor(.7);
+      border-radius: 8px;
+    }
+  }
+
+  .shrbtn a {
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+  }
+
+  .comment-box {
+    margin-top: 0;
+    padding: 10px;
+    background-color: bodyColor(.7);
+    border-radius: 8px;
+  }
+}
+
+.pager {
+  margin-top: 0;
+  padding: 10px;
+  background-color: bodyColor(.7);
+  border-radius: 8px;
+
+  @include linkColors();
+}
+
+/* サイドバー（はてなモジュール） */
+#box2 {
+  margin: 0;
+  padding: 0;
+}
+
+.hatena-module {
+  margin: 0px 0 8px;
+  padding: 10px;
+  background-color: bodyColor(.7);
+  border-radius: 8px;
+
+  .profile-description {
+    @include standardFonts();
+    @include linkColors();
+    font-size: .8em;
+  }
+}
+
+/*--------------------------------------
+  記事タイトルのデザイン
+  https://hitsuzi.hatenablog.com/entry/minimalism
+--------------------------------------*/
+.entry-date {
+  margin: 0;
+  padding: 0 20px;
+
+  @include titleFonts(normal);
+}
+
+.entry-title {
+  margin: 0;
+  padding: 0 10px;
+
+  font-size: 1.2em;
+  @include titleFonts(bold);
+}
+
+.entry-categories {
+  margin: 0 10px;
+  text-align: left;
+
+  .entry-category-link {
+    padding: 3px 10px 3px 10px;
+    border-radius: 2px;
+
+    @include standardFonts();
+    color: rgba(240, 240, 240, 1);
+    background-color: rgba(1, 1, 1, .9);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/*--------------------------------------
+  記事本体のデザイン
+--------------------------------------*/
+.entry-content {
+  @include linkColors();
+
+  /*--------------------------------------
+    見出し
+  --------------------------------------*/
+  h3 {
+    padding         : 4px 10px;
+    color           : charBlack(1);
+    background-color: #f0f0f0;
+    border-left     : 8px solid themeColor(1);
+    border-bottom   : 1px solid themeColor(1);
+  }
+
+  h4 {
+    padding      : 6px 10px;
+    color        : charBlack(1);
+    border-top   : 2px solid themeColor(.8);
+    border-bottom: 2px solid themeColor(.8);
+  }
+
+  /* https://saruwakakun.com/html-css/reference/border#section4 */
+  h5 {
+    font-size    : 1.2em;
+    padding      : 4px 10px;
+    color        : charBlack(1);
+    border-top   : 1.4px dashed themeColor(.8);
+    border-bottom: 1.4px dashed themeColor(.8);
+  }
+
+  h6 {
+    font-size: 1.2em;
+  }
+
+  /*--------------------------------------
+    本文のフォント
+  --------------------------------------*/
+  line-height: 200%;
+  font-size:   16px;
+  @include standardFonts();
+
+  color: charBlack(1);
+
+  /*--------------------------------------
+    目次の表示・非表示
+  --------------------------------------*/
+  /* 「.table-of-contents」にネストすると
+     ポインターとやフォントサイズが効かないので逃がしておく… */
+  .show-area {
+    display: inline-block;
+    cursor:  pointer;
+
+    margin-bottom: 0;
+    padding      : 0px;
+    border-radius: 5px;
+
+    font-size: .9em;
+
+    &:hover {
+      font-weight: bold;
+      @include linkColors(#1e366a);
+    }
+  }
+
+  /*--------------------------------------
+    目次
+  --------------------------------------*/
+  .table-of-contents {
+    display: none; /* デフォルトで非表示 */
+
+    /* 外枠 */
+    margin: 4px 10px 0;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border: dotted #1541a1 1.6px;
+
+    /* フォント */
+    @include linkColors(#1e366a);
+    line-height: 80% !important;
+
+    &:before {
+      content : ""; /* スクリプトで文字が追加されてしまうので消しておく */
+    }
+
+    /* 中身 */
+    ul, ol {
+      margin-left: 0;
+      padding-top   : 4px ;
+      padding-bottom: 4px ;
+      padding-left: 16px;
+    }
+
+    ul li, ol li {
+      padding-left: 4px;
+
+      font-size  : .98em;
+    }
+  }
+
+  /*--------------------------------------
+    文字サイズいろいろ
+  --------------------------------------*/
+  .note {
+    font-size  :  80%;
+    line-height: 120%;
+    color      : #d32f2f;
+  }
+
+  .additional-note {
+    font-size  :  80%;
+    line-height: 120%;
+    color      : #d32f2f;
+    font-weight: bold;
+  }
+
+  .small-chars {
+    font-size  :  80%;
+    line-height: 120%;
+  }
+
+  .large-chars {
+    font-size: 120%;
+  }
+
+  /*--------------------------------------
+    テキストボックス（まとめ、強調など）
+  --------------------------------------*/
+  .text-box-dashed {
+    margin       : 10px;
+    padding      : 10px;
+    border       : 1px dashed;
+    border-radius: 5px;
+    text-align   : center;
+  }
+
+  /*--------------------------------------
+    <kbd>タグ
+  --------------------------------------*/
+  /*
+    mac風
+    https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-style-by-nrjmadan.html
+  */
+  .mac-key {
+    /* ----Box Properties---- */
+    display      : inline-block;
+    padding      : 0.05em 0.6em;
+    margin       : 0px 4px;
+    background   : #fff;
+    border-radius: 4px;
+    box-shadow   : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+
+    /* ----Text Properties---- */
+    font-family: Helvetica, serif;
+    text-align : center;
+    color      : #666;
+  }
+
+  /*
+    立体ボタン風
+    https://saruwakakun.com/html-css/reference/buttons
+  */
+  .btn-square-emboss {
+    display        : inline-block;
+    padding        : 0.05em 0.6em;
+    margin         : 0px 4px;
+    text-decoration: none;
+    background     : #f0f0f0; /*ボタン色*/
+    color          : #666666; /*ボタン色より暗く*/
+    box-shadow     : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+    border-bottom  : solid 3px rgba(0, 0, 0, 0.3);
+    border-radius  : 3px;
+    font-size      : 90%;
+    text-shadow    : 1px 1px 1px $char-white;
+
+    /*
+      テキスト選択はOffに。
+      https://its-office.jp/blog/css/2017/04/30/user-select.html
+    */
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    &:active  {
+      -webkit-transform: translateY(4px);
+      transform        : translateY(4px);
+      box-shadow       : 0px 1px 0px rgba(0, 0, 0, 0.3);
+      border-bottom    : solid 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  /*--------------------------------------
+    文中のコード
+  --------------------------------------*/
+  code {
+    border-radius:  4px;
+    vertical-align: middle;
+    font-size:      90%;
+    font-style:     italic;
+    @include monospacedFonts();
+    background-color: #dfdbd4; /* 背景 gray */
+  }
+
+  /*--------------------------------------
+    コードブロック
+  --------------------------------------*/
+  pre.code {
+    padding-top: 30px !important;
+
+    /* フォント・メインカラーを変更 */
+    @include monospacedFonts();
+    font-size:   85%;
+    line-height: 150%;
+    color:       $char-white;         /* 文字色 white */
+    background-color: charBlack(.85); /* 背景   black */
+
+    /* シンタックス・ハイライト */
+    .synSpecial    { color: #66FFFF; } /* 特殊文字・記号（←変数名とか？）(明るめの水色)  */
+    .synType       { color: #66FFFF; } /* 型 (明るめの水色) */
+    .synComment    { color: #FF33CC; } /* コメント (ピンク) */
+    .synPreProc    { color: $char-white; } /* プリプロセッサ White */
+    .synIdentifier { color: #FFD700; } /* 識別子 Gold */
+    .synConstant   { color: #F0E68C; } /* 定数 Khaki */
+    .synStatement  { color: #00CCCC; } /* ステートメント DarkTurquouse */
+
+    /*
+      左上に言語名を表示
+      https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
+    */
+  &:before {
+      content:     attr(data-lang);
+      display:     inline-block;
+      background: white;
+      color:       black;
+      padding:     3px;
+      position:    absolute;
+      margin-left: -20px;
+      margin-top:  -30px;
+    }
+  }
+
+  /*--------------------------------------
+    テーブルの表示
+  --------------------------------------*/
+  td {
+    font-size  :  90%;
+    line-height: 130%;
+  }
+}
+
+/*--------------------------------------
+  ヨメレバ・カエレバ（レスポンシブ対応用）
+--------------------------------------*/
+.booklink-box, .kaerebalink-box {
+  padding      : 25px;
+  margin-bottom: 10px;
+  border       : double #CCC;
+  overflow     : hidden;
+  font-size    : small;
+}
+
+.booklink-image, .kaerebalink-image {
+  margin    : 0 15px 0 0;
+  float     : left;
+  min-width : 160px;
+  text-align: center;
+
+  img {
+    margin    : 0 auto;
+    text-align: center;
+  }
+}
+
+.booklink-info, .kaerebalink-info {
+    margin     : 0;
+    line-height: 120%;
+    overflow   : hidden;
+}
+
+.booklink-name, .kaerebalink-name {
+    margin-bottom: 24px;
+    line-height  : 1.5em;
+}
+
+.booklink-powered-date, .kaerebalink-powered-date {
+     font-size  :  8px;
+     margin-top : 10px;
+     font-family: verdana;
+     line-height: 120%;
+}
+
+.booklink-detail, .kaerebalink-detail {
+  font-size: 12px;
+}
+
+.booklink-powered-date, .kaerebalink-detail {
+  margin-bottom: 15px;
+}
+
+.booklink-link2, .kaerebalink-link1 {
+  margin-top: 10px;
+}
+
+@mixin kaereba() {
+  a {
+    width                : 30%;
+    -moz-border-radius   : 5px;
+    -webkit-border-radius: 5px;
+    border-radius        : 5px;
+    display              : inline-block;
+    margin               : 5px 2px 0 0;
+    padding              : 10px 1px;
+    text-align           : center;
+  /*  float                : left; */
+    text-decoration      : none;
+    font-weight          : 800;
+    text-shadow          : 1px 1px 1px #dcdcdc;
+    font-size            : 12px;
+    color                : #fff !important;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    position: relative;
+    top     : 1px;
+  }
+}
+
+.kaerebalink-link1 a { @include kaereba(); }
+.booklink-link2    a { @include kaereba(); }
+
+/*-------ボタンを変えるときはここから-------*/
+.shoplinkamazon a {
+  $amazon-btn: #FF9901;
+  color : $amazon-btn !important;
+  border: 1px solid $amazon-btn !important;
+}
+
+.shoplinkrakuten a {
+  $rakuten-btn: #c20004;
+  color : $rakuten-btn !important;
+  border: 1px solid $rakuten-btn !important;
+}
+
+.shoplinkkindle a {
+  $kindle-btn: #007dcd;
+  color : $kindle-btn !important;
+  border: 1px solid $kindle-btn !important;
+}
+
+.shoplinkkakakucom a {
+  $kakakuCom-btn: #314995;
+  color : $kakakuCom-btn !important;
+  border: 1px solid $kakakuCom-btn;
+}
+
+.shoplinkyahoo {
+  a {
+    $yahoo-btn: #7b0099;
+    color : $yahoo-btn !important;
+    border: 1px solid $yahoo-btn !important;
+  }
+
+  img { display  : none; }
+  a   { font-size: 10px; }
+}
+
+/* 追加 */
+.shoplinkrakukobo a {
+  $kobo-btn: #c20004;
+  color : $kobo-btn !important;
+  border: 1px solid $kobo-btn !important;
+}
+
+.shoplinkseven a {
+  $sevenNet-btn: #006e54;
+  color : $sevenNet-btn !important;
+  border: 1px solid $sevenNet-btn !important;
+}
+
+.shoplinktoshokan a {
+  $toshokan-btn: #888e7e;
+  color : $toshokan-btn !important;
+  border: 1px solid $toshokan-btn !important;
+}
+/*------------ここまでを変更------------*/
+
+// .shoplinkyahoo img { display  : none; }
+// .shoplinkyahoo a   { font-size: 10px; }
+.booklink-footer   { display  : none; }
+
+/*--------------------------------------
+  コメント欄に「ブログ主」の表示
+  https://www.foxism.jp/entry/2017/06/30/193115
+--------------------------------------*/
+.comment-nickname[data-user-name="yuricks7"]::after{
+  display      : inline-block;
+  margin       : 0 0 0 3px;
+  padding      : 0 3px;
+  border-radius: 2px;  /* 角丸 */
+
+  content      : 'Author!'; /* 表示する言葉 */
+  font-size    : 0.65rem;
+  line-height  : 1.8;
+  color        : $char-white; /* 文字色 */
+  background   : #00008b;   /* 背景色 */
+}
+
+/*--------------------------------------
+  「コメントを書く」ボタンを拡大
+  https://blog.minimal-green.com/entry/2016/08/08/210000
+--------------------------------------*/
+.leave-comment-title {
+  cursor          : pointer;
+
+  *zoom           : 1;
+  padding         : 1%;
+  margin          : 0.3% 10px 10px 0.3%;
+  line-height     : 200%;
+  border-radius   : 4px;
+  border          : 1.5px solid charBlack(1);
+  background-clip : padding-box;
+
+  text-align      : center;
+  vertical-align  : middle;
+  color           : $char-white;
+  background-color: highlighter(1);
+
+  font-size       : 16px;
+  font-weight     : bold;
+  text-decoration : none !important;
+
+  &:before {
+    padding-right: 5px;
+    content      : "\f01d";
+    font-family  : "blogicon";
+  }
+
+  &:hover {
+    text-decoration : none !important;
+    color           : charBlack(1);
+    background-color: rgba(20, 33, 220, .1);
+  }
+}
+
+/*--------------------------------------
+  キリトリ線
+  CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
+  https://switch-box.net/css-hr-decorations.html
+--------------------------------------*/
+hr {
+  /* 一旦リセット */
+  height:  0;
+  margin:  0;
+  padding: 0;
+  border:  0;
+
+  /* キリトリ線 */
+  height:     1em;
+  border-top: 1px dashed charBlack(.4);
+  text-align: center;
+  overflow:   visible;
+
+  &:after {
+    display:  inline-block;
+    position: relative;
+    height:   2em;
+    top:     -1em;
+    padding:  0 0.5em;
+
+    content:     "\002702"; /* ハサミ記号✂（機種依存？） */
+    line-height: 2em;
+    color:       charBlack(1);
+  }
+}
