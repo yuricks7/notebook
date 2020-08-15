@@ -1,0 +1,63 @@
+/* レスポンシブ対応 */
+
+/*--------------------------------------
+  テーブルにスクロールバーを付ける
+--------------------------------------*/
+/* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
+  https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
+*/
+@media (max-width: 680px) {
+  .table-scroll {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .entry-content {
+    font-size: 14px;
+  }
+
+  /*--------------------------------------
+    改行をレスポンシブに(?)
+  --------------------------------------*/
+  /*
+    https://wemo.tech/1224
+  */
+  .resp_break{
+    display: none;
+  }
+
+  /*--------------------------------------
+    ヨメレバ・カエレバ（レスポンシブ対応用）
+  --------------------------------------*/
+  .booklink-box, .kaerebalink-box {
+    padding: 15px;
+  }
+
+  .booklink-image, .kaerebalink-image {
+    width    : 100px !important;
+    min-width: initial;
+  }
+
+  .booklink-name > a, .kaerebalink-name > a {
+      font-size  : 15px;
+      font-weight: bold;
+  }
+
+  .booklink-name, .kaerebalink-name {
+    margin-bottom: 12px;
+  }
+
+  .booklink-powered-date, .kaerebalink-powered-date {
+    margin-top: 5px;
+  }
+
+  .booklink-link2 a, .kaerebalink-link1 a {
+    width                : calc(100% - 4px);
+    -moz-border-radius   :  5px;
+    -webkit-border-radius:  5px;
+    border-radius        :  5px;
+    margin               :  2px 0px;
+    padding              : 10px 0px;
+  }
+}

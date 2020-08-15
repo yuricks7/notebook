@@ -1,0 +1,81 @@
+@mixin titleFonts($weight) {
+  font-family: -apple-system,
+               'Kosugi Maru',;
+  font-weight: $weight;
+}
+
+@mixin siteDescriptionFonts() {
+  font-family: 'Meiryo UI',
+               'メイリオ',
+               Meiryo,
+               -apple-system,
+               BlinkMacSystemFont,
+               'Helvetica Neue',
+               'Hiragino Sans',
+               'Hiragino Kaku Gothic ProN',
+               sans-serif;
+}
+
+@mixin standardFonts() {
+  font-family: 'Kosugi Maru',
+               'Noto Sans CJK JP Regular',
+               'Meiryo UI',
+               'メイリオ',
+               'Meiryo',
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
+               'ＭＳ Ｐゴシック',
+               'MS PGothic',
+               'sans-serif' !important;
+}
+
+@mixin monospacedFonts() {
+  font-family: 'Roboto Mono',
+               Consolas,
+               'Meiryo UI',
+               'メイリオ',
+               Meiryo,
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
+               'ＭＳ Ｐゴシック',
+               'MS PGothic',
+               sans-serif;
+}
+
+$char-white: #f0f0f0;
+@function themeColor($density) {
+  @return rgba(29, 138, 255, $density);
+}
+
+@function bodyColor($density) {
+  @return rgba(250, 250, 250, $density);
+}
+
+@function highlighter($density) {
+  @return rgba(10, 33, 230, $density);
+}
+
+@function charBlack($density) {
+  @return rgba(5, 5, 5, $density)
+}
+
+@mixin linkColors($default: highlighter(.8)) {
+  text-decoration: none !important;
+
+  a {
+    &:link { /* 未訪問 */
+      color: $default;
+      font-style:normal;
+      text-decoration: none !important;
+    }
+
+    &:visited {
+      color: #388e3c;
+    }
+
+    &:hover {
+      color: highlighter(1);
+      font-weight:bold;
+    }
+  }
+}

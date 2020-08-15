@@ -1,0 +1,1410 @@
+@charset "UTF-8";
+/* Document
+ * ========================================================================== */
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+@import url("https://blog.hatena.ne.jp/-/theme/8599973812270629022.css");
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono&display=swap&subset=japanese");
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+  * 1. Add text decoration inheritance in all browsers (opinionated).
+  * 2. Add vertical alignment inheritance in all browsers (opinionated).
+  */
+::before,
+::after {
+  text-decoration: inherit;
+  /* 1 */
+  vertical-align: inherit;
+  /* 2 */
+}
+
+/**
+  * 1. Use the default cursor in all browsers (opinionated).
+  * 2. Change the line height in all browsers (opinionated).
+  * 3. Use a 4-space tab width in all browsers (opinionated).
+  * 4. Remove the grey highlight on links in iOS (opinionated).
+  * 5. Prevent adjustments of font size after orientation changes in
+  *    IE on Windows Phone and in iOS.
+  * 6. Breaks words to prevent overflow in all browsers (opinionated).
+  */
+html {
+  cursor: default;
+  /* 1 */
+  line-height: 1.5;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  /* 5 */
+  -webkit-text-size-adjust: 100%;
+  /* 5 */
+  word-break: break-word;
+  /* 6 */
+}
+
+/* Sections
+  * ========================================================================== */
+/**
+  * Remove the margin in all browsers (opinionated).
+  */
+body {
+  margin: 0;
+}
+
+/**
+  * Correct the font size and margin on `h1` elements within `section` and
+  * `article` contexts in Chrome, Edge, Firefox, and Safari.
+  */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+  * ========================================================================== */
+/**
+  * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+  */
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
+}
+
+/**
+  * Remove the margin on nested lists in Edge 19- and IE.
+  */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+/**
+  * 1. Add the correct sizing in Firefox.
+  * 2. Show the overflow in Edge 19- and IE.
+  */
+hr {
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+  * Add the correct display in IE.
+  */
+main {
+  display: block;
+}
+
+/**
+  * Remove the list style on navigation lists in all browsers (opinionated).
+  */
+nav ol,
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/**
+  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+  */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+  * ========================================================================== */
+/**
+  * Remove the gray background on active links in IE 10.
+  */
+a {
+  background-color: transparent;
+}
+
+/**
+  * Add the correct text decoration in Edge 19-, IE, and Safari.
+  */
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+  * Add the correct font weight in Chrome, Edge, and Safari.
+  */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+  */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+  * Add the correct font size in all browsers.
+  */
+small {
+  font-size: 80%;
+}
+
+/* Embedded content
+  * ========================================================================== */
+/*
+  * Change the alignment on media elements in all browsers (opinionated).
+  */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+  * Add the correct display in IE 9-.
+  */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+  * Add the correct display in iOS 4-7.
+  */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+  * Remove the border on iframes in all browsers (opinionated).
+  */
+iframe {
+  border-style: none;
+}
+
+/**
+  * Remove the border on images within links in IE 10-.
+  */
+img {
+  border-style: none;
+}
+
+/**
+  * Change the fill color to match the text color in all browsers (opinionated).
+  */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/**
+  * Hide the overflow in IE.
+  */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Tabular data
+  * ========================================================================== */
+/**
+  * Collapse border spacing in all browsers (opinionated).
+  */
+table {
+  border-collapse: collapse;
+}
+
+/* Forms
+  * ========================================================================== */
+/**
+  * Remove the margin on controls in Safari.
+  */
+button,
+input,
+select {
+  margin: 0;
+}
+
+/**
+  * 1. Show the overflow in IE.
+  * 2. Remove the inheritance of text transform in Edge 19-, Firefox, and IE.
+  */
+button {
+  overflow: visible;
+  /* 1 */
+  text-transform: none;
+  /* 2 */
+}
+
+/**
+  * Correct the inability to style buttons in iOS and Safari.
+  */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+  * 1. Change the inconsistent appearance in all browsers (opinionated).
+  * 2. Correct the padding in Firefox.
+  */
+fieldset {
+  border: 1px solid #a0a0a0;
+  /* 1 */
+  padding: 0.35em 0.75em 0.625em;
+  /* 2 */
+}
+
+/**
+  * Show the overflow in Edge 19- and IE.
+  */
+input {
+  overflow: visible;
+}
+
+/**
+  * 1. Correct the text wrapping in Edge 19- and IE.
+  * 2. Correct the color inheritance from `fieldset` elements in IE.
+  */
+legend {
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+  * 1. Add the correct display in Edge 19- and IE.
+  * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+  */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+  * Remove the inheritance of text transform in Firefox.
+  */
+select {
+  text-transform: none;
+}
+
+/**
+  * 1. Remove the margin in Firefox and Safari.
+  * 2. Remove the default vertical scrollbar in IE.
+  * 3. Change the resize direction in all browsers (opinionated).
+  */
+textarea {
+  margin: 0;
+  /* 1 */
+  overflow: auto;
+  /* 2 */
+  resize: vertical;
+  /* 3 */
+}
+
+/**
+  * Remove the padding in IE 10-.
+  */
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+}
+
+/**
+  * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+  * 2. Correct the outline style in Safari.
+  */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+  * Correct the cursor style of increment and decrement buttons in Safari.
+  */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+  * Correct the text style of placeholders in Chrome, Edge, and Safari.
+  */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+  * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+  */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+  * 1. Correct the inability to style upload buttons in iOS and Safari.
+  * 2. Change font properties to `inherit` in Safari.
+  */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/**
+  * Remove the inner border and padding of focus outlines in Firefox.
+  */
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+  * Restore the focus outline styles unset by the previous rule in Firefox.
+  */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+  * Remove the additional :invalid styles in Firefox.
+  */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Interactive
+  * ========================================================================== */
+/*
+  * Add the correct display in Edge 19- and IE.
+  */
+details {
+  display: block;
+}
+
+/*
+  * Add the correct styles in Edge 19-, IE, and Safari.
+  */
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+  * Add the correct display in all browsers.
+  */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+  * ========================================================================== */
+/**
+  * Add the correct display in IE 9-.
+  */
+canvas {
+  display: inline-block;
+}
+
+/**
+  * Add the correct display in IE.
+  */
+template {
+  display: none;
+}
+
+/* User interaction
+  * ========================================================================== */
+/*
+  * 1. Remove the tapping delay in IE 10.
+  * 2. Remove the tapping delay on clickable elements
+       in all browsers (opinionated).
+  */
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  /* 1 */
+  touch-action: manipulation;
+  /* 2 */
+}
+
+/**
+  * Add the correct display in IE 10-.
+  */
+[hidden] {
+  display: none;
+}
+
+/* Accessibility
+  * ========================================================================== */
+/**
+  * Change the cursor on busy elements in all browsers (opinionated).
+  */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/*
+  * Change the cursor on control elements in all browsers (opinionated).
+  */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+  * Change the cursor on disabled, not-editable, or otherwise
+  * inoperable elements in all browsers (opinionated).
+  */
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/*
+  * Change the display on visually hidden accessible elements
+  * in all browsers (opinionated).
+  */
+[aria-hidden="false"][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/*--------------------------------------
+  フォントのダウンロード
+--------------------------------------*/
+/* Kosugi Maru / Roboto Mono */
+/*--------------------------------------
+  ブログ全体のレイアウト
+--------------------------------------*/
+/* ページ全体 */
+body {
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.1);
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+}
+
+/* ヘッダー */
+/* https://hitsuzi.hatenablog.com/entry/minimalism */
+#blog-title {
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px;
+  font-family: -apple-system, "Kosugi Maru";
+  font-weight: bold;
+  background-color: #1d8aff !important;
+}
+
+/* ブログタイトル */
+#title a {
+  color: #f0f0f0 !important;
+}
+
+/* ブログ説明 */
+#blog-description {
+  color: #f0f0f0 !important;
+  font-family: 'Meiryo UI', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+/* ナビゲーション */
+#gnav {
+  background-color: rgba(250, 250, 250, 0.9);
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  margin: 10px 0 !important;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none !important;
+}
+
+.breadcrumb a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.8);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.breadcrumb a:visited {
+  color: #388e3c;
+}
+
+.breadcrumb a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.breadcrumb .breadcrumb-innner {
+  margin: 0 !important;
+  padding: 0;
+}
+
+/* ブログ本体 */
+#container {
+  margin-bottom: 0;
+  border: 0 1px 1px 1px solid rgba(10, 10, 10, 0.9) !important;
+  background-color: rgba(250, 250, 250, 0.5);
+}
+
+#content {
+  margin-top: 20px;
+}
+
+/* 記事タイトル */
+header {
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.9);
+}
+
+header .entry-header {
+  border-radius: 8px !important;
+  padding: 10px !important;
+}
+
+/* 本文 */
+.entry-content {
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.9);
+  border-radius: 8px;
+}
+
+/* 注釈 */
+.footnote {
+  margin-top: 0;
+  padding-top: 0;
+  border-radius: 8px;
+}
+
+/* フッター */
+.entry-footer-section {
+  margin-bottom: 0;
+  padding: 10px 10px 0;
+  background-color: rgba(250, 250, 250, 0.7);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.hatena-star-container {
+  margin-top: 0;
+  padding: 0 10px 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+footer {
+  margin: 0px;
+  padding: 0px;
+}
+
+footer .entry-footer-modules .hatena-module-related-entries {
+  margin: 0px;
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.7);
+  border-radius: 8px;
+}
+
+footer .shrbtn a {
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+}
+
+footer .comment-box {
+  margin-top: 0;
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.7);
+  border-radius: 8px;
+}
+
+.pager {
+  margin-top: 0;
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.7);
+  border-radius: 8px;
+  text-decoration: none !important;
+}
+
+.pager a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.8);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.pager a:visited {
+  color: #388e3c;
+}
+
+.pager a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+/* サイドバー（はてなモジュール） */
+#box2 {
+  margin: 0;
+  padding: 0;
+}
+
+.hatena-module {
+  margin: 0px 0 8px;
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.7);
+  border-radius: 8px;
+}
+
+.hatena-module .profile-description {
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  text-decoration: none !important;
+  font-size: .8em;
+}
+
+.hatena-module .profile-description a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.8);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.hatena-module .profile-description a:visited {
+  color: #388e3c;
+}
+
+.hatena-module .profile-description a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+/*--------------------------------------
+  記事タイトルのデザイン
+  https://hitsuzi.hatenablog.com/entry/minimalism
+--------------------------------------*/
+.entry-date {
+  margin: 0;
+  padding: 0 20px;
+  font-family: -apple-system, "Kosugi Maru";
+  font-weight: normal;
+}
+
+.entry-title {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 1.2em;
+  font-family: -apple-system, "Kosugi Maru";
+  font-weight: bold;
+}
+
+.entry-categories {
+  margin: 0 10px;
+  text-align: left;
+}
+
+.entry-categories .entry-category-link {
+  padding: 3px 10px 3px 10px;
+  border-radius: 2px;
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  color: #f0f0f0;
+  background-color: rgba(1, 1, 1, 0.9);
+}
+
+.entry-categories .entry-category-link:last-child {
+  margin-right: 0;
+}
+
+/*--------------------------------------
+  記事本体のデザイン
+--------------------------------------*/
+.entry-content {
+  text-decoration: none !important;
+  /*--------------------------------------
+    見出し
+  --------------------------------------*/
+  /* https://saruwakakun.com/html-css/reference/border#section4 */
+  /*--------------------------------------
+    本文のフォント
+  --------------------------------------*/
+  line-height: 200%;
+  font-size: 16px;
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  color: #050505;
+  /*--------------------------------------
+    目次の表示・非表示
+  --------------------------------------*/
+  /* 「.table-of-contents」にネストすると
+     ポインターとやフォントサイズが効かないので逃がしておく… */
+  /*--------------------------------------
+    目次
+  --------------------------------------*/
+  /*--------------------------------------
+    文字サイズいろいろ
+  --------------------------------------*/
+  /*--------------------------------------
+    テキストボックス（まとめ、強調など）
+  --------------------------------------*/
+  /*--------------------------------------
+    <kbd>タグ
+  --------------------------------------*/
+  /*
+    mac風
+    https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-style-by-nrjmadan.html
+  */
+  /*
+    立体ボタン風
+    https://saruwakakun.com/html-css/reference/buttons
+  */
+  /*--------------------------------------
+    文中のコード
+  --------------------------------------*/
+  /*--------------------------------------
+    コードブロック
+  --------------------------------------*/
+  /*--------------------------------------
+    テーブルの表示
+  --------------------------------------*/
+}
+
+.entry-content a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.8);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.entry-content a:visited {
+  color: #388e3c;
+}
+
+.entry-content a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.entry-content h3 {
+  padding: 4px 10px;
+  color: #050505;
+  background-color: #f0f0f0;
+  border-left: 8px solid #1d8aff;
+  border-bottom: 1px solid #1d8aff;
+}
+
+.entry-content h4 {
+  padding: 6px 10px;
+  color: #050505;
+  border-top: 2px solid rgba(29, 138, 255, 0.8);
+  border-bottom: 2px solid rgba(29, 138, 255, 0.8);
+}
+
+.entry-content h5 {
+  font-size: 1.2em;
+  padding: 4px 10px;
+  color: #050505;
+  border-top: 1.4px dashed rgba(29, 138, 255, 0.8);
+  border-bottom: 1.4px dashed rgba(29, 138, 255, 0.8);
+}
+
+.entry-content h6 {
+  font-size: 1.2em;
+}
+
+.entry-content .show-area {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 0px;
+  border-radius: 5px;
+  font-size: .9em;
+}
+
+.entry-content .show-area:hover {
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+.entry-content .show-area:hover a:link {
+  /* 未訪問 */
+  color: #1e366a;
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.entry-content .show-area:hover a:visited {
+  color: #388e3c;
+}
+
+.entry-content .show-area:hover a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.entry-content .table-of-contents {
+  display: none;
+  /* デフォルトで非表示 */
+  /* 外枠 */
+  margin: 4px 10px 0;
+  padding: 20px 50px;
+  border-radius: 5px;
+  border: dotted #1541a1 1.6px;
+  /* フォント */
+  text-decoration: none !important;
+  line-height: 80% !important;
+  /* 中身 */
+}
+
+.entry-content .table-of-contents a:link {
+  /* 未訪問 */
+  color: #1e366a;
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.entry-content .table-of-contents a:visited {
+  color: #388e3c;
+}
+
+.entry-content .table-of-contents a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.entry-content .table-of-contents:before {
+  content: "";
+  /* スクリプトで文字が追加されてしまうので消しておく */
+}
+
+.entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
+  margin-left: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+}
+
+.entry-content .table-of-contents ul li, .entry-content .table-of-contents ol li {
+  padding-left: 4px;
+  font-size: .98em;
+}
+
+.entry-content .note {
+  font-size: 80%;
+  line-height: 120%;
+  color: #d32f2f;
+}
+
+.entry-content .additional-note {
+  font-size: 80%;
+  line-height: 120%;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.entry-content .small-chars {
+  font-size: 80%;
+  line-height: 120%;
+}
+
+.entry-content .large-chars {
+  font-size: 120%;
+}
+
+.entry-content .text-box-dashed {
+  margin: 10px;
+  padding: 10px;
+  border: 1px dashed;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.entry-content .mac-key {
+  /* ----Box Properties---- */
+  display: inline-block;
+  padding: 0.05em 0.6em;
+  margin: 0px 4px;
+  background: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  /* ----Text Properties---- */
+  font-family: Helvetica, serif;
+  text-align: center;
+  color: #666;
+}
+
+.entry-content .btn-square-emboss {
+  display: inline-block;
+  padding: 0.05em 0.6em;
+  margin: 0px 4px;
+  text-decoration: none;
+  background: #f0f0f0;
+  /*ボタン色*/
+  color: #666666;
+  /*ボタン色より暗く*/
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border-bottom: solid 3px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 90%;
+  text-shadow: 1px 1px 1px #f0f0f0;
+  /*
+      テキスト選択はOffに。
+      https://its-office.jp/blog/css/2017/04/30/user-select.html
+    */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.entry-content .btn-square-emboss:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  border-bottom: solid 3px rgba(0, 0, 0, 0.1);
+}
+
+.entry-content code {
+  border-radius: 4px;
+  vertical-align: middle;
+  font-size: 90%;
+  font-style: italic;
+  font-family: 'Roboto Mono', Consolas, 'Meiryo UI', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  background-color: #dfdbd4;
+  /* 背景 gray */
+}
+
+.entry-content pre.code {
+  padding-top: 30px !important;
+  /* フォント・メインカラーを変更 */
+  font-family: 'Roboto Mono', Consolas, 'Meiryo UI', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 85%;
+  line-height: 150%;
+  color: #f0f0f0;
+  /* 文字色 white */
+  background-color: rgba(5, 5, 5, 0.85);
+  /* 背景   black */
+  /* シンタックス・ハイライト */
+  /* 特殊文字・記号（←変数名とか？）(明るめの水色)  */
+  /* 型 (明るめの水色) */
+  /* コメント (ピンク) */
+  /* プリプロセッサ White */
+  /* 識別子 Gold */
+  /* 定数 Khaki */
+  /* ステートメント DarkTurquouse */
+  /*
+      左上に言語名を表示
+      https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
+    */
+}
+
+.entry-content pre.code .synSpecial {
+  color: #66FFFF;
+}
+
+.entry-content pre.code .synType {
+  color: #66FFFF;
+}
+
+.entry-content pre.code .synComment {
+  color: #FF33CC;
+}
+
+.entry-content pre.code .synPreProc {
+  color: #f0f0f0;
+}
+
+.entry-content pre.code .synIdentifier {
+  color: #FFD700;
+}
+
+.entry-content pre.code .synConstant {
+  color: #F0E68C;
+}
+
+.entry-content pre.code .synStatement {
+  color: #00CCCC;
+}
+
+.entry-content pre.code:before {
+  content: attr(data-lang);
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 3px;
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -30px;
+}
+
+.entry-content td {
+  font-size: 90%;
+  line-height: 130%;
+}
+
+/*--------------------------------------
+  ヨメレバ・カエレバ（レスポンシブ対応用）
+--------------------------------------*/
+.booklink-box, .kaerebalink-box {
+  padding: 25px;
+  margin-bottom: 10px;
+  border: double #CCC;
+  overflow: hidden;
+  font-size: small;
+}
+
+.booklink-image, .kaerebalink-image {
+  margin: 0 15px 0 0;
+  float: left;
+  min-width: 160px;
+  text-align: center;
+}
+
+.booklink-image img, .kaerebalink-image img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booklink-info, .kaerebalink-info {
+  margin: 0;
+  line-height: 120%;
+  overflow: hidden;
+}
+
+.booklink-name, .kaerebalink-name {
+  margin-bottom: 24px;
+  line-height: 1.5em;
+}
+
+.booklink-powered-date, .kaerebalink-powered-date {
+  font-size: 8px;
+  margin-top: 10px;
+  font-family: verdana;
+  line-height: 120%;
+}
+
+.booklink-detail, .kaerebalink-detail {
+  font-size: 12px;
+}
+
+.booklink-powered-date, .kaerebalink-detail {
+  margin-bottom: 15px;
+}
+
+.booklink-link2, .kaerebalink-link1 {
+  margin-top: 10px;
+}
+
+.kaerebalink-link1 a a {
+  width: 30%;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px 2px 0 0;
+  padding: 10px 1px;
+  text-align: center;
+  /*  float                : left; */
+  text-decoration: none;
+  font-weight: 800;
+  text-shadow: 1px 1px 1px #dcdcdc;
+  font-size: 12px;
+  color: #fff !important;
+}
+
+.kaerebalink-link1 a:hover {
+  opacity: 0.6;
+}
+
+.kaerebalink-link1 a:active {
+  position: relative;
+  top: 1px;
+}
+
+.booklink-link2 a a {
+  width: 30%;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px 2px 0 0;
+  padding: 10px 1px;
+  text-align: center;
+  /*  float                : left; */
+  text-decoration: none;
+  font-weight: 800;
+  text-shadow: 1px 1px 1px #dcdcdc;
+  font-size: 12px;
+  color: #fff !important;
+}
+
+.booklink-link2 a:hover {
+  opacity: 0.6;
+}
+
+.booklink-link2 a:active {
+  position: relative;
+  top: 1px;
+}
+
+/*-------ボタンを変えるときはここから-------*/
+.shoplinkamazon a {
+  color: #FF9901 !important;
+  border: 1px solid #FF9901 !important;
+}
+
+.shoplinkrakuten a {
+  color: #c20004 !important;
+  border: 1px solid #c20004 !important;
+}
+
+.shoplinkkindle a {
+  color: #007dcd !important;
+  border: 1px solid #007dcd !important;
+}
+
+.shoplinkkakakucom a {
+  color: #314995 !important;
+  border: 1px solid #314995;
+}
+
+.shoplinkyahoo a {
+  color: #7b0099 !important;
+  border: 1px solid #7b0099 !important;
+}
+
+.shoplinkyahoo img {
+  display: none;
+}
+
+.shoplinkyahoo a {
+  font-size: 10px;
+}
+
+/* 追加 */
+.shoplinkrakukobo a {
+  color: #c20004 !important;
+  border: 1px solid #c20004 !important;
+}
+
+.shoplinkseven a {
+  color: #006e54 !important;
+  border: 1px solid #006e54 !important;
+}
+
+.shoplinktoshokan a {
+  color: #888e7e !important;
+  border: 1px solid #888e7e !important;
+}
+
+/*------------ここまでを変更------------*/
+.booklink-footer {
+  display: none;
+}
+
+/*--------------------------------------
+  コメント欄に「ブログ主」の表示
+  https://www.foxism.jp/entry/2017/06/30/193115
+--------------------------------------*/
+.comment-nickname[data-user-name="yuricks7"]::after {
+  display: inline-block;
+  margin: 0 0 0 3px;
+  padding: 0 3px;
+  border-radius: 2px;
+  /* 角丸 */
+  content: 'Author!';
+  /* 表示する言葉 */
+  font-size: 0.65rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  /* 文字色 */
+  background: #00008b;
+  /* 背景色 */
+}
+
+/*--------------------------------------
+  「コメントを書く」ボタンを拡大
+  https://blog.minimal-green.com/entry/2016/08/08/210000
+--------------------------------------*/
+.leave-comment-title {
+  cursor: pointer;
+  *zoom: 1;
+  padding: 1%;
+  margin: 0.3% 10px 10px 0.3%;
+  line-height: 200%;
+  border-radius: 4px;
+  border: 1.5px solid #050505;
+  background-clip: padding-box;
+  text-align: center;
+  vertical-align: middle;
+  color: #f0f0f0;
+  background-color: #0a21e6;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+.leave-comment-title:before {
+  padding-right: 5px;
+  content: "\f01d";
+  font-family: "blogicon";
+}
+
+.leave-comment-title:hover {
+  text-decoration: none !important;
+  color: #050505;
+  background-color: rgba(20, 33, 220, 0.1);
+}
+
+/*--------------------------------------
+  キリトリ線
+  CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
+  https://switch-box.net/css-hr-decorations.html
+--------------------------------------*/
+hr {
+  /* 一旦リセット */
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* キリトリ線 */
+  height: 1em;
+  border-top: 1px dashed rgba(5, 5, 5, 0.4);
+  text-align: center;
+  overflow: visible;
+}
+
+hr:after {
+  display: inline-block;
+  position: relative;
+  height: 2em;
+  top: -1em;
+  padding: 0 0.5em;
+  content: "\002702";
+  /* ハサミ記号✂（機種依存？） */
+  line-height: 2em;
+  color: #050505;
+}
+
+/* レスポンシブ対応 */
+/*--------------------------------------
+  テーブルにスクロールバーを付ける
+--------------------------------------*/
+/* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
+  https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
+*/
+@media (max-width: 680px) {
+  .table-scroll {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .entry-content {
+    font-size: 14px;
+  }
+  /*--------------------------------------
+    改行をレスポンシブに(?)
+  --------------------------------------*/
+  /*
+    https://wemo.tech/1224
+  */
+  .resp_break {
+    display: none;
+  }
+  /*--------------------------------------
+    ヨメレバ・カエレバ（レスポンシブ対応用）
+  --------------------------------------*/
+  .booklink-box, .kaerebalink-box {
+    padding: 15px;
+  }
+  .booklink-image, .kaerebalink-image {
+    width: 100px !important;
+    min-width: initial;
+  }
+  .booklink-name > a, .kaerebalink-name > a {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .booklink-name, .kaerebalink-name {
+    margin-bottom: 12px;
+  }
+  .booklink-powered-date, .kaerebalink-powered-date {
+    margin-top: 5px;
+  }
+  .booklink-link2 a, .kaerebalink-link1 a {
+    width: calc(100% - 4px);
+    border-radius: 5px;
+    margin: 2px 0px;
+    padding: 10px 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
