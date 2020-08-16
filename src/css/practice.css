@@ -544,21 +544,54 @@ textarea,
 /**
  * レスポンシブ対応
  */
-/*--------------------------------------
-  テーブルにスクロールバーを付ける
---------------------------------------*/
-/* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
-  https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
-*/
-@media (max-width: 680px) {
-  .table-scroll {
-    overflow-x: scroll;
+@media (max-width: 1340px) {
+  #content {
+    margin: 0 auto 10px;
+    width: 88%;
+  }
+  #content #main {
+    margin: 0 auto;
+    width: 100%;
+  }
+  #box2 {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1340px;
+  }
+}
+
+@media (max-width: 1138px) {
+  #blog-title {
+    height: 140px;
+    margin-top: 40px !important;
+  }
+  #blog-title #title {
+    margin-top: 20px !important;
+  }
+  #blog-title #blog-description {
+    margin-bottom: 20px !important;
   }
 }
 
 @media screen and (max-width: 680px) {
+  #container {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
   .entry-content {
     font-size: 14px;
+  }
+  .archive-entry h1 {
+    font-size: 2em !important;
+  }
+  /*--------------------------------------
+    テーブルにスクロールバーを付ける
+  --------------------------------------*/
+  /* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
+     https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
+  */
+  .table-scroll {
+    overflow-x: scroll;
   }
   /*--------------------------------------
     改行をレスポンシブに(?)
@@ -620,7 +653,7 @@ body {
 #blog-title {
   margin: 0 auto;
   width: 100%;
-  padding: 30px;
+  padding: 20px 30px;
   font-family: -apple-system, "Kosugi Maru";
   font-weight: bold;
   background-color: #1d8aff !important;
@@ -639,12 +672,40 @@ body {
 
 /* ナビゲーション */
 #gnav {
-  background-color: rgba(250, 250, 250, 0.9);
+  padding: 0;
+  border: 0;
+  background-color: rgba(29, 138, 255, 0.3);
+}
+
+#gnav .gnav-inner {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#gnav .gnav-inner .menu {
+  height: 100%;
+  margin: 2px;
+  padding: 6px 2px !important;
+}
+
+#gnav .gnav-inner .menu a {
+  vertical-align: middle;
+}
+
+#gnav .gnav-inner .menu:hover {
+  cursor: pointer;
+  margin: 0 1px;
+  border-radius: 2px;
+  border: 1px solid rgba(29, 138, 255, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(5, 5, 5, 0.4);
+          box-shadow: 0 0 3px rgba(5, 5, 5, 0.4);
+  background-color: rgba(29, 138, 255, 0.2);
 }
 
 /* パンくずリスト */
 .breadcrumb {
-  margin: 10px 0 !important;
+  margin: 1px 0 !important;
   width: 100%;
   padding: 10px;
   border-radius: 8px;
@@ -674,67 +735,172 @@ body {
 
 /* ブログ本体 */
 #container {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   border: 0 1px 1px 1px solid rgba(10, 10, 10, 0.9) !important;
+  border-radius: 8px;
   background-color: rgba(250, 250, 250, 0.5);
 }
 
+#container #container-inner {
+  padding: 0 0;
+}
+
+/* コンテンツ */
 #content {
-  margin-top: 20px;
+  margin: 0 auto 10px;
+  width: 88%;
 }
 
 /* 記事タイトル */
-header {
+.entry-inner header {
+  margin-bottom: 0;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.9);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #fafafa;
 }
 
-header .entry-header {
-  border-radius: 8px !important;
-  padding: 10px !important;
+.entry-inner header .entry-date, .entry-inner header .entry-header {
+  margin: 0;
+  padding: 4px 10px 0;
+}
+
+.entry-inner header .entry-categories {
+  margin: 0;
+  padding: 8px 0 4px;
 }
 
 /* 本文 */
 .entry-content {
+  margin-top: 0;
   padding: 10px;
   background-color: rgba(250, 250, 250, 0.9);
-  border-radius: 8px;
 }
 
 /* 注釈 */
 .footnote {
   margin-top: 0;
   padding-top: 0;
-  border-radius: 8px;
 }
 
-/* フッター */
+/* 記事フッター */
+.entry-footer {
+  margin-top: 0;
+}
+
 .entry-footer-section {
+  margin-top: 0;
   margin-bottom: 0;
   padding: 10px 10px 0;
   background-color: rgba(250, 250, 250, 0.7);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 }
 
+/* はてなスター */
 .hatena-star-container {
-  margin-top: 0;
+  height: 40px !important;
+  margin-top: 0  0   10px;
   padding: 0 10px 10px;
+  height: 30px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: rgba(250, 250, 250, 0.7);
 }
 
+.hatena-star-container .hatena-star-add-button {
+  width: 60px;
+  height: 30px;
+}
+
+.hatena-star-container .hatena-star-add-button:hover {
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hatena-star-container hatena-big-star-star-container:hover {
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 記事一覧 */
+.archive-entry {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: rgba(250, 250, 250, 0.5);
+  text-decoration: none !important;
+}
+
+.archive-entry a:link {
+  /* 未訪問 */
+  color: #050505;
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.archive-entry a:visited {
+  color: #388e3c;
+}
+
+.archive-entry a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.archive-entry .archive-date {
+  margin: 0;
+  font-weight: bold;
+}
+
+.archive-entry .archive-date time {
+  border-bottom: 3px solid rgba(29, 138, 255, 0.3);
+}
+
+.archive-entry .entry-title {
+  margin: 4px 10px 0 !important;
+  padding: 0;
+  font-size: 1.4em !important;
+}
+
+.archive-entry .categories {
+  margin: 4px 1px !important;
+  padding: 3px 8px !important;
+}
+
+.archive-entry .categories .archive-category-link {
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  color: #fafafa;
+  background-color: rgba(29, 138, 255, 0.8);
+}
+
+.archive-entry .categories .archive-category-link:last-child {
+  margin-right: 0;
+}
+
+.archive-entry .archive-entry-body {
+  margin-top: 0;
+  padding: 4px;
+}
+
+/* ブログフッター */
+#footer {
+  padding: 10px 20px 20px;
+}
+
 footer {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 footer .entry-footer-modules .hatena-module-related-entries {
-  margin: 0px;
+  margin: 0;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.7);
   border-radius: 8px;
+  background-color: rgba(250, 250, 250, 0.7);
 }
 
 footer .shrbtn a {
@@ -746,15 +912,15 @@ footer .shrbtn a {
 footer .comment-box {
   margin-top: 0;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.7);
   border-radius: 8px;
+  background-color: rgba(250, 250, 250, 0.7);
 }
 
 .pager {
   margin-top: 0;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.7);
   border-radius: 8px;
+  background-color: rgba(250, 250, 250, 0.7);
   text-decoration: none !important;
 }
 
@@ -783,28 +949,90 @@ footer .comment-box {
 .hatena-module {
   margin: 0px 0 8px;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.7);
   border-radius: 8px;
+  background-color: rgba(250, 250, 250, 0.7);
 }
 
-.hatena-module .profile-description {
+.hatena-module .hatena-module-title {
+  border-bottom: 2px double #1d8aff;
+}
+
+.hatena-module .hatena-module-body {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
-  font-size: .8em;
 }
 
-.hatena-module .profile-description a:link {
+.hatena-module .hatena-module-body a:link {
+  /* 未訪問 */
+  color: rgba(5, 5, 5, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body a:visited {
+  color: #388e3c;
+}
+
+.hatena-module .hatena-module-body a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.hatena-module .hatena-module-body .search-form {
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+}
+
+.hatena-module .hatena-module-body .profile-description {
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-size: .8em;
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body .profile-description a:link {
   /* 未訪問 */
   color: rgba(10, 33, 230, 0.8);
   font-style: normal;
   text-decoration: none !important;
 }
 
-.hatena-module .profile-description a:visited {
+.hatena-module .hatena-module-body .profile-description a:visited {
   color: #388e3c;
 }
 
-.hatena-module .profile-description a:hover {
+.hatena-module .hatena-module-body .profile-description a:hover {
+  color: #0a21e6;
+  font-weight: bold;
+}
+
+.hatena-module .hatena-module-body time {
+  color: rgba(5, 5, 5, 0.8);
+  font-weight: bold;
+  border-bottom: 3px solid rgba(29, 138, 255, 0.3);
+}
+
+.hatena-module .hatena-module-body img[alt] {
+  color: rgba(5, 5, 5, 0.6);
+  font-size: .8em;
+}
+
+.hatena-module .hatena-module-body .urllist-see-more {
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body .urllist-see-more a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.8);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body .urllist-see-more a:visited {
+  color: #388e3c;
+}
+
+.hatena-module .hatena-module-body .urllist-see-more a:hover {
   color: #0a21e6;
   font-weight: bold;
 }
@@ -818,6 +1046,10 @@ footer .comment-box {
   padding: 0 20px;
   font-family: -apple-system, "Kosugi Maru";
   font-weight: normal;
+}
+
+.entry-date time {
+  border-bottom: 3px solid rgba(29, 138, 255, 0.3);
 }
 
 .entry-title {
@@ -834,11 +1066,11 @@ footer .comment-box {
 }
 
 .entry-categories .entry-category-link {
-  padding: 3px 10px 3px 10px;
+  padding: 2px 10px;
   border-radius: 2px;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  color: #f0f0f0;
-  background-color: rgba(1, 1, 1, 0.9);
+  color: #fafafa;
+  background-color: rgba(29, 138, 255, 0.8);
 }
 
 .entry-categories .entry-category-link:last-child {
@@ -853,7 +1085,8 @@ footer .comment-box {
   /*--------------------------------------
     見出し
   --------------------------------------*/
-  /* https://saruwakakun.com/html-css/reference/border#section4 */
+  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
+     https://saruwakakun.com/html-css/reference/h-design */
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
@@ -919,26 +1152,34 @@ footer .comment-box {
 }
 
 .entry-content h3 {
-  padding: 4px 10px;
-  color: #050505;
-  background-color: #f0f0f0;
+  margin: 20px  0px 10px;
+  padding: 6px 10px  2px;
+  background-color: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 1px solid #1d8aff;
+  color: #050505;
+  font-size: 1.4em;
 }
 
 .entry-content h4 {
-  padding: 6px 10px;
+  margin: 16px 5px 10px;
+  padding: 5px 7px  5px;
+  border: dashed 1px #1d8aff;
+  -webkit-box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
+          box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
+  background-color: rgba(29, 138, 255, 0.1);
+  font-size: 1.36em;
   color: #050505;
-  border-top: 2px solid rgba(29, 138, 255, 0.8);
-  border-bottom: 2px solid rgba(29, 138, 255, 0.8);
 }
 
 .entry-content h5 {
-  font-size: 1.2em;
+  margin: 16px  4px 10px;
   padding: 4px 10px;
   color: #050505;
-  border-top: 1.4px dashed rgba(29, 138, 255, 0.8);
-  border-bottom: 1.4px dashed rgba(29, 138, 255, 0.8);
+  font-size: 1.2em;
+  background-color: transparent;
+  /*背景透明に*/
+  border-left: solid 6px #1d8aff;
 }
 
 .entry-content h6 {
@@ -1023,20 +1264,20 @@ footer .comment-box {
 }
 
 .entry-content .note {
-  font-size: 80%;
+  font-size: .8em;
   line-height: 120%;
   color: #d32f2f;
 }
 
 .entry-content .additional-note {
-  font-size: 80%;
+  font-size: .8em;
   line-height: 120%;
   color: #d32f2f;
   font-weight: bold;
 }
 
 .entry-content .small-chars {
-  font-size: 80%;
+  font-size: .8em;
   line-height: 120%;
 }
 
@@ -1087,9 +1328,9 @@ footer .comment-box {
       https://its-office.jp/blog/css/2017/04/30/user-select.html
     */
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .entry-content .btn-square-emboss:active {
@@ -1165,12 +1406,12 @@ footer .comment-box {
 .entry-content pre.code:before {
   content: attr(data-lang);
   display: inline-block;
-  background: white;
-  color: black;
-  padding: 3px;
   position: absolute;
   margin-left: -20px;
   margin-top: -30px;
+  padding: 3px;
+  color: black;
+  background: white;
 }
 
 .entry-content td {
@@ -1396,10 +1637,10 @@ footer .comment-box {
   *zoom: 1;
   padding: 1%;
   margin: 0.3% 10px 10px 0.3%;
-  line-height: 200%;
   border-radius: 4px;
   border: 1.5px solid #050505;
   background-clip: padding-box;
+  line-height: 200%;
   text-align: center;
   vertical-align: middle;
   color: #f0f0f0;
@@ -1410,14 +1651,14 @@ footer .comment-box {
 }
 
 .leave-comment-title:before {
-  padding-right: 5px;
   content: "\f01d";
+  padding-right: 5px;
   font-family: "blogicon";
 }
 
 .leave-comment-title:hover {
-  text-decoration: none !important;
   color: #050505;
+  text-decoration: none !important;
   background-color: rgba(20, 33, 220, 0.1);
 }
 

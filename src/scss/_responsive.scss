@@ -2,21 +2,64 @@
  * レスポンシブ対応
  */
 
-/*--------------------------------------
-  テーブルにスクロールバーを付ける
---------------------------------------*/
-/* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
-  https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
-*/
-@media (max-width: 680px) {
-  .table-scroll {
-    overflow-x: scroll;
+@media (max-width: 1340px) {
+
+  #content {
+    margin: 0 auto 10px;
+    width: 88%;
+
+    #main {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  #box2 {
+    margin:   0px auto;
+    width:  100%;
+    max-width: 1340px;
+  }
+}
+
+@media (max-width: 1138px) {
+
+  #blog-title {
+    height: 140px;
+    margin-top: 40px !important;
+
+    #title {
+      margin-top: 20px !important;
+    }
+
+    #blog-description {
+      margin-bottom: 20px !important;
+    }
   }
 }
 
 @media screen and (max-width: 680px) {
+  #container {
+    border-top-left-radius:  0 !important;
+    border-top-right-radius: 0 !important;
+  }
+
   .entry-content {
     font-size: 14px;
+  }
+
+  .archive-entry h1 {
+    font-size: 2em !important;
+  }
+
+
+  /*--------------------------------------
+    テーブルにスクロールバーを付ける
+  --------------------------------------*/
+  /* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
+     https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
+  */
+  .table-scroll {
+    overflow-x: scroll;
   }
 
   /*--------------------------------------

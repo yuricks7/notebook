@@ -16,7 +16,7 @@
 /* ページ全体 */
 body {
   margin: 0 auto;
-  width: 100%;
+  width : 100%;
 
   background-color: rgba(1, 1, 1, .1);
   @include standardFonts();
@@ -25,9 +25,9 @@ body {
 /* ヘッダー */
 /* https://hitsuzi.hatenablog.com/entry/minimalism */
 #blog-title {
-  margin: 0 auto;
-  width: 100%;
-  padding: 30px;
+  margin : 0 auto;
+  width  : 100%;
+  padding: 20px 30px;
 
   @include titleFonts(bold);
   background-color: themeColor(1) !important;
@@ -46,130 +46,283 @@ body {
 
 /* ナビゲーション */
 #gnav {
-  background-color: bodyColor(.9);
+  padding: 0;
+  border : 0;
+  background-color: themeColor(.3);
+
+  .gnav-inner {
+    height : 100%;
+    padding: 0;
+    margin : 0;
+
+    .menu {
+      height: 100%;
+
+      $original-margin: 2px;
+      $border-weight  : 1px;
+      margin          : $original-margin;
+      padding         : 6px 2px !important;
+
+      a {
+        vertical-align: middle;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        margin         : 0 1px;
+        border-radius  : 2px;
+        $border-density: .3;
+        border         : $border-weight solid themeColor($border-density);
+        box-shadow     : 0 0 3px charBlack($border-density + .1);
+
+        background-color: themeColor($border-density - .1);
+      }
+    }
+  }
 }
 
 /* パンくずリスト */
 .breadcrumb {
-  margin: 10px 0 !important;
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
+  margin       : 1px 0 !important;
+  width        : 100%;
+  padding      : 10px;
+  border-radius: $module-radius;
 
   @include linkColors();
 
   .breadcrumb-innner {
-    margin: 0 !important;
+    margin : 0 !important;
     padding: 0;
   }
 }
 
 /* ブログ本体 */
 #container {
-  margin-bottom: 0;
-  border: 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
+  margin-bottom: 10px;
+  border       : 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
+  border-radius: $module-radius;
 
   background-color: bodyColor(.5);
+
+  #container-inner {
+    padding: 0 0;
+  }
 }
 
+/* コンテンツ */
 #content {
-  margin-top: 20px;
+  margin: 0 auto 10px;
+  width: 88%;
 }
 
 /* 記事タイトル */
-header {
-  padding: 10px;
-  background-color: bodyColor(.9);
+.entry-inner {
+    header {
+    margin-bottom: 0;
+    padding      : 10px;
+    border-top-left-radius : $module-radius;
+    border-top-right-radius: $module-radius;
+    background-color: bodyColor(1);
 
-  .entry-header {
-    border-radius: 8px !important;
-    padding: 10px !important;
+    .entry-date, .entry-header {
+      margin : 0;
+      padding: 4px 10px 0;
+    }
+
+    .entry-categories{
+      margin : 0;
+      padding: 8px 0 4px;
+
+    }
   }
 }
 
 /* 本文 */
 .entry-content {
-  padding: 10px;
+  margin-top: 0;
+  padding   : 10px;
+
   background-color: bodyColor(.9);
-  border-radius: 8px;
 }
 
 /* 注釈 */
 .footnote {
-  margin-top: 0;
-  padding-top: 0;
-  border-radius: 8px;
+  margin-top   : 0;
+  padding-top  : 0;
 }
 
-/* フッター */
+/* 記事フッター */
+.entry-footer {
+  margin-top   : 0;
+}
 .entry-footer-section {
+  margin-top   : 0;
   margin-bottom: 0;
-  padding: 10px 10px 0;
+  padding      : 10px 10px 0;
+
   background-color: bodyColor(.7);
-  border-top-left-radius:  8px;
-  border-top-right-radius: 8px;
 }
 
+/* はてなスター */
 .hatena-star-container {
-  margin-top: 0;
-  padding: 0 10px 10px;
-  border-bottom-left-radius:  8px;
-  border-bottom-right-radius: 8px;
+  height: 40px !important;
+  margin-top: 0  0   10px;
+  padding   : 0 10px 10px;
+  height: 30px;
+  border-bottom-left-radius : $module-radius;
+  border-bottom-right-radius: $module-radius;
   background-color: bodyColor(.7);
+
+  .hatena-star-add-button {
+    width:  60px;
+    height: 30px;
+
+    &:hover {
+      box-shadow: 0 0 2px 2px btnColor(.3);
+    }
+  }
+
+  hatena-big-star-star-container {
+    &:hover {
+      box-shadow: 0 0 10px 10px btnColor(.3);
+    }
+  }
+}
+
+/* 記事一覧 */
+.archive-entry {
+  margin-top   : 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 2px 2px btnColor(.1);
+  background-color: bodyColor(.5);
+
+  @include linkColors(charBlack(1));
+
+  .archive-date {
+    margin: 0;
+
+    font-weight: bold;
+    time {
+      border-bottom: 3px solid themeColor(.3);
+    }
+  }
+
+  .entry-title {
+    margin : 4px 10px 0 !important;
+    padding: 0;
+
+    font-size: 1.4em !important;
+  }
+
+  .categories {
+    margin : 4px 1px !important;
+    padding: 3px 8px !important;
+
+    .archive-category-link {
+      @include categoryBtns(3px);
+    }
+  }
+
+  .archive-entry-body {
+    margin-top: 0;
+    padding: 4px;
+  }
+}
+
+/* ブログフッター */
+#footer{
+  padding: 10px 20px 20px;
 }
 
 footer {
-  margin: 0px;
-  padding: 0px;
+  margin : 0;
+  padding: 0;
 
   .entry-footer-modules {
     .hatena-module-related-entries {
-      margin: 0px;
+      margin : 0;
       padding: 10px;
+      border-radius: $module-radius;
+
       background-color: bodyColor(.7);
-      border-radius: 8px;
     }
   }
 
   .shrbtn a {
-    margin: 0;
+    margin : 0;
     padding: 0;
     border-radius: 4px;
   }
 
   .comment-box {
     margin-top: 0;
-    padding: 10px;
+    padding   : 10px;
+    border-radius:    $module-radius;
+
     background-color: bodyColor(.7);
-    border-radius: 8px;
   }
 }
 
 .pager {
   margin-top: 0;
-  padding: 10px;
-  background-color: bodyColor(.7);
-  border-radius: 8px;
+  padding   : 10px;
+  border-radius: $module-radius;
 
+  background-color: bodyColor(.7);
   @include linkColors();
 }
 
 /* サイドバー（はてなモジュール） */
 #box2 {
-  margin: 0;
+  margin : 0;
   padding: 0;
 }
 
 .hatena-module {
-  margin: 0px 0 8px;
+  margin :  0px 0 8px;
   padding: 10px;
-  background-color: bodyColor(.7);
-  border-radius: 8px;
+  border-radius: $module-radius;
 
-  .profile-description {
+  background-color: bodyColor(.7);
+
+  .hatena-module-title {
+    border-bottom: 2px double themeColor(1);
+  }
+
+  .hatena-module-body {
     @include standardFonts();
-    @include linkColors();
-    font-size: .8em;
+    @include linkColors(charBlack(.9));
+
+    .search-form {
+      padding: 4px;
+      border : 1px solid btnColor(.1);
+
+      font-size: 1.2em;
+    }
+
+    .profile-description {
+      @include standardFonts();
+      font-size: .8em;
+      @include linkColors();
+    }
+
+    time {
+      color      : charBlack(.8);
+      font-weight: bold;
+      border-bottom: 3px solid themeColor(.3);
+    }
+
+    img[alt] {
+      color    : charBlack(.6);
+      font-size: .8em;
+    }
+
+    .urllist-see-more {
+      @include linkColors();
+    }
   }
 }
 
@@ -178,14 +331,19 @@ footer {
   https://hitsuzi.hatenablog.com/entry/minimalism
 --------------------------------------*/
 .entry-date {
-  margin: 0;
+  margin : 0;
   padding: 0 20px;
 
   @include titleFonts(normal);
+
+  time {
+    border-bottom: 3px solid themeColor(.3);
+  }
+
 }
 
 .entry-title {
-  margin: 0;
+  margin : 0;
   padding: 0 10px;
 
   font-size: 1.2em;
@@ -193,20 +351,21 @@ footer {
 }
 
 .entry-categories {
-  margin: 0 10px;
+  margin    : 0 10px;
   text-align: left;
 
   .entry-category-link {
-    padding: 3px 10px 3px 10px;
-    border-radius: 2px;
+    @include categoryBtns(2px);
+    // padding: 3px 10px 3px 10px;
+    // border-radius: 2px;
 
-    @include standardFonts();
-    color: rgba(240, 240, 240, 1);
-    background-color: rgba(1, 1, 1, .9);
+    // @include standardFonts();
+    // color           : rgba(240, 240, 240, 1);
+    // background-color: rgba(1, 1, 1, .9);
 
-    &:last-child {
-      margin-right: 0;
-    }
+    // &:last-child {
+    //   margin-right: 0;
+    // }
   }
 }
 
@@ -220,27 +379,40 @@ footer {
     見出し
   --------------------------------------*/
   h3 {
-    padding         : 4px 10px;
-    color           : charBlack(1);
-    background-color: #f0f0f0;
-    border-left     : 8px solid themeColor(1);
-    border-bottom   : 1px solid themeColor(1);
+    margin : 20px  0px 10px;
+    padding:  6px 10px  2px;
+
+    background-color: themeColor(.1);
+    border-left  : 8px solid themeColor(1);
+    border-bottom: 1px solid themeColor(1);
+
+    color    : charBlack(1);
+    font-size: 1.4em;
   }
 
+  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
+     https://saruwakakun.com/html-css/reference/h-design */
   h4 {
-    padding      : 6px 10px;
-    color        : charBlack(1);
-    border-top   : 2px solid themeColor(.8);
-    border-bottom: 2px solid themeColor(.8);
+    margin : 16px 5px 10px;
+    padding:  5px 7px  5px;
+
+    border    : dashed 1px themeColor(1);
+    box-shadow: 0px 0px 0px 6px themeColor(.1);
+    background-color: themeColor(.1);
+
+    font-size: 1.36em;
+    color    : charBlack(1);
   }
 
-  /* https://saruwakakun.com/html-css/reference/border#section4 */
   h5 {
-    font-size    : 1.2em;
-    padding      : 4px 10px;
-    color        : charBlack(1);
-    border-top   : 1.4px dashed themeColor(.8);
-    border-bottom: 1.4px dashed themeColor(.8);
+    margin : 16px  4px 10px;
+    padding:  4px 10px;
+
+    color    : charBlack(1);
+    font-size: 1.2em;
+
+    background-color: transparent; /*背景透明に*/
+    border-left: solid 6px themeColor(1);
   }
 
   h6 {
@@ -251,7 +423,7 @@ footer {
     本文のフォント
   --------------------------------------*/
   line-height: 200%;
-  font-size:   16px;
+  font-size  :  16px;
   @include standardFonts();
 
   color: charBlack(1);
@@ -263,7 +435,7 @@ footer {
      ポインターとやフォントサイズが効かないので逃がしておく… */
   .show-area {
     display: inline-block;
-    cursor:  pointer;
+    cursor : pointer;
 
     margin-bottom: 0;
     padding      : 0px;
@@ -284,10 +456,10 @@ footer {
     display: none; /* デフォルトで非表示 */
 
     /* 外枠 */
-    margin: 4px 10px 0;
+    margin : 4px 10px 0;
     padding: 20px 50px;
     border-radius: 5px;
-    border: dotted #1541a1 1.6px;
+    border : dotted #1541a1 1.6px;
 
     /* フォント */
     @include linkColors(#1e366a);
@@ -299,16 +471,16 @@ footer {
 
     /* 中身 */
     ul, ol {
-      margin-left: 0;
-      padding-top   : 4px ;
-      padding-bottom: 4px ;
-      padding-left: 16px;
+      margin-left   :  0;
+      padding-top   :  4px;
+      padding-bottom:  4px;
+      padding-left  : 16px;
     }
 
     ul li, ol li {
       padding-left: 4px;
 
-      font-size  : .98em;
+      font-size: .98em;
     }
   }
 
@@ -316,20 +488,20 @@ footer {
     文字サイズいろいろ
   --------------------------------------*/
   .note {
-    font-size  :  80%;
+    font-size  :  .8em;
     line-height: 120%;
     color      : #d32f2f;
   }
 
   .additional-note {
-    font-size  :  80%;
+    font-size  :  .8em;
     line-height: 120%;
     color      : #d32f2f;
     font-weight: bold;
   }
 
   .small-chars {
-    font-size  :  80%;
+    font-size  :  .8em;
     line-height: 120%;
   }
 
@@ -381,8 +553,8 @@ footer {
     text-decoration: none;
     background     : #f0f0f0; /*ボタン色*/
     color          : #666666; /*ボタン色より暗く*/
-    box-shadow     : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-    border-bottom  : solid 3px rgba(0, 0, 0, 0.3);
+    box-shadow     : 0px 1px 3px 1px btnColor(.5);
+    border-bottom  : solid 3px btnColor(.3);
     border-radius  : 3px;
     font-size      : 90%;
     text-shadow    : 1px 1px 1px $char-white;
@@ -391,16 +563,13 @@ footer {
       テキスト選択はOffに。
       https://its-office.jp/blog/css/2017/04/30/user-select.html
     */
-    -webkit-user-select: none;
-      -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    user-select: none;
 
     &:active  {
       -webkit-transform: translateY(4px);
       transform        : translateY(4px);
-      box-shadow       : 0px 1px 0px rgba(0, 0, 0, 0.3);
-      border-bottom    : solid 3px rgba(0, 0, 0, 0.1);
+      box-shadow       : 0px 1px 0px btnColor(.3);
+      border-bottom    : solid 3px btnColor(.1);
     }
   }
 
@@ -408,10 +577,10 @@ footer {
     文中のコード
   --------------------------------------*/
   code {
-    border-radius:  4px;
-    vertical-align: middle;
-    font-size:      90%;
-    font-style:     italic;
+    border-radius   : 4px;
+    vertical-align  : middle;
+    font-size       : 90%;
+    font-style      : italic;
     @include monospacedFonts();
     background-color: #dfdbd4; /* 背景 gray */
   }
@@ -424,9 +593,9 @@ footer {
 
     /* フォント・メインカラーを変更 */
     @include monospacedFonts();
-    font-size:   85%;
+    font-size  :  85%;
     line-height: 150%;
-    color:       $char-white;         /* 文字色 white */
+    color      : $char-white;         /* 文字色 white */
     background-color: charBlack(.85); /* 背景   black */
 
     /* シンタックス・ハイライト */
@@ -443,14 +612,16 @@ footer {
       https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
     */
     &:before {
-      content:     attr(data-lang);
-      display:     inline-block;
-      background: white;
-      color:       black;
-      padding:     3px;
-      position:    absolute;
+      content    : attr(data-lang);
+
+      display    : inline-block;
+      position   : absolute;
       margin-left: -20px;
-      margin-top:  -30px;
+      margin-top : -30px;
+      padding    : 3px;
+
+      color      : black;
+      background : white;
     }
   }
 
@@ -469,27 +640,27 @@ footer {
   --------------------------------------*/
   hr {
     /* 一旦リセット */
-    height:  0;
-    margin:  0;
+    height : 0;
+    margin : 0;
     padding: 0;
-    border:  0;
+    border : 0;
 
     /* キリトリ線 */
-    height:     1em;
+    height    : 1em;
     border-top: 1px dashed charBlack(.4);
     text-align: center;
-    overflow:   visible;
+    overflow  : visible;
 
     &:after {
-      display:  inline-block;
+      display : inline-block;
       position: relative;
-      height:   2em;
-      top:     -1em;
-      padding:  0 0.5em;
+      height  : 2em;
+      top     : -1em;
+      padding : 0 0.5em;
 
-      content:     "\002702"; /* ハサミ記号✂（機種依存？） */
+      content    : "\002702"; /* ハサミ記号✂（機種依存？） */
       line-height: 2em;
-      color:       charBlack(1);
+      color      : charBlack(1);
     }
   }
 }
@@ -550,20 +721,18 @@ footer {
 @mixin kaereba() {
   /* ボタン化 */
   a {
-    width                : 30%;
-    -moz-border-radius   : 5px;
-    -webkit-border-radius: 5px;
-    border-radius        : 5px;
-    display              : inline-block;
-    margin               : 5px 2px 0 0;
-    padding              : 10px 1px;
-    text-align           : center;
+    width          : 30%;
+    border-radius  : 5px;
+    display        : inline-block;
+    margin         : 5px 2px 0 0;
+    padding        : 10px 1px;
+    text-align     : center;
   /*  float                : left; */
-    text-decoration      : none;
-    font-weight          : 800;
-    text-shadow          : 1px 1px 1px #dcdcdc;
-    font-size            : 12px;
-    color                : #fff !important;
+    text-decoration: none;
+    font-weight    : 800;
+    text-shadow    : 1px 1px 1px #dcdcdc;
+    font-size      : 12px;
+    color          : #fff !important;
   }
 
   &:hover {
@@ -665,10 +834,10 @@ footer {
   *zoom           : 1;
   padding         : 1%;
   margin          : 0.3% 10px 10px 0.3%;
-  line-height     : 200%;
   border-radius   : 4px;
   border          : 1.5px solid charBlack(1);
   background-clip : padding-box;
+  line-height     : 200%;
 
   text-align      : center;
   vertical-align  : middle;
@@ -680,14 +849,36 @@ footer {
   text-decoration : none !important;
 
   &:before {
-    padding-right: 5px;
     content      : "\f01d";
+    padding-right: 5px;
     font-family  : "blogicon";
   }
 
   &:hover {
-    text-decoration : none !important;
     color           : charBlack(1);
+    text-decoration : none !important;
     background-color: rgba(20, 33, 220, .1);
   }
 }
+
+// /*--------------------------------------
+//   代替画像
+//   https://blog.minimal-green.com/entry/2016/08/08/210000
+// --------------------------------------*/
+// // .related-entries-image-link img{
+// //   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/c/c-miya/20170207/20170207100452.png) !important;
+// // }
+// .magnifiable {
+//   margin-right: auto;
+//   margin-left: auto;
+//   width: 30%;
+//   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/c/c-miya/20170207/20170207100452.png) !important;
+// }
+//
+// a.urllist-image-link.related-entries-image-link > img {
+//   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/c/c-miya/20170207/20170207100452.png) !important;
+// }
+
+
+
+
