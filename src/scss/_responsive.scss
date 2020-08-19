@@ -52,7 +52,8 @@
     https://account-it-dentist.hatenablog.com/entry/blog-custom003
   */
   .lastmod {
-    font-size: 95%;
+    padding  :  0;
+    font-size: 12px;
   }
 
   /* 本文 */
@@ -60,6 +61,7 @@
     font-size: 14px;
   }
 
+  /* トップページ等の記事カード */
   .archive-entry h1 {
     font-size: 1.6em !important;
   }

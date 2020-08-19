@@ -586,12 +586,14 @@ textarea,
     https://account-it-dentist.hatenablog.com/entry/blog-custom003
   */
   .lastmod {
-    font-size: 95%;
+    padding: 0;
+    font-size: 12px;
   }
   /* 本文 */
   .entry-content {
     font-size: 14px;
   }
+  /* トップページ等の記事カード */
   .archive-entry h1 {
     font-size: 1.6em !important;
   }
@@ -973,6 +975,9 @@ footer .comment-box {
 .hatena-module .hatena-module-body {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
+  /* 検索フォーム */
+  /* プロフィール */
+  /* 最新記事など */
 }
 
 .hatena-module .hatena-module-body a:link {
@@ -1073,7 +1078,7 @@ footer .comment-box {
 .lastmod {
   display: inline;
   margin: 0;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 15px;
   text-decoration: none;
 }
@@ -1083,7 +1088,7 @@ footer .comment-box {
   content: '\f021';
   /* 更新マーク */
   font-family: FontAwesome;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 .entry-title {
