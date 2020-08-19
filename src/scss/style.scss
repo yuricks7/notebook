@@ -338,7 +338,7 @@ footer {
   padding: 0 20px;
 
   @include titleFonts(normal);
-  a { padding: 5px 6px !important; }
+  a { padding: 5px 6px 5px 0 !important; }
 }
 
 /*

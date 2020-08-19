@@ -589,6 +589,9 @@ textarea,
     padding: 0   !important;
     font-size: 12px !important;
   }
+  .entry-date a {
+    padding-left: 0 !important;
+  }
   /* 本文 */
   .entry-content {
     font-size: 14px;
@@ -1067,7 +1070,7 @@ footer .comment-box {
 }
 
 .entry-date a {
-  padding: 5px 6px !important;
+  padding: 5px 6px 5px 0 !important;
 }
 
 /*

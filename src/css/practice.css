@@ -590,6 +590,9 @@ textarea,
     padding: 0   !important;
     font-size: 12px !important;
   }
+  .entry-date a {
+    padding-left: 0 !important;
+  }
   /* 本文 */
   .entry-content {
     font-size: 14px;
