@@ -1061,8 +1061,8 @@ footer .comment-box {
   font-weight: normal;
 }
 
-.entry-date time {
-  border-bottom: 3px solid rgba(29, 138, 255, 0.3);
+.entry-date a {
+  padding: 5px 6px !important;
 }
 
 /*
@@ -1074,6 +1074,7 @@ footer .comment-box {
   display: inline;
   margin: 0;
   padding: 0 20px;
+  font-size: 15px;
   text-decoration: none;
 }
 
@@ -1082,10 +1083,6 @@ footer .comment-box {
   font-family: FontAwesome;
   content: '\f021';
   /* 更新マーク */
-}
-
-.entry-date a {
-  padding: 5px 6px !important;
 }
 
 .entry-title {

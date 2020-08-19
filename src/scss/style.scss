@@ -337,9 +337,12 @@ footer {
   @include titleFonts(normal);
 
   time {
-    border-bottom: 3px solid themeColor(.3);
+    // border-bottom: 3px solid themeColor(.3);
   }
 
+  a {
+    padding: 5px 6px !important;
+  }
 }
 
 /*
@@ -351,9 +354,12 @@ footer {
 	display: inline;
   margin : 0;
   padding: 0 20px;
+  // border-bottom: 3px solid themeColor(.3);
+
+  font-size: 15px;
+	text-decoration: none;
 	// color: #383838;
 	// padding: 5px 6px;
-	text-decoration: none;
 	// margin-left: 10px;
 
   &:before {
@@ -362,10 +368,6 @@ footer {
     font-family: FontAwesome;
     content: '\f021'; /* 更新マーク */
   }
-}
-
-.entry-date a {
-	padding: 5px 6px !important;
 }
 
 .entry-title {
