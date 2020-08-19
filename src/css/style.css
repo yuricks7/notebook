@@ -573,31 +573,45 @@ textarea,
 }
 
 @media screen and (max-width: 680px) {
+  /* コンテナ */
   #container {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
+  /*
+    更新日時表示
+
+    【参考】
+    【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+    https://account-it-dentist.hatenablog.com/entry/blog-custom003
+  */
+  .lastmod {
+    font-size: 95%;
+  }
+  /* 本文 */
   .entry-content {
     font-size: 14px;
   }
   .archive-entry h1 {
-    font-size: 2em !important;
+    font-size: 1.6em !important;
   }
   /*--------------------------------------
     テーブルにスクロールバーを付ける
+
+    【参考】
+    Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
+    https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
   --------------------------------------*/
-  /* Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
-     https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
-  */
   .table-scroll {
     overflow-x: scroll;
   }
   /*--------------------------------------
     改行をレスポンシブに(?)
-  --------------------------------------*/
-  /*
+
+    【参考】
+    スマホ表示とデスクトップ表示でレスポンシブに改行位置を変える時はbrタグにクラスを付けてcssだけで管理すると超楽な件 | WEMO
     https://wemo.tech/1224
-  */
+  --------------------------------------*/
   .resp_break {
     display: none;
   }
@@ -1049,6 +1063,31 @@ footer .comment-box {
 
 .entry-date time {
   border-bottom: 3px solid rgba(29, 138, 255, 0.3);
+}
+
+/*
+  更新日時表示
+  【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+  https://account-it-dentist.hatenablog.com/entry/blog-custom003
+*/
+.lastmod {
+  color: #383838;
+  padding: 5px 6px;
+  text-decoration: none;
+  font-size: 80%;
+  display: inline;
+  margin-left: 10px;
+}
+
+.lastmod:before {
+  margin-right: 5px;
+  padding-left: 3px;
+  font-family: FontAwesome;
+  content: '\f021';
+}
+
+.entry-date a {
+  padding: 5px 6px !important;
 }
 
 .entry-title {

@@ -342,6 +342,31 @@ footer {
 
 }
 
+/*
+  更新日時表示
+  【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+  https://account-it-dentist.hatenablog.com/entry/blog-custom003
+*/
+.lastmod {
+	color: #383838;
+	padding: 5px 6px;
+	text-decoration: none;
+	font-size: 80%;
+	display: inline;
+	margin-left: 10px;
+
+  &:before {
+    margin-right: 5px;
+    padding-left: 3px;
+    font-family: FontAwesome;
+    content: '\f021';
+  }
+}
+
+.entry-date a {
+	padding: 5px 6px !important;
+}
+
 .entry-title {
   margin : 0;
   padding: 0 10px;
