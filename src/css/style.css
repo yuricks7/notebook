@@ -1071,19 +1071,17 @@ footer .comment-box {
   https://account-it-dentist.hatenablog.com/entry/blog-custom003
 */
 .lastmod {
-  color: #383838;
-  padding: 5px 6px;
-  text-decoration: none;
-  font-size: 80%;
   display: inline;
-  margin-left: 10px;
+  margin: 0;
+  padding: 0 20px;
+  text-decoration: none;
 }
 
 .lastmod:before {
-  margin-right: 5px;
-  padding-left: 3px;
+  margin-right: 10px;
   font-family: FontAwesome;
   content: '\f021';
+  /* 更新マーク */
 }
 
 .entry-date a {
