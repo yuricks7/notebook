@@ -365,8 +365,10 @@ footer {
   &:before {
     margin-right: 10px;
     // padding-left:  3px;
-    font-family: FontAwesome;
+
     content: '\f021'; /* 更新マーク */
+    font-family: FontAwesome;
+    font-size: 16px;
   }
 }
 
