@@ -587,8 +587,8 @@ textarea,
     https://account-it-dentist.hatenablog.com/entry/blog-custom003
   */
   .lastmod {
-    padding: 0;
-    font-size: 12px;
+    padding: 0   !important;
+    font-size: 12px !important;
   }
   /* 本文 */
   .entry-content {
@@ -1089,7 +1089,7 @@ footer .comment-box {
   content: '\f021';
   /* 更新マーク */
   font-family: FontAwesome;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 .entry-title {
