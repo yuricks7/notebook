@@ -1147,6 +1147,7 @@ footer .comment-box {
   /*--------------------------------------
     文字サイズいろいろ
   --------------------------------------*/
+  /* 連載目次 */
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
   --------------------------------------*/
@@ -1324,7 +1325,14 @@ footer .comment-box {
 }
 
 .entry-content .large-chars {
-  font-size: 120%;
+  font-size: 1.2em;
+}
+
+.entry-content .serialized-label {
+  margin-left: 8px;
+  padding: 2px !important;
+  background-color: #d32f2f;
+  color: white;
 }
 
 .entry-content .text-box-dashed {

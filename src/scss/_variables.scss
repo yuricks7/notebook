@@ -47,6 +47,7 @@
 }
 
 $char-white: #f0f0f0;
+$char-red  : #d32f2f;
 @function themeColor($density) {
   @return rgba(29, 138, 255, $density);
 }

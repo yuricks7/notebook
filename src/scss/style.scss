@@ -499,34 +499,34 @@ footer {
     文字サイズいろいろ
   --------------------------------------*/
   .note {
-    font-size  :  .8em;
+    font-size  : .8em;
     line-height: 120%;
-    color      : #d32f2f;
+    color      : $char-red;
   }
 
   .additional-note {
-    font-size  :  .8em;
+    font-size  : .8em;
     line-height: 120%;
-    color      : #d32f2f;
+    color      : $char-red;
     font-weight: bold;
   }
 
   .small-chars {
-    font-size  :  .8em;
+    font-size  : .8em;
     line-height: 120%;
   }
 
   .large-chars {
-    font-size: 120%;
+    font-size: 1.2em;
   }
 
   /* 連載目次 */
   .serialized-label {
     margin-left: 8px;
-    padding: 2px !important;
+    padding    : 2px !important; // 効いてないかも？
 
-    background-color: red;
-    color: white;"
+    background-color: $char-red;
+    color           : white;
   }
 
 
