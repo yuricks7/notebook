@@ -705,89 +705,89 @@ footer {
   border  : double #CCC;
 
   font-size: .85em;
-}
 
-/* 画像 */
-.booklink-image, .kaerebalink-image {
-  margin   : 0 15px 0 0;
-  float    : left;
-  min-width: 160px;
+  /* 画像 */
+  .booklink-image, .kaerebalink-image {
+    margin   : 0 15px 0 0;
+    float    : left;
+    min-width: 160px;
 
-  text-align: center;
-
-  img {
-    margin    : 0 auto;
     text-align: center;
+
+    img {
+      margin    : 0 auto;
+      text-align: center;
+    }
   }
-}
 
-/* 商品概要 */
-.booklink-info, .kaerebalink-info {
-    margin     : 0;
+  /* 商品概要 */
+  .booklink-info, .kaerebalink-info {
+      margin     : 0;
 
-    overflow   : hidden;
+      overflow   : hidden;
+      line-height: 120%;
+  }
+
+  /* 商品名 */
+  .booklink-name, .kaerebalink-name {
+      margin-bottom: 24px;
+
+      font-size  :   1em;
+      line-height: 1.5em;
+  }
+
+  /* "posted with ヨメレバ" */
+  .booklink-powered-date {
+    margin-top   : 10px;
+    margin-bottom: 15px;
+
+    font-size  :  .7em;
+    font-family: verdana;
     line-height: 120%;
+  }
+
+  /* "posted with カエレバ" */
+  .kaerebalink-powered-date {
+    margin-top: 10px;
+
+    font-size  :  .7em;
+    font-family: verdana;
+    line-height: 120%;
+  }
+
+  /* 商品説明(?) */
+  .booklink-detail {
+    font-size: 12px;
+  }
+
+  .kaerebalink-detail {
+    margin-bottom: 15px;
+
+    font-size: 12px;
+  }
+
+  /* ボタンエリア */
+  .booklink-link2, .kaerebalink-link1 {
+    margin-top: 10px;
+
+    @include kaerebaLinkBtns();
+  }
+
+  /* ------- リンクボタンここから ------- */
+  .shoplinkrakuten   { @include kaerebaShopBtn(#c20004); }
+  .shoplinkamazon    { @include kaerebaShopBtn(#FF9901); }
+  .shoplinkkindle    { @include kaerebaShopBtn(#007dcd); }
+  .shoplinkkakakucom { @include kaerebaShopBtn(#314995); }
+  .shoplinkyahoo     { @include kaerebaShopBtn(#7b0099); }
+
+  // 追加
+  .shoplinkrakukobo  { @include kaerebaShopBtn(#c20004); }
+  .shoplinkseven     { @include kaerebaShopBtn(#006e54); }
+  .shoplinktoshokan  { @include kaerebaShopBtn(#888e7e); }
+  /* ------------ リンクボタンここまで ------------ */
+
+  .booklink-footer   { display: none; }
 }
-
-/* 商品名 */
-.booklink-name, .kaerebalink-name {
-    margin-bottom: 24px;
-
-    font-size  :   1em;
-    line-height: 1.5em;
-}
-
-/* "posted with ヨメレバ" */
-.booklink-powered-date {
-  margin-top   : 10px;
-  margin-bottom: 15px;
-
-  font-size  :  .7em;
-  font-family: verdana;
-  line-height: 120%;
-}
-
-/* "posted with カエレバ" */
-.kaerebalink-powered-date {
-  margin-top: 10px;
-
-  font-size  :  .7em;
-  font-family: verdana;
-  line-height: 120%;
-}
-
-/* 商品説明(?) */
-.booklink-detail {
-  font-size: 12px;
-}
-
-.kaerebalink-detail {
-  margin-bottom: 15px;
-
-  font-size: 12px;
-}
-
-/* ボタンエリア */
-.booklink-link2, .kaerebalink-link1 {
-  margin-top: 10px;
-
-  @include kaerebaLinkBtns();
-}
-
-/* ------- リンクボタンここから ------- */
-.shoplinkrakuten   { @include kaerebaShopBtn(#c20004); }
-.shoplinkamazon    { @include kaerebaShopBtn(#FF9901); }
-.shoplinkkindle    { @include kaerebaShopBtn(#007dcd); }
-.shoplinkkakakucom { @include kaerebaShopBtn(#314995); }
-.shoplinkyahoo     { @include kaerebaShopBtn(#7b0099); }
-
-/* 追加 */
-.shoplinkrakukobo  { @include kaerebaShopBtn(#c20004); }
-.shoplinkseven     { @include kaerebaShopBtn(#006e54); }
-.shoplinktoshokan  { @include kaerebaShopBtn(#888e7e); }
-/* ------------ リンクボタンここまで ------------ */
-
-.booklink-footer   { display: none; }
 
 /*--------------------------------------
   コメント欄に「ブログ主」の表示

@@ -2,6 +2,9 @@
  * レスポンシブ対応
  */
 
+ /*--------------------------------------
+  （最大）PC
+--------------------------------------*/
 @media (max-width: 1340px) {
 
   #content {
@@ -21,11 +24,14 @@
   }
 }
 
+/*--------------------------------------
+  （大）PC
+--------------------------------------*/
 @media (max-width: 1138px) {
 
   #blog-title {
     height    : 140px;
-    margin-top:  40px !important;
+    margin-top:  40px !important; // はてなのヘッダーに隠れないように…
 
     #title {
       margin-top: 20px !important;
@@ -37,11 +43,55 @@
   }
 }
 
+/*--------------------------------------
+  （中）タブレット
+--------------------------------------*/
 @media screen and (max-width: 680px) {
+
+  /* サイト名 */
+  #blog-title {
+    margin-top: 0px !important;
+  }
+
+  .entry-title {
+    font-family: -apple-system,
+                 'Kosugi Maru' !important;
+  }
+
   /* コンテナ */
   #container {
-    border-top-left-radius : 0 !important;
-    border-top-right-radius: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* コンテンツ */
+  #content {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .breadcrumb {
+    border-radius: 0 !important;
+  }
+
+  .entry-inner header {
+    border-radius: 0 !important;
+  }
+
+  .hatena-star-container {
+    border-radius: 0 !important;
+  }
+
+  footer {
+    .hatena-module-related-entries {
+      border-radius: 0 !important;
+    }
+
+    .comment-box {
+      border-radius: 0 !important;
+    }
+  }
+  .hatena-module {
+    border-radius: 0 !important;
   }
 
   /*
@@ -62,7 +112,7 @@
 
   /* 本文 */
   .entry-content {
-    font-size: 14px;
+    // font-size: 14px !important;
   }
 
   /* トップページ等の記事カード */
@@ -96,31 +146,75 @@
     ヨメレバ・カエレバ（レスポンシブ対応用）
   --------------------------------------*/
   .booklink-box, .kaerebalink-box {
-    padding: 15px;
+    padding: 15px !important;
+    overflow: scroll;
+
+    .booklink-image, .kaerebalink-image {
+      width    : 100px !important;
+      min-width: initial;
+    }
+
+    .booklink-name, .kaerebalink-name {
+      margin-bottom: 12px;
+    }
+
+    .booklink-name > a, .kaerebalink-name > a {
+      font-size  : 15px;
+      font-weight: bold;
+    }
+
+    .booklink-powered-date, .kaerebalink-powered-date {
+      margin-top: 5px;
+    }
+
+    .booklink-link2, .kaerebalink-link1 {
+      a {
+        width        : calc(100% - 4px);
+        border-radius:  5px;
+        margin       :  2px 0px;
+        padding      : 10px 0px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------
+  （小）スマホ
+--------------------------------------*/
+@media (max-width: 480px) {
+
+  /* 本文 */
+  .entry-content {
+    font-size: 14px !important;
   }
 
-  .booklink-image, .kaerebalink-image {
-    width    : 100px !important;
-    min-width: initial;
-  }
+  .booklink-box, .kaerebalink-box {
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px !important;
 
-  .booklink-name > a, .kaerebalink-name > a {
-    font-size  : 15px;
-    font-weight: bold;
-  }
+    .booklink-image, .kaerebalink-image {
+      margin: 0 auto !important;
+      width : 100%;
+      min-width: 80px;
 
-  .booklink-name, .kaerebalink-name {
-    margin-bottom: 12px;
-  }
+      display: inline-block;
+      clear: both !important;
 
-  .booklink-powered-date, .kaerebalink-powered-date {
-    margin-top: 5px;
-  }
+      img {
+        text-align: center !important;
+      }
+    }
 
-  .booklink-link2 a, .kaerebalink-link1 a {
-    width        : calc(100% - 4px);
-    border-radius:  5px;
-    margin       :  2px 0px;
-    padding      : 10px 0px;
+    .booklink-info, .kaerebalink-info {
+      margin: 0 auto !important;
+      width : 100%;
+
+      display: inline-block;
+
+      .booklink-name, .kaerebalink-name {
+        text-align: center;
+      }
+    }
   }
 }
