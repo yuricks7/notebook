@@ -617,6 +617,16 @@ textarea,
   .hatena-module {
     border-radius: 0 !important;
   }
+  .archive-heading {
+    padding-left: 10px;
+  }
+  .archive-entry {
+    padding: 10px 10px !important;
+    font-size: .7em;
+  }
+  .archive-entry .entry-thum {
+    width: 400px !important;
+  }
   /*
     更新日時表示
 
@@ -631,7 +641,6 @@ textarea,
   .entry-date a {
     padding-left: 0 !important;
   }
-  /* 本文 */
   /* トップページ等の記事カード */
   .archive-entry h1 {
     font-size: 1.6em !important;
@@ -870,13 +879,6 @@ body {
   padding: 8px 0 4px;
 }
 
-/* 本文 */
-.entry-content {
-  margin-top: 0;
-  padding: 10px;
-  background-color: rgba(250, 250, 250, 0.9);
-}
-
 /* 記事フッター */
 .entry-footer {
   margin-top: 0;
@@ -915,10 +917,29 @@ body {
           box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 記事一覧 */
+/* 記事一覧ページ */
+.archive-heading {
+  font-size: 1.8em !important;
+  font-weight: bold;
+  font-family: -apple-system, 'Kosugi Maru' !important;
+}
+
+.archive-heading:before {
+  margin-right: 10px;
+  content: '\f02b';
+  /* ふせんマーク */
+  vertical-align: middle;
+  font-family: FontAwesome;
+}
+
+header.archive-heading {
+  /* 親セレクタ（=記事一覧ページ限定） */
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
 .archive-entry {
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin: 10px 5px !important;
   padding: 10px;
   border-radius: 6px;
   -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
@@ -1199,6 +1220,9 @@ footer .comment-box {
   記事本体のデザイン
 --------------------------------------*/
 .entry-content {
+  margin-top: 0;
+  padding: 10px;
+  background-color: rgba(250, 250, 250, 0.9);
   text-decoration: none !important;
   /*--------------------------------------
     見出し
@@ -1271,8 +1295,8 @@ footer .comment-box {
 }
 
 .entry-content h3 {
-  margin: 20px  0px 10px;
-  padding: 6px 10px  2px;
+  margin: 20px  0px;
+  padding: 8px 10px 3px;
   background-color: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 1px solid #1d8aff;
@@ -1281,8 +1305,8 @@ footer .comment-box {
 }
 
 .entry-content h4 {
-  margin: 16px 5px 10px;
-  padding: 5px 7px  5px;
+  margin: 16px 7px;
+  padding: 0px 7px;
   border: dashed 1px #1d8aff;
   -webkit-box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
           box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);

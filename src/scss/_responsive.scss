@@ -94,6 +94,30 @@
     border-radius: 0 !important;
   }
 
+  .archive-heading {
+    padding-left: 10px;
+    // font-family: -apple-system,
+    //              'Kosugi Maru' !important;
+
+    // &:before {
+    //   margin-right: 10px;
+
+    //   content: '\f02b'; /* ふせんマーク */
+    //   vertical-align: middle;
+    //   font-family: FontAwesome;
+    //   font-size: 16px !important;
+    // }
+  }
+
+  .archive-entry {
+    padding: 10px 10px !important;
+    font-size: .7em;
+
+    .entry-thum {
+      width: 400px !important;
+    }
+  }
+
   /*
     更新日時表示
 
@@ -108,11 +132,6 @@
 
   .entry-date a {
     padding-left: 0 !important;
-  }
-
-  /* 本文 */
-  .entry-content {
-    // font-size: 14px !important;
   }
 
   /* トップページ等の記事カード */
