@@ -442,11 +442,15 @@ footer {
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
-  line-height: 200%;
-  font-size  :  16px;
   @include standardFonts();
+  font-size  : 16px;
+  line-height: 200%;
 
   color: charBlack(1);
+
+  p {
+    margin-bottom: 1.4em;
+  }
 
   /*--------------------------------------
     目次の表示・非表示

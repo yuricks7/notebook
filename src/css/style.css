@@ -1231,9 +1231,9 @@ footer .comment-box {
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
-  line-height: 200%;
-  font-size: 16px;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-size: 16px;
+  line-height: 200%;
   color: #050505;
   /*--------------------------------------
     目次の表示・非表示
@@ -1326,6 +1326,10 @@ footer .comment-box {
 
 .entry-content h6 {
   font-size: 1.2em;
+}
+
+.entry-content p {
+  margin-bottom: 1.4em;
 }
 
 .entry-content .show-area {
