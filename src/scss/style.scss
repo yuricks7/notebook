@@ -146,11 +146,11 @@ body {
   background-color: bodyColor(.9);
 }
 
-/* 注釈 */
-.footnote {
-  margin-top   : 0;
-  padding-top  : 0;
-}
+// /* 注釈 */
+// .footnote {
+//   margin-top   : 0;
+//   padding-top  : 0;
+// }
 
 /* 記事フッター */
 .entry-footer {
@@ -529,7 +529,6 @@ footer {
     color           : white;
   }
 
-
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
   --------------------------------------*/
@@ -599,9 +598,9 @@ footer {
   --------------------------------------*/
   code {
     border-radius   : 4px;
-    vertical-align  : middle;
-    font-size       : 90%;
-    font-style      : italic;
+    vertical-align  : top !important;
+    font-size       : 85%;
+    // font-style      : italic;
     @include monospacedFonts();
     background-color: #dfdbd4; /* 背景 gray */
   }
@@ -684,23 +683,36 @@ footer {
       color      : charBlack(1);
     }
   }
+
+  .footnote {
+    margin : 0;
+    padding: 6px;
+
+    .footnote-number, .footnote-delimiter {
+      @include footnoteParts();
+    }
+  }
 }
 
 /*--------------------------------------
   ヨメレバ・カエレバ（レスポンシブ対応用）
 --------------------------------------*/
+/* 外枠 */
 .booklink-box, .kaerebalink-box {
-  padding      : 25px;
-  margin-bottom: 10px;
-  border       : double #CCC;
-  overflow     : hidden;
-  font-size    : small;
+  margin  : 10px auto;
+  padding : 25px;
+  overflow: hidden;
+  border  : double #CCC;
+
+  font-size: .85em;
 }
 
+/* 画像 */
 .booklink-image, .kaerebalink-image {
-  margin    : 0 15px 0 0;
-  float     : left;
-  min-width : 160px;
+  margin   : 0 15px 0 0;
+  float    : left;
+  min-width: 160px;
+
   text-align: center;
 
   img {
@@ -709,124 +721,73 @@ footer {
   }
 }
 
+/* 商品概要 */
 .booklink-info, .kaerebalink-info {
     margin     : 0;
-    line-height: 120%;
+
     overflow   : hidden;
+    line-height: 120%;
 }
 
+/* 商品名 */
 .booklink-name, .kaerebalink-name {
     margin-bottom: 24px;
-    line-height  : 1.5em;
+
+    font-size  :   1em;
+    line-height: 1.5em;
 }
 
-.booklink-powered-date, .kaerebalink-powered-date {
-     font-size  :  8px;
-     margin-top : 10px;
-     font-family: verdana;
-     line-height: 120%;
+/* "posted with ヨメレバ" */
+.booklink-powered-date {
+  margin-top   : 10px;
+  margin-bottom: 15px;
+
+  font-size  :  .7em;
+  font-family: verdana;
+  line-height: 120%;
 }
 
-.booklink-detail, .kaerebalink-detail {
+/* "posted with カエレバ" */
+.kaerebalink-powered-date {
+  margin-top: 10px;
+
+  font-size  :  .7em;
+  font-family: verdana;
+  line-height: 120%;
+}
+
+/* 商品説明(?) */
+.booklink-detail {
   font-size: 12px;
 }
 
-.booklink-powered-date, .kaerebalink-detail {
+.kaerebalink-detail {
   margin-bottom: 15px;
+
+  font-size: 12px;
 }
 
+/* ボタンエリア */
 .booklink-link2, .kaerebalink-link1 {
   margin-top: 10px;
+
+  @include kaerebaLinkBtns();
 }
 
-@mixin kaereba() {
-  /* ボタン化 */
-  a {
-    width          : 30%;
-    border-radius  : 5px;
-    display        : inline-block;
-    margin         : 5px 2px 0 0;
-    padding        : 10px 1px;
-    text-align     : center;
-  /*  float                : left; */
-    text-decoration: none;
-    font-weight    : 800;
-    text-shadow    : 1px 1px 1px #dcdcdc;
-    font-size      : 12px;
-    color          : #fff !important;
-  }
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    position: relative;
-    top     : 1px;
-  }
-}
-.kaerebalink-link1 { @include kaereba(); }
-.booklink-link2    { @include kaereba(); }
-
-/*-------ボタンを変えるときはここから-------*/
-.shoplinkamazon a {
-  $amazon-btn: #FF9901;
-  color : $amazon-btn !important;
-  border: 1px solid $amazon-btn !important;
-}
-
-.shoplinkrakuten a {
-  $rakuten-btn: #c20004;
-  color : $rakuten-btn !important;
-  border: 1px solid $rakuten-btn !important;
-}
-
-.shoplinkkindle a {
-  $kindle-btn: #007dcd;
-  color : $kindle-btn !important;
-  border: 1px solid $kindle-btn !important;
-}
-
-.shoplinkkakakucom a {
-  $kakakuCom-btn: #314995;
-  color : $kakakuCom-btn !important;
-  border: 1px solid $kakakuCom-btn;
-}
-
-.shoplinkyahoo {
-  a {
-    $yahoo-btn: #7b0099;
-    color : $yahoo-btn !important;
-    border: 1px solid $yahoo-btn !important;
-  }
-
-  img { display  : none; }
-  a   { font-size: 10px; }
-}
+/* ------- リンクボタンここから ------- */
+.shoplinkrakuten   { @include kaerebaShopBtn(#c20004); }
+.shoplinkamazon    { @include kaerebaShopBtn(#FF9901); }
+.shoplinkkindle    { @include kaerebaShopBtn(#007dcd); }
+.shoplinkkakakucom { @include kaerebaShopBtn(#314995); }
+.shoplinkyahoo     { @include kaerebaShopBtn(#7b0099); }
 
 /* 追加 */
-.shoplinkrakukobo a {
-  $kobo-btn: #c20004;
-  color : $kobo-btn !important;
-  border: 1px solid $kobo-btn !important;
-}
+.shoplinkrakukobo  { @include kaerebaShopBtn(#c20004); }
+.shoplinkseven     { @include kaerebaShopBtn(#006e54); }
+.shoplinktoshokan  { @include kaerebaShopBtn(#888e7e); }
+/* ------------ リンクボタンここまで ------------ */
 
-.shoplinkseven a {
-  $sevenNet-btn: #006e54;
-  color : $sevenNet-btn !important;
-  border: 1px solid $sevenNet-btn !important;
-}
-
-.shoplinktoshokan a {
-  $toshokan-btn: #888e7e;
-  color : $toshokan-btn !important;
-  border: 1px solid $toshokan-btn !important;
-}
-/*------------ここまでを変更------------*/
-
-// .shoplinkyahoo img { display  : none; }
-// .shoplinkyahoo a   { font-size: 10px; }
-.booklink-footer   { display  : none; }
+.booklink-footer   { display: none; }
 
 /*--------------------------------------
   コメント欄に「ブログ主」の表示
@@ -881,25 +842,3 @@ footer {
     background-color: rgba(20, 33, 220, .1);
   }
 }
-
-// /*--------------------------------------
-//   代替画像
-//   https://blog.minimal-green.com/entry/2016/08/08/210000
-// --------------------------------------*/
-// // .related-entries-image-link img{
-// //   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/c/c-miya/20170207/20170207100452.png) !important;
-// // }
-// .magnifiable {
-//   margin-right: auto;
-//   margin-left: auto;
-//   width: 30%;
-//   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/c/c-miya/20170207/20170207100452.png) !important;
-// }
-//
-// a.urllist-image-link.related-entries-image-link > img {
-//   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/c/c-miya/20170207/20170207100452.png) !important;
-// }
-
-
-
-
