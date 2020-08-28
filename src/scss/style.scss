@@ -444,12 +444,32 @@ footer {
   --------------------------------------*/
   @include standardFonts();
   font-size  : 16px;
-  line-height: 200%;
+  line-height:  2em;
 
   color: charBlack(1);
 
+  /* 段落 */
   p {
     margin-bottom: 1.4em;
+  }
+
+  /* リスト */
+  ul, ol {
+    // background-color: red !important;
+    margin-left   :  0;
+    padding-top   :  4px;
+    padding-bottom:  4px;
+    padding-left  : 16px;
+
+    li {
+      padding-left: 4px;
+
+      font-size: .98em;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 
   /*--------------------------------------
@@ -599,10 +619,9 @@ footer {
     user-select: none;
 
     &:active  {
-      -webkit-transform: translateY(4px);
-      transform        : translateY(4px);
-      box-shadow       : 0px 1px 0px btnColor(.3);
-      border-bottom    : solid 3px btnColor(.1);
+      transform    : translateY(4px);
+      box-shadow   : 0px 1px 0px btnColor(.3);
+      border-bottom: solid 3px btnColor(.1);
     }
   }
 
@@ -610,51 +629,76 @@ footer {
     文中のコード
   --------------------------------------*/
   code {
-    border-radius   : 4px;
-    vertical-align  : top !important;
-    font-size       : 85%;
-    // font-style      : italic;
-    @include monospacedFonts();
-    background-color: #dfdbd4; /* 背景 gray */
+    padding-top  : 1px;
+    border-radius: 3px;
+    border: 1px solid rgba(204, 204, 204, .5);
+
+    color     : black !important;
+    background: #dfdbd4; /* 背景 黄みがかったgray */
+
+    font-size: .85em;
+    @include   monospacedFonts();
+    vertical-align: top !important;
   }
 
   /*--------------------------------------
     コードブロック
   --------------------------------------*/
   pre.code {
-    padding-top: 30px !important;
+    padding : 20px 10px 10px;
 
     /* フォント・メインカラーを変更 */
     @include monospacedFonts();
-    font-size  :  85%;
-    line-height: 150%;
-    color      : $char-white;         /* 文字色 white */
-    background-color: charBlack(.85); /* 背景   black */
+    font-size  : .85em;
+    line-height: 1.5em;
+    color      : $char-white;         /* white 文字色 */
+    background-color: charBlack(.85); /* black 背景 */
 
     /* シンタックス・ハイライト */
-    .synSpecial    { color: #66FFFF; } /* 特殊文字・記号（←変数名とか？）(明るめの水色)  */
-    .synType       { color: #66FFFF; } /* 型 (明るめの水色) */
-    .synComment    { color: #FF33CC; } /* コメント (ピンク) */
-    .synPreProc    { color: $char-white; } /* プリプロセッサ White */
-    .synIdentifier { color: #FFD700; } /* 識別子 Gold */
-    .synConstant   { color: #F0E68C; } /* 定数 Khaki */
-    .synStatement  { color: #00CCCC; } /* ステートメント DarkTurquouse */
+    .synSpecial    { color: #66FFFF; } /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
+    .synType       { color: #66FFFF; } /* (明るめの水色) 型 */
+    .synComment    { color: #FF33CC; } /* (ピンク)      コメント */
+    .synPreProc    { color: $char-white; } /* White プリプロセッサ */
+    .synIdentifier { color: #F0E68C; } /* Gold    識別子 */
+    .synConstant   { color: #FFD700; } /* Khaki   定数 */
+    .synStatement  { color: #00CCCC; } /* DarkTurquouse ステートメント */
 
     /*
       左上に言語名を表示
       https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
     */
     &:before {
-      content    : attr(data-lang);
-
       display    : inline-block;
       position   : absolute;
-      margin-left: -20px;
-      margin-top : -30px;
-      padding    : 3px;
+      margin-left: -15px;
+      margin-top : -25px;
+      padding    :   2px 10px;
+      border     :  1px solid rgba(204, 204, 204, .5);
+      border-radius: 3px;
 
-      color      : black;
-      background : white;
+      content   : attr(data-lang);
+      color     : black;
+      background: $char-white;
+    }
+  }
+
+  /*
+    左側に行番号を表示
+    https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
+  */
+  .code-line {
+    counter-increment: linenumber;  /* code-lineクラスの数 */
+
+    &:before {
+      display: inline-block;
+      width  : 30px;
+      margin-right : 10px;
+      padding-right:  6px;
+      border-right :  1px solid rgba(204, 204, 204, .5);
+
+      text-align: right;
+      content: counter(linenumber); /* 擬似要素として行番号を表示 */
+      color: rgba(204, 204, 204, 1);
     }
   }
 
@@ -662,8 +706,8 @@ footer {
     テーブルの表示
   --------------------------------------*/
   td {
-    font-size  :  90%;
-    line-height: 130%;
+    font-size  :  .9em;
+    line-height: 1.3em;
   }
 
   /*--------------------------------------
@@ -738,7 +782,7 @@ footer {
       margin     : 0;
 
       overflow   : hidden;
-      line-height: 120%;
+      line-height: 1.2em;
   }
 
   /* 商品名 */
@@ -756,7 +800,7 @@ footer {
 
     font-size  :  .7em;
     font-family: verdana;
-    line-height: 120%;
+    line-height: 1.2em;
   }
 
   /* "posted with カエレバ" */
@@ -765,7 +809,7 @@ footer {
 
     font-size  :  .7em;
     font-family: verdana;
-    line-height: 120%;
+    line-height: 1.2em;
   }
 
   /* 商品説明(?) */
@@ -832,7 +876,7 @@ footer {
   border-radius   : 4px;
   border          : 1.5px solid charBlack(1);
   background-clip : padding-box;
-  line-height     : 200%;
+  line-height     : 2em;
 
   text-align      : center;
   vertical-align  : middle;
