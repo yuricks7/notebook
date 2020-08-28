@@ -1300,8 +1300,8 @@ footer .comment-box {
 }
 
 .entry-content h3 {
-  margin: 20px  0px;
-  padding: 8px 10px 3px;
+  margin: 30px  0px 20px;
+  padding: 8px 10px  3px;
   background-color: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 1px solid #1d8aff;
@@ -1310,28 +1310,29 @@ footer .comment-box {
 }
 
 .entry-content h4 {
-  margin: 16px 7px;
+  margin: 30px 5px 20px;
   padding: 0px 7px;
   border: dashed 1px #1d8aff;
-  -webkit-box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
-          box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
+  -webkit-box-shadow: 0px 0px 0px 5px rgba(29, 138, 255, 0.1);
+          box-shadow: 0px 0px 0px 5px rgba(29, 138, 255, 0.1);
   background-color: rgba(29, 138, 255, 0.1);
-  font-size: 1.36em;
+  font-size: 1.32em;
   color: #050505;
 }
 
 .entry-content h5 {
-  margin: 16px  4px 10px;
-  padding: 4px 10px;
-  color: #050505;
-  font-size: 1.2em;
+  margin: 30px 4px 20px;
+  padding: 4px 6px;
   background-color: transparent;
   /*背景透明に*/
   border-left: solid 6px #1d8aff;
+  font-size: 1.2em;
+  color: #050505;
 }
 
 .entry-content h6 {
-  font-size: 1.2em;
+  margin: 26px 10px 20px;
+  font-size: 1.15em;
 }
 
 .entry-content p {
