@@ -1074,6 +1074,7 @@ footer .comment-box {
 .hatena-module .hatena-module-body {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
+  font-size: .9em;
   /* 検索フォーム */
   /* プロフィール */
   /* 最新記事など */
@@ -1103,7 +1104,7 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  font-size: .8em;
+  font-size: .95em;
   text-decoration: none !important;
 }
 
@@ -1132,6 +1133,11 @@ footer .comment-box {
 .hatena-module .hatena-module-body img[alt] {
   color: rgba(5, 5, 5, 0.6);
   font-size: .8em;
+}
+
+.hatena-module .hatena-module-body .urllist-title-link {
+  font-size: 1.1em;
+  line-height: 2.2em;
 }
 
 .hatena-module .hatena-module-body .urllist-see-more {
@@ -1339,20 +1345,30 @@ footer .comment-box {
   margin-bottom: 1.4em;
 }
 
+.entry-content b, .entry-content strong {
+  font-size: 1.03em;
+}
+
 .entry-content ul, .entry-content ol {
+  margin-top: 10px;
   margin-left: 0;
   padding-top: 4px;
   padding-bottom: 4px;
-  padding-left: 16px;
+  padding-left: 2em;
 }
 
 .entry-content ul li, .entry-content ol li {
+  margin-top: 4px;
   padding-left: 4px;
   font-size: .98em;
 }
 
 .entry-content ul li p, .entry-content ol li p {
-  margin-bottom: 0;
+  margin: 0;
+}
+
+.entry-content ul li ul, .entry-content ol li ul {
+  margin-top: 0;
 }
 
 .entry-content .show-area {

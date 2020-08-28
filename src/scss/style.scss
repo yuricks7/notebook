@@ -299,6 +299,7 @@ footer {
   .hatena-module-body {
     @include standardFonts();
     @include linkColors(charBlack(.9));
+    font-size: .9em;
 
     /* 検索フォーム */
     .search-form {
@@ -311,7 +312,7 @@ footer {
     /* プロフィール */
     .profile-description {
       @include standardFonts();
-      font-size: .8em;
+      font-size: .95em;
       @include linkColors();
     }
 
@@ -327,9 +328,15 @@ footer {
       font-size: .8em;
     }
 
+    .urllist-title-link {
+      font-size  : 1.1em;
+      line-height: 2.2em;
+    }
+
     .urllist-see-more {
       @include linkColors();
     }
+
   }
 }
 
@@ -436,7 +443,7 @@ footer {
   }
 
   h6 {
-    margin: 26px 10px 20px;
+    margin : 26px 10px 20px;
 
     font-size: 1.15em;
   }
@@ -455,21 +462,29 @@ footer {
     margin-bottom: 1.4em;
   }
 
+  b, strong {
+    font-size: 1.03em;
+  }
+
   /* リスト */
   ul, ol {
-    // background-color: red !important;
-    margin-left   :  0;
-    padding-top   :  4px;
-    padding-bottom:  4px;
-    padding-left  : 16px;
+    margin-top : 10px;
+    margin-left:  0;
+    padding-top   : 4px;
+    padding-bottom: 4px;
+    padding-left  : 2em;
 
     li {
+      margin-top  : 4px;
       padding-left: 4px;
-
       font-size: .98em;
 
       p {
-        margin-bottom: 0;
+        margin: 0;
+      }
+
+      ul {
+        margin-top: 0;
       }
     }
   }
