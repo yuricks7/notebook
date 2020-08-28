@@ -1586,11 +1586,11 @@ footer .comment-box {
 }
 
 .entry-content pre.code .synIdentifier {
-  color: #F0E68C;
+  color: #FFD700;
 }
 
 .entry-content pre.code .synConstant {
-  color: #FFD700;
+  color: #F0E68C;
 }
 
 .entry-content pre.code .synStatement {

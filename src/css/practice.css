@@ -1075,6 +1075,7 @@ footer .comment-box {
 .hatena-module .hatena-module-body {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
+  font-size: .9em;
   /* 検索フォーム */
   /* プロフィール */
   /* 最新記事など */
@@ -1104,7 +1105,7 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  font-size: .8em;
+  font-size: .95em;
   text-decoration: none !important;
 }
 
@@ -1133,6 +1134,11 @@ footer .comment-box {
 .hatena-module .hatena-module-body img[alt] {
   color: rgba(5, 5, 5, 0.6);
   font-size: .8em;
+}
+
+.hatena-module .hatena-module-body .urllist-title-link {
+  font-size: 1.1em;
+  line-height: 2.2em;
 }
 
 .hatena-module .hatena-module-body .urllist-see-more {
@@ -1234,8 +1240,10 @@ footer .comment-box {
   --------------------------------------*/
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: 16px;
-  line-height: 200%;
+  line-height: 2em;
   color: #050505;
+  /* 段落 */
+  /* リスト */
   /*--------------------------------------
     目次の表示・非表示
   --------------------------------------*/
@@ -1268,6 +1276,10 @@ footer .comment-box {
   /*--------------------------------------
     コードブロック
   --------------------------------------*/
+  /*
+    左側に行番号を表示
+    https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
+  */
   /*--------------------------------------
     テーブルの表示
   --------------------------------------*/
@@ -1295,8 +1307,8 @@ footer .comment-box {
 }
 
 .entry-content h3 {
-  margin: 20px  0px;
-  padding: 8px 10px 3px;
+  margin: 30px  0px 20px;
+  padding: 8px 10px  3px;
   background-color: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 1px solid #1d8aff;
@@ -1305,32 +1317,59 @@ footer .comment-box {
 }
 
 .entry-content h4 {
-  margin: 16px 7px;
+  margin: 30px 5px 20px;
   padding: 0px 7px;
   border: dashed 1px #1d8aff;
-  -webkit-box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
-          box-shadow: 0px 0px 0px 6px rgba(29, 138, 255, 0.1);
+  -webkit-box-shadow: 0px 0px 0px 5px rgba(29, 138, 255, 0.1);
+          box-shadow: 0px 0px 0px 5px rgba(29, 138, 255, 0.1);
   background-color: rgba(29, 138, 255, 0.1);
-  font-size: 1.36em;
+  font-size: 1.32em;
   color: #050505;
 }
 
 .entry-content h5 {
-  margin: 16px  4px 10px;
-  padding: 4px 10px;
-  color: #050505;
-  font-size: 1.2em;
+  margin: 30px 4px 20px;
+  padding: 4px 6px;
   background-color: transparent;
   /*背景透明に*/
   border-left: solid 6px #1d8aff;
+  font-size: 1.2em;
+  color: #050505;
 }
 
 .entry-content h6 {
-  font-size: 1.2em;
+  margin: 26px 10px 20px;
+  font-size: 1.15em;
 }
 
 .entry-content p {
   margin-bottom: 1.4em;
+}
+
+.entry-content b, .entry-content strong {
+  font-size: 1.03em;
+}
+
+.entry-content ul, .entry-content ol {
+  margin-top: 10px;
+  margin-left: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 2em;
+}
+
+.entry-content ul li, .entry-content ol li {
+  margin-top: 4px;
+  padding-left: 4px;
+  font-size: .98em;
+}
+
+.entry-content ul li p, .entry-content ol li p {
+  margin: 0;
+}
+
+.entry-content ul li ul, .entry-content ol li ul {
+  margin-top: 0;
 }
 
 .entry-content .show-area {
@@ -1489,39 +1528,42 @@ footer .comment-box {
 
 .entry-content .btn-square-emboss:active {
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);
+          transform: translateY(4px);
   -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
   border-bottom: solid 3px rgba(0, 0, 0, 0.1);
 }
 
 .entry-content code {
-  border-radius: 4px;
-  vertical-align: top !important;
-  font-size: 85%;
+  padding-top: 1px;
+  border-radius: 3px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  color: black !important;
+  background: #dfdbd4;
+  /* 背景 黄みがかったgray */
+  font-size: .85em;
   font-family: 'Roboto Mono', Consolas, 'Meiryo UI', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  background-color: #dfdbd4;
-  /* 背景 gray */
+  vertical-align: top !important;
 }
 
 .entry-content pre.code {
-  padding-top: 30px !important;
+  padding: 20px 10px 10px;
   /* フォント・メインカラーを変更 */
   font-family: 'Roboto Mono', Consolas, 'Meiryo UI', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  font-size: 85%;
-  line-height: 150%;
+  font-size: .85em;
+  line-height: 1.5em;
   color: #f0f0f0;
-  /* 文字色 white */
+  /* white 文字色 */
   background-color: rgba(5, 5, 5, 0.85);
-  /* 背景   black */
+  /* black 背景 */
   /* シンタックス・ハイライト */
-  /* 特殊文字・記号（←変数名とか？）(明るめの水色)  */
-  /* 型 (明るめの水色) */
-  /* コメント (ピンク) */
-  /* プリプロセッサ White */
-  /* 識別子 Gold */
-  /* 定数 Khaki */
-  /* ステートメント DarkTurquouse */
+  /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
+  /* (明るめの水色) 型 */
+  /* (ピンク)      コメント */
+  /* White プリプロセッサ */
+  /* Gold    識別子 */
+  /* Khaki   定数 */
+  /* DarkTurquouse ステートメント */
   /*
       左上に言語名を表示
       https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
@@ -1557,19 +1599,38 @@ footer .comment-box {
 }
 
 .entry-content pre.code:before {
-  content: attr(data-lang);
   display: inline-block;
   position: absolute;
-  margin-left: -20px;
-  margin-top: -30px;
-  padding: 3px;
+  margin-left: -15px;
+  margin-top: -25px;
+  padding: 2px 10px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  border-radius: 3px;
+  content: attr(data-lang);
   color: black;
-  background: white;
+  background: #f0f0f0;
+}
+
+.entry-content .code-line {
+  counter-increment: linenumber;
+  /* code-lineクラスの数 */
+}
+
+.entry-content .code-line:before {
+  display: inline-block;
+  width: 30px;
+  margin-right: 10px;
+  padding-right: 6px;
+  border-right: 1px solid rgba(204, 204, 204, 0.5);
+  text-align: right;
+  content: counter(linenumber);
+  /* 擬似要素として行番号を表示 */
+  color: #cccccc;
 }
 
 .entry-content td {
-  font-size: 90%;
-  line-height: 130%;
+  font-size: .9em;
+  line-height: 1.3em;
 }
 
 .entry-content hr {
@@ -1644,7 +1705,7 @@ footer .comment-box {
 .booklink-box .booklink-info, .booklink-box .kaerebalink-info, .kaerebalink-box .booklink-info, .kaerebalink-box .kaerebalink-info {
   margin: 0;
   overflow: hidden;
-  line-height: 120%;
+  line-height: 1.2em;
 }
 
 .booklink-box .booklink-name, .booklink-box .kaerebalink-name, .kaerebalink-box .booklink-name, .kaerebalink-box .kaerebalink-name {
@@ -1658,14 +1719,14 @@ footer .comment-box {
   margin-bottom: 15px;
   font-size: .7em;
   font-family: verdana;
-  line-height: 120%;
+  line-height: 1.2em;
 }
 
 .booklink-box .kaerebalink-powered-date, .kaerebalink-box .kaerebalink-powered-date {
   margin-top: 10px;
   font-size: .7em;
   font-family: verdana;
-  line-height: 120%;
+  line-height: 1.2em;
 }
 
 .booklink-box .booklink-detail, .kaerebalink-box .booklink-detail {
@@ -1940,7 +2001,7 @@ footer .comment-box {
   border-radius: 4px;
   border: 1.5px solid #050505;
   background-clip: padding-box;
-  line-height: 200%;
+  line-height: 2em;
   text-align: center;
   vertical-align: middle;
   color: #f0f0f0;
