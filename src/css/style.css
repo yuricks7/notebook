@@ -1252,9 +1252,10 @@ footer .comment-box {
     目次
   --------------------------------------*/
   /*--------------------------------------
-    文字サイズいろいろ
+    文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
+  /* 文中の文字 */
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
   --------------------------------------*/
@@ -1448,6 +1449,17 @@ footer .comment-box {
   font-size: .98em;
 }
 
+.entry-content .serialized-label {
+  margin-left: 8px;
+  padding: 2px !important;
+  background-color: #d32f2f;
+  color: white;
+}
+
+.entry-content .red {
+  color: #d32f2f;
+}
+
 .entry-content .note {
   font-size: .8em;
   line-height: 120%;
@@ -1466,15 +1478,12 @@ footer .comment-box {
   line-height: 120%;
 }
 
-.entry-content .large-chars {
-  font-size: 1.2em;
+.entry-content .small-chars code {
+  vertical-align: middle !important;
 }
 
-.entry-content .serialized-label {
-  margin-left: 8px;
-  padding: 2px !important;
-  background-color: #d32f2f;
-  color: white;
+.entry-content .large-chars {
+  font-size: 1.2em;
 }
 
 .entry-content .text-box-dashed {

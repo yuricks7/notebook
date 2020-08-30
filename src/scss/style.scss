@@ -546,8 +546,22 @@ footer {
   }
 
   /*--------------------------------------
-    文字サイズいろいろ
+    文字装飾いろいろ
   --------------------------------------*/
+  /* 連載目次 */
+  .serialized-label {
+    margin-left: 8px;
+    padding    : 2px !important; // 効いてないかも？
+
+    background-color: $char-red;
+    color           : white;
+  }
+
+  /* 文中の文字 */
+  .red {
+    color: $char-red;
+  }
+
   .note {
     font-size  : .8em;
     line-height: 120%;
@@ -564,19 +578,14 @@ footer {
   .small-chars {
     font-size  : .8em;
     line-height: 120%;
+
+    code {
+      vertical-align: middle !important;
+    }
   }
 
   .large-chars {
     font-size: 1.2em;
-  }
-
-  /* 連載目次 */
-  .serialized-label {
-    margin-left: 8px;
-    padding    : 2px !important; // 効いてないかも？
-
-    background-color: $char-red;
-    color           : white;
   }
 
   /*--------------------------------------
