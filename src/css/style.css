@@ -4,7 +4,6 @@
 /**
  * Add border box sizing in all browsers (opinionated).
  */
-@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono&display=swap&subset=japanese");
 *,
 ::before,
 ::after {
@@ -744,7 +743,6 @@ textarea,
 /*--------------------------------------
   フォントのダウンロード
 --------------------------------------*/
-/* Kosugi Maru / Roboto Mono */
 /*--------------------------------------
   ブログ全体のレイアウト
 --------------------------------------*/
@@ -1569,8 +1567,8 @@ footer .comment-box {
   /* (明るめの水色) 型 */
   /* (ピンク)      コメント */
   /* White プリプロセッサ */
-  /* Gold    識別子 */
-  /* Khaki   定数 */
+  /* Gold  識別子 */
+  /* Khaki 定数 */
   /* DarkTurquouse ステートメント */
   /*
       左上に言語名を表示
