@@ -577,7 +577,7 @@ textarea,
     margin-bottom: 20px !important;
   }
   #stoc-module {
-    display: none;
+    display: none !important;
   }
 }
 
