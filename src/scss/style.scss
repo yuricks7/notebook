@@ -3,15 +3,6 @@
 @import "variables";
 
 /*--------------------------------------
-  フォントのダウンロード
---------------------------------------*/
-// /* Kosugi Maru / Roboto Mono */
-// @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru|Roboto+Mono&display=swap&subset=japanese');
-
-// /* Noto Sans CJK JP */
-//  @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
-
-/*--------------------------------------
   ブログ全体のレイアウト
 --------------------------------------*/
 /* ページ全体 */
@@ -924,5 +915,118 @@ footer {
     color           : charBlack(1);
     text-decoration : none !important;
     background-color: rgba(20, 33, 220, .1);
+  }
+}
+
+/**
+ * 追尾する目次
+ *
+ * 【参考】
+ * はてなブログ向けのサイドバーで追尾する目次【ver3】 http://twilyze.hatenablog.jp/entry/sidebar-toc-3
+ * https://gist.github.com/Twilyze/30809fa76691983312dced621eb1040a#file-changelog-md
+ */
+/* モジュール */
+#stoc-module {
+  backface-visibility: hidden;
+
+  .tracking {
+    margin-bottom: 0;
+  }
+
+  .fixed {
+    position: fixed;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  @keyframes fadeIn {
+      0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  .fade-in {
+    animation: fadeIn 300ms;
+  }
+}
+
+/* コンテンツ */
+#stoc {
+  overflow-y: auto;
+
+  .shadow {
+    /* Shadows */
+    background:
+      radial-gradient(farthest-side at top,
+                    rgba(0, 0, 0, .17),
+                      transparent
+                    ) top / 100% 11px,
+      radial-gradient(farthest-side at bottom,
+                    rgba(0, 0, 0, .17),
+                      transparent
+                    ) bottom / 100% 11px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0 0 0 1em;
+    list-style-type: none;
+  }
+
+  > ol {
+    padding-left: 0;
+  }
+
+  .shadow > ol {
+    /* Shadow covers */
+    background:
+      linear-gradient(#fff 30%, transparent) top / 100% 40px,
+      linear-gradient(transparent, #fff 70%) bottom / 100% 40px;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    overflow-y: hidden;
+  }
+
+  // li {
+  //   /*margin: 3px 0;*/
+  // }
+
+  a {
+    padding: 2px 2px 2px 6px;
+    display: block;
+    text-decoration: none;
+    // color: #999;
+  }
+
+  &:not(.touch) a:hover {
+    background-color: rgba(0, 0, 0, .05);
+    text-decoration: underline;
+    // color: #999;
+  }
+
+  .active {
+    background-color: rgba(0, 0, 0, .05);
+    // color: #999;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: #ececec;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
   }
 }
