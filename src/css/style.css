@@ -575,6 +575,9 @@ textarea,
   #blog-title #blog-description {
     margin-bottom: 20px !important;
   }
+  #stoc-module {
+    display: none;
+  }
 }
 
 /*--------------------------------------
