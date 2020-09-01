@@ -16,7 +16,6 @@
  * Released under the MIT license:
  * http://opensource.org/licenses/mit-license.php
  */
-;
 (function ($) {
   'use strict';
   var urls = [],
