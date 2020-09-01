@@ -75,6 +75,11 @@ body {
 }
 
 /* パンくずリスト */
+#breadcrumb div {
+  display  : inline;
+  font-size: 13px;
+}
+
 .breadcrumb {
   margin       : 1px 0 !important;
   width        : 100%;
