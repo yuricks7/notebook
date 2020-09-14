@@ -200,14 +200,21 @@ body {
   box-shadow: 0 0 2px 2px btnColor(.1);
   background-color: bodyColor(.5);
 
-  @include linkColors(charBlack(1));
+  @include linkColors(
+    $default: charBlack(1),
+    $visited: charBlack(1));
 
   .archive-date {
     margin: 0;
 
     font-weight: bold;
     time {
-      border-bottom: 3px solid themeColor(.3);
+      // 効いてないかも
+      @include linkColors(
+        $default: highlighter(.9),
+        $visited: charBlack(1)
+      );
+      //   border-bottom: 3px solid themeColor(.3);
     }
   }
 
@@ -295,7 +302,10 @@ footer {
 
   .hatena-module-body {
     @include standardFonts();
-    @include linkColors(charBlack(.9));
+    @include linkColors(
+      $default: charBlack(.9),
+      $visited: charBlack(.9)
+    );
     font-size: .9em;
 
     /* 検索フォーム */
@@ -315,9 +325,10 @@ footer {
 
     /* 最新記事など */
     time {
-      color      : charBlack(.8);
+      color  : charBlack(.8);
+      @include linkColors($visited: charBlack(1));
       font-weight: bold;
-      border-bottom: 3px solid themeColor(.3);
+      // border-bottom: 3px solid themeColor(.3);
     }
 
     img[alt] {
@@ -331,7 +342,10 @@ footer {
     }
 
     .urllist-see-more {
-      @include linkColors();
+      @include linkColors(
+        $default: charBlack(1),
+        $visited: charBlack(1)
+      );
     }
 
   }
@@ -393,7 +407,7 @@ footer {
 --------------------------------------*/
 .entry-content {
   margin-top: 0;
-  padding   : 10px;
+  padding   : 10px 16px;
 
   background-color: bodyColor(.9);
 
@@ -403,12 +417,12 @@ footer {
     見出し
   --------------------------------------*/
   h3 {
-    margin : 30px  0px 20px;
+    margin : 40px  0px 30px;
     padding:  8px 10px  3px;
 
     background-color: themeColor(.1);
     border-left  : 8px solid themeColor(1);
-    border-bottom: 1px solid themeColor(1);
+    border-bottom: 3px solid themeColor(1);
 
     font-size: 1.4em;
     color    : charBlack(1);
@@ -417,34 +431,33 @@ footer {
   /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
      https://saruwakakun.com/html-css/reference/h-design */
   h4 {
-    margin : 30px 5px 20px;
-    padding:  0px 7px;
+    margin : 40px 3px 30px;
+    padding:  3px 3px;
 
-    border    : dashed 1px themeColor(1);
-    box-shadow: 0px 0px 0px 5px themeColor(.1);
     background-color: themeColor(.1);
+    border-top   : 2px solid themeColor(1);
+    border-bottom: 2px solid themeColor(1);
 
     font-size: 1.32em;
     color    : charBlack(1);
   }
 
   h5 {
-    margin : 30px 4px 20px;
+    margin : 36px 4px 20px;
     padding:  4px 6px;
 
-    background-color: transparent; /*背景透明に*/
-    border-left: solid 6px themeColor(1);
+    border-left: 6px solid themeColor(1);
 
     font-size: 1.2em;
     color    : charBlack(1);
   }
 
   h6 {
-    margin: 26px 10px 20px 0;
-    padding-left: 4px;
-    padding-bottom: 4px;
+    margin : 26px 0 20px;
+    padding:  4px;
 
-    border-bottom: 1px solid charBlack(.4);;
+    border-top   : 2px solid themeColor(1);
+    border-bottom: 2px solid themeColor(1);
 
     font-size: 1.16em;
     color    : charBlack(1);
@@ -462,6 +475,8 @@ footer {
   /* 段落 */
   p {
     margin-bottom: 1.4em;
+    margin-left : $side-margin;
+    margin-right: $side-margin;
   }
 
   b, strong {
@@ -491,16 +506,19 @@ footer {
     }
   }
 
+
   /*--------------------------------------
     目次の表示・非表示
   --------------------------------------*/
   /* 「.table-of-contents」にネストすると
-     ポインターとやフォントサイズが効かないので逃がしておく… */
+     カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
   .show-area {
     display: inline-block;
     cursor : pointer;
 
     margin-bottom: 0;
+    margin-left  : $side-margin;
+    margin-right : $side-margin;
     padding      : 0px;
     border-radius: 5px;
 
@@ -594,10 +612,12 @@ footer {
     テキストボックス（まとめ、強調など）
   --------------------------------------*/
   .text-box-dashed {
-    margin       : 10px;
-    padding      : 10px;
+    margin : 10px calc(10px + $side-margin);
+    padding: 10px;
+
     border       : 1px dashed;
     border-radius: 5px;
+
     text-align   : center;
   }
 
@@ -628,17 +648,20 @@ footer {
     https://saruwakakun.com/html-css/reference/buttons
   */
   .btn-square-emboss {
-    display        : inline-block;
-    padding        : 0.05em 0.6em;
-    margin         : 0px 4px;
+    display: inline-block;
+    margin : 0px 4px;
+    padding: 0.05em 0.6em;
+
+    border-bottom: solid 3px btnColor(.3);
+    border-radius: 3px;
+    box-shadow   : 0px 1px 3px 1px btnColor(.5);
+    background   : #f0f0f0; /*ボタン色*/
+
+    color    : #666666; /*ボタン色より暗く*/
+    font-size: 90%;
+    @include monospacedFonts();
     text-decoration: none;
-    background     : #f0f0f0; /*ボタン色*/
-    color          : #666666; /*ボタン色より暗く*/
-    box-shadow     : 0px 1px 3px 1px btnColor(.5);
-    border-bottom  : solid 3px btnColor(.3);
-    border-radius  : 3px;
-    font-size      : 90%;
-    text-shadow    : 1px 1px 1px $char-white;
+    text-shadow: 1px 1px 1px $char-white;
 
     /*
       テキスト選択はOffに。
@@ -650,6 +673,86 @@ footer {
       transform    : translateY(4px);
       box-shadow   : 0px 1px 0px btnColor(.3);
       border-bottom: solid 3px btnColor(.1);
+    }
+  }
+
+  /*--------------------------------------
+    引用
+    CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
+    https://saruwakakun.com/html-css/reference/blockquote
+  --------------------------------------*/
+  blockquote {
+    position  : relative;
+    box-sizing: border-box;
+
+    margin-left : $side-margin + 6px;
+    margin-right: $side-margin + 6px;
+    padding: 5px 10px 5px 32px;
+
+    border: 1px solid rgba(204, 204, 204, .5);
+    border-radius: 3px;
+    background   : #f3f3f3;
+
+    color: charBlack(.7);
+
+    /* 引用符 */
+    &:before{
+      display : inline-block;
+      position: absolute;
+      top   :  10px;
+      left  : -15px;
+      width :  40px;
+      height:  30px;
+
+      text-align : center;
+      content    : "\f10d"; // 引用符
+      font-family: FontAwesome;
+      font-size  : 18px;
+      font-weight: 900;
+      color      : #FFF;
+      line-height: 30px;
+
+      background: themeColor(.7);
+      box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
+    }
+
+    /* 折り込み */
+    &:after{
+      position: absolute;
+      top :  40px;
+      left: -15px;
+
+      border: none;
+      border-bottom: solid  8px transparent;
+      border-right : solid 15px themeColor(1);
+
+      content: "";
+    }
+
+    &:hover {
+      border: 1px solid rgba(204, 204, 204, .4);
+      background-color: #fff;
+      color: charBlack(.9);
+      font-style: normal;
+    }
+
+    p {
+      position: relative;
+      margin : 10px 0;
+      padding: 0;
+      z-index: 3;
+
+      line-height: 1.7;
+    }
+
+    /* 引用元 */
+    cite {
+      display: block;
+
+      color: #888888;
+      font-size : 0.9em;
+      font-style: italic;
+      text-align: right;
     }
   }
 
@@ -673,7 +776,10 @@ footer {
     コードブロック
   --------------------------------------*/
   pre.code {
-    padding : 20px 10px 10px;
+    margin-left  : $side-margin + 6px;
+    margin-right : $side-margin + 6px;
+    padding      : 20px 10px 10px;
+    border-radius: 3px;
 
     /* フォント・メインカラーを変更 */
     @include monospacedFonts();
@@ -696,13 +802,16 @@ footer {
       https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
     */
     &:before {
-      display    : inline-block;
-      position   : absolute;
-      margin-left: -15px;
+      display : inline-block;
+      position: absolute;
+
+      margin-left: -18px;
       margin-top : -25px;
       padding    :   2px 10px;
-      border     :  1px solid rgba(204, 204, 204, .5);
+
+      border:  1px solid rgba(204, 204, 204, .5);
       border-radius: 3px;
+      box-shadow   : 0 0 1px 1px charBlack(.2);
 
       content   : attr(data-lang);
       color     : black;
@@ -970,17 +1079,21 @@ footer {
 #stoc {
   overflow-y: auto;
 
+  @include linkColors($default: charBlack(1));
+
+  /* Shadows */
   .shadow {
-    /* Shadows */
     background:
-      radial-gradient(farthest-side at top,
-                    rgba(0, 0, 0, .17),
-                      transparent
-                    ) top / 100% 11px,
-      radial-gradient(farthest-side at bottom,
-                    rgba(0, 0, 0, .17),
-                      transparent
-                    ) bottom / 100% 11px;
+      radial-gradient(
+        farthest-side at top,
+        rgba(0, 0, 0, .17),
+        transparent
+      ) top / 100% 11px,
+      radial-gradient(
+        farthest-side at bottom,
+        rgba(0, 0, 0, .17),
+        transparent
+      ) bottom / 100% 11px;
     background-repeat: no-repeat;
     background-attachment: scroll;
   }
@@ -995,36 +1108,35 @@ footer {
     padding-left: 0;
   }
 
+  /* Shadow covers */
   .shadow > ol {
-    /* Shadow covers */
     background:
-      linear-gradient(#fff 30%, transparent) top / 100% 40px,
-      linear-gradient(transparent, #fff 70%) bottom / 100% 40px;
+      linear-gradient(
+        #fff 30%,
+        transparent
+      ) top / 100% 40px,
+      linear-gradient(
+        transparent,
+        #fff 70%
+      ) bottom / 100% 40px;
     background-repeat: no-repeat;
     background-attachment: local;
     overflow-y: hidden;
   }
 
-  // li {
-  //   /*margin: 3px 0;*/
-  // }
-
   a {
     padding: 2px 2px 2px 6px;
     display: block;
     text-decoration: none;
-    // color: #999;
   }
 
   &:not(.touch) a:hover {
     background-color: rgba(0, 0, 0, .05);
     text-decoration: underline;
-    // color: #999;
   }
 
   .active {
     background-color: rgba(0, 0, 0, .05);
-    // color: #999;
   }
 
   &::-webkit-scrollbar {

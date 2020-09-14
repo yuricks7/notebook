@@ -74,7 +74,7 @@ $char-red  : #d32f2f;
   @return rgba(0, 0, 0, $density);
 }
 
-@mixin linkColors($default: highlighter(.8)) {
+@mixin linkColors($default: highlighter(.9), $visited: #106d2f) {
   text-decoration: none !important;
 
   a {
@@ -85,7 +85,7 @@ $char-red  : #d32f2f;
     }
 
     &:visited {
-      color: #388e3c;
+      color: $visited;
     }
 
     &:hover {
@@ -99,6 +99,7 @@ $char-red  : #d32f2f;
   サイズ
 --------------------------------------*/
 $module-radius: 8px;
+$side-margin: 10px;
 
 /*--------------------------------------
   パーツ

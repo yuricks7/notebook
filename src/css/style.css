@@ -825,13 +825,13 @@ body {
 
 .breadcrumb a:link {
   /* 未訪問 */
-  color: rgba(10, 33, 230, 0.8);
+  color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
 
 .breadcrumb a:visited {
-  color: #388e3c;
+  color: #106d2f;
 }
 
 .breadcrumb a:hover {
@@ -958,7 +958,7 @@ header.archive-heading {
 }
 
 .archive-entry a:visited {
-  color: #388e3c;
+  color: #050505;
 }
 
 .archive-entry a:hover {
@@ -972,7 +972,23 @@ header.archive-heading {
 }
 
 .archive-entry .archive-date time {
-  border-bottom: 3px solid rgba(29, 138, 255, 0.3);
+  text-decoration: none !important;
+}
+
+.archive-entry .archive-date time a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.archive-entry .archive-date time a:visited {
+  color: #050505;
+}
+
+.archive-entry .archive-date time a:hover {
+  color: #0a21e6;
+  font-weight: bold;
 }
 
 .archive-entry .entry-title {
@@ -1043,13 +1059,13 @@ footer .comment-box {
 
 .pager a:link {
   /* 未訪問 */
-  color: rgba(10, 33, 230, 0.8);
+  color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
 
 .pager a:visited {
-  color: #388e3c;
+  color: #106d2f;
 }
 
 .pager a:hover {
@@ -1091,7 +1107,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body a:visited {
-  color: #388e3c;
+  color: rgba(5, 5, 5, 0.9);
 }
 
 .hatena-module .hatena-module-body a:hover {
@@ -1113,13 +1129,13 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .profile-description a:link {
   /* 未訪問 */
-  color: rgba(10, 33, 230, 0.8);
+  color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
 
 .hatena-module .hatena-module-body .profile-description a:visited {
-  color: #388e3c;
+  color: #106d2f;
 }
 
 .hatena-module .hatena-module-body .profile-description a:hover {
@@ -1129,8 +1145,24 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body time {
   color: rgba(5, 5, 5, 0.8);
+  text-decoration: none !important;
   font-weight: bold;
-  border-bottom: 3px solid rgba(29, 138, 255, 0.3);
+}
+
+.hatena-module .hatena-module-body time a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body time a:visited {
+  color: #050505;
+}
+
+.hatena-module .hatena-module-body time a:hover {
+  color: #0a21e6;
+  font-weight: bold;
 }
 
 .hatena-module .hatena-module-body img[alt] {
@@ -1149,13 +1181,13 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .urllist-see-more a:link {
   /* 未訪問 */
-  color: rgba(10, 33, 230, 0.8);
+  color: #050505;
   font-style: normal;
   text-decoration: none !important;
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:visited {
-  color: #388e3c;
+  color: #050505;
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:hover {
@@ -1229,7 +1261,7 @@ footer .comment-box {
 --------------------------------------*/
 .entry-content {
   margin-top: 0;
-  padding: 10px;
+  padding: 10px 16px;
   background-color: rgba(250, 250, 250, 0.9);
   text-decoration: none !important;
   /*--------------------------------------
@@ -1250,7 +1282,7 @@ footer .comment-box {
     目次の表示・非表示
   --------------------------------------*/
   /* 「.table-of-contents」にネストすると
-     ポインターとやフォントサイズが効かないので逃がしておく… */
+     カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
   /*--------------------------------------
     目次
   --------------------------------------*/
@@ -1274,6 +1306,11 @@ footer .comment-box {
     https://saruwakakun.com/html-css/reference/buttons
   */
   /*--------------------------------------
+    引用
+    CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
+    https://saruwakakun.com/html-css/reference/blockquote
+  --------------------------------------*/
+  /*--------------------------------------
     文中のコード
   --------------------------------------*/
   /*--------------------------------------
@@ -1295,13 +1332,13 @@ footer .comment-box {
 
 .entry-content a:link {
   /* 未訪問 */
-  color: rgba(10, 33, 230, 0.8);
+  color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
 
 .entry-content a:visited {
-  color: #388e3c;
+  color: #106d2f;
 }
 
 .entry-content a:hover {
@@ -1310,47 +1347,46 @@ footer .comment-box {
 }
 
 .entry-content h3 {
-  margin: 30px  0px 20px;
+  margin: 40px  0px 30px;
   padding: 8px 10px  3px;
   background-color: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
-  border-bottom: 1px solid #1d8aff;
+  border-bottom: 3px solid #1d8aff;
   font-size: 1.4em;
   color: #050505;
 }
 
 .entry-content h4 {
-  margin: 30px 5px 20px;
-  padding: 0px 7px;
-  border: dashed 1px #1d8aff;
-  -webkit-box-shadow: 0px 0px 0px 5px rgba(29, 138, 255, 0.1);
-          box-shadow: 0px 0px 0px 5px rgba(29, 138, 255, 0.1);
+  margin: 40px 3px 30px;
+  padding: 3px 3px;
   background-color: rgba(29, 138, 255, 0.1);
+  border-top: 2px solid #1d8aff;
+  border-bottom: 2px solid #1d8aff;
   font-size: 1.32em;
   color: #050505;
 }
 
 .entry-content h5 {
-  margin: 30px 4px 20px;
+  margin: 36px 4px 20px;
   padding: 4px 6px;
-  background-color: transparent;
-  /*背景透明に*/
-  border-left: solid 6px #1d8aff;
+  border-left: 6px solid #1d8aff;
   font-size: 1.2em;
   color: #050505;
 }
 
 .entry-content h6 {
-  margin: 26px 10px 20px 0;
-  padding-left: 4px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(5, 5, 5, 0.4);
+  margin: 26px 0 20px;
+  padding: 4px;
+  border-top: 2px solid #1d8aff;
+  border-bottom: 2px solid #1d8aff;
   font-size: 1.16em;
   color: #050505;
 }
 
 .entry-content p {
   margin-bottom: 1.4em;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .entry-content b, .entry-content strong {
@@ -1383,6 +1419,8 @@ footer .comment-box {
   display: inline-block;
   cursor: pointer;
   margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 0px;
   border-radius: 5px;
   font-size: .9em;
@@ -1401,7 +1439,7 @@ footer .comment-box {
 }
 
 .entry-content .show-area:hover a:visited {
-  color: #388e3c;
+  color: #106d2f;
 }
 
 .entry-content .show-area:hover a:hover {
@@ -1431,7 +1469,7 @@ footer .comment-box {
 }
 
 .entry-content .table-of-contents a:visited {
-  color: #388e3c;
+  color: #106d2f;
 }
 
 .entry-content .table-of-contents a:hover {
@@ -1494,7 +1532,7 @@ footer .comment-box {
 }
 
 .entry-content .text-box-dashed {
-  margin: 10px;
+  margin: 10px calc(10px + $side-margin);
   padding: 10px;
   border: 1px dashed;
   border-radius: 5px;
@@ -1518,18 +1556,19 @@ footer .comment-box {
 
 .entry-content .btn-square-emboss {
   display: inline-block;
-  padding: 0.05em 0.6em;
   margin: 0px 4px;
-  text-decoration: none;
+  padding: 0.05em 0.6em;
+  border-bottom: solid 3px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
   background: #f0f0f0;
   /*ボタン色*/
   color: #666666;
   /*ボタン色より暗く*/
-  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-  border-bottom: solid 3px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
   font-size: 90%;
+  font-family: 'Roboto Mono', Consolas, 'Meiryo UI', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  text-decoration: none;
   text-shadow: 1px 1px 1px #f0f0f0;
   /*
       テキスト選択はOffに。
@@ -1549,6 +1588,74 @@ footer .comment-box {
   border-bottom: solid 3px rgba(0, 0, 0, 0.1);
 }
 
+.entry-content blockquote {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 5px 10px 5px 32px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  border-radius: 3px;
+  background: #f3f3f3;
+  color: rgba(5, 5, 5, 0.7);
+  /* 引用符 */
+  /* 折り込み */
+  /* 引用元 */
+}
+
+.entry-content blockquote:before {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: -15px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  content: "\f10d";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-weight: 900;
+  color: #FFF;
+  line-height: 30px;
+  background: rgba(29, 138, 255, 0.7);
+  -webkit-box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
+          box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
+}
+
+.entry-content blockquote:after {
+  position: absolute;
+  top: 40px;
+  left: -15px;
+  border: none;
+  border-bottom: solid  8px transparent;
+  border-right: solid 15px #1d8aff;
+  content: "";
+}
+
+.entry-content blockquote:hover {
+  border: 1px solid rgba(204, 204, 204, 0.4);
+  background-color: #fff;
+  color: rgba(5, 5, 5, 0.9);
+  font-style: normal;
+}
+
+.entry-content blockquote p {
+  position: relative;
+  margin: 10px 0;
+  padding: 0;
+  z-index: 3;
+  line-height: 1.7;
+}
+
+.entry-content blockquote cite {
+  display: block;
+  color: #888888;
+  font-size: 0.9em;
+  font-style: italic;
+  text-align: right;
+}
+
 .entry-content code {
   padding-top: 1px;
   border-radius: 3px;
@@ -1562,7 +1669,10 @@ footer .comment-box {
 }
 
 .entry-content pre.code {
+  margin-left: 16px;
+  margin-right: 16px;
   padding: 20px 10px 10px;
+  border-radius: 3px;
   /* フォント・メインカラーを変更 */
   font-family: 'Roboto Mono', Consolas, 'Meiryo UI', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   font-size: .85em;
@@ -1616,11 +1726,13 @@ footer .comment-box {
 .entry-content pre.code:before {
   display: inline-block;
   position: absolute;
-  margin-left: -15px;
+  margin-left: -18px;
   margin-top: -25px;
   padding: 2px 10px;
   border: 1px solid rgba(204, 204, 204, 0.5);
   border-radius: 3px;
+  -webkit-box-shadow: 0 0 1px 1px rgba(5, 5, 5, 0.2);
+          box-shadow: 0 0 1px 1px rgba(5, 5, 5, 0.2);
   content: attr(data-lang);
   color: black;
   background: #f0f0f0;
@@ -2094,10 +2206,28 @@ footer .comment-box {
 /* コンテンツ */
 #stoc {
   overflow-y: auto;
+  text-decoration: none !important;
+  /* Shadows */
+  /* Shadow covers */
+}
+
+#stoc a:link {
+  /* 未訪問 */
+  color: #050505;
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+#stoc a:visited {
+  color: #106d2f;
+}
+
+#stoc a:hover {
+  color: #0a21e6;
+  font-weight: bold;
 }
 
 #stoc .shadow {
-  /* Shadows */
   background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.17), transparent) top/100% 11px, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.17), transparent) bottom/100% 11px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -2114,7 +2244,6 @@ footer .comment-box {
 }
 
 #stoc .shadow > ol {
-  /* Shadow covers */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 40px, -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #fff)) bottom/100% 40px;
   background: linear-gradient(#fff 30%, transparent) top/100% 40px, linear-gradient(transparent, #fff 70%) bottom/100% 40px;
   background-repeat: no-repeat;

@@ -1,992 +1,911 @@
+
 <!DOCTYPE html>
+<html
+  lang="ja"
 
-<html lang="ja" data-admin-domain="//blog.hatena.ne.jp"
-  data-admin-origin="https://blog.hatena.ne.jp" data-author="yuricks7"
-  data-avail-langs="ja en" data-blog="yuru-wota.hateblo.jp"
-  data-blog-host="yuru-wota.hateblo.jp" data-blog-is-public="1"
-  data-blog-name="ゆるおたノート" data-blog-owner="yuricks7"
-  data-blog-uri="https://www.yuru-wota.com/"
-  data-blog-uuid="17391345971628268059"
-  data-blogs-uri-base="https://www.yuru-wota.com" data-brand="pro"
-  data-data-layer="{&quot;hatenablog&quot;:{&quot;router_type&quot;:&quot;blogs&quot;,&quot;page_id&quot;:&quot;preview&quot;,&quot;analytics&quot;:{&quot;brand_property_id&quot;:&quot;&quot;,&quot;property_id&quot;:&quot;UA-116388193-1&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;,&quot;separated_property_id&quot;:&quot;UA-29716941-19&quot;},&quot;brand&quot;:&quot;pro&quot;,&quot;admin&quot;:{},&quot;permalink_entry&quot;:{&quot;hour&quot;:&quot;8&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/entry/VSCode/Settings/20190507&quot;,&quot;title&quot;:&quot;\u3010Visual Studio Code\u3011\u307b\u307c\u30c6\u30ad\u30b9\u30c8\u30a8\u30c7\u30a3\u30bf\u3068\u3057\u3066\u4f7f\u3063\u3066\u3044\u308b\u79c1\u306e\u8a2d\u5b9a\u3092\u6652\u3057\u3066\u307f\u307e\u3059\u3002&quot;,&quot;date&quot;:&quot;2019-05-07&quot;,&quot;categories&quot;:&quot;VS Code\tVS Code-\u30ab\u30b9\u30bf\u30de\u30a4\u30ba\t\u25a0\u30d7\u30ed\u30b0\u30e9\u30e0\u5168\u822c\tPC\u8a2d\u5b9a&quot;,&quot;author_name&quot;:&quot;yuricks7&quot;},&quot;blog&quot;:{&quot;lang&quot;:&quot;ja&quot;,&quot;is_responsive_view&quot;:&quot;true&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/&quot;,&quot;content_seems_japanese&quot;:&quot;true&quot;,&quot;owner_name&quot;:&quot;yuricks7&quot;,&quot;enable_ads&quot;:&quot;false&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;true&quot;,&quot;name&quot;:&quot;\u3086\u308b\u304a\u305f\u30ce\u30fc\u30c8&quot;,&quot;enable_keyword_link&quot;:&quot;true&quot;,&quot;is_public&quot;:&quot;true&quot;,&quot;disable_ads&quot;:&quot;pro&quot;,&quot;is_sleeping&quot;:&quot;false&quot;},&quot;pro&quot;:&quot;pro&quot;}}"
-  data-device="pc" data-dont-recommend-pro="false"
-  data-global-domain="https://hatenablog.com"
-  data-globalheader-color="b" data-globalheader-type="pc"
-  data-has-touch-view="1" data-help-url="https://help.hatenablog.com"
-  data-no-suggest-touch-view="1" data-page="preview"
-  data-parts-domain="https://hatenablog-parts.com"
-  data-plus-available="1" data-pro="true" data-router-type="blogs"
-  data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218"
-  data-sentry-environment="production" data-sentry-sample-rate="0.1"
-  data-static-domain="https://cdn.blog.st-hatena.com"
-  data-version="fae0677a5fd937fae8fcd5617dd75829" itemscope
-  itemtype="http://schema.org/Article" data-initial-state="{}">
-  <head
-    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+data-admin-domain="//blog.hatena.ne.jp"
+data-admin-origin="https://blog.hatena.ne.jp"
+data-author="yuricks7"
+data-avail-langs="ja en"
+data-blog="yuru-wota.hateblo.jp"
+data-blog-host="yuru-wota.hateblo.jp"
+data-blog-is-public="1"
+data-blog-name="ゆるおたノート"
+data-blog-owner="yuricks7"
+data-blog-uri="https://www.yuru-wota.com/"
+data-blog-uuid="17391345971628268059"
+data-blogs-uri-base="https://www.yuru-wota.com"
+data-brand="pro"
+data-data-layer="{&quot;hatenablog&quot;:{&quot;blog&quot;:{&quot;disable_ads&quot;:&quot;pro&quot;,&quot;is_sleeping&quot;:&quot;false&quot;,&quot;name&quot;:&quot;\u3086\u308b\u304a\u305f\u30ce\u30fc\u30c8&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;content_seems_japanese&quot;:&quot;true&quot;,&quot;is_public&quot;:&quot;true&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;true&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/&quot;,&quot;is_responsive_view&quot;:&quot;true&quot;,&quot;enable_keyword_link&quot;:&quot;true&quot;,&quot;lang&quot;:&quot;ja&quot;,&quot;owner_name&quot;:&quot;yuricks7&quot;,&quot;enable_ads&quot;:&quot;false&quot;},&quot;brand&quot;:&quot;pro&quot;,&quot;router_type&quot;:&quot;blogs&quot;,&quot;admin&quot;:{},&quot;page_id&quot;:&quot;preview&quot;,&quot;pro&quot;:&quot;pro&quot;,&quot;permalink_entry&quot;:{&quot;author_name&quot;:&quot;yuricks7&quot;,&quot;categories&quot;:&quot;Git\t\u25a0\u30d7\u30ed\u30b0\u30e9\u30e0\u5168\u822c\t\u25a0\u305f\u3060\u3044\u307e\u52c9\u5f37\u4e2d&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/entry/Git/How-to-Commit&quot;,&quot;date&quot;:&quot;2019-06-26&quot;,&quot;hour&quot;:&quot;18&quot;,&quot;title&quot;:&quot;\u3010Git\u52c9\u5f37\u4e2d\u3011\u30b9\u30c6\u30fc\u30b8\u3057\u305f\u5909\u66f4\u3092\u8a18\u9332\u3059\u308b&quot;},&quot;analytics&quot;:{&quot;property_id&quot;:&quot;UA-116388193-1&quot;,&quot;brand_property_id&quot;:&quot;&quot;,&quot;separated_property_id&quot;:&quot;UA-29716941-19&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;}}}"
+data-device="pc"
+data-dont-recommend-pro="false"
+data-global-domain="https://hatenablog.com"
+data-globalheader-color="b"
+data-globalheader-type="pc"
+data-has-touch-view="1"
+data-help-url="https://help.hatenablog.com"
+data-no-suggest-touch-view="1"
+data-page="preview"
+data-parts-domain="https://hatenablog-parts.com"
+data-plus-available="1"
+data-pro="true"
+data-router-type="blogs"
+data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218"
+data-sentry-environment="production"
+data-sentry-sample-rate="0.1"
+data-static-domain="https://cdn.blog.st-hatena.com"
+data-version="c357291fb11fb1b40da8de089a397fcb"
 
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+itemscope
+itemtype="http://schema.org/Article"
 
-    <meta name="robots" content="max-image-preview:large" />
+  data-initial-state="{}"
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible"
-      content="IE=7; IE=9; IE=10; IE=11" />
+  >
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。 -
-      ゆるおたノート</title>
 
-    <link rel="canonical"
-      href="https://www.yuru-wota.com/entry/VSCode/Settings/20190507" />
+  
 
-    <link rel="amphtml"
-      href="https://www.yuru-wota.com/entry/VSCode/Settings/20190507?amp=1">
 
-    <meta itemprop="name"
-      content="【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。 - ゆるおたノート" />
 
-    <meta itemprop="image"
-      content="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830113529.png" />
+  
 
-    <meta property="og:title"
-      content="【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。 - ゆるおたノート" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url"
-      content="https://www.yuru-wota.com/entry/VSCode/Settings/20190507" />
+  <meta name="robots" content="max-image-preview:large" />
 
-    <meta property="og:image"
-      content="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830113529.png" />
 
-    <meta property="og:image:alt"
-      content="【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。 - ゆるおたノート" />
-    <meta property="og:description"
-      content="ちょっとカッコつけて楽にPC触りたいとかいう不純な動機で2か月ほどVS Codeを触ってみました。 たまにショートカットキーが反応しないような気はするものの、色分けや入力支援のおかげで感触は上々です。 &lt;2019/05/14追記&gt; （→「IME」をオフにして「英文入力モード」にしたら使えるようになりました!!） 本来はプログラミングに使うためのエディタですが、Markdownのおかげで現状ほぼ只のテキストエディタと化している私の設定内容を公開してみたいと思います。 拡張機能（プラグイン）の追加 VS Codeの設定 Japanese Language Pack for Visual Studi…" />
-    <meta property="og:site_name" content="ゆるおたノート" />
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11" />
+  <title>【Git勉強中】ステージした変更を記録する - ゆるおたノート</title>
 
-    <meta property="article:published_time" content="1557185400" />
+  
+  <link rel="canonical" href="https://www.yuru-wota.com/entry/Git/How-to-Commit"/>
 
-    <meta property="article:tag" content="VS Code" />
-    <meta property="article:tag" content="VS Code-カスタマイズ" />
+
+
+      <link rel="amphtml" href="https://www.yuru-wota.com/entry/Git/How-to-Commit?amp=1">
+  
+
+<meta itemprop="name" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート"/>
+
+  <meta itemprop="image" content="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png"/>
+
+
+  <meta property="og:title" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート"/>
+<meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.yuru-wota.com/entry/Git/How-to-Commit"/>
+
+  
+  
+  
+  <meta property="og:image" content="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png"/>
+
+<meta property="og:image:alt" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート"/>
+    <meta property="og:description" content="いよいよ「Gitの本番」って感じです！ はじめに 基本の流れ 凡例 ▼コミット 【A】既にステージに上がっている変更内容をまとめてコミット 【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット 【C】ファイルやフォルダを1つずつ指定してコミット ［注意］.gitignoreに該当するファイルに注意！ 【D】カレントディレクトリを指定して、まとめてコミット ▼コミットメッセージの入力 【A】コミットメッセージを入力しつつコミット 【B】コミットメッセージに段落をつける ［例］ 【C】エディタでコミットメッセージを入力してコミット このシリーズについて 次回 連載目次 参照 注釈…" />
+<meta property="og:site_name" content="ゆるおたノート"/>
+
+  <meta property="article:published_time" content="1561541400" />
+
+    <meta property="article:tag" content="Git" />
     <meta property="article:tag" content="■プログラム全般" />
-    <meta property="article:tag" content="PC設定" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image"
-      content="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830113529.png" />
-    <meta name="twitter:title"
-      content="【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。 - ゆるおたノート" />
-    <meta name="twitter:description"
-      content="ちょっとカッコつけて楽にPC触りたいとかいう不純な動機で2か月ほどVS Codeを触ってみました。 たまにショートカットキーが反応しないような気はするものの、色分けや入力支援のおかげで感触は上々です。 &lt;2019/05/14追記&gt; （→「IME」をオフにして「英文入力モード」にしたら使えるようになりました!!） 本来は…" />
-    <meta name="twitter:app:name:iphone" content="はてなブログアプリ" />
-    <meta name="twitter:app:id:iphone" content="583299321" />
-    <meta name="twitter:app:url:iphone"
-      content="hatenablog:///open?uri=https%3A%2F%2Fwww.yuru-wota.com%2Fpreview" />
-    <meta name="twitter:site" content="@yuricks7" />
+    <meta property="article:tag" content="■ただいま勉強中" />
+      <meta name="twitter:card"  content="summary" />  <meta name="twitter:title" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート" />    <meta name="twitter:description" content="いよいよ「Gitの本番」って感じです！ はじめに 基本の流れ 凡例 ▼コミット 【A】既にステージに上がっている変更内容をまとめてコミット 【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット 【C】ファイルやフォルダを1つずつ指定してコミット ［注意］.gitignoreに該当するファイルに注意！ …" />  <meta name="twitter:app:name:iphone" content="はてなブログアプリ" />
+  <meta name="twitter:app:id:iphone" content="583299321" />
+  <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=https%3A%2F%2Fwww.yuru-wota.com%2Fpreview" />  <meta name="twitter:site" content="@yuricks7" />
+  
+    <meta name="description" content="いよいよ「Gitの本番」って感じです！ はじめに 基本の流れ 凡例 ▼コミット 【A】既にステージに上がっている変更内容をまとめてコミット 【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット 【C】ファイルやフォルダを1つずつ指定してコミット ［注意］.gitignoreに該当するファイルに注意！ 【D】カレントディレクトリを指定して、まとめてコミット ▼コミットメッセージの入力 【A】コミットメッセージを入力しつつコミット 【B】コミットメッセージに段落をつける ［例］ 【C】エディタでコミットメッセージを入力してコミット このシリーズについて 次回 連載目次 参照 注釈…" />
+    <meta name="google-site-verification" content="21-F4bTHgx11yvh8xwYR6rF4fi5XhZbCCpNxQ3eikc0" />
+    <meta name="keywords" content="VBA, GAS, Google Apps Script, アイドル, ドルオタ, 発達障害, 双極性障害" />
+    <meta name="msvalidate.01" content="2AE533C720A779D9F7F376A4495F8531" />
 
-    <meta name="description"
-      content="ちょっとカッコつけて楽にPC触りたいとかいう不純な動機で2か月ほどVS Codeを触ってみました。 たまにショートカットキーが反応しないような気はするものの、色分けや入力支援のおかげで感触は上々です。 &lt;2019/05/14追記&gt; （→「IME」をオフにして「英文入力モード」にしたら使えるようになりました!!） 本来はプログラミングに使うためのエディタですが、Markdownのおかげで現状ほぼ只のテキストエディタと化している私の設定内容を公開してみたいと思います。 拡張機能（プラグイン）の追加 VS Codeの設定 Japanese Language Pack for Visual Studi…" />
-    <meta name="google-site-verification"
-      content="21-F4bTHgx11yvh8xwYR6rF4fi5XhZbCCpNxQ3eikc0" />
-    <meta name="keywords"
-      content="VBA, GAS, Google Apps Script, アイドル, ドルオタ, 発達障害, 双極性障害" />
-    <meta name="msvalidate.01"
-      content="2AE533C720A779D9F7F376A4495F8531" />
 
-    <script id="embed-gtm-data-layer-loader"
-      data-data-layer-page-specific="">
-        (function () {
-          function loadDataLayer(elem, attrName) {
-            if (!elem) { return {}; }
-            var json = elem.getAttribute(attrName);
-            if (!json) { return {}; }
-            return JSON.parse(json);
-          }
+  
+<script
+  id="embed-gtm-data-layer-loader"
+  data-data-layer-page-specific=""
+>
+(function() {
+  function loadDataLayer(elem, attrName) {
+    if (!elem) { return {}; }
+    var json = elem.getAttribute(attrName);
+    if (!json) { return {}; }
+    return JSON.parse(json);
+  }
 
-          var globalVariables = loadDataLayer(
-            document.documentElement,
-            'data-data-layer'
-          );
-          var pageSpecificVariables = loadDataLayer(
-            document.getElementById('embed-gtm-data-layer-loader'),
-            'data-data-layer-page-specific'
-          );
+  var globalVariables = loadDataLayer(
+    document.documentElement,
+    'data-data-layer'
+  );
+  var pageSpecificVariables = loadDataLayer(
+    document.getElementById('embed-gtm-data-layer-loader'),
+    'data-data-layer-page-specific'
+  );
 
-          var variables = [globalVariables, pageSpecificVariables];
+  var variables = [globalVariables, pageSpecificVariables];
 
-          if (!window.dataLayer) {
-            window.dataLayer = [];
-          }
+  if (!window.dataLayer) {
+    window.dataLayer = [];
+  }
 
-          for (var i = 0; i < variables.length; i++) {
-            window.dataLayer.push(variables[i]);
-          }
-        })();
-      </script>
+  for (var i = 0; i < variables.length; i++) {
+    window.dataLayer.push(variables[i]);
+  }
+})();
+</script>
 
-    <!-- Google Tag Manager -->
+<!-- Google Tag Manager -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4CXTW');</script> -->
+<!-- End Google Tag Manager -->
 
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-P4CXTW');</script>
-    <!-- End Google Tag Manager -->
 
-    <link rel="shortcut icon"
-      href="https://www.yuru-wota.com/favicon">
-    <link rel="apple-touch-icon"
-      href="https://cdn.blog.st-hatena.com/images/touch-icon-iphone-retina.png">
-    <link rel="icon" sizes="192x192"
-      href="https://cdn.blog.st-hatena.com/images/common/meta-icon-global.png">
 
-    <link rel="alternate" type="application/atom+xml" title="Atom"
-      href="https://www.yuru-wota.com/feed" />
-    <link rel="alternate" type="application/rss+xml" title="RSS2.0"
-      href="https://www.yuru-wota.com/rss" />
-    <link rel="alternate" type="application/json+oembed"
-      href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507&amp;format=json"
-      title="oEmbed Profile of 【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。" />
-    <link rel="alternate" type="text/xml+oembed"
-      href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507&amp;format=xml"
-      title="oEmbed Profile of 【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。" />
 
-    <link rel="author" href="http://www.hatena.ne.jp/yuricks7/">
+  <link rel="shortcut icon" href="https://www.yuru-wota.com/favicon">
+<link rel="apple-touch-icon" href="https://cdn.blog.st-hatena.com/images/touch-icon-iphone-retina.png">
+<link rel="icon" sizes="192x192" href="https://cdn.blog.st-hatena.com/images/common/meta-icon-global.png">
 
-    <link rel="stylesheet" type="text/css"
-      href="https://cdn.blog.st-hatena.com/css/blog.css?version=83d4e140de222456fed90d9724d259d11fdfc647&amp;env=production" />
+  
 
-    <link rel="stylesheet" type="text/css"
-      href="https://usercss.blog.st-hatena.com/blog_style/17391345971628268059/f17662ccf0de1cb53883c56747504f21ec8f9931" />
+<link rel="alternate" type="application/atom+xml" title="Atom" href="https://www.yuru-wota.com/feed"/>
+<link rel="alternate" type="application/rss+xml" title="RSS2.0" href="https://www.yuru-wota.com/rss"/>
+<link rel="alternate" type="application/json+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit&amp;format=json" title="oEmbed Profile of 【Git勉強中】ステージした変更を記録する"/>
+<link rel="alternate" type="text/xml+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit&amp;format=xml" title="oEmbed Profile of 【Git勉強中】ステージした変更を記録する"/>
+  
+  <link rel="author" href="http://www.hatena.ne.jp/yuricks7/">
 
-    <script> </script>
+  
 
-    <style>
-      div#google_afc_user,
-      div.google-afc-user-container,
-      div.google_afc_image,
-      div.google_afc_blocklink {
-        display: block !important;
-      }
-    </style>
 
-    <!-- Google AdSense -->
+  
+    <link rel="stylesheet" type="text/css" href="https://cdn.blog.st-hatena.com/css/blog.css?version=83d4e140de222456fed90d9724d259d11fdfc647&amp;env=production"/>
 
-    <script async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+  <link rel="stylesheet" type="text/css" href="https://usercss.blog.st-hatena.com/blog_style/17391345971628268059/ea4d776a221de655d3c0f12f1132e6c64efbee49"/>
+  
+  
 
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-8579683611271746",
-        enable_page_level_ads: true
-      });
-    </script>
+  
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  
+<script> </script>
 
-    <!-- <script async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-116388193-1"></script>
+  
+<style>
+  div#google_afc_user,
+  div.google-afc-user-container,
+  div.google_afc_image,
+  div.google_afc_blocklink {
+      display: block !important;
+  }
+</style>
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
 
-      gtag('config', 'UA-116388193-1');
-    </script> -->
+  
 
-    <!-- Bing Webマスター -->
-    <!-- <meta name="msvalidate.01"
-      content="2AE533C720A779D9F7F376A4495F8531" /> -->
+  
+<!-- *********************************************
+ * カスタマイズ
+************************************************ -->
+<!-- レスポンシブ対応  -->
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+<!-- Google Fonts-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Roboto+Mono:wght@460&display=swap">
+<!-- セルフカスタマイズ -->
+<link rel="stylesheet" href="../css/style.css">
 
-    <!-- Minimalismをレスポンシブデザインに -->
-    <meta name="viewport"
-          content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+<!-- *********************************************
+ * 外部タグ
+************************************************ -->
+<!-- Google AdSense -->
+<!-- <script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/header/googleAdSense.js"></script> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-116388193-1"></script> -->
+<!-- <script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/header/googleAnalytics.js"></script> -->
+<!-- Bing Webマスター -->
+<!-- <meta name="msvalidate.01" content="2AE533C720A779D9F7F376A4495F8531" /> -->
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
 
-    <!-- セルフカスタマイズ -->
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
+  <body class="page-preview page-entry enable-top-editarea enable-bottom-editarea category-Git category-■プログラム全般 category-■ただいま勉強中">
+    
 
-  <body
-    class="page-preview page-entry enable-top-editarea enable-bottom-editarea category-VS-Code category-VS-Code-カスタマイズ category-■プログラム全般 category-PC設定">
+    <div id="globalheader-container"
+  data-brand="hatenablog"
+  
+  
+  >
+  <iframe id="globalheader" height="37" frameborder="0" allowTransparency="true"></iframe>
+</div>
 
-    <div id="globalheader-container" data-brand="hatenablog">
-      <iframe id="globalheader" height="37" frameborder="0"
-        allowTransparency="true"></iframe>
-    </div>
 
     <div id="container">
       <div id="container-inner">
-
         <header id="blog-title" data-brand="hatenablog">
-          <div id="blog-title-inner">
-            <div id="blog-title-content">
+  <div id="blog-title-inner" >
+    <div id="blog-title-content">
+      <h1 id="title"><a href="https://www.yuru-wota.com/">ゆるおたノート</a></h1>
+      
+        <h2 id="blog-description">Tomorrow is another day.</h2>
+      
+    </div>
+  </div>
+</header>
 
-              <h1 id="title"><a
-                  href="https://www.yuru-wota.com/">ゆるおたノート</a></h1>
-
-              <h2 id="blog-description">Tomorrow is another day.</h2>
-
-            </div>
-          </div>
-        </header>
-
-        <div id="top-editarea">
-          <!-- メニューリスト -->
-          <nav id="gnav">
-            <div class="gnav-inner" id="menu-scroll">
-              <div class="menu">
-                <a href="https://yuru-wota.hateblo.jp/archive">
+        
+  <div id="top-editarea">
+    <!-- *********************************************
+ * メニューリスト（タイトル下）
+************************************************ -->
+<nav id="gnav">
+  <div class="gnav-inner" id="menu-scroll">
+    <div class="menu">
+      <a href="https://yuru-wota.hateblo.jp/archive">
         <i class="fa fa-home" aria-hidden="true"></i> HOME
       </a>
-              </div>
-              <div class="menu">
-                <a
-                  href="https://yuru-wota.hateblo.jp/entry/2018/03/25/AboutThisBlog">
+    </div>
+    <div class="menu">
+      <a href="https://yuru-wota.hateblo.jp/entry/2018/03/25/AboutThisBlog">
         <i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT
       </a>
-              </div>
-              <div class="menu">
-                <a
-                  href="https://yuru-wota.hateblo.jp/archive/category/じぶんのこと">
+    </div>
+    <div class="menu">
+      <a href="https://yuru-wota.hateblo.jp/archive/category/じぶんのこと">
         <i class="blogicon-star f02d" aria-hidden="true"></i> じぶん
       </a>
-              </div>
-              <div class="menu">
-                <a
-                  href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC">
+    </div>
+    <div class="menu">
+      <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC">
         <i class="blogicon-code f038" aria-hidden="true"></i> プログラミング
       </a>
-              </div>
-              <div class="menu">
-                <a
-                  href="https://yuru-wota.hateblo.jp/archive/category/うっかりハック">
+    </div>
+    <div class="menu">
+      <a href="https://yuru-wota.hateblo.jp/archive/category/うっかりハック">
         <i class="fa fa-wrench" aria-hidden="true"></i> うっかりハック
       </a>
-              </div>
-              <div class="menu">
-                <a
-                  href="https://yuru-wota.hateblo.jp/archive/category/アイドル">
+    </div>
+    <div class="menu">
+      <a href="https://yuru-wota.hateblo.jp/archive/category/アイドル">
         <i class="blogicon-music f046" aria-hidden="true"></i> アイドル
       </a>
-              </div>
-              <div class="menu">
-                <a
-                  href="https://yuru-wota.hateblo.jp/archive/category/こころケア">
+    </div>
+    <div class="menu">
+      <a href="https://yuru-wota.hateblo.jp/archive/category/こころケア">
         <i class="blogicon-heart f048" aria-hidden="true"></i> こころケア
       </a>
-              </div>
-            </div>
-          </nav>
+    </div>
+  </div>
+</nav>
 
-          <!-- パンくずリスト -->
-          <link type="text/css" rel="stylesheet"
-            href="http://hatena.wackwack.net/v1.1/css/fulldisplay.min.css" />
-        </div>
+<!-- *********************************************
+ * カテゴリーをパンくずリスト化
+************************************************ -->
+<link type="text/css" rel="stylesheet" href="https://hatena.wackwack.net/v1.1/css/fulldisplay.min.css"/>
 
-        <div id="top-box">
-          <div class="breadcrumb" data-test-id="breadcrumb">
-            <div class="breadcrumb-inner">
-              <a class="breadcrumb-link"
-                href="https://www.yuru-wota.com/"><span>トップ</span></a>
-              <span class="breadcrumb-gt">&gt;</span>
-              <span class="breadcrumb-child">            <a class="breadcrumb-child-link" href="https://www.yuru-wota.com/archive/category/VS%20Code"><span>VS Code</span></a>
-              </span> <span class="breadcrumb-gt">&gt;</span>
-              <span class="breadcrumb-child">            <span>【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。</span>
-              </span> </div>
-          </div>
-        </div>
+  </div>
 
-        <script type="application/ld+json"
-          class="test-breadcrumb-json-ld">
-    {"itemListElement":[{"position":1,"item":{"@id":"https://www.yuru-wota.com/","name":"トップ"},"@type":"ListItem"},{"@type":"ListItem","position":2,"item":{"@id":"https://www.yuru-wota.com/archive/category/VS%20Code","name":"VS Code"}}],"@context":"http://schema.org","@type":"BreadcrumbList"}
+
+        
+            <div id="top-box">
+    <div class="breadcrumb" data-test-id="breadcrumb">
+      <div class="breadcrumb-inner">
+        <a class="breadcrumb-link" href="https://www.yuru-wota.com/"><span>トップ</span></a>          <span class="breadcrumb-gt">&gt;</span>          <span class="breadcrumb-child">            <a class="breadcrumb-child-link" href="https://www.yuru-wota.com/archive/category/Git"><span>Git</span></a>          </span>            <span class="breadcrumb-gt">&gt;</span>          <span class="breadcrumb-child">            <span>【Git勉強中】ステージした変更を記録する</span>          </span>      </div>
+    </div>
+  </div>
+  <script type="application/ld+json" class="test-breadcrumb-json-ld">
+    {"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"position":1,"item":{"name":"トップ","@id":"https://www.yuru-wota.com/"},"@type":"ListItem"},{"position":2,"item":{"name":"Git","@id":"https://www.yuru-wota.com/archive/category/Git"},"@type":"ListItem"}]}
   </script>
+        
+        
 
-        <div id="content" class="hfeed"
-          data-editor-id="editor-83sl0g1bh0g">
-          <div id="content-inner">
-            <div id="wrapper">
-              <div id="main">
-                <div id="main-inner">
 
-                  <!-- google_ad_section_start -->
-                  <!-- rakuten_ad_target_begin -->
 
-                  <article
-                    class="entry hentry test-hentry js-entry-article date-first autopagerize_page_element chars-4400 words-400 mode-markdown entry-odd"
-                    id="entry-" data-keyword-campaign="" data-uuid=""
-                    data-publication-type="entry">
-                    <div class="entry-inner">
 
-                      <header class="entry-header">
+<div id="content" class="hfeed"
+  
+  data-editor-id="editor-k22g3i9l38"
+  
+  >
+  <div id="content-inner">
+    <div id="wrapper">
+      <div id="main">
+        <div id="main-inner">
+          
 
-                        <div class="date entry-date first">
-                          <a href="https://www.yuru-wota.com/archive/2019/05/07"
-                            rel="nofollow">
-      <time pubdate datetime="2019-05-06T23:30:00Z" title="2019-05-06T23:30:00Z">
-        <span class="date-year">2019</span><span class="hyphen">-</span><span class="date-month">05</span><span class="hyphen">-</span><span class="date-day">07</span>
+
+          
+  
+  <!-- google_ad_section_start -->
+  <!-- rakuten_ad_target_begin -->
+  
+  
+  
+
+  
+
+  
+    
+      
+        <article class="entry hentry test-hentry js-entry-article date-first autopagerize_page_element chars-3200 words-400 mode-markdown entry-odd" id="entry-" data-keyword-campaign="" data-uuid="" data-publication-type="entry">
+  <div class="entry-inner">
+    <header class="entry-header">
+  
+    <div class="date entry-date first">
+    <a href="https://www.yuru-wota.com/archive/2019/06/26" rel="nofollow">
+      <time pubdate datetime="2019-06-26T09:30:00Z" title="2019-06-26T09:30:00Z">
+        <span class="date-year">2019</span><span class="hyphen">-</span><span class="date-month">06</span><span class="hyphen">-</span><span class="date-day">26</span>
       </time>
     </a>
-                        </div>
+  </div>
+  <h1 class="entry-title">
+  <a href="https://www.yuru-wota.com/entry/Git/How-to-Commit" class="entry-title-link bookmark">【Git勉強中】ステージした変更を記録する</a>
+</h1>
 
-                        <h1 class="entry-title">
-                          <a href="https://www.yuru-wota.com/entry/VSCode/Settings/20190507"
-                            class="entry-title-link bookmark">【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。</a>
-                        </h1>
+  
+  
 
-                        <div class="entry-categories categories">
+  <div class="entry-categories categories">
+    
+    <a href="https://www.yuru-wota.com/archive/category/Git" class="entry-category-link category-Git">Git</a>
+    
+    <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC" class="entry-category-link category-■プログラム全般">■プログラム全般</a>
+    
+    <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD" class="entry-category-link category-■ただいま勉強中">■ただいま勉強中</a>
+    
+  </div>
 
-                          <a href="https://www.yuru-wota.com/archive/category/VS%20Code"
-                            class="entry-category-link category-VS-Code">VS Code</a>
 
-                          <a href="https://www.yuru-wota.com/archive/category/VS%20Code-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA"
-                            class="entry-category-link category-VS-Code-カスタマイズ">VS Code-カスタマイズ</a>
+  
+  <div class="customized-header">
+    <div class="entry-header-html"><!-- *********************************************
+ * パンくずリスト
+ * CopyRight http://blog.wackwack.net/entry/2016/09/22/185558
+************************************************ -->
+<!-- 生成位置 -->
+<div id="breadcrumb"></div></div>
+  </div>
 
-                          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC"
-                            class="entry-category-link category-■プログラム全般">■プログラム全般</a>
 
-                          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A"
-                            class="entry-category-link category-PC設定">PC設定</a>
+  
 
-                        </div>
+</header>
 
-                        <div class="customized-header">
-                          <div class="entry-header-html">
+    
 
-                            <style>
-                              div #breadcrumb div {
-                                display: inline;
-                                font-size: 13px;
-                              }
-                            </style>
-                            <div id="breadcrumb"></div>
-                          </div>
-                        </div>
 
-                      </header>
+    <div class="entry-content">
+  
+    <p>いよいよ「Gitの本番」って感じです！</p>
 
-                      <div class="entry-content">
+<ul class="table-of-contents">
+    <li><a href="#はじめに">はじめに</a><ul>
+            <li><a href="#基本の流れ">基本の流れ</a></li>
+            <li><a href="#凡例">凡例</a></li>
+        </ul>
+    </li>
+    <li><a href="#コミット">▼コミット</a><ul>
+            <li><a href="#A既にステージに上がっている変更内容をまとめてコミット">【A】既にステージに上がっている変更内容をまとめてコミット</a></li>
+            <li><a href="#B変更のあったファイルをインデックスに追加しつつまとめてコミット">【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット</a></li>
+            <li><a href="#Cファイルやフォルダを1つずつ指定してコミット">【C】ファイルやフォルダを1つずつ指定してコミット</a><ul>
+                    <li><a href="#注意gitignoreに該当するファイルに注意">［注意］.gitignoreに該当するファイルに注意！</a></li>
+                </ul>
+            </li>
+            <li><a href="#Dカレントディレクトリを指定してまとめてコミット">【D】カレントディレクトリを指定して、まとめてコミット</a></li>
+        </ul>
+    </li>
+    <li><a href="#コミットメッセージの入力">▼コミットメッセージの入力</a><ul>
+            <li><a href="#Aコミットメッセージを入力しつつコミット">【A】コミットメッセージを入力しつつコミット</a></li>
+            <li><a href="#Bコミットメッセージに段落をつける">【B】コミットメッセージに段落をつける</a><ul>
+                    <li><a href="#例">［例］</a></li>
+                </ul>
+            </li>
+            <li><a href="#Cエディタでコミットメッセージを入力してコミット">【C】エディタでコミットメッセージを入力してコミット</a></li>
+        </ul>
+    </li>
+    <li><a href="#このシリーズについて">このシリーズについて</a><ul>
+            <li><a href="#次回">次回</a></li>
+            <li><a href="#連載目次">連載目次</a></li>
+        </ul>
+    </li>
+    <li><a href="#参照">参照</a></li>
+    <li><a href="#注釈">注釈</a></li>
+</ul>
 
-                        <p>ちょっと<s>カッコつけて</s>楽にPC触りたいとかいう不純な動機で2か月ほど<a class="keyword" href="http://d.hatena.ne.jp/keyword/VS%20Code">VS Code</a>を触ってみました。</p>
+<h3 id="はじめに">はじめに</h3>
 
-                        <p><s>たまにショートカットキーが反応しないような気はするものの、</s>色分けや入力支援のおかげで感触は上々です。<br>
-<span class="additional-note">&lt;2019/05/14追記></span><br>
-<span class="small-chars">（→「<a class="keyword" href="http://d.hatena.ne.jp/keyword/IME">IME</a>」をオフにして「英文入力モード」にしたら使えるようになりました!!）</span><br></p>
+<h4 id="基本の流れ">基本の流れ</h4>
 
-                        <p>本来はプログラミングに使うためのエディタですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Markdown">Markdown</a>のおかげで<strong>現状ほぼ只の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C6%A5%AD%A5%B9%A5%C8%A5%A8%A5%C7%A5%A3%A5%BF">テキストエディタ</a>と化している</strong>私の設定内容を公開してみたいと思います。</p>
+<p>Git自体はじめての方は、まずはこちらからどうぞ。</p>
 
-                        <ul class="table-of-contents">
-                          <li><a
-                              href="#拡張機能プラグインの追加">拡張機能（プラグイン）の追加</a>
-                            <ul>
-                              <li><a href="#VS-Codeの設定">VS Codeの設定</a>
-                                <ul>
-                                  <li><a
-                                      href="#Japanese-Language-Pack-for-Visual-Studio-Code">Japanese Language Pack for Visual Studio Code</a>
-                                  </li>
-                                  <li><a
-                                      href="#Settings-Sync">Settings Sync</a>
-                                  </li>
-                                  <li><a
-                                      href="#Material-Theme">Material Theme</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li><a href="#入力支援">入力支援</a>
-                                <ul>
-                                  <li><a
-                                      href="#Bracket-Pair-Colorizer">Bracket Pair Colorizer</a>
-                                  </li>
-                                  <li><a
-                                      href="#Path-Intellisense">Path Intellisense</a>
-                                  </li>
-                                  <li><a
-                                      href="#Trailing-Spaces">Trailing Spaces</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a
-                              href="#設定の変更Settingsjson">設定の変更（Settings.json）</a>
-                            <ul>
-                              <li><a
-                                  href="#配色テーマファイルアイコン">配色テーマ・ファイルアイコン</a>
-                              </li>
-                              <li><a
-                                  href="#VSCode全体の表示">VSCode全体の表示</a>
-                              </li>
-                              <li><a href="#エクスプローラー">エクスプローラー</a>
-                              </li>
-                              <li><a href="#エディタウィンドウ">エディタ・ウィンドウ</a>
-                              </li>
-                              <li><a href="#Markdown">Markdown</a>
-                              </li>
-                              <li><a href="#HTML">HTML</a></li>
-                              <li><a href="#Gitまわり">Gitまわり</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="#参照">参照</a></li>
-                          <li><a href="#後記">後記</a></li>
-                        </ul>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FSummary-of-Operations" title="【Git勉強中】操作に慣れてきたので、流れを整理してみました。 - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe></p>
 
-                        <h3 id="拡張機能プラグインの追加"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>（<a
-                            class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3">プラグイン</a>）の追加
-                        </h3>
+<h4 id="凡例">凡例</h4>
 
-                        <h4 id="VS-Codeの設定"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/VS%20Code">VS Code</a>の設定
-                        </h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">記号・用語 </th>
+<th> 意味 </th>
+<th> 説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><code>$</code> </td>
+<td> 「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%DE%A5%F3%A5%C9%A5%E9%A5%A4%A5%F3">コマンドライン</a>」で使えるコマンド </td>
+<td> 通常、Gitを始めとする「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B7%A5%A7%A5%EB%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8">シェルスクリプト</a>」系の説明では、コマンドの文頭に<code>$</code>をつけて表現されることが多いようです。<br>当記事でもそれに倣って記載しています。<br><br>実際にコマンドを入力するときは、<code>git～</code>以下をコピペしてください。</td>
+</tr>
+<tr>
+<td style="text-align:center;"><code>#</code> </td>
+<td> コメント </td>
+<td> 補足事項など。<br><span class="small-chars">（対話モードでは使えません、、、）</span></td>
+</tr>
+<tr>
+<td style="text-align:center;"><code>&lt;&gt;</code> </td>
+<td> 編集点<span class="small-chars">（という表現で良いのかな…？）</span> </td>
+<td> 任意の値（名前、識別子など）を入力してください。</td>
+</tr>
+<tr>
+<td style="text-align:center;"><span class="small-chars">（コミットの）</span>識別子 </td>
+<td> コミットごとに付与される半角英数字7桁の番号。 </td>
+<td> <a class="keyword" href="http://d.hatena.ne.jp/keyword/SHA-1">SHA-1</a>という<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%CF%A5%C3%A5%B7%A5%E5%C3%CD">ハッシュ値</a>だそうです。<br>当記事では<code>&lt;コミット&gt;</code>と表記します。</td>
+</tr>
+</tbody>
+</table>
 
-                        <h5
-                          id="Japanese-Language-Pack-for-Visual-Studio-Code">
-                          Japanese Language Pack for <a
-                            class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/Visual%20Studio%20Code">Visual Studio Code</a>
-                        </h5>
 
-                        <p>初期設定は全編英語です。日本人なので、まずは何も考えず日本語化します。</p>
+<h3 id="コミット">▼コミット</h3>
 
-                        <p>インストール後、言語の設定変更が必要です。<br>
-詳しい手順はページ下方のリンク先をご参照頂ければと思います。</p>
+<h4 id="A既にステージに上がっている変更内容をまとめてコミット">【A】既にステージに上がっている変更内容をまとめてコミット</h4>
 
-                        <h5 id="Settings-Sync">Settings Sync</h5>
+<p>引数なしで実行します。</p>
 
-                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/GitHub">GitHub</a>のアカウントを使ってほかの端末と<a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a>の設定を同期できます。<br>
-設定ファイルの中身（<code>settings.json</code>など）をGistにアップロード/ダウンロードすることで、データを管理します。</p>
-
-                        <p><span class="note">※送信後のメッセージ。</span><br>
-<span itemscope itemtype="http://schema.org/Photograph"><img class="hatena-fotolife" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830113529.png" width="60%" alt="送信後のメッセージ" title="f:id:yuricks7:20200830113529p:plain" itemprop="image" ></span></p>
-
-                        <h5 id="Material-Theme">Material Theme</h5>
-
-                        <p>配色テーマとアイコンテーマがいっぱい。</p>
-
-                        <p>現在は以下の設定で使っています。</p>
-
-                        <ul>
-                          <li>
-                            <p><b>配色テーマ</b><br>
-Material Theme Palenight High Contrast<br>
-<span itemscope itemtype="http://schema.org/Photograph"><img class="hatena-fotolife" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830115006.png" alt="Material Theme Palenight High Contrast" title="f:id:yuricks7:20200830115006p:plain" itemprop="image" ></span></p>
-                          </li>
-                          <li>
-                            <p><b>ファイルアイコンのテーマ</b><br>
-<a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a> Icons<br>
-<span itemscope itemtype="http://schema.org/Photograph"><img class="hatena-fotolife" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830115514.png" height="50%" alt="VSCode Icons" title="f:id:yuricks7:20200830115514p:plain" itemprop="image" ></span></p>
-                          </li>
-                        </ul>
-
-                        <h4 id="入力支援">入力支援</h4>
-
-                        <h5 id="Bracket-Pair-Colorizer">Bracket Pair
-                          Colorizer</h5>
-
-                        <p>カッコ（Bracket）を階層ごとに色分けしてくれます。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph"><img class="hatena-fotolife" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830115905.png" alt="Bracket Pair Colorizer" title="f:id:yuricks7:20200830115905p:plain" itemprop="image" ></span></p>
-
-                        <h5 id="Path-Intellisense">Path Intellisense
-                        </h5>
-
-                        <h6 id="Path-Intellisense">Path Intellisense
-                        </h6>
-
-                        <p>ファイルのパスを入力補完してくれるようになります。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph"><img class="hatena-fotolife" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830120222.png" alt="Path Intellisense" title="f:id:yuricks7:20200830120222p:plain" itemprop="image" ></span></p>
-
-                        <h5 id="Trailing-Spaces">Trailing Spaces</h5>
-
-                        <p>行末にある余計なスペースを強調表示します。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph"><img class="hatena-fotolife" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200830/20200830120616.png" alt="Trailing Spaces" title="f:id:yuricks7:20200830120616p:plain" itemprop="image" ></span></p>
-
-                        <h3 id="設定の変更Settingsjson">
-                          設定の変更（<code>Settings.json</code>）</h3>
-
-                        <h4 id="配色テーマファイルアイコン">配色テーマ・ファイルアイコン</h4>
-
-                        <p>前述の<a href="https://yuru-wota.hateblo.jp/preview###Material-Theme">Material Theme</a>を適用させます。</p>
-
-                        <p><span class="small-chars">2行目の<code>"materialTheme.accent": "Pink"</code>は反映されていない気がする…</span></p>
-
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synConstant">&quot;workbench.colorTheme&quot;</span>: <span class="synConstant">&quot;Material Theme Palenight High Contrast&quot;</span>,
-   <span class="synConstant">&quot;materialTheme.accent&quot;</span>: <span class="synConstant">&quot;Pink&quot;</span>,
-   <span class="synConstant">&quot;workbench.iconTheme&quot;</span> : <span class="synConstant">&quot;vscode-icons&quot;</span>
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit
 </pre>
 
-                        <h4 id="VSCode全体の表示"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a>全体の表示
-                        </h4>
 
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synComment">// タイトルバーにプロジェクトルートからの相対パスを表示</span>
-   <span class="synComment">/* 例) Visual Studio Code - 02_Documents - 03_Languages\Javascript\test1.js */</span>
-   <span class="synConstant">&quot;window.title&quot;</span>:
-      <span class="synConstant">&quot;${dirty}${appName}${separator}${rootName}${separator}${activeEditorMedium}&quot;</span>,
+<h4 id="B変更のあったファイルをインデックスに追加しつつまとめてコミット">【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット</h4>
 
-   <span class="synConstant">&quot;editor.minimap.enabled&quot;</span>    : <span class="synConstant">false</span>,
-   <span class="synConstant">&quot;workbench.sideBar.location&quot;</span>: <span class="synConstant">&quot;left&quot;</span>,
+<p><code>git add .</code>と<code>git commit</code>の合わせ技。</p>
 
-   <span class="synComment">// Controls if file decorations should use badges.</span>
-<span class="synComment">/* &quot;explorer.decorations.badges&quot;: false, */</span>
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit <span class="synSpecial">-a</span>
 </pre>
 
-                        <h4 id="エクスプローラー"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%A5%A8%A5%AF%A5%B9%A5%D7%A5%ED%A1%BC%A5%E9">エクスプローラ</a>ー
-                        </h4>
 
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synConstant">&quot;explorer.sortOrder&quot;</span>    : <span class="synConstant">&quot;filesFirst&quot;</span>,
-   <span class="synConstant">&quot;search.showLineNumbers&quot;</span>: <span class="synConstant">true</span>,
+
+
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit <span class="synSpecial">--all</span>
 </pre>
 
-                        <h4 id="エディタウィンドウ">エディタ・ウィンドウ</h4>
 
-                        <p>フォント<code>Noto Sans</code>は只今試用中…</p>
+<p>ただし、<b>新規作成されたファイルは対象外</b>なので、別途<code>git add</code>でステージしてからコミットする必要があります。</p>
 
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synConstant">&quot;editor.cursorWidth&quot;</span>  : 2,
-   <span class="synConstant">&quot;editor.fontFamily&quot;</span>   :
-      <span class="synConstant">&quot;'Noto Sans Mono CJK JP Bold', 'Consolas', 'Meiryo UI', 'ＭＳ ゴシック', 'Operator Mono', 'Courier New', 'monospace'&quot;</span>,
-   <span class="synConstant">&quot;editor.fontSize&quot;</span>     : 13.5,
-   <span class="synConstant">&quot;editor.letterSpacing&quot;</span>: 0.5,
-   <span class="synComment">// Controls the line height.</span>
-   <span class="synComment">// Use 0 to compute the lineHeight from the fontSize.</span>
-   <span class="synConstant">&quot;editor.lineHeight&quot;</span>   : 17,
-   <span class="synComment">// Enables font ligatures（合字、記号の結合）</span>
-   <span class="synConstant">&quot;editor.fontLigatures&quot;</span>: <span class="synConstant">true</span>,
+<h4 id="Cファイルやフォルダを1つずつ指定してコミット">【C】ファイルやフォルダを1つずつ指定してコミット</h4>
 
-   <span class="synComment">//Tabの設定</span>
-   <span class="synConstant">&quot;editor.renderIndentGuides&quot;</span>: <span class="synConstant">true</span>,
-   <span class="synConstant">&quot;editor.tabSize&quot;</span>           : 2,
-   <span class="synConstant">&quot;editor.tabCompletion&quot;</span>     : <span class="synConstant">&quot;on&quot;</span>,
-
-   <span class="synComment">// ●●文字目に目安線を入れる</span>
-   <span class="synConstant">&quot;editor.rulers&quot;</span>           : <span class="synIdentifier">[</span>60, 70<span class="synIdentifier">]</span>,
-
-   <span class="synComment">// 最終行に改行の追加を強制</span>
-   <span class="synConstant">&quot;files.insertFinalNewline&quot;</span>: <span class="synConstant">true</span>,
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit <span class="synStatement">&lt;</span>ファイル名/フォルダ名<span class="synStatement">&gt;</span>
 </pre>
 
-                        <h4 id="Markdown"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/Markdown">Markdown</a>
-                        </h4>
 
-                        <p>本当は自動で左側にプレビューを置けるともっと嬉しい…</p>
+<h5 id="注意gitignoreに該当するファイルに注意"><span class="red">［注意］</span><code>.gitignore</code>に該当するファイルに注意！</h5>
 
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synConstant">&quot;markdown.preview.breaks&quot;</span>    : <span class="synConstant">true</span>,
-   <span class="synConstant">&quot;markdown.preview.fontFamily&quot;</span>:
-      <span class="synConstant">&quot;'Noto Sans CJK JP Bold', 'Meiryo UI', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Droid Sans', 'Ubuntu'&quot;</span>,
-   <span class="synConstant">&quot;markdown.preview.fontSize&quot;</span>  : 14,
-   <span class="synConstant">&quot;markdown.preview.lineHeight&quot;</span>: 1.05,
+<p><code>.gitignore</code>に記載のあるファイルはステージされないため、コミットにも含められずエラーになります。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
+$ git commit <span class="synStatement">&lt;</span>ファイル名<span class="synStatement">&gt;</span>
+ 
+<span class="synComment"># 結果</span>
+error: pathspec <span class="synStatement">'</span><span class="synConstant">&lt;ファイル名&gt;</span><span class="synStatement">'</span> did not match any file<span class="synPreProc">(</span><span class="synSpecial">s</span><span class="synPreProc">)</span> known to git.
 </pre>
 
-                        <h4 id="HTML">HTML</h4>
 
-                        <p>タグの自動フォーマット関連です。<br>
-長くなってしまうので、詳しくはページ下方のリンク先をご参照ください。</p>
+<blockquote><p>「&lt;ファイル名>」は、gitが検知しているファイルにはマッチしませんでした。</p></blockquote>
 
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synComment">// 既定のHTMLフォーマッタを有効/無効にします</span>
-   <span class="synConstant">&quot;html.format.enable&quot;</span>          : <span class="synConstant">true</span>,
+<h4 id="Dカレントディレクトリを指定してまとめてコミット">【D】カレント<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リを指定して、まとめてコミット</h4>
 
-   <span class="synComment">// コンテンツを再フォーマットしてはならないタグをコンマで区切ってリストにします。</span>
-   <span class="synComment">// 'null' は、既定値の'pre' タグを表します。</span>
-   <span class="synConstant">&quot;html.format.contentUnformatted&quot;</span>: <span class="synConstant">&quot;pre,code,textarea&quot;</span>,
+<p>引数として<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C1%EA%C2%D0%A5%D1%A5%B9">相対パス</a>の<code>.</code>（ピリオド）をつけます。</p>
 
-   <span class="synComment">// 再フォーマットしてはならないタグの、コンマ区切りの一覧。'</span>
-   <span class="synComment">// null'の場合、既定で https://www.w3.org/TR/html5/dom.html###phrasing-content に</span>
-   <span class="synComment">// リストされているすべてのタグになります。</span>
-   <span class="synConstant">&quot;html.format.unformatted&quot;</span>     : <span class="synConstant">&quot;wbr&quot;</span>, <span class="synComment">// pタグ内のspanタグ等も改行する</span>
-
-   <span class="synComment">// 直前に改行を1つ入れるタグの、コンマで区切られたリストです。</span>
-   <span class="synComment">// 'null'は、既定値の&quot;head, body, /html&quot; を表します。</span>
-   <span class="synConstant">&quot;html.format.extraLiners&quot;</span>     : <span class="synConstant">&quot;&quot;</span>,
-
-   <span class="synComment">// &lt;head&gt;セクションと&lt;body&gt;セクションをインデントします。</span>
-   <span class="synConstant">&quot;html.format.indentInnerHtml&quot;</span> : <span class="synConstant">true</span>,
-
-   <span class="synComment">// 書式設定とインデント{{###foo}}および{{/foo}}。</span>
-   <span class="synConstant">&quot;html.format.indentHandlebars&quot;</span>: <span class="synConstant">true</span>,
-
-   <span class="synComment">// 属性を折り返します。</span>
-   <span class="synConstant">&quot;html.format.wrapAttributes&quot;</span>  : <span class="synConstant">&quot;force-aligned&quot;</span>, <span class="synComment">// 2つ目の属性から折り返し、属性の並びを揃える</span>
-
-   <span class="synComment">// 要素の前にある既存の改行を保持するかどうか。</span>
-   <span class="synComment">// 要素の前でのみ機能し、タグの内側やテキストに対しては機能しません。</span>
-   <span class="synConstant">&quot;html.format.preserveNewLines&quot;</span>: <span class="synConstant">true</span>,
-
-   <span class="synComment">// 1つのチャンク内に保持できる改行の最大数。</span>
-   <span class="synComment">// 無制限にするには、'null'を使います。</span>
-   <span class="synConstant">&quot;html.format.maxPreserveNewLines&quot;</span>: <span class="synStatement">null</span>,
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit .
 </pre>
 
-                        <h4 id="Gitまわり">Gitまわり</h4>
 
-                        <pre class="code lang-javascript"
-                          data-lang="javascript" data-unlink>   <span class="synConstant">&quot;git.defaultCloneDirectory&quot;</span>: <span class="synConstant">&quot;D:</span><span class="synSpecial">\\</span><span class="synConstant">02_Documents&quot;</span>,
-   <span class="synConstant">&quot;sync.gist&quot;</span>                : <span class="synConstant">&quot;xxxxxxxxxx&quot;</span>,
+<h3 id="コミットメッセージの入力">▼コミットメッセージの入力</h3>
+
+<h4 id="Aコミットメッセージを入力しつつコミット">【A】コミットメッセージを入力しつつコミット</h4>
+
+<p>コミット後に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C6%A5%AD%A5%B9%A5%C8%A5%A8%A5%C7%A5%A3%A5%BF">テキストエディタ</a>で入力する手間（<a href="https://www.yuru-wota.com/preview#%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E5%85%A5%E5%8A%9B%E3%81%97%E3%81%A6%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88">後述</a>）が減ります。<br>
+ただし、入力している文字数は確認できないので、何かしら対策が必要かも…？<a href="#f-ccf001e1" name="fn-ccf001e1" title="
+コミットメッセージの文字数制限について。
+[https://qiita.com/tommy_aka_jps/items/a20d9a821cc01ee7bd96:embed]
+">*1</a></p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit<span class="synStatement"> . </span>-m <span class="synStatement">'</span><span class="synConstant">&lt;コメント&gt;</span><span class="synStatement">'</span>
 </pre>
 
-                        <h3 id="参照">参照</h3>
 
-                        <p>以下のページを参考にさせて頂きました。</p>
 
-                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2FHiroCh%2Fitems%2F481adfa969dbe689f566" title="Visual Studio Codeを日本語化する方法 - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://qiita.com/HiroCh/items/481adfa969dbe689f566">qiita.com</a></cite></p>
 
-                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fcoliss.com%2Farticles%2Fbuild-websites%2Foperation%2Fwork%2Fbest-of-visual-studio-code-themes.html" title="Visual Studio Codeで見やすいテーマファイルのまとめ" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://coliss.com/articles/build-websites/operation/work/best-of-visual-studio-code-themes.html">coliss.com</a></cite></p>
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit<span class="synStatement"> . </span>--message<span class="synStatement">='</span><span class="synConstant">&lt;コメント&gt;</span><span class="synStatement">'</span>
+</pre>
 
-                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fnecojackarc.hatenablog.com%2Fentry%2F2017%2F03%2F12%2F184557" title="Visual Studio Code 入門～導入から Gist による設定管理まで～ - 雀巽の日記帳" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://necojackarc.hatenablog.com/entry/2017/03/12/184557">necojackarc.hatenablog.com</a></cite></p>
 
-                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fnecojackarc.hatenablog.com%2Fentry%2F2017%2F03%2F16%2F090000" title="Visual Studio Code 入門～オススメ設定と拡張機能編～ - 雀巽の日記帳" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://necojackarc.hatenablog.com/entry/2017/03/16/090000">necojackarc.hatenablog.com</a></cite></p>
+<p>※後者は<code>=</code>が必要！</p>
 
-                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3DEquinusocio.vsc-material-theme%23%23%23recommended-settings-for-a-better-experience" title="Material Theme - Visual Studio Marketplace" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme###recommended-settings-for-a-better-experience">marketplace.visualstudio.com</a></cite></p>
+<h4 id="Bコミットメッセージに段落をつける">【B】コミットメッセージに段落をつける</h4>
 
-                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Frubytomato%40github%2Fitems%2Fd4716c41a2d15c64f791" title="Visual Studio Codeのhtmlフォーマッターのメモ - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://qiita.com/rubytomato@github/items/d4716c41a2d15c64f791">qiita.com</a></cite></p>
+<p>オプション<code>-m &lt;コメント&gt;</code>1つにつき1つずつ段落化されます。<br>
+これを利用して、要約→詳細のように表現できます。</p>
 
-                        <h3 id="後記">後記</h3>
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit<span class="synStatement"> . </span>-m <span class="synStatement">'</span><span class="synConstant">&lt;コメント&gt;</span><span class="synStatement">'</span> <span class="synSpecial">-m</span> <span class="synStatement">'</span><span class="synConstant">&lt;詳細コメント&gt;</span><span class="synStatement">'</span>
+</pre>
 
-                        <p>Web開発等はやっていないとは言え、現状ほとんどブログかプログラミング問題の<br>
-下書きにしか使っていないので<strong>宝の持ち腐れ</strong>感もりもりです。</p>
+<h4 id="例3">［例］</h4>
 
-                        <p>ただの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C6%A5%AD%A5%B9%A5%C8%A5%A8%A5%C7%A5%A3%A5%BF">テキストエディタ</a>として使うなら、わざわざ選択するメリットは<br>
-「画面を暗く出来て目に優しい！」くらいかもしれませんが、<br>
-難しいことナシに好みに合わせて色々カスタマイズ出来るのが楽しいですね。</p>
+<h5 id="例">【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット</h5>
 
-                        <p>あと、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DE%A1%BC">プログラマー</a>さん達による「初心者向け」の情報が多いのもポイント高し。</p>
+<h6 id="C">【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット</h6>
 
-                        <p>また、Node.jsが使えると自分でも<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>を作れるみたいです。<br>
-機能本体はどの言語でもOKのようですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>でも出来るそうなので<br>
-ノン<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DE%A1%BC">プログラマー</a>でもチャンスはあるかもしれません。</p>
+<p><b>タイトル（Short Description）</b>が「test1.」のコミット履歴が作成されました。</p>
 
-                        <p>私はまだアイディアや技術力が無いので実際やるかどうかは別ですが…<br>
-いつか出来たら楽しいかも。</p>
+<h6 id="例X">［例］</h5>
 
-                        <p>先延ばしっぱなしですが、ノン<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%ED%A5%B0%A5%E9%A5%DE%A1%BC">プログラマー</a>としては<a class="keyword" href="http://d.hatena.ne.jp/keyword/VBA">VBA</a>やGASも<br>
-近々試してみたいと思います。</p>
+<p class="text-box-dashed">タイトル（<b>Short Description</b>）が「test1.」のコミット履歴が作成されました。</p>
 
-                      </div>
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
+$ git commit <span class="synSpecial">-m</span> <span class="synStatement">&quot;</span><span class="synConstant">test1.</span><span class="synStatement">&quot;</span> <span class="synSpecial">-m</span> <span class="synStatement">&quot;</span><span class="synConstant">test2!</span><span class="synStatement">&quot;</span> <span class="synSpecial">-m</span> <span class="synStatement">&quot;</span><span class="synConstant">it's test3!!</span><span class="synStatement">&quot;</span>
 
-                      <footer class="entry-footer">
+<span class="synComment"># 結果</span>
+<span class="synStatement">[</span>develop c115340<span class="synStatement">]</span> test1.
+ <span class="synConstant">1</span> file changed, <span class="synConstant">1</span> insertion<span class="synPreProc">(</span><span class="synSpecial">+</span><span class="synPreProc">)</span>, <span class="synConstant">1</span> deletion<span class="synPreProc">(</span><span class="synSpecial">-</span><span class="synPreProc">)</span>
 
-                        <p class="entry-footer-section">
+<span class="synComment"># コミット内容を確認</span>
+$ git log
+commit c11534072071664c079cb709d2cabb32d8342db0 <span class="synPreProc">(</span><span class="synSpecial">HEAD -</span><span class="synStatement">&gt;</span><span class="synSpecial"> develop</span><span class="synPreProc">)</span>
+Author: xxxxxxxx <span class="synStatement">&lt;</span>xxxxxxxx@users.noreply.github.com<span class="synStatement">&gt;</span>
+Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synConstant">2019</span> +<span class="synConstant">0900</span>
+
+    test1.
+
+    test2.
+
+    it<span class="synStatement">'</span><span class="synConstant">s test3!</span>
+</pre>
+
+
+<p>タイトル（Short Description）が「test1.」のコミット履歴が作成されました。</p>
+
+<h4 id="Cエディタでコミットメッセージを入力してコミット">【C】エディタでコミットメッセージを入力してコミット</h4>
+
+<p>普段は↑のコマンドを使ってコミットメッセージを入れるので、これはあまり必要ないかと思います。<br>
+ただ、コメントを入れ忘れてしまった時にはエディタが自動で立ち上がります。<br>
+そのときに焦ってしまうので笑、一応記載しておきます。</p>
+
+<ol>
+  <li>コマンドを打ちます。
+    <pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit</pre>
+  </li>
+</ol>
+<p>(1) コマンドを打ちます。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit
+</pre>
+
+
+<p>(2) 下記のメッセージと共にエディタが開きます。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink>hint: Waiting <span class="synStatement">for</span> your editor to close the file...
+</pre>
+
+
+<blockquote><p>エディタのクローズ待ち…</p><cite>test.</cite></blockquote>
+
+<p>(3) エディタで1行目にコメントを入力。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink>ここにコメントを入力。
+<span class="synComment"># Please enter the commit message for your changes. Lines starting</span>
+<span class="synComment"># with '#' will be ignored, and an empty message aborts the commit.</span>
+<span class="synComment">#</span>
+<span class="synComment"># On branch develop</span>
+<span class="synComment"># Changes to be committed:</span>
+<span class="synComment">#  modified:   index.html</span>
+<span class="synComment">#</span>
+</pre>
+
+
+<blockquote><p>コミットメッセージを入力してください。<br>
+<code>#</code>で始まる行は無視しますが、メッセージが空の場合はコミットを中止します。<br>
+（以下略）</p></blockquote>
+
+<p>(4) 入力を終えたら<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">S</kbd></kbd>で保存。<br></p>
+
+<p>※飛ばすと怒られます。笑</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink>Aborting commit due to empty commit message.
+</pre>
+
+
+<blockquote><p>コミットメッセージが無いので、コミットは中止します。</p></blockquote>
+
+<p>(5) 保存できたら、<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">W</kbd></kbd>でエディタを閉じます。</p>
+
+<h3 id="このシリーズについて">このシリーズについて</h3>
+
+<p>Gitのコマンドについて、少しずつ記事にまとめています。</p>
+
+<p>誤り、分かりづらい等ありましたら、ぜひ<strong>コメント欄</strong>や<a href="https://twitter.com/yuricks7">Twitter</a>、<a href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>等でご教示ください！</p>
+
+<h4 id="次回">次回</h4>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Fix-commits" title="【Git勉強中】あっ！そのコミット訂正させてください！ - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe></p>
+
+<h4 id="連載目次">連載目次</h4>
+
+<ol>
+<li><a href="https://www.yuru-wota.com/entry/Git/Summary-of-Operations">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x64CD;&#x4F5C;&#x306B;&#x6163;&#x308C;&#x3066;&#x304D;&#x305F;&#x306E;&#x3067;&#x3001;&#x6D41;&#x308C;&#x3092;&#x6574;&#x7406;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="https://www.yuru-wota.com/entry/Git/how-to-move-branch">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30D6;&#x30E9;&#x30F3;&#x30C1;&#x306E;&#x79FB;&#x52D5;&#x3092;&#x4F7F;&#x3044;&#x5206;&#x3051;&#x305F;&#x3044; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Stage">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30B9;&#x30C6;&#x30FC;&#x30B8;&#x306B;&#x4E0A;&#x3052;&#x305F;&#x308A;&#x4E0B;&#x3052;&#x305F;&#x308A;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><span class="serialized-label">当記事</span><a href="https://www.yuru-wota.com/entry/Git/How-to-Commit">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30B9;&#x30C6;&#x30FC;&#x30B8;&#x3057;&#x305F;&#x5909;&#x66F4;&#x3092;&#x8A18;&#x9332;&#x3059;&#x308B; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Fix-commits">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x3042;&#x3063;&#xFF01;&#x305D;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x8A02;&#x6B63;&#x3055;&#x305B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#xFF01; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Merge-and-Push">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x81EA;&#x5206;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x5C65;&#x6B74;&#x3092;&#x63D0;&#x51FA;&#x3059;&#x308B; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Connect-Repogitories">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306E;&#x4F5C;&#x6210;&#x3068;&#x63A5;&#x7D9A; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+</ol>
+
+
+<h3 id="参照">参照</h3>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgit-scm.com%2Fdocs" title="Git - Reference" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
+<iframe src="https://hatenablog-parts.com/embed?url=http%3A%2F%2Fwww-creators.com%2Farchives%2F2106" title="git commit コマンドの使い方と、主要オプションのまとめ | WWWクリエイターズ" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2F2m1tsu3%2Fitems%2F6d49374230afab251337" title="基本的なGitコマンドまとめ - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe></p>
+
+<h3 id="注釈">注釈</h3>
+<div class="footnote">
+<p class="footnote"><a href="#fn-ccf001e1" name="f-ccf001e1" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">コミットメッセージの文字数制限について。
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Ftommy_aka_jps%2Fitems%2Fa20d9a821cc01ee7bd96" title="git commit 時に書くコミットメッセージ1行目の表示文字数上限を調べてみた - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
+</span></p>
+</div>
+    
+
+  
+</div>
+
+    
+  <footer class="entry-footer">
+    
+    <p class="entry-footer-section">
   <span class="author vcard"><span class="fn" data-load-nickname="1" data-user-name="yuricks7">yuricks7</span></span>
-  <span class="entry-footer-time"><a href="https://www.yuru-wota.com/entry/VSCode/Settings/20190507"><time data-relative datetime="2019-05-06T23:30:00Z" title="2019-05-06T23:30:00Z" pubdate class="updated">2019-05-07 08:30</time></a></span>
+  <span class="entry-footer-time"><a href="https://www.yuru-wota.com/entry/Git/How-to-Commit"><time data-relative datetime="2019-06-26T09:30:00Z" title="2019-06-26T09:30:00Z" pubdate class="updated">2019-06-26 18:30</time></a></span>
 </p>
 
-                        <div class="hatena-star-container">
-                        </div>
-                        <div class="hatena-star-metadata"
-                          style="display: none">
-                          <a class="hatena-star-permalink"
-                            href="https://www.yuru-wota.com/entry/VSCode/Settings/20190507">【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。</a>
-                        </div>
+    
+  <div class="hatena-star-container">
+  </div>
+  <div class="hatena-star-metadata" style="display: none">
+    <a class="hatena-star-permalink" href="https://www.yuru-wota.com/entry/Git/How-to-Commit">【Git勉強中】ステージした変更を記録する</a>
+  </div>
 
-                        <div class="social-buttons">
 
-                        </div>
+    
+<div class="social-buttons">
+  
+  
+  
+  
+  
+  
+  
+</div>
 
-                        <div class="customized-footer">
+    
 
-                          <div class="entry-footer-modules"
-                            id="entry-footer-secondary-modules">
-                          </div>
+    <div class="customized-footer">
+      
 
-                          <div class="entry-footer-html">
-                            <!-- /*--------------------------------------
-   * シェアボタンの変更
-   * 【参考】
-   * シンプルで美しいはてなブログの新テーマ「Minimalism」を公開しました。 - ひつじの雑記帳
-   * https://hitsuzi.hatenablog.com/entry/minimalism
-  --------------------------------------*/ -->
-                            <div class="shrbtn">
-                              <!-- Twitter -->
-                              <a class="share_btn"
-                                title="このエントリーをTwitterでシェア"
-                                href="http://twitter.com/intent/tweet?text=【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。 https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507">
+        
+
+        
+
+          <div class="entry-footer-modules" id="entry-footer-secondary-modules">        </div>
+        
+  <div class="entry-footer-html"><!-- *********************************************
+ * サイトマップから最新の更新日を取得
+ * 【参考】
+ * 【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+ * https://account-it-dentist.hatenablog.com/entry/blog-custom003
+************************************************ -->
+<!-- jQuery (3.3.1)  -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- main -->
+<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/aUnder/modifyDate.js"></script>
+
+<!-- *********************************************
+ * 目次（クリックで表示/非表示）
+ * 【参考】
+ * 『目次』をカスタム！【表示】【隠す】機能を追加する方法 - 人生RPG
+ * https://www.life-is-rpg.com/entry/2018/03/16/110000
+************************************************ -->
+<!-- jQuery (1.9.1)  -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- main -->
+<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/aUnder/tocOnBody.js"></script>
+
+<!-- *********************************************
+ * コードブロックに行番号を追加
+ * 【参考】
+ * 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
+ * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
+************************************************ -->
+<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/aUnder/rowNumOnCodeBlock.js"></script>
+
+<!-- *********************************************
+ * シェアボタンの変更
+ * 【参考】
+ * シンプルで美しいはてなブログの新テーマ「Minimalism」を公開しました。 - ひつじの雑記帳
+ * https://hitsuzi.hatenablog.com/entry/minimalism
+************************************************ -->
+<div class="shrbtn">
+  <!-- Twitter -->
+  <a class="share_btn" title="このエントリーをTwitterでシェア"
+     href="http://twitter.com/intent/tweet?text=【Git勉強中】ステージした変更を記録する https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
     <i class="fa fa-twitter"></i>
   </a>
-
-                              <!-- はてなブックマーク -->
-                              <a class="share_btn"
-                                title="このエントリーをはてなブックマークでシェア"
-                                href="http://b.hatena.ne.jp/entry/https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507">
+  <!-- はてなブックマーク -->
+  <a class="share_btn" title="このエントリーをはてなブックマークでシェア"
+     href="http://b.hatena.ne.jp/entry/https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
     <span class="htvcenter" style="line-height: 1.6;">
-      <i class="blogicon-bookmark" style="font-size:22px"></i>
+      <i class="blogicon-bookmark" style="font-size: 22px;"></i>
     </span>
   </a>
-
-                              <!-- Facebook -->
-                              <a class="share_btn"
-                                title="このエントリーをFacebookでシェア"
-                                href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507">
+  <!-- Facebook -->
+  <a class="share_btn" title="このエントリーをFacebookでシェア"
+     href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
     <i class="fa fa-facebook"></i>
   </a>
-
-                              <!-- Tumblr -->
-                              <a class="share_btn"
-                                title="このエントリーをTumblrでシェア"
-                                href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=【Visual Studio Code】ほぼテキストエディタとして使っている私の設定を晒してみます。&amp;canonicalUrl=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507"
-                                target="_blank">
+  <!-- Tumblr -->
+  <a class="share_btn" title="このエントリーをTumblrでシェア"
+     href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=【Git勉強中】ステージした変更を記録する&amp;canonicalUrl=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit"
+     target="_blank">
     <i class="fa fa-tumblr-square" aria-hidden="true"></i>
   </a>
-
-                              <!-- Pocket -->
-                              <a class="share_btn"
-                                title="このエントリーをPocketに追加する"
-                                href="http://getpocket.com/edit?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVSCode%2FSettings%2F20190507">
+  <!-- Pocket -->
+  <a class="share_btn" title="このエントリーをPocketに追加する"
+     href="http://getpocket.com/edit?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
     <i class="fa fa-get-pocket"></i>
   </a>
-
-                              <!-- feedly -->
-                              <a class="share_btn"
-                                title="このブログのフィードを取得する"
-                                href="http://feedly.com/i/subscription/feed/http://https://yuru-wota.hateblo.jp/feed"
-                                target="_blank">
+  <!-- feedly -->
+  <a class="share_btn" title="このブログのフィードを取得する"
+     href="http://feedly.com/i/subscription/feed/http://https://yuru-wota.hateblo.jp/feed"
+     target="_blank">
     <i class="fa fa-rss"></i>
   </a>
-
-                              <!-- 読者登録 -->
-                              <a class="share_btn" title="読者登録してみる"
-                                href="http://blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
-                                target="_blank">
+  <!-- 読者登録 -->
+  <a class="share_btn" title="読者登録してみる"
+     href="http://blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
+     target="_blank">
     <i class="fas fa-book" style='font-family: "FontAwesome";'></i>
   </a>
-                            </div>
+</div>
+</div>
 
-                            <!-- /*--------------------------------------
-    関連記事の表示(?)
-  --------------------------------------*/ -->
 
-                            <script>
-                              //<![CDATA[
-                              window.Shisuh = (window.Shisuh) ?
-                                window.Shisuh : {};
-                              Shisuh.topUrl = 'https://yuru-wota.hateblo.jp';
-                              Shisuh.type = 'Hatebu';
-                              Shisuh.headerText = 'この記事をご覧の方にオススメ';
-                              Shisuh.alg = 'Related';
-                              Shisuh.showBottom = '1';
-                              Shisuh.insertAfterScript = '1';
-                              Shisuh.showInsert = '1';
-                              Shisuh.originalTemplateTypeWide = 'Panel';
-                              Shisuh.originalTemplateTypeNarrow = 'Panel';
-    //]]>
-                            </script>
+      
+    </div>
+    
+  <div class="comment-box">
+    
+    <ul class="comment">
+      <li class="read-more-comments" style="display: none;"><a>もっと読む</a></li>
+    </ul>
+    
+      <a class="leave-comment-title js-leave-comment-title">コメントを書く</a>
+    
+  </div>
 
-                            <script id="ssRelatedPageSdk"
-                              type="text/javascript" charset="utf-8"
-                              src="https://www.shisuh.com/djs/relatedPageFeed/">
-                              </script>
+  </footer>
 
-                            <!-- /*--------------------------------------
-   * サイトマップから最新の更新日を取得
-   *
-   * 【参考】
-   * 【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
-   * https://account-it-dentist.hatenablog.com/entry/blog-custom003 *
-   *
-   * ～以下、作成者様のコメント～
-   *
-   * 更新日時表示ちょっと手を入れてある
-   * Show lastmod for Hatena Blog v1.0.1
-   * Date: 2016-12-20
-   * Copyright (c) 2016 https://www.tsubasa-note.blog/
-   * Released under the MIT license:
-   * http://opensource.org/licenses/mit-license.php
-  --------------------------------------*/ -->
+  </div>
+</article>
 
-                            <script>
-                              ; (function ($) {
-                                'use strict';
-                                var urls = [], opts = { cache: false, dataType: 'xml' }, p,
-                                  url = 'https://www.yuru-wota.com/sitemap_index.xml';
-                                function parseSitemapXML(url) {
-                                  var d = new $.Deferred;
-                                  $.ajax($.extend(opts, { url: url })).done(function (xml) {
-                                    $(xml).find('sitemap').each(function () {
-                                      urls.push($(this).find('loc').text());
-                                    });
-                                    d.resolve();
-                                  }).fail(function () {
-                                    d.reject();
-                                  });
-                                  return d.promise();
-                                }
+      
+      
+    
+  
 
-                                function findURL(url) {
-                                  $.ajax($.extend(opts, { url: url })).done(function (xml) {
-                                    var isMatched = false;
-                                    $(xml).find('url').each(function () {
-                                      var $this = $(this);
-                                      if ($this.find('loc').text() === location.href) {
-                                        isMatched = true;
-                                        appendLastmod($this.find('lastmod').text());
-                                        return false;
-                                      }
-                                    });
-                                    if (!isMatched) nextURL();
-                                  }).fail(function () { });
-                                }
+  
+  <!-- rakuten_ad_target_end -->
+  <!-- google_ad_section_end -->
+  
+  
+  
+  <div class="pager pager-permalink permalink">
+    
+    
+  </div>
 
-                                function nextURL() {
-                                  urls.shift();
-                                  if (urls.length) findURL(urls[0]);
-                                }
 
-                                function appendLastmod(lastmod) {
-                                  var lastDate = lastmod.split('T');
-                                  var $container = $('<div></div>', { 'class': 'lastmod' });
-                                  $container.append($('<span></span>', { 'class': 'date-year' }).text(lastDate[0].split('-')[0]));
-                                  $container.append($('<span></span>', { 'class': 'hyphen' }).text('-'));
-                                  $container.append($('<span></span>', { 'class': 'date-month' }).text(lastDate[0].split('-')[1]));
-                                  $container.append($('<span></span>', { 'class': 'hyphen' }).text('-'));
-                                  $container.append($('<span></span>', { 'class': 'date-day' }).text(lastDate[0].split('-')[2]));
-                                  if ($('.entry-header > .date').get(0).tagName.toLowerCase() === 'span') {
-                                    $('.entry-title').before($container);
-                                  } else {
-                                    $('.entry-date').append($container);
-                                  }
-                                }
-                                p = parseSitemapXML(url);
-                                p.done(function () { findURL(urls[0]) });
-                                p.fail(function (error) { });
-                              })(jQuery);
-                            </script>
+  
 
-                            <!-- /*--------------------------------------
-   * コードブロックに行番号を追加
-   *
-   * 【参考】
-   * 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
-   * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
-  --------------------------------------*/ -->
 
-                            <script>
-                              var codeBlocks = document.getElementsByClassName('code');
-                              [].forEach.call(codeBlocks, function (e) {
-                                if (!/lang/.test(e.className)) {
-                                  return;
-                                }
 
-                                var lines = e.innerHTML.split(/\n/);
-                                var codeBlock = "";
-                                lines.forEach(function (line) {
-                                  if (line != "") {
-                                    codeBlock += '<div class="code-line">' + line + '</div>';
-                                  }
-                                })
+        </div>
+      </div>
 
-                                e.innerHTML = codeBlock;
-                              });
-                            </script>
-                          </div>
+      <aside id="box1">
+  <div id="box1-inner">
+  </div>
+</aside>
 
-                        </div>
+    </div><!-- #wrapper -->
 
-                        <div class="comment-box">
+    
+<aside id="box2">
+  
+  <div id="box2-inner">
+    
+      <div class="hatena-module hatena-module-search-box">
+  <div class="hatena-module-title">
+    検索
+  </div>
+  <div class="hatena-module-body">
+    <form class="search-form" role="search" action="https://www.yuru-wota.com/search" method="get">
+  <input type="text" name="q" class="search-module-input" value="" placeholder="記事を検索" required>
+  <input type="submit" value="検索" class="search-module-button" />
+</form>
 
-                          <ul class="comment">
-                            <li class="read-more-comments"
-                              style="display: none;"><a>もっと読む</a></li>
-                          </ul>
+  </div>
+</div>
 
-                          <a
-                            class="leave-comment-title js-leave-comment-title">コメントを書く</a>
+    
+      
 
-                        </div>
-
-                      </footer>
-
-                    </div>
-                  </article>
-
-                  <!-- rakuten_ad_target_end -->
-                  <!-- google_ad_section_end -->
-
-                  <div class="pager pager-permalink permalink">
-
-                  </div>
-
-                </div>
-              </div>
-
-              <aside id="box1">
-                <div id="box1-inner">
-                </div>
-              </aside>
-
-            </div><!-- #wrapper -->
-
-            <aside id="box2">
-
-              <div id="box2-inner">
-
-                <div class="hatena-module hatena-module-search-box">
-                  <div class="hatena-module-title">
-                    検索
-                  </div>
-                  <div class="hatena-module-body">
-
-                    <form class="search-form" role="search"
-                      action="https://www.yuru-wota.com/search"
-                      method="get">
-                      <input type="text" name="q"
-                        class="search-module-input" value=""
-                        placeholder="記事を検索" required>
-                      <input type="submit" value="検索"
-                        class="search-module-button" />
-                    </form>
-
-                  </div>
-                </div>
-
-                <div class="hatena-module hatena-module-profile">
-                  <div class="hatena-module-title">
-                    プロフィール
-                  </div>
-                  <div class="hatena-module-body">
-
-                    <a href="https://www.yuru-wota.com/about"
-                      class="profile-icon-link">
+<div class="hatena-module hatena-module-profile">
+  <div class="hatena-module-title">
+    プロフィール
+  </div>
+  <div class="hatena-module-body">
+    
+    <a href="https://www.yuru-wota.com/about" class="profile-icon-link">
       <img src="https://cdn.profile-image.st-hatena.com/users/yuricks7/profile.png?1574076408"
       alt="id:yuricks7" class="profile-icon" />
     </a>
+    
 
-                    <span class="id">
+    
+    <span class="id">
       <a href="https://www.yuru-wota.com/about" class="hatena-id-link"><span data-load-nickname="1" data-user-name="yuricks7">id:yuricks7</span></a>
+      
+  
+    
+    
+      <a href="http://blog.hatena.ne.jp/guide/pro" title="はてなブログPro"><i class="badge-type-pro">はてなブログPro</i></a>
+    
+  
 
-                    <a href="http://blog.hatena.ne.jp/guide/pro"
-                      title="はてなブログPro"><i class="badge-type-pro">はてなブログPro</i></a>
 
-                    </span>
+    </span>
+    
 
-                    <div class="profile-description">
-                      <p>「モノづくり」の質を上げるべく、ネットの海で右往左往しつつお勉強しています。</p>
-                      <p><b>質問箱</b>：<a href="https://peing.net/ja/yuricks7/">https://peing.net/ja/yuricks7/</a><br />
-内容によっては、こちらで記事にさせて頂くかもしれません。</p>
-                      <p><b>サブブログ</b>：<a href="https://monologue.yuru-wota.com/">https://monologue.yuru-wota.com/</a><br />
-自分の趣味や障害についてなど、何でも晒して書いてます。</p>
-                      <p>私の頭の中や日々の記録は<a href="https://twitter.com/yuricks7" target="_blank" rel="noopener noreferrer">Twitter</a>からどうぞ。<br />
+    
+
+    
+    <div class="profile-description">
+      <p>「モノづくり」の質を上げるべく、ネットの海で右往左往しつつお勉強しています。</p><p><b>質問箱</b>：<a href="https://peing.net/ja/yuricks7/">https://peing.net/ja/yuricks7/</a><br />
+内容によっては、こちらで記事にさせて頂くかもしれません。</p><p><b>サブブログ</b>：<a href="https://monologue.yuru-wota.com/">https://monologue.yuru-wota.com/</a><br />
+自分の趣味や障害についてなど、何でも晒して書いてます。</p><p>私の頭の中や日々の記録は<a href="https://twitter.com/yuricks7" target="_blank" rel="noopener noreferrer">Twitter</a>からどうぞ。<br />
 たまに趣味のこともつぶやきます。</p>
 
-                    </div>
+    </div>
+    
 
-                    <div
-                      class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
+    
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box"
+  
+  >
 
-                      <a href="#"
-                        class="hatena-follow-button js-hatena-follow-button">
+  <a href="#" class="hatena-follow-button js-hatena-follow-button">
     <span class="subscribing">
       <span class="foreground">読者です</span>
       <span class="background">読者をやめる</span>
@@ -996,826 +915,777 @@ Material Theme Palenight High Contrast<br>
       <span class="background">読者になる</span>
     </span>
   </a>
-                      <div
-                        class="subscription-count-box js-subscription-count-box">
-                        <i></i>
-                        <u></u>
-                        <span class="subscription-count js-subscription-count">
+  <div class="subscription-count-box js-subscription-count-box">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">
     </span>
-                      </div>
-                    </div>
+  </div>
+</div>
 
-                    <div class="hatena-follow-button-box btn-twitter">
-                      <a href="https://twitter.com/yuricks7"
-                        class="twitter-follow-button"
-                        data-show-count="false" data-lang="ja">
+    
+
+    
+    <div class="hatena-follow-button-box btn-twitter">
+      <a href="https://twitter.com/yuricks7" class="twitter-follow-button" data-show-count="false" data-lang="ja">
         @yuricks7をフォロー
       </a>
-                    </div>
+    </div>
+    
+  </div>
+</div>
 
-                  </div>
-                </div>
+    
+      <div class="hatena-module hatena-module-links">
+  <div class="hatena-module-title">
+    このブログについて
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://www.yuru-wota.com/privacy-policy/20190617#%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a>
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/privacy-policy/20190617#%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85">免責事項</a>
+        </li>
+      
+        <li>
+          <a href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
 
-                <div class="hatena-module hatena-module-links">
-                  <div class="hatena-module-title">
-                    このブログについて
-                  </div>
-                  <div class="hatena-module-body">
-                    <ul class="hatena-urllist">
+    
+      
+<div class="hatena-module hatena-module-entries-access-ranking"
+  data-count="5"
+  data-source="access"
+  data-enable_customize_format="0"
 
-                      <li>
-                        <a
-                          href="https://www.yuru-wota.com/privacy-policy/20190617#%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a>
-                      </li>
+  data-display_entry_category="0"
+  data-display_entry_image="1"
+  data-display_entry_image_size_width="90"
+  data-display_entry_image_size_height="90"
+  data-display_entry_body_length="0"
+  data-display_entry_date="1"
+  data-display_entry_title_length="20"
+  data-restrict_entry_title_length="0"
+  data-display_bookmark_count="0"
 
-                      <li>
-                        <a
-                          href="https://www.yuru-wota.com/privacy-policy/20190617#%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85">免責事項</a>
-                      </li>
+>
+  <div class="hatena-module-title">
+    
+      人気TOP5
+    
+  </div>
+  <div class="hatena-module-body">
+    
+  </div>
+</div>
 
-                      <li>
-                        <a
-                          href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>
-                      </li>
-
-                    </ul>
-                  </div>
-                </div>
-
-                <div
-                  class="hatena-module hatena-module-entries-access-ranking"
-                  data-count="5" data-source="access"
-                  data-enable_customize_format="0"
-                  data-display_entry_category="0"
-                  data-display_entry_image="1"
-                  data-display_entry_image_size_width="90"
-                  data-display_entry_image_size_height="90"
-                  data-display_entry_body_length="0"
-                  data-display_entry_date="1"
-                  data-display_entry_title_length="20"
-                  data-restrict_entry_title_length="0"
-                  data-display_bookmark_count="0">
-                  <div class="hatena-module-title">
-
-                    人気TOP5
-
-                  </div>
-                  <div class="hatena-module-body">
-
-                  </div>
-                </div>
-
-                <div
-                  class="hatena-module hatena-module-recent-entries ">
-                  <div class="hatena-module-title">
-                    <a href="https://www.yuru-wota.com/archive">
+    
+      <div class="hatena-module hatena-module-recent-entries ">
+  <div class="hatena-module-title">
+    <a href="https://www.yuru-wota.com/archive">
       最近の記事
     </a>
-                  </div>
-                  <div class="hatena-module-body">
-                    <ul
-                      class="recent-entries hatena-urllist urllist-with-thumbnails">
+  </div>
+  <div class="hatena-module-body">
+    <ul class="recent-entries hatena-urllist urllist-with-thumbnails">
+  
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Compile-Error">
+  <img alt="【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）" src="https://cdn.image.st-hatena.com/image/square/27975e7625483b5a76374ba0fff3b1795c9968ea/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png" class="urllist-image recent-entries-image" title="【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）" width="90">
+</a>
+            <div class="urllist-date-link recent-entries-date-link">
+  <a href="https://www.yuru-wota.com/archive/2020/09/01" rel="nofollow">
+    <time pubdate datetime="2020-09-01T12:30:00Z" title="2020-09-01T12:30:00Z">
+      2020-09-01
+    </time>
+  </a>
+</div>
 
-                      <li class="urllist-item recent-entries-item">
-                        <div
-                          class="urllist-item-inner recent-entries-item-inner">
+          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Compile-Error" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）</a>
 
-                          <a class="urllist-image-link recent-entries-image-link"
-                            href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment">
+
+          
+          
+
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment">
   <img alt="カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた" src="https://cdn.image.st-hatena.com/image/square/d7908f48f56a3d9444966ebd3c703e83a84d1ca2/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2Fran%2Fimg%2F1001%2F0004%2F939%2F761%2F310%2F461%2F10010004939761310461_1.jpg%3F_ex%3D320x320" class="urllist-image recent-entries-image" title="カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた" width="90">
 </a>
-                          <div
-                            class="urllist-date-link recent-entries-date-link">
-                            <a href="https://www.yuru-wota.com/archive/2020/08/26"
-                              rel="nofollow">
+            <div class="urllist-date-link recent-entries-date-link">
+  <a href="https://www.yuru-wota.com/archive/2020/08/26" rel="nofollow">
     <time pubdate datetime="2020-08-26T12:00:00Z" title="2020-08-26T12:00:00Z">
       2020-08-26
     </time>
   </a>
-                          </div>
+</div>
 
-                          <a href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment"
-                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた</a>
+          <a href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた</a>
 
-                        </div>
-                      </li>
 
-                      <li class="urllist-item recent-entries-item">
-                        <div
-                          class="urllist-item-inner recent-entries-item-inner">
+          
+          
 
-                          <a class="urllist-image-link recent-entries-image-link"
-                            href="https://www.yuru-wota.com/entry/VBA/Environ-Function">
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/Environ-Function">
   <img alt="【VBA】環境変数の中身をVBAで見てみる" src="https://cdn.image.st-hatena.com/image/square/27975e7625483b5a76374ba0fff3b1795c9968ea/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png" class="urllist-image recent-entries-image" title="【VBA】環境変数の中身をVBAで見てみる" width="90">
 </a>
-                          <div
-                            class="urllist-date-link recent-entries-date-link">
-                            <a href="https://www.yuru-wota.com/archive/2020/03/22"
-                              rel="nofollow">
+            <div class="urllist-date-link recent-entries-date-link">
+  <a href="https://www.yuru-wota.com/archive/2020/03/22" rel="nofollow">
     <time pubdate datetime="2020-03-22T11:00:00Z" title="2020-03-22T11:00:00Z">
       2020-03-22
     </time>
   </a>
-                          </div>
+</div>
 
-                          <a href="https://www.yuru-wota.com/entry/VBA/Environ-Function"
-                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】環境変数の中身をVBAで見てみる</a>
+          <a href="https://www.yuru-wota.com/entry/VBA/Environ-Function" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】環境変数の中身をVBAで見てみる</a>
 
-                        </div>
-                      </li>
 
-                      <li class="urllist-item recent-entries-item">
-                        <div
-                          class="urllist-item-inner recent-entries-item-inner">
+          
+          
 
-                          <a class="urllist-image-link recent-entries-image-link"
-                            href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline">
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline">
   <img alt="【VBA】自分用コーディングガイドライン" src="https://cdn.image.st-hatena.com/image/square/4deae2e663e71141ad5c81bd6ef1c73958d5800f/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F5658%2F9784873115658.jpg%3F_ex%3D200x200" class="urllist-image recent-entries-image" title="【VBA】自分用コーディングガイドライン" width="90">
 </a>
-                          <div
-                            class="urllist-date-link recent-entries-date-link">
-                            <a href="https://www.yuru-wota.com/archive/2020/03/10"
-                              rel="nofollow">
+            <div class="urllist-date-link recent-entries-date-link">
+  <a href="https://www.yuru-wota.com/archive/2020/03/10" rel="nofollow">
     <time pubdate datetime="2020-03-10T12:00:00Z" title="2020-03-10T12:00:00Z">
       2020-03-10
     </time>
   </a>
-                          </div>
+</div>
 
-                          <a href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline"
-                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】自分用コーディングガイドライン</a>
+          <a href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】自分用コーディングガイドライン</a>
 
-                        </div>
-                      </li>
 
-                      <li class="urllist-item recent-entries-item">
-                        <div
-                          class="urllist-item-inner recent-entries-item-inner">
+          
+          
 
-                          <div
-                            class="urllist-date-link recent-entries-date-link">
-                            <a href="https://www.yuru-wota.com/archive/2019/12/14"
-                              rel="nofollow">
+                </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+        
+                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error">
+  <img alt="【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）" src="https://cdn.image.st-hatena.com/image/square/27975e7625483b5a76374ba0fff3b1795c9968ea/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png" class="urllist-image recent-entries-image" title="【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）" width="90">
+</a>
+            <div class="urllist-date-link recent-entries-date-link">
+  <a href="https://www.yuru-wota.com/archive/2019/12/14" rel="nofollow">
     <time pubdate datetime="2019-12-14T10:00:00Z" title="2019-12-14T10:00:00Z">
       2019-12-14
     </time>
   </a>
-                          </div>
+</div>
 
-                          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error"
-                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）</a>
+          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）</a>
 
-                        </div>
-                      </li>
 
-                      <li class="urllist-item recent-entries-item">
-                        <div
-                          class="urllist-item-inner recent-entries-item-inner">
+          
+          
 
-                          <a class="urllist-image-link recent-entries-image-link"
-                            href="https://www.yuru-wota.com/entry/Batch/Conflict-with-Applications">
-  <img alt="【バッチファイル】何やらSTARTできてないモノが…？" src="https://cdn.image.st-hatena.com/image/square/ef208fce4d06bab075abf06c0b6e6897395133d2/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Flh3.googleusercontent.com%2F-kqSMwmR1LIU%2FXbRYhuBg9FI%2FAAAAAAAAAEo%2Fv-o_MS4AiHspVsDJEXvWbrOntKMQC1l6wCE0YBhgL%2Fs1200%2F20191026_Picture02.png" class="urllist-image recent-entries-image" title="【バッチファイル】何やらSTARTできてないモノが…？" width="90">
-</a>
-                          <div
-                            class="urllist-date-link recent-entries-date-link">
-                            <a href="https://www.yuru-wota.com/archive/2019/10/27"
-                              rel="nofollow">
-    <time pubdate datetime="2019-10-27T02:00:00Z" title="2019-10-27T02:00:00Z">
-      2019-10-27
-    </time>
-  </a>
-                          </div>
+                </div>
+    </li>
+  
+</ul>
 
-                          <a href="https://www.yuru-wota.com/entry/Batch/Conflict-with-Applications"
-                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【バッチファイル】何やらSTARTできてないモノが…？</a>
-
-                        </div>
-                      </li>
-
-                    </ul>
-
-                    <div
-                      class="urllist-see-more recent-entries-see-more">
-                      <a href="https://www.yuru-wota.com/archive"
-                        class="urllist-see-more-link recent-entries-see-more-link">
+          <div class="urllist-see-more recent-entries-see-more">
+        <a href="https://www.yuru-wota.com/archive"  class="urllist-see-more-link recent-entries-see-more-link">
           もっと見る
         </a>
-                    </div>
-                  </div>
-                </div>
+      </div>  </div>
+</div>
 
-                <div class="hatena-module hatena-module-archive"
-                  data-archive-type="default"
-                  data-archive-url="https://www.yuru-wota.com/archive">
-                  <div class="hatena-module-title">
-                    <a
-                      href="https://www.yuru-wota.com/archive">月別アーカイブ</a>
-                  </div>
-                  <div class="hatena-module-body">
-                  </div>
-                </div>
+    
+      
 
-                <div class="hatena-module hatena-module-category">
-                  <div class="hatena-module-title">
-                    カテゴリー
-                  </div>
-                  <div class="hatena-module-body">
-                    <ul class="hatena-urllist">
+<div class="hatena-module hatena-module-archive" data-archive-type="default" data-archive-url="https://www.yuru-wota.com/archive">
+  <div class="hatena-module-title">
+    <a href="https://www.yuru-wota.com/archive">月別アーカイブ</a>
+  </div>
+  <div class="hatena-module-body">
+  </div>
+</div>
 
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Batch"
-                          class="category-Batch">
+    
+      
+
+<div class="hatena-module hatena-module-category">
+  <div class="hatena-module-title">
+    カテゴリー
+  </div>
+  <div class="hatena-module-body">
+    <ul class="hatena-urllist">
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Batch" class="category-Batch">
             Batch (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Chatwork"
-                          class="category-Chatwork">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Chatwork" class="category-Chatwork">
             Chatwork (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/CSS"
-                          class="category-CSS">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/CSS" class="category-CSS">
             CSS (4)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Excel"
-                          class="category-Excel">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Excel" class="category-Excel">
             Excel (14)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Excel-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%82%AD%E3%83%BC"
-                          class="category-Excel-ショートカットキー">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Excel-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%82%AD%E3%83%BC" class="category-Excel-ショートカットキー">
             Excel-ショートカットキー (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Git"
-                          class="category-Git">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Git" class="category-Git">
             Git (8)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Google%20Analytics"
-                          class="category-Google-Analytics">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Google%20Analytics" class="category-Google-Analytics">
             Google Analytics (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/HTML"
-                          class="category-HTML">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/HTML" class="category-HTML">
             HTML (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0"
-                          class="category-HTML-タグ">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0" class="category-HTML-タグ">
             HTML-タグ (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0-kbd"
-                          class="category-HTML-タグ-kbd">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0-kbd" class="category-HTML-タグ-kbd">
             HTML-タグ-kbd (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/JacaScript%20%2F%20Google%20Apps%20Script-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA"
-                          class="category-JacaScript-/-Google-Apps-Script-ライブラリ">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/JacaScript%20%2F%20Google%20Apps%20Script-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" class="category-JacaScript-/-Google-Apps-Script-ライブラリ">
             JacaScript / Google Apps Script-ライブラリ (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script"
-                          class="category-JavaScript-/-Google-Apps-Script">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script" class="category-JavaScript-/-Google-Apps-Script">
             JavaScript / Google Apps Script (10)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-Gmail"
-                          class="category-JavaScript-/-Google-Apps-Script-Gmail">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-Gmail" class="category-JavaScript-/-Google-Apps-Script-Gmail">
             JavaScript / Google Apps Script-Gmail (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%8C%96"
-                          class="category-JavaScript-/-Google-Apps-Script-クラスとインスタンス化">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%8C%96" class="category-JavaScript-/-Google-Apps-Script-クラスとインスタンス化">
             JavaScript / Google Apps Script-クラスとインスタンス化 (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A"
-                          class="category-PC設定">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A" class="category-PC設定">
             PC設定 (10)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89"
-                          class="category-PC設定-キーボード">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89" class="category-PC設定-キーボード">
             PC設定-キーボード (4)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2"
-                          class="category-PC設定-フリーウェア">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2" class="category-PC設定-フリーウェア">
             PC設定-フリーウェア (3)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2-%E8%A7%A3%E5%87%8D%E3%82%BD%E3%83%95%E3%83%88"
-                          class="category-PC設定-フリーウェア-解凍ソフト">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2-%E8%A7%A3%E5%87%8D%E3%82%BD%E3%83%95%E3%83%88" class="category-PC設定-フリーウェア-解凍ソフト">
             PC設定-フリーウェア-解凍ソフト (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%9E%E3%82%A6%E3%82%B9"
-                          class="category-PC設定-マウス">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%9E%E3%82%A6%E3%82%B9" class="category-PC設定-マウス">
             PC設定-マウス (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD"
-                          class="category-PC設定-拡張機能">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD" class="category-PC設定-拡張機能">
             PC設定-拡張機能 (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PowerShell"
-                          class="category-PowerShell">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PowerShell" class="category-PowerShell">
             PowerShell (6)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/PowerShell-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86"
-                          class="category-PowerShell-パッケージ管理">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/PowerShell-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86" class="category-PowerShell-パッケージ管理">
             PowerShell-パッケージ管理 (5)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Slack"
-                          class="category-Slack">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Slack" class="category-Slack">
             Slack (3)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/Slack-Bot"
-                          class="category-Slack-Bot">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/Slack-Bot" class="category-Slack-Bot">
             Slack-Bot (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA"
-                          class="category-VBA">
-            VBA (22)
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA" class="category-VBA">
+            VBA (23)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88"
-                          class="category-VBA-エラー対策-チェックリスト">
-            VBA-エラー対策-チェックリスト (1)
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%82%A8%E3%83%A9%E3%83%BC" class="category-VBA-エラー対策-コンパイルエラー">
+            VBA-エラー対策-コンパイルエラー (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%A8%E3%83%A9%E3%83%BC"
-                          class="category-VBA-エラー対策-チェックリスト-実行時エラー">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88" class="category-VBA-エラー対策-チェックリスト">
+            VBA-エラー対策-チェックリスト (2)
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%A8%E3%83%A9%E3%83%BC" class="category-VBA-エラー対策-チェックリスト-実行時エラー">
             VBA-エラー対策-チェックリスト-実行時エラー (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3"
-                          class="category-VBA-コーディングガイドライン">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3" class="category-VBA-コーディングガイドライン">
             VBA-コーディングガイドライン (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%BB%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C"
-                          class="category-VBA-セルの操作">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%BB%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C" class="category-VBA-セルの操作">
             VBA-セルの操作 (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C"
-                          class="category-VBA-テーブルの操作">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C" class="category-VBA-テーブルの操作">
             VBA-テーブルの操作 (5)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%93%8D%E4%BD%9C"
-                          class="category-VBA-文字列の操作">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%93%8D%E4%BD%9C" class="category-VBA-文字列の操作">
             VBA-文字列の操作 (4)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E9%80%86%E5%BC%95%E3%81%8D%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9"
-                          class="category-VBA-逆引きリファレンス">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VBA-%E9%80%86%E5%BC%95%E3%81%8D%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9" class="category-VBA-逆引きリファレンス">
             VBA-逆引きリファレンス (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VS%20Code"
-                          class="category-VS-Code">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VS%20Code" class="category-VS-Code">
             VS Code (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/VS%20Code-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA"
-                          class="category-VS-Code-カスタマイズ">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/VS%20Code-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA" class="category-VS-Code-カスタマイズ">
             VS Code-カスタマイズ (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD"
-                          class="category-■ただいま勉強中">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD" class="category-■ただいま勉強中">
             ■ただいま勉強中 (15)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA"
-                          class="category-■ブログカスタマイズ">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA" class="category-■ブログカスタマイズ">
             ■ブログカスタマイズ (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF"
-                          class="category-■ブログカスタマイズ-コードブロック">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF" class="category-■ブログカスタマイズ-コードブロック">
             ■ブログカスタマイズ-コードブロック (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%83%9C%E3%82%BF%E3%83%B3"
-                          class="category-■ブログカスタマイズ-ボタン">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%83%9C%E3%82%BF%E3%83%B3" class="category-■ブログカスタマイズ-ボタン">
             ■ブログカスタマイズ-ボタン (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC"
-                          class="category-■プログラム全般">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC" class="category-■プログラム全般">
             ■プログラム全般 (42)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%96%87%E6%B3%95%E3%83%BB%E6%A7%8B%E6%96%87"
-                          class="category-■プログラム全般-文法・構文">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%96%87%E6%B3%95%E3%83%BB%E6%A7%8B%E6%96%87" class="category-■プログラム全般-文法・構文">
             ■プログラム全般-文法・構文 (11)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5"
-                          class="category-■プログラム全般-概念">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5" class="category-■プログラム全般-概念">
             ■プログラム全般-概念 (3)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91"
-                          class="category-■プログラム全般-概念-オブジェクト指向">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91" class="category-■プログラム全般-概念-オブジェクト指向">
             ■プログラム全般-概念-オブジェクト指向 (3)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%81%BF%E3%81%98%E3%81%8B%E3%82%81"
-                          class="category-◆みじかめ">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%81%BF%E3%81%98%E3%81%8B%E3%82%81" class="category-◆みじかめ">
             ◆みじかめ (4)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94"
-                          class="category-◆ノンプロ研">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94" class="category-◆ノンプロ研">
             ◆ノンプロ研 (7)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-Advent%20Calender"
-                          class="category-◆ノンプロ研-Advent-Calender">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-Advent%20Calender" class="category-◆ノンプロ研-Advent-Calender">
             ◆ノンプロ研-Advent Calender (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E3%83%81%E3%83%BC%E3%83%A0%E6%9D%B1%E5%8C%97"
-                          class="category-◆ノンプロ研-チーム東北">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E3%83%81%E3%83%BC%E3%83%A0%E6%9D%B1%E5%8C%97" class="category-◆ノンプロ研-チーム東北">
             ◆ノンプロ研-チーム東北 (4)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E5%AE%9A%E4%BE%8B%E4%BC%9A"
-                          class="category-◆ノンプロ研-定例会">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E5%AE%9A%E4%BE%8B%E4%BC%9A" class="category-◆ノンプロ研-定例会">
             ◆ノンプロ研-定例会 (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF"
-                          class="category-うっかりハック">
-            うっかりハック (4)
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF" class="category-うっかりハック">
+            うっかりハック (5)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF-%E3%81%B7%E3%81%A1"
-                          class="category-うっかりハック-ぷち">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF-%E3%81%B7%E3%81%A1" class="category-うっかりハック-ぷち">
             うっかりハック-ぷち (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%93%E3%81%AE%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
-                          class="category-このブログについて">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%81%93%E3%81%AE%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" class="category-このブログについて">
             このブログについて (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%98%E3%81%B6%E3%82%93%E3%81%AE%E3%81%93%E3%81%A8"
-                          class="category-じぶんのこと">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%81%98%E3%81%B6%E3%82%93%E3%81%AE%E3%81%93%E3%81%A8" class="category-じぶんのこと">
             じぶんのこと (3)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB"
-                          class="category-アイドル">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB" class="category-アイドル">
             アイドル (5)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD"
-                          class="category-アイドル-ハロプロ">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD" class="category-アイドル-ハロプロ">
             アイドル-ハロプロ (5)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-BEYOOOOONDS"
-                          class="category-アイドル-ハロプロ-BEYOOOOONDS">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-BEYOOOOONDS" class="category-アイドル-ハロプロ-BEYOOOOONDS">
             アイドル-ハロプロ-BEYOOOOONDS (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-Juice%3DJuice"
-                          class="category-アイドル-ハロプロ-Juice=Juice">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-Juice%3DJuice" class="category-アイドル-ハロプロ-Juice=Juice">
             アイドル-ハロプロ-Juice=Juice (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%98%E3%80%82"
-                          class="category-アイドル-ハロプロ-モーニング娘。">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%98%E3%80%82" class="category-アイドル-ハロプロ-モーニング娘。">
             アイドル-ハロプロ-モーニング娘。 (3)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8"
-                          class="category-読書">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8" class="category-読書">
             読書 (5)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8-%E5%86%99%E7%B5%8C"
-                          class="category-読書-写経">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8-%E5%86%99%E7%B5%8C" class="category-読書-写経">
             読書-写経 (4)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9"
-                          class="category-買い物">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9" class="category-買い物">
             買い物 (2)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9-%E5%AE%B6%E9%9B%BB"
-                          class="category-買い物-家電">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9-%E5%AE%B6%E9%9B%BB" class="category-買い物-家電">
             買い物-家電 (1)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E9%81%8E%E5%8E%BB%E8%A8%98%E4%BA%8B"
-                          class="category-過去記事">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E9%81%8E%E5%8E%BB%E8%A8%98%E4%BA%8B" class="category-過去記事">
             過去記事 (14)
           </a>
-                      </li>
-
-                      <li>
-                        <a href="https://www.yuru-wota.com/archive/category/%E9%9B%91%E8%A8%98"
-                          class="category-雑記">
+        </li>
+      
+        <li>
+          <a href="https://www.yuru-wota.com/archive/category/%E9%9B%91%E8%A8%98" class="category-雑記">
             雑記 (2)
           </a>
-                      </li>
+        </li>
+      
+    </ul>
+  </div>
+</div>
 
-                    </ul>
-                  </div>
-                </div>
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">目次</div>
+  <div class="hatena-module-body">
+    <!-- -->
+<nav id='stoc'></nav>
+  </div>
+</div>
 
-              </div>
-            </aside>
+    
+    
+  </div>
+</aside>
 
-          </div>
-        </div>
 
-        <div id="bottom-editarea">
-          <!-- パンくずリスト -->
-          <!-- CopyRight http://blog.wackwack.net/entry/2016/09/22/185558 -->
+  </div>
+</div>
 
-          <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-          <script
-            src="https://hatena.wackwack.net/v1.1/js/breadcrumb.min.js"></script>
 
-          <script
-            src="https://hatena.wackwack.net/v1.1/js/category_archive.min.js"></script>
 
-          <!-- クリックすると表示される目次 -->
-          <!--
- 参照 https://www.life-is-rpg.com/entry/2018/03/16/110000
--->
+        
 
-          <script type="text/javascript"
-            src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        
+  <div id="bottom-editarea">
+    <!-- *********************************************
+ * パンくずリスト
+ * CopyRight
+ * http://blog.wackwack.net/entry/2016/09/22/185558
+************************************************ -->
+<!-- jQuery (3.3.1)  -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- main -->
+<script type="text/javascript" src="https://hatena.wackwack.net/v1.1/js/breadcrumb.min.js"></script>
+<script type="text/javascript" src="https://hatena.wackwack.net/v1.1/js/category_archive.min.js"></script>
 
-          <script>
-            $(function () {
-              var $Contents = $(".table-of-contents")
-              $($Contents).before('目次<span class="show-area" style="color: blue;">[▼表示]</span>');
-              $(".show-area").click(function () {
-                var $this = $(this);
-                if ($Contents.css('display') == 'none') {
-                  $Contents.slideDown(100),
-                    $this.text("[▲隠す]");
-                } else {
-                  $Contents.slideUp(100),
-                    $this.text("[▼表示]")
-                };
-              });
-            });
-          </script>
-        </div>
+<!-- *********************************************
+ * lazy load
+ * 【参考】
+ * はてなブログでLazy Loadを使う方法！コピペで簡単に使える！｜パソコン・ブログガイド
+ * https://www.gipsyjazznyumon.com/lazy-load-for-hatenablog/
+************************************************ -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/eFooter/lazyLoad.js"></script>
+
+<!-- *********************************************
+ * 追尾する目次（ver3.3.0）
+ * 【参考】
+ * https://git.io/stoc
+************************************************ -->
+<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/eFooter/tocOnSideBar.js"></script>
+
+  </div>
+
 
       </div>
     </div>
+    
+<footer id="footer" data-brand="hatenablog">
+  <div id="footer-inner">
+    
+      <div style="display:none !important" class="guest-footer js-guide-register test-blogs-register-guide" data-action="guide-register">
+  <div class="guest-footer-content">
+    <h3>はてなブログをはじめよう！</h3>
+    <p>yuricks7さんは、はてなブログを使っています。あなたもはてなブログをはじめてみませんか？</p>
+    <div class="guest-footer-btn-container">
+      <div  class="guest-footer-btn">
+        <a class="btn btn-register js-inherit-ga" href="https://blog.hatena.ne.jp/register?via=200227" target="_blank">はてなブログをはじめる（無料）</a>
+      </div>
+      <div  class="guest-footer-btn">
+        <a href="https://hatenablog.com/guide" target="_blank">はてなブログとは</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <footer id="footer" data-brand="hatenablog">
-      <div id="footer-inner">
-
-        <div style="display:none !important"
-          class="guest-footer js-guide-register test-blogs-register-guide"
-          data-action="guide-register">
-          <div class="guest-footer-content">
-
-            <h3>はてなブログをはじめよう！</h3>
-            <p>yuricks7さんは、はてなブログを使っています。あなたもはてなブログをはじめてみませんか？</p>
-            <div class="guest-footer-btn-container">
-              <div class="guest-footer-btn">
-                <a class="btn btn-register js-inherit-ga"
-                  href="https://blog.hatena.ne.jp/register?via=200227"
-                  target="_blank">はてなブログをはじめる（無料）</a>
-              </div>
-              <div class="guest-footer-btn">
-                <a href="https://hatenablog.com/guide"
-                  target="_blank">はてなブログとは</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <address class="footer-address">
-          <a href="https://www.yuru-wota.com/">
+    
+    <address class="footer-address">
+      <a href="https://www.yuru-wota.com/">
         <img src="https://cdn.blog.st-hatena.com/images/admin/blog-icon-noimage.png" width="16" height="16" alt="ゆるおたノート"/>
         <span class="footer-address-name">ゆるおたノート</span>
       </a>
-        </address>
-        <p class="services">
+    </address>
+    <p class="services">
       Powered by <a href="https://hatenablog.com/">Hatena Blog</a>
       |
         <a href="https://blog.hatena.ne.jp/-/abuse_report?target_url=https%3A%2F%2Fwww.yuru-wota.com%2Fpreview" class="report-abuse-link test-report-abuse-link" target="_blank">ブログを報告する</a>
     </p>
-      </div>
-    </footer>
+  </div>
+</footer>
 
-    <script
-      src="https://s.hatena.ne.jp/js/HatenaStar.js?20191001"></script>
 
-    <div class="quote-box">
-      <div class="tooltip-quote tooltip-quote-star">
-        <i class="blogicon-star" title="引用スターをつける"></i>
-      </div>
-      <div class="tooltip-quote tooltip-quote-stock">
-        <i class="blogicon-quote" title="引用をストック"></i>
-      </div>
-      <div
-        class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet">
-        <a class="js-tweet-quote" target="_blank"
-          data-track-name="quote-tweet"
-          data-track-once><i class="blogicon-twitter" title="引用してツイートする"></i></a>
-      </div>
-    </div>
+    
 
-    <div class="message-box" id="quote-star-message-box"
-      style="display: none; position: absolute;">
-      スターをつけました
-    </div>
+    
+  <script src="https://s.hatena.ne.jp/js/HatenaStar.js?20191001"></script>
 
-    <div class="quote-stock-panel" id="quote-stock-message-box"
-      style="position: absolute; z-index: 3000">
-      <div class="message-box" id="quote-stock-succeeded-message"
-        style="display: none">
-        <p>引用をストックしました</p>
-        <button class="btn btn-primary"
-          id="quote-stock-show-editor-button"
-          data-track-name="curation-quote-edit-button">ストック一覧を見る</button>
-        <button
-          class="btn quote-stock-close-message-button">閉じる</button>
-      </div>
 
-      <div class="message-box" id="quote-login-required-message"
-        style="display: none">
-        <p>引用するにはまずログインしてください</p>
-        <button class="btn btn-primary"
-          id="quote-login-button">ログイン</button>
-        <button
-          class="btn quote-stock-close-message-button">閉じる</button>
-      </div>
+    
+    
 
-      <div class="error-box" id="quote-stock-failed-message"
-        style="display: none">
-        <p>引用をストックできませんでした。再度お試しください</p>
-        <button
-          class="btn quote-stock-close-message-button">閉じる</button>
-      </div>
+<div class="quote-box">
+  <div class="tooltip-quote tooltip-quote-star">
+    <i class="blogicon-star" title="引用スターをつける"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-stock">
+    <i class="blogicon-quote" title="引用をストック"></i>
+  </div>
+  <div class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet">
+    <a class="js-tweet-quote" target="_blank" data-track-name="quote-tweet" data-track-once><i class="blogicon-twitter" title="引用してツイートする"></i></a>
+  </div>
+</div>
 
-      <div class="error-box" id="unstockable-quote-message-box"
-        style="display: none; position: absolute; z-index: 3000;">
-        <p>限定公開記事のため引用できません。</p>
-      </div>
-    </div>
+<div class="message-box" id="quote-star-message-box" style="display: none; position: absolute;">
+  スターをつけました
+</div>
 
-    <script type="x-underscore-template"
-      id="js-requote-button-template">
+<div class="quote-stock-panel" id="quote-stock-message-box" style="position: absolute; z-index: 3000">
+  <div class="message-box" id="quote-stock-succeeded-message" style="display: none">
+    <p>引用をストックしました</p>
+    <button class="btn btn-primary" id="quote-stock-show-editor-button" data-track-name="curation-quote-edit-button">ストック一覧を見る</button>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="message-box" id="quote-login-required-message" style="display: none">
+    <p>引用するにはまずログインしてください</p>
+    <button class="btn btn-primary" id="quote-login-button">ログイン</button>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="error-box" id="quote-stock-failed-message" style="display: none">
+    <p>引用をストックできませんでした。再度お試しください</p>
+    <button class="btn quote-stock-close-message-button">閉じる</button>
+  </div>
+
+  <div class="error-box" id="unstockable-quote-message-box" style="display: none; position: absolute; z-index: 3000;">
+    <p>限定公開記事のため引用できません。</p>
+  </div>
+</div>
+
+<script type="x-underscore-template" id="js-requote-button-template">
   <div class="requote-button js-requote-button">
     <button class="requote-button-btn tipsy-top" title="引用する"><i class="blogicon-quote"></i></button>
   </div>
 </script>
 
-    <div id="hidden-subscribe-button" style="display: none;">
-      <div
-        class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
 
-        <a href="#"
-          class="hatena-follow-button js-hatena-follow-button">
+
+    
+    <div id="hidden-subscribe-button" style="display: none;">
+      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box"
+  
+  >
+
+  <a href="#" class="hatena-follow-button js-hatena-follow-button">
     <span class="subscribing">
       <span class="foreground">読者です</span>
       <span class="background">読者をやめる</span>
@@ -1825,50 +1695,53 @@ Material Theme Palenight High Contrast<br>
       <span class="background">読者になる</span>
     </span>
   </a>
-        <div class="subscription-count-box js-subscription-count-box">
-          <i></i>
-          <u></u>
-          <span class="subscription-count js-subscription-count">
+  <div class="subscription-count-box js-subscription-count-box">
+    <i></i>
+    <u></u>
+    <span class="subscription-count js-subscription-count">
     </span>
-        </div>
-      </div>
+  </div>
+</div>
 
     </div>
 
-    <script type="text/javascript"
-      src="https://platform.twitter.com/widgets.js"></script>
+    
+  <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
 
-    <script type="text/javascript"
-      src="https://b.st-hatena.com/js/bookmark_button.js"
-      charset="utf-8" async="async"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 
-    <script type="text/javascript"
-      src="https://cdn.blog.st-hatena.com/js/external/jquery.min.js?version=1.12.3"></script>
 
-    <script type="text/javascript"
-      src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.js?version=0.8.3"></script>
+<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.min.js?version=1.12.3"></script>
+<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.js?version=0.8.3"></script>
+<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.time.js?version=0.8.3"></script>
+<script id="vendor-js" data-env="production" type="text/javascript" src="https://cdn.blog.st-hatena.com/js/vendor.js?version=3666b64dd7f91e9633de4fee56e0bed192084078&amp;env=production" crossorigin="anonymous"></script>
 
-    <script type="text/javascript"
-      src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.time.js?version=0.8.3"></script>
 
-    <script id="vendor-js" data-env="production"
-      type="text/javascript"
-      src="https://cdn.blog.st-hatena.com/js/vendor.js?version=0db50ad808c705267f6a1dce36574039516810b0&amp;env=production"
-      crossorigin="anonymous"></script>
 
-    <script type="text/javascript"
-      src="https://cdn.blog.st-hatena.com/js/texts-ja.js?version=af5e84b47288c9edcb63dd3bd5021a40cbc6ce9a&amp;env=production"></script>
 
-    <script id="hatenablog-js" data-env="production"
-      type="text/javascript"
-      src="https://cdn.blog.st-hatena.com/js/hatenablog.js?version=e95383d5e4b45fd11a7bac20783875444af2052a&amp;env=production"
-      crossorigin="anonymous"></script>
 
-    <script
-      type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
+<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/texts-ja.js?version=a3041712612329192b782c15cb657bc27371800a&amp;env=production"></script>
+<script id="hatenablog-js" data-env="production"
+  type="text/javascript" src="https://cdn.blog.st-hatena.com/js/hatenablog.js?version=34cbd25e650ec25360a7f6e3f00afc62d47e4664&amp;env=production" crossorigin="anonymous"></script>
 
-    <script src="https://www.google.com/recaptcha/api.js" async
-      defer></script>
+
+  <script type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+
+
+
+    
+
+    
+
+
+
+
 
   </body>
 </html>
