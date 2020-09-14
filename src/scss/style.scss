@@ -410,8 +410,8 @@ footer {
     border-left  : 8px solid themeColor(1);
     border-bottom: 1px solid themeColor(1);
 
-    color    : charBlack(1);
     font-size: 1.4em;
+    color    : charBlack(1);
   }
 
   /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
@@ -440,9 +440,14 @@ footer {
   }
 
   h6 {
-    margin : 26px 10px 20px;
+    margin: 26px 10px 20px 0;
+    padding-left: 4px;
+    padding-bottom: 4px;
 
-    font-size: 1.15em;
+    border-bottom: 1px solid charBlack(.4);;
+
+    font-size: 1.16em;
+    color    : charBlack(1);
   }
 
   /*--------------------------------------
