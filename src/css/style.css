@@ -1315,8 +1315,8 @@ footer .comment-box {
   background-color: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 1px solid #1d8aff;
-  color: #050505;
   font-size: 1.4em;
+  color: #050505;
 }
 
 .entry-content h4 {
@@ -1341,8 +1341,12 @@ footer .comment-box {
 }
 
 .entry-content h6 {
-  margin: 26px 10px 20px;
-  font-size: 1.15em;
+  margin: 26px 10px 20px 0;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.4);
+  font-size: 1.16em;
+  color: #050505;
 }
 
 .entry-content p {
