@@ -959,7 +959,7 @@ header.archive-heading {
 }
 
 .archive-entry a:visited {
-  color: #106d2f;
+  color: #050505;
 }
 
 .archive-entry a:hover {
@@ -969,6 +969,26 @@ header.archive-heading {
 
 .archive-entry .archive-date {
   margin: 0;
+  font-weight: bold;
+}
+
+.archive-entry .archive-date time {
+  text-decoration: none !important;
+}
+
+.archive-entry .archive-date time a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.archive-entry .archive-date time a:visited {
+  color: #050505;
+}
+
+.archive-entry .archive-date time a:hover {
+  color: #0a21e6;
   font-weight: bold;
 }
 
@@ -1088,7 +1108,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body a:visited {
-  color: #106d2f;
+  color: rgba(5, 5, 5, 0.9);
 }
 
 .hatena-module .hatena-module-body a:hover {
@@ -1126,6 +1146,23 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body time {
   color: rgba(5, 5, 5, 0.8);
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.hatena-module .hatena-module-body time a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body time a:visited {
+  color: #050505;
+}
+
+.hatena-module .hatena-module-body time a:hover {
+  color: #0a21e6;
   font-weight: bold;
 }
 
@@ -1151,7 +1188,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:visited {
-  color: #106d2f;
+  color: #050505;
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:hover {
@@ -1332,7 +1369,7 @@ footer .comment-box {
 
 .entry-content h5 {
   margin: 36px 4px 20px;
-  padding: 4px 6px;
+  padding: 4px 10px;
   border-left: 6px solid #1d8aff;
   font-size: 1.2em;
   color: #050505;
@@ -2170,10 +2207,28 @@ footer .comment-box {
 /* コンテンツ */
 #stoc {
   overflow-y: auto;
+  text-decoration: none !important;
+  /* Shadows */
+  /* Shadow covers */
+}
+
+#stoc a:link {
+  /* 未訪問 */
+  color: #050505;
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+#stoc a:visited {
+  color: #106d2f;
+}
+
+#stoc a:hover {
+  color: #0a21e6;
+  font-weight: bold;
 }
 
 #stoc .shadow {
-  /* Shadows */
   background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.17), transparent) top/100% 11px, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.17), transparent) bottom/100% 11px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -2190,7 +2245,6 @@ footer .comment-box {
 }
 
 #stoc .shadow > ol {
-  /* Shadow covers */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 40px, -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #fff)) bottom/100% 40px;
   background: linear-gradient(#fff 30%, transparent) top/100% 40px, linear-gradient(transparent, #fff 70%) bottom/100% 40px;
   background-repeat: no-repeat;

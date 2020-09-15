@@ -1267,8 +1267,6 @@ footer .comment-box {
   /*--------------------------------------
     見出し
   --------------------------------------*/
-  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
-     https://saruwakakun.com/html-css/reference/h-design */
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
@@ -1358,7 +1356,7 @@ footer .comment-box {
 
 .entry-content h4 {
   margin: 40px 3px 30px;
-  padding: 3px 3px;
+  padding: 3px 10px;
   background-color: rgba(29, 138, 255, 0.1);
   border-top: 2px solid #1d8aff;
   border-bottom: 2px solid #1d8aff;
@@ -1375,7 +1373,7 @@ footer .comment-box {
 }
 
 .entry-content h6 {
-  margin: 26px 0 20px;
+  margin: 26px  0   20px;
   padding: 4px;
   border-top: 2px solid #1d8aff;
   border-bottom: 2px solid #1d8aff;

@@ -428,11 +428,9 @@ footer {
     color    : charBlack(1);
   }
 
-  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
-     https://saruwakakun.com/html-css/reference/h-design */
   h4 {
     margin : 40px 3px 30px;
-    padding:  3px 3px;
+    padding:  3px 10px;
 
     background-color: themeColor(.1);
     border-top   : 2px solid themeColor(1);
@@ -453,7 +451,7 @@ footer {
   }
 
   h6 {
-    margin : 26px 0 20px;
+    margin : 26px  0   20px;
     padding:  4px;
 
     border-top   : 2px solid themeColor(1);
