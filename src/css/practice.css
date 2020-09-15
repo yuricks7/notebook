@@ -648,16 +648,6 @@ textarea,
     font-size: 1.6em !important;
   }
   /*--------------------------------------
-    テーブルにスクロールバーを付ける
-
-    【参考】
-    Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
-    https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
-  --------------------------------------*/
-  .table-scroll {
-    overflow-x: scroll;
-  }
-  /*--------------------------------------
     改行をレスポンシブに(?)
 
     【参考】
@@ -1268,8 +1258,6 @@ footer .comment-box {
   /*--------------------------------------
     見出し
   --------------------------------------*/
-  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
-     https://saruwakakun.com/html-css/reference/h-design */
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
@@ -1358,8 +1346,8 @@ footer .comment-box {
 }
 
 .entry-content h4 {
-  margin: 40px 3px 30px;
-  padding: 3px 3px;
+  margin: 40px  3px 30px;
+  padding: 3px 10px;
   background-color: rgba(29, 138, 255, 0.1);
   border-top: 2px solid #1d8aff;
   border-bottom: 2px solid #1d8aff;
@@ -1369,7 +1357,7 @@ footer .comment-box {
 
 .entry-content h5 {
   margin: 36px 4px 20px;
-  padding: 4px 10px;
+  padding: 4px 6px;
   border-left: 6px solid #1d8aff;
   font-size: 1.2em;
   color: #050505;
@@ -1754,6 +1742,26 @@ footer .comment-box {
   content: counter(linenumber);
   /* 擬似要素として行番号を表示 */
   color: #cccccc;
+}
+
+.entry-content table {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  /* 横スクロール */
+  overflow-x: scroll;
+  width: auto;
+  max-width: 980px;
+  white-space: nowrap;
+  /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch;
+  /* スマホでも滑らかに */
+  border-radius: 3px;
+  border: 1px solid rgba(5, 5, 5, 0.05);
+}
+
+.entry-content th {
+  background-color: rgba(5, 5, 5, 0.025);
 }
 
 .entry-content td {
