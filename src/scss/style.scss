@@ -428,11 +428,9 @@ footer {
     color    : charBlack(1);
   }
 
-  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
-     https://saruwakakun.com/html-css/reference/h-design */
   h4 {
-    margin : 40px 3px 30px;
-    padding:  3px 3px;
+    margin : 40px  3px 30px;
+    padding:  3px 10px;
 
     background-color: themeColor(.1);
     border-top   : 2px solid themeColor(1);
@@ -842,10 +840,43 @@ footer {
   /*--------------------------------------
     テーブルの表示
   --------------------------------------*/
+  table {
+    margin-left : $side-margin;
+    margin-right: $side-margin;
+
+    // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
+    // https://qiita.com/ymeeto/items/f165576f49f37e28e253
+    display: block;
+
+    /* 横スクロール */
+    overflow-x: scroll;
+    width: auto;
+    max-width: 980px;
+
+    // /* 縦スクロール */
+    // overflow-y: scroll;
+    // height: auto;
+    // max-height: 980px;
+
+    white-space: nowrap;               /* 自動改行をoff */
+    -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
+
+    border-radius: 3px;
+    border: 1px solid charBlack(.05);
+  }
+
+  th {
+    // width: 100px;
+    background-color: charBlack(.025);
+  }
+
   td {
+    // width: 100px;
+    // position: sticky;
     font-size  :  .9em;
     line-height: 1.3em;
   }
+
 
   /*--------------------------------------
     キリトリ線

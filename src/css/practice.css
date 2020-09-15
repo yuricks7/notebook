@@ -648,16 +648,6 @@ textarea,
     font-size: 1.6em !important;
   }
   /*--------------------------------------
-    テーブルにスクロールバーを付ける
-
-    【参考】
-    Shibablog(しばぶろ) - はてなブログでスマホだと表が見切れてしまう時の３つの対策！
-    https://www.sibalove.com/entry/hatena-table#%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B
-  --------------------------------------*/
-  .table-scroll {
-    overflow-x: scroll;
-  }
-  /*--------------------------------------
     改行をレスポンシブに(?)
 
     【参考】
@@ -959,7 +949,7 @@ header.archive-heading {
 }
 
 .archive-entry a:visited {
-  color: #106d2f;
+  color: #050505;
 }
 
 .archive-entry a:hover {
@@ -969,6 +959,26 @@ header.archive-heading {
 
 .archive-entry .archive-date {
   margin: 0;
+  font-weight: bold;
+}
+
+.archive-entry .archive-date time {
+  text-decoration: none !important;
+}
+
+.archive-entry .archive-date time a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.archive-entry .archive-date time a:visited {
+  color: #050505;
+}
+
+.archive-entry .archive-date time a:hover {
+  color: #0a21e6;
   font-weight: bold;
 }
 
@@ -1088,7 +1098,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body a:visited {
-  color: #106d2f;
+  color: rgba(5, 5, 5, 0.9);
 }
 
 .hatena-module .hatena-module-body a:hover {
@@ -1126,6 +1136,23 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body time {
   color: rgba(5, 5, 5, 0.8);
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.hatena-module .hatena-module-body time a:link {
+  /* 未訪問 */
+  color: rgba(10, 33, 230, 0.9);
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+.hatena-module .hatena-module-body time a:visited {
+  color: #050505;
+}
+
+.hatena-module .hatena-module-body time a:hover {
+  color: #0a21e6;
   font-weight: bold;
 }
 
@@ -1151,7 +1178,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:visited {
-  color: #106d2f;
+  color: #050505;
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:hover {
@@ -1231,8 +1258,6 @@ footer .comment-box {
   /*--------------------------------------
     見出し
   --------------------------------------*/
-  /* CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選
-     https://saruwakakun.com/html-css/reference/h-design */
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
@@ -1321,8 +1346,8 @@ footer .comment-box {
 }
 
 .entry-content h4 {
-  margin: 40px 3px 30px;
-  padding: 3px 3px;
+  margin: 40px  3px 30px;
+  padding: 3px 10px;
   background-color: rgba(29, 138, 255, 0.1);
   border-top: 2px solid #1d8aff;
   border-bottom: 2px solid #1d8aff;
@@ -1717,6 +1742,26 @@ footer .comment-box {
   content: counter(linenumber);
   /* 擬似要素として行番号を表示 */
   color: #cccccc;
+}
+
+.entry-content table {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  /* 横スクロール */
+  overflow-x: scroll;
+  width: auto;
+  max-width: 980px;
+  white-space: nowrap;
+  /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch;
+  /* スマホでも滑らかに */
+  border-radius: 3px;
+  border: 1px solid rgba(5, 5, 5, 0.05);
+}
+
+.entry-content th {
+  background-color: rgba(5, 5, 5, 0.025);
 }
 
 .entry-content td {
@@ -2170,10 +2215,28 @@ footer .comment-box {
 /* コンテンツ */
 #stoc {
   overflow-y: auto;
+  text-decoration: none !important;
+  /* Shadows */
+  /* Shadow covers */
+}
+
+#stoc a:link {
+  /* 未訪問 */
+  color: #050505;
+  font-style: normal;
+  text-decoration: none !important;
+}
+
+#stoc a:visited {
+  color: #106d2f;
+}
+
+#stoc a:hover {
+  color: #0a21e6;
+  font-weight: bold;
 }
 
 #stoc .shadow {
-  /* Shadows */
   background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.17), transparent) top/100% 11px, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.17), transparent) bottom/100% 11px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -2190,7 +2253,6 @@ footer .comment-box {
 }
 
 #stoc .shadow > ol {
-  /* Shadow covers */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 40px, -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #fff)) bottom/100% 40px;
   background: linear-gradient(#fff 30%, transparent) top/100% 40px, linear-gradient(transparent, #fff 70%) bottom/100% 40px;
   background-repeat: no-repeat;
