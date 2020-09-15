@@ -866,13 +866,10 @@ footer {
   }
 
   th {
-    // width: 100px;
-    background-color: charBlack(.025);
+    background-color: charBlack(.03) !important;
   }
 
   td {
-    // width: 100px;
-    // position: sticky;
     font-size  :  .9em;
     line-height: 1.3em;
   }
