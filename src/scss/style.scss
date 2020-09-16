@@ -379,10 +379,10 @@ footer {
   &:before {
     margin-right: 10px;
 
-    content: "f02b";
-    font-family: "blogicon-repeat";
-    // content: '\f021'; /* 更新マーク（repeat） */
-    // font-family: FontAwesome;
+    // content: "f02b";
+    // font-family: "blogicon-repeat";
+    content: '\f021'; /* 更新マーク（repeat） */
+    font-family: FontAwesome;
     font-size: 16px !important;
   }
 }
