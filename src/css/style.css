@@ -1215,9 +1215,8 @@ footer .comment-box {
 
 .lastmod:before {
   margin-right: 10px;
-  content: '\f021';
-  /* 更新マーク */
-  font-family: FontAwesome;
+  content: "blogicon-repeat";
+  font-family: "f02b";
   font-size: 16px !important;
 }
 
@@ -2285,5 +2284,90 @@ footer .comment-box {
 
 #stoc::-webkit-scrollbar-thumb {
   background: #b1b1b1;
+}
+
+/**
+ * シェアボタン
+ *
+ * 【参考】
+ *  はてなブログのSNSボタンをおしゃれにカスタマイズする方法｜パソコン・ブログガイド
+ *  https://www.gipsyjazznyumon.com/hatenablog-social-media-buttons-custmize/
+ */
+.share-btn-type2 {
+  margin: 0.8em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.share-btn-type2 .share-btn__item {
+  width: 13.5%;
+  height: 30px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.share-btn-type2 .share-btn__item:hover {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 #333;
+          box-shadow: 0 0 #333;
+}
+
+.share-btn-type2 .share-btn__item--tumblr {
+  background-color: #35465c;
+  -webkit-box-shadow: 0 4px #010101;
+          box-shadow: 0 4px #010101;
+}
+
+.share-btn-type2 .share-btn__item--facebook {
+  background-color: #1778F2;
+  -webkit-box-shadow: 0 4px #1366ce;
+          box-shadow: 0 4px #1366ce;
+}
+
+.share-btn-type2 .share-btn__item--twitter {
+  background-color: #1BA1F3;
+  -webkit-box-shadow: 0 4px #1280c3;
+          box-shadow: 0 4px #1280c3;
+}
+
+.share-btn-type2 .share-btn__item--hatebu {
+  background-color: #00A4DE;
+  -webkit-box-shadow: 0 4px #038ebf;
+          box-shadow: 0 4px #038ebf;
+}
+
+.share-btn-type2 .share-btn__item--pocket {
+  background-color: #EF4155;
+  -webkit-box-shadow: 0 4px #c3293b;
+          box-shadow: 0 4px #c3293b;
+}
+
+.share-btn-type2 .share-btn__item--feedly {
+  background-color: #2bb24c;
+  -webkit-box-shadow: 0 4px #247739;
+          box-shadow: 0 4px #247739;
+}
+
+.share-btn-type2 .share-btn__item--rss {
+  background-color: #f26522;
+  -webkit-box-shadow: 0 4px #9e531d;
+          box-shadow: 0 4px #9e531d;
+}
+
+.share-btn-type2 .share-btn__item--hateblo {
+  background-color: #dfdfdf;
+  -webkit-box-shadow: 0 4px #515151;
+          box-shadow: 0 4px #515151;
+  color: #000;
 }
 /*# sourceMappingURL=style.css.map */
