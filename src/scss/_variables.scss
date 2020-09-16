@@ -167,3 +167,75 @@ $side-margin: 10px;
 
   img { display  : none; }
 }
+
+@mixin shareBtns($width, $height) {
+  .color-share-btns {
+    margin: 0.8em 0;
+    display: flex;
+    justify-content: space-between;
+
+    .share-btn-item {
+      width : $width;
+      height: $height;
+      border-radius: 4px;
+
+      color: #fff;
+      font-size  : 16px;
+      text-align : center;
+      line-height: $height;
+
+      transition : all .3s;
+
+      &:hover {
+        transform: translateY(4px);
+        box-shadow: 0 0 #333;
+      }
+    }
+
+    @include shareBtnColors();
+  }
+}
+
+@mixin shareBtnColors() {
+  .tumblr {
+    background-color: #35465c;
+    box-shadow: 0 4px #010101;
+  }
+
+  .facebook {
+    background-color: #1778F2;
+    box-shadow: 0 4px #1366ce;
+  }
+
+  .twitter {
+    background-color: #1BA1F3;
+    box-shadow: 0 4px #1280c3;
+  }
+
+  .hatebu {
+    background-color: #00A4DE;
+    box-shadow: 0 4px #038ebf;
+  }
+
+  .pocket {
+    background-color: #EF4155;
+    box-shadow: 0 4px #c3293b;
+  }
+
+  .feedly {
+    background-color: #2bb24c;
+    box-shadow: 0 4px #247739;
+  }
+
+  .rss {
+    background-color: #f26522;
+    box-shadow: 0 4px #9e531d;
+  }
+
+  .hateblo {
+    background-color: #dfdfdf;
+    box-shadow: 0 4px #515151;
+
+    color: #000;
+  }
+}
