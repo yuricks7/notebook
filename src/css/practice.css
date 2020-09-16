@@ -1761,7 +1761,7 @@ footer .comment-box {
 }
 
 .entry-content th {
-  background-color: rgba(5, 5, 5, 0.025);
+  background-color: rgba(5, 5, 5, 0.03) !important;
 }
 
 .entry-content td {

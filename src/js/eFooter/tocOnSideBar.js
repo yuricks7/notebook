@@ -35,13 +35,13 @@
   ];
 
   const MATCH_MEDIA         = false;
-  const MEDIA_QUERY_SIDEBAR = '(min-width: 768px)';
+  const MEDIA_QUERY_SIDEBAR = '(min-width: 1138px)';
   const MARGIN_TOP     = 10;
   const MARGIN_BOTTOM  =  0;
   const CURRENT_MARGIN = 50;
-  const ADJUST_FIXED   =  0;
+  const ADJUST_FIXED   =  0; // 固定位置？
   const MAX_HEIGHT     =  0;
-  const HEADLINE_QUERY = ['h3', 'h4', 'h5'];
+  const HEADLINE_QUERY = ['h3', 'h4', 'h5', 'h6'];
   const HEADLINE_MIN   =  1;
   const ADJUST_SCROLL  =  0;
   const SCROLL_TIME_PC    = 400;
@@ -55,7 +55,7 @@
   const DELAY_TIME_LOAD = 1000;
   const GLOBAL_HEADER   = ['#globalheader-container'];
   const CLICK_UPDATE    = [];
-  const CLICK_UPDATE_DELAY = 500;
+  const CLICK_UPDATE_DELAY = 200;
   const USE_LIST        = 'ol';
   const TOUCH_DEVICE    = 'ontouchstart' in window;
   const TOUCH_DEVICE_DISABLE = false;

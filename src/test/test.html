@@ -1,725 +1,1038 @@
-
 <!DOCTYPE html>
-<html
-  lang="ja"
+<html lang="ja" data-admin-domain="//blog.hatena.ne.jp"
+  data-admin-origin="https://blog.hatena.ne.jp" data-author="yuricks7"
+  data-avail-langs="ja en" data-blog="yuru-wota.hateblo.jp"
+  data-blog-host="yuru-wota.hateblo.jp" data-blog-is-public="1"
+  data-blog-name="ゆるおたノート" data-blog-owner="yuricks7"
+  data-blog-uri="https://www.yuru-wota.com/"
+  data-blog-uuid="17391345971628268059"
+  data-blogs-uri-base="https://www.yuru-wota.com" data-brand="pro"
+  data-data-layer="{&quot;hatenablog&quot;:{&quot;analytics&quot;:{&quot;property_id&quot;:&quot;UA-116388193-1&quot;,&quot;brand_property_id&quot;:&quot;&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;,&quot;separated_property_id&quot;:&quot;UA-29716941-19&quot;},&quot;pro&quot;:&quot;pro&quot;,&quot;router_type&quot;:&quot;blogs&quot;,&quot;blog&quot;:{&quot;disable_ads&quot;:&quot;pro&quot;,&quot;is_public&quot;:&quot;true&quot;,&quot;lang&quot;:&quot;ja&quot;,&quot;is_responsive_view&quot;:&quot;true&quot;,&quot;is_sleeping&quot;:&quot;false&quot;,&quot;enable_keyword_link&quot;:&quot;true&quot;,&quot;owner_name&quot;:&quot;yuricks7&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;true&quot;,&quot;name&quot;:&quot;\u3086\u308b\u304a\u305f\u30ce\u30fc\u30c8&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/&quot;,&quot;enable_ads&quot;:&quot;false&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;content_seems_japanese&quot;:&quot;true&quot;},&quot;permalink_entry&quot;:{&quot;hour&quot;:&quot;21&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/entry/Git/how-to-move-branch&quot;,&quot;date&quot;:&quot;2019-06-23&quot;,&quot;title&quot;:&quot;\u3010Git\u52c9\u5f37\u4e2d\u3011\u30d6\u30e9\u30f3\u30c1\u306e\u79fb\u52d5\u3092\u4f7f\u3044\u5206\u3051\u305f\u3044&quot;,&quot;author_name&quot;:&quot;yuricks7&quot;,&quot;categories&quot;:&quot;Git\t\u25a0\u305f\u3060\u3044\u307e\u52c9\u5f37\u4e2d\t\u25a0\u30d7\u30ed\u30b0\u30e9\u30e0\u5168\u822c&quot;},&quot;brand&quot;:&quot;pro&quot;,&quot;admin&quot;:{},&quot;page_id&quot;:&quot;entry&quot;}}"
+  data-device="pc" data-dont-recommend-pro="false"
+  data-global-domain="https://hatenablog.com"
+  data-globalheader-color="b" data-globalheader-type="pc"
+  data-has-touch-view="1" data-help-url="https://help.hatenablog.com"
+  data-no-suggest-touch-view="1" data-page="entry"
+  data-parts-domain="https://hatenablog-parts.com"
+  data-plus-available="1" data-pro="true" data-router-type="blogs"
+  data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218"
+  data-sentry-environment="production" data-sentry-sample-rate="0.1"
+  data-static-domain="https://cdn.blog.st-hatena.com"
+  data-version="8cb5695dfc20fd387497a943dda5a804" itemscope
+  itemtype="http://schema.org/Article" data-initial-state="{}">
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
-data-admin-domain="//blog.hatena.ne.jp"
-data-admin-origin="https://blog.hatena.ne.jp"
-data-author="yuricks7"
-data-avail-langs="ja en"
-data-blog="yuru-wota.hateblo.jp"
-data-blog-host="yuru-wota.hateblo.jp"
-data-blog-is-public="1"
-data-blog-name="ゆるおたノート"
-data-blog-owner="yuricks7"
-data-blog-uri="https://www.yuru-wota.com/"
-data-blog-uuid="17391345971628268059"
-data-blogs-uri-base="https://www.yuru-wota.com"
-data-brand="pro"
-data-data-layer="{&quot;hatenablog&quot;:{&quot;blog&quot;:{&quot;disable_ads&quot;:&quot;pro&quot;,&quot;is_sleeping&quot;:&quot;false&quot;,&quot;name&quot;:&quot;\u3086\u308b\u304a\u305f\u30ce\u30fc\u30c8&quot;,&quot;force_pc_view&quot;:&quot;true&quot;,&quot;content_seems_japanese&quot;:&quot;true&quot;,&quot;is_public&quot;:&quot;true&quot;,&quot;entry_show_footer_related_entries&quot;:&quot;true&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/&quot;,&quot;is_responsive_view&quot;:&quot;true&quot;,&quot;enable_keyword_link&quot;:&quot;true&quot;,&quot;lang&quot;:&quot;ja&quot;,&quot;owner_name&quot;:&quot;yuricks7&quot;,&quot;enable_ads&quot;:&quot;false&quot;},&quot;brand&quot;:&quot;pro&quot;,&quot;router_type&quot;:&quot;blogs&quot;,&quot;admin&quot;:{},&quot;page_id&quot;:&quot;preview&quot;,&quot;pro&quot;:&quot;pro&quot;,&quot;permalink_entry&quot;:{&quot;author_name&quot;:&quot;yuricks7&quot;,&quot;categories&quot;:&quot;Git\t\u25a0\u30d7\u30ed\u30b0\u30e9\u30e0\u5168\u822c\t\u25a0\u305f\u3060\u3044\u307e\u52c9\u5f37\u4e2d&quot;,&quot;uri&quot;:&quot;https://www.yuru-wota.com/entry/Git/How-to-Commit&quot;,&quot;date&quot;:&quot;2019-06-26&quot;,&quot;hour&quot;:&quot;18&quot;,&quot;title&quot;:&quot;\u3010Git\u52c9\u5f37\u4e2d\u3011\u30b9\u30c6\u30fc\u30b8\u3057\u305f\u5909\u66f4\u3092\u8a18\u9332\u3059\u308b&quot;},&quot;analytics&quot;:{&quot;property_id&quot;:&quot;UA-116388193-1&quot;,&quot;brand_property_id&quot;:&quot;&quot;,&quot;separated_property_id&quot;:&quot;UA-29716941-19&quot;,&quot;non_sampling_property_id&quot;:&quot;&quot;}}}"
-data-device="pc"
-data-dont-recommend-pro="false"
-data-global-domain="https://hatenablog.com"
-data-globalheader-color="b"
-data-globalheader-type="pc"
-data-has-touch-view="1"
-data-help-url="https://help.hatenablog.com"
-data-no-suggest-touch-view="1"
-data-page="preview"
-data-parts-domain="https://hatenablog-parts.com"
-data-plus-available="1"
-data-pro="true"
-data-router-type="blogs"
-data-sentry-dsn="https://03a33e4781a24cf2885099fed222b56d@sentry.io/1195218"
-data-sentry-environment="production"
-data-sentry-sample-rate="0.1"
-data-static-domain="https://cdn.blog.st-hatena.com"
-data-version="c357291fb11fb1b40da8de089a397fcb"
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
 
-itemscope
-itemtype="http://schema.org/Article"
+    <meta name="robots" content="max-image-preview:large" />
 
-  data-initial-state="{}"
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible"
+      content="IE=7; IE=9; IE=10; IE=11" />
 
-  >
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【Git勉強中】ブランチの移動を使い分けたい - ゆるおたノート</title>
 
+    <link rel="canonical"
+      href="https://www.yuru-wota.com/entry/Git/how-to-move-branch" />
 
-  
+    <link rel="amphtml"
+      href="https://www.yuru-wota.com/entry/Git/how-to-move-branch?amp=1">
 
+    <meta itemprop="name"
+      content="【Git勉強中】ブランチの移動を使い分けたい - ゆるおたノート" />
 
+    <meta itemprop="image"
+      content="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200915/20200915000100.png" />
 
-  
+    <meta property="og:title"
+      content="【Git勉強中】ブランチの移動を使い分けたい - ゆるおたノート" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url"
+      content="https://www.yuru-wota.com/entry/Git/how-to-move-branch" />
 
-  <meta name="robots" content="max-image-preview:large" />
+    <meta property="og:image"
+      content="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200915/20200915000100.png" />
 
+    <meta property="og:image:alt"
+      content="【Git勉強中】ブランチの移動を使い分けたい - ゆるおたノート" />
+    <meta property="og:description"
+      content="これは覚えることがあまり無いですが、「branchを切り替えて編集」がまだ慣れません… はじめに 基本の流れ 凡例 【1】ブランチのリストを出力して現在地を確認 ［a］ローカルリポジトリのみ表示 書き方 例 ［b］リモートリポジトリも含めて表示 書き方 例 【2】（旧）ブランチの切り替え ［a］既存のブランチへ切り替え 書き方 例 ［b］ブランチを新規作成して切り替え 書き方 例 ［c］現在の変更内容を破棄して強制的に切り替え 書き方 例 【2】（ver. 2.23～）ブランチの切り替え ［a］既存のブランチへ切り替え 書き方 ［b］ブランチを新規作成して切り替え 書き方 ［c］現在の変更内容…" />
+    <meta property="og:site_name" content="ゆるおたノート" />
 
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11" />
-  <title>【Git勉強中】ステージした変更を記録する - ゆるおたノート</title>
-
-  
-  <link rel="canonical" href="https://www.yuru-wota.com/entry/Git/How-to-Commit"/>
-
-
-
-      <link rel="amphtml" href="https://www.yuru-wota.com/entry/Git/How-to-Commit?amp=1">
-  
-
-<meta itemprop="name" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート"/>
-
-  <meta itemprop="image" content="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png"/>
-
-
-  <meta property="og:title" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート"/>
-<meta property="og:type" content="article"/>
-  <meta property="og:url" content="https://www.yuru-wota.com/entry/Git/How-to-Commit"/>
-
-  
-  
-  
-  <meta property="og:image" content="https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png"/>
-
-<meta property="og:image:alt" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート"/>
-    <meta property="og:description" content="いよいよ「Gitの本番」って感じです！ はじめに 基本の流れ 凡例 ▼コミット 【A】既にステージに上がっている変更内容をまとめてコミット 【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット 【C】ファイルやフォルダを1つずつ指定してコミット ［注意］.gitignoreに該当するファイルに注意！ 【D】カレントディレクトリを指定して、まとめてコミット ▼コミットメッセージの入力 【A】コミットメッセージを入力しつつコミット 【B】コミットメッセージに段落をつける ［例］ 【C】エディタでコミットメッセージを入力してコミット このシリーズについて 次回 連載目次 参照 注釈…" />
-<meta property="og:site_name" content="ゆるおたノート"/>
-
-  <meta property="article:published_time" content="1561541400" />
+    <meta property="article:published_time" content="1561291200" />
 
     <meta property="article:tag" content="Git" />
-    <meta property="article:tag" content="■プログラム全般" />
     <meta property="article:tag" content="■ただいま勉強中" />
-      <meta name="twitter:card"  content="summary" />  <meta name="twitter:title" content="【Git勉強中】ステージした変更を記録する - ゆるおたノート" />    <meta name="twitter:description" content="いよいよ「Gitの本番」って感じです！ はじめに 基本の流れ 凡例 ▼コミット 【A】既にステージに上がっている変更内容をまとめてコミット 【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット 【C】ファイルやフォルダを1つずつ指定してコミット ［注意］.gitignoreに該当するファイルに注意！ …" />  <meta name="twitter:app:name:iphone" content="はてなブログアプリ" />
-  <meta name="twitter:app:id:iphone" content="583299321" />
-  <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=https%3A%2F%2Fwww.yuru-wota.com%2Fpreview" />  <meta name="twitter:site" content="@yuricks7" />
-  
-    <meta name="description" content="いよいよ「Gitの本番」って感じです！ はじめに 基本の流れ 凡例 ▼コミット 【A】既にステージに上がっている変更内容をまとめてコミット 【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット 【C】ファイルやフォルダを1つずつ指定してコミット ［注意］.gitignoreに該当するファイルに注意！ 【D】カレントディレクトリを指定して、まとめてコミット ▼コミットメッセージの入力 【A】コミットメッセージを入力しつつコミット 【B】コミットメッセージに段落をつける ［例］ 【C】エディタでコミットメッセージを入力してコミット このシリーズについて 次回 連載目次 参照 注釈…" />
-    <meta name="google-site-verification" content="21-F4bTHgx11yvh8xwYR6rF4fi5XhZbCCpNxQ3eikc0" />
-    <meta name="keywords" content="VBA, GAS, Google Apps Script, アイドル, ドルオタ, 発達障害, 双極性障害" />
-    <meta name="msvalidate.01" content="2AE533C720A779D9F7F376A4495F8531" />
+    <meta property="article:tag" content="■プログラム全般" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image"
+      content="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200915/20200915000100.png" />
+    <meta name="twitter:title"
+      content="【Git勉強中】ブランチの移動を使い分けたい - ゆるおたノート" />
+    <meta name="twitter:description"
+      content="これは覚えることがあまり無いですが、「branchを切り替えて編集」がまだ慣れません… はじめに 基本の流れ 凡例 【1】ブランチのリストを出力して現在地を確認 ［a］ローカルリポジトリのみ表示 書き方 例 ［b］リモートリポジトリも含めて表示 書き方 例 【2】（旧）ブランチの切り替え ［a］既存のブランチへ切り替え…" />
+    <meta name="twitter:app:name:iphone" content="はてなブログアプリ" />
+    <meta name="twitter:app:id:iphone" content="583299321" />
+    <meta name="twitter:app:url:iphone"
+      content="hatenablog:///open?uri=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch" />
+    <meta name="twitter:site" content="@yuricks7" />
 
+    <meta name="description"
+      content="これは覚えることがあまり無いですが、「branchを切り替えて編集」がまだ慣れません… はじめに 基本の流れ 凡例 【1】ブランチのリストを出力して現在地を確認 ［a］ローカルリポジトリのみ表示 書き方 例 ［b］リモートリポジトリも含めて表示 書き方 例 【2】（旧）ブランチの切り替え ［a］既存のブランチへ切り替え 書き方 例 ［b］ブランチを新規作成して切り替え 書き方 例 ［c］現在の変更内容を破棄して強制的に切り替え 書き方 例 【2】（ver. 2.23～）ブランチの切り替え ［a］既存のブランチへ切り替え 書き方 ［b］ブランチを新規作成して切り替え 書き方 ［c］現在の変更内容…" />
+    <meta name="google-site-verification"
+      content="21-F4bTHgx11yvh8xwYR6rF4fi5XhZbCCpNxQ3eikc0" />
+    <meta name="keywords"
+      content="VBA, GAS, Google Apps Script, アイドル, ドルオタ, 発達障害, 双極性障害" />
+    <meta name="msvalidate.01"
+      content="2AE533C720A779D9F7F376A4495F8531" />
 
-  
-<script
-  id="embed-gtm-data-layer-loader"
-  data-data-layer-page-specific=""
->
-(function() {
-  function loadDataLayer(elem, attrName) {
-    if (!elem) { return {}; }
-    var json = elem.getAttribute(attrName);
-    if (!json) { return {}; }
-    return JSON.parse(json);
-  }
+    <script id="embed-gtm-data-layer-loader"
+      data-data-layer-page-specific="{&quot;hatenablog&quot;:{&quot;blogs_permalink&quot;:{&quot;has_related_entries_with_elasticsearch&quot;:&quot;true&quot;,&quot;entry_afc_issued&quot;:&quot;false&quot;,&quot;brand_hide_afc&quot;:&quot;false&quot;,&quot;blog_hide_afc_func&quot;:&quot;true&quot;,&quot;is_author_pro&quot;:&quot;true&quot;,&quot;is_blog_sleeping&quot;:&quot;false&quot;,&quot;blog_struct_hide_afc&quot;:&quot;true&quot;,&quot;blog_hide_afc_field&quot;:&quot;false&quot;,&quot;blog_afc_issued&quot;:&quot;false&quot;}}}">
+        (function () {
+          function loadDataLayer(elem, attrName) {
+            if (!elem) { return {}; }
+            var json = elem.getAttribute(attrName);
+            if (!json) { return {}; }
+            return JSON.parse(json);
+          }
 
-  var globalVariables = loadDataLayer(
-    document.documentElement,
-    'data-data-layer'
-  );
-  var pageSpecificVariables = loadDataLayer(
-    document.getElementById('embed-gtm-data-layer-loader'),
-    'data-data-layer-page-specific'
-  );
+          var globalVariables = loadDataLayer(
+            document.documentElement,
+            'data-data-layer'
+          );
+          var pageSpecificVariables = loadDataLayer(
+            document.getElementById('embed-gtm-data-layer-loader'),
+            'data-data-layer-page-specific'
+          );
 
-  var variables = [globalVariables, pageSpecificVariables];
+          var variables = [globalVariables, pageSpecificVariables];
 
-  if (!window.dataLayer) {
-    window.dataLayer = [];
-  }
+          if (!window.dataLayer) {
+            window.dataLayer = [];
+          }
 
-  for (var i = 0; i < variables.length; i++) {
-    window.dataLayer.push(variables[i]);
-  }
-})();
-</script>
+          for (var i = 0; i < variables.length; i++) {
+            window.dataLayer.push(variables[i]);
+          }
+        })();
+      </script>
 
-<!-- Google Tag Manager -->
-<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P4CXTW');</script> -->
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
 
+    <!-- <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P4CXTW');</script> -->
+    <!-- End Google Tag Manager -->
 
+    <link rel="shortcut icon"
+      href="https://www.yuru-wota.com/favicon">
+    <link rel="apple-touch-icon"
+      href="https://cdn.blog.st-hatena.com/images/touch-icon-iphone-retina.png">
+    <link rel="icon" sizes="192x192"
+      href="https://cdn.blog.st-hatena.com/images/common/meta-icon-global.png">
 
+    <link rel="alternate" type="application/atom+xml" title="Atom"
+      href="https://www.yuru-wota.com/feed" />
+    <link rel="alternate" type="application/rss+xml" title="RSS2.0"
+      href="https://www.yuru-wota.com/rss" />
+    <link rel="alternate" type="application/json+oembed"
+      href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch&amp;format=json"
+      title="oEmbed Profile of 【Git勉強中】ブランチの移動を使い分けたい" />
+    <link rel="alternate" type="text/xml+oembed"
+      href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch&amp;format=xml"
+      title="oEmbed Profile of 【Git勉強中】ブランチの移動を使い分けたい" />
 
-  <link rel="shortcut icon" href="https://www.yuru-wota.com/favicon">
-<link rel="apple-touch-icon" href="https://cdn.blog.st-hatena.com/images/touch-icon-iphone-retina.png">
-<link rel="icon" sizes="192x192" href="https://cdn.blog.st-hatena.com/images/common/meta-icon-global.png">
+    <link rel="author" href="http://www.hatena.ne.jp/yuricks7/">
 
-  
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.blog.st-hatena.com/css/blog.css?version=83d4e140de222456fed90d9724d259d11fdfc647&amp;env=production" />
 
-<link rel="alternate" type="application/atom+xml" title="Atom" href="https://www.yuru-wota.com/feed"/>
-<link rel="alternate" type="application/rss+xml" title="RSS2.0" href="https://www.yuru-wota.com/rss"/>
-<link rel="alternate" type="application/json+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit&amp;format=json" title="oEmbed Profile of 【Git勉強中】ステージした変更を記録する"/>
-<link rel="alternate" type="text/xml+oembed" href="https://hatenablog.com/oembed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit&amp;format=xml" title="oEmbed Profile of 【Git勉強中】ステージした変更を記録する"/>
-  
-  <link rel="author" href="http://www.hatena.ne.jp/yuricks7/">
+    <link rel="stylesheet" type="text/css"
+      href="https://usercss.blog.st-hatena.com/blog_style/17391345971628268059/344b79650be61e360102ac0ea2288f425c60c662" />
 
-  
+    <script> </script>
 
+    <style>
+      div#google_afc_user,
+      div.google-afc-user-container,
+      div.google_afc_image,
+      div.google_afc_blocklink {
+        display: block !important;
+      }
+    </style>
 
-  
-    <link rel="stylesheet" type="text/css" href="https://cdn.blog.st-hatena.com/css/blog.css?version=83d4e140de222456fed90d9724d259d11fdfc647&amp;env=production"/>
-
-    
-  <link rel="stylesheet" type="text/css" href="https://usercss.blog.st-hatena.com/blog_style/17391345971628268059/ea4d776a221de655d3c0f12f1132e6c64efbee49"/>
-  
-  
-
-  
-
-  
-<script> </script>
-
-  
-<style>
-  div#google_afc_user,
-  div.google-afc-user-container,
-  div.google_afc_image,
-  div.google_afc_blocklink {
-      display: block !important;
-  }
-</style>
-
-
-  
-
-  
-<!-- *********************************************
+    <!-- *********************************************
  * カスタマイズ
 ************************************************ -->
-<!-- レスポンシブ対応  -->
-<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
-<!-- Google Fonts-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Roboto+Mono:wght@460&display=swap">
-<!-- セルフカスタマイズ -->
-<link rel="stylesheet" href="../css/style.css">
+    <!-- レスポンシブ対応  -->
+    <meta name="viewport"
+      content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+    <!-- Google Fonts-->
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Roboto+Mono:wght@460&display=swap">
+    <!-- セルフカスタマイズ -->
+    <link rel="stylesheet"
+      href="../css/style.css">
 
-<!-- *********************************************
+    <!-- *********************************************
  * 外部タグ
 ************************************************ -->
-<!-- Google AdSense -->
-<!-- <script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/header/googleAdSense.js"></script> -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-116388193-1"></script> -->
-<!-- <script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/header/googleAnalytics.js"></script> -->
-<!-- Bing Webマスター -->
-<!-- <meta name="msvalidate.01" content="2AE533C720A779D9F7F376A4495F8531" /> -->
+    <!-- Google AdSense -->
+    <!-- <script type="text/javascript"
+      src="../js/header/googleAdSense.js"></script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script type="text/javascript" async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-116388193-1"></script>
+    <script type="text/javascript"
+      src="../js/header/googleAnalytics.js"></script> -->
+    <!-- Bing Webマスター -->
+    <!-- <meta name="msvalidate.01"
+      content="2AE533C720A779D9F7F376A4495F8531" /> -->
 
-</head>
+  </head>
 
-  <body class="page-preview page-entry enable-top-editarea enable-bottom-editarea category-Git category-■プログラム全般 category-■ただいま勉強中">
-    
+  <body
+    class="page-entry enable-top-editarea enable-bottom-editarea category-Git category-■ただいま勉強中 category-■プログラム全般">
 
-    <div id="globalheader-container"
-  data-brand="hatenablog"
-  
-  
-  >
-  <iframe id="globalheader" height="37" frameborder="0" allowTransparency="true"></iframe>
-</div>
+    <div id="globalheader-container" data-brand="hatenablog">
+      <iframe id="globalheader" height="37" frameborder="0"
+        allowTransparency="true"></iframe>
 
+    </div>
 
     <div id="container">
       <div id="container-inner">
-        <header id="blog-title" data-brand="hatenablog">
-  <div id="blog-title-inner" >
-    <div id="blog-title-content">
-      <h1 id="title"><a href="https://www.yuru-wota.com/">ゆるおたノート</a></h1>
-      
-        <h2 id="blog-description">Tomorrow is another day.</h2>
-      
-    </div>
-  </div>
-</header>
 
-        
-  <div id="top-editarea">
-    <!-- *********************************************
+        <header id="blog-title" data-brand="hatenablog">
+          <div id="blog-title-inner">
+            <div id="blog-title-content">
+
+              <h1 id="title"><a
+                  href="https://www.yuru-wota.com/">ゆるおたノート</a></h1>
+
+              <h2 id="blog-description">Tomorrow is another day.</h2>
+
+            </div>
+
+          </div>
+        </header>
+
+        <div id="top-editarea">
+          <!-- *********************************************
  * メニューリスト（タイトル下）
 ************************************************ -->
-<nav id="gnav">
-  <div class="gnav-inner" id="menu-scroll">
-    <div class="menu">
-      <a href="https://yuru-wota.hateblo.jp/archive">
+          <nav id="gnav">
+            <div class="gnav-inner" id="menu-scroll">
+              <div class="menu">
+                <a href="https://yuru-wota.hateblo.jp/archive">
         <i class="fa fa-home" aria-hidden="true"></i> HOME
       </a>
-    </div>
-    <div class="menu">
-      <a href="https://yuru-wota.hateblo.jp/entry/2018/03/25/AboutThisBlog">
+
+              </div>
+              <div class="menu">
+                <a
+                  href="https://yuru-wota.hateblo.jp/entry/2018/03/25/AboutThisBlog">
         <i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT
       </a>
-    </div>
-    <div class="menu">
-      <a href="https://yuru-wota.hateblo.jp/archive/category/じぶんのこと">
+
+              </div>
+              <div class="menu">
+                <a
+                  href="https://yuru-wota.hateblo.jp/archive/category/じぶんのこと">
         <i class="blogicon-star f02d" aria-hidden="true"></i> じぶん
       </a>
-    </div>
-    <div class="menu">
-      <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC">
+
+              </div>
+              <div class="menu">
+                <a
+                  href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC">
         <i class="blogicon-code f038" aria-hidden="true"></i> プログラミング
       </a>
-    </div>
-    <div class="menu">
-      <a href="https://yuru-wota.hateblo.jp/archive/category/うっかりハック">
+
+              </div>
+              <div class="menu">
+                <a
+                  href="https://yuru-wota.hateblo.jp/archive/category/うっかりハック">
         <i class="fa fa-wrench" aria-hidden="true"></i> うっかりハック
       </a>
-    </div>
-    <div class="menu">
-      <a href="https://yuru-wota.hateblo.jp/archive/category/アイドル">
+
+              </div>
+              <div class="menu">
+                <a
+                  href="https://yuru-wota.hateblo.jp/archive/category/アイドル">
         <i class="blogicon-music f046" aria-hidden="true"></i> アイドル
       </a>
-    </div>
-    <div class="menu">
-      <a href="https://yuru-wota.hateblo.jp/archive/category/こころケア">
+
+              </div>
+              <div class="menu">
+                <a
+                  href="https://yuru-wota.hateblo.jp/archive/category/こころケア">
         <i class="blogicon-heart f048" aria-hidden="true"></i> こころケア
       </a>
-    </div>
-  </div>
-</nav>
 
-<!-- *********************************************
+              </div>
+
+            </div>
+          </nav>
+
+          <!-- *********************************************
  * カテゴリーをパンくずリスト化
 ************************************************ -->
-<link type="text/css" rel="stylesheet" href="https://hatena.wackwack.net/v1.1/css/fulldisplay.min.css"/>
+          <link type="text/css" rel="stylesheet"
+            href="https://hatena.wackwack.net/v1.1/css/fulldisplay.min.css" />
 
-  </div>
+        </div>
 
+        <div id="top-box">
+          <div class="breadcrumb" data-test-id="breadcrumb">
+            <div class="breadcrumb-inner">
+              <a class="breadcrumb-link"
+                href="https://www.yuru-wota.com/"><span>トップ</span></a>
+              <span class="breadcrumb-gt">&gt;</span>
+              <span class="breadcrumb-child">            <a class="breadcrumb-child-link" href="https://www.yuru-wota.com/archive/category/Git"><span>Git</span></a>
+              </span> <span class="breadcrumb-gt">&gt;</span>
+              <span class="breadcrumb-child">            <span>【Git勉強中】ブランチの移動を使い分けたい</span>
+              </span>
 
-        
-            <div id="top-box">
-    <div class="breadcrumb" data-test-id="breadcrumb">
-      <div class="breadcrumb-inner">
-        <a class="breadcrumb-link" href="https://www.yuru-wota.com/"><span>トップ</span></a>          <span class="breadcrumb-gt">&gt;</span>          <span class="breadcrumb-child">            <a class="breadcrumb-child-link" href="https://www.yuru-wota.com/archive/category/Git"><span>Git</span></a>          </span>            <span class="breadcrumb-gt">&gt;</span>          <span class="breadcrumb-child">            <span>【Git勉強中】ステージした変更を記録する</span>          </span>      </div>
-    </div>
-  </div>
-  <script type="application/ld+json" class="test-breadcrumb-json-ld">
-    {"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"position":1,"item":{"name":"トップ","@id":"https://www.yuru-wota.com/"},"@type":"ListItem"},{"position":2,"item":{"name":"Git","@id":"https://www.yuru-wota.com/archive/category/Git"},"@type":"ListItem"}]}
+            </div>
+
+          </div>
+
+        </div>
+
+        <script type="application/ld+json"
+          class="test-breadcrumb-json-ld">
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":{"name":"トップ","@id":"https://www.yuru-wota.com/"},"position":1},{"item":{"@id":"https://www.yuru-wota.com/archive/category/Git","name":"Git"},"position":2,"@type":"ListItem"}],"@context":"http://schema.org"}
   </script>
-        
-        
 
+        <div id="content" class="hfeed">
+          <div id="content-inner">
+            <div id="wrapper">
+              <div id="main">
+                <div id="main-inner">
 
+                  <!-- google_ad_section_start -->
+                  <!-- rakuten_ad_target_begin -->
 
+                  <article
+                    class="entry hentry test-hentry js-entry-article date-first autopagerize_page_element chars-2800 words-400 mode-markdown entry-odd"
+                    id="entry-17680117127205393941"
+                    data-keyword-campaign=""
+                    data-uuid="17680117127205393941"
+                    data-publication-type="entry">
+                    <div class="entry-inner">
 
-<div id="content" class="hfeed"
-  
-  data-editor-id="editor-k22g3i9l38"
-  
-  >
-  <div id="content-inner">
-    <div id="wrapper">
-      <div id="main">
-        <div id="main-inner">
-          
+                      <header class="entry-header">
 
-
-          
-  
-  <!-- google_ad_section_start -->
-  <!-- rakuten_ad_target_begin -->
-  
-  
-  
-
-  
-
-  
-    
-      
-        <article class="entry hentry test-hentry js-entry-article date-first autopagerize_page_element chars-3200 words-400 mode-markdown entry-odd" id="entry-" data-keyword-campaign="" data-uuid="" data-publication-type="entry">
-  <div class="entry-inner">
-    <header class="entry-header">
-  
-    <div class="date entry-date first">
-    <a href="https://www.yuru-wota.com/archive/2019/06/26" rel="nofollow">
-      <time pubdate datetime="2019-06-26T09:30:00Z" title="2019-06-26T09:30:00Z">
-        <span class="date-year">2019</span><span class="hyphen">-</span><span class="date-month">06</span><span class="hyphen">-</span><span class="date-day">26</span>
+                        <div class="date entry-date first">
+                          <a href="https://www.yuru-wota.com/archive/2019/06/23"
+                            rel="nofollow">
+      <time pubdate datetime="2019-06-23T12:00:00Z" title="2019-06-23T12:00:00Z">
+        <span class="date-year">2019</span><span class="hyphen">-</span><span class="date-month">06</span><span class="hyphen">-</span><span class="date-day">23</span>
       </time>
     </a>
-  </div>
-  <h1 class="entry-title">
-  <a href="https://www.yuru-wota.com/entry/Git/How-to-Commit" class="entry-title-link bookmark">【Git勉強中】ステージした変更を記録する</a>
-</h1>
 
-  
-  
+                        </div>
 
-  <div class="entry-categories categories">
-    
-    <a href="https://www.yuru-wota.com/archive/category/Git" class="entry-category-link category-Git">Git</a>
-    
-    <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC" class="entry-category-link category-■プログラム全般">■プログラム全般</a>
-    
-    <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD" class="entry-category-link category-■ただいま勉強中">■ただいま勉強中</a>
-    
-  </div>
+                        <h1 class="entry-title">
+                          <a href="https://www.yuru-wota.com/entry/Git/how-to-move-branch"
+                            class="entry-title-link bookmark">【Git勉強中】ブランチの移動を使い分けたい</a>
+                        </h1>
 
+                        <div class="entry-categories categories">
 
-  
-  <div class="customized-header">
-    <div class="entry-header-html"><!-- *********************************************
+                          <a href="https://www.yuru-wota.com/archive/category/Git"
+                            class="entry-category-link category-Git">Git</a>
+
+                          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD"
+                            class="entry-category-link category-■ただいま勉強中">■ただいま勉強中</a>
+
+                          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC"
+                            class="entry-category-link category-■プログラム全般">■プログラム全般</a>
+
+                        </div>
+
+                        <div class="customized-header">
+                          <div class="entry-header-html">
+                            <!-- *********************************************
  * パンくずリスト
  * CopyRight http://blog.wackwack.net/entry/2016/09/22/185558
 ************************************************ -->
-<!-- 生成位置 -->
-<div id="breadcrumb"></div></div>
-  </div>
+                            <!-- 生成位置 -->
+                            <div id="breadcrumb">
 
+                            </div>
 
-  
+                          </div>
 
-</header>
+                        </div>
 
-    
+                      </header>
 
+                      <div class="entry-content">
 
-    <div class="entry-content">
-  
-    <p>いよいよ「Gitの本番」って感じです！</p>
+                        <p>これは覚えることがあまり無いですが、「branchを切り替えて編集」がまだ慣れません…</p>
 
-<ul class="table-of-contents">
-    <li><a href="#はじめに">はじめに</a><ul>
-            <li><a href="#基本の流れ">基本の流れ</a></li>
-            <li><a href="#凡例">凡例</a></li>
-        </ul>
-    </li>
-    <li><a href="#コミット">▼コミット</a><ul>
-            <li><a href="#A既にステージに上がっている変更内容をまとめてコミット">【A】既にステージに上がっている変更内容をまとめてコミット</a></li>
-            <li><a href="#B変更のあったファイルをインデックスに追加しつつまとめてコミット">【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット</a></li>
-            <li><a href="#Cファイルやフォルダを1つずつ指定してコミット">【C】ファイルやフォルダを1つずつ指定してコミット</a><ul>
-                    <li><a href="#注意gitignoreに該当するファイルに注意">［注意］.gitignoreに該当するファイルに注意！</a></li>
-                </ul>
-            </li>
-            <li><a href="#Dカレントディレクトリを指定してまとめてコミット">【D】カレントディレクトリを指定して、まとめてコミット</a></li>
-        </ul>
-    </li>
-    <li><a href="#コミットメッセージの入力">▼コミットメッセージの入力</a><ul>
-            <li><a href="#Aコミットメッセージを入力しつつコミット">【A】コミットメッセージを入力しつつコミット</a></li>
-            <li><a href="#Bコミットメッセージに段落をつける">【B】コミットメッセージに段落をつける</a><ul>
-                    <li><a href="#例">［例］</a></li>
-                </ul>
-            </li>
-            <li><a href="#Cエディタでコミットメッセージを入力してコミット">【C】エディタでコミットメッセージを入力してコミット</a></li>
-        </ul>
-    </li>
-    <li><a href="#このシリーズについて">このシリーズについて</a><ul>
-            <li><a href="#次回">次回</a></li>
-            <li><a href="#連載目次">連載目次</a></li>
-        </ul>
-    </li>
-    <li><a href="#参照">参照</a></li>
-    <li><a href="#注釈">注釈</a></li>
-</ul>
+                        <ul class="table-of-contents">
+                          <li><a href="#はじめに">はじめに</a>
+                            <ul>
+                              <li><a href="#基本の流れ">基本の流れ</a></li>
+                              <li><a href="#凡例">凡例</a></li>
+                            </ul>
+                          </li>
+                          <li><a
+                              href="#1ブランチのリストを出力して現在地を確認">【1】ブランチのリストを出力して現在地を確認</a>
+                            <ul>
+                              <li><a
+                                  href="#aローカルリポジトリのみ表示">［a］ローカルリポジトリのみ表示</a>
+                                <ul>
+                                  <li><a href="#書き方">書き方</a></li>
+                                  <li><a href="#例">例</a></li>
+                                </ul>
+                              </li>
+                              <li><a
+                                  href="#bリモートリポジトリも含めて表示">［b］リモートリポジトリも含めて表示</a>
+                                <ul>
+                                  <li><a href="#書き方-1">書き方</a></li>
+                                  <li><a href="#例-1">例</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a
+                              href="#2旧ブランチの切り替え">【2】（旧）ブランチの切り替え</a>
+                            <ul>
+                              <li><a
+                                  href="#a既存のブランチへ切り替え">［a］既存のブランチへ切り替え</a>
+                                <ul>
+                                  <li><a href="#書き方-2">書き方</a></li>
+                                  <li><a href="#例-2">例</a></li>
+                                </ul>
+                              </li>
+                              <li><a
+                                  href="#bブランチを新規作成して切り替え">［b］ブランチを新規作成して切り替え</a>
+                                <ul>
+                                  <li><a href="#書き方-3">書き方</a></li>
+                                  <li><a href="#例-3">例</a></li>
+                                </ul>
+                              </li>
+                              <li><a
+                                  href="#c現在の変更内容を破棄して強制的に切り替え">［c］現在の変更内容を破棄して強制的に切り替え</a>
+                                <ul>
+                                  <li><a href="#書き方-4">書き方</a></li>
+                                  <li><a href="#例-4">例</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a
+                              href="#2ver-223ブランチの切り替え">【2】（ver. 2.23～）ブランチの切り替え</a>
+                            <ul>
+                              <li><a
+                                  href="#a既存のブランチへ切り替え-1">［a］既存のブランチへ切り替え</a>
+                                <ul>
+                                  <li><a href="#書き方-5">書き方</a></li>
+                                </ul>
+                              </li>
+                              <li><a
+                                  href="#bブランチを新規作成して切り替え-1">［b］ブランチを新規作成して切り替え</a>
+                                <ul>
+                                  <li><a href="#書き方-6">書き方</a></li>
+                                </ul>
+                              </li>
+                              <li><a
+                                  href="#c現在の変更内容を破棄して強制的に切り替え-1">［c］現在の変更内容を破棄して強制的に切り替え</a>
+                                <ul>
+                                  <li><a href="#書き方-7">書き方</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a href="#このシリーズについて">このシリーズについて</a>
+                            <ul>
+                              <li><a href="#次回">次回</a></li>
+                              <li><a href="#連載目次">連載目次</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#参照">参照</a></li>
+                        </ul>
 
-<h3 id="はじめに">はじめに</h3>
+                        <h3 id="はじめに">はじめに</h3>
 
-<h4 id="基本の流れ">基本の流れ</h4>
+                        <h4 id="基本の流れ">基本の流れ</h4>
 
-<p>Git自体はじめての方は、まずはこちらからどうぞ。</p>
+                        <p>Git自体はじめての方は、まずはこちらからどうぞ。</p>
 
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FSummary-of-Operations" title="【Git勉強中】操作に慣れてきたので、流れを整理してみました。 - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe></p>
+                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FSummary-of-Operations" title="【Git勉強中】操作に慣れてきたので、流れを整理してみました。 - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe></p>
 
-<h4 id="凡例">凡例</h4>
+                        <h4 id="凡例">凡例</h4>
 
-<table>
-<thead>
-<tr>
-<th style="text-align:center;">記号・用語 </th>
-<th> 意味 </th>
-<th> 説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;"><code>$</code> </td>
-<td> 「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%DE%A5%F3%A5%C9%A5%E9%A5%A4%A5%F3">コマンドライン</a>」で使えるコマンド </td>
-<td> 通常、Gitを始めとする「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B7%A5%A7%A5%EB%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8">シェルスクリプト</a>」系の説明では、コマンドの文頭に<code>$</code>をつけて表現されることが多いようです。<br>当記事でもそれに倣って記載しています。<br><br>実際にコマンドを入力するときは、<code>git～</code>以下をコピペしてください。</td>
-</tr>
-<tr>
-<td style="text-align:center;"><code>#</code> </td>
-<td> コメント </td>
-<td> 補足事項など。<br><span class="small-chars">（対話モードでは使えません、、、）</span></td>
-</tr>
-<tr>
-<td style="text-align:center;"><code>&lt;&gt;</code> </td>
-<td> 編集点<span class="small-chars">（という表現で良いのかな…？）</span> </td>
-<td> 任意の値（名前、識別子など）を入力してください。</td>
-</tr>
-<tr>
-<td style="text-align:center;"><span class="small-chars">（コミットの）</span>識別子 </td>
-<td> コミットごとに付与される半角英数字7桁の番号。 </td>
-<td> <a class="keyword" href="http://d.hatena.ne.jp/keyword/SHA-1">SHA-1</a>という<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%CF%A5%C3%A5%B7%A5%E5%C3%CD">ハッシュ値</a>だそうです。<br>当記事では<code>&lt;コミット&gt;</code>と表記します。</td>
-</tr>
-</tbody>
-</table>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th style="text-align:center;">記号・用語
+                              </th>
+                              <th> 意味 </th>
+                              <th> 説明</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="text-align:center;">
+                                <code>$</code> </td>
+                              <td> 「<a class="keyword"
+                                  href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%DE%A5%F3%A5%C9%A5%E9%A5%A4%A5%F3">コマンドライン</a>」で使えるコマンド
+                              </td>
+                              <td> 通常、Gitを始めとする「<a class="keyword"
+                                  href="http://d.hatena.ne.jp/keyword/%A5%B7%A5%A7%A5%EB%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8">シェルスクリプト</a>」系の説明では、コマンドの文頭に<code>$</code>をつけて表現されることが多いようです。<br>当記事でもそれに倣って記載しています。<br><br>実際にコマンドを入力するときは、<code>git～</code>以下をコピペしてください。
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="text-align:center;">
+                                <code>#</code> </td>
+                              <td> コメント </td>
+                              <td>
+                                補足事項など。<br><span class="small-chars">（対話モードでは使えません、、、）</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="text-align:center;">
+                                <code>&lt;&gt;</code> </td>
+                              <td>
+                                編集点<span class="small-chars">（という表現で良いのかな…？）</span>
+                              </td>
+                              <td> 任意の値（名前、識別子など）を入力してください。</td>
+                            </tr>
+                            <tr>
+                              <td style="text-align:center;">
+                                <span class="small-chars">（コミットの）</span>識別子
+                              </td>
+                              <td> コミットごとに付与される半角英数字7桁の番号。 </td>
+                              <td> <a class="keyword"
+                                  href="http://d.hatena.ne.jp/keyword/SHA-1">SHA-1</a>という<a
+                                  class="keyword"
+                                  href="http://d.hatena.ne.jp/keyword/%A5%CF%A5%C3%A5%B7%A5%E5%C3%CD">ハッシュ値</a>だそうです。<br>当記事では<code>&lt;コミット&gt;</code>と表記します。
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
 
+                        <h3 id="1ブランチのリストを出力して現在地を確認">
+                          【1】ブランチのリストを出力して現在地を確認</h3>
 
-<h3 id="コミット">▼コミット</h3>
+                        <p>その名も<code>branch</code>コマンド。分かりやすい名前だ…</p>
 
-<h4 id="A既にステージに上がっている変更内容をまとめてコミット">【A】既にステージに上がっている変更内容をまとめてコミット</h4>
+                        <h4 id="aローカルリポジトリのみ表示">［a］ローカル<a
+                            class="keyword"
+                            href="http://d.hatena.ne.jp/keyword/%A5%EA%A5%DD%A5%B8%A5%C8%A5%EA">リポジトリ</a>のみ表示
+                        </h4>
 
-<p>引数なしで実行します。</p>
+                        <h5 id="書き方">書き方</h5>
 
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit
+                        <p>下記3件のコマンドは同じ結果が出力されます。</p>
+
+                        <p>オプションなし（デフォルト）</p>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git branch
 </pre>
 
+                        <p>オプションつき</p>
 
-<h4 id="B変更のあったファイルをインデックスに追加しつつまとめてコミット">【B】変更のあったファイルをインデックスに追加しつつ、まとめてコミット</h4>
-
-<p><code>git add .</code>と<code>git commit</code>の合わせ技。</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit <span class="synSpecial">-a</span>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git branch <span class="synSpecial">--list</span>
 </pre>
 
+                        <p>オプションのショートハンドつき</p>
 
-
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit <span class="synSpecial">--all</span>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git branch <span class="synSpecial">-l</span>
 </pre>
 
+                        <p
+                          class="text-box-dashed">なお、これ以降、<code>--list</code>と<code>-l</code>のようにオプション付きのものを2行続けて書いている場合は、「同じ意味のコマンド」を指しているものとします。</p>
 
-<p>ただし、<b>新規作成されたファイルは対象外</b>なので、別途<code>git add</code>でステージしてからコミットする必要があります。</p>
+                        <h5 id="例">例</h5>
 
-<h4 id="Cファイルやフォルダを1つずつ指定してコミット">【C】ファイルやフォルダを1つずつ指定してコミット</h4>
+                        <p>現在のブランチは、<b><code>*</code>（<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A5%B9%A5%BF%A5%EA%A5%B9%A5%AF">アスタリスク</a>）でハイライト</b>されます。<br>
+（<a class="keyword" href="http://d.hatena.ne.jp/keyword/bash">bash</a>等、使うエディタによってはブランチ名に色も付きます。）</p>
 
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit <span class="synStatement">&lt;</span>ファイル名/フォルダ名<span class="synStatement">&gt;</span>
-</pre>
-
-
-<h5 id="注意gitignoreに該当するファイルに注意"><span class="red">［注意］</span><code>.gitignore</code>に該当するファイルに注意！</h5>
-
-<p><code>.gitignore</code>に記載のあるファイルはステージされないため、コミットにも含められずエラーになります。</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
-$ git commit <span class="synStatement">&lt;</span>ファイル名<span class="synStatement">&gt;</span>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink><span class="synComment"># 入力</span>
+$ git branch
  
 <span class="synComment"># 結果</span>
-error: pathspec <span class="synStatement">'</span><span class="synConstant">&lt;ファイル名&gt;</span><span class="synStatement">'</span> did not match any file<span class="synPreProc">(</span><span class="synSpecial">s</span><span class="synPreProc">)</span> known to git.
+  branch1
+* branch2
+  master
 </pre>
 
+                        <h4 id="bリモートリポジトリも含めて表示">［b］リモー<a
+                            class="keyword"
+                            href="http://d.hatena.ne.jp/keyword/%A5%C8%A5%EA%A5%DD%A5%B8">トリポジ</a>トリも含めて表示
+                        </h4>
 
-<blockquote><p>「&lt;ファイル名>」は、gitが検知しているファイルにはマッチしませんでした。</p></blockquote>
+                        <h5 id="書き方-1">書き方</h5>
 
-<h4 id="Dカレントディレクトリを指定してまとめてコミット">【D】カレント<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リを指定して、まとめてコミット</h4>
-
-<p>引数として<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C1%EA%C2%D0%A5%D1%A5%B9">相対パス</a>の<code>.</code>（ピリオド）をつけます。</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit .
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git branch <span class="synSpecial">-a</span>
 </pre>
 
-
-<h3 id="コミットメッセージの入力">▼コミットメッセージの入力</h3>
-
-<h4 id="Aコミットメッセージを入力しつつコミット">【A】コミットメッセージを入力しつつコミット</h4>
-
-<p>コミット後に<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C6%A5%AD%A5%B9%A5%C8%A5%A8%A5%C7%A5%A3%A5%BF">テキストエディタ</a>で入力する手間（<a href="https://www.yuru-wota.com/preview#%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E5%85%A5%E5%8A%9B%E3%81%97%E3%81%A6%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88">後述</a>）が減ります。<br>
-ただし、入力している文字数は確認できないので、何かしら対策が必要かも…？<a href="#f-ccf001e1" name="fn-ccf001e1" title="
-コミットメッセージの文字数制限について。
-[https://qiita.com/tommy_aka_jps/items/a20d9a821cc01ee7bd96:embed]
-">*1</a></p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit<span class="synStatement"> . </span>-m <span class="synStatement">'</span><span class="synConstant">&lt;コメント&gt;</span><span class="synStatement">'</span>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git branch <span class="synSpecial">--all</span>
 </pre>
 
+                        <h5 id="例-1">例</h5>
 
-
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit<span class="synStatement"> . </span>--message<span class="synStatement">='</span><span class="synConstant">&lt;コメント&gt;</span><span class="synStatement">'</span>
-</pre>
-
-
-<p>※後者は<code>=</code>が必要！</p>
-
-<h4 id="Bコミットメッセージに段落をつける">【B】コミットメッセージに段落をつける</h4>
-
-<p>オプション<code>-m &lt;コメント&gt;</code>1つにつき1つずつ段落化されます。<br>
-これを利用して、要約→詳細のように表現できます。</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit<span class="synStatement"> . </span>-m <span class="synStatement">'</span><span class="synConstant">&lt;コメント&gt;</span><span class="synStatement">'</span> <span class="synSpecial">-m</span> <span class="synStatement">'</span><span class="synConstant">&lt;詳細コメント&gt;</span><span class="synStatement">'</span>
-</pre>
-
-<h4 id="例3">［例］</h4>
-
-<h5 id="例">【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット</h5>
-
-<h6 id="C">【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット【C】エディタでコミットメッセージを入力してコミット</h6>
-
-<p><b>タイトル（Short Description）</b>が「test1.」のコミット履歴が作成されました。</p>
-
-<h6 id="例X">［例］</h5>
-
-<p class="text-box-dashed">タイトル（<b>Short Description</b>）が「test1.」のコミット履歴が作成されました。</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
-$ git commit <span class="synSpecial">-m</span> <span class="synStatement">&quot;</span><span class="synConstant">test1.</span><span class="synStatement">&quot;</span> <span class="synSpecial">-m</span> <span class="synStatement">&quot;</span><span class="synConstant">test2!</span><span class="synStatement">&quot;</span> <span class="synSpecial">-m</span> <span class="synStatement">&quot;</span><span class="synConstant">it's test3!!</span><span class="synStatement">&quot;</span>
-
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink><span class="synComment"># 入力</span>
+$ git branch <span class="synSpecial">-a</span>
+ 
 <span class="synComment"># 結果</span>
-<span class="synStatement">[</span>develop c115340<span class="synStatement">]</span> test1.
- <span class="synConstant">1</span> file changed, <span class="synConstant">1</span> insertion<span class="synPreProc">(</span><span class="synSpecial">+</span><span class="synPreProc">)</span>, <span class="synConstant">1</span> deletion<span class="synPreProc">(</span><span class="synSpecial">-</span><span class="synPreProc">)</span>
-
-<span class="synComment"># コミット内容を確認</span>
-$ git log
-commit c11534072071664c079cb709d2cabb32d8342db0 <span class="synPreProc">(</span><span class="synSpecial">HEAD -</span><span class="synStatement">&gt;</span><span class="synSpecial"> develop</span><span class="synPreProc">)</span>
-Author: xxxxxxxx <span class="synStatement">&lt;</span>xxxxxxxx@users.noreply.github.com<span class="synStatement">&gt;</span>
-Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synConstant">2019</span> +<span class="synConstant">0900</span>
-
-    test1.
-
-    test2.
-
-    it<span class="synStatement">'</span><span class="synConstant">s test3!</span>
+  branch1
+* branch2
+  master
+  remotes/origin/HEAD -<span class="synStatement">&gt;</span> origin/master
+  remotes/origin/master
 </pre>
 
+                        <h3 id="2旧ブランチの切り替え">【2】（旧）ブランチの切り替え</h3>
 
-<p>タイトル（Short Description）が「test1.」のコミット履歴が作成されました。</p>
+                        <p><code>checkout</code>コマンドを使用します。<br>
+いったん現在のブランチから退出（チェックアウト）して、目的のブランチに移動するイメージですかね。</p>
 
-<h4 id="Cエディタでコミットメッセージを入力してコミット">【C】エディタでコミットメッセージを入力してコミット</h4>
+                        <p><span class="additional-note">&lt;2020/09/16追記></span><br>
+Gitのバージョンアップにより、新しいコマンドが別途追加されました（<a href="#2ver-223%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E3%81%AE%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88">後述</a>）。</p>
 
-<p>普段は↑のコマンドを使ってコミットメッセージを入れるので、これはあまり必要ないかと思います。<br>
-ただ、コメントを入れ忘れてしまった時にはエディタが自動で立ち上がります。<br>
-そのときに焦ってしまうので笑、一応記載しておきます。</p>
+                        <h4 id="a既存のブランチへ切り替え">［a］既存のブランチへ切り替え</h4>
 
-<ol>
-  <li>コマンドを打ちます。
-    <pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit</pre>
-  </li>
-</ol>
-<p>(1) コマンドを打ちます。</p>
+                        <h5 id="書き方-2">書き方</h5>
 
-<pre class="code lang-sh" data-lang="sh" data-unlink>$ git commit
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git checkout <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
 </pre>
 
+                        <h5 id="例-2">例</h5>
 
-<p>(2) 下記のメッセージと共にエディタが開きます。</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>hint: Waiting <span class="synStatement">for</span> your editor to close the file...
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink><span class="synComment"># 入力</span>
+$ git checkout branch1
+ 
+<span class="synComment"># 結果</span>
+Switched to branch <span class="synStatement">'</span><span class="synConstant">branch1</span><span class="synStatement">'</span>
 </pre>
 
+                        <h4 id="bブランチを新規作成して切り替え">［b］ブランチを新規作成して切り替え
+                        </h4>
 
-<blockquote><p>エディタのクローズ待ち…</p><cite>test.</cite></blockquote>
+                        <h5 id="書き方-3">書き方</h5>
 
-<p>(3) エディタで1行目にコメントを入力。</p>
+                        <p>ブランチを作成することを「ブランチを切る」と呼ぶみたいです。かっこいい。</p>
 
-<pre class="code lang-sh" data-lang="sh" data-unlink>ここにコメントを入力。
-<span class="synComment"># Please enter the commit message for your changes. Lines starting</span>
-<span class="synComment"># with '#' will be ignored, and an empty message aborts the commit.</span>
-<span class="synComment">#</span>
-<span class="synComment"># On branch develop</span>
-<span class="synComment"># Changes to be committed:</span>
-<span class="synComment">#  modified:   index.html</span>
-<span class="synComment">#</span>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git checkout <span class="synSpecial">-b</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
 </pre>
 
+                        <h5 id="例-3">例</h5>
 
-<blockquote><p>コミットメッセージを入力してください。<br>
-<code>#</code>で始まる行は無視しますが、メッセージが空の場合はコミットを中止します。<br>
-（以下略）</p></blockquote>
-
-<p>(4) 入力を終えたら<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">S</kbd></kbd>で保存。<br></p>
-
-<p>※飛ばすと怒られます。笑</p>
-
-<pre class="code lang-sh" data-lang="sh" data-unlink>Aborting commit due to empty commit message.
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink><span class="synComment"># 新規作成して切り替え</span>
+$ git checkout <span class="synSpecial">-b</span> branch3
+ 
+<span class="synComment"># 結果</span>
+Switched to a new branch <span class="synStatement">'</span><span class="synConstant">branch3</span><span class="synStatement">'</span>
+ 
+<span class="synComment"># 切り替えできたか確認</span>
+$ git branch
+ 
+<span class="synComment"># 結果</span>
+  branch1
+  branch2
+* branch3 <span class="synComment"># 現在のブランチに`*`がつく</span>
+  master
 </pre>
 
+                        <h4 id="c現在の変更内容を破棄して強制的に切り替え">
+                          ［c］現在の変更内容を破棄して強制的に切り替え</h4>
 
-<blockquote><p>コミットメッセージが無いので、コミットは中止します。</p></blockquote>
+                        <h5 id="書き方-4">書き方</h5>
 
-<p>(5) 保存できたら、<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">W</kbd></kbd>でエディタを閉じます。</p>
+                        <p>Gitが認識しないファイルで作業してしまった場合や、作業ツリーに変更があった場合など。</p>
 
-<h3 id="このシリーズについて">このシリーズについて</h3>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git checkout <span class="synSpecial">-f</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
 
-<p>Gitのコマンドについて、少しずつ記事にまとめています。</p>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git checkout <span class="synSpecial">--force</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
 
-<p>誤り、分かりづらい等ありましたら、ぜひ<strong>コメント欄</strong>や<a href="https://twitter.com/yuricks7">Twitter</a>、<a href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>等でご教示ください！</p>
+                        <h5 id="例-4">例</h5>
 
-<h4 id="次回">次回</h4>
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink><span class="synComment"># 入力</span>
+$ git checkout <span class="synSpecial">-f</span> branch1
+ 
+<span class="synComment"># 結果</span>
+Switched to branch <span class="synStatement">'</span><span class="synConstant">branch1</span><span class="synStatement">'</span>
+</pre>
 
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Fix-commits" title="【Git勉強中】あっ！そのコミット訂正させてください！ - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe></p>
+                        <h3 id="2ver-223ブランチの切り替え">【2】（ver.
+                          2.23～）ブランチの切り替え</h3>
 
-<h4 id="連載目次">連載目次</h4>
+                        <p><span class="additional-note">&lt;2020/09/16追記></span><br>
+この記事を投稿した後に、Gitのバージョンアップで<code>checkout</code>コマンドが下記2点に分離されました。</p>
 
-<ol>
-<li><a href="https://www.yuru-wota.com/entry/Git/Summary-of-Operations">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x64CD;&#x4F5C;&#x306B;&#x6163;&#x308C;&#x3066;&#x304D;&#x305F;&#x306E;&#x3067;&#x3001;&#x6D41;&#x308C;&#x3092;&#x6574;&#x7406;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-<li><a href="https://www.yuru-wota.com/entry/Git/how-to-move-branch">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30D6;&#x30E9;&#x30F3;&#x30C1;&#x306E;&#x79FB;&#x52D5;&#x3092;&#x4F7F;&#x3044;&#x5206;&#x3051;&#x305F;&#x3044; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Stage">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30B9;&#x30C6;&#x30FC;&#x30B8;&#x306B;&#x4E0A;&#x3052;&#x305F;&#x308A;&#x4E0B;&#x3052;&#x305F;&#x308A;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-<li><span class="serialized-label">当記事</span><a href="https://www.yuru-wota.com/entry/Git/How-to-Commit">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30B9;&#x30C6;&#x30FC;&#x30B8;&#x3057;&#x305F;&#x5909;&#x66F4;&#x3092;&#x8A18;&#x9332;&#x3059;&#x308B; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Fix-commits">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x3042;&#x3063;&#xFF01;&#x305D;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x8A02;&#x6B63;&#x3055;&#x305B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#xFF01; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Merge-and-Push">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x81EA;&#x5206;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x5C65;&#x6B74;&#x3092;&#x63D0;&#x51FA;&#x3059;&#x308B; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-<li><a href="https://www.yuru-wota.com/entry/Git/How-to-Connect-Repogitories">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306E;&#x4F5C;&#x6210;&#x3068;&#x63A5;&#x7D9A; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
-</ol>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>コマンド </th>
+                              <th> 役割</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><code>switch</code> </td>
+                              <td> ブランチを移動する</td>
+                            </tr>
+                            <tr>
+                              <td><code>restore</code> </td>
+                              <td> コミット前の修正を取り消す</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>具体的でより使いやすいですね！</p>
+
+                        <ul>
+                          <li>詳しい情報は公式Blog様（英語）へどうぞ。
+                            <iframe
+                              src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.blog%2F2019-08-16-highlights-from-git-2-23%2F"
+                              title="Highlights from Git 2.23"
+                              class="embed-card embed-webcard"
+                              scrolling="no" frameborder="0"
+                              style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
+                          </li>
+                        </ul>
+
+                        <h4 id="a既存のブランチへ切り替え-1">［a］既存のブランチへ切り替え</h4>
+
+                        <h5 id="書き方-5">書き方</h5>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git switch <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
+
+                        <h4 id="bブランチを新規作成して切り替え-1">［b］ブランチを新規作成して切り替え
+                        </h4>
+
+                        <h5 id="書き方-6">書き方</h5>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git switch <span class="synSpecial">-c</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git switch <span class="synSpecial">--create</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
+
+                        <h4 id="c現在の変更内容を破棄して強制的に切り替え-1">
+                          ［c］現在の変更内容を破棄して強制的に切り替え</h4>
+
+                        <h5 id="書き方-7">書き方</h5>
+                        <h6 id="書き方-10">書き方</h6>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git switch <span class="synSpecial">-f</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git switch <span class="synSpecial">--force</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
+
+                        <pre class="code lang-sh" data-lang="sh"
+                          data-unlink>$ git switch <span class="synSpecial">--discard-changes</span> <span class="synStatement">&lt;</span>目的のブランチ名<span class="synStatement">&gt;</span>
+</pre>
+
+                        <p><code>discard</code>で「破棄する」という意味です。</p>
+
+                        <h3 id="このシリーズについて">このシリーズについて</h3>
+
+                        <p>Gitのコマンドについて、少しずつ記事にまとめています。</p>
+
+                        <p>誤り、分かりづらい等ありましたら、ぜひ<strong>コメント欄</strong>や<a href="https://twitter.com/yuricks7">Twitter</a>、<a href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>等でご教示ください！</p>
+
+                        <h4 id="次回">次回</h4>
+
+                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Stage" title="【Git勉強中】ステージに上げたり下げたり。 - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe></p>
+
+                        <h4 id="連載目次">連載目次</h4>
+
+                        <ol>
+                          <li><a
+                              href="https://www.yuru-wota.com/entry/Git/Summary-of-Operations">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x64CD;&#x4F5C;&#x306B;&#x6163;&#x308C;&#x3066;&#x304D;&#x305F;&#x306E;&#x3067;&#x3001;&#x6D41;&#x308C;&#x3092;&#x6574;&#x7406;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                          <li>
+                            <span class="serialized-label">当記事</span><a
+                              href="https://www.yuru-wota.com/entry/Git/how-to-move-branch">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30D6;&#x30E9;&#x30F3;&#x30C1;&#x306E;&#x79FB;&#x52D5;&#x3092;&#x4F7F;&#x3044;&#x5206;&#x3051;&#x305F;&#x3044; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                          <li><a
+                              href="https://www.yuru-wota.com/entry/Git/How-to-Stage">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30B9;&#x30C6;&#x30FC;&#x30B8;&#x306B;&#x4E0A;&#x3052;&#x305F;&#x308A;&#x4E0B;&#x3052;&#x305F;&#x308A;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                          <li><a
+                              href="https://www.yuru-wota.com/entry/Git/How-to-Commit">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30B9;&#x30C6;&#x30FC;&#x30B8;&#x3057;&#x305F;&#x5909;&#x66F4;&#x3092;&#x8A18;&#x9332;&#x3059;&#x308B; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                          <li><a
+                              href="https://www.yuru-wota.com/entry/Git/How-to-Fix-commits">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x3042;&#x3063;&#xFF01;&#x305D;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x8A02;&#x6B63;&#x3055;&#x305B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#xFF01; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                          <li><a
+                              href="https://www.yuru-wota.com/entry/Git/How-to-Merge-and-Push">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x81EA;&#x5206;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x5C65;&#x6B74;&#x3092;&#x63D0;&#x51FA;&#x3059;&#x308B; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                          <li><a
+                              href="https://www.yuru-wota.com/entry/Git/How-to-Connect-Repogitories">&#x3010;Git&#x52C9;&#x5F37;&#x4E2D;&#x3011;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306E;&#x4F5C;&#x6210;&#x3068;&#x63A5;&#x7D9A; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
+                          </li>
+                        </ol>
+
+                        <h3 id="参照">参照</h3>
+
+                        <img class=”lazy” data-original=”https://cdn.profile-image.st-hatena.com/users/yuricks7/profile.png?1574076408“>
+<img src="https://cdn.profile-image.st-hatena.com/users/yuricks7/profile.png?1574076408">
 
 
-<h3 id="参照">参照</h3>
+                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.sejuku.net%2Fblog%2F71457" title="【Git入門】チェックアウト(checkout)とは？使い方を基礎から解説！ | 侍エンジニア塾ブログ（Samurai Blog） - プログラミング入門者向けサイト" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2FTetsuTaka%2Fitems%2F5ab227a8bd2cd7106833" title="git コマンド branchの作り方 - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe></p>
 
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgit-scm.com%2Fdocs" title="Git - Reference" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
-<iframe src="https://hatenablog-parts.com/embed?url=http%3A%2F%2Fwww-creators.com%2Farchives%2F2106" title="git commit コマンドの使い方と、主要オプションのまとめ | WWWクリエイターズ" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2F2m1tsu3%2Fitems%2F6d49374230afab251337" title="基本的なGitコマンドまとめ - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe></p>
+                        <p><span class="additional-note">&lt;2020/09/16追記></span><br>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgit-scm.com%2Fdocs%2Fgit-checkout" title="Git - git-checkout Documentation" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgit-scm.com%2Fdocs%2Fgit-switch" title="Git - git-switch Documentation" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe></p>
 
-<h3 id="注釈">注釈</h3>
-<div class="footnote">
-<p class="footnote"><a href="#fn-ccf001e1" name="f-ccf001e1" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">コミットメッセージの文字数制限について。
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Ftommy_aka_jps%2Fitems%2Fa20d9a821cc01ee7bd96" title="git commit 時に書くコミットメッセージ1行目の表示文字数上限を調べてみた - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe>
-</span></p>
-</div>
-    
+                      </div>
 
-  
-</div>
+                      <footer class="entry-footer">
 
-    
-  <footer class="entry-footer">
-    
-    <p class="entry-footer-section">
+                        <p class="entry-footer-section">
   <span class="author vcard"><span class="fn" data-load-nickname="1" data-user-name="yuricks7">yuricks7</span></span>
-  <span class="entry-footer-time"><a href="https://www.yuru-wota.com/entry/Git/How-to-Commit"><time data-relative datetime="2019-06-26T09:30:00Z" title="2019-06-26T09:30:00Z" pubdate class="updated">2019-06-26 18:30</time></a></span>
+  <span class="entry-footer-time"><a href="https://www.yuru-wota.com/entry/Git/how-to-move-branch"><time data-relative datetime="2019-06-23T12:00:00Z" title="2019-06-23T12:00:00Z" pubdate class="updated">2019-06-23 21:00</time></a></span>
 </p>
 
-    
-  <div class="hatena-star-container">
-  </div>
-  <div class="hatena-star-metadata" style="display: none">
-    <a class="hatena-star-permalink" href="https://www.yuru-wota.com/entry/Git/How-to-Commit">【Git勉強中】ステージした変更を記録する</a>
-  </div>
+                        <div class="hatena-star-container">
 
+                        </div>
+                        <div class="hatena-star-metadata"
+                          style="display: none">
+                          <a class="hatena-star-permalink"
+                            href="https://www.yuru-wota.com/entry/Git/how-to-move-branch">【Git勉強中】ブランチの移動を使い分けたい</a>
 
-    
-<div class="social-buttons">
-  
-  
-  
-  
-  
-  
-  
-</div>
+                        </div>
 
-    
+                        <div class="social-buttons">
 
-    <div class="customized-footer">
-      
+                        </div>
 
-        
+                        <div class="customized-footer">
 
-        
+                          <div class="entry-footer-modules"
+                            id="entry-footer-secondary-modules">
+                            <div
+                              class="hatena-module hatena-module-related-entries">
 
-          <div class="entry-footer-modules" id="entry-footer-secondary-modules">        </div>
-        
-  <div class="entry-footer-html"><!-- *********************************************
+                              <!-- Hatena-Epic-has-related-entries-with-elasticsearch:true -->
+                              <div class="hatena-module-title">
+                                関連記事
+
+                              </div>
+                              <div class="hatena-module-body">
+                                <ul
+                                  class="related-entries hatena-urllist urllist-with-thumbnails">
+
+                                  <li
+                                    class="urllist-item related-entries-item">
+                                    <div
+                                      class="urllist-item-inner related-entries-item-inner">
+
+                                      <a class="urllist-image-link related-entries-image-link"
+                                        href="https://www.yuru-wota.com/entry/Batch/Conflict-with-Applications">
+  <img alt="【バッチファイル】何やらSTARTできてないモノがあるような…？" src="https://cdn.image.st-hatena.com/image/square/fa913a8601addcbd40c275117cd8e903d22c3002/backend=imagemagick;height=100;version=1;width=100/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fy%2Fyuricks7%2F20200915%2F20200915190536.png" class="urllist-image related-entries-image" title="【バッチファイル】何やらSTARTできてないモノがあるような…？" width="100">
+</a>
+                                      <div
+                                        class="urllist-date-link related-entries-date-link">
+                                        <a href="https://www.yuru-wota.com/archive/2019/10/27"
+                                          rel="nofollow">
+    <time pubdate datetime="2019-10-27T02:00:00Z" title="2019-10-27T02:00:00Z">
+      2019-10-27
+    </time>
+  </a>
+
+                                      </div>
+
+                                      <a href="https://www.yuru-wota.com/entry/Batch/Conflict-with-Applications"
+                                        class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">【バッチファイル】何やらSTARTできてないモノがあるような…？</a>
+
+                                      <div
+                                        class="urllist-entry-body related-entries-entry-body">
+                                        前回、バッチファイルの作成について書きました。
+                                        ただ、分から…
+
+                                      </div>
+
+                                    </div>
+                                  </li>
+
+                                  <li
+                                    class="urllist-item related-entries-item">
+                                    <div
+                                      class="urllist-item-inner related-entries-item-inner">
+
+                                      <div
+                                        class="urllist-date-link related-entries-date-link">
+                                        <a href="https://www.yuru-wota.com/archive/2019/10/22"
+                                          rel="nofollow">
+    <time pubdate datetime="2019-10-22T08:00:00Z" title="2019-10-22T08:00:00Z">
+      2019-10-22
+    </time>
+  </a>
+
+                                      </div>
+
+                                      <a href="https://www.yuru-wota.com/entry/Batch/MyStartUp"
+                                        class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">【バッチファイル】指定した順番にアプリケーションを開くスクリプトを書いてみた</a>
+
+                                      <div
+                                        class="urllist-entry-body related-entries-entry-body">
+                                        スタートアップフォルダにいくつかショートカットを入れておい…
+
+                                      </div>
+
+                                    </div>
+                                  </li>
+
+                                  <li
+                                    class="urllist-item related-entries-item">
+                                    <div
+                                      class="urllist-item-inner related-entries-item-inner">
+
+                                      <a class="urllist-image-link related-entries-image-link"
+                                        href="https://www.yuru-wota.com/entry/Git/How-to-Connect-Repogitories">
+  <img alt="【Git勉強中】リポジトリの作成と接続" src="https://cdn.image.st-hatena.com/image/square/d6b38e769d9207a10bdc269a325212766c690b05/backend=imagemagick;height=100;version=1;width=100/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fy%2Fyuricks7%2F20200915%2F20200915000100.png" class="urllist-image related-entries-image" title="【Git勉強中】リポジトリの作成と接続" width="100">
+</a>
+                                      <div
+                                        class="urllist-date-link related-entries-date-link">
+                                        <a href="https://www.yuru-wota.com/archive/2019/07/02"
+                                          rel="nofollow">
+    <time pubdate datetime="2019-07-02T12:30:00Z" title="2019-07-02T12:30:00Z">
+      2019-07-02
+    </time>
+  </a>
+
+                                      </div>
+
+                                      <a href="https://www.yuru-wota.com/entry/Git/How-to-Connect-Repogitories"
+                                        class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">【Git勉強中】リポジトリの作成と接続</a>
+
+                                      <div
+                                        class="urllist-entry-body related-entries-entry-body">
+                                        たぶん、手順的にはリモートリポジトリを先に作る方が楽で簡単…
+
+                                      </div>
+
+                                    </div>
+                                  </li>
+
+                                  <li
+                                    class="urllist-item related-entries-item">
+                                    <div
+                                      class="urllist-item-inner related-entries-item-inner">
+
+                                      <a class="urllist-image-link related-entries-image-link"
+                                        href="https://www.yuru-wota.com/entry/Git/Summary-of-Operations">
+  <img alt="【Git勉強中】操作に慣れてきたので、流れを整理してみました。" src="https://cdn.image.st-hatena.com/image/square/d6b38e769d9207a10bdc269a325212766c690b05/backend=imagemagick;height=100;version=1;width=100/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fy%2Fyuricks7%2F20200915%2F20200915000100.png" class="urllist-image related-entries-image" title="【Git勉強中】操作に慣れてきたので、流れを整理してみました。" width="100">
+</a>
+                                      <div
+                                        class="urllist-date-link related-entries-date-link">
+                                        <a href="https://www.yuru-wota.com/archive/2019/06/21"
+                                          rel="nofollow">
+    <time pubdate datetime="2019-06-21T12:30:00Z" title="2019-06-21T12:30:00Z">
+      2019-06-21
+    </time>
+  </a>
+
+                                      </div>
+
+                                      <a href="https://www.yuru-wota.com/entry/Git/Summary-of-Operations"
+                                        class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">【Git勉強中】操作に慣れてきたので、流れを整理してみました。</a>
+
+                                      <div
+                                        class="urllist-entry-body related-entries-entry-body">
+                                        Gitって難しいですね。
+                                        最初はマウスでポチポチしていましたが…
+
+                                      </div>
+
+                                    </div>
+                                  </li>
+
+                                  <li
+                                    class="urllist-item related-entries-item">
+                                    <div
+                                      class="urllist-item-inner related-entries-item-inner">
+
+                                      <a class="urllist-image-link related-entries-image-link"
+                                        href="https://www.yuru-wota.com/entry/VBA/organization-test-of-flow">
+  <img alt="【Excel VBA】テーブル変換とスタイル変更 ～処理の流れを整理してみる～" src="https://cdn.image.st-hatena.com/image/square/85025fd93eb697d569efd6b32cb16c5554269628/backend=imagemagick;height=100;version=1;width=100/https%3A%2F%2Flh3.googleusercontent.com%2F-KSiNabsb6Os%2FXNcObwkSWMI%2FAAAAAAAADRk%2F3dZW_qx9oJ4for1C8IsCTsqQsQdkLZInQCE0YBhgL%2Fs1200%2FFlow01.PNG" class="urllist-image related-entries-image" title="【Excel VBA】テーブル変換とスタイル変更 ～処理の流れを整理してみる～" width="100">
+</a>
+                                      <div
+                                        class="urllist-date-link related-entries-date-link">
+                                        <a href="https://www.yuru-wota.com/archive/2019/05/12"
+                                          rel="nofollow">
+    <time pubdate datetime="2019-05-11T23:30:00Z" title="2019-05-11T23:30:00Z">
+      2019-05-12
+    </time>
+  </a>
+
+                                      </div>
+
+                                      <a href="https://www.yuru-wota.com/entry/VBA/organization-test-of-flow"
+                                        class="urllist-title-link related-entries-title-link  urllist-title related-entries-title">【Excel VBA】テーブル変換とスタイル変更 ～処理の流れを整理してみる～</a>
+
+                                      <div
+                                        class="urllist-entry-body related-entries-entry-body">
+                                        前回の記事で、「テーブルを好きなデザイン（スタイル）で使い…
+
+                                      </div>
+
+                                    </div>
+                                  </li>
+
+                                </ul>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                          <div class="entry-footer-html">
+<!-- *********************************************
  * サイトマップから最新の更新日を取得
  * 【参考】
  * 【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
  * https://account-it-dentist.hatenablog.com/entry/blog-custom003
 ************************************************ -->
 <!-- jQuery (3.3.1)  -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- main -->
-<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/aUnder/modifyDate.js"></script>
+
+<script type="text/javascript"
+  src="../js/aUnder/modifyDate.js"></script>
 
 <!-- *********************************************
  * 目次（クリックで表示/非表示）
@@ -728,9 +1041,13 @@ Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synCon
  * https://www.life-is-rpg.com/entry/2018/03/16/110000
 ************************************************ -->
 <!-- jQuery (1.9.1)  -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript"
+  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <!-- main -->
-<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/aUnder/tocOnBody.js"></script>
+
+<script type="module"
+  src="../js/aUnder/tocOnBody.js"></script>
 
 <!-- *********************************************
  * コードブロックに行番号を追加
@@ -738,7 +1055,9 @@ Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synCon
  * 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
  * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
 ************************************************ -->
-<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/aUnder/rowNumOnCodeBlock.js"></script>
+
+<script type="module"
+src="../js/aUnder/rowNumOnCodeBlock.js"></script>
 
 <!-- *********************************************
  * シェアボタンの変更
@@ -748,164 +1067,170 @@ Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synCon
 ************************************************ -->
 <div class="shrbtn">
   <!-- Twitter -->
-  <a class="share_btn" title="このエントリーをTwitterでシェア"
-     href="http://twitter.com/intent/tweet?text=【Git勉強中】ステージした変更を記録する https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
+  <a class="share_btn"
+    title="このエントリーをTwitterでシェア"
+    href="http://twitter.com/intent/tweet?text=【Git勉強中】ブランチの移動を使い分けたい https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch">
     <i class="fa fa-twitter"></i>
   </a>
-  <!-- はてなブックマーク -->
-  <a class="share_btn" title="このエントリーをはてなブックマークでシェア"
-     href="http://b.hatena.ne.jp/entry/https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
-    <span class="htvcenter" style="line-height: 1.6;">
-      <i class="blogicon-bookmark" style="font-size: 22px;"></i>
-    </span>
-  </a>
-  <!-- Facebook -->
-  <a class="share_btn" title="このエントリーをFacebookでシェア"
-     href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
-    <i class="fa fa-facebook"></i>
-  </a>
-  <!-- Tumblr -->
-  <a class="share_btn" title="このエントリーをTumblrでシェア"
-     href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=【Git勉強中】ステージした変更を記録する&amp;canonicalUrl=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit"
-     target="_blank">
-    <i class="fa fa-tumblr-square" aria-hidden="true"></i>
-  </a>
-  <!-- Pocket -->
-  <a class="share_btn" title="このエントリーをPocketに追加する"
-     href="http://getpocket.com/edit?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2FHow-to-Commit">
-    <i class="fa fa-get-pocket"></i>
-  </a>
-  <!-- feedly -->
-  <a class="share_btn" title="このブログのフィードを取得する"
-     href="http://feedly.com/i/subscription/feed/http://https://yuru-wota.hateblo.jp/feed"
-     target="_blank">
-    <i class="fa fa-rss"></i>
-  </a>
-  <!-- 読者登録 -->
-  <a class="share_btn" title="読者登録してみる"
-     href="http://blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
-     target="_blank">
-    <i class="fas fa-book" style='font-family: "FontAwesome";'></i>
-  </a>
-</div>
-</div>
+<!-- はてなブックマーク -->
+<a class="share_btn"
+  title="このエントリーをはてなブックマークでシェア"
+  href="http://b.hatena.ne.jp/entry/https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch">
+  <span class="htvcenter" style="line-height: 1.6;">
+    <i class="blogicon-bookmark" style="font-size: 22px;"></i>
+  </span>
+</a>
+<!-- Facebook -->
+<a class="share_btn"
+  title="このエントリーをFacebookでシェア"
+  href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch">
+  <i class="fa fa-facebook"></i>
+</a>
+<!-- Tumblr -->
+<a class="share_btn"
+  title="このエントリーをTumblrでシェア"
+  href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=【Git勉強中】ブランチの移動を使い分けたい&amp;canonicalUrl=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
+  target="_blank">
+  <i class="fa fa-tumblr-square" aria-hidden="true"></i>
+</a>
+<!-- Pocket -->
+<a class="share_btn"
+title="このエントリーをPocketに追加する"
+href="http://getpocket.com/edit?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch">
+  <i class="fa fa-get-pocket"></i>
+</a>
+<!-- feedly -->
+<a class="share_btn"
+  title="このブログのフィードを取得する"
+  href="http://feedly.com/i/subscription/feed/http://https://yuru-wota.hateblo.jp/feed"
+  target="_blank">
+  <i class="fa fa-rss"></i>
+</a>
+<!-- 読者登録 -->
+<a class="share_btn" title="読者登録してみる"
+  href="http://blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
+  target="_blank">
+  <i class="fas fa-book" style='font-family: "FontAwesome";'></i>
+</a>
 
+                            </div>
 
-      
-    </div>
-    
-  <div class="comment-box">
-    
-    <ul class="comment">
-      <li class="read-more-comments" style="display: none;"><a>もっと読む</a></li>
-    </ul>
-    
-      <a class="leave-comment-title js-leave-comment-title">コメントを書く</a>
-    
-  </div>
+                          </div>
 
-  </footer>
+                        </div>
 
-  </div>
-</article>
+                        <div class="comment-box">
 
-      
-      
-    
-  
+                          <ul class="comment">
+                            <li class="read-more-comments"
+                              style="display: none;"><a>もっと読む</a></li>
+                          </ul>
 
-  
-  <!-- rakuten_ad_target_end -->
-  <!-- google_ad_section_end -->
-  
-  
-  
-  <div class="pager pager-permalink permalink">
-    
-    
-  </div>
+                          <a
+                            class="leave-comment-title js-leave-comment-title">コメントを書く</a>
 
+                        </div>
 
-  
+                      </footer>
 
+                    </div>
+                  </article>
 
+                  <!-- rakuten_ad_target_end -->
+                  <!-- google_ad_section_end -->
 
-        </div>
-      </div>
+                  <div class="pager pager-permalink permalink">
 
-      <aside id="box1">
-  <div id="box1-inner">
-  </div>
-</aside>
+                    <span class="pager-prev">
+        <a href="https://www.yuru-wota.com/entry/Git/How-to-Stage" rel="prev">
+          <span class="pager-arrow">&laquo; </span>
+                    【Git勉強中】ステージに上げたり下げたり…
+                    </a>
+                    </span>
 
-    </div><!-- #wrapper -->
+                    <span class="pager-next">
+        <a href="https://www.yuru-wota.com/entry/Git/Summary-of-Operations" rel="next">
+          【Git勉強中】操作に慣れてきたので、流れ…
+          <span class="pager-arrow"> &raquo;</span>
+                    </a>
+                    </span>
 
-    
-<aside id="box2">
-  
-  <div id="box2-inner">
-    
-      <div class="hatena-module hatena-module-search-box">
-  <div class="hatena-module-title">
-    検索
-  </div>
-  <div class="hatena-module-body">
-    <form class="search-form" role="search" action="https://www.yuru-wota.com/search" method="get">
-  <input type="text" name="q" class="search-module-input" value="" placeholder="記事を検索" required>
-  <input type="submit" value="検索" class="search-module-button" />
-</form>
+                  </div>
 
-  </div>
-</div>
+                </div>
 
-    
-      
+              </div>
 
-<div class="hatena-module hatena-module-profile">
-  <div class="hatena-module-title">
-    プロフィール
-  </div>
-  <div class="hatena-module-body">
-    
-    <a href="https://www.yuru-wota.com/about" class="profile-icon-link">
+              <aside id="box1">
+                <div id="box1-inner">
+
+                </div>
+              </aside>
+
+            </div><!-- #wrapper -->
+
+            <aside id="box2">
+
+              <div id="box2-inner">
+
+                <div class="hatena-module hatena-module-search-box">
+                  <div class="hatena-module-title">
+                    検索
+
+                  </div>
+                  <div class="hatena-module-body">
+
+                    <form class="search-form" role="search"
+                      action="https://www.yuru-wota.com/search"
+                      method="get">
+                      <input type="text" name="q"
+                        class="search-module-input" value=""
+                        placeholder="記事を検索" required>
+                      <input type="submit" value="検索"
+                        class="search-module-button" />
+                    </form>
+
+                  </div>
+
+                </div>
+
+                <div class="hatena-module hatena-module-profile">
+                  <div class="hatena-module-title">
+                    プロフィール
+
+                  </div>
+                  <div class="hatena-module-body">
+
+                    <a href="https://www.yuru-wota.com/about"
+                      class="profile-icon-link">
       <img src="https://cdn.profile-image.st-hatena.com/users/yuricks7/profile.png?1574076408"
       alt="id:yuricks7" class="profile-icon" />
     </a>
-    
 
-    
-    <span class="id">
+                    <span class="id">
       <a href="https://www.yuru-wota.com/about" class="hatena-id-link"><span data-load-nickname="1" data-user-name="yuricks7">id:yuricks7</span></a>
-      
-  
-    
-    
-      <a href="http://blog.hatena.ne.jp/guide/pro" title="はてなブログPro"><i class="badge-type-pro">はてなブログPro</i></a>
-    
-  
 
+                    <a href="http://blog.hatena.ne.jp/guide/pro"
+                      title="はてなブログPro"><i class="badge-type-pro">はてなブログPro</i></a>
 
-    </span>
-    
+                    </span>
 
-    
-
-    
-    <div class="profile-description">
-      <p>「モノづくり」の質を上げるべく、ネットの海で右往左往しつつお勉強しています。</p><p><b>質問箱</b>：<a href="https://peing.net/ja/yuricks7/">https://peing.net/ja/yuricks7/</a><br />
-内容によっては、こちらで記事にさせて頂くかもしれません。</p><p><b>サブブログ</b>：<a href="https://monologue.yuru-wota.com/">https://monologue.yuru-wota.com/</a><br />
-自分の趣味や障害についてなど、何でも晒して書いてます。</p><p>私の頭の中や日々の記録は<a href="https://twitter.com/yuricks7" target="_blank" rel="noopener noreferrer">Twitter</a>からどうぞ。<br />
+                    <div class="profile-description">
+                      <p>「モノづくり」の質を上げるべく、ネットの海で右往左往しつつお勉強しています。</p>
+                      <p><b>質問箱</b>：<a href="https://peing.net/ja/yuricks7/">https://peing.net/ja/yuricks7/</a><br />
+内容によっては、こちらで記事にさせて頂くかもしれません。</p>
+                      <p><b>サブブログ</b>：<a href="https://monologue.yuru-wota.com/">https://monologue.yuru-wota.com/</a><br />
+自分の趣味や障害についてなど、何でも晒して書いてます。</p>
+                      <p>私の頭の中や日々の記録は<a href="https://twitter.com/yuricks7" target="_blank" rel="noopener noreferrer">Twitter</a>からどうぞ。<br />
 たまに趣味のこともつぶやきます。</p>
 
-    </div>
-    
+                    </div>
 
-    
-      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box"
-  
-  >
+                    <div
+                      class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
 
-  <a href="#" class="hatena-follow-button js-hatena-follow-button">
+                      <a href="#"
+                        class="hatena-follow-button js-hatena-follow-button">
     <span class="subscribing">
       <span class="foreground">読者です</span>
       <span class="background">読者をやめる</span>
@@ -915,657 +1240,740 @@ Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synCon
       <span class="background">読者になる</span>
     </span>
   </a>
-  <div class="subscription-count-box js-subscription-count-box">
-    <i></i>
-    <u></u>
-    <span class="subscription-count js-subscription-count">
+                      <div
+                        class="subscription-count-box js-subscription-count-box">
+                        <i></i>
+                        <u></u>
+                        <span class="subscription-count js-subscription-count">
     </span>
-  </div>
-</div>
 
-    
+                      </div>
 
-    
-    <div class="hatena-follow-button-box btn-twitter">
-      <a href="https://twitter.com/yuricks7" class="twitter-follow-button" data-show-count="false" data-lang="ja">
+                    </div>
+
+                    <div class="hatena-follow-button-box btn-twitter">
+                      <a href="https://twitter.com/yuricks7"
+                        class="twitter-follow-button"
+                        data-show-count="false" data-lang="ja">
         @yuricks7をフォロー
       </a>
-    </div>
-    
-  </div>
-</div>
 
-    
-      <div class="hatena-module hatena-module-links">
-  <div class="hatena-module-title">
-    このブログについて
-  </div>
-  <div class="hatena-module-body">
-    <ul class="hatena-urllist">
-      
-        <li>
-          <a href="https://www.yuru-wota.com/privacy-policy/20190617#%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/privacy-policy/20190617#%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85">免責事項</a>
-        </li>
-      
-        <li>
-          <a href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>
-        </li>
-      
-    </ul>
-  </div>
-</div>
+                    </div>
 
-    
-      
-<div class="hatena-module hatena-module-entries-access-ranking"
-  data-count="5"
-  data-source="access"
-  data-enable_customize_format="0"
+                  </div>
 
-  data-display_entry_category="0"
-  data-display_entry_image="1"
-  data-display_entry_image_size_width="90"
-  data-display_entry_image_size_height="90"
-  data-display_entry_body_length="0"
-  data-display_entry_date="1"
-  data-display_entry_title_length="20"
-  data-restrict_entry_title_length="0"
-  data-display_bookmark_count="0"
+                </div>
 
->
-  <div class="hatena-module-title">
-    
-      人気TOP5
-    
-  </div>
-  <div class="hatena-module-body">
-    
-  </div>
-</div>
+                <div class="hatena-module hatena-module-links">
+                  <div class="hatena-module-title">
+                    このブログについて
 
-    
-      <div class="hatena-module hatena-module-recent-entries ">
-  <div class="hatena-module-title">
-    <a href="https://www.yuru-wota.com/archive">
+                  </div>
+                  <div class="hatena-module-body">
+                    <ul class="hatena-urllist">
+
+                      <li>
+                        <a
+                          href="https://www.yuru-wota.com/privacy-policy/20190617#%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="https://www.yuru-wota.com/privacy-policy/20190617#%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85">免責事項</a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="https://forms.gle/fsFacUBN6Kxq4Rcn8">お問い合わせフォーム</a>
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div
+                  class="hatena-module hatena-module-entries-access-ranking"
+                  data-count="5" data-source="access"
+                  data-enable_customize_format="0"
+                  data-display_entry_category="0"
+                  data-display_entry_image="1"
+                  data-display_entry_image_size_width="90"
+                  data-display_entry_image_size_height="90"
+                  data-display_entry_body_length="0"
+                  data-display_entry_date="1"
+                  data-display_entry_title_length="20"
+                  data-restrict_entry_title_length="0"
+                  data-display_bookmark_count="0">
+                  <div class="hatena-module-title">
+
+                    人気TOP5
+
+                  </div>
+                  <div class="hatena-module-body">
+
+                  </div>
+
+                </div>
+
+                <div
+                  class="hatena-module hatena-module-recent-entries ">
+                  <div class="hatena-module-title">
+                    <a href="https://www.yuru-wota.com/archive">
       最近の記事
     </a>
-  </div>
-  <div class="hatena-module-body">
-    <ul class="recent-entries hatena-urllist urllist-with-thumbnails">
-  
-  
-    
-    <li class="urllist-item recent-entries-item">
-      <div class="urllist-item-inner recent-entries-item-inner">
-        
-                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Compile-Error">
+
+                  </div>
+                  <div class="hatena-module-body">
+                    <ul
+                      class="recent-entries hatena-urllist urllist-with-thumbnails">
+
+                      <li class="urllist-item recent-entries-item">
+                        <div
+                          class="urllist-item-inner recent-entries-item-inner">
+
+                          <a class="urllist-image-link recent-entries-image-link"
+                            href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Compile-Error">
   <img alt="【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）" src="https://cdn.image.st-hatena.com/image/square/27975e7625483b5a76374ba0fff3b1795c9968ea/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png" class="urllist-image recent-entries-image" title="【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）" width="90">
 </a>
-            <div class="urllist-date-link recent-entries-date-link">
-  <a href="https://www.yuru-wota.com/archive/2020/09/01" rel="nofollow">
+                          <div
+                            class="urllist-date-link recent-entries-date-link">
+                            <a href="https://www.yuru-wota.com/archive/2020/09/01"
+                              rel="nofollow">
     <time pubdate datetime="2020-09-01T12:30:00Z" title="2020-09-01T12:30:00Z">
       2020-09-01
     </time>
   </a>
-</div>
 
-          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Compile-Error" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）</a>
+                          </div>
 
+                          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Compile-Error"
+                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】どこがダメ？ - エラー発生時のチェックリスト（コンパイルエラー編）</a>
 
-          
-          
+                        </div>
+                      </li>
 
-                </div>
-    </li>
-  
-    
-    <li class="urllist-item recent-entries-item">
-      <div class="urllist-item-inner recent-entries-item-inner">
-        
-                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment">
+                      <li class="urllist-item recent-entries-item">
+                        <div
+                          class="urllist-item-inner recent-entries-item-inner">
+
+                          <a class="urllist-image-link recent-entries-image-link"
+                            href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment">
   <img alt="カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた" src="https://cdn.image.st-hatena.com/image/square/d7908f48f56a3d9444966ebd3c703e83a84d1ca2/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2Fran%2Fimg%2F1001%2F0004%2F939%2F761%2F310%2F461%2F10010004939761310461_1.jpg%3F_ex%3D320x320" class="urllist-image recent-entries-image" title="カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた" width="90">
 </a>
-            <div class="urllist-date-link recent-entries-date-link">
-  <a href="https://www.yuru-wota.com/archive/2020/08/26" rel="nofollow">
+                          <div
+                            class="urllist-date-link recent-entries-date-link">
+                            <a href="https://www.yuru-wota.com/archive/2020/08/26"
+                              rel="nofollow">
     <time pubdate datetime="2020-08-26T12:00:00Z" title="2020-08-26T12:00:00Z">
       2020-08-26
     </time>
   </a>
-</div>
 
-          <a href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた</a>
+                          </div>
 
+                          <a href="https://www.yuru-wota.com/entry/WorkSpace/Silent-Environment"
+                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">カチャカチャ音が苦手なのでPC環境を自分好みに整えてみた</a>
 
-          
-          
+                        </div>
+                      </li>
 
-                </div>
-    </li>
-  
-    
-    <li class="urllist-item recent-entries-item">
-      <div class="urllist-item-inner recent-entries-item-inner">
-        
-                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/Environ-Function">
+                      <li class="urllist-item recent-entries-item">
+                        <div
+                          class="urllist-item-inner recent-entries-item-inner">
+
+                          <a class="urllist-image-link recent-entries-image-link"
+                            href="https://www.yuru-wota.com/entry/VBA/Environ-Function">
   <img alt="【VBA】環境変数の中身をVBAで見てみる" src="https://cdn.image.st-hatena.com/image/square/27975e7625483b5a76374ba0fff3b1795c9968ea/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png" class="urllist-image recent-entries-image" title="【VBA】環境変数の中身をVBAで見てみる" width="90">
 </a>
-            <div class="urllist-date-link recent-entries-date-link">
-  <a href="https://www.yuru-wota.com/archive/2020/03/22" rel="nofollow">
+                          <div
+                            class="urllist-date-link recent-entries-date-link">
+                            <a href="https://www.yuru-wota.com/archive/2020/03/22"
+                              rel="nofollow">
     <time pubdate datetime="2020-03-22T11:00:00Z" title="2020-03-22T11:00:00Z">
       2020-03-22
     </time>
   </a>
-</div>
 
-          <a href="https://www.yuru-wota.com/entry/VBA/Environ-Function" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】環境変数の中身をVBAで見てみる</a>
+                          </div>
 
+                          <a href="https://www.yuru-wota.com/entry/VBA/Environ-Function"
+                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】環境変数の中身をVBAで見てみる</a>
 
-          
-          
+                        </div>
+                      </li>
 
-                </div>
-    </li>
-  
-    
-    <li class="urllist-item recent-entries-item">
-      <div class="urllist-item-inner recent-entries-item-inner">
-        
-                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline">
+                      <li class="urllist-item recent-entries-item">
+                        <div
+                          class="urllist-item-inner recent-entries-item-inner">
+
+                          <a class="urllist-image-link recent-entries-image-link"
+                            href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline">
   <img alt="【VBA】自分用コーディングガイドライン" src="https://cdn.image.st-hatena.com/image/square/4deae2e663e71141ad5c81bd6ef1c73958d5800f/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbook%2Fcabinet%2F5658%2F9784873115658.jpg%3F_ex%3D200x200" class="urllist-image recent-entries-image" title="【VBA】自分用コーディングガイドライン" width="90">
 </a>
-            <div class="urllist-date-link recent-entries-date-link">
-  <a href="https://www.yuru-wota.com/archive/2020/03/10" rel="nofollow">
+                          <div
+                            class="urllist-date-link recent-entries-date-link">
+                            <a href="https://www.yuru-wota.com/archive/2020/03/10"
+                              rel="nofollow">
     <time pubdate datetime="2020-03-10T12:00:00Z" title="2020-03-10T12:00:00Z">
       2020-03-10
     </time>
   </a>
-</div>
 
-          <a href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】自分用コーディングガイドライン</a>
+                          </div>
 
+                          <a href="https://www.yuru-wota.com/entry/VBA/My-Coding-Guideline"
+                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】自分用コーディングガイドライン</a>
 
-          
-          
+                        </div>
+                      </li>
 
-                </div>
-    </li>
-  
-    
-    <li class="urllist-item recent-entries-item">
-      <div class="urllist-item-inner recent-entries-item-inner">
-        
-                      <a class="urllist-image-link recent-entries-image-link" href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error">
+                      <li class="urllist-item recent-entries-item">
+                        <div
+                          class="urllist-item-inner recent-entries-item-inner">
+
+                          <a class="urllist-image-link recent-entries-image-link"
+                            href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error">
   <img alt="【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）" src="https://cdn.image.st-hatena.com/image/square/27975e7625483b5a76374ba0fff3b1795c9968ea/backend=imagemagick;height=90;version=1;width=90/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png" class="urllist-image recent-entries-image" title="【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）" width="90">
 </a>
-            <div class="urllist-date-link recent-entries-date-link">
-  <a href="https://www.yuru-wota.com/archive/2019/12/14" rel="nofollow">
+                          <div
+                            class="urllist-date-link recent-entries-date-link">
+                            <a href="https://www.yuru-wota.com/archive/2019/12/14"
+                              rel="nofollow">
     <time pubdate datetime="2019-12-14T10:00:00Z" title="2019-12-14T10:00:00Z">
       2019-12-14
     </time>
   </a>
-</div>
 
-          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error" class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）</a>
+                          </div>
 
+                          <a href="https://www.yuru-wota.com/entry/VBA/Check-List-When-Runtime-Error"
+                            class="urllist-title-link recent-entries-title-link  urllist-title recent-entries-title">【VBA】なにか忘れてる？ - エラー発生時のチェックリスト（実行時エラー編）</a>
 
-          
-          
+                        </div>
+                      </li>
 
-                </div>
-    </li>
-  
-</ul>
+                    </ul>
 
-          <div class="urllist-see-more recent-entries-see-more">
-        <a href="https://www.yuru-wota.com/archive"  class="urllist-see-more-link recent-entries-see-more-link">
+                    <div
+                      class="urllist-see-more recent-entries-see-more">
+                      <a href="https://www.yuru-wota.com/archive"
+                        class="urllist-see-more-link recent-entries-see-more-link">
           もっと見る
         </a>
-      </div>  </div>
-</div>
 
-    
-      
+                    </div>
 
-<div class="hatena-module hatena-module-archive" data-archive-type="default" data-archive-url="https://www.yuru-wota.com/archive">
-  <div class="hatena-module-title">
-    <a href="https://www.yuru-wota.com/archive">月別アーカイブ</a>
-  </div>
-  <div class="hatena-module-body">
-  </div>
-</div>
+                  </div>
 
-    
-      
+                </div>
 
-<div class="hatena-module hatena-module-category">
-  <div class="hatena-module-title">
-    カテゴリー
-  </div>
-  <div class="hatena-module-body">
-    <ul class="hatena-urllist">
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Batch" class="category-Batch">
+                <div class="hatena-module hatena-module-html">
+                  <div class="hatena-module-title">目次
+
+                  </div>
+                  <div class="hatena-module-body">
+                    <!-- -->
+                    <nav id='stoc'></nav>
+
+                  </div>
+
+                </div>
+
+                <div class="hatena-module hatena-module-archive"
+                  data-archive-type="default"
+                  data-archive-url="https://www.yuru-wota.com/archive">
+                  <div class="hatena-module-title">
+                    <a
+                      href="https://www.yuru-wota.com/archive">月別アーカイブ</a>
+
+                  </div>
+                  <div class="hatena-module-body">
+
+                  </div>
+
+                </div>
+
+                <div class="hatena-module hatena-module-category">
+                  <div class="hatena-module-title">
+                    カテゴリー
+
+                  </div>
+                  <div class="hatena-module-body">
+                    <ul class="hatena-urllist">
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Batch"
+                          class="category-Batch">
             Batch (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Chatwork" class="category-Chatwork">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Chatwork"
+                          class="category-Chatwork">
             Chatwork (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/CSS" class="category-CSS">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/CSS"
+                          class="category-CSS">
             CSS (4)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Excel" class="category-Excel">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Excel"
+                          class="category-Excel">
             Excel (14)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Excel-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%82%AD%E3%83%BC" class="category-Excel-ショートカットキー">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Excel-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%82%AD%E3%83%BC"
+                          class="category-Excel-ショートカットキー">
             Excel-ショートカットキー (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Git" class="category-Git">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Git"
+                          class="category-Git">
             Git (8)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Google%20Analytics" class="category-Google-Analytics">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Google%20Analytics"
+                          class="category-Google-Analytics">
             Google Analytics (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/HTML" class="category-HTML">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/HTML"
+                          class="category-HTML">
             HTML (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0" class="category-HTML-タグ">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0"
+                          class="category-HTML-タグ">
             HTML-タグ (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0-kbd" class="category-HTML-タグ-kbd">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/HTML-%E3%82%BF%E3%82%B0-kbd"
+                          class="category-HTML-タグ-kbd">
             HTML-タグ-kbd (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/JacaScript%20%2F%20Google%20Apps%20Script-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" class="category-JacaScript-/-Google-Apps-Script-ライブラリ">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/JacaScript%20%2F%20Google%20Apps%20Script-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA"
+                          class="category-JacaScript-/-Google-Apps-Script-ライブラリ">
             JacaScript / Google Apps Script-ライブラリ (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script" class="category-JavaScript-/-Google-Apps-Script">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script"
+                          class="category-JavaScript-/-Google-Apps-Script">
             JavaScript / Google Apps Script (10)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-Gmail" class="category-JavaScript-/-Google-Apps-Script-Gmail">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-Gmail"
+                          class="category-JavaScript-/-Google-Apps-Script-Gmail">
             JavaScript / Google Apps Script-Gmail (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%8C%96" class="category-JavaScript-/-Google-Apps-Script-クラスとインスタンス化">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script-%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%8C%96"
+                          class="category-JavaScript-/-Google-Apps-Script-クラスとインスタンス化">
             JavaScript / Google Apps Script-クラスとインスタンス化 (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A" class="category-PC設定">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A"
+                          class="category-PC設定">
             PC設定 (10)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89" class="category-PC設定-キーボード">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89"
+                          class="category-PC設定-キーボード">
             PC設定-キーボード (4)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2" class="category-PC設定-フリーウェア">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2"
+                          class="category-PC設定-フリーウェア">
             PC設定-フリーウェア (3)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2-%E8%A7%A3%E5%87%8D%E3%82%BD%E3%83%95%E3%83%88" class="category-PC設定-フリーウェア-解凍ソフト">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%82%A2-%E8%A7%A3%E5%87%8D%E3%82%BD%E3%83%95%E3%83%88"
+                          class="category-PC設定-フリーウェア-解凍ソフト">
             PC設定-フリーウェア-解凍ソフト (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%9E%E3%82%A6%E3%82%B9" class="category-PC設定-マウス">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E3%83%9E%E3%82%A6%E3%82%B9"
+                          class="category-PC設定-マウス">
             PC設定-マウス (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD" class="category-PC設定-拡張機能">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PC%E8%A8%AD%E5%AE%9A-%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD"
+                          class="category-PC設定-拡張機能">
             PC設定-拡張機能 (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PowerShell" class="category-PowerShell">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PowerShell"
+                          class="category-PowerShell">
             PowerShell (6)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/PowerShell-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86" class="category-PowerShell-パッケージ管理">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/PowerShell-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86"
+                          class="category-PowerShell-パッケージ管理">
             PowerShell-パッケージ管理 (5)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Slack" class="category-Slack">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Slack"
+                          class="category-Slack">
             Slack (3)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/Slack-Bot" class="category-Slack-Bot">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/Slack-Bot"
+                          class="category-Slack-Bot">
             Slack-Bot (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA" class="category-VBA">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA"
+                          class="category-VBA">
             VBA (23)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%82%A8%E3%83%A9%E3%83%BC" class="category-VBA-エラー対策-コンパイルエラー">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%82%A8%E3%83%A9%E3%83%BC"
+                          class="category-VBA-エラー対策-コンパイルエラー">
             VBA-エラー対策-コンパイルエラー (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88" class="category-VBA-エラー対策-チェックリスト">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88"
+                          class="category-VBA-エラー対策-チェックリスト">
             VBA-エラー対策-チェックリスト (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%A8%E3%83%A9%E3%83%BC" class="category-VBA-エラー対策-チェックリスト-実行時エラー">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%A8%E3%83%A9%E3%83%BC%E5%AF%BE%E7%AD%96-%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88-%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%A8%E3%83%A9%E3%83%BC"
+                          class="category-VBA-エラー対策-チェックリスト-実行時エラー">
             VBA-エラー対策-チェックリスト-実行時エラー (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3" class="category-VBA-コーディングガイドライン">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3"
+                          class="category-VBA-コーディングガイドライン">
             VBA-コーディングガイドライン (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%BB%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C" class="category-VBA-セルの操作">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%82%BB%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C"
+                          class="category-VBA-セルの操作">
             VBA-セルの操作 (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C" class="category-VBA-テーブルの操作">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E6%93%8D%E4%BD%9C"
+                          class="category-VBA-テーブルの操作">
             VBA-テーブルの操作 (5)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%93%8D%E4%BD%9C" class="category-VBA-文字列の操作">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%93%8D%E4%BD%9C"
+                          class="category-VBA-文字列の操作">
             VBA-文字列の操作 (4)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VBA-%E9%80%86%E5%BC%95%E3%81%8D%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9" class="category-VBA-逆引きリファレンス">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VBA-%E9%80%86%E5%BC%95%E3%81%8D%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9"
+                          class="category-VBA-逆引きリファレンス">
             VBA-逆引きリファレンス (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VS%20Code" class="category-VS-Code">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VS%20Code"
+                          class="category-VS-Code">
             VS Code (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/VS%20Code-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA" class="category-VS-Code-カスタマイズ">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/VS%20Code-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA"
+                          class="category-VS-Code-カスタマイズ">
             VS Code-カスタマイズ (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD" class="category-■ただいま勉強中">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%81%9F%E3%81%A0%E3%81%84%E3%81%BE%E5%8B%89%E5%BC%B7%E4%B8%AD"
+                          class="category-■ただいま勉強中">
             ■ただいま勉強中 (15)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA" class="category-■ブログカスタマイズ">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA"
+                          class="category-■ブログカスタマイズ">
             ■ブログカスタマイズ (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF" class="category-■ブログカスタマイズ-コードブロック">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF"
+                          class="category-■ブログカスタマイズ-コードブロック">
             ■ブログカスタマイズ-コードブロック (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%83%9C%E3%82%BF%E3%83%B3" class="category-■ブログカスタマイズ-ボタン">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-%E3%83%9C%E3%82%BF%E3%83%B3"
+                          class="category-■ブログカスタマイズ-ボタン">
             ■ブログカスタマイズ-ボタン (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC" class="category-■プログラム全般">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC"
+                          class="category-■プログラム全般">
             ■プログラム全般 (42)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%96%87%E6%B3%95%E3%83%BB%E6%A7%8B%E6%96%87" class="category-■プログラム全般-文法・構文">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%96%87%E6%B3%95%E3%83%BB%E6%A7%8B%E6%96%87"
+                          class="category-■プログラム全般-文法・構文">
             ■プログラム全般-文法・構文 (11)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5" class="category-■プログラム全般-概念">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5"
+                          class="category-■プログラム全般-概念">
             ■プログラム全般-概念 (3)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91" class="category-■プログラム全般-概念-オブジェクト指向">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC-%E6%A6%82%E5%BF%B5-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91"
+                          class="category-■プログラム全般-概念-オブジェクト指向">
             ■プログラム全般-概念-オブジェクト指向 (3)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%81%BF%E3%81%98%E3%81%8B%E3%82%81" class="category-◆みじかめ">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%81%BF%E3%81%98%E3%81%8B%E3%82%81"
+                          class="category-◆みじかめ">
             ◆みじかめ (4)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94" class="category-◆ノンプロ研">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94"
+                          class="category-◆ノンプロ研">
             ◆ノンプロ研 (7)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-Advent%20Calender" class="category-◆ノンプロ研-Advent-Calender">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-Advent%20Calender"
+                          class="category-◆ノンプロ研-Advent-Calender">
             ◆ノンプロ研-Advent Calender (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E3%83%81%E3%83%BC%E3%83%A0%E6%9D%B1%E5%8C%97" class="category-◆ノンプロ研-チーム東北">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E3%83%81%E3%83%BC%E3%83%A0%E6%9D%B1%E5%8C%97"
+                          class="category-◆ノンプロ研-チーム東北">
             ◆ノンプロ研-チーム東北 (4)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E5%AE%9A%E4%BE%8B%E4%BC%9A" class="category-◆ノンプロ研-定例会">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E2%97%86%E3%83%8E%E3%83%B3%E3%83%97%E3%83%AD%E7%A0%94-%E5%AE%9A%E4%BE%8B%E4%BC%9A"
+                          class="category-◆ノンプロ研-定例会">
             ◆ノンプロ研-定例会 (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF" class="category-うっかりハック">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF"
+                          class="category-うっかりハック">
             うっかりハック (5)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF-%E3%81%B7%E3%81%A1" class="category-うっかりハック-ぷち">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%83%8F%E3%83%83%E3%82%AF-%E3%81%B7%E3%81%A1"
+                          class="category-うっかりハック-ぷち">
             うっかりハック-ぷち (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%81%93%E3%81%AE%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" class="category-このブログについて">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%93%E3%81%AE%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
+                          class="category-このブログについて">
             このブログについて (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%81%98%E3%81%B6%E3%82%93%E3%81%AE%E3%81%93%E3%81%A8" class="category-じぶんのこと">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%81%98%E3%81%B6%E3%82%93%E3%81%AE%E3%81%93%E3%81%A8"
+                          class="category-じぶんのこと">
             じぶんのこと (3)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB" class="category-アイドル">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB"
+                          class="category-アイドル">
             アイドル (5)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD" class="category-アイドル-ハロプロ">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD"
+                          class="category-アイドル-ハロプロ">
             アイドル-ハロプロ (5)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-BEYOOOOONDS" class="category-アイドル-ハロプロ-BEYOOOOONDS">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-BEYOOOOONDS"
+                          class="category-アイドル-ハロプロ-BEYOOOOONDS">
             アイドル-ハロプロ-BEYOOOOONDS (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-Juice%3DJuice" class="category-アイドル-ハロプロ-Juice=Juice">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-Juice%3DJuice"
+                          class="category-アイドル-ハロプロ-Juice=Juice">
             アイドル-ハロプロ-Juice=Juice (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%98%E3%80%82" class="category-アイドル-ハロプロ-モーニング娘。">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%98%E3%80%82"
+                          class="category-アイドル-ハロプロ-モーニング娘。">
             アイドル-ハロプロ-モーニング娘。 (3)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8" class="category-読書">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8"
+                          class="category-読書">
             読書 (5)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8-%E5%86%99%E7%B5%8C" class="category-読書-写経">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E8%AA%AD%E6%9B%B8-%E5%86%99%E7%B5%8C"
+                          class="category-読書-写経">
             読書-写経 (4)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9" class="category-買い物">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9"
+                          class="category-買い物">
             買い物 (2)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9-%E5%AE%B6%E9%9B%BB" class="category-買い物-家電">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E8%B2%B7%E3%81%84%E7%89%A9-%E5%AE%B6%E9%9B%BB"
+                          class="category-買い物-家電">
             買い物-家電 (1)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E9%81%8E%E5%8E%BB%E8%A8%98%E4%BA%8B" class="category-過去記事">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E9%81%8E%E5%8E%BB%E8%A8%98%E4%BA%8B"
+                          class="category-過去記事">
             過去記事 (14)
           </a>
-        </li>
-      
-        <li>
-          <a href="https://www.yuru-wota.com/archive/category/%E9%9B%91%E8%A8%98" class="category-雑記">
+                      </li>
+
+                      <li>
+                        <a href="https://www.yuru-wota.com/archive/category/%E9%9B%91%E8%A8%98"
+                          class="category-雑記">
             雑記 (2)
           </a>
-        </li>
-      
-    </ul>
-  </div>
-</div>
+                      </li>
 
-    
-      
-<div class="hatena-module hatena-module-html">
-    <div class="hatena-module-title">目次</div>
-  <div class="hatena-module-body">
-    <!-- -->
-<nav id='stoc'></nav>
-  </div>
-</div>
+                    </ul>
 
-    
-    
-  </div>
-</aside>
+                  </div>
 
+                </div>
 
-  </div>
-</div>
+              </div>
+            </aside>
 
+          </div>
 
+        </div>
 
-
-        
-
-        
-  <div id="bottom-editarea">
-    <!-- *********************************************
+        <div id="bottom-editarea">
+<!-- *********************************************
  * パンくずリスト
  * CopyRight
  * http://blog.wackwack.net/entry/2016/09/22/185558
 ************************************************ -->
 <!-- jQuery (3.3.1)  -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- main -->
-<script type="text/javascript" src="https://hatena.wackwack.net/v1.1/js/breadcrumb.min.js"></script>
-<script type="text/javascript" src="https://hatena.wackwack.net/v1.1/js/category_archive.min.js"></script>
+
+<script type="text/javascript"
+  src="https://hatena.wackwack.net/v1.1/js/breadcrumb.min.js"></script>
+
+<script type="text/javascript"
+  src="https://hatena.wackwack.net/v1.1/js/category_archive.min.js"></script>
 
 <!-- *********************************************
  * lazy load
@@ -1573,119 +1981,152 @@ Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synCon
  * はてなブログでLazy Loadを使う方法！コピペで簡単に使える！｜パソコン・ブログガイド
  * https://www.gipsyjazznyumon.com/lazy-load-for-hatenablog/
 ************************************************ -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/eFooter/lazyLoad.js"></script>
 
-<!-- *********************************************
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+<script type="text/javascript"
+  src="../js/eFooter/lazyLoad.js"></script>
+
+          <!-- *********************************************
  * 追尾する目次（ver3.3.0）
  * 【参考】
  * https://git.io/stoc
 ************************************************ -->
-<script type="text/javascript" src="//yuricks7.github.io/notebook/src/js/eFooter/tocOnSideBar.js"></script>
 
-  </div>
+          <script type="text/javascript"
+            src="../js/eFooter/tocOnSideBar.js"></script>
 
+        </div>
 
       </div>
+
     </div>
-    
-<footer id="footer" data-brand="hatenablog">
-  <div id="footer-inner">
-    
-      <div style="display:none !important" class="guest-footer js-guide-register test-blogs-register-guide" data-action="guide-register">
-  <div class="guest-footer-content">
-    <h3>はてなブログをはじめよう！</h3>
-    <p>yuricks7さんは、はてなブログを使っています。あなたもはてなブログをはじめてみませんか？</p>
-    <div class="guest-footer-btn-container">
-      <div  class="guest-footer-btn">
-        <a class="btn btn-register js-inherit-ga" href="https://blog.hatena.ne.jp/register?via=200227" target="_blank">はてなブログをはじめる（無料）</a>
-      </div>
-      <div  class="guest-footer-btn">
-        <a href="https://hatenablog.com/guide" target="_blank">はてなブログとは</a>
-      </div>
-    </div>
-  </div>
-</div>
 
-    
-    <address class="footer-address">
-      <a href="https://www.yuru-wota.com/">
+    <footer id="footer" data-brand="hatenablog">
+      <div id="footer-inner">
+
+        <div style="display:none !important"
+          class="guest-footer js-guide-register test-blogs-register-guide"
+          data-action="guide-register">
+          <div class="guest-footer-content">
+
+            <h3>はてなブログをはじめよう！</h3>
+            <p>yuricks7さんは、はてなブログを使っています。あなたもはてなブログをはじめてみませんか？</p>
+            <div class="guest-footer-btn-container">
+              <div class="guest-footer-btn">
+                <a class="btn btn-register js-inherit-ga"
+                  href="https://blog.hatena.ne.jp/register?via=200227"
+                  target="_blank">はてなブログをはじめる（無料）</a>
+
+              </div>
+              <div class="guest-footer-btn">
+                <a href="https://hatenablog.com/guide"
+                  target="_blank">はてなブログとは</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <address class="footer-address">
+          <a href="https://www.yuru-wota.com/">
         <img src="https://cdn.blog.st-hatena.com/images/admin/blog-icon-noimage.png" width="16" height="16" alt="ゆるおたノート"/>
         <span class="footer-address-name">ゆるおたノート</span>
       </a>
-    </address>
-    <p class="services">
+        </address>
+        <p class="services">
       Powered by <a href="https://hatenablog.com/">Hatena Blog</a>
       |
-        <a href="https://blog.hatena.ne.jp/-/abuse_report?target_url=https%3A%2F%2Fwww.yuru-wota.com%2Fpreview" class="report-abuse-link test-report-abuse-link" target="_blank">ブログを報告する</a>
+        <a href="https://blog.hatena.ne.jp/-/abuse_report?target_url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch" class="report-abuse-link test-report-abuse-link" target="_blank">ブログを報告する</a>
     </p>
-  </div>
-</footer>
 
+      </div>
+    </footer>
 
-    
+    <script
+      src="https://s.hatena.ne.jp/js/HatenaStar.js?20191001"></script>
 
-    
-  <script src="https://s.hatena.ne.jp/js/HatenaStar.js?20191001"></script>
+    <div class="quote-box">
+      <div class="tooltip-quote tooltip-quote-star">
+        <i class="blogicon-star" title="引用スターをつける"></i>
 
+      </div>
+      <div class="tooltip-quote tooltip-quote-stock">
+        <i class="blogicon-quote" title="引用をストック"></i>
 
-    
-    
+      </div>
+      <div
+        class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet">
+        <a class="js-tweet-quote" target="_blank"
+          data-track-name="quote-tweet"
+          data-track-once><i class="blogicon-twitter" title="引用してツイートする"></i></a>
 
-<div class="quote-box">
-  <div class="tooltip-quote tooltip-quote-star">
-    <i class="blogicon-star" title="引用スターをつける"></i>
-  </div>
-  <div class="tooltip-quote tooltip-quote-stock">
-    <i class="blogicon-quote" title="引用をストック"></i>
-  </div>
-  <div class="tooltip-quote tooltip-quote-tweet js-tooltip-quote-tweet">
-    <a class="js-tweet-quote" target="_blank" data-track-name="quote-tweet" data-track-once><i class="blogicon-twitter" title="引用してツイートする"></i></a>
-  </div>
-</div>
+      </div>
 
-<div class="message-box" id="quote-star-message-box" style="display: none; position: absolute;">
-  スターをつけました
-</div>
+    </div>
 
-<div class="quote-stock-panel" id="quote-stock-message-box" style="position: absolute; z-index: 3000">
-  <div class="message-box" id="quote-stock-succeeded-message" style="display: none">
-    <p>引用をストックしました</p>
-    <button class="btn btn-primary" id="quote-stock-show-editor-button" data-track-name="curation-quote-edit-button">ストック一覧を見る</button>
-    <button class="btn quote-stock-close-message-button">閉じる</button>
-  </div>
+    <div class="message-box" id="quote-star-message-box"
+      style="display: none; position: absolute;">
+      スターをつけました
 
-  <div class="message-box" id="quote-login-required-message" style="display: none">
-    <p>引用するにはまずログインしてください</p>
-    <button class="btn btn-primary" id="quote-login-button">ログイン</button>
-    <button class="btn quote-stock-close-message-button">閉じる</button>
-  </div>
+    </div>
 
-  <div class="error-box" id="quote-stock-failed-message" style="display: none">
-    <p>引用をストックできませんでした。再度お試しください</p>
-    <button class="btn quote-stock-close-message-button">閉じる</button>
-  </div>
+    <div class="quote-stock-panel" id="quote-stock-message-box"
+      style="position: absolute; z-index: 3000">
+      <div class="message-box" id="quote-stock-succeeded-message"
+        style="display: none">
+        <p>引用をストックしました</p>
+        <button class="btn btn-primary"
+          id="quote-stock-show-editor-button"
+          data-track-name="curation-quote-edit-button">ストック一覧を見る</button>
+        <button
+          class="btn quote-stock-close-message-button">閉じる</button>
 
-  <div class="error-box" id="unstockable-quote-message-box" style="display: none; position: absolute; z-index: 3000;">
-    <p>限定公開記事のため引用できません。</p>
-  </div>
-</div>
+      </div>
 
-<script type="x-underscore-template" id="js-requote-button-template">
+      <div class="message-box" id="quote-login-required-message"
+        style="display: none">
+        <p>引用するにはまずログインしてください</p>
+        <button class="btn btn-primary"
+          id="quote-login-button">ログイン</button>
+        <button
+          class="btn quote-stock-close-message-button">閉じる</button>
+
+      </div>
+
+      <div class="error-box" id="quote-stock-failed-message"
+        style="display: none">
+        <p>引用をストックできませんでした。再度お試しください</p>
+        <button
+          class="btn quote-stock-close-message-button">閉じる</button>
+
+      </div>
+
+      <div class="error-box" id="unstockable-quote-message-box"
+        style="display: none; position: absolute; z-index: 3000;">
+        <p>限定公開記事のため引用できません。</p>
+
+      </div>
+
+    </div>
+
+    <script type="x-underscore-template"
+      id="js-requote-button-template">
   <div class="requote-button js-requote-button">
     <button class="requote-button-btn tipsy-top" title="引用する"><i class="blogicon-quote"></i></button>
   </div>
 </script>
 
-
-
-    
     <div id="hidden-subscribe-button" style="display: none;">
-      <div class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box"
-  
-  >
+      <div
+        class="hatena-follow-button-box btn-subscribe js-hatena-follow-button-box">
 
-  <a href="#" class="hatena-follow-button js-hatena-follow-button">
+        <a href="#"
+          class="hatena-follow-button js-hatena-follow-button">
     <span class="subscribing">
       <span class="foreground">読者です</span>
       <span class="background">読者をやめる</span>
@@ -1695,53 +2136,52 @@ Date:   Wed Jun <span class="synConstant">26</span> 16:55:41 <span class="synCon
       <span class="background">読者になる</span>
     </span>
   </a>
-  <div class="subscription-count-box js-subscription-count-box">
-    <i></i>
-    <u></u>
-    <span class="subscription-count js-subscription-count">
+        <div class="subscription-count-box js-subscription-count-box">
+          <i></i>
+          <u></u>
+          <span class="subscription-count js-subscription-count">
     </span>
-  </div>
-</div>
+
+        </div>
+
+      </div>
 
     </div>
 
-    
-  <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript"
+      src="https://platform.twitter.com/widgets.js"></script>
 
-<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    <script type="text/javascript"
+      src="https://b.st-hatena.com/js/bookmark_button.js"
+      charset="utf-8" async="async"></script>
 
+    <script type="text/javascript"
+      src="https://cdn.blog.st-hatena.com/js/external/jquery.min.js?version=1.12.3"></script>
 
-<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.min.js?version=1.12.3"></script>
-<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.js?version=0.8.3"></script>
-<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.time.js?version=0.8.3"></script>
-<script id="vendor-js" data-env="production" type="text/javascript" src="https://cdn.blog.st-hatena.com/js/vendor.js?version=3666b64dd7f91e9633de4fee56e0bed192084078&amp;env=production" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+      src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.js?version=0.8.3"></script>
 
+    <script type="text/javascript"
+      src="https://cdn.blog.st-hatena.com/js/external/jquery.flot.time.js?version=0.8.3"></script>
 
+    <script id="vendor-js" data-env="production"
+      type="text/javascript"
+      src="https://cdn.blog.st-hatena.com/js/vendor.js?version=cceb5f5a4a0bc19613a5ce43c5e874c720195211&amp;env=production"
+      crossorigin="anonymous"></script>
 
+    <script type="text/javascript"
+      src="https://cdn.blog.st-hatena.com/js/texts-ja.js?version=5e6afcb5b363863518db8c88468e00d6bc5a17ed&amp;env=production"></script>
 
+    <script id="hatenablog-js" data-env="production"
+      type="text/javascript"
+      src="https://cdn.blog.st-hatena.com/js/hatenablog.js?version=d50041c19cdd6e91eeb5606279fa4a57dce3e965&amp;env=production"
+      crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://cdn.blog.st-hatena.com/js/texts-ja.js?version=a3041712612329192b782c15cb657bc27371800a&amp;env=production"></script>
-<script id="hatenablog-js" data-env="production"
-  type="text/javascript" src="https://cdn.blog.st-hatena.com/js/hatenablog.js?version=34cbd25e650ec25360a7f6e3f00afc62d47e4664&amp;env=production" crossorigin="anonymous"></script>
+    <script
+      type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
 
-
-  <script type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
-
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-
-
-
-
-    
-
-    
-
-
-
-
+    <script src="https://www.google.com/recaptcha/api.js" async
+      defer></script>
 
   </body>
 </html>
