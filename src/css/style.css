@@ -1215,7 +1215,7 @@ footer .comment-box {
 
 .lastmod:before {
   margin-right: 10px;
-  content: '\f021';
+  content: '\f2f9';
   /* 更新マーク（repeat） */
   font-family: FontAwesome;
   font-size: 16px !important;
