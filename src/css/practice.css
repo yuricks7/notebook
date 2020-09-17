@@ -781,6 +781,9 @@ body {
 
 /* ナビゲーション */
 #gnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 0;
   border: 0;
   background-color: rgba(29, 138, 255, 0.3);
@@ -794,8 +797,16 @@ body {
 
 #gnav .gnav-inner .menu {
   height: 100%;
-  margin: 2px;
-  padding: 6px 2px !important;
+  margin: 0px  0px 5px;
+  padding: 8px 18px 6px !important;
+  -webkit-box-shadow: 0 4px rgba(29, 138, 255, 0.6);
+          box-shadow: 0 4px rgba(29, 138, 255, 0.6);
+  border-left: 1px solid rgba(29, 138, 255, 0.3);
+  border-right: 1px solid rgba(29, 138, 255, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 #gnav .gnav-inner .menu a {
@@ -803,15 +814,29 @@ body {
 }
 
 #gnav .gnav-inner .menu:hover {
-  cursor: pointer;
-  margin: 0 1px;
-  border-radius: 2px;
-  border: 1px solid rgba(29, 138, 255, 0.3);
-  -webkit-box-shadow: 0 0 3px rgba(5, 5, 5, 0.4);
-          box-shadow: 0 0 3px rgba(5, 5, 5, 0.4);
-  background-color: rgba(29, 138, 255, 0.2);
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 #333;
+          box-shadow: 0 0 #333;
 }
 
+#gnav .gnav-inner .menu .content {
+  width: 750px;
+  height: 200px;
+  background: #eee;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+ * 階層化（ホバーで子要素を表示）
+ *
+ * HTMLとCSSだけでできるドロップダウンメニューの作り方 | Public Constructor
+ * https://public-constructor.com/html-css-dropdown-menu/
+ */
 /* パンくずリスト */
 #breadcrumb div {
   display: inline;
@@ -1345,6 +1370,10 @@ footer .comment-box {
   font-size: 1.2em;
 }
 
+.hatena-module .hatena-module-body .search-form:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: .95em;
@@ -1395,6 +1424,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .urllist-title-link {
+  display: block;
   font-size: 1.1em;
   line-height: 2.2em;
 }
@@ -2364,7 +2394,7 @@ footer .comment-box {
 --------------------------------------*/
 .leave-comment-title {
   cursor: pointer;
-  margin: 0.3% 10px;
+  margin: 0 20px 20px;
   padding: 1%;
   border-radius: 4px;
   background-color: #0a21e6;
@@ -2378,8 +2408,8 @@ footer .comment-box {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none !important;
-  -webkit-transition: all .1s;
-  transition: all .1s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .leave-comment-title:before {
@@ -2389,11 +2419,6 @@ footer .comment-box {
 }
 
 .leave-comment-title:hover {
-  color: #f0f0f0;
-  background-color: #0a21e6;
-}
-
-.leave-comment-title:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
   -webkit-box-shadow: 0 0 #333;

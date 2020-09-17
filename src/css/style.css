@@ -780,6 +780,9 @@ body {
 
 /* ナビゲーション */
 #gnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 0;
   border: 0;
   background-color: rgba(29, 138, 255, 0.3);
@@ -816,6 +819,23 @@ body {
           box-shadow: 0 0 #333;
 }
 
+#gnav .gnav-inner .menu .content {
+  width: 750px;
+  height: 200px;
+  background: #eee;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+ * 階層化（ホバーで子要素を表示）
+ *
+ * HTMLとCSSだけでできるドロップダウンメニューの作り方 | Public Constructor
+ * https://public-constructor.com/html-css-dropdown-menu/
+ */
 /* パンくずリスト */
 #breadcrumb div {
   display: inline;
@@ -1349,6 +1369,10 @@ footer .comment-box {
   font-size: 1.2em;
 }
 
+.hatena-module .hatena-module-body .search-form:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: .95em;
@@ -1399,6 +1423,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .urllist-title-link {
+  display: block;
   font-size: 1.1em;
   line-height: 2.2em;
 }
