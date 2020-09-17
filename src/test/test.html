@@ -237,9 +237,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         
   <div id="top-editarea">
-    <!-- *********************************************
+<!-- *********************************************
  * メニューリスト（タイトル下）
 ************************************************ -->
+<!-- <nav id="gnav">
+  <ul class="gnav-inner" id="menu-scroll">
+    <li class="menu">
+      <a href="https://www.yuru-wota.com/archive/category/■プログラム全般">
+        <i class="blogicon-code f016" aria-hidden="true"></i> プログラミング
+        <ul class="hidden-list">
+          <li><a href="#">VBA</a></li>
+          <li><a href="#">GAS</a></li>
+          <li><a href="#">HTML&CSS</a></li>
+          <li><a href="#">PowerShell</a></li>
+        </ul>
+      </a>
+    </li>
+    <li class="menu"><a href="#">Menu</a>
+      <ul class="hidden-list">
+        <li><a href="#">Child Menu</a></li>
+        <li><a href="#">Child Menu</a></li>
+        <li><a href="#">Child Menu</a></li>
+      </ul>
+    </li>
+    <li class="menu"><a href="#">Menu</a>
+      <ul class="hidden-list">
+        <li><a href="#">Child Menu</a></li>
+        <li><a href="#">Child Menu</a></li>
+      </ul>
+    </li>
+    <li class="menu"><a href="#">Menu</a>
+      <ul class="hidden-list">
+        <li><a href="#">Child Menu</a></li>
+        <li><a href="#">Child Menu</a></li>
+        <li><a href="#">Child Menu</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav> -->
 <nav id="gnav">
   <div class="gnav-inner" id="menu-scroll">
     <div class="menu">
@@ -255,6 +290,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="menu">
       <a href="https://www.yuru-wota.com/archive/category/■プログラム全般">
         <i class="blogicon-code f016" aria-hidden="true"></i> プログラミング
+        <ul>
+          <li>VBA</li>
+          <li>GAS</li>
+          <li>HTML&CSS</li>
+          <li>PowerShell</li>
+        </ul>
       </a>
     </div>
     <div class="menu">
@@ -439,7 +480,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <i class="blogicon-hatenablog lg"></i>
     </a>
   </div>
-</div></div>
+</div>
+</div>
   </div>
 
 
@@ -909,8 +951,8 @@ Switched to branch <span class="synStatement">'</span><span class="synConstant">
  *  https://shirokai.hatenablog.com/entry/hatenablog-icon-webfont
 ************************************************ -->
 
-<p>記事をシェア</p>
 <div class="footer-share-btns">
+  <p>記事をシェア</p>
   <div class="color-share-btns">
     <!-- Pocket -->
     <a class="share-btn-item pocket"
@@ -1144,29 +1186,29 @@ Switched to branch <span class="synStatement">'</span><span class="synConstant">
 <div class="follow-blog-btns">
   <p>ブログを購読する</p>
   <div class="color-share-btns">
-    <!-- -->
+    <!-- はてなブログ -->
     <a class="share-btn-item hateblo"
-      title="はてなブログで更新情報をフォロー"
-      href="//blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
-      target="_blank">
+       title="はてなブログで更新情報をフォロー"
+       href="//blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
+       target="_blank">
       <i class="blogicon-hatenablog lg"></i>
     </a>
-    <!-- -->
+    <!-- RSS -->
     <a class="share-btn-item rss"
-      href="//yuru-wota.hateblo.jp/feed"
-      target="_blank"
-      title="RSSで更新情報をフォロー"
-      rel="nofollow noopener noreferrer">
+       href="//yuru-wota.hateblo.jp/feed"
+       target="_blank"
+       title="RSSで更新情報をフォロー"
+       rel="nofollow noopener noreferrer">
       <i class="blogicon-rss lg"></i>
     </a>
-    <!-- -->
+    <!-- feedly -->
     <a class="share-btn-item feedly"
        href='https://feedly.com/i/subscription/feed%2Fhttp%3A%2F%2Fyuru-wota.hateblo.jp%2Ffeed'
        title="feedlyで更新情報をフォロー"
        target='blank'>
       <img id='feedlyFollow'
-            src='http://s3.feedly.com/img/follows/feedly-follow-circle-flat-green_2x.png'
-            alt='follow us in feedly'>
+           src='http://s3.feedly.com/img/follows/feedly-follow-circle-flat-green_2x.png'
+           alt='follow us in feedly'>
     </a>
   </div>
 </div>
@@ -1176,35 +1218,34 @@ Switched to branch <span class="synStatement">'</span><span class="synConstant">
   <div class="color-share-btns">
     <!-- GitHub -->
     <a class="share-btn-item github"
-        title="GitHubでフォロー"
-        href="//github.com/yuricks7"
-        target="_blank">
+       title="GitHubでフォロー"
+       href="//github.com/yuricks7"
+       target="_blank">
       <i class="fa fa-github" aria-hidden="true"></i>
     </a>
     <!-- ほしいものリスト -->
     <a class="share-btn-item amazon"
-        title="ほしいものリストをフォロー"
-        href="//www.amazon.jp/hz/wishlist/ls/22UCQW1JBKRCQ?ref_=wl_share"
-        onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
-        target="_blank">
+       title="ほしいものリストをフォロー"
+       href="//www.amazon.jp/hz/wishlist/ls/22UCQW1JBKRCQ?ref_=wl_share"
+       onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+       target="_blank">
       <i class="blogicon-amazon lg"></i>
     </a>
     <!-- Twitter -->
     <a class="share-btn-item twitter"
-        title="twitterでフォロー"
-        href="//twitter.com/yuricks7"
-        target="_blank">
+       title="twitterでフォロー"
+       href="//twitter.com/yuricks7"
+       target="_blank">
       <i class="blogicon-twitter lg"></i>
     </a>
     <!-- ココナラ -->
     <a class="share-btn-item coconala"
-        title="ココナラで依頼"
-        href="//profile.coconala.com/users/1504111"
-        target="_blank">
+       title="ココナラで依頼"
+       href="//profile.coconala.com/users/1504111"
+       target="_blank">
       <img id='feedlyFollow'
-            src='//yuricks7.github.io/notebook/src/img/social-icon/coconala.jpg'
-            alt='ココナラ'>
-            <!-- width='28' height='28'> -->
+           src='//yuricks7.github.io/notebook/src/img/social-icon/coconala.jpg'
+           alt='ココナラ'>
     </a>
   </div>
 </div>

@@ -40,6 +40,7 @@ body {
 #gnav {
   padding: 0;
   border : 0;
+
   background-color: themeColor(.3);
 
   .gnav-inner {
@@ -50,25 +51,33 @@ body {
     .menu {
       height: 100%;
 
-      $original-margin: 2px;
-      $border-weight  : 1px;
-      margin          : $original-margin;
-      padding         : 6px 2px !important;
+      margin : 0px  0px 5px;
+      padding: 8px 18px 6px !important;
+
+      box-shadow: 0 4px themeColor(.6);
+      border-left : 1px solid themeColor(.3);
+      border-right: 1px solid themeColor(.3);
+      border-bottom-left-radius : 3px;
+      border-bottom-right-radius: 3px;
 
       a {
         vertical-align: middle;
       }
 
+      // .hidden-list {
+      //   display: none;
+      // }
+
+      transition : all .3s;
       &:hover {
-        cursor: pointer;
+        // transform: scale(1.2, 1.2);
+        transform: translateY(4px);
+        box-shadow: 0 0 #333;
 
-        margin         : 0 1px;
-        border-radius  : 2px;
-        $border-density: .3;
-        border         : $border-weight solid themeColor($border-density);
-        box-shadow     : 0 0 3px charBlack($border-density + .1);
-
-        background-color: themeColor($border-density - .1);
+        // .hidden-list {
+        //   display: block;
+        //   overflow: visible;
+        // }
       }
     }
   }
