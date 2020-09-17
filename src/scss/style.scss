@@ -1073,35 +1073,40 @@ footer {
   https://blog.minimal-green.com/entry/2016/08/08/210000
 --------------------------------------*/
 .leave-comment-title {
-  cursor          : pointer;
+  cursor: pointer;
 
-  *zoom           : 1;
-  padding         : 1%;
-  margin          : 0.3% 10px 10px 0.3%;
-  border-radius   : 4px;
-  border          : 1.5px solid charBlack(1);
-  background-clip : padding-box;
-  line-height     : 2em;
+  // *zoom  : 1 !important;
+  margin : 0 20px 20px;
+  padding: 1%;
+  border-radius: 4px;
 
-  text-align      : center;
-  vertical-align  : middle;
-  color           : $char-white;
   background-color: highlighter(1);
+  background-clip : padding-box;
+  box-shadow: 0 4px highlighter(.5);
 
-  font-size       : 16px;
-  font-weight     : bold;
-  text-decoration : none !important;
+  line-height: 2em;
+  text-align : center;
+  vertical-align: middle;
+
+  color      : $char-white;
+  font-size  : 16px;
+  font-weight: bold;
+  text-decoration: none !important;
 
   &:before {
-    content      : "\f01d";
     padding-right: 5px;
-    font-family  : "blogicon";
+
+    content    : "\f009";
+    font-family: "blogicon";
   }
 
+  transition : all .3s;
   &:hover {
-    color           : charBlack(1);
-    text-decoration : none !important;
-    background-color: rgba(20, 33, 220, .1);
+    transform: translateY(4px);
+    box-shadow: 0 0 #333;
+
+    color      : $char-white;
+    background-color: highlighter(1);
   }
 }
 
