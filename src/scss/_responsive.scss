@@ -45,6 +45,36 @@
   #stoc-module {
     display: none !important;
   }
+
+  .hatena-module hatena-module-html {
+    // display: block;
+  }
+
+  .follow-blog-btns {
+    // display: block;
+    // float  : left;
+
+    .color-share-btns {
+      max-width : 40% !important;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .follow-account-btns {
+    // display: block;
+    // float  : right;
+
+    .color-share-btns {
+      max-width : 50% !important;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
 }
 
 /*--------------------------------------

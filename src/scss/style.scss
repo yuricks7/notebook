@@ -163,7 +163,7 @@ body {
     transition : all .3s;
 
     &:hover {
-      transform:scale(1.1,1.1);
+      transform : scale(1.1, 1.1);
       box-shadow: 0 0 #333;
     }
   }
@@ -251,14 +251,24 @@ body {
   text-align: center;
 
   p {
-    margin: 10px;
+    margin: 24px 10px 10px;
   }
 
   .footer-share-btns {
     @include shareBtns(19%, 34px);
+
+    /* 微調整 */
+    .hateblo {
+      i {
+        font-size  : 28px !important;
+        position: relative !important;
+        top: 2px !important;
+      }
+    }
   }
 
   .footer-subscription-btns {
+    margin-top  : 30px;
     margin-left : auto;
     margin-right: auto;
     max-width: 50%;
@@ -1063,35 +1073,40 @@ footer {
   https://blog.minimal-green.com/entry/2016/08/08/210000
 --------------------------------------*/
 .leave-comment-title {
-  cursor          : pointer;
+  cursor: pointer;
 
-  *zoom           : 1;
-  padding         : 1%;
-  margin          : 0.3% 10px 10px 0.3%;
-  border-radius   : 4px;
-  border          : 1.5px solid charBlack(1);
-  background-clip : padding-box;
-  line-height     : 2em;
+  // *zoom  : 1 !important;
+  margin : 0 20px 20px;
+  padding: 1%;
+  border-radius: 4px;
 
-  text-align      : center;
-  vertical-align  : middle;
-  color           : $char-white;
   background-color: highlighter(1);
+  background-clip : padding-box;
+  box-shadow: 0 4px highlighter(.5);
 
-  font-size       : 16px;
-  font-weight     : bold;
-  text-decoration : none !important;
+  line-height: 2em;
+  text-align : center;
+  vertical-align: middle;
+
+  color      : $char-white;
+  font-size  : 16px;
+  font-weight: bold;
+  text-decoration: none !important;
 
   &:before {
-    content      : "\f01d";
     padding-right: 5px;
-    font-family  : "blogicon";
+
+    content    : "\f009";
+    font-family: "blogicon";
   }
 
+  transition : all .3s;
   &:hover {
-    color           : charBlack(1);
-    text-decoration : none !important;
-    background-color: rgba(20, 33, 220, .1);
+    transform: translateY(4px);
+    box-shadow: 0 0 #333;
+
+    color      : $char-white;
+    background-color: highlighter(1);
   }
 }
 
@@ -1222,3 +1237,34 @@ footer {
   @include shareBtns(13.5%, 30px);
 }
 
+/*--------------------------------------
+  フォローボタン
+--------------------------------------*/
+.hatena-module-body {
+
+  .follow-blog-btns {
+    @include followBtns(36px, 70%);
+
+    /* 微調整 */
+    .hateblo {
+      i {
+        font-size  : 36px;
+        position: relative !important;
+        top: 4px !important;
+      }
+    }
+  }
+
+  .follow-account-btns {
+    @include followBtns(36px, 80%);
+
+    /* 微調整 */
+    .github {
+      i {
+        font-size  : 41px;
+        position: relative !important;
+        top: -2px !important;
+      }
+    }
+  }
+}

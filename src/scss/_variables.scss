@@ -170,7 +170,7 @@ $side-margin: 10px;
 
 @mixin shareBtns($width, $height) {
   .color-share-btns {
-    margin: 0.8em 0;
+    margin: 1em 0 1.2em;
     display: flex;
     justify-content: space-between;
 
@@ -188,6 +188,52 @@ $side-margin: 10px;
 
       &:hover {
         transform: translateY(4px);
+        box-shadow: 0 0 #333;
+      }
+    }
+
+    @include shareBtnColors();
+  }
+}
+
+@mixin followBtns($icon-size, $area-width) {
+  .color-share-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8em auto;
+    max-width : $area-width;
+
+    a {
+      padding: 0 !important;
+    }
+
+    .share-btn-item {
+      overflow: hidden;
+
+
+      width : $icon-size; // トリミング
+      height: $icon-size; // トリミング
+
+      /* 円形にする */
+      border-radius: 50%;
+      img {
+        margin : 0;
+        padding: 0 0 4px; // 画像の中心を合わせる
+        vertical-align: middle;
+        border-radius: 50%;
+      }
+
+      box-shadow: none !important;
+
+      color: #fff;
+      font-size  : 16px;
+      text-align : center;
+      line-height: $icon-size;
+
+      transition : all .3s;
+
+      &:hover {
+        transform:scale(1.1, 1.1);
         box-shadow: 0 0 #333;
       }
     }
@@ -222,9 +268,8 @@ $side-margin: 10px;
     box-shadow: 0 4px #c3293b;
   }
 
-  .feedly {
-    background-color: #2bb24c;
-    box-shadow: 0 4px #247739;
+  .feedly { // 画像
+    box-shadow: 0 4px #176b2c;
   }
 
   .rss {
@@ -237,5 +282,21 @@ $side-margin: 10px;
     box-shadow: 0 4px #515151;
 
     color: #000;
+  }
+
+  .github {
+    background-color: #fafafa;
+    box-shadow: 0 4px #989898;
+
+    color: #333;
+  }
+
+  .amazon {
+    background-color: #ff9900;
+    box-shadow: 0 4px #8a5300;
+  }
+
+  .coconala { // 画像
+    box-shadow: 0 4px #989898;
   }
 }
