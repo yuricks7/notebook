@@ -4,7 +4,6 @@
 /**
  * Add border box sizing in all browsers (opinionated).
  */
-@import url("https://blog.hatena.ne.jp/-/theme/8599973812270629022.css");
 *,
 ::before,
 ::after {
@@ -754,7 +753,7 @@ body {
   margin: 0 auto;
   width: 100%;
   background-color: rgba(1, 1, 1, 0.1);
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
 /* ヘッダー */
@@ -763,7 +762,7 @@ body {
   margin: 0 auto;
   width: 100%;
   padding: 20px 30px;
-  font-family: -apple-system, 'Kosugi Maru';
+  font-family: -apple-system, 'Meiryo UI';
   font-weight: bold;
   background-color: #1d8aff !important;
 }
@@ -849,6 +848,7 @@ body {
   padding: 10px;
   border-radius: 8px;
   text-decoration: none !important;
+  background-color: rgba(250, 250, 250, 0.6);
 }
 
 .breadcrumb a:link {
@@ -870,6 +870,11 @@ body {
 .breadcrumb .breadcrumb-innner {
   margin: 0 !important;
   padding: 0;
+}
+
+#header {
+  padding: 10px;
+  background-color: #1d8aff;
 }
 
 /* ブログ本体 */
@@ -896,7 +901,6 @@ body {
   padding: 10px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background-color: #fafafa;
 }
 
 .entry-inner header .entry-date, .entry-inner header .entry-header {
@@ -1340,7 +1344,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body {
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
   font-size: .9em;
   /* 検索フォーム */
@@ -1375,7 +1379,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .profile-description {
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: .95em;
   text-decoration: none !important;
 }
@@ -1456,7 +1460,7 @@ footer .comment-box {
 .entry-date {
   margin: 0;
   padding: 0 20px;
-  font-family: -apple-system, 'Kosugi Maru';
+  font-family: -apple-system, 'Meiryo UI';
   font-weight: normal;
 }
 
@@ -1489,7 +1493,7 @@ footer .comment-box {
   margin: 0;
   padding: 0 10px;
   font-size: 1.2em;
-  font-family: -apple-system, 'Kosugi Maru';
+  font-family: -apple-system, 'Meiryo UI';
   font-weight: bold;
 }
 
@@ -1524,7 +1528,7 @@ footer .comment-box {
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: 16px;
   line-height: 2em;
   color: #050505;
@@ -1665,6 +1669,12 @@ footer .comment-box {
 
 .entry-content ul li ul, .entry-content ol li ul {
   margin-top: 0;
+}
+
+.entry-content ul img, .entry-content ol img {
+  max-width: 80% !important;
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
 .entry-content .show-area {
@@ -1819,7 +1829,7 @@ footer .comment-box {
   color: #666666;
   /*ボタン色より暗く*/
   font-size: 90%;
-  font-family: 'Roboto Mono', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   text-decoration: none;
   text-shadow: 1px 1px 1px #f0f0f0;
   /*
@@ -1844,9 +1854,11 @@ footer .comment-box {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 5px 10px 5px 32px;
+  width: auto;
+  max-width: 100%;
   border: 1px solid rgba(204, 204, 204, 0.5);
   border-radius: 3px;
   background: #f3f3f3;
@@ -1916,17 +1928,23 @@ footer .comment-box {
   background: #dfdbd4;
   /* 背景 黄みがかったgray */
   font-size: .85em;
-  font-family: 'Roboto Mono', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   vertical-align: top !important;
 }
 
 .entry-content pre.code {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 20px 10px 10px;
   border-radius: 3px;
+  /* 横スクロール */
+  width: auto;
+  max-width: 100%;
+  overflow-x: scroll;
+  white-space: pre;
+  /* 自動改行をoff */
   /* フォント・メインカラーを変更 */
-  font-family: 'Roboto Mono', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   font-size: .85em;
   line-height: 1.5em;
   color: #f0f0f0;
@@ -2902,40 +2920,4 @@ footer .comment-box {
   position: relative !important;
   top: -2px !important;
 }
-
-.header {
-  background-color: rgba(215, 245, 250, 0.8);
-  margin: auto;
-  padding: 20px 20px 20px 20px;
-  text-align: center;
-}
-
-.content {
-  background-color: rgba(250, 235, 215, 0.8);
-  margin: 10px 10px;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.category {
-  display: inline-block;
-  vertical-align: top;
-  background-color: rgba(250, 235, 215, 0.8);
-  /* 3で割るとはみ出る…？ */
-  width: calc(100% / 2);
-  padding: 10px 20px;
-  margin: 0;
-  border: 2px dashed white;
-  border-radius: 10px;
-}
-
-.category-index {
-  font-size: 24px;
-  border: 1px rgba(255, 255, 255, 0.8);
-}
-
-.category-contents {
-  text-align: left;
-}
-/*# sourceMappingURL=practice.css.map */
+/*# sourceMappingURL=amp.css.map */

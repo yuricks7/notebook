@@ -39,13 +39,52 @@
 @mixin monospacedFonts() {
   font-family: 'Roboto Mono',
                Consolas,
-               'Meiryo UI',
                'メイリオ',
                Meiryo,
                'ヒラギノ角ゴ ProN',
                'Hiragino Kaku Gothic ProN',
+               'ＭＳ ゴシック',
+               'MS Gothic',
+               sans-serif;
+}
+
+@mixin amp-titleFonts($weight) {
+  font-family: -apple-system,
+               'Meiryo UI';
+  font-weight: $weight;
+}
+
+@mixin amp-siteDescriptionFonts() {
+  font-family: 'Meiryo UI',
+               'メイリオ',
+               Meiryo,
+               -apple-system,
+               BlinkMacSystemFont,
+               'Helvetica Neue',
+               'Hiragino Sans',
+               'Hiragino Kaku Gothic ProN',
+               sans-serif;
+}
+
+@mixin amp-standardFonts() {
+  font-family: 'Meiryo UI',
+               'メイリオ',
+               'Meiryo',
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
                'ＭＳ Ｐゴシック',
                'MS PGothic',
+               'sans-serif' !important;
+}
+
+@mixin amp-monospacedFonts() {
+  font-family: Consolas,
+               'メイリオ',
+               Meiryo,
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
+               'ＭＳ ゴシック',
+               'MS Gothic',
                sans-serif;
 }
 

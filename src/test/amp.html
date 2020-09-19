@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html amp lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>リーダブルコードへの旅 ～箇条書きを表にする③～ - ゆるおたノート</title>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"yuricks7"},"dateModified":"2019-06-17T10:10:58+09:00","datePublished":"2018-06-02T17:00:00+09:00","description":"前回、長ーくなったモジュールを細切れにしてみたところで、 動かしてみるとコンパイル・エラーが発生しました。 yuru-wota.hateblo.jp こちらと闘いながら、ここももうちょっとスッキリさせてみたいと思います。 今回は「メインモジュール」以外はほぼ変えないので、そちらは省いて書きます。 「同じ適用範囲内で宣言が重複しています。」 修正してみました。 「変数が定義されていません。」 修正してみました。 少し整理します。 結果と考察 「同じ適用範囲内で宣言が重複しています。」 エラーメッセージによると、てやんでぃ！分かったから何度も何度も（型を）宣言すンじゃねェ！とのことです。 文字列を…","headline":"リーダブルコードへの旅 ～箇条書きを表にする③～","image":{"@type":"ImageObject","height":1051,"url":"https://cdn.blog.st-hatena.com/images/theme/og-image-1500.png?version=ae5ff7f431a954a61dcf473724b83cedd969bf04\u0026env=production","width":1500},"mainEntityOfPage":"https://www.yuru-wota.com/entry/2018/06/02/170000","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","height":60,"url":"https://cdn.blog.st-hatena.com/images/admin/blog-icon-noimage-w60.png?version=1d76cbbc5fea95fa101a65bc2eb25718de0269db\u0026env=production","width":60},"name":"ゆるおたノート"}}</script>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>      <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>      <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script> -->
+    <!-- <meta name="amp-google-client-id-api" content="googleanalytics"> -->
+
+    <style amp-custom>
+      body{background:#fff;color:#3d4245;font-family:Helvetica Neue,Helvetica,Arial,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,ＭＳ\ Ｐゴシック,MS PGothic,sans-serif;-webkit-font-smoothing:antialiased}a{color:#0e6ace;text-decoration:none}h1 a,h2 a,h3 a,h4 a,h5 a{color:#3d4245}.clearfix{display:block}.clearfix:after{display:block;visibility:hidden;font-size:0;height:0;clear:both;content:"."}.header-image-wrapper a{display:block}.header-image{width:100%;height:200px;background-size:cover;background-position:50%;background-repeat:no-repeat}@media screen and (max-width:320px){.header-image{height:180px}}#container{width:93.75%}#container,#header,.section{margin:15px auto}#header{text-align:center}.header-image-enable #header{margin:-50px auto 15px}.header-image-only #header{display:none}.header-blog-icon{text-align:center}.header-blog-icon-img{margin:auto;width:60px;height:60px;border-radius:50%;border:4px solid #fff;background:#fff}#title{font-size:130%;margin:0}#blog-description{font-size:80%;color:#6b7377;font-weight:400;margin:0;line-height:1.5;margin-top:.5em}.breadcrumb{font-size:90%;margin:15px auto}.breadcrumb,.breadcrumb a{color:#6b7377}.entry .date{font-weight:700;font-size:80%;display:inline-block;margin-bottom:.5rem}.entry-title{margin:0 0 .5rem;font-size:130%;line-height:1.3}.categories{font-size:85%;margin:0 0 .5rem;color:#6b7377}.categories a{margin-right:.5em;color:#6b7377}.entry-content{line-height:1.8;font-size:90%;word-wrap:break-word;overflow-x:auto}.entry-content .paragraph,.entry-content p{margin:0 0 1em}.entry-content a.keyword{font-weight:400;color:#3d4245;border-bottom:1px solid #dedede}.entry-content b a.keyword,.entry-content strong a.keyword{font-weight:700}.entry-content iframe,.entry-content img{max-width:100%}.entry-content img{height:auto;-webkit-box-sizing:border-box;box-sizing:border-box}.entry-content figure{margin-left:0;margin-right:0}.entry-content ol,.entry-content ul{margin:0 0 0 2em;padding:0}.entry-content pre{overflow:auto;white-space:pre-wrap}.entry-content .section{margin:0;width:auto}.entry-content table{border-collapse:collapse;border-spacing:0;font-size:80%;width:100%;overflow:auto;display:block}.entry-content table td,.entry-content table th{border:1px solid #ddd;padding:5px 10px}.entry-content table th{background:#fafafa}.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6{margin:0 0 13px}.entry-content h1 a,.entry-content h1 a.keyword,.entry-content h2 a,.entry-content h2 a.keyword,.entry-content h3 a,.entry-content h3 a.keyword,.entry-content h4 a,.entry-content h4 a.keyword,.entry-content h5 a,.entry-content h5 a.keyword,.entry-content h6 a,.entry-content h6 a.keyword{font-weight:700}.entry-content h1{font-size:22px}.entry-content h2{font-size:20px}.entry-content h3{font-size:18px}.entry-content h4{font-size:16px}.entry-content h5{font-size:15px}.entry-content h6{font-size:14px}.entry-content ol,.entry-content p,.entry-content ul{margin-bottom:1em}.entry-content blockquote{margin:1.5em 0;padding:0 12px;border-left:4px solid #ddd;color:#777}.entry-content blockquote p:last-child{margin-bottom:0}.entry-content pre{border:1px solid #ddd;padding:1em;margin:1em 0}.entry-content .hatena-embed{border:1px solid #999;padding:1em;margin:1em 0}.entry-content .instagram-iframe{width:300px;height:380px}.entry-content amp-img.entry-content-img{display:inline-block}.figure-image{margin:1em auto;text-align:center}.figure-image figcaption{font-size:95%;opacity:.7;margin:0 auto 1.5em;text-align:center}.figure-image>p img,.figure-image>span img{vertical-align:bottom;margin-bottom:10px}@media (max-width:480px){.figure-image>p img,.figure-image>span img{margin-bottom:6px}}.figure-image>p{margin:0}.images-row{margin-top:10px;margin-bottom:10px}@media (max-width:480px){.images-row{margin-top:6px;margin-bottom:6px}}.hatena-asin-detail{margin:1em 0;-o-border-image:initial;border-image:initial;font-size:90%;display:block}.hatena-asin-detail:after{display:block;visibility:hidden;font-size:0;height:0;clear:both;content:"."}.hatena-asin-detail .hatena-asin-detail-image{float:left;margin-right:15px}.hatena-asin-detail .hatena-asin-detail-title{margin-top:0;font-weight:700;margin:0 0 .3em}.hatena-asin-detail .paragraph,.hatena-asin-detail p{text-indent:0}.hatena-asin-detail ul{list-style:none;margin:0;padding:0}.hatena-asin-detail .hatena-asin-detail-foot{clear:left}.hatena-asin-detail,.itunes-embed{padding:.8em .6em;border:1px solid #ddd}.itunes-embed{margin:1em 0;-o-border-image:initial;border-image:initial;font-size:90%;display:block}.itunes-embed:after{display:block;visibility:hidden;font-size:0;height:0;clear:both;content:"."}.itunes-embed .itunes-embed-image{float:left;margin-right:15px;max-width:100px}.itunes-embed .itunes-embed-title{margin-top:0;font-weight:700;margin:0 0 .3em}.itunes-embed .paragraph,.itunes-embed p{text-indent:0}.itunes-embed ul{list-style:none;margin:0;padding:0}.itunes-embed ul li{line-height:1.5}.itunes-embed .itunes-embed-preview{margin:10px 0}.itunes-embed.itunes-kind-software .itunes-embed-image{border-radius:15px}.hatena-citation{font-style:normal;font-size:90%;opacity:.75;display:block}.hatena-dazn-detail{max-width:468px;margin-top:1em;margin-bottom:1em;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.hatena-dazn-detail .dazn-movie amp-video-iframe{height:0;padding-top:56%}.hatena-dazn-detail .dazn-ad a,.hatena-dazn-detail .dazn-ad amp-img{display:block;margin:0;padding:0}.entry-footer-section{color:#6b7377;font-size:80%;margin-bottom:10px}.pager-group{font-size:80%;display:table;table-layout:fixed;width:100%;border-radius:6px;border:1px solid #bfced3;height:100%}.pager-group .pager-inner{display:table-cell;border-collapse:collapse;position:relative}.pager-group .pager-r{border-left:1px solid #bfced3;text-align:right}.pager-group a{display:block;color:#333;font-weight:700;height:100%}.pager-group a:visited{color:#333}.pager-l a{padding:10px 5px 10px 20px}.pager-l a,.pager-r a{background-size:14px 13px}.pager-r a{padding:10px 20px 10px 5px}.pager-arrow{font-size:30px;height:30px;line-height:.7;position:absolute;display:block;top:0;bottom:0;margin:auto;color:#dfe5e7}.pager-l .pager-arrow{left:3px}.pager-r .pager-arrow{right:3px}.social-share{margin:0 auto;padding:0;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.social-share>li{list-style:none}.social-share .social-share-bookmark .amp-social-share-button{background-color:#00a4de}.social-share .social-share-facebook .amp-social-share-button{display:block;background-color:#3b5998;width:56px;height:44px}.social-share .social-share-pocket .amp-social-share-button{display:block;background-color:#ed4256;width:56px;height:44px}.ad-wrapper{text-align:center}.related-entries-title{font-weight:700;border-bottom:1px solid #c2cdd1;margin-bottom:.8em;line-height:1.6}.related-entries{list-style:none;margin:0 0 2em;padding:0;font-size:90%}.related-entries .related-entry{padding:8px 0;border-bottom:1px solid #dde5e8;line-height:1.5;display:block}.related-entries .related-entry:after{display:block;visibility:hidden;font-size:0;height:0;clear:both;content:"."}.related-entries .related-entry:first-child{padding-top:0}.related-entries .related-entry:last-child{padding-bottom:0;border-bottom:0}.related-entries .related-entry a{text-decoration:none;word-wrap:break-word}.related-entries .related-entry-image{margin:0 .7em .7em 0;float:left}.related-entries .related-entry-date-link{font-size:85%}.related-entries .related-entry-date-link a{color:#6b7377}.related-entries .related-entry-entry-body{font-size:90%;word-wrap:break-word}.footer{text-align:center;word-wrap:break-word;color:#6b7377;margin-bottom:1em}.footer small{line-height:1.3;font-size:75%}.profile-cards-list{margin:1em 0}.hatena-gnavi-embed,.profile-cards-list .profile-card-container{border:1px solid #dde5e8;border-radius:3px;padding:.8em;margin:1em 0}.hatena-gnavi-embed{position:relative}.hatena-gnavi-embed .gnavi-embed-thumbnail-container{position:absolute;top:.8em;left:.8em}.hatena-gnavi-embed .gnavi-embed-thumbnail-container .entry-content-img{max-width:80px;max-height:80px}.hatena-gnavi-embed .gnavi-embed-restaurant-information{margin-left:90px}.hatena-gnavi-embed .gnavi-embed-title{font-weight:700;font-size:1.5em;line-height:1.5}.hatena-gnavi-embed .gnavi-embed-title a{color:#3d4245;line-height:1.5;text-decoration:none}.hatena-gnavi-embed .gnavi-embed-link a,.hatena-gnavi-embed .gnavi-embed-tel a{color:#3d4245;text-decoration:none}.hatena-gnavi-embed .gnavi-embed-link{font-weight:700;border-top:1px solid #dde5e8;padding-top:.5em}.hatena-gnavi-embed .gnavi-embed-footer{text-align:right;font-size:11px}.hatena-gnavi-embed .gnavi-embed-footer a{color:#6b7377;text-decoration:none}
+
+      @import url();
+      
+      
+      
+      
+
+      
+    </style>
+
+    <link rel="stylesheet" href="../css/amp.css">
+    
+    
+    <link rel="shortcut icon" href="https://www.yuru-wota.com/favicon">
+<link rel="apple-touch-icon" href="https://cdn.blog.st-hatena.com/images/touch-icon-iphone-retina.png">
+<link rel="icon" sizes="192x192" href="https://cdn.blog.st-hatena.com/images/common/meta-icon-global.png">
+
+
+    <link rel="canonical" href="https://www.yuru-wota.com/entry/2018/06/02/170000"/>
+
+    
+  </head>
+  <body id="body" class="page-entry ">
+    
+    
+
+    
+
+
+    
+
+    <div id="container">
+
+      <header id="header">
+        <div class="header-blog-icon">
+          <a href="https://www.yuru-wota.com/">
+            <amp-img width="60" height="60" layout="responsive"
+              src="https://cdn.blog.st-hatena.com/images/admin/blog-icon-noimage.png" alt="ゆるおたノート" class="header-blog-icon-img" />
+          </a>
+        </div>
+        <h1 id="title">
+          <a href="https://www.yuru-wota.com/" class="blog-title">ゆるおたノート</a>
+        </h1>
+        
+          <h2 id="blog-description">Tomorrow is another day.</h2>
+        
+      </header>
+
+      
+          <div id="top-box">
+    <div class="breadcrumb" data-test-id="breadcrumb">
+      <div class="breadcrumb-inner">
+        <a class="breadcrumb-link" href="https://www.yuru-wota.com/"><span>トップ</span></a>          <span class="breadcrumb-gt">&gt;</span>          <span class="breadcrumb-child">            <a class="breadcrumb-child-link" href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC"><span>■プログラム全般</span></a>          </span>            <span class="breadcrumb-gt">&gt;</span>          <span class="breadcrumb-child">            <span>リーダブルコードへの旅 ～箇条書きを表にする③～</span>          </span>      </div>
+    </div>
+  </div>
+  <script type="application/ld+json" class="test-breadcrumb-json-ld">
+    {"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"position":1,"@type":"ListItem","item":{"@id":"https://www.yuru-wota.com/","name":"トップ"}},{"position":2,"item":{"@id":"https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC","name":"■プログラム全般"},"@type":"ListItem"}]}
+  </script>
+      
+
+      
+
+<!-- google_ad_section_start -->
+<!-- rakuten_ad_target_begin -->
+<article class="entry js-entry-article mode-markdown section" data-keyword-campaign="" data-uuid="17391345971650355377" id="entry-17391345971650355377" >
+  <header class="entry-header section">
+    <span class="date first">
+      <time datetime="2018-06-02T08:00:00Z" title="2018-06-02T08:00:00Z">
+        <span class="date-year">2018</span><span class="hyphen">-</span><span class="date-month">06</span><span class="hyphen">-</span><span class="date-day">02</span>
+      </time>
+    </span>
+
+    <h1 class="entry-title"><a href="https://www.yuru-wota.com/entry/2018/06/02/170000">リーダブルコードへの旅 ～箇条書きを表にする③～</a></h1>
+    
+    
+      <div class="categories">
+        <i class="blogicon-folder"></i>
+        
+        <a href="https://www.yuru-wota.com/archive/category/%E2%96%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%85%A8%E8%88%AC">■プログラム全般</a>
+        
+        <a href="https://www.yuru-wota.com/archive/category/VBA">VBA</a>
+        
+        <a href="https://www.yuru-wota.com/archive/category/VBA-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E6%93%8D%E4%BD%9C">VBA-文字列の操作</a>
+        
+        <a href="https://www.yuru-wota.com/archive/category/Excel">Excel</a>
+        
+        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB">アイドル</a>
+        
+        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD">アイドル-ハロプロ</a>
+        
+        <a href="https://www.yuru-wota.com/archive/category/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB-%E3%83%8F%E3%83%AD%E3%83%97%E3%83%AD-%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%98%E3%80%82">アイドル-ハロプロ-モーニング娘。</a>
+        
+      </div>
+    
+
+    
+    
+    
+  </header>
+
+  <div class="entry-content section">
+    <div class="paragraph">前回、長ーくなったモジュールを細切れにしてみたところで、
+動かしてみると<strong>コンパイル・エラー</strong>が発生しました。
+<amp-iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fyuru-wota.hateblo.jp%2Fentry%2F2018%2F05%2F30%2F060000" title="リーダブルコードへの旅 ～箇条書きを表にする②～ - ゆるオタクのすすめ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" width="auto" height="190px" layout="fixed-height" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"><div placeholder></div></amp-iframe><cite class="hatena-citation"><a href="https://yuru-wota.hateblo.jp/entry/2018/05/30/060000">yuru-wota.hateblo.jp</a></cite></div>
+
+<div class="paragraph">こちらと闘いながら、ここももうちょっとスッキリさせてみたいと思います。
+今回は「メインモジュール」以外はほぼ変えないので、そちらは省いて書きます。</div>
+
+<ul class="table-of-contents">
+    <li><a href="#同じ適用範囲内で宣言が重複しています">「同じ適用範囲内で宣言が重複しています。」</a><ul>
+            <li><a href="#修正してみました">修正してみました。</a></li>
+        </ul>
+    </li>
+    <li><a href="#変数が定義されていません">「変数が定義されていません。」</a><ul>
+            <li><a href="#修正してみました-1">修正してみました。</a></li>
+        </ul>
+    </li>
+    <li><a href="#少し整理します">少し整理します。</a></li>
+    <li><a href="#結果と考察">結果と考察</a></li>
+</ul>
+
+<h3 id="同じ適用範囲内で宣言が重複しています">「同じ適用範囲内で宣言が重複しています。」</h3>
+
+<div class="paragraph">エラーメッセージによると、<strong>てやんでぃ！分かったから何度も何度も（型を）宣言すンじゃねェ！</strong>とのことです。</div>
+
+<div class="paragraph">文字列を選択肢としたところで、それを満たす場合の処理を都度命令していましたが、
+選択肢ごとに同じことを書いていたので怒られてしまいました。</div>
+
+<div class="paragraph">というわけで、変数の宣言を1回に省いてみます。</div>
+
+<pre class="code lang-vb" data-lang="vb" data-unlink><span class="synStatement">Private</span> <span class="synStatement">Sub</span> searchStrings<span class="synStatement">(ByRef</span> ThisSheet <span class="synStatement">As</span> Worksheet<span class="synStatement">)</span>
+
+    <span class="synStatement">Dim</span> ListRowCounts <span class="synStatement">As</span> <span class="synType">Long</span>
+    <span class="synStatement">Dim</span> LastRow <span class="synStatement">As</span> <span class="synType">Long</span>
+    ListRowCounts <span class="synStatement">=</span> ThisSheet<span class="synStatement">.</span>UsedRange<span class="synStatement">.</span>Rows<span class="synStatement">.</span><span class="synPreProc">Count</span>
+    LastRow <span class="synStatement">=</span> ThisSheet<span class="synStatement">.</span>UsedRange<span class="synStatement">.</span>Rows<span class="synStatement">(</span>ListRowCounts<span class="synStatement">).</span>Row
+
+    <span class="synStatement">Dim</span> CurrentRow <span class="synStatement">As</span> <span class="synType">Long</span>
+    <span class="synStatement">For</span> CurrentRow <span class="synStatement">=</span> <span class="synConstant">2</span> <span class="synStatement">To</span> LastRow
+
+        <span class="synStatement">Dim</span> ThisStr <span class="synStatement">As</span> <span class="synType">String</span>
+        ThisStr <span class="synStatement">=</span> Cells<span class="synStatement">(</span>CurrentRow<span class="synStatement">,</span> eCol<span class="synStatement">.</span>Inputs<span class="synStatement">).</span><span class="synPreProc">Value</span>
+        
+        <span class="synStatement">Dim</span> SearchKey <span class="synStatement">As</span> <span class="synType">String</span>
+        <span class="synStatement">Dim</span> hasSearchKey <span class="synStatement">As</span> <span class="synType">Boolean</span>
+        hasSearchKey <span class="synStatement">=</span> <span class="synIdentifier">InStr</span><span class="synStatement">(</span><span class="synConstant">1</span><span class="synStatement">,</span> ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>
+        
+        <span class="synStatement">Select</span> <span class="synStatement">Case</span> SearchKey
+            
+           <span class="synComment"> '全角コロン＋全角スペース</span>
+            <span class="synStatement">Case</span> <span class="synConstant">&quot;：　&quot;</span>
+
+                <span class="synStatement">If</span> hasSearchKey <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                    <span class="synStatement">Dim</span> arrSplitedStr <span class="synStatement">As</span> <span class="synType">Variant</span><span class="synComment"> '←ここだけ残す。</span>
+                    arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>  
+                    <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+                <span class="synStatement">End</span> <span class="synStatement">If</span>
+                                
+           <span class="synComment"> '全角＋半角</span>
+            <span class="synStatement">Case</span> <span class="synConstant">&quot;： &quot;</span>
+                <span class="synStatement">If</span> hasSearchKey <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                    arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>
+                    <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+                <span class="synStatement">End</span> <span class="synStatement">If</span>
+
+           <span class="synComment"> '全角コロンだけ</span>
+            <span class="synStatement">Case</span> <span class="synConstant">&quot;：&quot;</span>
+                <span class="synStatement">If</span> hasSearchKey <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                    arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>
+                    <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+                <span class="synStatement">End</span> <span class="synStatement">If</span>
+
+           <span class="synComment"> '半角＋全角</span>
+            <span class="synStatement">Case</span> <span class="synConstant">&quot;:　&quot;</span>
+                <span class="synStatement">If</span> hasSearchKey <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                    arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>
+                    <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+                <span class="synStatement">End</span> <span class="synStatement">If</span>
+
+           <span class="synComment"> '半角＋半角</span>
+            <span class="synStatement">Case</span> <span class="synConstant">&quot;: &quot;</span>
+                <span class="synStatement">If</span> hasSearchKey <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                    arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>
+                    <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+                <span class="synStatement">End</span> <span class="synStatement">If</span>
+
+           <span class="synComment"> '半角コロンだけ</span>
+            <span class="synStatement">Case</span> <span class="synConstant">&quot;:&quot;</span>
+                <span class="synStatement">If</span> hasSearchKey <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                    arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> SearchKey<span class="synStatement">)</span>
+                    <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+                <span class="synStatement">End</span> <span class="synStatement">If</span>
+
+        <span class="synStatement">End</span> <span class="synStatement">Select</span>
+
+    <span class="synStatement">Next</span> CurrentRow
+    
+    <span class="synStatement">Call</span> formatThisSheet
+
+<span class="synStatement">End</span> <span class="synStatement">Sub</span>
+</pre>
+
+
+<h4 id="修正してみました">修正してみました。</h4>
+
+<div class="paragraph">これを実行してみると…
+<span itemscope itemtype="http://schema.org/Photograph"><amp-img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20180602/20180602135156.png" alt="f:id:yuricks7:20180602135156p:plain" title="f:id:yuricks7:20180602135156p:plain" class="entry-content-img" itemprop="image" width="605" height="490" sizes="(min-width: 625px) 605px, 93.75vw" layout="responsive"></amp-img></span></div>
+
+<div class="paragraph">今度は、その先で<strong>変数が定義されていません</strong>と出ました…</div>
+
+<h3 id="変数が定義されていません">「変数が定義されていません。」</h3>
+
+<div class="paragraph">これは<strong>なんか当然のように知らない名前が出てきましたけど、どっかで教えてくれましたっけ？</strong>と
+聞かれているみたいです。個人的に、よくやるミスです…</div>
+
+<div class="paragraph">で、上の画像では<strong>ThisSheet</strong>がハイライト（強調）されているので、
+コードを上にさかのぼって確認してみると…</div>
+
+<div class="paragraph"><span>いた！</span>
+<span itemscope itemtype="http://schema.org/Photograph"><amp-img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20180602/20180602140019.png" alt="f:id:yuricks7:20180602140019p:plain" title="f:id:yuricks7:20180602140019p:plain" class="entry-content-img" itemprop="image" width="542" height="410" sizes="(min-width: 562px) 542px, 93.75vw" layout="responsive"></amp-img></span></div>
+
+<div class="paragraph">しかも上のプロシージャではちゃんと伝言（変数を引き渡し）している…
+うーん、ケアレスミスということですね…</div>
+
+<div class="paragraph">でもちゃんと警告してくれるのでうっかり人間には助かります…</div>
+
+<h4 id="修正してみました-1">修正してみました。</h4>
+
+<div class="paragraph">というわけで、ちゃんと変数の引き渡しをして、</div>
+
+<pre class="code lang-vb" data-lang="vb" data-unlink><span class="synComment">'～前略～</span>
+    <span class="synStatement">End</span> <span class="synStatement">With</span>
+
+    <span class="synStatement">Call</span> searchStrings<span class="synStatement">(</span>ThisSheet<span class="synStatement">)</span>
+
+<span class="synStatement">End</span> <span class="synStatement">Sub</span>
+
+<span class="synStatement">Private</span> <span class="synStatement">Sub</span> searchStrings<span class="synStatement">(ByRef</span> ThisSheet <span class="synStatement">As</span> Worksheet<span class="synStatement">)</span>
+
+    <span class="synStatement">Dim</span> ListRowCounts <span class="synStatement">As</span> <span class="synType">Long</span>
+<span class="synComment">'～後略～</span>
+</pre>
+
+
+<div class="paragraph">もう1回、<strong>ステップイン</strong> <code>F8</code> で実行してみます。</div>
+
+<div class="paragraph">お。今度はちゃんと最後まで動いてくれました。
+<span itemscope itemtype="http://schema.org/Photograph"><amp-img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20180602/20180602141554.png" alt="f:id:yuricks7:20180602141554p:plain" title="f:id:yuricks7:20180602141554p:plain" class="entry-content-img" itemprop="image" width="357" height="160" sizes="(min-width: 377px) 357px, 93.75vw" layout="responsive"></amp-img></span></div>
+
+<div class="paragraph">…と思ったら、分割してくれてないじゃん！おいー！！
+チクチク注意する割に、自分の仕事は飛ばすなんて。<s>まるで私のようだ…</s></div>
+
+<div class="paragraph"><span itemtype="http://schema.org/Photograph" itemscope="itemscope"><amp-img class="entry-content-img" src="https://lh3.googleusercontent.com/-_clBeFA2x3U/WxI3ZMewqxI/AAAAAAAAB8s/w2VEOM4Ci7Mi_zC3ZHIJ_hQqGgSt_TBigCE0YBhgL/s1024/20180602_SplitStrings.gif" itemprop="image" width="320" height="200" sizes="(min-width: 340px) 320px, 93.75vw" layout="responsive"></amp-img></span></div>
+
+<div class="paragraph">でも、こういう時はほぼ必ず指示者の命令が不明確、もしくは間違っているワケで。
+手順と指示の仕方をもう少し検討する必要がありそうです。</div>
+
+<h3 id="少し整理します">少し整理します。</h3>
+
+<div class="paragraph">条件を枝分かれするより、選択肢を丸ごとひとつのハコに放り込んで、
+指示を1回にしたら、処理を飛ばされる原因が見えてくるかもしれないな…？</div>
+
+<div class="paragraph">というわけで、視点を変えて苦手な配列を使ってみることにしました。</div>
+
+<pre class="code lang-vb" data-lang="vb" data-unlink><span class="synStatement">Sub</span> searchAndSplitStrings<span class="synStatement">(ByRef</span> ThisSheet <span class="synStatement">As</span> Worksheet<span class="synStatement">)</span>
+
+    <span class="synStatement">Dim</span> ListRowCounts <span class="synStatement">As</span> <span class="synType">Long</span>
+    <span class="synStatement">Dim</span> LastRow <span class="synStatement">As</span> <span class="synType">Long</span>
+    ListRowCounts <span class="synStatement">=</span> ThisSheet<span class="synStatement">.</span>UsedRange<span class="synStatement">.</span>Rows<span class="synStatement">.</span><span class="synPreProc">Count</span>
+    LastRow <span class="synStatement">=</span> ThisSheet<span class="synStatement">.</span>UsedRange<span class="synStatement">.</span>Rows<span class="synStatement">(</span>ListRowCounts<span class="synStatement">).</span>Row
+
+    <span class="synStatement">Dim</span> CurrentRow <span class="synStatement">As</span> <span class="synType">Long</span>
+    <span class="synStatement">For</span> CurrentRow <span class="synStatement">=</span> <span class="synConstant">2</span> <span class="synStatement">To</span> LastRow
+       
+        <span class="synStatement">Dim</span> arrSearchKey<span class="synStatement">(</span><span class="synConstant">1</span> <span class="synStatement">To</span> <span class="synConstant">6</span><span class="synStatement">)</span> <span class="synStatement">As</span> <span class="synType">String</span>
+        arrSearchKey<span class="synStatement">(</span><span class="synConstant">1</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">&quot;：　&quot;</span><span class="synComment"> '全角コロン＋全角スペース</span>
+        arrSearchKey<span class="synStatement">(</span><span class="synConstant">2</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">&quot;： &quot;</span><span class="synComment"> '全角コロン＋半角スペース</span>
+        arrSearchKey<span class="synStatement">(</span><span class="synConstant">3</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">&quot;：&quot;</span><span class="synComment"> '全角コロンだけ</span>
+        arrSearchKey<span class="synStatement">(</span><span class="synConstant">4</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">&quot;:　&quot;</span><span class="synComment"> '半角＋全角</span>
+        arrSearchKey<span class="synStatement">(</span><span class="synConstant">5</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">&quot;: &quot;</span><span class="synComment"> ''半角＋半角</span>
+        arrSearchKey<span class="synStatement">(</span><span class="synConstant">6</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">&quot;:&quot;</span><span class="synComment"> '半角コロンだけ</span>
+        
+        <span class="synStatement">Dim</span> <span class="synPreProc">Item</span> <span class="synStatement">As</span> <span class="synType">Variant</span>
+        <span class="synStatement">For</span> <span class="synStatement">Each</span> <span class="synPreProc">Item</span> <span class="synStatement">In</span> arrSearchKey
+            
+            <span class="synStatement">Dim</span> ThisStr <span class="synStatement">As</span> <span class="synType">String</span>
+            ThisStr <span class="synStatement">=</span> Cells<span class="synStatement">(</span>CurrentRow<span class="synStatement">,</span> eCol<span class="synStatement">.</span>Inputs<span class="synStatement">).</span><span class="synPreProc">Value</span>
+            
+            <span class="synStatement">If</span> hasSearchKey<span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> <span class="synPreProc">Item</span><span class="synStatement">)</span> <span class="synStatement">=</span> <span class="synConstant">True</span> <span class="synStatement">Then</span>
+                <span class="synStatement">Dim</span> arrSplitedStr <span class="synStatement">As</span> <span class="synType">Variant</span>
+                arrSplitedStr <span class="synStatement">=</span> <span class="synPreProc">Split</span><span class="synStatement">(</span>ThisStr<span class="synStatement">,</span> <span class="synPreProc">Item</span><span class="synStatement">)</span>
+                <span class="synStatement">Call</span> outputStrArray<span class="synStatement">(</span>arrSplitedStr<span class="synStatement">,</span> CurrentRow<span class="synStatement">)</span>
+            
+        <span class="synStatement">Next</span> <span class="synPreProc">Item</span>
+
+    <span class="synStatement">Next</span> CurrentRow
+    
+    <span class="synStatement">Call</span> formatThisSheet<span class="synStatement">(</span>ThisSheet<span class="synStatement">)</span>
+<span class="synStatement">End</span> <span class="synStatement">Sub</span>
+
+<span class="synStatement">Function</span> hasSearchKey<span class="synStatement">(ByVal</span> ThisStr <span class="synStatement">As</span> <span class="synType">String</span><span class="synStatement">, _</span>
+                      <span class="synStatement">ByVal</span> <span class="synPreProc">Item</span> <span class="synStatement">As</span> <span class="synType">Variant</span><span class="synStatement">)</span> <span class="synStatement">As</span> <span class="synType">Boolean</span>
+            
+    hasSearchKey <span class="synStatement">=</span> <span class="synIdentifier">InStr</span><span class="synStatement">(</span><span class="synConstant">1</span><span class="synStatement">,</span> ThisStr<span class="synStatement">,</span> arrSearchKey<span class="synStatement">)</span>
+
+<span class="synStatement">End</span> <span class="synStatement">Function</span>
+</pre>
+
+
+<div class="paragraph">配列に代入の部分がアレだけど、だいぶスッキリしました。</div>
+
+<div class="paragraph">ついでに、こちら↓で勉強した<strong>Function</strong>プロシージャも、練習のために使ってみる。
+<amp-iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmoripro.net%2Fvba-function-procedure%2F" title="【ExcelVBA】Functionプロシージャとは（やさしい図解付き）｜もりさんのプログラミング手帳" class="embed-card embed-webcard" scrolling="no" frameborder="0" width="auto" height="190px" layout="fixed-height" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"><div placeholder></div></amp-iframe><cite class="hatena-citation"><a href="https://moripro.net/vba-function-procedure/">moripro.net</a></cite></div>
+
+<div class="paragraph">（使い方あってるのかな…？？？）</div>
+
+<h3 id="結果と考察">結果と考察</h3>
+
+<div class="paragraph">試しに実行してみると…
+<span itemscope itemtype="http://schema.org/Photograph"><amp-img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20180602/20180602163802.png" alt="f:id:yuricks7:20180602163802p:plain" title="f:id:yuricks7:20180602163802p:plain" class="entry-content-img" itemprop="image" width="670" height="674" sizes="(min-width: 690px) 670px, 93.75vw" layout="responsive"></amp-img></span></div>
+
+<div class="paragraph">今度はFor文が間違えているみたいです。ガックシ…（古い）
+一つ潰せばまた問題が出てくる…世の中そんなモンでしょうか。</div>
+
+<div class="paragraph">でも、これも学びのタネと思って、頑張ります。</div>
+
+<div class="paragraph">そんなわけで、次回につづく。</div>
+
+    
+      <div class="profile-cards-list">
+        
+      </div>
+    
+  </div>
+
+  <div class="entry-footer section">
+    <div class="entry-footer-section">
+      <span class="author vcard fn" data-load-nickname="1" data-user-name="yuricks7">yuricks7</span>
+      <span class="entry-footer-time"><time data-relative datetime="2018-06-02T08:00:00Z" title="2018-06-02T08:00:00Z" class="updated">2018-06-02 17:00</time></span>
+      <a href="https://www.yuru-wota.com/entry/2018/06/02/170000" rel="bookmark" class="bookmark"></a>
+    </div>
+  </div>
+
+</article>
+
+
+<div class="entry-footer-module section">
+  
+  
+
+<ul class="social-share" data-amp-auto-lightbox-disable>
+  
+  
+  
+  
+  
+  
+</ul>
+
+</div>
+
+
+  <div class="pager-wrapper section">
+    <div class="pager-group permalink-pager">
+      <div class="pager-inner pager-l">
+        
+          <a href="https://www.yuru-wota.com/entry/PowerShell/get-PackageProvider" rel="prev" data-track-name="blogs-touch-permalink-pager-prev" data-track-once>
+            【PowerShell】コマンドを使ってパッケージ・プロバ…
+          </a>
+          <span class="pager-arrow"><i class="blogicon-chevron-left"></i></span>
+        
+      </div>
+      <div class="pager-inner pager-r">
+        
+          <a href="https://www.yuru-wota.com/entry/2018/05/30/060000" rel="next" data-track-name="blogs-touch-permalink-pager-next" data-track-once>
+            リーダブルコードへの旅 ～箇条書きを表にする②～
+          </a>
+          <span class="pager-arrow"><i class="blogicon-chevron-right"></i></span>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+      <footer class="footer section">
+        <small>
+          ゆるおたノート
+          
+            <div class="powered-by-hatenablog">
+              Powered by <a href="https://hatenablog.com/">Hatena Blog</a>.
+            </div>        </small>
+      </footer>
+    </div>
+    /* <amp-analytics type="googleanalytics" id="service-default-analytics">
+      <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-78157340-1"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
+      </script>
+    </amp-analytics> */
+      /* <amp-analytics type="googleanalytics" id="custom-analytics">
+        <script type="application/json">
+          {
+            "vars": {
+              "account": "UA-116388193-1"
+            },
+            "triggers": {
+              "trackPageview": {
+                "on": "visible",
+                "request": "pageview"
+              }
+            }
+          }
+        </script>
+      </amp-analytics> */
+    <amp-pixel src="https://blog.hatena.ne.jp/api/log?uri=AMPDOC_URL&amp;referrer=DOCUMENT_REFERRER&amp;dummy=RANDOM"></amp-pixel>
+  </body>
+</html>
