@@ -979,12 +979,12 @@ footer {
 
     // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
     // https://qiita.com/ymeeto/items/f165576f49f37e28e253
-    display: block;
+    display: block !important;
 
     /* 横スクロール */
     overflow-x: scroll;
-    width: auto;
-    max-width: 980px;
+    width    : auto !important;
+    max-width: 100%;
 
     // /* 縦スクロール */
     // overflow-y: scroll;
@@ -996,6 +996,9 @@ footer {
 
     border-radius: 3px;
     border: 1px solid charBlack(.05);
+
+    font-size  : .98em;
+    line-height: 1.1em;
   }
 
   th {
@@ -1003,7 +1006,7 @@ footer {
   }
 
   td {
-    font-size  :  .9em;
+    font-size  :  .94em;
     line-height: 1.3em;
   }
 

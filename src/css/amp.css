@@ -2030,17 +2030,19 @@ footer .comment-box {
 .entry-content table {
   margin-left: 10px;
   margin-right: 10px;
-  display: block;
+  display: block !important;
   /* 横スクロール */
   overflow-x: scroll;
-  width: auto;
-  max-width: 980px;
+  width: auto !important;
+  max-width: 100%;
   white-space: nowrap;
   /* 自動改行をoff */
   -webkit-overflow-scrolling: touch;
   /* スマホでも滑らかに */
   border-radius: 3px;
   border: 1px solid rgba(5, 5, 5, 0.05);
+  font-size: .98em;
+  line-height: 1.1em;
 }
 
 .entry-content th {
@@ -2048,7 +2050,7 @@ footer .comment-box {
 }
 
 .entry-content td {
-  font-size: .9em;
+  font-size: .94em;
   line-height: 1.3em;
 }
 
