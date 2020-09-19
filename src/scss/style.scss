@@ -23,6 +23,8 @@ body {
 
   @include titleFonts(bold);
   background-color: themeColor(1) !important;
+
+  box-shadow: 0 0 3px 3px btnColor(.3);
 }
 
 /* ブログタイトル */
@@ -42,7 +44,8 @@ body {
   padding: 0;
   border : 0;
 
-  background-color: themeColor(.3);
+  background-color: themeColor(.6);
+  // background-color: themeColor(.3);
 
   .gnav-inner {
     height : 100%;
@@ -55,9 +58,11 @@ body {
       margin : 0px auto 5px;
       padding: 8px  4px 6px !important;
 
-      box-shadow: 0 4px btnColor(.4);
-      border-left : 1px solid btnColor(.4);
-      border-right: 1px solid btnColor(.4);
+      // background-color: themeColor(.2);
+
+      box-shadow  : 0 4px btnColor(.3);
+      border-left : 1px solid btnColor(.3);
+      border-right: 1px solid btnColor(.3);
       border-bottom-left-radius : 3px;
       border-bottom-right-radius: 3px;
 
