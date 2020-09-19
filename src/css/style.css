@@ -795,17 +795,17 @@ body {
 }
 
 #gnav .gnav-inner .menu {
-  height: 100%;
-  margin: 0px  0px 5px;
-  padding: 8px 18px 6px !important;
-  -webkit-box-shadow: 0 4px rgba(29, 138, 255, 0.6);
-          box-shadow: 0 4px rgba(29, 138, 255, 0.6);
-  border-left: 1px solid rgba(29, 138, 255, 0.3);
-  border-right: 1px solid rgba(29, 138, 255, 0.3);
+  width: calc(100% / 8);
+  margin: 0px auto 5px;
+  padding: 8px  4px 6px !important;
+  -webkit-box-shadow: 0 4px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px rgba(0, 0, 0, 0.4);
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .25s;
+  transition: all .25s;
 }
 
 #gnav .gnav-inner .menu a {
@@ -932,8 +932,8 @@ body {
   margin: 8px;
   width: 45px;
   height: 28px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .25s;
+  transition: all .25s;
 }
 
 .hatena-star-container .hatena-star-add-button:hover {
@@ -2407,8 +2407,8 @@ footer .comment-box {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none !important;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .25s;
+  transition: all .25s;
 }
 
 .leave-comment-title:before {
