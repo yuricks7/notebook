@@ -1921,13 +1921,15 @@ footer .comment-box {
 }
 
 .entry-content code {
+  margin-left: 2px;
+  margin-right: 2px;
   padding-top: 1px;
   border-radius: 3px;
   border: 1px solid rgba(204, 204, 204, 0.5);
   color: black !important;
   background: #dfdbd4;
   /* 背景 黄みがかったgray */
-  font-size: .85em;
+  font-size: 1em !important;
   font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   vertical-align: top !important;
 }

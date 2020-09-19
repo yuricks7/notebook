@@ -883,6 +883,8 @@ footer {
     文中のコード
   --------------------------------------*/
   code {
+    margin-left:  2px;
+    margin-right: 2px;
     padding-top  : 1px;
     border-radius: 3px;
     border: 1px solid rgba(204, 204, 204, .5);
@@ -890,7 +892,7 @@ footer {
     color     : black !important;
     background: #dfdbd4; /* 背景 黄みがかったgray */
 
-    font-size: .85em;
+    font-size: 1em !important;
     @include amp-monospacedFonts();
     vertical-align: top !important;
   }
