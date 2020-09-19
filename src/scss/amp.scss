@@ -912,8 +912,8 @@ footer {
 
     /* フォント・メインカラーを変更 */
     @include amp-monospacedFonts();
-    font-size  : .85em;
-    line-height: 1.5em;
+    font-size  : .96em;
+    line-height: 1.3em;
     color      : $char-white;         /* white 文字色 */
     background-color: charBlack(.85); /* black 背景 */
 

@@ -1945,8 +1945,8 @@ footer .comment-box {
   /* 自動改行をoff */
   /* フォント・メインカラーを変更 */
   font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
-  font-size: .85em;
-  line-height: 1.5em;
+  font-size: .96em;
+  line-height: 1.3em;
   color: #f0f0f0;
   /* white 文字色 */
   background-color: rgba(5, 5, 5, 0.85);
