@@ -23,6 +23,7 @@
     max-width: 1340px;
   }
 
+  /* プロフィール */
   .follow-blog-btns {
     width: 49.5%;
     margin-top: 0 !important;
@@ -60,6 +61,34 @@
     p {
       padding: 4px 40px;
       text-align : left;
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: flex;
+    margin: 10px auto 0;
+  }
+
+  .page-lists {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+
+    .module-sub-header {
+      margin-top: 0 !important;
+      text-align: center
+    }
+
+    .page-list a {
+      display: inline-block;
+      padding: 0 4px 8px;
+
+      i {
+        font-size: 22px !important;
+      }
     }
   }
 }
@@ -173,9 +202,47 @@
       text-align: left;
     }
 
-    p {
+    .profile-others-body {
       padding: 4px 10px;
       text-align : left;
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: block;
+    margin: 10px auto 0;
+  }
+
+  .page-lists {
+    display: block;
+    width  : 100%;
+
+    .module-sub-header {
+      margin-top   : 10px !important;
+      margin-bottom: 0px;
+
+      text-align: left;
+    }
+
+    li {
+      padding: 4px 4px !important;
+    }
+
+    a {
+      display: inline;
+      padding: 10px 4px 8px !important;
+      vertical-align: middle !important;
+
+      br {
+        display: none;
+      }
+
+      i {
+        display: inline !important;
+
+        font-size: 12px !important;
+      }
     }
   }
 

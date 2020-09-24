@@ -560,6 +560,7 @@ textarea,
     width: 100%;
     max-width: 1340px;
   }
+  /* プロフィール */
   .follow-blog-btns {
     width: 49.5%;
     margin-top: 0 !important;
@@ -588,6 +589,31 @@ textarea,
   .profile-others p {
     padding: 4px 40px;
     text-align: left;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px auto 0;
+  }
+  .page-lists {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-lists .module-sub-header {
+    margin-top: 0 !important;
+    text-align: center;
+  }
+  .page-lists .page-list a {
+    display: inline-block;
+    padding: 0 4px 8px;
+  }
+  .page-lists .page-list a i {
+    font-size: 22px !important;
   }
 }
 
@@ -673,9 +699,38 @@ textarea,
   .profile-others .profile-header {
     text-align: left;
   }
-  .profile-others p {
+  .profile-others .profile-others-body {
     padding: 4px 10px;
     text-align: left;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: block;
+    margin: 10px auto 0;
+  }
+  .page-lists {
+    display: block;
+    width: 100%;
+  }
+  .page-lists .module-sub-header {
+    margin-top: 10px !important;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  .page-lists li {
+    padding: 4px 4px !important;
+  }
+  .page-lists a {
+    display: inline;
+    padding: 10px 4px 8px !important;
+    vertical-align: middle !important;
+  }
+  .page-lists a br {
+    display: none;
+  }
+  .page-lists a i {
+    display: inline !important;
+    font-size: 12px !important;
   }
   /* 記事一覧 */
   .archive-heading {
@@ -1394,6 +1449,7 @@ footer .comment-box {
   font-size: .9em;
   /* 検索フォーム */
   /* プロフィール */
+  /* このブログについて */
   /* 最新記事など */
 }
 
@@ -1448,9 +1504,9 @@ footer .comment-box {
 .hatena-module .hatena-module-body .profile-description .profile-header {
   display: block;
   clear: right;
-  margin-top: 16px;
+  margin: 16px auto 4px;
   padding: 2px 4px 0px;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.05);
   color: #050505;
   font-size: 1.2em;
 }
@@ -1496,10 +1552,6 @@ footer .comment-box {
   padding: 0 0 4px;
   vertical-align: middle;
   border-radius: 50%;
-}
-
-.hatena-module .hatena-module-body .profile-description .follow-blog-btns .color-share-btns .share-btn-item p {
-  text-align: left;
 }
 
 .hatena-module .hatena-module-body .profile-description .follow-blog-btns .color-share-btns .share-btn-item:hover {
@@ -1623,10 +1675,6 @@ footer .comment-box {
   border-radius: 50%;
 }
 
-.hatena-module .hatena-module-body .profile-description .follow-account-btns .color-share-btns .share-btn-item p {
-  text-align: left;
-}
-
 .hatena-module .hatena-module-body .profile-description .follow-account-btns .color-share-btns .share-btn-item:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
@@ -1704,6 +1752,69 @@ footer .comment-box {
   font-size: 41px;
   position: relative !important;
   top: -2px !important;
+}
+
+.hatena-module .hatena-module-body .profile-description .profile-others p {
+  padding: 2px 10px;
+}
+
+.hatena-module .hatena-module-body .module-sub-header {
+  display: block;
+  clear: right;
+  margin: 16px auto 4px;
+  padding: 2px 4px 0px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #050505;
+  font-size: 1.2em;
+}
+
+.hatena-module .hatena-module-body .page-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hatena-module .hatena-module-body .page-list li {
+  width: 50%;
+  height: 60px;
+  margin: 0.4em auto 0;
+  list-style: none;
+  text-align: center;
+}
+
+.hatena-module .hatena-module-body .page-list li a {
+  display: block;
+  height: 80%;
+  margin: 4px;
+  padding: auto 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  color: rgba(5, 5, 5, 0.7);
+  font-size: 12px;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.hatena-module .hatena-module-body .page-list li a i {
+  display: inline-block;
+  padding-top: 10px;
+  color: rgba(5, 5, 5, 0.6);
+  font-size: 18px;
+}
+
+.hatena-module .hatena-module-body .page-list li a:hover {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 #333;
+          box-shadow: 0 0 #333;
+  color: #050505;
+}
+
+.hatena-module .hatena-module-body .page-list li a:hover i {
+  color: #050505;
 }
 
 .hatena-module .hatena-module-body time {
@@ -3013,10 +3124,6 @@ footer .comment-box {
   border-radius: 50%;
 }
 
-.hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item p {
-  text-align: left;
-}
-
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
@@ -3136,10 +3243,6 @@ footer .comment-box {
   padding: 0 0 4px;
   vertical-align: middle;
   border-radius: 50%;
-}
-
-.hatena-module-body .follow-account-btns .color-share-btns .share-btn-item p {
-  text-align: left;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item:hover {

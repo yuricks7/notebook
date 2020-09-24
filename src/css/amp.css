@@ -559,6 +559,7 @@ textarea,
     width: 100%;
     max-width: 1340px;
   }
+  /* プロフィール */
   .follow-blog-btns {
     width: 49.5%;
     margin-top: 0 !important;
@@ -587,6 +588,31 @@ textarea,
   .profile-others p {
     padding: 4px 40px;
     text-align: left;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px auto 0;
+  }
+  .page-lists {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-lists .module-sub-header {
+    margin-top: 0 !important;
+    text-align: center;
+  }
+  .page-lists .page-list a {
+    display: inline-block;
+    padding: 0 4px 8px;
+  }
+  .page-lists .page-list a i {
+    font-size: 22px !important;
   }
 }
 
@@ -672,9 +698,38 @@ textarea,
   .profile-others .profile-header {
     text-align: left;
   }
-  .profile-others p {
+  .profile-others .profile-others-body {
     padding: 4px 10px;
     text-align: left;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: block;
+    margin: 10px auto 0;
+  }
+  .page-lists {
+    display: block;
+    width: 100%;
+  }
+  .page-lists .module-sub-header {
+    margin-top: 10px !important;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  .page-lists li {
+    padding: 4px 4px !important;
+  }
+  .page-lists a {
+    display: inline;
+    padding: 10px 4px 8px !important;
+    vertical-align: middle !important;
+  }
+  .page-lists a br {
+    display: none;
+  }
+  .page-lists a i {
+    display: inline !important;
+    font-size: 12px !important;
   }
   /* 記事一覧 */
   .archive-heading {
@@ -2772,10 +2827,6 @@ footer .comment-box {
   border-radius: 50%;
 }
 
-.hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item p {
-  text-align: left;
-}
-
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
@@ -2895,10 +2946,6 @@ footer .comment-box {
   padding: 0 0 4px;
   vertical-align: middle;
   border-radius: 50%;
-}
-
-.hatena-module-body .follow-account-btns .color-share-btns .share-btn-item p {
-  text-align: left;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item:hover {
