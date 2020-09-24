@@ -1409,27 +1409,28 @@ footer {
 --------------------------------------*/
 .hatena-module-body {
 
+  $icon-size: 36px;
   .follow-blog-btns {
-    @include followBtns(36px, 70%);
+    @include followBtns($icon-size, 70%);
 
     /* 微調整 */
     .hateblo {
       i {
-        font-size  : 36px;
-        position: relative !important;
+        font-size: $icon-size;
+        position : relative !important;
         top: 4px !important;
       }
     }
   }
 
   .follow-account-btns {
-    @include followBtns(36px, 80%);
+    @include followBtns($icon-size, 80%);
 
     /* 微調整 */
     .github {
       i {
-        font-size  : 41px;
-        position: relative !important;
+        font-size: 41px;
+        position : relative !important;
         top: -2px !important;
       }
     }

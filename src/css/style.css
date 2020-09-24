@@ -570,7 +570,7 @@ textarea,
     text-align: center;
   }
   .follow-blog-btns .color-share-btns {
-    max-width: 55% !important;
+    min-width: 55% !important;
   }
   .follow-account-btns {
     width: 49.5%;
@@ -580,7 +580,7 @@ textarea,
     text-align: center;
   }
   .follow-account-btns .color-share-btns {
-    max-width: 65% !important;
+    min-width: 65% !important;
   }
   .profile-others .profile-header {
     text-align: center;
@@ -609,7 +609,10 @@ textarea,
   }
   .page-lists .page-list a {
     display: inline-block;
-    padding: 0 4px 8px;
+    padding: 4px 4px 8px;
+  }
+  .page-lists .page-list a br {
+    display: none;
   }
   .page-lists .page-list a i {
     font-size: 22px !important;
@@ -674,26 +677,11 @@ textarea,
     border-radius: 0 !important;
   }
   /* プロフィール */
-  .follow-blog-btns {
-    width: 100%;
-    margin-top: 0 !important;
-    clear: left;
-  }
   .follow-blog-btns .profile-header {
     text-align: left;
   }
-  .follow-blog-btns .color-share-btns {
-    max-width: 55% !important;
-  }
-  .follow-account-btns {
-    width: 100%;
-    clear: right;
-  }
   .follow-account-btns .profile-header {
     text-align: left;
-  }
-  .follow-account-btns .color-share-btns {
-    max-width: 65% !important;
   }
   .profile-others .profile-header {
     text-align: left;
@@ -704,32 +692,32 @@ textarea,
   }
   /* このブログについて */
   .page-lists-container {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin: 10px auto 0;
   }
   .page-lists {
     display: block;
-    width: 100%;
   }
   .page-lists .module-sub-header {
-    margin-top: 10px !important;
-    margin-bottom: 0px;
-    text-align: left;
+    margin: 10px auto 0;
   }
   .page-lists li {
+    height: 100px !important;
     padding: 4px 4px !important;
   }
   .page-lists a {
-    display: inline;
-    padding: 10px 4px 8px !important;
-    vertical-align: middle !important;
+    display: inline-block;
+    padding: 10px 4px 4px !important;
+    font-size: 1em !important;
   }
   .page-lists a br {
-    display: none;
+    display: inline !important;
   }
   .page-lists a i {
-    display: inline !important;
-    font-size: 12px !important;
+    display: inline-block;
+    font-size: 22px !important;
   }
   /* 記事一覧 */
   .archive-heading {
@@ -807,6 +795,7 @@ textarea,
   .entry-content {
     font-size: 14px !important;
   }
+  /* カエレバ */
   .booklink-box, .kaerebalink-box {
     margin: 0 auto;
     width: 100%;
@@ -829,6 +818,77 @@ textarea,
   }
   .booklink-box .booklink-info .booklink-name, .booklink-box .booklink-info .kaerebalink-name, .booklink-box .kaerebalink-info .booklink-name, .booklink-box .kaerebalink-info .kaerebalink-name, .kaerebalink-box .booklink-info .booklink-name, .kaerebalink-box .booklink-info .kaerebalink-name, .kaerebalink-box .kaerebalink-info .booklink-name, .kaerebalink-box .kaerebalink-info .kaerebalink-name {
     text-align: center;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: block !important;
+  }
+  .page-lists {
+    display: block !important;
+    width: 100%  !important;
+  }
+  .page-lists li {
+    height: 60px !important;
+  }
+  .page-lists a {
+    display: inline;
+    padding: 0 4px 10px !important;
+  }
+  .page-lists a br {
+    display: none !important;
+  }
+  .page-lists a i {
+    display: inline;
+    position: relative;
+    top: 1px;
+  }
+}
+
+/*--------------------------------------
+  （極小）スマホ
+--------------------------------------*/
+@media (max-width: 380px) {
+  /* プロフィール */
+  .follow-blog-btns {
+    clear: left;
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+  .follow-blog-btns .profile-header {
+    margin: 0 auto 10px !important;
+    text-align: left;
+  }
+  .follow-blog-btns .color-share-btns {
+    min-width: 100px;
+    max-width: 80% !important;
+  }
+  .follow-account-btns {
+    clear: right;
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+  .follow-account-btns .profile-header {
+    margin: 0 auto 10px !important;
+    text-align: left;
+  }
+  .follow-account-btns .color-share-btns {
+    min-width: 130px !important;
+    max-width: 90%  !important;
+  }
+  .page-lists li {
+    height: 100px !important;
+  }
+  .page-lists li a {
+    display: inline-block;
+    padding-bottom: 4px !important;
+  }
+  .page-lists li a br {
+    display: inline !important;
+  }
+  .page-lists li a i {
+    display: inline-block;
+    padding-top: 12px !important;
+    padding-bottom: 8px !important;
   }
 }
 
@@ -1539,7 +1599,7 @@ footer .comment-box {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2em;
   text-align: center;
   line-height: 36px;
   -webkit-transition: all .3s;
@@ -1660,7 +1720,7 @@ footer .comment-box {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2em;
   text-align: center;
   line-height: 36px;
   -webkit-transition: all .3s;
@@ -3109,7 +3169,7 @@ footer .comment-box {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2em;
   text-align: center;
   line-height: 36px;
   -webkit-transition: all .3s;
@@ -3230,7 +3290,7 @@ footer .comment-box {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2em;
   text-align: center;
   line-height: 36px;
   -webkit-transition: all .3s;
