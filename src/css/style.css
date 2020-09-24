@@ -922,14 +922,14 @@ body {
 /* ヘッダー */
 /* https://hitsuzi.hatenablog.com/entry/minimalism */
 #blog-title {
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
   padding: 20px 30px;
   font-family: -apple-system, 'Kosugi Maru';
   font-weight: bold;
   background-color: #1d8aff !important;
-  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
 }
 
 /* ブログタイトル */
@@ -950,7 +950,7 @@ body {
   display: flex;
   padding: 0;
   border: 0;
-  background-color: rgba(29, 138, 255, 0.6);
+  background-color: rgba(29, 138, 255, 0.3);
 }
 
 #gnav .gnav-inner {
@@ -964,6 +964,7 @@ body {
   min-width: 116px;
   margin: 0px auto 5px;
   padding: 8px  4px 6px !important;
+  background-color: rgba(29, 138, 255, 0.1);
   -webkit-box-shadow: 0 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px rgba(0, 0, 0, 0.3);
   border-left: 1px solid rgba(0, 0, 0, 0.3);

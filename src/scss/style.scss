@@ -17,14 +17,14 @@ body {
 /* ヘッダー */
 /* https://hitsuzi.hatenablog.com/entry/minimalism */
 #blog-title {
+  width: 100%;
   margin : 0 auto;
-  width  : 100%;
   padding: 20px 30px;
 
   @include titleFonts(bold);
   background-color: themeColor(1) !important;
 
-  box-shadow: 0 0 3px 3px btnColor(.3);
+  box-shadow: 0 5px 3px -1px btnColor(.3); // 下方向のみ
 }
 
 /* ブログタイトル */
@@ -44,8 +44,7 @@ body {
   padding: 0;
   border : 0;
 
-  background-color: themeColor(.6);
-  // background-color: themeColor(.3);
+  background-color: themeColor(.3);
 
   .gnav-inner {
     height : 100%;
@@ -59,7 +58,7 @@ body {
       margin : 0px auto 5px;
       padding: 8px  4px 6px !important;
 
-      // background-color: themeColor(.2);
+      background-color: themeColor(.1);
 
       box-shadow  : 0 4px btnColor(.3);
       border-left : 1px solid btnColor(.3);
