@@ -430,15 +430,56 @@ footer {
       @include standardFonts();
       font-size: .95em;
       @include linkColors();
+
+    .profile-header {
+      display: block;
+      clear: right;
+
+      margin-top: 16px;
+      padding: 2px 4px 0px;
+      background: btnColor(.08);
+      // border-bottom: 1px solid btnColor(.4);
+
+      color: charBlack(1);
+      font-size: 1.2em;
     }
 
-    /* 最新記事など */
-    time {
-      color  : charBlack(.8);
-      @include linkColors($visited: charBlack(1));
-      font-weight: bold;
-      // border-bottom: 3px solid themeColor(.3);
+    .follow-blog-btns {
+      margin-top: 16px;
+      @include followBtns(36px, 70%);
+
+      /* 微調整 */
+      .hateblo {
+        i {
+          font-size  : 36px;
+          position: relative !important;
+          top: 4px !important;
+        }
+      }
     }
+
+    .follow-account-btns {
+      @include followBtns(36px, 80%);
+
+      /* 微調整 */
+      .github {
+        i {
+          font-size  : 41px;
+          position: relative !important;
+          top: -2px !important;
+        }
+      }
+    }
+
+  }
+
+  /* 最新記事など */
+  time {
+    color  : charBlack(.8);
+    @include linkColors($visited: charBlack(1));
+    font-weight: bold;
+    // border-bottom: 3px solid themeColor(.3);
+  }
 
     img[alt] {
       color    : charBlack(.6);

@@ -22,6 +22,46 @@
     width : 100%;
     max-width: 1340px;
   }
+
+  .follow-blog-btns {
+    width: 49.5%;
+    margin-top: 0 !important;
+    clear: left;
+    float: left;
+
+    .profile-header {
+      text-align: center;
+    }
+
+    .color-share-btns {
+      max-width : 55% !important;
+    }
+
+  }
+
+  .follow-account-btns {
+    width: 49.5%;
+    float: right;
+
+    .profile-header {
+      text-align: center;
+    }
+
+    .color-share-btns {
+      max-width : 65% !important;
+    }
+  }
+
+  .profile-others {
+    .profile-header {
+      text-align: center;
+    }
+
+    p {
+      padding: 4px 40px;
+      text-align : left;
+    }
+  }
 }
 
 /*--------------------------------------
@@ -44,26 +84,6 @@
 
   #stoc-module {
     display: none !important;
-  }
-
-  .follow-blog-btns {
-    .color-share-btns {
-      max-width : 40% !important;
-    }
-
-    p {
-      text-align: center;
-    }
-  }
-
-  .follow-account-btns {
-    .color-share-btns {
-      max-width : 50% !important;
-    }
-
-    p {
-      text-align: center;
-    }
   }
 }
 
@@ -118,6 +138,48 @@
     border-radius: 0 !important;
   }
 
+  /* プロフィール */
+  .follow-blog-btns {
+    width: 100%;
+    margin-top: 0 !important;
+    clear: left;
+
+    .profile-header {
+      text-align: left;
+    }
+
+    .color-share-btns {
+      max-width : 55% !important;
+    }
+
+  }
+
+  .follow-account-btns {
+    width: 100%;
+    clear: right;
+
+    .profile-header {
+      text-align: left;
+    }
+
+    .color-share-btns {
+      max-width : 65% !important;
+    }
+  }
+
+  .profile-others {
+
+    .profile-header {
+      text-align: left;
+    }
+
+    p {
+      padding: 4px 10px;
+      text-align : left;
+    }
+  }
+
+  /* 記事一覧 */
   .archive-heading {
     padding-left: 10px;
   }
