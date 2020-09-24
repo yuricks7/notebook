@@ -271,10 +271,6 @@ $side-margin: 10px;
 
       transition : all .3s;
 
-      p {
-        text-align : left;
-      }
-
       &:hover {
         transform:scale(1.1, 1.1);
         box-shadow: 0 0 #333;

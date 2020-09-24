@@ -1449,7 +1449,7 @@ footer .comment-box {
   clear: right;
   margin-top: 16px;
   padding: 2px 4px 0px;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.06);
   color: #050505;
   font-size: 1.2em;
 }
@@ -1495,10 +1495,6 @@ footer .comment-box {
   padding: 0 0 4px;
   vertical-align: middle;
   border-radius: 50%;
-}
-
-.hatena-module .hatena-module-body .profile-description .follow-blog-btns .color-share-btns .share-btn-item p {
-  text-align: left;
 }
 
 .hatena-module .hatena-module-body .profile-description .follow-blog-btns .color-share-btns .share-btn-item:hover {
@@ -1622,10 +1618,6 @@ footer .comment-box {
   border-radius: 50%;
 }
 
-.hatena-module .hatena-module-body .profile-description .follow-account-btns .color-share-btns .share-btn-item p {
-  text-align: left;
-}
-
 .hatena-module .hatena-module-body .profile-description .follow-account-btns .color-share-btns .share-btn-item:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
@@ -1703,6 +1695,42 @@ footer .comment-box {
   font-size: 41px;
   position: relative !important;
   top: -2px !important;
+}
+
+.hatena-module .hatena-module-body .profile-description .profile-others p {
+  padding: 2px 10px;
+}
+
+.hatena-module .hatena-module-body .page-list {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.8em auto;
+}
+
+.hatena-module .hatena-module-body .page-list li {
+  width: 50%;
+  height: 60px;
+  margin: 0.8em auto;
+  border-radius: 3px;
+  list-style: none;
+  text-align: center;
+}
+
+.hatena-module .hatena-module-body .page-list li i {
+  display: block;
+  font-size: 26px;
+  color: white;
+}
+
+.hatena-module .hatena-module-body .page-list li a {
+  display: block;
+  margin: 0 4px 4px 4px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 12px;
 }
 
 .hatena-module .hatena-module-body time {
@@ -3012,10 +3040,6 @@ footer .comment-box {
   border-radius: 50%;
 }
 
-.hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item p {
-  text-align: left;
-}
-
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
@@ -3135,10 +3159,6 @@ footer .comment-box {
   padding: 0 0 4px;
   vertical-align: middle;
   border-radius: 50%;
-}
-
-.hatena-module-body .follow-account-btns .color-share-btns .share-btn-item p {
-  text-align: left;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item:hover {
