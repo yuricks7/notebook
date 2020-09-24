@@ -204,7 +204,7 @@ $side-margin: 10px;
     }
   }
 
-  img { display  : none; }
+  img { display: none; }
 }
 
 @mixin shareBtns($width, $height) {
@@ -240,8 +240,9 @@ $side-margin: 10px;
   clear  : right;
 
   margin : 16px auto 4px;
-  padding: 2px 4px 0px;
-  background: btnColor(.05);
+  padding: 2px 6px 0px;
+  // background: btnColor(.04);
+  border-left: 6px solid btnColor(.07);
 
   color: charBlack(1);
   font-size: 1.2em;

@@ -430,42 +430,44 @@ footer {
       @include standardFonts();
       font-size: .95em;
       @include linkColors();
+    }
 
-      .profile-header {
-        @include sumModuleHeaders();
-      }
+    /* アカウント一覧 */
+    .accounts-header {
+      @include sumModuleHeaders();
+    }
 
-      .follow-blog-btns {
-        margin-top: 16px;
-        @include followBtns(36px, 70%);
+    .follow-blog-btns {
+      margin-top: 16px;
+      @include followBtns(36px, 70%);
 
-        /* 微調整 */
-        .hateblo {
-          i {
-            font-size  : 36px;
-            position: relative !important;
-            top: 4px !important;
-          }
+      /* 微調整 */
+      .hateblo {
+        i {
+          font-size  : 36px;
+          position: relative !important;
+          top: 4px !important;
         }
-      }
-
-      .follow-account-btns {
-        @include followBtns(36px, 80%);
-
-        /* 微調整 */
-        .github {
-          i {
-            font-size: 41px;
-            position : relative !important;
-            top: -2px !important;
-          }
-        }
-      }
-
-      .profile-others p {
-        padding: 2px 10px;
       }
     }
+
+    .follow-account-btns {
+      @include followBtns(36px, 80%);
+
+      /* 微調整 */
+      .github {
+        i {
+          font-size: 41px;
+          position : relative !important;
+          top: -2px !important;
+        }
+      }
+    }
+
+      // .profile-others p {
+      //   padding: 2px 10px;
+      // }
+    // }
 
     /* このブログについて */
     .module-sub-header {
