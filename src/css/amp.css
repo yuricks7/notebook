@@ -559,6 +559,68 @@ textarea,
     width: 100%;
     max-width: 1340px;
   }
+  /* プロフィール */
+  .follow-blog-btns {
+    width: 49.5%;
+    margin-top: 0 !important;
+    clear: left;
+    float: left;
+  }
+  .follow-blog-btns .profile-header {
+    text-align: center;
+  }
+  .follow-blog-btns .color-share-btns {
+    min-width: 55% !important;
+  }
+  .follow-account-btns {
+    width: 49.5%;
+    float: right;
+  }
+  .follow-account-btns .profile-header {
+    text-align: center;
+  }
+  .follow-account-btns .color-share-btns {
+    min-width: 65% !important;
+  }
+  .profile-others .profile-header {
+    text-align: center;
+  }
+  .profile-others p {
+    padding: 4px 40px;
+    text-align: left;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px auto 0;
+  }
+  .page-lists {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-lists .module-sub-header {
+    margin-top: 0 !important;
+    text-align: center;
+  }
+  .page-lists .page-list a {
+    display: inline-block;
+    padding: 4px 8px;
+  }
+  .page-lists .page-list a br {
+    display: none;
+  }
+  .page-lists .page-list a i {
+    font-size: 22px !important;
+  }
+  /* 追尾する目次 */
+  #stoc-module {
+    display: none !important;
+  }
 }
 
 /*--------------------------------------
@@ -574,21 +636,6 @@ textarea,
   }
   #blog-title #blog-description {
     margin-bottom: 20px !important;
-  }
-  #stoc-module {
-    display: none !important;
-  }
-  .follow-blog-btns .color-share-btns {
-    max-width: 40% !important;
-  }
-  .follow-blog-btns p {
-    text-align: center;
-  }
-  .follow-account-btns .color-share-btns {
-    max-width: 50% !important;
-  }
-  .follow-account-btns p {
-    text-align: center;
   }
 }
 
@@ -630,6 +677,50 @@ textarea,
   .hatena-module {
     border-radius: 0 !important;
   }
+  /* プロフィール */
+  .follow-blog-btns .profile-header {
+    text-align: left;
+  }
+  .follow-account-btns .profile-header {
+    text-align: left;
+  }
+  .profile-others .profile-header {
+    text-align: left;
+  }
+  .profile-others .profile-others-body {
+    padding: 4px 10px;
+    text-align: left;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px auto 0;
+  }
+  .page-lists {
+    display: block;
+  }
+  .page-lists .module-sub-header {
+    margin: 10px auto 0;
+  }
+  .page-lists li {
+    height: 100px !important;
+    padding: 4px 4px !important;
+  }
+  .page-lists a {
+    display: inline-block;
+    padding: 10px 4px 4px !important;
+    font-size: 1em !important;
+  }
+  .page-lists a br {
+    display: inline !important;
+  }
+  .page-lists a i {
+    display: inline-block;
+    font-size: 22px !important;
+  }
+  /* 記事一覧 */
   .archive-heading {
     padding-left: 10px;
   }
@@ -705,6 +796,7 @@ textarea,
   .entry-content {
     font-size: 14px !important;
   }
+  /* カエレバ */
   .booklink-box, .kaerebalink-box {
     margin: 0 auto;
     width: 100%;
@@ -727,6 +819,77 @@ textarea,
   }
   .booklink-box .booklink-info .booklink-name, .booklink-box .booklink-info .kaerebalink-name, .booklink-box .kaerebalink-info .booklink-name, .booklink-box .kaerebalink-info .kaerebalink-name, .kaerebalink-box .booklink-info .booklink-name, .kaerebalink-box .booklink-info .kaerebalink-name, .kaerebalink-box .kaerebalink-info .booklink-name, .kaerebalink-box .kaerebalink-info .kaerebalink-name {
     text-align: center;
+  }
+  /* このブログについて */
+  .page-lists-container {
+    display: block !important;
+  }
+  .page-lists {
+    display: block !important;
+    width: 100%  !important;
+  }
+  .page-lists li {
+    height: 60px !important;
+  }
+  .page-lists a {
+    display: inline;
+    padding: 0 4px 10px !important;
+  }
+  .page-lists a br {
+    display: none !important;
+  }
+  .page-lists a i {
+    display: inline;
+    position: relative;
+    top: 1px;
+  }
+}
+
+/*--------------------------------------
+  （極小）スマホ
+--------------------------------------*/
+@media (max-width: 380px) {
+  /* プロフィール */
+  .follow-blog-btns {
+    clear: left;
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+  .follow-blog-btns .profile-header {
+    margin: 0 auto 10px !important;
+    text-align: left;
+  }
+  .follow-blog-btns .color-share-btns {
+    min-width: 100px;
+    max-width: 80% !important;
+  }
+  .follow-account-btns {
+    clear: right;
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+  .follow-account-btns .profile-header {
+    margin: 0 auto 10px !important;
+    text-align: left;
+  }
+  .follow-account-btns .color-share-btns {
+    min-width: 130px !important;
+    max-width: 90%  !important;
+  }
+  .page-lists li {
+    height: 100px !important;
+  }
+  .page-lists li a {
+    display: inline-block;
+    padding-bottom: 4px !important;
+  }
+  .page-lists li a br {
+    display: inline !important;
+  }
+  .page-lists li a i {
+    display: inline-block;
+    padding-top: 12px !important;
+    padding-bottom: 8px !important;
   }
 }
 
@@ -1921,13 +2084,15 @@ footer .comment-box {
 }
 
 .entry-content code {
+  margin-left: 2px;
+  margin-right: 2px;
   padding-top: 1px;
   border-radius: 3px;
   border: 1px solid rgba(204, 204, 204, 0.5);
   color: black !important;
   background: #dfdbd4;
   /* 背景 黄みがかったgray */
-  font-size: .85em;
+  font-size: 1em !important;
   font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   vertical-align: top !important;
 }
@@ -1945,8 +2110,8 @@ footer .comment-box {
   /* 自動改行をoff */
   /* フォント・メインカラーを変更 */
   font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
-  font-size: .85em;
-  line-height: 1.5em;
+  font-size: .96em;
+  line-height: 1.3em;
   color: #f0f0f0;
   /* white 文字色 */
   background-color: rgba(5, 5, 5, 0.85);
@@ -2028,17 +2193,19 @@ footer .comment-box {
 .entry-content table {
   margin-left: 10px;
   margin-right: 10px;
-  display: block;
+  display: block !important;
   /* 横スクロール */
   overflow-x: scroll;
-  width: auto;
-  max-width: 980px;
+  width: auto !important;
+  max-width: 100%;
   white-space: nowrap;
   /* 自動改行をoff */
   -webkit-overflow-scrolling: touch;
   /* スマホでも滑らかに */
   border-radius: 3px;
   border: 1px solid rgba(5, 5, 5, 0.05);
+  font-size: .98em;
+  line-height: 1.1em;
 }
 
 .entry-content th {
@@ -2046,7 +2213,7 @@ footer .comment-box {
 }
 
 .entry-content td {
-  font-size: .9em;
+  font-size: .94em;
   line-height: 1.3em;
 }
 
@@ -2707,7 +2874,7 @@ footer .comment-box {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2em;
   text-align: center;
   line-height: 36px;
   -webkit-transition: all .3s;
@@ -2828,7 +2995,7 @@ footer .comment-box {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.2em;
   text-align: center;
   line-height: 36px;
   -webkit-transition: all .3s;

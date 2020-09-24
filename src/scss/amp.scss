@@ -883,6 +883,8 @@ footer {
     文中のコード
   --------------------------------------*/
   code {
+    margin-left:  2px;
+    margin-right: 2px;
     padding-top  : 1px;
     border-radius: 3px;
     border: 1px solid rgba(204, 204, 204, .5);
@@ -890,7 +892,7 @@ footer {
     color     : black !important;
     background: #dfdbd4; /* 背景 黄みがかったgray */
 
-    font-size: .85em;
+    font-size: 1em !important;
     @include amp-monospacedFonts();
     vertical-align: top !important;
   }
@@ -912,8 +914,8 @@ footer {
 
     /* フォント・メインカラーを変更 */
     @include amp-monospacedFonts();
-    font-size  : .85em;
-    line-height: 1.5em;
+    font-size  : .96em;
+    line-height: 1.3em;
     color      : $char-white;         /* white 文字色 */
     background-color: charBlack(.85); /* black 背景 */
 
@@ -977,12 +979,12 @@ footer {
 
     // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
     // https://qiita.com/ymeeto/items/f165576f49f37e28e253
-    display: block;
+    display: block !important;
 
     /* 横スクロール */
     overflow-x: scroll;
-    width: auto;
-    max-width: 980px;
+    width    : auto !important;
+    max-width: 100%;
 
     // /* 縦スクロール */
     // overflow-y: scroll;
@@ -994,6 +996,9 @@ footer {
 
     border-radius: 3px;
     border: 1px solid charBlack(.05);
+
+    font-size  : .98em;
+    line-height: 1.1em;
   }
 
   th {
@@ -1001,7 +1006,7 @@ footer {
   }
 
   td {
-    font-size  :  .9em;
+    font-size  :  .94em;
     line-height: 1.3em;
   }
 

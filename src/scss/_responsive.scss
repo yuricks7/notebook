@@ -22,6 +22,84 @@
     width : 100%;
     max-width: 1340px;
   }
+
+  /* プロフィール */
+  .follow-blog-btns {
+    width: 49.5%;
+    margin-top: 0 !important;
+    clear: left;
+    float: left;
+
+    .profile-header {
+      text-align: center;
+    }
+
+    .color-share-btns {
+      min-width : 55% !important;
+    }
+
+  }
+
+  .follow-account-btns {
+    width: 49.5%;
+    float: right;
+
+    .profile-header {
+      text-align: center;
+    }
+
+    .color-share-btns {
+      min-width : 65% !important;
+    }
+  }
+
+  .profile-others {
+    .profile-header {
+      text-align: center;
+    }
+
+    p {
+      padding: 4px 40px;
+      text-align : left;
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: flex;
+    margin: 10px auto 0;
+  }
+
+  .page-lists {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+
+    .module-sub-header {
+      margin-top: 0 !important;
+      text-align: center
+    }
+
+    .page-list a {
+      display: inline-block;
+      padding:  4px 8px;
+
+      br {
+        display: none;
+      }
+
+      i {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  /* 追尾する目次 */
+  #stoc-module {
+    display: none !important;
+  }
 }
 
 /*--------------------------------------
@@ -39,30 +117,6 @@
 
     #blog-description {
       margin-bottom: 20px !important;
-    }
-  }
-
-  #stoc-module {
-    display: none !important;
-  }
-
-  .follow-blog-btns {
-    .color-share-btns {
-      max-width : 40% !important;
-    }
-
-    p {
-      text-align: center;
-    }
-  }
-
-  .follow-account-btns {
-    .color-share-btns {
-      max-width : 50% !important;
-    }
-
-    p {
-      text-align: center;
     }
   }
 }
@@ -118,6 +172,68 @@
     border-radius: 0 !important;
   }
 
+  /* プロフィール */
+  .follow-blog-btns {
+    .profile-header {
+      text-align: left;
+    }
+  }
+
+  .follow-account-btns {
+    .profile-header {
+      text-align: left;
+    }
+  }
+
+  .profile-others {
+
+    .profile-header {
+      text-align: left;
+    }
+
+    .profile-others-body {
+      padding: 4px 10px;
+      text-align : left;
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: flex;
+    margin : 10px auto 0;
+  }
+
+  .page-lists {
+    display: block;
+
+    .module-sub-header {
+      margin : 10px auto 0;
+    }
+
+    li {
+      height : 100px !important;
+      padding:  4px 4px !important;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 4px 4px !important;
+
+      font-size: 1em !important;
+
+      br {
+        display: inline !important;
+      }
+
+      i {
+        display: inline-block;
+
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  /* 記事一覧 */
   .archive-heading {
     padding-left: 10px;
   }
@@ -209,6 +325,7 @@
     font-size: 14px !important;
   }
 
+  /* カエレバ */
   .booklink-box, .kaerebalink-box {
     margin: 0 auto;
     width: 100%;
@@ -235,6 +352,98 @@
 
       .booklink-name, .kaerebalink-name {
         text-align: center;
+      }
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: block !important;
+  }
+
+  .page-lists {
+    display: block !important;
+    width  : 100%  !important;
+
+    li {
+      height: 60px !important;
+    }
+
+    a {
+      display: inline;
+      padding: 0 4px 10px !important;
+
+      br {
+        display: none !important;
+      }
+
+      i {
+        display: inline;
+        position: relative; // 微調整
+        top     : 1px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------
+  （極小）スマホ
+--------------------------------------*/
+@media (max-width: 380px) {
+
+  /* プロフィール */
+  .follow-blog-btns {
+    clear: left;
+    width: 100%;
+    margin-bottom: 10px !important;
+
+    .profile-header {
+      margin: 0 auto 10px !important;
+
+      text-align: left;
+    }
+
+    .color-share-btns {
+      // width: min(80%, 100px); // ruby-sassが未対応
+      min-width : 100px;
+      max-width :  80% !important;
+    }
+  }
+
+  .follow-account-btns {
+    clear: right;
+    width: 100%;
+    margin-bottom: 10px !important;
+
+    .profile-header {
+      margin: 0 auto 10px !important;
+
+      text-align: left;
+    }
+
+    .color-share-btns {
+      min-width : 130px !important;
+      max-width :  90%  !important;
+    }
+  }
+
+  .page-lists {
+    li {
+      height: 100px !important; // できれば可変にしたい
+
+      a {
+        display: inline-block;
+        padding-bottom: 4px !important;
+
+        br {
+          display: inline !important;
+        }
+
+        i {
+          display: inline-block;
+          padding-top   : 12px !important;
+          padding-bottom:  8px !important;
+        }
       }
     }
   }

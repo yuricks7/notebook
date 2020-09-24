@@ -235,6 +235,19 @@ $side-margin: 10px;
   }
 }
 
+@mixin sumModuleHeaders() {
+  display: block;
+  clear  : right;
+
+  margin : 16px auto 4px;
+  padding: 2px 4px 0px;
+  background: btnColor(.05);
+
+  color: charBlack(1);
+  font-size: 1.2em;
+}
+
+
 @mixin followBtns($icon-size, $area-width) {
   .color-share-btns {
     display: flex;
@@ -248,7 +261,6 @@ $side-margin: 10px;
 
     .share-btn-item {
       overflow: hidden;
-
 
       width : $icon-size; // トリミング
       height: $icon-size; // トリミング
@@ -265,7 +277,8 @@ $side-margin: 10px;
       box-shadow: none !important;
 
       color: #fff;
-      font-size  : 16px;
+      font-size  : 1.2em;
+      // font-size  : 16px;
       text-align : center;
       line-height: $icon-size;
 
