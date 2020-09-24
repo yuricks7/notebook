@@ -1837,7 +1837,7 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .page-list li {
   width: 50%;
-  height: 60px;
+  height: 80px;
   margin: 0.4em auto 0;
   list-style: none;
   text-align: center;
@@ -1847,7 +1847,6 @@ footer .comment-box {
   display: block;
   height: 80%;
   margin: 4px;
-  padding: auto 4px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -1859,7 +1858,8 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .page-list li a i {
   display: inline-block;
-  padding-top: 10px;
+  padding-top: 14px;
+  padding-bottom: 4px;
   color: rgba(5, 5, 5, 0.6);
   font-size: 18px;
 }

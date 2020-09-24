@@ -481,7 +481,7 @@ footer {
 
       li {
         width : 50%;
-        height: 60px;
+        height: 80px;
         margin: 0.4em auto 0;
 
         list-style: none;
@@ -491,7 +491,7 @@ footer {
           display: block;
           height : 80%;
           margin : 4px;
-          padding: auto 4px;
+          // padding: 10px 4px;
 
           border-radius: 4px;
           background: btnColor(.03);
@@ -502,7 +502,8 @@ footer {
 
           i {
             display: inline-block;
-            padding-top: 10px;
+            padding-top   : 14px;
+            padding-bottom:  4px;
 
             color: charBlack(.6);
             font-size: 18px;
