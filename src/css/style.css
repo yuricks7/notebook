@@ -961,6 +961,7 @@ body {
 
 #gnav .gnav-inner .menu {
   width: calc(100% / 8);
+  min-width: 116px;
   margin: 0px auto 5px;
   padding: 8px  4px 6px !important;
   -webkit-box-shadow: 0 4px rgba(0, 0, 0, 0.3);
