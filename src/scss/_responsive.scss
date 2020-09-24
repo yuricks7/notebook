@@ -84,7 +84,7 @@
 
     .page-list a {
       display: inline-block;
-      padding: 4px 4px 8px;
+      padding:  4px 8px;
 
       br {
         display: none;
@@ -94,6 +94,11 @@
         font-size: 22px !important;
       }
     }
+  }
+
+  /* 追尾する目次 */
+  #stoc-module {
+    display: none !important;
   }
 }
 
@@ -113,10 +118,6 @@
     #blog-description {
       margin-bottom: 20px !important;
     }
-  }
-
-  #stoc-module {
-    display: none !important;
   }
 }
 

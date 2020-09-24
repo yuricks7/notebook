@@ -610,13 +610,17 @@ textarea,
   }
   .page-lists .page-list a {
     display: inline-block;
-    padding: 4px 4px 8px;
+    padding: 4px 8px;
   }
   .page-lists .page-list a br {
     display: none;
   }
   .page-lists .page-list a i {
     font-size: 22px !important;
+  }
+  /* 追尾する目次 */
+  #stoc-module {
+    display: none !important;
   }
 }
 
@@ -633,9 +637,6 @@ textarea,
   }
   #blog-title #blog-description {
     margin-bottom: 20px !important;
-  }
-  #stoc-module {
-    display: none !important;
   }
 }
 
