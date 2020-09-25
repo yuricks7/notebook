@@ -38,6 +38,7 @@
 
 @mixin monospacedFonts() {
   font-family: 'Roboto Mono',
+               'BIZ UDゴシック',
                Consolas,
                'メイリオ',
                Meiryo,
@@ -48,6 +49,7 @@
                sans-serif;
 }
 
+// Webフォントを除外
 @mixin amp-titleFonts($weight) {
   font-family: -apple-system,
                'Meiryo UI';
@@ -79,7 +81,8 @@
 
 @mixin amp-monospacedFonts() {
   font-family: Consolas,
-               'メイリオ',
+              'BIZ UDゴシック',
+              'メイリオ',
                Meiryo,
                'ヒラギノ角ゴ ProN',
                'Hiragino Kaku Gothic ProN',

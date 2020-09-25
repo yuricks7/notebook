@@ -1988,7 +1988,7 @@ footer .comment-box {
   color: #666666;
   /*ボタン色より暗く*/
   font-size: 90%;
-  font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: Consolas, 'BIZ UDゴシック', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   text-decoration: none;
   text-shadow: 1px 1px 1px #f0f0f0;
   /*
@@ -2089,7 +2089,7 @@ footer .comment-box {
   background: #dfdbd4;
   /* 背景 黄みがかったgray */
   font-size: 1em !important;
-  font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: Consolas, 'BIZ UDゴシック', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   vertical-align: top !important;
 }
 
@@ -2105,7 +2105,7 @@ footer .comment-box {
   white-space: pre;
   /* 自動改行をoff */
   /* フォント・メインカラーを変更 */
-  font-family: Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: Consolas, 'BIZ UDゴシック', 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   font-size: .96em;
   line-height: 1.3em;
   color: #f0f0f0;
