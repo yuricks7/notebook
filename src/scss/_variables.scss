@@ -6,21 +6,21 @@
   フォント
 --------------------------------------*/
 @mixin titleFonts($weight) {
+  font-weight: $weight;
   font-family: -apple-system,
                'Kosugi Maru';
-  font-weight: $weight;
 }
 
 @mixin siteDescriptionFonts() {
   font-family: 'Meiryo UI',
                'メイリオ',
-               Meiryo,
-               -apple-system,
-               BlinkMacSystemFont,
+                Meiryo,
+                -apple-system,
+                BlinkMacSystemFont,
                'Helvetica Neue',
                'Hiragino Sans',
                'Hiragino Kaku Gothic ProN',
-               sans-serif;
+                sans-serif;
 }
 
 @mixin standardFonts() {
@@ -39,33 +39,33 @@
 @mixin monospacedFonts() {
   font-family: 'Roboto Mono',
                'BIZ UDゴシック',
-               Consolas,
+                Consolas,
                'メイリオ',
-               Meiryo,
+                Meiryo,
                'ヒラギノ角ゴ ProN',
                'Hiragino Kaku Gothic ProN',
                'ＭＳ ゴシック',
                'MS Gothic',
-               sans-serif;
+                sans-serif;
 }
 
 // Webフォントを除外
 @mixin amp-titleFonts($weight) {
+  font-weight: $weight;
   font-family: -apple-system,
                'Meiryo UI';
-  font-weight: $weight;
 }
 
 @mixin amp-siteDescriptionFonts() {
   font-family: 'Meiryo UI',
                'メイリオ',
-               Meiryo,
-               -apple-system,
-               BlinkMacSystemFont,
+                Meiryo,
+                -apple-system,
+                BlinkMacSystemFont,
                'Helvetica Neue',
                'Hiragino Sans',
                'Hiragino Kaku Gothic ProN',
-               sans-serif;
+                sans-serif;
 }
 
 @mixin amp-standardFonts() {
@@ -84,10 +84,10 @@
               'BIZ UDゴシック',
               'メイリオ',
                Meiryo,
-               'ヒラギノ角ゴ ProN',
-               'Hiragino Kaku Gothic ProN',
-               'ＭＳ ゴシック',
-               'MS Gothic',
+              'ヒラギノ角ゴ ProN',
+              'Hiragino Kaku Gothic ProN',
+              'ＭＳ ゴシック',
+              'MS Gothic',
                sans-serif;
 }
 
@@ -120,7 +120,7 @@ $char-red  : #d32f2f;
   text-decoration: none !important;
 
   a {
-    &:link { /* 未訪問 */
+    &:link { // 未訪問
       color: $default;
       font-style:normal;
       text-decoration: none !important;
@@ -152,7 +152,7 @@ $side-margin: 10px;
 
   @include standardFonts();
   color  : bodyColor(1);
-  background-color: themeColor(.8);
+  background: themeColor(.8);
 
   &:last-child {
     margin-right: 0;
@@ -177,27 +177,26 @@ $side-margin: 10px;
   /*  float                : left; */
     text-decoration: none;
     font-weight    : 800;
-    // text-shadow    : 1px 1px 1px #dcdcdc;
     font-size      : 12px;
     color          : #fff !important;
   }
 
 }
 
-@mixin kaerebaShopBtn($btn-color) {
+@mixin kaerebaShopBtn($shop-color) {
   margin: 0 auto !important;
 
   a {
     width: 100%;
 
-    color : $btn-color !important;
-    border: 1px solid $btn-color !important;
+    color : $shop-color !important;
+    border: 1px solid $shop-color !important;
 
     &:hover {
       color: $char-white !important;
       text-shadow: none;
 
-      background-color: $btn-color;
+      background: $shop-color;
       border: 1px solid charBlack(1) !important;
     }
 
@@ -298,27 +297,27 @@ $side-margin: 10px;
 
 @mixin shareBtnColors() {
   .tumblr {
-    background-color: #35465c;
+    background: #35465c;
     box-shadow: 0 4px #010101;
   }
 
   .facebook {
-    background-color: #1778F2;
+    background: #1778F2;
     box-shadow: 0 4px #1366ce;
   }
 
   .twitter {
-    background-color: #1BA1F3;
+    background: #1BA1F3;
     box-shadow: 0 4px #1280c3;
   }
 
   .hatebu {
-    background-color: #00A4DE;
+    background: #00A4DE;
     box-shadow: 0 4px #038ebf;
   }
 
   .pocket {
-    background-color: #EF4155;
+    background: #EF4155;
     box-shadow: 0 4px #c3293b;
   }
 
@@ -327,26 +326,26 @@ $side-margin: 10px;
   }
 
   .rss {
-    background-color: #f26522;
+    background: #f26522;
     box-shadow: 0 4px #9e531d;
   }
 
   .hateblo {
-    background-color: #dfdfdf;
+    background: #dfdfdf;
     box-shadow: 0 4px #515151;
 
     color: #000;
   }
 
   .github {
-    background-color: #fafafa;
+    background: #fafafa;
     box-shadow: 0 4px #989898;
 
     color: #333;
   }
 
   .amazon {
-    background-color: #ff9900;
+    background: #ff9900;
     box-shadow: 0 4px #8a5300;
   }
 

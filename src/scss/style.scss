@@ -10,7 +10,7 @@ body {
   margin: 0 auto;
   width : 100%;
 
-  background-color: rgba(1, 1, 1, .1);
+  background: rgba(1, 1, 1, .1);
   @include standardFonts();
 }
 
@@ -22,7 +22,7 @@ body {
   padding: 20px 30px;
 
   @include titleFonts(bold);
-  background-color: themeColor(1) !important;
+  background: themeColor(1) !important;
 
   box-shadow: 0 5px 3px -1px btnColor(.3); // 下方向のみ
 }
@@ -44,7 +44,7 @@ body {
   padding: 0;
   border : 0;
 
-  background-color: themeColor(.3);
+  background: themeColor(.3);
 
   .gnav-inner {
     height : 100%;
@@ -58,7 +58,7 @@ body {
       margin : 0px auto 5px;
       padding: 8px  4px 6px !important;
 
-      background-color: themeColor(.1);
+      background: themeColor(.1);
 
       box-shadow  : 0 4px btnColor(.3);
       border-left : 1px solid btnColor(.3);
@@ -86,13 +86,14 @@ body {
         // }
       }
       .content {
-        width: 750px;
-        height: 200px;
-        background: #eee;
-        margin: 0 auto;
+        margin : 0 auto;
         padding: 10px;
-        text-align: left;
+        width : 750px;
+        height: 200px;
         box-sizing: border-box;
+        background: #eee;
+
+        text-align: left;
       }
     }
   }
@@ -167,7 +168,7 @@ body {
   border       : 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
   border-radius: $module-radius;
 
-  background-color: bodyColor(.5);
+  background: bodyColor(.5);
 
   #container-inner {
     padding: 0 0;
@@ -187,7 +188,7 @@ body {
     padding      : 10px;
     border-top-left-radius : $module-radius;
     border-top-right-radius: $module-radius;
-    background-color: bodyColor(1);
+    background: bodyColor(1);
 
     .entry-date, .entry-header {
       margin : 0;
@@ -212,7 +213,7 @@ body {
   margin-bottom: 0;
   padding      : 10px 10px 0;
 
-  background-color: bodyColor(.7);
+  background: bodyColor(.7);
 }
 
 /* はてなスター */
@@ -220,7 +221,7 @@ body {
   height: 40px !important;
   margin : 0;
   padding: 0 10px 10px;
-  background-color: bodyColor(.7);
+  background: bodyColor(.7);
 
   .hatena-star-add-button {
     margin:  8px;
@@ -260,8 +261,8 @@ body {
   margin : 10px 5px !important;
   padding: 10px;
   border-radius: 6px;
+  background: bodyColor(.5);
   box-shadow: 0 0 2px 2px btnColor(.1);
-  background-color: bodyColor(.5);
 
   @include linkColors(
     $default: charBlack(1),
@@ -311,9 +312,8 @@ body {
   margin :  0;
   padding: 10px 4px;
 
+  background: bodyColor(.1);
   border: 4px solid bodyColor(.8);
-  background-color: bodyColor(.1);
-  // background: rgb(37, 31, 31);
 
   text-align: center;
 
@@ -359,7 +359,7 @@ footer {
       padding: 10px;
       border-radius: $module-radius;
 
-      background-color: bodyColor(.7);
+      background: bodyColor(.7);
     }
   }
 
@@ -375,7 +375,7 @@ footer {
     border-bottom-left-radius : $module-radius;
     border-bottom-right-radius: $module-radius;
 
-    background-color: bodyColor(.7);
+    background: bodyColor(.7);
   }
 }
 
@@ -384,7 +384,7 @@ footer {
   padding   : 10px;
   border-radius: $module-radius;
 
-  background-color: bodyColor(.7);
+  background: bodyColor(.7);
   @include linkColors();
 }
 
@@ -402,7 +402,7 @@ footer {
   padding: 10px;
   border-radius: $module-radius;
 
-  background-color: bodyColor(.7);
+  background: bodyColor(.7);
 
   .hatena-module-title {
     border-bottom: 2px double themeColor(1);
@@ -493,8 +493,8 @@ footer {
           display: block;
           height : 80%;
           margin : 4px;
-
           border-radius: 4px;
+
           background: btnColor(.03);
           border: 1px solid btnColor(.04);
 
@@ -619,7 +619,7 @@ footer {
   margin-top: 0;
   padding   : 10px 16px;
 
-  background-color: bodyColor(.9);
+  background: bodyColor(.9);
 
   @include linkColors();
 
@@ -630,7 +630,7 @@ footer {
     margin : 40px  0px 30px;
     padding:  8px 10px  3px;
 
-    background-color: themeColor(.1);
+    background: themeColor(.1);
     border-left  : 8px solid themeColor(1);
     border-bottom: 3px solid themeColor(1);
 
@@ -642,7 +642,7 @@ footer {
     margin : 40px  3px 30px;
     padding:  3px 10px;
 
-    background-color: themeColor(.1);
+    background: themeColor(.1);
     border-top   : 2px solid themeColor(1);
     border-bottom: 2px solid themeColor(1);
 
@@ -796,7 +796,7 @@ footer {
     margin-left: 8px;
     padding    : 2px !important; // 効いてないかも？
 
-    background-color: $char-red;
+    background: $char-red;
     color           : white;
   }
 
@@ -956,7 +956,7 @@ footer {
 
     &:hover {
       border: 1px solid rgba(204, 204, 204, .4);
-      background-color: #fff;
+      background: #fff;
       color: charBlack(.9);
       font-style: normal;
     }
@@ -1010,8 +1010,8 @@ footer {
     @include monospacedFonts();
     font-size  : .85em;
     line-height: 1.5em;
-    color      : $char-white;         /* white 文字色 */
-    background-color: charBlack(.85); /* black 背景 */
+    color      : $char-white;    /* white 文字色 */
+    background : charBlack(.85); /* black 背景 */
 
     /* シンタックス・ハイライト */
     .synSpecial    { color: #66FFFF; } /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
@@ -1093,7 +1093,7 @@ footer {
   }
 
   th {
-    background-color: charBlack(.03) !important;
+    background: charBlack(.03) !important;
   }
 
   td {
@@ -1267,8 +1267,8 @@ footer {
   padding: 1%;
   border-radius: 4px;
 
-  background-color: highlighter(1);
   background-clip : padding-box;
+  background: highlighter(1);
   box-shadow: 0 4px highlighter(.5);
 
   line-height: 2em;
@@ -1289,11 +1289,11 @@ footer {
 
   transition : all .25s;
   &:hover {
-    transform: translateY(4px);
+    transform : translateY(4px);
+    background: highlighter(1);
     box-shadow: 0 0 #333;
 
-    color      : $char-white;
-    background-color: highlighter(1);
+    color: $char-white;
   }
 }
 
@@ -1391,12 +1391,12 @@ footer {
   }
 
   &:not(.touch) a:hover {
-    background-color: rgba(0, 0, 0, .05);
+    background: rgba(0, 0, 0, .05);
     text-decoration: underline;
   }
 
   .active {
-    background-color: rgba(0, 0, 0, .05);
+    background: rgba(0, 0, 0, .05);
   }
 
   &::-webkit-scrollbar {

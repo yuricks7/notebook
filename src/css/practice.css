@@ -922,8 +922,8 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 20px 30px;
-  font-family: -apple-system, 'Kosugi Maru';
   font-weight: bold;
+  font-family: -apple-system, 'Kosugi Maru';
   background-color: #1d8aff !important;
   -webkit-box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
@@ -1015,7 +1015,6 @@ body {
 }
 
 .breadcrumb a:link {
-  /* 未訪問 */
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -1139,7 +1138,6 @@ header.archive-heading {
 }
 
 .archive-entry a:link {
-  /* 未訪問 */
   color: #050505;
   font-style: normal;
   text-decoration: none !important;
@@ -1164,7 +1162,6 @@ header.archive-heading {
 }
 
 .archive-entry .archive-date time a:link {
-  /* 未訪問 */
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -1195,7 +1192,7 @@ header.archive-heading {
   border-radius: 3px;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   color: #fafafa;
-  background-color: rgba(29, 138, 255, 0.8);
+  background: rgba(29, 138, 255, 0.8);
 }
 
 .archive-entry .categories .archive-category-link:last-child {
@@ -1257,31 +1254,31 @@ header.archive-heading {
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -1292,27 +1289,27 @@ header.archive-heading {
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .entry-footer-html .footer-share-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
@@ -1365,31 +1362,31 @@ header.archive-heading {
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -1400,27 +1397,27 @@ header.archive-heading {
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
@@ -1470,7 +1467,6 @@ footer .comment-box {
 }
 
 .pager a:link {
-  /* 未訪問 */
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -1516,7 +1512,6 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body a:link {
-  /* 未訪問 */
   color: rgba(5, 5, 5, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -1548,7 +1543,6 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .profile-description a:link {
-  /* 未訪問 */
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -1614,31 +1608,31 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -1649,27 +1643,27 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
@@ -1745,31 +1739,31 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -1780,27 +1774,27 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
@@ -1892,7 +1886,6 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body time a:link {
-  /* 未訪問 */
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -1923,7 +1916,6 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .urllist-see-more a:link {
-  /* 未訪問 */
   color: #050505;
   font-style: normal;
   text-decoration: none !important;
@@ -1945,8 +1937,8 @@ footer .comment-box {
 .entry-date {
   margin: 0;
   padding: 0 20px;
-  font-family: -apple-system, 'Kosugi Maru';
   font-weight: normal;
+  font-family: -apple-system, 'Kosugi Maru';
 }
 
 .entry-date a {
@@ -1978,8 +1970,8 @@ footer .comment-box {
   margin: 0;
   padding: 0 10px;
   font-size: 1.2em;
-  font-family: -apple-system, 'Kosugi Maru';
   font-weight: bold;
+  font-family: -apple-system, 'Kosugi Maru';
 }
 
 .entry-categories {
@@ -1992,7 +1984,7 @@ footer .comment-box {
   border-radius: 2px;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   color: #fafafa;
-  background-color: rgba(29, 138, 255, 0.8);
+  background: rgba(29, 138, 255, 0.8);
 }
 
 .entry-categories .entry-category-link:last-child {
@@ -2072,7 +2064,6 @@ footer .comment-box {
 }
 
 .entry-content a:link {
-  /* 未訪問 */
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
@@ -2111,17 +2102,29 @@ footer .comment-box {
   margin: 36px 4px 20px;
   padding: 4px 6px;
   border-left: 6px solid #1d8aff;
-  font-size: 1.2em;
+  font-size: 1.26em;
   color: #050505;
 }
 
 .entry-content h6 {
   margin: 26px 0 20px;
-  padding: 4px;
-  border-top: 2px solid #1d8aff;
-  border-bottom: 2px solid #1d8aff;
-  font-size: 1.16em;
-  color: #050505;
+  position: relative;
+  border-bottom: solid 2.6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+}
+
+.entry-content h6:before {
+  padding: 0 4px;
+  content: " ";
+}
+
+.entry-content h6:after {
+  display: block;
+  width: 24%;
+  position: absolute;
+  bottom: -2.6px;
+  border-bottom: solid 2.6px #1d8aff;
+  content: " ";
 }
 
 .entry-content p {
@@ -2173,7 +2176,6 @@ footer .comment-box {
 }
 
 .entry-content .show-area:hover a:link {
-  /* 未訪問 */
   color: #1e366a;
   font-style: normal;
   text-decoration: none !important;
@@ -2203,7 +2205,6 @@ footer .comment-box {
 }
 
 .entry-content .table-of-contents a:link {
-  /* 未訪問 */
   color: #1e366a;
   font-style: normal;
   text-decoration: none !important;
@@ -2660,7 +2661,7 @@ footer .comment-box {
 .booklink-box .shoplinkrakuten a:hover, .kaerebalink-box .shoplinkrakuten a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #c20004;
+  background: #c20004;
   border: 1px solid #050505 !important;
 }
 
@@ -2686,7 +2687,7 @@ footer .comment-box {
 .booklink-box .shoplinkamazon a:hover, .kaerebalink-box .shoplinkamazon a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #FF9901;
+  background: #FF9901;
   border: 1px solid #050505 !important;
 }
 
@@ -2712,7 +2713,7 @@ footer .comment-box {
 .booklink-box .shoplinkkindle a:hover, .kaerebalink-box .shoplinkkindle a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #007dcd;
+  background: #007dcd;
   border: 1px solid #050505 !important;
 }
 
@@ -2738,7 +2739,7 @@ footer .comment-box {
 .booklink-box .shoplinkkakakucom a:hover, .kaerebalink-box .shoplinkkakakucom a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #314995;
+  background: #314995;
   border: 1px solid #050505 !important;
 }
 
@@ -2764,7 +2765,7 @@ footer .comment-box {
 .booklink-box .shoplinkyahoo a:hover, .kaerebalink-box .shoplinkyahoo a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #7b0099;
+  background: #7b0099;
   border: 1px solid #050505 !important;
 }
 
@@ -2790,7 +2791,7 @@ footer .comment-box {
 .booklink-box .shoplinkrakukobo a:hover, .kaerebalink-box .shoplinkrakukobo a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #c20004;
+  background: #c20004;
   border: 1px solid #050505 !important;
 }
 
@@ -2816,7 +2817,7 @@ footer .comment-box {
 .booklink-box .shoplinkseven a:hover, .kaerebalink-box .shoplinkseven a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #006e54;
+  background: #006e54;
   border: 1px solid #050505 !important;
 }
 
@@ -2842,7 +2843,7 @@ footer .comment-box {
 .booklink-box .shoplinktoshokan a:hover, .kaerebalink-box .shoplinktoshokan a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
-  background-color: #888e7e;
+  background: #888e7e;
   border: 1px solid #050505 !important;
 }
 
@@ -2980,7 +2981,6 @@ footer .comment-box {
 }
 
 #stoc a:link {
-  /* 未訪問 */
   color: #050505;
   font-style: normal;
   text-decoration: none !important;
@@ -3084,31 +3084,31 @@ footer .comment-box {
 }
 
 .header-share-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .header-share-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .header-share-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .header-share-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .header-share-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -3119,27 +3119,27 @@ footer .comment-box {
 }
 
 .header-share-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .header-share-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .header-share-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .header-share-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
@@ -3202,31 +3202,31 @@ footer .comment-box {
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -3237,27 +3237,27 @@ footer .comment-box {
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .hatena-module-body .follow-blog-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
@@ -3323,31 +3323,31 @@ footer .comment-box {
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .tumblr {
-  background-color: #35465c;
+  background: #35465c;
   -webkit-box-shadow: 0 4px #010101;
           box-shadow: 0 4px #010101;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .facebook {
-  background-color: #1778F2;
+  background: #1778F2;
   -webkit-box-shadow: 0 4px #1366ce;
           box-shadow: 0 4px #1366ce;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .twitter {
-  background-color: #1BA1F3;
+  background: #1BA1F3;
   -webkit-box-shadow: 0 4px #1280c3;
           box-shadow: 0 4px #1280c3;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .hatebu {
-  background-color: #00A4DE;
+  background: #00A4DE;
   -webkit-box-shadow: 0 4px #038ebf;
           box-shadow: 0 4px #038ebf;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .pocket {
-  background-color: #EF4155;
+  background: #EF4155;
   -webkit-box-shadow: 0 4px #c3293b;
           box-shadow: 0 4px #c3293b;
 }
@@ -3358,27 +3358,27 @@ footer .comment-box {
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .rss {
-  background-color: #f26522;
+  background: #f26522;
   -webkit-box-shadow: 0 4px #9e531d;
           box-shadow: 0 4px #9e531d;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .hateblo {
-  background-color: #dfdfdf;
+  background: #dfdfdf;
   -webkit-box-shadow: 0 4px #515151;
           box-shadow: 0 4px #515151;
   color: #000;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .github {
-  background-color: #fafafa;
+  background: #fafafa;
   -webkit-box-shadow: 0 4px #989898;
           box-shadow: 0 4px #989898;
   color: #333;
 }
 
 .hatena-module-body .follow-account-btns .color-share-btns .amazon {
-  background-color: #ff9900;
+  background: #ff9900;
   -webkit-box-shadow: 0 4px #8a5300;
           box-shadow: 0 4px #8a5300;
 }
