@@ -559,38 +559,39 @@ textarea,
     width: 100%;
     max-width: 1340px;
   }
-  /* プロフィール */
-  .follow-blog-btns {
-    width: 49.5%;
-    margin-top: 0 !important;
-    clear: left;
-    float: left;
+  /* アカウント一覧 */
+  .account-btns-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
   }
-  .follow-blog-btns .profile-header {
+  .accounts-header {
+    margin-top: 0 !important;
     text-align: center;
+  }
+  .follow-blog-btns {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   .follow-blog-btns .color-share-btns {
     min-width: 55% !important;
   }
   .follow-account-btns {
-    width: 49.5%;
-    float: right;
-  }
-  .follow-account-btns .profile-header {
-    text-align: center;
+    display: block !important;
+    width: 49%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .follow-account-btns .color-share-btns {
     min-width: 65% !important;
   }
-  .profile-others .profile-header {
-    text-align: center;
-  }
-  .profile-others p {
-    padding: 4px 40px;
-    text-align: left;
-  }
   /* このブログについて */
   .page-lists-container {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -603,18 +604,18 @@ textarea,
     margin-left: auto;
     margin-right: auto;
   }
-  .page-lists .module-sub-header {
+  .module-sub-header {
     margin-top: 0 !important;
     text-align: center;
   }
-  .page-lists .page-list a {
+  .page-list a {
     display: inline-block;
     padding: 4px 8px;
   }
-  .page-lists .page-list a br {
+  .page-list a br {
     display: none;
   }
-  .page-lists .page-list a i {
+  .page-list a i {
     font-size: 22px !important;
   }
   /* 追尾する目次 */
@@ -678,17 +679,7 @@ textarea,
     border-radius: 0 !important;
   }
   /* プロフィール */
-  .follow-blog-btns .profile-header {
-    text-align: left;
-  }
-  .follow-account-btns .profile-header {
-    text-align: left;
-  }
-  .profile-others .profile-header {
-    text-align: left;
-  }
-  .profile-others .profile-others-body {
-    padding: 4px 10px;
+  .accounts-header {
     text-align: left;
   }
   /* このブログについて */
@@ -697,6 +688,9 @@ textarea,
     display: -ms-flexbox;
     display: flex;
     margin: 10px auto 0;
+  }
+  .module-sub-header {
+    text-align: left !important;
   }
   .page-lists {
     display: block;
@@ -710,7 +704,7 @@ textarea,
   }
   .page-lists a {
     display: inline-block;
-    padding: 10px 4px 4px !important;
+    padding: 4px !important;
     font-size: 1em !important;
   }
   .page-lists a br {
@@ -849,15 +843,20 @@ textarea,
   （極小）スマホ
 --------------------------------------*/
 @media (max-width: 380px) {
-  /* プロフィール */
+  /* アカウント一覧 */
+  .account-btns-container {
+    display: block;
+    width: 100%;
+  }
+  .accounts-header {
+    width: 100%;
+    margin: 0 auto 10px !important;
+    text-align: left;
+  }
   .follow-blog-btns {
     clear: left;
     width: 100%;
     margin-bottom: 10px !important;
-  }
-  .follow-blog-btns .profile-header {
-    margin: 0 auto 10px !important;
-    text-align: left;
   }
   .follow-blog-btns .color-share-btns {
     min-width: 100px;
@@ -868,14 +867,11 @@ textarea,
     width: 100%;
     margin-bottom: 10px !important;
   }
-  .follow-account-btns .profile-header {
-    margin: 0 auto 10px !important;
-    text-align: left;
-  }
   .follow-account-btns .color-share-btns {
     min-width: 130px !important;
     max-width: 90%  !important;
   }
+  /* このブログについて */
   .page-lists li {
     height: 100px !important;
   }

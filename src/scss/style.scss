@@ -395,6 +395,9 @@ footer {
 }
 
 .hatena-module {
+  clear  : both;
+  display: block;
+
   margin :  0px 0 8px;
   padding: 10px;
   border-radius: $module-radius;
@@ -404,6 +407,10 @@ footer {
   .hatena-module-title {
     border-bottom: 2px double themeColor(1);
   }
+
+  // .hatena-module-body {
+  //   // height: 300px !important;
+  // }
 
   .hatena-module-body {
     @include standardFonts();
@@ -433,13 +440,13 @@ footer {
     }
 
     /* アカウント一覧 */
-    .accounts-header {
-      @include sumModuleHeaders();
-    }
-
     .follow-blog-btns {
       margin-top: 16px;
       @include followBtns(36px, 70%);
+
+      .accounts-header {
+        @include sumModuleHeaders();
+      }
 
       /* 微調整 */
       .hateblo {
@@ -454,6 +461,10 @@ footer {
     .follow-account-btns {
       @include followBtns(36px, 80%);
 
+      .accounts-header {
+        @include sumModuleHeaders();
+      }
+
       /* 微調整 */
       .github {
         i {
@@ -463,11 +474,6 @@ footer {
         }
       }
     }
-
-      // .profile-others p {
-      //   padding: 2px 10px;
-      // }
-    // }
 
     /* このブログについて */
     .module-sub-header {
@@ -491,7 +497,6 @@ footer {
           display: block;
           height : 80%;
           margin : 4px;
-          // padding: 10px 4px;
 
           border-radius: 4px;
           background: btnColor(.03);
@@ -519,18 +524,17 @@ footer {
             }
           }
         }
-
       }
     }
 
 
-  /* 最新記事など */
-  time {
-    color  : charBlack(.8);
-    @include linkColors($visited: charBlack(1));
-    font-weight: bold;
-    // border-bottom: 3px solid themeColor(.3);
-  }
+    /* 最新記事など */
+    time {
+      color  : charBlack(.8);
+      @include linkColors($visited: charBlack(1));
+      font-weight: bold;
+      // border-bottom: 3px solid themeColor(.3);
+    }
 
     img[alt] {
       color    : charBlack(.6);
