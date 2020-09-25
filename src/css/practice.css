@@ -676,93 +676,6 @@ textarea,
   footer .comment-box {
     border-radius: 0 !important;
   }
-  /*========================
-  　smartphone　bottom menu
-  　========================*/
-  .mini-text {
-    font-size: 10px;
-  }
-  /*文字大きさ*/
-  ul.bottom-menu {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    /*高さ*/
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    /*背景色*/
-    border-top: 2px solid #808080;
-    /*バーの上の線*/
-    border-bottom: 2px solid #808080;
-    /*バーの下の線*/
-    z-index: 30;
-  }
-  ul.bottom-menu li {
-    float: left;
-    width: 25%;
-    background-color: #f5f5f5;
-    /*背景色*/
-    list-style-type: none;
-    text-align: center;
-    font-size: 25px;
-    /*アイコンのサイズ*/
-  }
-  .bottom-menu li a {
-    display: block;
-    color: #808080;
-    /*アイコン＆文字の色*/
-    padding-top: 10px;
-    padding-bottom: 5px;
-    line-height: 10px;
-    text-decoration: none;
-  }
-  .bottom-menu li a:hover {
-    color: #a9a9a9;
-    /*マウスオーバー時の色*/
-  }
-  /* === 展開メニュー === */
-  ul.menu-second-level {
-    visibility: hidden;
-    opacity: 0;
-    z-index: 1;
-  }
-  ul.menu-second-level li a {
-    border-top: 1px dashed #a9a9a9;
-    /*展開の枠点線*/
-    font-size: 15px;
-    /*展開メニューの文字サイズ*/
-    line-height: 30px;
-    /*文字の縦幅*/
-  }
-  .menu-second-level li a:hover {
-    height: 100%;
-    background: lightgrey;
-    /*マウスオーバーの色*/
-  }
-  li.menu-width-max ul.menu-second-level {
-    position: absolute;
-    bottom: 47px;
-    /*高さ*/
-    left: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    padding: 0;
-  }
-  li.menu-width-max:hover ul.menu-second-level {
-    bottom: 47px;
-    /*高さ*/
-    visibility: visible;
-    opacity: 1;
-  }
-  li.menu-width-max ul.menu-second-level li {
-    float: left;
-    width: 100%;
-    border: none;
-  }
   .hatena-module {
     border-radius: 0 !important;
   }
@@ -1766,8 +1679,8 @@ footer .comment-box {
   margin: 16px auto 4px;
   padding: 2px 6px 0px;
   background: rgba(0, 0, 0, 0.04);
-  color: #050505;
-  font-size: 1.2em;
+  color: rgba(5, 5, 5, 0.9);
+  font-size: 1.1em;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .hateblo i {
@@ -1897,8 +1810,8 @@ footer .comment-box {
   margin: 16px auto 4px;
   padding: 2px 6px 0px;
   background: rgba(0, 0, 0, 0.04);
-  color: #050505;
-  font-size: 1.2em;
+  color: rgba(5, 5, 5, 0.9);
+  font-size: 1.1em;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .github i {
@@ -1913,8 +1826,8 @@ footer .comment-box {
   margin: 16px auto 4px;
   padding: 2px 6px 0px;
   background: rgba(0, 0, 0, 0.04);
-  color: #050505;
-  font-size: 1.2em;
+  color: rgba(5, 5, 5, 0.9);
+  font-size: 1.1em;
 }
 
 .hatena-module .hatena-module-body .page-list {
@@ -3090,7 +3003,7 @@ footer .comment-box {
 
 #stoc ol {
   margin: 0;
-  padding: 0 0 0 1em;
+  padding: 0 0 0 1.2em;
   list-style-type: none;
 }
 
@@ -3107,18 +3020,19 @@ footer .comment-box {
 }
 
 #stoc a {
-  padding: 2px 2px 2px 6px;
   display: block;
+  padding: 2px 2px 2px 6px;
+  color: #050505 !important;
   text-decoration: none;
 }
 
 #stoc:not(.touch) a:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.1);
   text-decoration: underline;
 }
 
 #stoc .active {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.07);
 }
 
 #stoc::-webkit-scrollbar {

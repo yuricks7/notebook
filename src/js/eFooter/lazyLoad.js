@@ -2,8 +2,11 @@
  * lazy load
  *
  * 【参考】
- * はてなブログでLazy Loadを使う方法！コピペで簡単に使える！｜パソコン・ブログガイド
- * https://www.gipsyjazznyumon.com/lazy-load-for-hatenablog/
+ * - はてなブログでLazy Loadを使う方法！コピペで簡単に使える！｜パソコン・ブログガイド
+ *   https://www.gipsyjazznyumon.com/lazy-load-for-hatenablog/
+ *
+ * - はてなブログでlazy loadを使う方法【写真ブログにおすすめ】 | PhotogLife
+ *   https://www.photoglife.work/2019/08/676/
  *
  * 【使用ライブラリ】
  * [Name] jQuery (1.12.3)
