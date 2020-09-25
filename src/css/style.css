@@ -3089,7 +3089,7 @@ footer .comment-box {
 
 #stoc ol {
   margin: 0;
-  padding: 0 0 0 1em;
+  padding: 0 0 0 1.2em;
   list-style-type: none;
 }
 
@@ -3106,18 +3106,19 @@ footer .comment-box {
 }
 
 #stoc a {
-  padding: 2px 2px 2px 6px;
   display: block;
+  padding: 2px 2px 2px 6px;
+  color: #050505 !important;
   text-decoration: none;
 }
 
 #stoc:not(.touch) a:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.1);
   text-decoration: underline;
 }
 
 #stoc .active {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.07);
 }
 
 #stoc::-webkit-scrollbar {

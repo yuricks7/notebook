@@ -1344,23 +1344,25 @@ footer {
   /* Shadows */
   .shadow {
     background:
-      radial-gradient(
-        farthest-side at top,
-        rgba(0, 0, 0, .17),
-        transparent
-      ) top / 100% 11px,
-      radial-gradient(
-        farthest-side at bottom,
-        rgba(0, 0, 0, .17),
-        transparent
-      ) bottom / 100% 11px;
+    radial-gradient(
+      farthest-side at top,
+      btnColor(.17),
+      transparent
+    ) top / 100% 11px,
+
+    radial-gradient(
+      farthest-side at bottom,
+      btnColor(.17),
+      transparent
+    ) bottom / 100% 11px;
+
     background-repeat: no-repeat;
     background-attachment: scroll;
   }
 
   ol {
     margin: 0;
-    padding: 0 0 0 1em;
+    padding: 0 0 0 1.2em;
     list-style-type: none;
   }
 
@@ -1385,18 +1387,21 @@ footer {
   }
 
   a {
-    padding: 2px 2px 2px 6px;
     display: block;
+    padding: 2px 2px 2px 6px;
+
+    color: charBlack(1) !important;
     text-decoration: none;
   }
 
   &:not(.touch) a:hover {
-    background: rgba(0, 0, 0, .05);
+    background: btnColor(.1);
+
     text-decoration: underline;
   }
 
   .active {
-    background: rgba(0, 0, 0, .05);
+    background: btnColor(.07);
   }
 
   &::-webkit-scrollbar {
