@@ -2110,17 +2110,29 @@ footer .comment-box {
   margin: 36px 4px 20px;
   padding: 4px 6px;
   border-left: 6px solid #1d8aff;
-  font-size: 1.2em;
+  font-size: 1.26em;
   color: #050505;
 }
 
 .entry-content h6 {
   margin: 26px 0 20px;
-  padding: 4px;
-  border-top: 2px solid #1d8aff;
-  border-bottom: 2px solid #1d8aff;
-  font-size: 1.16em;
-  color: #050505;
+  position: relative;
+  border-bottom: solid 2.6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+}
+
+.entry-content h6:before {
+  padding: 0 4px;
+  content: " ";
+}
+
+.entry-content h6:after {
+  display: block;
+  width: 24%;
+  position: absolute;
+  bottom: -2.6px;
+  border-bottom: solid 2.6px #1d8aff;
+  content: " ";
 }
 
 .entry-content p {

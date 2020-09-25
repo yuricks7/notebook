@@ -656,19 +656,34 @@ footer {
 
     border-left: 6px solid themeColor(1);
 
-    font-size: 1.2em;
+    font-size: 1.26em;
     color    : charBlack(1);
   }
 
   h6 {
     margin : 26px 0 20px;
-    padding:  4px;
 
-    border-top   : 2px solid themeColor(1);
-    border-bottom: 2px solid themeColor(1);
+    $border-weight: 2.6px;
+    position: relative;
+    border-bottom: solid $border-weight btnColor(.1);
 
-    font-size: 1.16em;
-    color    : charBlack(1);
+    font-size: 1.2em;
+
+    &:before {
+      padding: 0 4px;
+
+      content: " ";
+    }
+
+    &:after {
+      display : block;
+      width   : 24%;
+      position: absolute;
+      bottom  : -$border-weight;
+      border-bottom: solid $border-weight themeColor(1);
+
+      content: " ";
+    }
   }
 
   /*--------------------------------------
