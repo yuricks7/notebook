@@ -9,6 +9,6 @@
  * [Name] jQuery (1.12.3)
  */
 $('.lazy').lazyload({
-  effect : 'fadeIn',
-  threshold :200
+  effect    : 'fadeIn',
+  threshold : 200 // 表示位置の閾値（10pxの距離まで近づいたら表示する）
 });
