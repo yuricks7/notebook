@@ -319,6 +319,53 @@
           class="test-breadcrumb-json-ld">
     {"itemListElement":[{"@type":"ListItem","item":{"@id":"https://www.yuru-wota.com/","name":"トップ"},"position":1},{"item":{"@id":"https://www.yuru-wota.com/archive/category/JavaScript%20%2F%20Google%20Apps%20Script","name":"JavaScript / Google Apps Script"},"@type":"ListItem","position":2}],"@type":"BreadcrumbList","@context":"http://schema.org"}
   </script>
+<!-- *********************************************
+ * カテゴリーをパンくずリスト化
+************************************************ -->
+<!-- bottom navigation -->
+<ul class="bottom-menu">
+  <li>
+    <!--　↓↓項目1. ホーム 　＃の部分にホームのURLを入れる -->
+    <a href="//www.yuru-wota.com/">
+      <i class="blogicon-home"></i><br>
+      <span class="mini-text">ホーム</span>
+    </a>
+  </li>
+
+  <li class="menu-width-max">
+    <!-- ↓↓項目2. おすすめ　すぐ下の"＃"はそのまま -->
+    <a href="#">
+      <i class="blogicon-list"></i><br>
+      <span class="mini-text">目次</span>
+    </a>
+
+    <!-- <ul id='stoc'></ul> -->
+    <!-- <ul class="menu-second-level"> -->
+      <!-- 下の"#"の部分におすすめ"記事URL"とタイトル等を入れる -->
+      <!-- <li><a href="#">タイトル１</a></li>
+      <li><a href="#">タイトル２</a></li>
+      <li><a href="#">タイトル３</a></li>
+      <li><a href="#">タイトル４</a></li>
+      <li><a href="#">タイトル５</a></li>
+    </ul> -->
+  </li>
+  <li>
+    <!-- ↓↓項目3.　読者登録 ↓↓の部分の書き換えが必要です -->
+    <!--  ~hatena.ne.jp/自分のはてなID/URL(http://の部分は無し)/subscribe　-->
+    <a href="https://blog.hatena.ne.jp/はてなID/自分のURL/subscribe" target="_blank">
+      <i class="blogicon-search"></i><br>
+      <span class="mini-text">サイト内検索</span>
+    </a>
+  </li>
+  <li>
+    <!-- ↓↓項目4.　ツイッター ↓↓の部分の書き換えが必要です-->
+    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
+    <a href="https://twitter.com/intent/follow?screen_name=自分のツイッターID">
+      <i class="blogicon-list"></i><br>
+      <span class="mini-text">カテゴリ</span>
+    </a>
+  </li>
+</ul>
 
         <div id="content" class="hfeed">
           <div id="content-inner">
@@ -811,7 +858,7 @@ Googleさんの発表（動画）によれば新しいIDEを目下開発中ら�
                             <!-- main -->
 
                             <script type="text/javascript"
-                              src="//yuricks7.github.io/notebook/src/js/aUnder/tocOnBody.js"></script>
+                              src="../js/aUnder/tocOnBody.js"></script>
 
                             <!-- *********************************************
  * コードブロックに行番号を追加
@@ -1851,7 +1898,7 @@ Googleさんの発表（動画）によれば新しいIDEを目下開発中ら�
 ************************************************ -->
 
           <script type="text/javascript"
-            src="//yuricks7.github.io/notebook/src/js/eFooter/tocOnSideBar.js"></script>
+            src="../js/eFooter/tocOnSideBar.js"></script>
 
         </div>
 

@@ -676,6 +676,93 @@ textarea,
   footer .comment-box {
     border-radius: 0 !important;
   }
+  /*========================
+  　smartphone　bottom menu
+  　========================*/
+  .mini-text {
+    font-size: 10px;
+  }
+  /*文字大きさ*/
+  ul.bottom-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    /*高さ*/
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    /*背景色*/
+    border-top: 2px solid #808080;
+    /*バーの上の線*/
+    border-bottom: 2px solid #808080;
+    /*バーの下の線*/
+    z-index: 30;
+  }
+  ul.bottom-menu li {
+    float: left;
+    width: 25%;
+    background-color: #f5f5f5;
+    /*背景色*/
+    list-style-type: none;
+    text-align: center;
+    font-size: 25px;
+    /*アイコンのサイズ*/
+  }
+  .bottom-menu li a {
+    display: block;
+    color: #808080;
+    /*アイコン＆文字の色*/
+    padding-top: 10px;
+    padding-bottom: 5px;
+    line-height: 10px;
+    text-decoration: none;
+  }
+  .bottom-menu li a:hover {
+    color: #a9a9a9;
+    /*マウスオーバー時の色*/
+  }
+  /* === 展開メニュー === */
+  ul.menu-second-level {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+  }
+  ul.menu-second-level li a {
+    border-top: 1px dashed #a9a9a9;
+    /*展開の枠点線*/
+    font-size: 15px;
+    /*展開メニューの文字サイズ*/
+    line-height: 30px;
+    /*文字の縦幅*/
+  }
+  .menu-second-level li a:hover {
+    height: 100%;
+    background: lightgrey;
+    /*マウスオーバーの色*/
+  }
+  li.menu-width-max ul.menu-second-level {
+    position: absolute;
+    bottom: 47px;
+    /*高さ*/
+    left: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+  }
+  li.menu-width-max:hover ul.menu-second-level {
+    bottom: 47px;
+    /*高さ*/
+    visibility: visible;
+    opacity: 1;
+  }
+  li.menu-width-max ul.menu-second-level li {
+    float: left;
+    width: 100%;
+    border: none;
+  }
   .hatena-module {
     border-radius: 0 !important;
   }
@@ -912,7 +999,7 @@ textarea,
 body {
   margin: 0 auto;
   width: 100%;
-  background-color: rgba(1, 1, 1, 0.1);
+  background: rgba(1, 1, 1, 0.1);
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
@@ -924,7 +1011,7 @@ body {
   padding: 20px 30px;
   font-weight: bold;
   font-family: -apple-system, 'Kosugi Maru';
-  background-color: #1d8aff !important;
+  background: #1d8aff !important;
   -webkit-box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
 }
@@ -947,7 +1034,7 @@ body {
   display: flex;
   padding: 0;
   border: 0;
-  background-color: rgba(29, 138, 255, 0.3);
+  background: rgba(29, 138, 255, 0.3);
 }
 
 #gnav .gnav-inner {
@@ -961,7 +1048,7 @@ body {
   min-width: 116px;
   margin: 0px auto 5px;
   padding: 8px  4px 6px !important;
-  background-color: rgba(29, 138, 255, 0.1);
+  background: rgba(29, 138, 255, 0.1);
   -webkit-box-shadow: 0 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px rgba(0, 0, 0, 0.3);
   border-left: 1px solid rgba(0, 0, 0, 0.3);
@@ -984,14 +1071,14 @@ body {
 }
 
 #gnav .gnav-inner .menu .content {
-  width: 750px;
-  height: 200px;
-  background: #eee;
   margin: 0 auto;
   padding: 10px;
-  text-align: left;
+  width: 750px;
+  height: 200px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background: #eee;
+  text-align: left;
 }
 
 /**
@@ -1039,7 +1126,7 @@ body {
   margin-bottom: 10px;
   border: 0 1px 1px 1px solid rgba(10, 10, 10, 0.9) !important;
   border-radius: 8px;
-  background-color: rgba(250, 250, 250, 0.5);
+  background: rgba(250, 250, 250, 0.5);
 }
 
 #container #container-inner {
@@ -1058,7 +1145,7 @@ body {
   padding: 10px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background-color: #fafafa;
+  background: #fafafa;
 }
 
 .entry-inner header .entry-date, .entry-inner header .entry-header {
@@ -1080,7 +1167,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   padding: 10px 10px 0;
-  background-color: rgba(250, 250, 250, 0.7);
+  background: rgba(250, 250, 250, 0.7);
 }
 
 /* はてなスター */
@@ -1088,7 +1175,7 @@ body {
   height: 40px !important;
   margin: 0;
   padding: 0 10px 10px;
-  background-color: rgba(250, 250, 250, 0.7);
+  background: rgba(250, 250, 250, 0.7);
 }
 
 .hatena-star-container .hatena-star-add-button {
@@ -1131,9 +1218,9 @@ header.archive-heading {
   margin: 10px 5px !important;
   padding: 10px;
   border-radius: 6px;
+  background: rgba(250, 250, 250, 0.5);
   -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
-  background-color: rgba(250, 250, 250, 0.5);
   text-decoration: none !important;
 }
 
@@ -1211,8 +1298,8 @@ header.archive-heading {
 .entry-footer-html {
   margin: 0;
   padding: 10px 4px;
+  background: rgba(250, 250, 250, 0.1);
   border: 4px solid rgba(250, 250, 250, 0.8);
-  background-color: rgba(250, 250, 250, 0.1);
   text-align: center;
 }
 
@@ -1441,7 +1528,7 @@ footer .entry-footer-modules .hatena-module-related-entries {
   margin: 0;
   padding: 10px;
   border-radius: 8px;
-  background-color: rgba(250, 250, 250, 0.7);
+  background: rgba(250, 250, 250, 0.7);
 }
 
 footer .shrbtn a {
@@ -1455,14 +1542,14 @@ footer .comment-box {
   padding: 10px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  background-color: rgba(250, 250, 250, 0.7);
+  background: rgba(250, 250, 250, 0.7);
 }
 
 .pager {
   margin-top: 0;
   padding: 10px;
   border-radius: 8px;
-  background-color: rgba(250, 250, 250, 0.7);
+  background: rgba(250, 250, 250, 0.7);
   text-decoration: none !important;
 }
 
@@ -1493,7 +1580,7 @@ footer .comment-box {
   margin: 0px 0 8px;
   padding: 10px;
   border-radius: 8px;
-  background-color: rgba(250, 250, 250, 0.7);
+  background: rgba(250, 250, 250, 0.7);
 }
 
 .hatena-module .hatena-module-title {
@@ -1997,7 +2084,7 @@ footer .comment-box {
 .entry-content {
   margin-top: 0;
   padding: 10px 16px;
-  background-color: rgba(250, 250, 250, 0.9);
+  background: rgba(250, 250, 250, 0.9);
   text-decoration: none !important;
   /*--------------------------------------
     見出し
@@ -2081,7 +2168,7 @@ footer .comment-box {
 .entry-content h3 {
   margin: 40px  0px 30px;
   padding: 8px 10px  3px;
-  background-color: rgba(29, 138, 255, 0.1);
+  background: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 3px solid #1d8aff;
   font-size: 1.4em;
@@ -2091,7 +2178,7 @@ footer .comment-box {
 .entry-content h4 {
   margin: 40px  3px 30px;
   padding: 3px 10px;
-  background-color: rgba(29, 138, 255, 0.1);
+  background: rgba(29, 138, 255, 0.1);
   border-top: 2px solid #1d8aff;
   border-bottom: 2px solid #1d8aff;
   font-size: 1.32em;
@@ -2239,7 +2326,7 @@ footer .comment-box {
 .entry-content .serialized-label {
   margin-left: 8px;
   padding: 2px !important;
-  background-color: #d32f2f;
+  background: #d32f2f;
   color: white;
 }
 
@@ -2379,7 +2466,7 @@ footer .comment-box {
 
 .entry-content blockquote:hover {
   border: 1px solid rgba(204, 204, 204, 0.4);
-  background-color: #fff;
+  background: #fff;
   color: rgba(5, 5, 5, 0.9);
   font-style: normal;
 }
@@ -2423,7 +2510,7 @@ footer .comment-box {
   line-height: 1.5em;
   color: #f0f0f0;
   /* white 文字色 */
-  background-color: rgba(5, 5, 5, 0.85);
+  background: rgba(5, 5, 5, 0.85);
   /* black 背景 */
   /* シンタックス・ハイライト */
   /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
@@ -2516,7 +2603,7 @@ footer .comment-box {
 }
 
 .entry-content th {
-  background-color: rgba(5, 5, 5, 0.03) !important;
+  background: rgba(5, 5, 5, 0.03) !important;
 }
 
 .entry-content td {
@@ -2889,8 +2976,8 @@ footer .comment-box {
   margin: 0 20px 20px;
   padding: 1%;
   border-radius: 4px;
-  background-color: #0a21e6;
   background-clip: padding-box;
+  background: #0a21e6;
   -webkit-box-shadow: 0 4px rgba(10, 33, 230, 0.5);
           box-shadow: 0 4px rgba(10, 33, 230, 0.5);
   line-height: 2em;
@@ -2913,10 +3000,10 @@ footer .comment-box {
 .leave-comment-title:hover {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
+  background: #0a21e6;
   -webkit-box-shadow: 0 0 #333;
           box-shadow: 0 0 #333;
   color: #f0f0f0;
-  background-color: #0a21e6;
 }
 
 /**
@@ -3026,12 +3113,12 @@ footer .comment-box {
 }
 
 #stoc:not(.touch) a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   text-decoration: underline;
 }
 
 #stoc .active {
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 #stoc::-webkit-scrollbar {
