@@ -2297,27 +2297,29 @@ footer .comment-box {
 .entry-content .btn-square-emboss {
   display: inline-block;
   margin: 0px 4px;
-  padding: 0.05em 0.6em;
+  padding: 0.01em 0.6em;
   border-bottom: solid 3px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.5);
   background: #f0f0f0;
   /*ボタン色*/
   color: #666666;
   /*ボタン色より暗く*/
   font-size: 90%;
+  line-height: 1.75em;
   font-family: 'Roboto Mono', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   text-decoration: none;
   text-shadow: 1px 1px 1px #f0f0f0;
+  /* 文字色より明るく */
   /*
       テキスト選択はOffに。
       https://its-office.jp/blog/css/2017/04/30/user-select.html
     */
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
 }
 
 .entry-content .btn-square-emboss:active {

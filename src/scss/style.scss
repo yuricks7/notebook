@@ -408,10 +408,6 @@ footer {
     border-bottom: 2px double themeColor(1);
   }
 
-  // .hatena-module-body {
-  //   // height: 300px !important;
-  // }
-
   .hatena-module-body {
     @include standardFonts();
     @include linkColors(
@@ -862,24 +858,26 @@ footer {
   .btn-square-emboss {
     display: inline-block;
     margin : 0px 4px;
-    padding: 0.05em 0.6em;
+    padding: 0.01em 0.6em;
 
     border-bottom: solid 3px btnColor(.3);
-    border-radius: 3px;
-    box-shadow   : 0px 1px 3px 1px btnColor(.5);
+    border-radius: 4px;
+    box-shadow   : 0px 1px 3px -1px btnColor(.5);
     background   : #f0f0f0; /*ボタン色*/
 
     color    : #666666; /*ボタン色より暗く*/
     font-size: 90%;
+    line-height: 1.75em;
     @include monospacedFonts();
+
     text-decoration: none;
-    text-shadow: 1px 1px 1px $char-white;
+    text-shadow: 1px 1px 1px $char-white; /* 文字色より明るく */
 
     /*
       テキスト選択はOffに。
       https://its-office.jp/blog/css/2017/04/30/user-select.html
     */
-    user-select: none;
+    user-select: none !important;
 
     &:active  {
       transform    : translateY(4px);
