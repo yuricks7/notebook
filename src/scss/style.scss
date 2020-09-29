@@ -707,12 +707,10 @@ footer {
   }
 
   .hatena-fotolife {
-    // width: 700px;
-    // max-width: 100%;
-    // width: 100%;
+    width: 100%;
     max-width: 680px;
     min-width: 300px;
-    overflow-x: scroll;
+    overflow-x: scroll; // 効かないかも
   }
 
   /* リスト */
