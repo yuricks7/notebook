@@ -2136,6 +2136,12 @@ footer .comment-box {
   font-size: 1.03em;
 }
 
+.entry-content .hatena-fotolife {
+  max-width: 680px;
+  min-width: 300px;
+  overflow-x: scroll;
+}
+
 .entry-content ul, .entry-content ol {
   margin-top: 10px;
   margin-left: 0;

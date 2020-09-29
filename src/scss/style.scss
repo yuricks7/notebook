@@ -706,6 +706,15 @@ footer {
     font-size: 1.03em;
   }
 
+  .hatena-fotolife {
+    // width: 700px;
+    // max-width: 100%;
+    // width: 100%;
+    max-width: 680px;
+    min-width: 300px;
+    overflow-x: scroll;
+  }
+
   /* リスト */
   ul, ol {
     margin-top : 10px;
