@@ -757,7 +757,6 @@ footer {
     }
   }
 
-
   /*--------------------------------------
     目次の表示・非表示
   --------------------------------------*/
@@ -784,7 +783,7 @@ footer {
   /*--------------------------------------
     目次
   --------------------------------------*/
-  .table-of-contents {
+  .table-of-contents { // = ul, ol
     display: none; /* デフォルトで非表示 */
 
     /* 外枠 */
@@ -802,17 +801,18 @@ footer {
     }
 
     /* 中身 */
+    li {
+      margin-top   : 0 !important;
+      margin-bottom: 0 !important;
+
+      font-size: .98em;
+    }
+
     ul, ol {
-      margin-left   :  0;
+      margin: 0 !important;
       padding-top   :  4px;
       padding-bottom:  4px;
       padding-left  : 16px;
-    }
-
-    ul li, ol li {
-      padding-left: 4px;
-
-      font-size: .98em;
     }
   }
 

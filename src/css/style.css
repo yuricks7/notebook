@@ -2255,16 +2255,17 @@ footer .comment-box {
   /* スクリプトで文字が追加されてしまうので消しておく */
 }
 
+.entry-content .table-of-contents li {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: .98em;
+}
+
 .entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
-  margin-left: 0;
+  margin: 0 !important;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
-}
-
-.entry-content .table-of-contents ul li, .entry-content .table-of-contents ol li {
-  padding-left: 4px;
-  font-size: .98em;
 }
 
 .entry-content .serialized-label {
