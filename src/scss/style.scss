@@ -733,7 +733,7 @@ footer {
 
   /* ツイート */
   .twitter-tweet {
-    margin: 15px ($side-margin + 6px) 15px;
+    margin: 15px ($side-margin + 6px);
   }
 
   /* リスト */
@@ -940,10 +940,8 @@ footer {
     position  : relative;
     box-sizing: border-box;
 
-    margin: 15px ($side-margin + 6px) 15px;
-    // margin-left : $side-margin + 6px;
-    // margin-right: $side-margin + 6px;
-    padding: 5px 10px 5px 32px;
+    margin : 15px ($side-margin + 6px);
+    padding:  5px 10px 5px 32px;
 
     border: 1px solid rgba(204, 204, 204, .5);
     border-radius: 3px;
@@ -1021,8 +1019,8 @@ footer {
     position  : relative;
     box-sizing: border-box;
 
-    margin: 15px ($side-margin + 6px) 15px;
-    padding: 5px 10px 5px 32px;
+    margin : 15px ($side-margin + 6px);
+    padding:  5px 10px 5px 32px;
 
     border: 1px solid rgba(204, 204, 204, .5);
     border-radius: 3px;
@@ -1089,8 +1087,8 @@ footer {
     コードブロック
   --------------------------------------*/
   pre.code {
-    margin: 15px ($side-margin + 6px) 15px;
-    padding      : 20px 10px 10px;
+    margin : 15px ($side-margin + 6px);
+    padding: 20px 10px 10px;
     border-radius: 3px;
 
     /* フォント・メインカラーを変更 */
