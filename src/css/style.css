@@ -2173,22 +2173,20 @@ footer .comment-box {
 .entry-content ul, .entry-content ol {
   margin-top: 10px;
   margin-left: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 2em;
+  padding: 4px auto 4px 2em;
 }
 
 .entry-content ul li, .entry-content ol li {
-  margin-top: 4px;
+  margin-bottom: 1.3em;
   padding-left: 4px;
   font-size: .98em;
 }
 
 .entry-content ul li p, .entry-content ol li p {
-  margin: 0;
+  margin: 0 0 .8em 0;
 }
 
-.entry-content ul li ul, .entry-content ol li ul {
+.entry-content ul li ul, .entry-content ul li ol, .entry-content ol li ul, .entry-content ol li ol {
   margin-top: 0;
 }
 
