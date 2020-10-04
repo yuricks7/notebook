@@ -2010,6 +2010,7 @@ footer .comment-box {
   color: #050505;
   /* 段落 */
   /* カード形式リンク */
+  /* ツイート */
   /* リスト */
   /*--------------------------------------
     目次の表示・非表示
@@ -2151,11 +2152,22 @@ footer .comment-box {
 }
 
 .entry-content .embed-card {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .entry-content .embed-card + a {
   font-size: .8em;
+}
+
+.entry-content .embed-card + a:before {
+  margin-left: 8px;
+  margin-right: 8px;
+  content: ">>";
+  font-weight: bold;
+}
+
+.entry-content .twitter-tweet {
+  margin: 15px 16px 15px;
 }
 
 .entry-content ul, .entry-content ol {

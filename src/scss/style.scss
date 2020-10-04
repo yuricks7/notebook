@@ -717,11 +717,23 @@ footer {
 
   /* カード形式リンク */
   .embed-card {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 
     &+a {
+      &:before {
+        margin-left : 8px;
+        margin-right: 8px;
+        content: ">>";
+        font-weight: bold;
+      }
+
       font-size: .8em;
     }
+  }
+
+  /* ツイート */
+  .twitter-tweet {
+    margin: 15px ($side-margin + 6px) 15px;
   }
 
   /* リスト */
