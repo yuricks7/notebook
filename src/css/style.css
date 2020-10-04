@@ -2043,6 +2043,11 @@ footer .comment-box {
     https://saruwakakun.com/html-css/reference/blockquote
   --------------------------------------*/
   /*--------------------------------------
+    翻訳
+    CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
+    https://saruwakakun.com/html-css/reference/blockquote
+  --------------------------------------*/
+  /*--------------------------------------
     文中のコード
   --------------------------------------*/
   /*--------------------------------------
@@ -2343,8 +2348,7 @@ footer .comment-box {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: 15px 16px 15px;
   padding: 5px 10px 5px 32px;
   border: 1px solid rgba(204, 204, 204, 0.5);
   border-radius: 3px;
@@ -2407,6 +2411,53 @@ footer .comment-box {
   text-align: right;
 }
 
+.entry-content .translation {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 15px 16px 15px;
+  padding: 5px 10px 5px 32px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  border-radius: 3px;
+  background: #f3f3f3;
+  color: rgba(5, 5, 5, 0.7);
+  /* 国旗 */
+}
+
+.entry-content .translation:before {
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: -15px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  content: "●";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-weight: 900;
+  color: red;
+  line-height: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
+          box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
+}
+
+.entry-content .translation:hover {
+  border: 1px solid rgba(204, 204, 204, 0.4);
+  background: #fff;
+  color: rgba(5, 5, 5, 0.9);
+  font-style: normal;
+}
+
+.entry-content .translation p {
+  position: relative;
+  margin: 10px 0;
+  padding: 0;
+  z-index: 3;
+  line-height: 1.7;
+}
+
 .entry-content code {
   padding-top: 1px;
   border-radius: 3px;
@@ -2420,8 +2471,7 @@ footer .comment-box {
 }
 
 .entry-content pre.code {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: 15px 16px 15px;
   padding: 20px 10px 10px;
   border-radius: 3px;
   /* フォント・メインカラーを変更 */
