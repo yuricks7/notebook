@@ -505,362 +505,455 @@
 
                       <div class="entry-content">
 
-                        <p><strong><a class="keyword" href="http://d.hatena.ne.jp/keyword/Google%20Apps">Google Apps</a> Script</strong>は、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Web%A5%D6%A5%E9%A5%A6%A5%B6">Webブラウザ</a>さえあれば使えるのが大きなメリットですが、<strong>Clasp</strong>というツールを使うと、ローカルで編集することもできます。</p>
 
-                        <p>ただ、多少準備が必要なせいもあるのか、入門者向けの情報が少ないです。<br>
-もっともっと普及してほしいので、1年ちょっと使ってみて感じたことを整理してみました。</p>
-
-                        <p class="text-box-dashed">
-<span class="small-chars">なお、以下は<b>ローカルエディタとして「<strong><a class="keyword" href="http://d.hatena.ne.jp/keyword/Visual%20Studio%20Code">Visual Studio Code</a></strong>（通称<strong><a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a></strong>）を使う場合」</b>を例に書いています。<br>
-細かい点は違うかもしれませんが、大抵のメリットは他のエディタでもカスタマイズ等で同じように享受できると思います。<br>
-適宜、読み替えてご覧ください。</span>
-</p>
+                        <p>Node.js、Claspの順にインストールしていきます。</p>
 
                         <ul class="table-of-contents">
-                          <li><a href="#メリット">メリット</a>
-                            <ul>
-                              <li><a href="#画面のカスタマイズ">画面のカスタマイズ</a>
-                                <ul>
-                                  <li><a
-                                      href="#好きな配色フォントが使える">好きな配色、フォントが使える</a>
-                                  </li>
-                                  <li><a
-                                      href="#デバッグ中は切り替える">デバッグ中は切り替える</a>
-                                  </li>
-                                  <li><a
-                                      href="#拡張機能があればカッコも色分け">拡張機能があれば、カッコも色分け</a>
-                                  </li>
+                            <li><a href="#Claspをインストール">Claspをインストール</a><ul>
+                                    <li><a href="#nodejsを入れる">node.jsを入れる</a><ul>
+                                            <li><a href="#ダウンロード">ダウンロード</a><ul>
+                                                    <li><a href="#Windowsの64bit版の場合">Windowsの64bit版の場合</a></li>
+                                                    <li><a href="#それ以外の場合">それ以外の場合</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#インストール">インストール</a></li>
+                                            <li><a href="#バージョンを確認">バージョンを確認</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#Claspを入れる">Claspを入れる</a><ul>
+                                            <li><a href="#インストール-1">インストール</a><ul>
+                                                    <li><a href="#コマンドの意味">コマンドの意味</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#バージョンを確認-1">バージョンを確認</a><ul>
+                                                    <li><a href="#そんなコマンドは無いよと言われたら">「そんなコマンドは無いよ」と言われたら…</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                              </li>
-                              <li><a href="#エディタの補助機能">エディタの補助機能</a>
-                                <ul>
-                                  <li><a
-                                      href="#自動整形で困らない">自動整形で困らない</a>
-                                  </li>
-                                  <li><a
-                                      href="#使ってない変数はグレーアウト">使ってない変数はグレーアウト</a>
-                                  </li>
-                                  <li><a
-                                      href="#ファイルを分割しても認識してくれる">ファイルを分割しても認識してくれる</a>
-                                  </li>
-                                  <li><a
-                                      href="#ドキュメンテーションコメントを頑張ると">ドキュメンテーション・コメントを頑張ると…</a>
-                                  </li>
+                            </li>
+                            <li><a href="#Googleアカウントの登録">Googleアカウントの登録</a><ul>
+                                    <li><a href="#GAS側の設定">GAS側の設定</a><ul>
+                                            <li><a href="#GASのプロジェクトを外部から操作できるようにする">GASのプロジェクトを外部から操作できるようにする</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#Clasp側の設定">Clasp側の設定</a><ul>
+                                            <li><a href="#作業用のChromeをアクティブにしておく">作業用のChromeを「アクティブ」にしておく</a></li>
+                                            <li><a href="#ClaspにGoogleアカウントを紐付ける">ClaspにGoogleアカウントを紐付ける</a></li>
+                                            <li><a href="#Googleアカウントにログイン">Googleアカウントにログイン</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                              </li>
-                              <li><a href="#Git管理">Git管理</a>
-                                <ul>
-                                  <li><a
-                                      href="#ちゃんとコマンドが使える">ちゃんとコマンドが使える</a>
-                                  </li>
-                                  <li><a
-                                      href="#READMEでスクリプトの説明もできる">READMEでスクリプトの説明もできる</a>
-                                  </li>
+                            </li>
+                            <li><a href="#このシリーズについて">このシリーズについて</a><ul>
+                                    <li><a href="#連載目次">連載目次</a></li>
                                 </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a href="#デメリット">デメリット</a>
-                            <ul>
-                              <li><a
-                                  href="#慣れるまでは設定とか同期実行とか少しめんどくさいかも">慣れるまでは、設定とか同期・実行とか少しめんどくさいかも</a>
-                                <ul>
-                                  <li><a
-                                      href="#GAS特有の文法には弱い">GAS特有の文法には弱い？</a>
-                                  </li>
-                                  <li><a href="#不安定">不安定…？</a></li>
-                                  <li><a href="#情報が少なくて">情報が少なくて…</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
+                            </li>
+                            <li><a href="#参考">参考</a></li>
+                            <li><a href="#注釈">注釈</a></li>
                         </ul>
-
-                        <h3 id="メリット">メリット</h3>
-
-                        <h4 id="画面のカスタマイズ">画面のカスタマイズ</h4>
-
-                        <h5 id="好きな配色フォントが使える">好きな配色、フォントが使える</h5>
-
-                        <p>ブラウザ上のエディタでは、<a href="https://www.yuru-wota.com/entry/GAS/PrepareForCoding/#AppsScript-Color">拡張機能</a>で<code>Darcula</code>というカラーテーマを使っています。<br>
-<span class="small-chars">（フォントは恐らく<code>Roboto Mono</code>と<code>Arial</code>だと思います。）</span></p>
-
-                        <!-- <p><span itemscope itemtype="http://schema.org/Photograph">
-                          <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923151301.png"
-                               alt="Chromeの拡張機能でDarculaを選択"
-                               title="f:id:yuricks7:20200923151301p:plain" itemprop="image" >
-                      <!-- <img class="hatena-fotolife lazy" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923151301.png"
-                              data-original=”https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923151301.png“
-                              alt="Chromeの拡張機能でDarculaを選択"
-                              title="f:id:yuricks7:20200923151301p:plain" itemprop="image" > -->
-                          <!-- <img class="hatena-fotolife lazy" title="f:id:yuricks7:20200923151301p:plain" > -->
-                          <!-- </span>
-                        </p> -->
-
-                        <span itemscope itemtype="http://schema.org/Photograph">
-                          <img class="hatena-fotolife lazy"
-                               src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200925/●ファイル名●.png"
-                               alt="●●"
-                               title="f:id:yuricks7:●ファイル名●p:plain"
-                               itemprop="image" >
-                        </span>
-
-                        <span itemscope itemtype="http://schema.org/Photograph">
-                          <img class="hatena-fotolife lazy"
-                               alt="●●"
-                               title="f:id:yuricks7:●ファイル名●p:plain"
-                               data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200925/●ファイル名●.png"
-                               itemprop="image" />
-                        </span>
-
-
-
-
-                        <p>
-                          <span itemscope itemtype="http://schema.org/Photograph">
-                            <img class="hatena-fotolife lazy"
-                                 alt="Chromeの拡張機能でDarculaを選択"
-                                 title="f:id:yuricks7:20200923151301p:plain"
-                                 data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923151301.png"
-                                 itemprop="image" />
-                          </span>
-                        </p>
-
-                        <p>ローカルでもGASを編集する場合は<code>Darcula</code>です。<br>
-<span class="small-chars">（フォントは、<code>Roboto Mono</code>に日本語用として<code>MotoyaLMaru W3 mono</code>を組み合わせています。）</span></p>
-
-                        <p>
-                          <span itemscope itemtype="http://schema.org/Photograph">
-                            <img class="hatena-fotolife lazy"
-                                 data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923160552.png"
-                                 alt="VSCodeでもDarculaを選択。"
-                                 title="f:id:yuricks7:20200923160552p:plain"
-                                 itemprop="image" >
-                          </span>
-
-
-
-                          <!-- <span itemscope itemtype="http://schema.org/Photograph">
-                            <img class="hatena-fotolife lazy" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923160552.png" alt="VSCodeでもDarculaを選択。" title="f:id:yuricks7:20200923160552p:plain" itemprop="image" >
-                          </span> -->
-                        </p>
-
-                        <p>同じ名前のテーマでも色付けのパターンは多少違うようですが、こちらの方がキーワード等は厳密に区別してくれている気がします。</p>
-
-                        <p>他にも、プログラミング界隈でよく使われるものを筆頭に、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>として豊富に（というか大量に）提供されています。</p>
-
-                        <p>
-                          <span itemscope itemtype="http://schema.org/Photograph">
-                            <img class="hatena-fotolife lazy"
-                                 data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923152018.png"
-                                 alt="大量のカラーテーマ"
-                                 title="f:id:yuricks7:20200923152018p:plain"
-                                 itemprop="image" >
-                          </span>
-                        </p>
-                        <!-- <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923152018.png" alt="大量のカラーテーマ" title="f:id:yuricks7:20200923152018p:plain" itemprop="image" >
-</span></p> -->
-
-                        <p>こだわる人は、自分の好みに合わせて微調整したり、イチから作成することもできます。</p>
-
-                        <h5 id="デバッグ中は切り替える"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D0%A5%C3%A5%B0">デバッグ</a>中は切り替える
-                        </h5>
-
-                        <p>しかし、私が助かっているのはここだけではなくて、「うっかり人間」向けのメリットがあります。</p>
-
-                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%D0%A5%C3%A5%B0">デバッグ</a>の時に「出力内容が変だけど、どうしてもエラーの原因を見つけられない！」という時、変な値を代入していないか目視でもチェックしたりします。<br>
-そういう時は、<b>テーマやフォントを変えてみると見つけやすくなることがあります</b>。<a href="#f-7b4b5ca1" name="fn-7b4b5ca1" title="ADHD等の発達障害界隈で言われていることですが、PC上で編集した文章は「目が滑る」ことがあります。
-その対処として、「（紙に印刷したりして）見た目を変えるとチェック漏れが減る」というテクニックを応用しています。">*1</a></p>
-
-                        <p>例えば、<code>rainglowテストあいう</code>という<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>で<code>Rainbow Contrast</code>を選択すると、コメントは薄くなりますが、文字列や数値の彩度が上がり少し浮き上がったように見えるので、間違いを探しやすくなります。</p>
-
+                        
+                        <h3 id="Claspをインストール">Claspをインストール</h3>
+                        
+                        <h4 id="nodejsを入れる">node.jsを入れる</h4>
+                        
+                        <h5 id="ダウンロード">ダウンロード</h5>
+                        
+                        <p>OSにより選択してください。</p>
+                        
                         <ul>
-                          <li>
-                            <p>変更前：<code>Darcula</code><br>
-<span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923160552.png" alt="VSCodeでもDarculaを選択。" title="f:id:yuricks7:20200923160552p:plain" itemprop="image" >
-</span></p>
-                          </li>
-                          <li>
-                            <p>変更後：<code>Rainbow Contrast</code><br>
-<span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923160630.png" alt="Rainbow Contrastで値を強調" title="f:id:yuricks7:20200923160630p:plain" itemprop="image" >
-</span></p>
-                          </li>
+                        <li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の64bit版の場合：<a href="#Windows%E3%81%AE64bit%E7%89%88%E3%81%AE%E5%A0%B4%E5%90%88">ジャンプ！</a></li>
+                        <li>それ以外の場合：<a href="#%E3%81%9D%E3%82%8C%E4%BB%A5%E5%A4%96%E3%81%AE%E5%A0%B4%E5%90%88">ジャンプ！</a></li>
                         </ul>
-
-                        <p>どのシチュエーションでどのテーマが向いているかは個人差もあるようですが、その探す時間も愛おしいくらいです。</p>
-
-                        <p>そもそも、それを差し置いても自分好みの配色・フォントを使えるっていうだけで結構テンションが上がります。笑</p>
-
-                        <h5 id="拡張機能があればカッコも色分け"><a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>があれば、カッコも色分け
-                        </h5>
-
-                        <p>プログラムを書いていると、複雑な処理にはどうしてもネストを多用しがちになり、カッコだらけで読みづらくなっていきます。<br>
-しかもブラウザのエディタでは、カッコは基本的に単色です。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923155520.png" alt="単色のカッコ達" title="f:id:yuricks7:20200923155520p:plain" itemprop="image" >
-</span></p>
-
-                        <p>そこで、過去記事で紹介している<a href="https://www.yuru-wota.com/entry/GAS/PrepareForCoding/#Bracket-Pair-Colorizer">こちら</a>の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>を使うと、<b>階層ごとに色分けとルーラーが加わるので「今書いているコードはどの階層なのか」が視覚的に判別しやすくなります</b>。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923160135.png" alt="拡張機能で階層を色分け" title="f:id:yuricks7:20200923160135p:plain" itemprop="image" >
-</span></p>
-
-                        <p>もちろん、<b>深すぎるネストは即解消推奨</b>ですが、その手助けにもなります。</p>
-
-                        <h4 id="エディタの補助機能">エディタの補助機能</h4>
-
-                        <h5 id="自動整形で困らない">自動整形で困らない</h5>
-                        <h6 id="自動整形で困らない">自動整形で困らない。自動整形で困らない、自動整形で困らない。自動整形で困らない。自動整形で困らない。</h6>
-
-                        <p>これはたぶん今だけのバグかと思いますが、ブラウザではV8版になってから<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">Tab</kbd></kbd>の自動インデント機能が上手く機能しなくなってしまいました。<a href="#f-e40e3a86" name="fn-e40e3a86" title="そもそも公式さんが調整してからリリースしてほしかったのですが、もう過ぎたことなのでそれは仕方ないとして…
-Googleさんの発表（動画）によれば新しいIDEを目下開発中らしいので、そちらでは改善されていることを祈ります！">*2</a></p>
-
-                        <p>例えば、テンプレート文字列を使うとインデントがズレます…<br>
-<span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923161641.png" alt="自動整形のバグ？" title="f:id:yuricks7:20200923161641p:plain" itemprop="image" >
-</span></p>
-
-                        <p>ブラウザ上でもコードを編集することがあり、かなり多用していたので個人的にはこれが1番困っています。</p>
-
-                        <p>対して、<a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a>は元々「モダン<a class="keyword" href="http://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>」向け<a href="#f-6c77fc33" name="fn-6c77fc33" title="厳密には、JavaScriptというかTypescript向け…？">*3</a>に作られているので、<b>新しい文法でも問題なく整形</b>してくれます。</p>
-
-                        <p><span class="small-chars">※コロン<code>:</code>の位置は自分で調整しています。</span><br>
-<span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923162338.png" alt="インデントはズレない" title="f:id:yuricks7:20200923162338p:plain" itemprop="image" >
-</span></p>
-
-                        <p>また、<code>Prettier</code>などの整形ツールを使えば、さらに自分やチームの<b>独自ルールに準拠するように細かく設定することも可能</b>です。</p>
-
-                        <h5 id="使ってない変数はグレーアウト">使ってない変数はグレーアウト</h5>
-
-                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%EA%A5%D5%A5%A1%A5%AF%A5%BF%A5%EA%A5%F3%A5%B0">リファクタリング</a>を繰り返していると、いつの間にか定義しただけの「ぼっち変数/定数」が残ってしまうことがあります。</p>
-
-                        <p>動作には直接問題ないとしても「ちょっと残念なコード」になっちゃうし、コンピューターがコードを解析する時間も、宣言の数だけほんの少し増えてしまいます。</p>
-
-                        <p><b>どうせなら少しでもパフォーマンスは上げたい</b>ものです。<br>
-それに、今は大丈夫でも、将来的に「名前がバッティングしてエラーの元に」なんてことにもなりかねません…</p>
-
-                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a>はその辺も織り込み済みで、<b>宣言だけで実際に使っていない変数/定数は、グレーアウトと修正の提案</b>で知らせてくれます。</p>
-
-                        <p><span class="small-chars">※この画像では分かりづらいですが、定数<code>m</code>が修正の提案とともにグレーになっています。</span><br>
-<span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923182846.png" alt="未使用変数はグレーアウト" title="f:id:yuricks7:20200923182846p:plain" itemprop="image" >
-</span></p>
-
-                        <h5 id="ファイルを分割しても認識してくれる">ファイルを分割しても認識してくれる
-                        </h5>
-
-                        <p>コードが長くなってくると、ファイルを分割することがあります。</p>
-
-                        <p><kbd><kbd class="btn-square-emboss">Alt</kbd>+<kbd class="btn-square-emboss">/</kbd></kbd>（単語補完）や<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">Space</kbd></kbd><!--この場合、別のファイルで定義しているものは、 --><br><kbd><kbd class="btn-square-emboss">Alt</kbd>+<kbd class="btn-square-emboss">/</kbd></kbd>（単語補完）や<kbd><kbd class="btn-square-emboss">Ctrl</kbd>+<kbd class="btn-square-emboss">Space</kbd></kbd>（コンテンツ アシスト）では入力補完が呼び出せないことがあります。<br></p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923163755.png" alt="インテリセンスが出ない" title="f:id:yuricks7:20200923163755p:plain" itemprop="image" >
-</span></p>
-
-                        <p>都度ファイルを行ったり来たりする必要があって、地味に不便です…</p>
-
-                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a>なら、<b>プロジェクト内であれば認識して選択肢に入れてくれます。</b><br>
-クラスなら、メソッドやプロパティには画像のように別々の記号もつくので、「これはメソッドだっけ…？カッコ<code>()</code>要るんだっけな…？」みたいなことも減ります。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923163404.png" alt="メソッドやプロパティは記号つきで選択肢" title="f:id:yuricks7:20200923163404p:plain" itemprop="image" >
-</span></p>
-
-                        <h5 id="ドキュメンテーションコメントを頑張ると"><a
-                            class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%A5%C9%A5%AD%A5%E5%A5%E1%A5%F3%A5%C6%A1%BC%A5%B7%A5%E7%A5%F3">ドキュメンテーション</a>・コメントを頑張ると…
-                        </h5>
-
-                        <p>少し面倒ですが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C9%A5%AD%A5%E5%A5%E1%A5%F3%A5%C6%A1%BC%A5%B7%A5%E7%A5%F3">ドキュメンテーション</a>・コメントも1つずつ書いておくと、入力補完に加えて、<b>自分で書いた説明も小窓で見られる</b>ようになります。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923165019.png" alt="定義を見ながら編集できる" title="f:id:yuricks7:20200923165019p:plain" itemprop="image" >
-</span><br>
-<span class="small-chars">（引数の説明が微妙なのは見逃してください…）</span></p>
-
-                        <p>これは<a href="https://twitter.com/yuricks7/status/1267466304987906049">つい最近気づいた</a>機能ですが、かなり便利です。<br>
-引数の数や順番も分かるので、書き間違いによるエラーも減りました。</p>
-
-                        <p>所定の書式に沿って書いておけば、型も判定してくれるみたいで<b>入力補完の選択肢も更に厳密に</b>絞ってくれます。<br>
-クラスを親子関係で使うような時は、特に有効です。</p>
-
-                        <h4 id="Git管理">Git管理</h4>
-
-                        <h5 id="ちゃんとコマンドが使える">ちゃんとコマンドが使える</h5>
-
-                        <p><a href="https://www.yuru-wota.com/entry/GAS/PrepareForCoding/#Google-Apps-Script-Github-%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88">Chromeの拡張機能</a>だけでも、<a class="keyword" href="http://d.hatena.ne.jp/keyword/GitHub">GitHub</a>と連携すればGit管理は出来ます。これも便利です。<br>
-でも、これだと「ブランチ切ってプッシュ、プル」しかできないのです…</p>
-
-                        <p>もうちょっと厳密に管理したい時は、Claspで一旦ローカルに落として管理するのが便利です。<br>
-ローカルで使えるということは、<b>SourceTree等の<a class="keyword" href="http://d.hatena.ne.jp/keyword/GUI">GUI</a>ツールを使っている方であれば、そちらでも操作できるように</b>なります。</p>
-
-                        <p>正直、Gitの使い方自体は全く自信がありません…<br>
-でも、<b>「コミットの取り消し」や「コミット・コメントの編集」ができるだけでも、ローカルで使う価値は大いにある</b>と思っています。<br></p>
-
-                        <p>その上で上記の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>と連携すれば、盤石です。<br>
-ただし、これもちょっとコツが要るみたいで…この点は後日、別途記事にする予定です。</p>
-
-                        <h5 id="READMEでスクリプトの説明もできる">
-                          <code>README</code>で<a class="keyword"
-                            href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%EA%A5%D7%A5%C8">スクリプト</a>の説明もできる
-                        </h5>
-
-                        <p>これは私自身あまり活用できていませんが、<code>README</code>を使えば、リファレンス等の作成や、運用ルールの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B7%C7%BC%A8">掲示</a>等に活用できるかと思います。</p>
-
-                        <h3 id="デメリット">デメリット</h3>
-
-                        <h4 id="慣れるまでは設定とか同期実行とか少しめんどくさいかも">
-                          慣れるまでは、設定とか同期・実行とか少しめんどくさいかも</h4>
-
-                        <h5 id="GAS特有の文法には弱い">GAS特有の文法には弱い？</h5>
-
-                        <p>Claspを入れただけでは、<code>Spreadsheetサービス</code>や<code>DriveAppサービス</code>のような「GAS特有の文法」はエディタが認識できません。</p>
-
-                        <p>そこで、ひと手間。<br>
-プロジェクトの中に<b>公式が配布しているGAS専用の<a href="https://www.npmjs.com/package/@types/google-apps-script">型定義ファイル</a>というものを入れると、ブラウザと同じように認識/入力補完」</b>してくれるようになります。</p>
-
-                        <p><span itemscope itemtype="http://schema.org/Photograph">
-  <img class="hatena-fotolife lazy" data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200923/20200923174142.png" alt="GAS特有の文法も使える" title="f:id:yuricks7:20200923174142p:plain" itemprop="image" >
-</span></p>
-
-                        <h5 id="不安定">不安定…？</h5>
-
-                        <p>というわけで、文法自体はデメリットと言うほどではないのですが、これが少し不安定なようで(?)<b>時々GAS用語がエディタに認識されない</b>ことがあります。<br>
-<span class="small-chars">（もしかしたら、私が普段<code>Typescript</code>を使っていないので無意識にどこか大事なところを弄っているせい、とかで濡れ衣かもしれませんが…）</span></p>
-
-                        <p>型定義ファイルを入れ直しても動かない時は、ちょっとめんどくさいですが<b>「GASの文法はブラウザで、それ以外の文法やコードの整形はローカルで」がとりあえずの対処法</b>になるかなと思います。</p>
-
-                        <h5 id="情報が少なくて">情報が少なくて…</h5>
-
-                        <p>便利なツールですが、基本的に<a class="keyword" href="http://d.hatena.ne.jp/keyword/CLI">CLI</a>という黒い画面でいじることもあり、<b>まだまだ「入門者向け」の解説が少ない</b>です。<br>
-そのため、分からないところはどうしても時間をかけて調べながら、自分で翻訳しながら、の作業になります。</p>
-
-                        <p>特にプログラミング経験が浅い身としては、ひとつひとつ理解できるまで時間がかかることもあります。<br>
-少しでも使い方を理解できたら、全部覚えるのは大変なので<code>Phrase Express</code>のような<b><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%CB%A5%DA%A5%C3%A5%C8">スニペット</a>ツールを活用していくことをおすすめ</b>します。</p>
-
-                        <p>でも、すごく便利なので、もっと普及して<strong>Clasp</strong>の情報が増えてほしいです…</p>
-
+                        
+                        
+                        <h6 id="Windowsの64bit版の場合"><a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の64bit版の場合</h6>
+                        
+                        <ol>
+                        <li><p><u>公式サイトにアクセス</u></p>
+                        
+                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fnodejs.org%2Fja%2F" title="Node.js" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://nodejs.org/ja/">Node.js</a></p></li>
+                        <li><p><u>左側の「推奨版」を任意の場所にダウンロード</u></p>
+                        
+                        <p><span class="small-chars">※当記事の執筆時点で、<b>12.18.4 LTS</b>が推奨版のようです。</span><br>
+                        <span itemscope itemtype="http://schema.org/Photograph">
+                        <img class="hatena-fotolife lazy"
+                             alt="Node.jsのダウンロード・ページ"
+                             title="f:id:yuricks7:20200929173216p:plain"
+                             data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929173216.png"
+                             src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929173216.png"
+                             itemprop="image" />
+                        </span></p></li>
+                        </ol>
+                        
+                        
+                        <h6 id="それ以外の場合">それ以外の場合</h6>
+                        
+                        <ol>
+                        <li><p><u>公式サイトのバージョン一覧にアクセス</u></p>
+                        
+                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fnodejs.org%2Fja%2Fdownload%2F" title="ダウンロード | Node.js" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://nodejs.org/ja/download/">&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9; | Node.js</a></p></li>
+                        <li><p><u>「推奨版」タブから、自分のOSや目的に合うものを任意の場所にダウンロード</u></p>
+                        
+                        <p><span class="small-chars">※たとえば<a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の32bit版の場合は、画像中央あたりの「<b><a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a> Installer (.<a class="keyword" href="http://d.hatena.ne.jp/keyword/msi">msi</a>)</b>の<b>32-bit</b>版」が良いようです。</span><br>
+                        <span itemscope itemtype="http://schema.org/Photograph">
+                        <img class="hatena-fotolife lazy"
+                             alt="Node.jsのインストーラーの一覧"
+                             title="f:id:yuricks7:20200929190614p:plain"
+                             data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929190614.png"
+                             src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929190614.png"
+                             itemprop="image" />
+                        </span></p></li>
+                        </ol>
+                        
+                        
+                        <h5 id="インストール">インストール</h5>
+                        
+                        <ol>
+                        <li><p><u><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%E9">インストーラ</a>を起動して、画面の指示に従い<code>Node.js</code>をインストールする</u></p>
+                        
+                        <p>詳しい手順はこちら↓が参考になるかと思います。<br>
+                        <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgas.excelspeedup.com%2Fnodejs%2F" title="claspを使う事前準備-Node.jsをインストールする" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://gas.excelspeedup.com/nodejs/">clasp&#x3092;&#x4F7F;&#x3046;&#x4E8B;&#x524D;&#x6E96;&#x5099;-Node.js&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B; &ndash; &#x7D4C;&#x7406;&#x696D;&#x52D9;&#x5411;&#x3051;Google Apps Script&#x8B1B;&#x5EA7;</a></p>
+                        
+                        <p><code>Node.js</code>を入れる過程で、このあと使用する<code>npm</code>というツールもインストールされます。</p></li>
+                        </ol>
+                        
+                        
+                        <h5 id="バージョンを確認">バージョンを確認</h5>
+                        
+                        <ol>
+                        <li><p><u><code>Node.js</code>のインストールができたら、ターミナルを起動する</u></p>
+                        
+                        <p>特に理由が無ければ、<code>PowerShell</code>か<code>Git Bash</code>がおすすめです。<br>
+                        以下、原則「<code>Git Bash</code>を使用する場合」を前提に説明します。</p></li>
+                        <li><p><u>下記のコマンドを入力して、インストールができているか確認する</u></p></li>
+                        </ol>
+                        
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink>npm <span class="synSpecial">-v</span>
+                        </pre>
+                        
+                        
+                        <p>こんな風に<code>npm</code>のバージョンが出力されればOK。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synConstant">6</span>.<span class="synConstant">9</span>.<span class="synConstant">0</span>
+                        </pre>
+                        
+                        
+                        <p><span class="small-chars">※バージョンは執筆時点のものです。</span></p>
+                        
+                        <h4 id="Claspを入れる">Claspを入れる</h4>
+                        
+                        <h5 id="インストール-1">インストール</h5>
+                        
+                        <p><code>npm</code>というNode.js版のパッケージ管理ツールを使用して<code>Clasp</code>をインストールします。</p>
+                        
+                        <p><span class="small-chars">※<a class="keyword" href="http://d.hatena.ne.jp/keyword/PowerShell">PowerShell</a>用の記事ですが、「パッケージとは何ぞや？」な方はこちらへ。</span><br>
+                        <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FPowerShell%2Fwhat-is-package" title="【PowerShell】「そもそもパッケージって何？」っていうあなたに、少し説明します。 - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://www.yuru-wota.com/entry/PowerShell/what-is-package">&#x3010;PowerShell&#x3011;&#x300C;&#x305D;&#x3082;&#x305D;&#x3082;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3063;&#x3066;&#x4F55;&#xFF1F;&#x300D;&#x3063;&#x3066;&#x3044;&#x3046;&#x3042;&#x306A;&#x305F;&#x306B;&#x3001;&#x5C11;&#x3057;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></p>
+                        
+                        <p>下記のコマンドを入力して、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>社が配布している<code>Clasp</code>の公式パッケージ（<code>@google/clasp</code>）をインストール。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink>npm i @google/clasp <span class="synSpecial">-g</span>
+                        </pre>
+                        
+                        
+                        <h6 id="コマンドの意味">コマンドの意味</h6>
+                        
+                        <p><code>npm i [パッケージ名]</code>で、「パッケージをダウンロードしてインストールする」という意味のコマンドです。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># パッケージをインストール</span>
+                        npm i <span class="synStatement">[</span>パッケージ名<span class="synStatement">]</span>
+                        </pre>
+                        
+                        
+                        <p>インストール先はカレント<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リの周辺（<a href="https://qiita.com/kijitoraneko/items/175ef29d45d155b3f405">参考</a>）で、基本はプロジェクト内の展開になると思います。</p>
+                        
+                        <p>そこに<code>-g</code>というオプションをつけると、展開範囲はOSのユーザー単位（=グローバル）になります。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># パッケージをグローバルでインストール</span>
+                        npm i <span class="synStatement">[</span>パッケージ名<span class="synStatement">]</span> <span class="synSpecial">-g</span>
+                        </pre>
+                        
+                        
+                        <p>パッケージ自体のインストール先も、<code>npm</code>のインストール場所に変更されます。</p>
+                        
+                        <p>ちなみに<code>i</code>は<code>install</code>のショートハンドで、下記のように書いてもOKです。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># パッケージをグローバルでインストール</span>
+                        npm install <span class="synSpecial">-g</span> <span class="synStatement">[</span>パッケージ名<span class="synStatement">]</span>
+                        </pre>
+                        
+                        
+                        <h5 id="バージョンを確認-1">バージョンを確認</h5>
+                        
+                        <p>インストールが出来たら、念のため<code>Clasp</code>が正しくインストール出来ているか確認します。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
+                        clasp <span class="synSpecial">-v</span>
+                         
+                        <span class="synComment"># 出力（例）</span>
+                        <span class="synConstant">2</span>.<span class="synConstant">1</span>.<span class="synConstant">0</span>
+                        </pre>
+                        
+                        
+                        <p><span class="small-chars">※バージョンは執筆時点のものです。</span></p>
+                        
+                        <h6 id="そんなコマンドは無いよと言われたら">「そんなコマンドは無いよ」と言われたら…</h6>
+                        
+                        <p>Claspのコマンドを使用する時、コマンドがシェル<a href="#f-3ad1410e" name="fn-3ad1410e" title="
+                          シェルとは？
+                        
+                        シェル（英：shell）とは
+                        
+                        コンピュータ株式会社の受付のおねーさんのこと。
+                        
+                        もう少し真面目に書くと
+                        
+                        人間様からの入力をコンピュータさんに伝えるプログラムのこと
+                        
+                        です。
+                        イメージしにくければ
+                        
+                        Windowsにおける「コマンドプロンプト」みたいなもの
+                        
+                        と考えても構いません。
+                        
+                        シェル (shell)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典
+                        ">*1</a>に登録できていないと下記のようなエラー文が出力されます。</p></blockquote>
+                        
                         <hr />
-
+                        
+                        
+                        
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synStatement">command</span> not found
+                        </pre>
+                        
+                        
+                        <blockquote><p>コマンドが見つかりません。</p></blockquote>
+                        
+                        <hr />
+                        
+                        
+                        <p>この場合は、Claspのコマンド達を「Claspという名のコマンド」として端末に登録して、<b>シェルがClaspコマンドを認識できるようにしておく</b>必要があります。<br></p>
+                        
+                        <p>書き方は、こんな感じ。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># コマンドを登録する</span>
+                        <span class="synStatement">alias</span> <span class="synStatement">[</span>コマンド名<span class="synStatement">]=[</span>ソースコード<span class="synStatement">]</span>
+                        </pre>
+                        
+                        
+                        <p><code>alias</code>は、別名・通称という意味です。</p>
+                        
+                        <p>Claspを登録する場合は、こんな感じに書きます。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># Claspコマンドを登録する</span>
+                        <span class="synStatement">alias </span><span class="synIdentifier">Clasp</span><span class="synStatement">=</span>～/clasp/src/index.js
+                        </pre>
+                        
+                        
+                        <p>今回はClaspのパッケージを<a href="#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E6%84%8F%E5%91%B3">グローバルでインストール</a>しているので、Claspコマンドの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9">ソースコード</a>も端末の「ユーザーごと」に入っています。</p>
+                        
+                        <p>そこで、<b><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9">エイリアス</a>にもユーザー用のファイルを指定</b>します。<br>
+                        <a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の場合は、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9">ソースコード</a>の場所はこちら。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink>/C/Users/<span class="synStatement">[</span>ユーザー名<span class="synStatement">]</span>/AppData/Roaming/npm/node_modules/\@google/clasp/src/index.js
+                        </pre>
+                        
+                        
+                        <p>なお、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Bash">Bash</a>用の表記なので、パスは<code>C:\Users\～</code>ではなく<code>/C/Users/～</code>のようにバックスラッシュ<code>/</code>で区切ることに注意してください。</p>
+                        
+                        <p>これをコマンドに適用すると、こんな感じになります。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># aliasコマンドで「Claspコマンド」のソースを指定する</span>
+                        <span class="synStatement">alias </span><span class="synIdentifier">clasp</span><span class="synStatement">=</span>/C/Users/<span class="synStatement">[</span>ユーザー名<span class="synStatement">]</span>/AppData/Roaming/npm/node_modules/\@google/clasp/src/index.js
+                        </pre>
+                        
+                        
+                        <p>ターミナル上で上記のように入力し、<kbd><kbd class="btn-square-emboss">Enter</kbd></kbd>で実行します。</p>
+                        
+                        <p>そして、これを実行しても特に出力は無いので<span class="small-chars">（不安…）</span>、登録できたかの確認の意味も含めて、改めてClaspコマンドを使ってみます。</p>
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
+                        clasp <span class="synSpecial">-v</span>
+                         
+                        <span class="synComment"># 出力（例）</span>
+                        <span class="synConstant">2</span>.<span class="synConstant">1</span>.<span class="synConstant">0</span>
+                        </pre>
+                        
+                        
+                        <p>バージョンが出力されればOK。</p>
+                        
+                        <h3 id="Googleアカウントの登録"><a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントの登録</h3>
+                        
+                        <h4 id="GAS側の設定">GAS側の設定</h4>
+                        
+                        <h5 id="GASのプロジェクトを外部から操作できるようにする">GASのプロジェクトを外部から操作できるようにする</h5>
+                        
+                        <p><code>Google Apps Script API</code>を有効化します。</p>
+                        
+                        <ol>
+                        <li><p><u>Clasp作業用の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントでログインした状態で、設定ページにアクセス</u></p>
+                        
+                        <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fscript.google.com%2Fhome%2Fusersettings" title="Apps Script – Google Apps Script" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe></p></li>
+                        <li><p><u>設定ページにアクセスしたら、背景が青い辺りにカーソルを合わせてクリック</u></p>
+                        
+                        <p><span itemscope itemtype="http://schema.org/Photograph">
+                        <img class="hatena-fotolife lazy"
+                             alt="背景が青い辺りにカーソルを合わせてクリック"
+                             title="f:id:yuricks7:20200929193456p:plain"
+                             data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193456.png"
+                             src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193456.png"
+                             itemprop="image" />
+                        </span></p></li>
+                        <li><p><u>画面右側のスイッチをクリックして、<code>Google Apps Script API</code>を<kbd><kbd class="btn-square-emboss">オン</kbd></kbd>に変更</u></p>
+                        
+                        <p><span itemscope itemtype="http://schema.org/Photograph">
+                        <img class="hatena-fotolife lazy"
+                             alt="Google Apps Script APIを「オン」にする"
+                             title="f:id:yuricks7:20200929193752p:plain"
+                             data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193752.png"
+                             src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193752.png"
+                             itemprop="image" />
+                        </span></p></li>
+                        </ol>
+                        
+                        
+                        <h4 id="Clasp側の設定">Clasp側の設定</h4>
+                        
+                        <h5 id="作業用のChromeをアクティブにしておく">作業用の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Chrome">Chrome</a>を「アクティブ」にしておく</h5>
+                        
+                        <p>ここは<a class="keyword" href="http://d.hatena.ne.jp/keyword/Chrome">Chrome</a>で<b>ブラウザを複数ユーザー分作成している方</b>向けです。<br>
+                        それ以外の方は<a href="#Clasp%E3%81%ABGoogle%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%B4%90%E4%BB%98%E3%81%91%E3%82%8B">次へ</a>。</p>
+                        
+                        <ol>
+                        <li><u>Claspで作業したいユーザーのブラウザで任意のページを開いてウィンドウをアクティブにしておく</u></li>
+                        </ol>
+                        
+                        
+                        <h5 id="ClaspにGoogleアカウントを紐付ける">Claspに<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントを紐付ける</h5>
+                        
+                        <ol>
+                        <li><u>ターミナルに戻って下記のコマンドを入力</u></li>
+                        </ol>
+                        
+                        
+                        <pre class="code lang-sh" data-lang="sh" data-unlink>clasp login
+                        </pre>
+                        
+                        
+                        <h5 id="Googleアカウントにログイン"><a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントにログイン</h5>
+                        
+                        <ol>
+                        <li><u>自動でブラウザが開くので、Clasp作業用の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントでログイン</u></li>
+                        </ol>
+                        
+                        
+                        <p>アカウントが認証されると、ブラウザの上の方に下記のメッセージが表示されます。</p>
+                        
+                        <pre class="code" data-lang="" data-unlink>Logged in! You may close this page.</pre>
+                        
+                        
+                        <blockquote><p>ログインしました！このページは閉じて構いません。</p></blockquote>
+                        
+                        <p>ここまで来たら、ブラウザは一旦閉じてもOKです。</p>
+                        
+                        <h3 id="このシリーズについて">このシリーズについて</h3>
+                        
+                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Google%20Apps">Google Apps</a> Scriptをローカルで編集する方法について、まとめています。</p>
+                        
+                        <h4 id="連載目次">連載目次</h4>
+                        
+                        <ol>
+                        <li><a href="https://www.yuru-wota.com/entry/GAS/What-a-good-clasp">&#x3010;Clasp&#x3011;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x3067;GAS&#x3092;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x3068;&#x30C7;&#x30E1;&#x30EA;&#x30C3;&#x30C8; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+                        <li><span class="serialized-label">当記事</span><a href="https://www.yuru-wota.com/entry/GAS/How-to-Install-Clasp">&#x3010;Clasp&#x3011;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x3067;GAS&#x3092;&#x66F8;&#x304F;&#x6E96;&#x5099; &#xFF5E;Clasp&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#xFF5E; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+                        </ol>
+                        
+                        
+                        <h3 id="参考">参考</h3>
+                        
+                        <ul>
+                        <li><p>全体の手順</p>
+                        
+                        <ul>
+                        <li><a href="https://gas.excelspeedup.com/">&#x7D4C;&#x7406;&#x696D;&#x52D9;&#x5411;&#x3051;Google Apps Script&#x8B1B;&#x5EA7; &ndash; GAS&#x306F;&#x7D4C;&#x7406;&#x696D;&#x52D9;&#x306E;&#x5408;&#x7406;&#x5316;&#x306B;&#x306F;&#x3068;&#x3066;&#x3082;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3088;</a></li>
+                        <li><a href="https://qiita.com/HeRo/items/4e65dcc82783b2766c03">GAS &#x306E;Google&#x8B39;&#x88FD;CLI&#x30C4;&#x30FC;&#x30EB; clasp - Qiita</a></li>
+                        </ul>
+                        </li>
+                        <li><p>シェル、ターミナルの使い方</p>
+                        
+                        <ul>
+                        <li><p>npmとは</p>
+                        
+                        <ul>
+                        <li><a href="https://techacademy.jp/magazine/16105">&#x4FBF;&#x5229;&#x306A;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;&#x30C4;&#x30FC;&#x30EB;&#xFF01;npm&#x3068;&#x306F;&#x3010;&#x521D;&#x5FC3;&#x8005;&#x5411;&#x3051;&#x3011; | TechAcademy&#x30DE;&#x30AC;&#x30B8;&#x30F3;</a></li>
+                        </ul>
+                        </li>
+                        <li><p>alias</p>
+                        
+                        <ul>
+                        <li><a href="https://github.com/google/clasp/issues/687">Install clasp without sudo instructions &middot; Issue #687 &middot; google/clasp &middot; GitHub</a></li>
+                        </ul>
+                        </li>
+                        </ul>
+                        </li>
+                        <li><p>Clasp</p>
+                        
+                        <ul>
+                        <li><p>公式ドキュメント</p>
+                        
+                        <ul>
+                        <li><p>概要</p>
+                        
+                        <ul>
+                        <li><a href="https://developers.google.com/apps-script/guides/clasp">Command Line Interface using clasp &nbsp;|&nbsp; Apps Script &nbsp;|&nbsp; Google Developers</a></li>
+                        </ul>
+                        </li>
+                        <li><p><a class="keyword" href="http://d.hatena.ne.jp/keyword/GitHub">GitHub</a>のREADME</p>
+                        
+                        <ul>
+                        <li><a href="https://github.com/google/clasp/blob/master/README.md">clasp/README.md at master &middot; google/clasp &middot; GitHub</a></li>
+                        </ul>
+                        </li>
+                        </ul>
+                        </li>
+                        <li><p>使い方のコツなど</p>
+                        
+                        <ul>
+                        <li><a href="https://qiita.com/kjfsm4/items/a8d59a660176deac62cb">clasp&#x306E;README&#x3092;&#x65E5;&#x672C;&#x8A9E;&#x8A33; - Qiita</a></li>
+                        <li><a href="https://qiita.com/rf_p/items/7492375ddd684ba734f8">clasp&#x3092;&#x4F7F;&#x3044;&#x3001;Google Apps Script&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;git&#x3067;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;&#x3059;&#x308B; - Qiita</a></li>
+                        </ul>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        
+                        
+                        <h3 id="注釈">注釈</h3>
                         <div class="footnote">
-                          <p class="footnote"><a href="#fn-7b4b5ca1" name="f-7b4b5ca1" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text"><a class="keyword" href="http://d.hatena.ne.jp/keyword/ADHD">ADHD</a>等の<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C8%AF%C3%A3%BE%E3%B3%B2">発達障害</a>界隈で言われていることですが、<b>PC上で編集した文章は「目が滑る」</b>ことがあります。<br>
-その対処として、「（紙に印刷したりして）見た目を変えるとチェック漏れが減る」というテクニックを応用しています。</span></p>
-                          <p
-                            class="footnote"><a href="#fn-e40e3a86" name="f-e40e3a86" class="footnote-number">*2</a><span class="footnote-delimiter">:</span><span class="footnote-text">そもそも公式さんが調整してからリリースしてほしかったのですが、もう過ぎたことなのでそれは仕方ないとして…<br>
-<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>さんの発表（<a href="https://youtu.be/vMaSAUc4Dgc?t=1295">動画</a>）によれば新しい<a class="keyword" href="http://d.hatena.ne.jp/keyword/IDE">IDE</a>を目下開発中らしいので、そちらでは改善されていることを祈ります！</span></p>
-                          <p
-                            class="footnote"><a href="#fn-6c77fc33" name="f-6c77fc33" class="footnote-number">*3</a><span class="footnote-delimiter">:</span><span class="footnote-text">厳密には、<a class="keyword" href="http://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>というかTypescript向け…？</span></p>
-
+                        <p class="footnote"><a href="#fn-3ad1410e" name="f-3ad1410e" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">  シェルとは？</p>
+                        
+                        <blockquote><p>シェル（英：shell）とは<br>
+                        <br>
+                        コンピュータ株式会社の受付のおねーさんのこと。<br>
+                        <br>
+                        もう少し真面目に書くと<br>
+                        <br>
+                        人間様からの入力をコンピュータさんに伝えるプログラムのこと<br>
+                        <br>
+                        です。<br>
+                        イメージしにくければ<br>
+                        <br>
+                        <a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>における「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%DE%A5%F3%A5%C9%A5%D7%A5%ED%A5%F3%A5%D7%A5%C8">コマンドプロンプト</a>」みたいなもの<br>
+                        <br>
+                        と考えても構いません。</p>
+                        
+                        <p><cite><a href="https://wa3.i-3-i.info/word11219.html">シェル (shell)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典</a></cite>
+                        </span></p>
                         </div>
+
 
                       </div>
 
