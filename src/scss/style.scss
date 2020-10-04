@@ -651,7 +651,7 @@ footer {
   }
 
   h5 {
-    margin : 36px 4px 20px;
+    margin : 36px 4px 26px;
     padding:  4px 6px;
 
     border-left: 6px solid themeColor(1);
@@ -661,7 +661,7 @@ footer {
   }
 
   h6 {
-    margin : 26px 0 20px;
+    margin : 30px 0 26px;
 
     $border-weight: 2.6px;
     position: relative;
@@ -670,7 +670,7 @@ footer {
     font-size: 1.2em;
 
     &:before {
-      padding: 0 4px;
+      padding: 0 2px;
 
       content: " ";
     }
