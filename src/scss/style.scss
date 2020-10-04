@@ -1092,21 +1092,23 @@ footer {
       左上に言語名を表示
       https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
     */
-    &:before {
-      display : inline-block;
-      position: absolute;
+    &:not([data-lang=""]) { /* 言語の指定がある時のみ */
+      &:before {
+        display : inline-block;
+        position: absolute;
 
-      margin-left: -18px;
-      margin-top : -25px;
-      padding    :   2px 10px;
+        margin-left: -18px;
+        margin-top : -25px;
+        padding    :   2px 10px;
 
-      border:  1px solid rgba(204, 204, 204, .5);
-      border-radius: 3px;
-      box-shadow   : 0 0 1px 1px charBlack(.2);
+        border:  1px solid rgba(204, 204, 204, .5);
+        border-radius: 3px;
+        box-shadow   : 0 0 1px 1px charBlack(.2);
 
-      content   : attr(data-lang);
-      color     : black;
-      background: $char-white;
+        content   : attr(data-lang);
+        color     : black;
+        background: $char-white;
+      }
     }
   }
 
