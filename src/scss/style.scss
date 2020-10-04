@@ -715,6 +715,15 @@ footer {
     overflow-x: scroll; // 効かないかも
   }
 
+  /* カード形式リンク */
+  .embed-card {
+    margin-bottom: 0;
+
+    &+a {
+      font-size: .8em;
+    }
+  }
+
   /* リスト */
   ul, ol {
     margin-top : 10px;

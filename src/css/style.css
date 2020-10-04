@@ -2009,6 +2009,7 @@ footer .comment-box {
   line-height: 2em;
   color: #050505;
   /* 段落 */
+  /* カード形式リンク */
   /* リスト */
   /*--------------------------------------
     目次の表示・非表示
@@ -2147,6 +2148,14 @@ footer .comment-box {
   max-width: 680px;
   min-width: 300px;
   overflow-x: scroll;
+}
+
+.entry-content .embed-card {
+  margin-bottom: 0;
+}
+
+.entry-content .embed-card + a {
+  font-size: .8em;
 }
 
 .entry-content ul, .entry-content ol {
