@@ -2426,6 +2426,7 @@ footer .comment-box {
 
 .entry-content blockquote cite {
   display: block;
+  padding-right: 40px;
   color: #888888;
   font-size: 0.9em;
   font-style: italic;
