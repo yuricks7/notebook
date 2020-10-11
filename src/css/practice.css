@@ -2010,6 +2010,8 @@ footer .comment-box {
   line-height: 2em;
   color: #050505;
   /* 段落 */
+  /* カード形式リンク */
+  /* ツイート */
   /* リスト */
   /*--------------------------------------
     目次の表示・非表示
@@ -2040,6 +2042,11 @@ footer .comment-box {
   */
   /*--------------------------------------
     引用
+    CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
+    https://saruwakakun.com/html-css/reference/blockquote
+  --------------------------------------*/
+  /*--------------------------------------
+    翻訳
     CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
     https://saruwakakun.com/html-css/reference/blockquote
   --------------------------------------*/
@@ -2099,7 +2106,7 @@ footer .comment-box {
 }
 
 .entry-content h5 {
-  margin: 36px 4px 20px;
+  margin: 36px 4px 26px;
   padding: 4px 6px;
   border-left: 6px solid #1d8aff;
   font-size: 1.26em;
@@ -2107,14 +2114,14 @@ footer .comment-box {
 }
 
 .entry-content h6 {
-  margin: 26px 0 20px;
+  margin: 30px 0 26px;
   position: relative;
   border-bottom: solid 2.6px rgba(0, 0, 0, 0.1);
   font-size: 1.2em;
 }
 
 .entry-content h6:before {
-  padding: 0 4px;
+  padding: 0 2px;
   content: " ";
 }
 
@@ -2138,31 +2145,49 @@ footer .comment-box {
 }
 
 .entry-content .hatena-fotolife {
+  margin: 15px auto 30px;
   width: 100%;
-  max-width: 700px;
+  max-width: 680px;
   min-width: 300px;
   overflow-x: scroll;
+}
+
+.entry-content .embed-card {
+  margin-bottom: 0 !important;
+}
+
+.entry-content .embed-card + a {
+  font-size: .8em;
+}
+
+.entry-content .embed-card + a:before {
+  margin-left: 8px;
+  margin-right: 8px;
+  content: ">>";
+  font-weight: bold;
+}
+
+.entry-content .twitter-tweet {
+  margin: 15px 16px;
 }
 
 .entry-content ul, .entry-content ol {
   margin-top: 10px;
   margin-left: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 2em;
+  padding: 4px auto 4px 2em;
 }
 
 .entry-content ul li, .entry-content ol li {
-  margin-top: 4px;
+  margin-bottom: 1.3em;
   padding-left: 4px;
   font-size: .98em;
 }
 
 .entry-content ul li p, .entry-content ol li p {
-  margin: 0;
+  margin: 0 0 .8em 0;
 }
 
-.entry-content ul li ul, .entry-content ol li ul {
+.entry-content ul li ul, .entry-content ul li ol, .entry-content ol li ul, .entry-content ol li ol {
   margin-top: 0;
 }
 
@@ -2231,16 +2256,17 @@ footer .comment-box {
   /* スクリプトで文字が追加されてしまうので消しておく */
 }
 
+.entry-content .table-of-contents li {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: .98em;
+}
+
 .entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
-  margin-left: 0;
+  margin: 0 !important;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
-}
-
-.entry-content .table-of-contents ul li, .entry-content .table-of-contents ol li {
-  padding-left: 4px;
-  font-size: .98em;
 }
 
 .entry-content .serialized-label {
@@ -2343,8 +2369,7 @@ footer .comment-box {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: 15px 16px;
   padding: 5px 10px 5px 32px;
   border: 1px solid rgba(204, 204, 204, 0.5);
   border-radius: 3px;
@@ -2407,6 +2432,53 @@ footer .comment-box {
   text-align: right;
 }
 
+.entry-content .translation {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 15px 16px;
+  padding: 5px 10px 5px 32px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  border-radius: 3px;
+  background: #f3f3f3;
+  color: rgba(5, 5, 5, 0.7);
+  /* 国旗 */
+}
+
+.entry-content .translation:before {
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: -15px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  content: "●";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-weight: 900;
+  color: red;
+  line-height: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
+          box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
+}
+
+.entry-content .translation:hover {
+  border: 1px solid rgba(204, 204, 204, 0.4);
+  background: #fff;
+  color: rgba(5, 5, 5, 0.9);
+  font-style: normal;
+}
+
+.entry-content .translation p {
+  position: relative;
+  margin: 10px 0;
+  padding: 0;
+  z-index: 3;
+  line-height: 1.7;
+}
+
 .entry-content code {
   padding-top: 1px;
   border-radius: 3px;
@@ -2420,8 +2492,7 @@ footer .comment-box {
 }
 
 .entry-content pre.code {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: 15px 16px;
   padding: 20px 10px 10px;
   border-radius: 3px;
   /* フォント・メインカラーを変更 */
@@ -2474,7 +2545,11 @@ footer .comment-box {
   color: #00CCCC;
 }
 
-.entry-content pre.code:before {
+.entry-content pre.code:not([data-lang=""]) {
+  /* 言語の指定がある時のみ */
+}
+
+.entry-content pre.code:not([data-lang=""]):before {
   display: inline-block;
   position: absolute;
   margin-left: -18px;
