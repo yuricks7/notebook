@@ -2181,9 +2181,12 @@ footer .comment-box {
 .entry-content .hatena-fotolife {
   margin: 15px auto 30px;
   width: 100%;
+  height: auto;
   max-width: 680px;
-  min-width: 300px;
+  min-width: 100px;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* スマホでも滑らかに */
 }
 
 .entry-content .embed-card {
