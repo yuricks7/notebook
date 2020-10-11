@@ -1,0 +1,54 @@
+@mixin standardFonts() {
+  font-family: 'M PLUS Rounded 1c',
+               'Noto Sans CJK JP Regular',
+               'Meiryo UI',
+               'メイリオ',
+               'Meiryo',
+               'ヒラギノ角ゴ ProN',
+               'Hiragino Kaku Gothic ProN',
+               'ＭＳ Ｐゴシック',
+               'MS PGothic',
+               'sans-serif' !important;
+}
+
+/* カード形式リンク */
+.embed-card {
+  margin-bottom: 0 !important;
+
+  &+a {
+    &:before {
+      margin-left : 8px;
+      margin-right: 8px;
+      content: ">>";
+      font-weight: bold;
+    }
+
+    font-size: .8em;
+  }
+}
+
+body {
+  @include standardFonts();
+}
+
+.hatena-module-body {
+  @include standardFonts();
+  // font-size: .9em;
+}
+
+/* プロフィール */
+.profile-description {
+  @include standardFonts();
+  // font-size: .95em;
+}
+
+/*--------------------------------------
+  本文のフォント
+--------------------------------------*/
+.entry-content {
+  @include standardFonts();
+  // font-size  : 16px;
+  // line-height:  2em;
+
+  // color: charBlack(1);
+}
