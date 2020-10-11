@@ -1,5 +1,6 @@
 @mixin standardFonts() {
-  font-family: 'M PLUS Rounded 1c',
+  font-family: 'M PLUS 1p',
+               'Sawarabi Mincho',
                'Noto Sans CJK JP Regular',
                'Meiryo UI',
                'メイリオ',
@@ -47,8 +48,55 @@ body {
 --------------------------------------*/
 .entry-content {
   @include standardFonts();
-  font-size  : 21px;
-  // line-height:  2em;
+  font-size  : 17px;
+  line-height: 1.8em;
 
-  // color: charBlack(1);
+  /*--------------------------------------
+    目次の表示・非表示ボタン
+  --------------------------------------*/
+  /* 「.table-of-contents」にネストすると
+      カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
+  .show-area {
+    display: inline-block;
+    cursor : pointer;
+
+    font-size: .8em;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  /*--------------------------------------
+    目次
+  --------------------------------------*/
+  .table-of-contents { // = ul, ol
+    // display: none; /* デフォルトで非表示 */
+
+    /* 外枠 */
+    margin : 4px 10px 0;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border : dotted #1541a1 1.6px;
+
+    &:before {
+      content : ""; /* スクリプトで文字が追加されてしまうので消しておく */
+    }
+
+    /* 中身 */
+    li {
+      margin-top   : 0 !important;
+      margin-bottom: 0 !important;
+
+      font-size: .98em;
+    }
+
+    ul, ol {
+      margin: 0 !important;
+      padding-top   :  4px;
+      padding-bottom:  4px;
+      padding-left  : 16px;
+    }
+  }
+
 }

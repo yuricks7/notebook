@@ -16,23 +16,69 @@
 }
 
 body {
-  font-family: 'M PLUS Rounded 1c', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
 .hatena-module-body {
-  font-family: 'M PLUS Rounded 1c', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
 /* プロフィール */
 .profile-description {
-  font-family: 'M PLUS Rounded 1c', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
 /*--------------------------------------
   本文のフォント
 --------------------------------------*/
 .entry-content {
-  font-family: 'M PLUS Rounded 1c', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  font-size: 21px;
+  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-size: 17px;
+  line-height: 1.8em;
+  /*--------------------------------------
+    目次の表示・非表示ボタン
+  --------------------------------------*/
+  /* 「.table-of-contents」にネストすると
+      カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
+  /*--------------------------------------
+    目次
+  --------------------------------------*/
+}
+
+.entry-content .show-area {
+  display: inline-block;
+  cursor: pointer;
+  font-size: .8em;
+}
+
+.entry-content .show-area:hover {
+  font-weight: bold;
+}
+
+.entry-content .table-of-contents {
+  /* 外枠 */
+  margin: 4px 10px 0;
+  padding: 20px 50px;
+  border-radius: 5px;
+  border: dotted #1541a1 1.6px;
+  /* 中身 */
+}
+
+.entry-content .table-of-contents:before {
+  content: "";
+  /* スクリプトで文字が追加されてしまうので消しておく */
+}
+
+.entry-content .table-of-contents li {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: .98em;
+}
+
+.entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
+  margin: 0 !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
 }
 /*# sourceMappingURL=cook.css.map */
