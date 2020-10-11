@@ -740,11 +740,11 @@ footer {
   ul, ol {
     margin-top : 10px;
     margin-left:  0;
-    padding: 4px auto 4px 2em;
 
     li {
-      margin-bottom: 1.3em;
-      padding-left : 4px;
+      margin-top   : .5em;
+      margin-bottom:  0;
+      padding-left :  .1em !important;
       font-size: .98em;
 
       p {
@@ -753,6 +753,7 @@ footer {
 
       ul, ol {
         margin-top: 0;
+        padding-left: 1.3em;
       }
     }
   }
@@ -805,14 +806,14 @@ footer {
       margin-top   : 0 !important;
       margin-bottom: 0 !important;
 
-      font-size: .98em;
+      font-size: .99em;
     }
 
     ul, ol {
       margin: 0 !important;
-      padding-top   :  4px;
-      padding-bottom:  4px;
-      padding-left  : 16px;
+      padding-top   :   4px;
+      padding-bottom:   4px;
+      padding-left  : 1.5em;
     }
   }
 
