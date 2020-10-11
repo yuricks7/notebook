@@ -2008,7 +2008,6 @@ footer .comment-box {
   font-size: 16px;
   line-height: 2em;
   color: #050505;
-  /* 段落 */
   /* カード形式リンク */
   /* ツイート */
   /* リスト */
@@ -2141,6 +2140,18 @@ footer .comment-box {
 
 .entry-content b, .entry-content strong {
   font-size: 1.03em;
+}
+
+.entry-content s {
+  text-decoration: none;
+  /* 赤線 */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d32f2f), to(#d32f2f));
+  background-image: linear-gradient(#d32f2f, #d32f2f);
+  background-position: 0 50%;
+  background-size: 100% 3px;
+  background-repeat: repeat-x;
+  /* グレーアウト */
+  color: #949494;
 }
 
 .entry-content .hatena-fotolife {

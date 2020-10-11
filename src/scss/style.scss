@@ -695,15 +695,28 @@ footer {
 
   color: charBlack(1);
 
-  /* 段落 */
   p {
     margin-bottom: 1.4em;
-    margin-left : $side-margin;
-    margin-right: $side-margin;
+    margin-left  : $side-margin;
+    margin-right : $side-margin;
   }
 
   b, strong {
     font-size: 1.03em;
+  }
+
+  s {
+    text-decoration: none;
+
+    /* 赤線 */
+    background-image:
+      linear-gradient($char-red, $char-red);
+    background-position: 0 50%;
+    background-size    : 100% 3px;
+    background-repeat  : repeat-x;
+
+    /* グレーアウト */
+    color: rgb(148, 148, 148);
   }
 
   .hatena-fotolife {
