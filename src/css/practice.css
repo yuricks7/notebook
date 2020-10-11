@@ -1021,7 +1021,7 @@ body {
 }
 
 .breadcrumb a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 .breadcrumb a:hover {
@@ -1473,7 +1473,7 @@ footer .comment-box {
 }
 
 .pager a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 .pager a:hover {
@@ -1549,7 +1549,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .profile-description a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 .hatena-module .hatena-module-body .profile-description a:hover {
@@ -2077,7 +2077,7 @@ footer .comment-box {
 }
 
 .entry-content a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 .entry-content a:hover {
@@ -2174,12 +2174,12 @@ footer .comment-box {
 .entry-content ul, .entry-content ol {
   margin-top: 10px;
   margin-left: 0;
-  padding: 4px auto 4px 2em;
 }
 
 .entry-content ul li, .entry-content ol li {
-  margin-bottom: 1.3em;
-  padding-left: 4px;
+  margin-top: .5em;
+  margin-bottom: 0;
+  padding-left: .1em !important;
   font-size: .98em;
 }
 
@@ -2189,6 +2189,7 @@ footer .comment-box {
 
 .entry-content ul li ul, .entry-content ul li ol, .entry-content ol li ul, .entry-content ol li ol {
   margin-top: 0;
+  padding-left: 1.3em;
 }
 
 .entry-content .show-area {
@@ -2214,7 +2215,7 @@ footer .comment-box {
 }
 
 .entry-content .show-area:hover a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 .entry-content .show-area:hover a:hover {
@@ -2243,7 +2244,7 @@ footer .comment-box {
 }
 
 .entry-content .table-of-contents a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 .entry-content .table-of-contents a:hover {
@@ -2259,14 +2260,14 @@ footer .comment-box {
 .entry-content .table-of-contents li {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  font-size: .98em;
+  font-size: .99em;
 }
 
 .entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
   margin: 0 !important;
   padding-top: 4px;
   padding-bottom: 4px;
-  padding-left: 16px;
+  padding-left: 1.5em;
 }
 
 .entry-content .serialized-label {
@@ -3069,7 +3070,7 @@ footer .comment-box {
 }
 
 #stoc a:visited {
-  color: #106d2f;
+  color: #009130;
 }
 
 #stoc a:hover {

@@ -116,7 +116,8 @@ $char-red  : #d32f2f;
   @return rgba(0, 0, 0, $density);
 }
 
-@mixin linkColors($default: highlighter(.9), $visited: #106d2f) {
+@mixin linkColors($default: highlighter(.9),
+                  $visited: #009130) {
   text-decoration: none !important;
 
   a {
