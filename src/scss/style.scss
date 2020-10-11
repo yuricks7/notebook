@@ -1111,7 +1111,7 @@ footer {
   --------------------------------------*/
   pre.code {
     margin : 15px ($side-margin + 6px);
-    padding: 20px 10px 10px;
+    padding: 20px 30px 10px 10px;
     border-radius: 3px;
 
     /* フォント・メインカラーを変更 */
@@ -1120,6 +1120,9 @@ footer {
     line-height: 1.5em;
     color      : $char-white;    /* white 文字色 */
     background : charBlack(.85); /* black 背景 */
+
+    overflow-x: scroll; // 効かないかも
+    -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
 
     /* シンタックス・ハイライト */
     .synSpecial    { color: #66FFFF; } /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
@@ -1172,6 +1175,12 @@ footer {
       content: counter(linenumber); /* 擬似要素として行番号を表示 */
       color: rgba(204, 204, 204, 1);
     }
+
+    &:after {
+      margin-right: 1em;
+      content: ""; /* margin用 */
+    }
+
   }
 
   /*--------------------------------------
