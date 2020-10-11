@@ -677,6 +677,9 @@ textarea,
     padding-left: 6px !important;
     padding-right: 6px !important;
   }
+  .entry-content .hatena-fotolife {
+    margin-right: 10px;
+  }
   .hatena-star-container {
     border-radius: 0 !important;
   }
