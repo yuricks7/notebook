@@ -674,6 +674,10 @@ textarea,
   .entry-inner header {
     border-radius: 0 !important;
   }
+  .entry-content {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
   .hatena-star-container {
     border-radius: 0 !important;
   }
@@ -2029,7 +2033,7 @@ footer .comment-box {
   line-height: 2em;
   color: #050505;
   /* カード形式リンク */
-  /* ツイート */
+  /* ツイート・カード */
   /* リスト */
   /*--------------------------------------
     目次の表示・非表示
@@ -2182,9 +2186,12 @@ footer .comment-box {
 .entry-content .hatena-fotolife {
   margin: 15px auto 30px;
   width: 100%;
+  height: auto;
   max-width: 680px;
-  min-width: 300px;
+  min-width: 100px;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* スマホでも滑らかに */
 }
 
 .entry-content .embed-card {
@@ -2200,10 +2207,6 @@ footer .comment-box {
   margin-right: 8px;
   content: ">>";
   font-weight: bold;
-}
-
-.entry-content .twitter-tweet {
-  margin: 15px 16px;
 }
 
 .entry-content ul, .entry-content ol {
@@ -2521,7 +2524,7 @@ footer .comment-box {
 
 .entry-content pre.code {
   margin: 15px 16px;
-  padding: 20px 10px 10px;
+  padding: 20px 30px 10px 10px;
   border-radius: 3px;
   /* フォント・メインカラーを変更 */
   font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
@@ -2531,6 +2534,9 @@ footer .comment-box {
   /* white 文字色 */
   background: rgba(5, 5, 5, 0.85);
   /* black 背景 */
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* スマホでも滑らかに */
   /* シンタックス・ハイライト */
   /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
   /* (明るめの水色) 型 */
@@ -2607,6 +2613,12 @@ footer .comment-box {
   content: counter(linenumber);
   /* 擬似要素として行番号を表示 */
   color: #cccccc;
+}
+
+.entry-content .code-line:after {
+  margin-right: 1em;
+  content: "";
+  /* margin用 */
 }
 
 .entry-content table {
