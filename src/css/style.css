@@ -2028,7 +2028,7 @@ footer .comment-box {
   line-height: 2em;
   color: #050505;
   /* カード形式リンク */
-  /* ツイート */
+  /* ツイート・カード */
   /* リスト */
   /*--------------------------------------
     目次の表示・非表示
@@ -2202,10 +2202,6 @@ footer .comment-box {
   margin-right: 8px;
   content: ">>";
   font-weight: bold;
-}
-
-.entry-content .twitter-tweet {
-  margin: 15px 16px;
 }
 
 .entry-content ul, .entry-content ol {
