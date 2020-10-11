@@ -99,4 +99,53 @@ body {
     }
   }
 
+  /*--------------------------------------
+    テーブルの表示
+  --------------------------------------*/
+  $table-border: 1.6px solid #afb8ca;
+  table {
+    /*
+      はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
+      https://qiita.com/ymeeto/items/f165576f49f37e28e253
+    */
+    display: block;
+
+    /* 横スクロール */
+    overflow-x: scroll;
+    width: auto;
+    max-width: 980px;
+
+    white-space: nowrap;               /* 自動改行をoff */
+    -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
+
+    /* 外枠 */
+    border-radius: 3px;
+    border: $table-border;
+  }
+
+  @mixin xBorders() {
+    &:nth-child(2) {
+      border-left: $table-border;
+    }
+
+    &:nth-child(3) {
+      border-right: $table-border;
+    }
+  }
+
+  th {
+    @include xBorders();
+  }
+
+  tr {
+    border-bottom: $table-border;
+  }
+
+  td {
+    &:nth-child(1) {
+      text-align: center;
+    }
+
+    @include xBorders();
+  }
 }

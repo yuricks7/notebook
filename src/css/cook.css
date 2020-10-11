@@ -43,6 +43,9 @@ body {
   /*--------------------------------------
     目次
   --------------------------------------*/
+  /*--------------------------------------
+    テーブルの表示
+  --------------------------------------*/
 }
 
 .entry-content .show-area {
@@ -80,5 +83,48 @@ body {
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
+}
+
+.entry-content table {
+  /*
+      はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
+      https://qiita.com/ymeeto/items/f165576f49f37e28e253
+    */
+  display: block;
+  /* 横スクロール */
+  overflow-x: scroll;
+  width: auto;
+  max-width: 980px;
+  white-space: nowrap;
+  /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch;
+  /* スマホでも滑らかに */
+  /* 外枠 */
+  border-radius: 3px;
+  border: 1.6px solid #afb8ca;
+}
+
+.entry-content th:nth-child(2) {
+  border-left: 1.6px solid #afb8ca;
+}
+
+.entry-content th:nth-child(3) {
+  border-right: 1.6px solid #afb8ca;
+}
+
+.entry-content tr {
+  border-bottom: 1.6px solid #afb8ca;
+}
+
+.entry-content td:nth-child(1) {
+  text-align: center;
+}
+
+.entry-content td:nth-child(2) {
+  border-left: 1.6px solid #afb8ca;
+}
+
+.entry-content td:nth-child(3) {
+  border-right: 1.6px solid #afb8ca;
 }
 /*# sourceMappingURL=cook.css.map */
