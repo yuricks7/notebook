@@ -608,6 +608,9 @@ textarea,
     margin-top: 0 !important;
     text-align: center;
   }
+  .page-list li {
+    height: 4em !important;
+  }
   .page-list a {
     display: inline-block;
     padding: 4px 8px;
@@ -616,7 +619,11 @@ textarea,
     display: none;
   }
   .page-list a i {
+    padding-top: 4px !important;
     font-size: 22px !important;
+  }
+  .page-list a .blogicon-private {
+    font-size: 26px;
   }
   /* 追尾する目次 */
   #stoc-module {
@@ -823,7 +830,7 @@ textarea,
     width: 100%  !important;
   }
   .page-lists li {
-    height: 60px !important;
+    height: 5em !important;
   }
   .page-lists a {
     display: inline;
@@ -834,6 +841,7 @@ textarea,
   }
   .page-lists a i {
     display: inline;
+    padding-top: 10px !important;
     position: relative;
     top: 1px;
   }
@@ -1869,6 +1877,12 @@ footer .comment-box {
   padding-bottom: 4px;
   color: rgba(5, 5, 5, 0.6);
   font-size: 18px;
+}
+
+.hatena-module .hatena-module-body .page-list li a .blogicon-private {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 2px;
 }
 
 .hatena-module .hatena-module-body .page-list li a:hover {

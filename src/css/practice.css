@@ -609,6 +609,9 @@ textarea,
     margin-top: 0 !important;
     text-align: center;
   }
+  .page-list li {
+    height: 4em !important;
+  }
   .page-list a {
     display: inline-block;
     padding: 4px 8px;
@@ -617,7 +620,11 @@ textarea,
     display: none;
   }
   .page-list a i {
+    padding-top: 4px !important;
     font-size: 22px !important;
+  }
+  .page-list a .blogicon-private {
+    font-size: 26px;
   }
   /* 追尾する目次 */
   #stoc-module {
@@ -824,7 +831,7 @@ textarea,
     width: 100%  !important;
   }
   .page-lists li {
-    height: 60px !important;
+    height: 5em !important;
   }
   .page-lists a {
     display: inline;
@@ -835,6 +842,7 @@ textarea,
   }
   .page-lists a i {
     display: inline;
+    padding-top: 10px !important;
     position: relative;
     top: 1px;
   }
@@ -1538,8 +1546,9 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  font-size: .95em;
   text-decoration: none !important;
+  font-size: .95em;
+  line-height: 1.8em;
 }
 
 .hatena-module .hatena-module-body .profile-description a:link {
@@ -1555,6 +1564,10 @@ footer .comment-box {
 .hatena-module .hatena-module-body .profile-description a:hover {
   color: #0a21e6;
   font-weight: bold;
+}
+
+.hatena-module .hatena-module-body .profile-description p {
+  margin-bottom: .8em;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns {
@@ -1867,6 +1880,12 @@ footer .comment-box {
   font-size: 18px;
 }
 
+.hatena-module .hatena-module-body .page-list li a .blogicon-private {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
 .hatena-module .hatena-module-body .page-list li a:hover {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
@@ -2009,7 +2028,6 @@ footer .comment-box {
   font-size: 16px;
   line-height: 2em;
   color: #050505;
-  /* 段落 */
   /* カード形式リンク */
   /* ツイート */
   /* リスト */
@@ -2142,6 +2160,23 @@ footer .comment-box {
 
 .entry-content b, .entry-content strong {
   font-size: 1.03em;
+}
+
+.entry-content s {
+  text-decoration: none;
+  /* 赤線 */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d32f2f), to(#d32f2f));
+  background-image: linear-gradient(#d32f2f, #d32f2f);
+  background-position: 0 50%;
+  background-size: 100% 3px;
+  background-repeat: repeat-x;
+  /* グレーアウト */
+  color: #949494;
+}
+
+.entry-content img[alt] {
+  color: rgba(5, 5, 5, 0.5);
+  font-size: .8em;
 }
 
 .entry-content .hatena-fotolife {
@@ -2427,6 +2462,7 @@ footer .comment-box {
 
 .entry-content blockquote cite {
   display: block;
+  padding-right: 40px;
   color: #888888;
   font-size: 0.9em;
   font-style: italic;
@@ -2443,33 +2479,24 @@ footer .comment-box {
   border-radius: 3px;
   background: #f3f3f3;
   color: rgba(5, 5, 5, 0.7);
-  /* 国旗 */
+  /* ラベル */
 }
 
 .entry-content .translation:before {
   display: inline-block;
   position: absolute;
-  top: -8px;
-  left: -15px;
-  width: 40px;
-  height: 30px;
+  top: -.6em;
+  left: -.6em;
+  width: 3em;
+  height: 1.9em;
+  content: "意訳";
+  font-size: .8em;
   text-align: center;
-  content: "●";
-  font-family: FontAwesome;
-  font-size: 18px;
-  font-weight: 900;
-  color: red;
-  line-height: 30px;
-  background: #fff;
+  line-height: 1.9em;
+  color: #f0f0f0;
+  background: rgba(10, 33, 230, 0.8);
   -webkit-box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
           box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
-}
-
-.entry-content .translation:hover {
-  border: 1px solid rgba(204, 204, 204, 0.4);
-  background: #fff;
-  color: rgba(5, 5, 5, 0.9);
-  font-style: normal;
 }
 
 .entry-content .translation p {
