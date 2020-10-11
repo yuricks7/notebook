@@ -1537,8 +1537,9 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  font-size: .95em;
   text-decoration: none !important;
+  font-size: .95em;
+  line-height: 1.8em;
 }
 
 .hatena-module .hatena-module-body .profile-description a:link {
@@ -1554,6 +1555,10 @@ footer .comment-box {
 .hatena-module .hatena-module-body .profile-description a:hover {
   color: #0a21e6;
   font-weight: bold;
+}
+
+.hatena-module .hatena-module-body .profile-description p {
+  margin-bottom: .8em;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns {

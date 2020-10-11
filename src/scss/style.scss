@@ -431,8 +431,13 @@ footer {
     /* プロフィール */
     .profile-description {
       @include standardFonts();
-      font-size: .95em;
       @include linkColors();
+      font-size  : .95em;
+      line-height: 1.8em;
+
+      p {
+        margin-bottom: .8em;
+      }
     }
 
     /* アカウント一覧 */
