@@ -719,6 +719,11 @@ footer {
     color: rgb(148, 148, 148);
   }
 
+  img[alt] {
+    color    : charBlack(.5);
+    font-size: .8em;
+  }
+
   .hatena-fotolife {
     margin: 15px auto 30px;
 
