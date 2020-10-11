@@ -2527,7 +2527,7 @@ footer .comment-box {
 
 .entry-content pre.code {
   margin: 15px 16px;
-  padding: 20px 30px 10px 10px;
+  padding: 20px 10px 10px 10px;
   border-radius: 3px;
   /* フォント・メインカラーを変更 */
   font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;

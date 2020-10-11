@@ -2536,8 +2536,10 @@ footer .comment-box {
   /* white 文字色 */
   background: rgba(5, 5, 5, 0.85);
   /* black 背景 */
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll !important;
+  white-space: nowrap !important;
+  /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch !important;
   /* スマホでも滑らかに */
   /* シンタックス・ハイライト */
   /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
