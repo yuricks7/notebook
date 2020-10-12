@@ -137,7 +137,9 @@ body {
 
     /* 外枠 */
     border-radius: 3px;
-    border: tableBorder(3px);
+    border: tableBorder(2px);
+
+    font-size: .95em;
   }
 
   th {
@@ -155,5 +157,13 @@ body {
     }
 
     @include verticalLines();
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* 本文 */
+  .entry-content {
+    font-size: 14px !important;
   }
 }
