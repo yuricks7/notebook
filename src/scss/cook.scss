@@ -105,7 +105,21 @@ body {
   /*--------------------------------------
     テーブルの表示
   --------------------------------------*/
-  $table-border: 1.6px solid #afb8ca;
+  @function tableBorder($thickness) {
+    @return $thickness solid #afb8ca;
+  }
+
+  @mixin verticalLines() {
+    &:nth-child(2) {
+      border-left: tableBorder(2px) !important;
+    }
+
+    &:nth-child(3) {
+      border-right: tableBorder(2px) !important;
+    }
+  }
+
+  $table-border: 3px solid #afb8ca;
   table {
     /*
       はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
@@ -123,25 +137,16 @@ body {
 
     /* 外枠 */
     border-radius: 3px;
-    border: $table-border;
-  }
-
-  @mixin xBorders() {
-    &:nth-child(2) {
-      border-left: $table-border;
-    }
-
-    &:nth-child(3) {
-      border-right: $table-border;
-    }
+    border: tableBorder(3px);
   }
 
   th {
-    @include xBorders();
+    border: none !important;
+    @include verticalLines();
   }
 
   tr {
-    border-bottom: $table-border;
+    border-bottom: tableBorder(1px);
   }
 
   td {
@@ -149,6 +154,6 @@ body {
       text-align: center;
     }
 
-    @include xBorders();
+    @include verticalLines();
   }
 }

@@ -102,19 +102,23 @@ body {
   /* スマホでも滑らかに */
   /* 外枠 */
   border-radius: 3px;
-  border: 1.6px solid #afb8ca;
+  border: 3px solid #afb8ca;
+}
+
+.entry-content th {
+  border: none !important;
 }
 
 .entry-content th:nth-child(2) {
-  border-left: 1.6px solid #afb8ca;
+  border-left: 2px solid #afb8ca !important;
 }
 
 .entry-content th:nth-child(3) {
-  border-right: 1.6px solid #afb8ca;
+  border-right: 2px solid #afb8ca !important;
 }
 
 .entry-content tr {
-  border-bottom: 1.6px solid #afb8ca;
+  border-bottom: 1px solid #afb8ca;
 }
 
 .entry-content td:nth-child(1) {
@@ -122,10 +126,10 @@ body {
 }
 
 .entry-content td:nth-child(2) {
-  border-left: 1.6px solid #afb8ca;
+  border-left: 2px solid #afb8ca !important;
 }
 
 .entry-content td:nth-child(3) {
-  border-right: 1.6px solid #afb8ca;
+  border-right: 2px solid #afb8ca !important;
 }
 /*# sourceMappingURL=cook.css.map */
