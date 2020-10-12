@@ -5,20 +5,40 @@
  * 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
  * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
  */
-var codeBlocks = document.getElementsByClassName('code');
+const main = () => {
 
-[].forEach.call(codeBlocks, function(e) {
-  if (!/lang/.test(e.className)) {
-      return;
-  }
+  let codeBlocks = document.getElementsByClassName('code');
 
-  var lines     = e.innerHTML.split(/\n/);
-  var codeBlock = "";
-  lines.forEach(function(line){
-    if(line != ""){
-      codeBlock += '<div class="code-line">' + line + '</div>';
-    }
-  })
+  // ノードのリストで配列ライクに`forEachメソッド`を使う
+  // https://www.it-swarm-ja.tech/ja/javascript/javascript%E3%81%A7-foreachcall%EF%BC%88%EF%BC%89%E3%81%AF%E4%BD%95%E3%82%92%E3%81%97%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F/1072215681/
+  let nodeList = [];
+  nodeList.forEach.call(codeBlocks, function (e) {
+    // 言語の指定がなければ飛ばす
+    if (!/lang/.test(e.className)) return;
 
-  e.innerHTML = codeBlock;
-});
+    e.innerHTML = addRowNumbers(e);
+  });
+}
+
+/**
+ * 1行ごとに行番号付与用のクラスを追加する
+ *
+ * @param {object} e 元のCodeBlock要素
+ *
+ * @return {object} "code-line"クラスを付与し直したHTML（文字列？）
+ */
+const addRowNumbers = (e) => {
+  let codeLine = "";
+  const lines   = e.innerHTML.split(/\n/); // 改行で区切り
+  lines.forEach((line, i) => {
+    // if (line === "") return; 　　　　  // 空行は飛ばさない！
+    if (i === lines.length - 1) return; // 最終行は飛ばす（<pre>が改行されている前提）
+
+    codeLine += '<div class="code-line">' + line + '</div>';
+  });
+
+  return codeLine;
+}
+
+// エントリーポイント
+main();
