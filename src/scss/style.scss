@@ -852,17 +852,20 @@ footer {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
-  .serialized-label {
-    margin-left: 8px;
-    padding    : 2px !important; // 効いてないかも？
+  .serialized-label { @include labels($char-red,  .85em); }
 
-    background: $char-red;
-    color           : white;
-  }
+  /* 各種ラベル */
+  .red-label   { @include labels($char-red,   .85em); }
+  .blue-label  { @include labels($char-blue,  .85em); }
+  .green-label { @include labels($char-green, .85em); }
 
   /* 文中の文字 */
   .red {
     color: $char-red;
+  }
+
+  .blue {
+    color: $char-blue;
   }
 
   .note {

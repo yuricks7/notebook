@@ -2312,14 +2312,51 @@ footer .comment-box {
 }
 
 .entry-content .serialized-label {
-  margin-left: 8px;
-  padding: 2px !important;
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
   background: #d32f2f;
   color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .red-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: #d32f2f;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .blue-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: darkblue;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .green-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: #009130;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
 }
 
 .entry-content .red {
   color: #d32f2f;
+}
+
+.entry-content .blue {
+  color: blue;
 }
 
 .entry-content .note {
@@ -2537,8 +2574,10 @@ footer .comment-box {
   /* white 文字色 */
   background: rgba(5, 5, 5, 0.85);
   /* black 背景 */
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll !important;
+  white-space: nowrap !important;
+  /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch !important;
   /* スマホでも滑らかに */
   /* シンタックス・ハイライト */
   /* (明るめの水色) 特殊文字・記号（←変数名とか？） */

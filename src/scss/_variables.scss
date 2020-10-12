@@ -96,6 +96,9 @@
 --------------------------------------*/
 $char-white: #f0f0f0;
 $char-red  : #d32f2f;
+$char-blue : darkblue;
+$char-green: #009130;
+
 @function themeColor($density) {
   @return rgba(29, 138, 255, $density);
 }
@@ -117,7 +120,7 @@ $char-red  : #d32f2f;
 }
 
 @mixin linkColors($default: highlighter(.9),
-                  $visited: #009130) {
+                  $visited: $char-green) {
   text-decoration: none !important;
 
   a {
@@ -141,8 +144,8 @@ $char-red  : #d32f2f;
 /*--------------------------------------
   サイズ
 --------------------------------------*/
-$module-radius: 8px;
-$side-margin: 10px;
+$module-radius:  8px;
+$side-margin  : 10px;
 
 /*--------------------------------------
   パーツ
@@ -160,10 +163,16 @@ $side-margin: 10px;
   }
 }
 
-@mixin footnoteParts() {
-  font-size   : .85em;
-  font-weight : bold;
-  vertical-align: top;
+@mixin labels($color,
+              $font-size: .85em) {
+  margin : auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+
+  background: $color;
+  color     : white;
+  text-align: center;
+  font-size : $font-size;
 }
 
 @mixin kaerebaLinkBtns() {
@@ -208,6 +217,12 @@ $side-margin: 10px;
   }
 
   img { display: none; }
+}
+
+@mixin footnoteParts() {
+  font-size  : .85em;
+  font-weight: bold;
+  vertical-align: top;
 }
 
 @mixin shareBtns($width, $height) {
