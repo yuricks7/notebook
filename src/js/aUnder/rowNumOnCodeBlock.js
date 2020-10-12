@@ -12,13 +12,13 @@ const main = () => {
   // ノードのリストで配列ライクに`forEachメソッド`を使う
   // https://www.it-swarm-ja.tech/ja/javascript/javascript%E3%81%A7-foreachcall%EF%BC%88%EF%BC%89%E3%81%AF%E4%BD%95%E3%82%92%E3%81%97%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F/1072215681/
   let nodeList = [];
-  nodeList.forEach.call(codeBlocks, function (e) {
+  nodeList.forEach.call(codeBlocks, (e) => {
     // 言語の指定がなければ飛ばす
     if (!/lang/.test(e.className)) return;
 
     e.innerHTML = addRowNumbers(e);
   });
-}
+};
 
 /**
  * 1行ごとに行番号付与用のクラスを追加する
@@ -38,7 +38,7 @@ const addRowNumbers = (e) => {
   });
 
   return codeLine;
-}
+};
 
 // エントリーポイント
 main();
