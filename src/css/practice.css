@@ -2050,6 +2050,7 @@ footer .comment-box {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
+  /* 各種ラベル */
   /* 文中の文字 */
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
@@ -2356,7 +2357,7 @@ footer .comment-box {
 }
 
 .entry-content .blue {
-  color: blue;
+  color: darkblue;
 }
 
 .entry-content .note {

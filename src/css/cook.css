@@ -5,6 +5,7 @@
 }
 
 .embed-card + a {
+  text-decoration: none;
   font-size: .8em;
 }
 
