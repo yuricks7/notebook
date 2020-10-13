@@ -717,15 +717,17 @@ footer {
   }
 
   s {
+    text-decoration: none;
+
+    /* 赤線 */
+    background-image:
+      linear-gradient($char-red, $char-red);
+    background-position: 0 50%;
+    background-size    : 100% 3px;
+    background-repeat  : repeat-x;
+
     /* グレーアウト */
     color: rgb(148, 148, 148);
-
-    code {
-      background: rgb(200, 200, 200);
-
-      color: $char-white !important;
-      font-style: italic;
-    }
   }
 
   img[alt] {
@@ -850,20 +852,17 @@ footer {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
-  .serialized-label { @include labels($char-red,  .85em); }
+  .serialized-label {
+    margin-left: 8px;
+    padding    : 2px !important; // 効いてないかも？
 
-  /* 各種ラベル */
-  .red-label   { @include labels($char-red,   .85em); }
-  .blue-label  { @include labels($char-blue,  .85em); }
-  .green-label { @include labels($char-green, .85em); }
+    background: $char-red;
+    color           : white;
+  }
 
   /* 文中の文字 */
   .red {
     color: $char-red;
-  }
-
-  .blue {
-    color: $char-blue;
   }
 
   .note {
@@ -1123,7 +1122,7 @@ footer {
     background : charBlack(.85); /* black 背景 */
 
     overflow-x : scroll !important; // 効かないかも
-    white-space: nowrap !important; /* 自動改行をoff */
+    white-space: pre    !important; /* 自動改行をoff、インデントは維持 */
     -webkit-overflow-scrolling: touch !important; /* スマホでも滑らかに */
 
     /* シンタックス・ハイライト */

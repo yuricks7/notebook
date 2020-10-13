@@ -25,20 +25,24 @@ const main = () => {
  *
  * @param {object} e 元のCodeBlock要素
  *
- * @return {object} "code-line"クラスを付与し直したHTML（文字列？）
+ * @return {String} "code-line"クラスを付与し直したHTMLの文字列
  */
 const addRowNumbers = (e) => {
   let codeLine = "";
+  const  open_tag = '<div class="code-line">';
+  const close_tag = '</div>';
   const lines   = e.innerHTML.split(/\n/); // 改行で区切り
   lines.forEach((line, i) => {
     // if (line === "") return; 　　　　  // 空行は飛ばさない！
     if (i === lines.length - 1) return; // 最終行は飛ばす（<pre>が改行されている前提）
 
-    codeLine += '<div class="code-line">' + line + '</div>';
+    codeLine += open_tag + line + close_tag;
   });
 
   return codeLine;
 };
 
-// エントリーポイント
+/**
+ * エントリーポイント
+ */
 main();
