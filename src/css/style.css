@@ -2174,6 +2174,12 @@ footer .comment-box {
   color: #949494;
 }
 
+.entry-content s code {
+  background: #c8c8c8;
+  color: #f0f0f0 !important;
+  font-style: italic;
+}
+
 .entry-content img[alt] {
   color: rgba(5, 5, 5, 0.5);
   font-size: .8em;
