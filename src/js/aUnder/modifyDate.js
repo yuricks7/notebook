@@ -17,37 +17,22 @@
  * http://opensource.org/licenses/mit-license.php
  */
 const main = ($) => {
-
-  // 厳格モード
-  // 【JavasScript】use strictとは - Qiita
-  // https://qiita.com/miri4ech/items/ffcebaf593f5baa1c112
   'use strict';
 
   let urls = [];
-  let opts = {
-    cache   : false,
-    dataType: 'xml'
-  };
-
-  const src = "https://www.yuru-wota.com/sitemap_index.xml";
-  let parsedXml;
-  parsedXml = parseSitemapXML(src);
-  parsedXml.done(function () { findURL(urls[0]) });
-  parsedXml.fail(function (error) {});
+  let opts = { cache: false, dataType: 'xml' };
 
   const parseSitemapXML = (url) => {
     let d = new $.Deferred;
-
-    // Ajax通信でデータを取得
-    $.ajax( $.extend(opts, {url: url}) ).done(function(xml) {
+    $.ajax($.extend(opts, {url: url})).done(function (xml) {
       // <loc>タグの要素を順に格納
       $(xml).find('sitemap').each(function () {
-        urls.push( $(this).find('loc').text() );
+        urls.push($(this).find('loc').text());
       });
 
       d.resolve();
 
-    }).fail( () => {
+    }).fail(function () {
       d.reject();
 
     });
@@ -56,23 +41,24 @@ const main = ($) => {
   }
 
   const findURL = (url) => {
-    // Ajax通信でデータを取得
-    $.ajax( $.extend(opts, {url: url}) ).done(function (xml) {
+    $.ajax( $.extend(opts, {url: url} )).done(function (xml) {
       let isMatched = false;
-
       $(xml).find('url').each(function () {
+        // <loc>タグの要素を取得して、リンク先（の一覧）と一致するもののみ使用する
         let $this = $(this);
         if ($this.find('loc').text() !== location.href) return;
-
-        // <loc>タグのURLを確認して、日付を格納
         isMatched = true;
+
+        // 日付を格納する
         appendLastmod($this.find('lastmod').text());
+
         return false;
       });
 
-      if (!isMatched) nextURL();
+      if (!isMatched) nextURL(); // 再帰
+    }).fail(function () {
 
-    }).fail(function () { });
+    });
   }
 
   const nextURL = () => {
@@ -85,15 +71,15 @@ const main = ($) => {
     const lastDate = lastmod.split('T');
     const dateElements = lastDate[0].split('-');
 
-    let $container  = $('<div></div>', {'class': 'lastmod'});
+    let $container =  $('<div></div>', {'class': 'lastmod'});
     $container.append($(spanTag, {'class': 'date-year' }).text(dateElements[0]));
     $container.append($(spanTag, {'class': 'hyphen'    }).text('-'));
     $container.append($(spanTag, {'class': 'date-month'}).text(dateElements[1]));
     $container.append($(spanTag, {'class': 'hyphen'    }).text('-'));
     $container.append($(spanTag, {'class': 'date-day'  }).text(dateElements[2]));
 
-    const tag = $('.entry-header > .date').get(0).tagName.toLowerCase();
-    if (tag === 'span') {
+    const position = $('.entry-header > .date').get(0).tagName.toLowerCase();
+    if (position === 'span') {
       $('.entry-title').before($container);
 
     } else {
@@ -101,14 +87,20 @@ const main = ($) => {
 
     }
   }
-};
+
+  let p;
+  const SITEMAP = 'https://www.yuru-wota.com/sitemap_index.xml';
+  p = parseSitemapXML(SITEMAP);
+  p.done(function () { findURL(urls[0]) });
+  p.fail(function (error) { });
+}
 
 /**
  * エントリーポイント
  */
-(main($))(jQuery);
+// (main($))(jQuery);
 
-// /**
-//  * 外部から呼び出し可
-//  */
-// export { main };
+/**
+ * 外部から呼び出し可
+ */
+export { main };
