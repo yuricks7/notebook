@@ -88,17 +88,11 @@ const main = ($) => {
     }
   }
 
-  let p;
   const SITEMAP = 'https://www.yuru-wota.com/sitemap_index.xml';
-  p = parseSitemapXML(SITEMAP);
-  p.done(function () { findURL(urls[0]) });
-  p.fail(function (error) { });
+  let parsedXml = parseSitemapXML(SITEMAP);
+  parsedXml.done(function () { findURL(urls[0]) });
+  parsedXml.fail(function (error) { });
 }
-
-/**
- * エントリーポイント
- */
-// (main($))(jQuery);
 
 /**
  * 外部から呼び出し可
