@@ -16,33 +16,38 @@
  * Released under the MIT license:
  * http://opensource.org/licenses/mit-license.php
  */
-function ($) {
+const main = ($) => {
 
   // 厳格モード
   // 【JavasScript】use strictとは - Qiita
   // https://qiita.com/miri4ech/items/ffcebaf593f5baa1c112
   'use strict';
 
-  let urls = [],
-      opts = {
-        cache: false,
-        dataType: 'xml'
-      },
-      p,
-      url = 'https://www.yuru-wota.com/sitemap_index.xml';
+  let urls = [];
+  let opts = {
+    cache   : false,
+    dataType: 'xml'
+  };
+
+  const src = "https://www.yuru-wota.com/sitemap_index.xml";
+  let parsedXml;
+  parsedXml = parseSitemapXML(src);
+  parsedXml.done(function () { findURL(urls[0]) });
+  parsedXml.fail(function (error) {});
 
   const parseSitemapXML = (url) => {
     let d = new $.Deferred;
 
-    $.ajax( $.extend(opts, { url: url }) ).done(
-      function(xml) {
-        $(xml).find('sitemap').each(function () {
-          urls.push($(this).find('loc').text());
-        });
+    // Ajax通信でデータを取得
+    $.ajax( $.extend(opts, {url: url}) ).done(function(xml) {
+      // <loc>タグの要素を順に格納
+      $(xml).find('sitemap').each(function () {
+        urls.push( $(this).find('loc').text() );
+      });
 
-        d.resolve();
-      }
-    ).fail( () => {
+      d.resolve();
+
+    }).fail( () => {
       d.reject();
 
     });
@@ -50,41 +55,45 @@ function ($) {
     return d.promise();
   }
 
+  const findURL = (url) => {
+    // Ajax通信でデータを取得
+    $.ajax( $.extend(opts, {url: url}) ).done(function (xml) {
+      let isMatched = false;
+
+      $(xml).find('url').each(function () {
+        let $this = $(this);
+        if ($this.find('loc').text() !== location.href) return;
+
+        // <loc>タグのURLを確認して、日付を格納
+        isMatched = true;
+        appendLastmod($this.find('lastmod').text());
+        return false;
+      });
+
+      if (!isMatched) nextURL();
+
+    }).fail(function () { });
+  }
+
   const nextURL = () => {
     urls.shift();
     if (urls.length) findURL(urls[0]);
   }
 
-  const findURL = (url) => {
-    $.ajax( $.extend(opts, { url: url }) ).done(
-      function (xml) {
-        let isMatched = false;
+  const appendLastmod = (lastmod) => {
+    const spanTag  = '<span></span>';
+    const lastDate = lastmod.split('T');
+    const dateElements = lastDate[0].split('-');
 
-        $(xml).find('url').each(function () {
-          let $this = $(this);
+    let $container  = $('<div></div>', {'class': 'lastmod'});
+    $container.append($(spanTag, {'class': 'date-year' }).text(dateElements[0]));
+    $container.append($(spanTag, {'class': 'hyphen'    }).text('-'));
+    $container.append($(spanTag, {'class': 'date-month'}).text(dateElements[1]));
+    $container.append($(spanTag, {'class': 'hyphen'    }).text('-'));
+    $container.append($(spanTag, {'class': 'date-day'  }).text(dateElements[2]));
 
-          if ($this.find('loc').text() === location.href) {
-            isMatched = true;
-            appendLastmod($this.find('lastmod').text());
-            return false;
-          }
-        });
-
-        if (!isMatched) nextURL();
-      }
-    ).fail(function () { });
-  }
-
-  function appendLastmod(lastmod) {
-    let lastDate   = lastmod.split('T');
-    let $container =  $('<div></div>',   { 'class': 'lastmod' });
-    $container.append($('<span></span>', { 'class': 'date-year'  }).text(lastDate[0].split('-')[0]));
-    $container.append($('<span></span>', { 'class': 'hyphen'     }).text('-'));
-    $container.append($('<span></span>', { 'class': 'date-month' }).text(lastDate[0].split('-')[1]));
-    $container.append($('<span></span>', { 'class': 'hyphen'     }).text('-'));
-    $container.append($('<span></span>', { 'class': 'date-day'   }).text(lastDate[0].split('-')[2]));
-
-    if ($('.entry-header > .date').get(0).tagName.toLowerCase() === 'span') {
+    const tag = $('.entry-header > .date').get(0).tagName.toLowerCase();
+    if (tag === 'span') {
       $('.entry-title').before($container);
 
     } else {
@@ -92,8 +101,14 @@ function ($) {
 
     }
   }
-
-  p = parseSitemapXML(url);
-  p.done(function () { findURL(urls[0]) });
-  p.fail(function (error) { });
 };
+
+/**
+ * エントリーポイント
+ */
+(main($))(jQuery);
+
+// /**
+//  * 外部から呼び出し可
+//  */
+// export { main };

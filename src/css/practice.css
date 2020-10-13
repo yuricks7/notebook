@@ -2050,7 +2050,6 @@ footer .comment-box {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
-  /* 各種ラベル */
   /* 文中の文字 */
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
@@ -2171,6 +2170,13 @@ footer .comment-box {
 }
 
 .entry-content s {
+  text-decoration: none;
+  /* 赤線 */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d32f2f), to(#d32f2f));
+  background-image: linear-gradient(#d32f2f, #d32f2f);
+  background-position: 0 50%;
+  background-size: 100% 3px;
+  background-repeat: repeat-x;
   /* グレーアウト */
   color: #949494;
 }
@@ -2306,51 +2312,14 @@ footer .comment-box {
 }
 
 .entry-content .serialized-label {
-  margin: auto 4px auto 0;
-  padding: 4px;
-  border-radius: 3px;
+  margin-left: 8px;
+  padding: 2px !important;
   background: #d32f2f;
   color: white;
-  text-align: center;
-  font-size: 0.85em;
-}
-
-.entry-content .red-label {
-  margin: auto 4px auto 0;
-  padding: 4px;
-  border-radius: 3px;
-  background: #d32f2f;
-  color: white;
-  text-align: center;
-  font-size: 0.85em;
-}
-
-.entry-content .blue-label {
-  margin: auto 4px auto 0;
-  padding: 4px;
-  border-radius: 3px;
-  background: darkblue;
-  color: white;
-  text-align: center;
-  font-size: 0.85em;
-}
-
-.entry-content .green-label {
-  margin: auto 4px auto 0;
-  padding: 4px;
-  border-radius: 3px;
-  background: #009130;
-  color: white;
-  text-align: center;
-  font-size: 0.85em;
 }
 
 .entry-content .red {
   color: #d32f2f;
-}
-
-.entry-content .blue {
-  color: darkblue;
 }
 
 .entry-content .note {
@@ -2569,8 +2538,8 @@ footer .comment-box {
   background: rgba(5, 5, 5, 0.85);
   /* black 背景 */
   overflow-x: scroll !important;
-  white-space: nowrap !important;
-  /* 自動改行をoff */
+  white-space: pre    !important;
+  /* 自動改行をoff、インデントは維持 */
   -webkit-overflow-scrolling: touch !important;
   /* スマホでも滑らかに */
   /* シンタックス・ハイライト */
