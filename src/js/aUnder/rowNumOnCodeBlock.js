@@ -43,6 +43,6 @@ const addRowNumbers = (e) => {
 };
 
 /**
- * エントリーポイント
+ * 外部から呼び出し可
  */
-main();
+export { main };

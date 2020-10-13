@@ -7,19 +7,38 @@
  * 【使用ライブラリ】
  * [Name] jQuery (1.9.1)
  */
-$(function() {
-  var $Contents = $(".table-of-contents");
-  $($Contents).before(
-    '目次<span class="show-area" style="color: blue;">[▼表示]</span>'
-  );
-  $(".show-area").click(function() {
-    var $this = $(this);
-    if ($Contents.css('display') == 'none') {
-      $Contents.slideDown(100),
-      $this.text("[▲隠す]");
+const main = () => {
+  const editableClass = "show-area";
+  const btn = {
+    open : "[▼表示]",
+    close: "[▲隠す]",
+  }
+
+  let $Contents = $(".table-of-contents");
+  const tag = {
+    open : `<span class="${editableClass}" style="color: blue;">`,
+    close: '</span>',
+  }
+  $($Contents).before('目次' + tag.open + btn.open + tag.close);
+
+  const slideDuration = 100;
+  $("." + editableClass).click(function() {
+    let $this = $(this);
+
+    // CSSを編集して切り替える
+    if ($Contents.css('display') === 'none') {
+      $Contents.slideDown(slideDuration),
+      $this.text(btn.close);
+
     } else {
-      $Contents.slideUp(100),
-      $this.text("[▼表示]");
+      $Contents.slideUp(slideDuration),
+      $this.text(btn.open);
+
     };
   });
-});
+}
+
+/**
+ * 外部から呼び出し可
+ */
+export { main };

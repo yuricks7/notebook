@@ -16,68 +16,84 @@
  * Released under the MIT license:
  * http://opensource.org/licenses/mit-license.php
  */
-(function ($) {
+function ($) {
+
+  // 厳格モード
+  // 【JavasScript】use strictとは - Qiita
+  // https://qiita.com/miri4ech/items/ffcebaf593f5baa1c112
   'use strict';
-  var urls = [],
-      opts = { cache: false, dataType: 'xml' },
+
+  let urls = [],
+      opts = {
+        cache: false,
+        dataType: 'xml'
+      },
       p,
-      url  = 'https://www.yuru-wota.com/sitemap_index.xml';
+      url = 'https://www.yuru-wota.com/sitemap_index.xml';
 
-  function parseSitemapXML(url) {
-    var d = new $.Deferred;
+  const parseSitemapXML = (url) => {
+    let d = new $.Deferred;
 
-    $.ajax($.extend(opts, { url: url })).done(function (xml) {
-      $(xml).find('sitemap').each(function () {
-        urls.push($(this).find('loc').text());
-      });
-      d.resolve();
+    $.ajax( $.extend(opts, { url: url }) ).done(
+      function(xml) {
+        $(xml).find('sitemap').each(function () {
+          urls.push($(this).find('loc').text());
+        });
 
-    }).fail(function () {
+        d.resolve();
+      }
+    ).fail( () => {
       d.reject();
 
     });
+
     return d.promise();
   }
 
-  function findURL(url) {
-    $.ajax($.extend(opts, { url: url })).done(function (xml) {
-      var isMatched = false;
-      $(xml).find('url').each(function () {
-        var $this = $(this);
-
-        if ($this.find('loc').text() === location.href) {
-          isMatched = true;
-          appendLastmod($this.find('lastmod').text());
-          return false;
-        }
-      });
-
-      if (!isMatched) nextURL();
-    }).fail(function () { });
-  }
-
-  function nextURL() {
+  const nextURL = () => {
     urls.shift();
     if (urls.length) findURL(urls[0]);
   }
 
+  const findURL = (url) => {
+    $.ajax( $.extend(opts, { url: url }) ).done(
+      function (xml) {
+        let isMatched = false;
+
+        $(xml).find('url').each(function () {
+          let $this = $(this);
+
+          if ($this.find('loc').text() === location.href) {
+            isMatched = true;
+            appendLastmod($this.find('lastmod').text());
+            return false;
+          }
+        });
+
+        if (!isMatched) nextURL();
+      }
+    ).fail(function () { });
+  }
+
   function appendLastmod(lastmod) {
-    var lastDate   = lastmod.split('T');
-    var $container =  $('<div></div>',   { 'class': 'lastmod' });
-    $container.append($('<span></span>', { 'class': 'date-year' }).text(lastDate[0].split('-')[0]));
-    $container.append($('<span></span>', { 'class': 'hyphen' }).text('-'));
+    let lastDate   = lastmod.split('T');
+    let $container =  $('<div></div>',   { 'class': 'lastmod' });
+    $container.append($('<span></span>', { 'class': 'date-year'  }).text(lastDate[0].split('-')[0]));
+    $container.append($('<span></span>', { 'class': 'hyphen'     }).text('-'));
     $container.append($('<span></span>', { 'class': 'date-month' }).text(lastDate[0].split('-')[1]));
-    $container.append($('<span></span>', { 'class': 'hyphen' }).text('-'));
-    $container.append($('<span></span>', { 'class': 'date-day' }).text(lastDate[0].split('-')[2]));
+    $container.append($('<span></span>', { 'class': 'hyphen'     }).text('-'));
+    $container.append($('<span></span>', { 'class': 'date-day'   }).text(lastDate[0].split('-')[2]));
 
     if ($('.entry-header > .date').get(0).tagName.toLowerCase() === 'span') {
       $('.entry-title').before($container);
+
     } else {
       $('.entry-date').append($container);
+
     }
   }
 
   p = parseSitemapXML(url);
   p.done(function () { findURL(urls[0]) });
   p.fail(function (error) { });
-})(jQuery);
+};
