@@ -11,7 +11,14 @@
  * 【使用ライブラリ】
  * [Name] jQuery (1.12.3)
  */
-$('.lazy').lazyload({
-  effect    : 'fadeIn',
-  threshold : 200 // 表示位置の閾値（10pxの距離まで近づいたら表示する）
-});
+function main() {
+  $('.lazy').lazyload({
+    effect    : 'fadeIn',
+    threshold : 200 // 表示位置の閾値（10pxの距離まで近づいたら表示する）
+  });
+}
+
+/**
+ * 外部から呼び出し可
+ */
+export { main };
