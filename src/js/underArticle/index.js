@@ -4,4 +4,4 @@ import { main as addRowNumbersOnCodeBlocks} from "./rowNumOnCodeBlock.js";
 
 addTocOnBody();
 addRowNumbersOnCodeBlocks();
-(addModifyDate($))(jQuery); // 他の関数が実行できないので最後に置く。
+// (addModifyDate($))(jQuery); // 他の関数が実行できないので最後に置く。
