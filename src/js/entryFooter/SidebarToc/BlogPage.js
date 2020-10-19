@@ -16,23 +16,23 @@ class BlogPage {
 
     // 目次モジュール用
     this.categories = [{
-      class  : "page-entry",
-      title  : "目次",
-      display: true,
+      class: "page-entry",
+      title: "目次",
+      canDisplay: true,
     }, {
-      class  : "page-index",
-      title  : "このページの記事一覧",
-      display: true,
+      class: "page-index",
+      title: "このページの記事一覧",
+      canDisplay    : true,
       canListUpPages: true,
     }, {
-      class  : "page-archive",
-      title  : "このカテゴリーの記事一覧",
-      display: true,
+      class: "page-archive",
+      title: "このカテゴリーの記事一覧",
+      canDisplay    : true,
       canListUpPages: true,
     }, {
-      class  : "page-static_page",
-      title  : "entry-title",
-      display: false,
+      class: "page-static_page",
+      title: "entry-title",
+      canDisplay: false,
     }];
 
     // メディアクエリ
@@ -81,7 +81,7 @@ class BlogPage {
       category = categories[i];
 
       if(!bodyClassList.contains(category.class)) continue;
-      if(!category.display) break;
+      if(!category.canDisplay) break;
 
       console.log(`page: ${category.class}`);
       break;

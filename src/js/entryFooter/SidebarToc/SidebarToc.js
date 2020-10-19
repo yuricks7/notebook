@@ -130,11 +130,18 @@ class SidebarToc {
 
   /**
    * 目次要素全体を非表示にする
+   *
+   * @param {boolean} canHide
+   *
+   * @return {boolean} 処理続行の可否
    */
-  hide() {
-    this.module.style.display = "none";
+  hide(canHide) {
+    if (!canHide) return true;
 
+    this.module.style.display = "none";
     console.log("%c---sidebar toc is hidden---", "color: blue");
+
+    return false;
   }
 
   /**
@@ -170,6 +177,7 @@ class SidebarToc {
 
     this.element.contents     = elmContents;
     this.element.ContentTexts = elmContentTexts;
+
     return;
   }
 
@@ -215,100 +223,126 @@ class SidebarToc {
   /**
    * 見出しリストを作成
    *
-   * @param {Boolean} hasTocOnBody
-   * @param {Boolean} canListUpPages
+   * @param {boolean} hasTocOnBody
+   * @param {boolean} canListUpPages
    *
    * @return {Element}
    */
   generateHeadingList(hasTocOnBody, canListUpPages) {
-    let headlines    = [];
-    let currentLevel = 0;
-
-    // タグの設定
-    let line       = "";
-    let closeLine  = "";
-    let layerlevel = 0;
     const htmlOps = new HtmlOps();
     const elmContents     = this.element.contents;
     const elmContentTexts = this.element.contentTexts;
+
+    let headlines = [];
+    let layer     = 0;
     for (let i = 0; i < elmContents.length; i++) {
-      const elmContent = elmContents[i];
-      const text = canListUpPages ? elmContentTexts[i] : elmContent.textContent;
+      let   elem = elmContents[i];
+      const text = canListUpPages ? elmContentTexts[i] : elem.textContent;
 
-      // a要素を作成
-      // （目次記法がある時は、すでにIDが設定されているのでそれを使う）
-      let idName;
-      if (hasTocOnBody) {
-        idName = elmContent.id;
+      // a要素の準備
+      let attrs  = this.setLineAnchor_(hasTocOnBody, i, elem);
+      let idName = attrs.idName;
+      elem = attrs.elem;
 
-      } else {
-        idName = "section" + i;
-        elmContent.setAttribute("id", idName);
+      // 基本の文字列
+      let line = `<li><a href="#${idName}">${htmlOps.escape(text)}</a>`;
 
-      }
+      // 階層を追加
+      let obj;
+      if (!canListUpPages) obj = this.addListTags_(line, elem, layer);
 
-      // 階層を作成
-      if (canListUpPages) continue; // 階層が必要ないページ
-      layerlevel = this.getListLayer_(elmContent);
-
-      closeLine = `<li><a href="#${idName}">${htmlOps.escape(text)}</a>`;
-      line = this.getEndOfLine_(currentLevel, layerlevel) + closeLine;
-
-      headlines.push(line);
-      layerlevel = 0;
+      headlines.push(obj.line);
+      layer = obj.layer; // 次の要素にも使用
     }
 
     this.headlines = headlines;
-
   }
 
   /**
-   * 現在地を探索
+   * a要素を設定する
+   *
+   * @param {boolean} hasTocOnBody 
+   * @param {number}  i 
+   * @param {Element} elem 
+   *
+   * @return {object} id名と、それを設定した要素
+   */
+  setLineAnchor_(hasTocOnBody, i, elem) {
+    let idName;
+
+    // 本文に目次記法がある時は、すでにIDが設定されているので流用する
+    if (hasTocOnBody) {
+      idName = elem.id;
+
+    } else {
+      idName = `section${i}`;
+      elem.setAttribute('id', idName);
+
+    }
+
+    return {
+      elem  : elem,
+      idName: idName
+    }
+  }
+
+  /**
+   * 階層に合わせてタグを追加する
+   *
+   * @param {string}  line 
+   * @param {Element} elem 
+   * @param {number}  layer 
+   *
+   * @return {object} 生成した文字列と、現在の階層
+   */
+  addListTags_(line, elem, layer) {
+    const tag   = this.headline.tag;
+    let heading = this.getHeadingIndex_(elem);
+
+    while (heading > layer) {
+      line = `<${tag}>${line}`;
+      layer++;
+    }
+
+    while (heading < layer) {
+      line = `</${tag}></li>${line}`;
+      layer--;
+    }
+
+    return {
+      line: line,
+      layer: layer
+    }
+  }
+
+  /**
+   * 出力する階層を取得
    *
    * @param {Element} elem
    *
-   * @return {number} 階層
+   * @return {number}
    */
-  getListLayer_(elem) {
-    const nodeName   = elem.nodeName.toLowerCase();
-    const sourceTags = this.headline.sources;
+  getHeadingIndex_(elem) {
+    const srcTags  = this.headline.sources;
+    const nodeName = elem.nodeName.toLowerCase();
 
-    for (let i = 1; i < sourceTags.length; i++) {
-      if (nodeName === sourceTags[i]) return i;
-    }
-  }
+    let layer = 0;
+    for (let i = 0; i < srcTags.length; i++) {
+      if (nodeName !== srcTags[i]) continue;
 
-  /**
-   * 見出しリストに追加
-   *
-   * @param {number} currentLevel
-   * @param {number} layerlevel
-   *
-   * @return {string} HTML
-   */
-  getEndOfLine_(currentLevel, layerlevel) {
-    let line = "";
-    const tag = this.headline.tag;
-
-    while (currentLevel < layerlevel) {
-      line = `<${tag}>`;
-      currentLevel++;
+      layer = i;
+      break;
     }
 
-    while (currentLevel > layerlevel) {
-      line = `</${tag}></li>`;
-      currentLevel--;
-    }
-
-    return line;
+    return layer;
   }
 
   /**
    * モジュールタイトルの追加（設定によっては追加しない）
    *
-   * @param {string}   pageListTitle 内容
-   * @param {boolean}  canListUpPages 内容
-   * @param {BlogPage} blogPage 内容
+   * @param {string}   pageListTitle 
+   * @param {boolean}  canListUpPages 
+   * @param {BlogPage} blogPage 
    *
    * @return {string} 表示用のモジュール名
    */

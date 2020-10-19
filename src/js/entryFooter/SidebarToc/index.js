@@ -30,10 +30,10 @@ const index = () => {
 
   // ページの種類を判定
   let pageCategory = blogPage.getCategory();
-  if (!pageCategory) { // 表示不要なら「非表示」にして処理終了
-    stoc.hide();
-    return; // 終了
-  }
+
+  // 表示自体不要なら「非表示」にして処理終了
+  let canContinue = stoc.hide(!pageCategory.canDisplay);
+  if (!canContinue) return; // 終了
 
   // 目次記法の目次にもスムーズスクロールを適用
   const canListUpPages = pageCategory.canListUpPages;
@@ -43,10 +43,8 @@ const index = () => {
   if (!canListUpPages) hasTocOnBody = setSmoothScrollTocOnBody(elmMainInner);
 
   // タッチデバイスで動かさない設定の時は、「非表示」にして終了
-  if (stoc.touch.isDisable) {
-    stoc.hide();
-    return; // 終了
-  }
+  canContinue = stoc.hide(stoc.touch.isDisable);
+  if (!canContinue) return; // 終了
 
   // 見出しリストを作成
   stoc.getHeadLineSources(blogPage, canListUpPages);
