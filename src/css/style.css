@@ -2169,6 +2169,10 @@ footer .comment-box {
   font-size: 1.03em;
 }
 
+.entry-content u kbd {
+  text-decoration: underline !important;
+}
+
 .entry-content s {
   /* グレーアウト */
   color: #949494;
