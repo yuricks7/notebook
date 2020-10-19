@@ -20,25 +20,27 @@ const index = () => {
   "use strict";
 
   const blogPage = new BlogPage();
-  const doc  = blogPage.doc;
-  const stoc = new SidebarToc(doc); // 目次モジュール
+  const doc       = blogPage.doc;
+  const classDefs = blogPage.selector.class;
+  const stoc = new SidebarToc(doc, classDefs.moduleTitle); // 目次モジュール
 
   const delay = stoc.delay;
   const m = `%c---sidebar toc---  delay.afterDomLoaded: ${delay.afterDomLoaded}`;
   console.log(m, "color:blue");
   console.time("sidebarToc is added");
 
-  // ページの種類を判定
+  /* -------------------------------------------
+     ページの種類を判定
+   --------------------------------------------- */
   let pageCategory = blogPage.getCategory();
-
-  // 表示自体不要なら「非表示」にして処理終了
-  let canContinue = stoc.hide(!pageCategory.canDisplay);
+  let canContinue  = stoc.hide(!pageCategory.canDisplay);
   if (!canContinue) return; // 終了
 
-  // 目次記法の目次にもスムーズスクロールを適用
+  /* -------------------------------------------
+     目次記法の目次
+   --------------------------------------------- */
   const canListUpPages = pageCategory.canListUpPages;
   const elmMainInner   = blogPage.element.mainInner;
-
   let hasTocOnBody = false;
   if (!canListUpPages) hasTocOnBody = setSmoothScrollTocOnBody(elmMainInner);
 
@@ -46,89 +48,49 @@ const index = () => {
   canContinue = stoc.hide(stoc.touch.isDisable);
   if (!canContinue) return; // 終了
 
-  // 見出しリストを作成
+  /* -------------------------------------------
+     見出しリストを作成
+   --------------------------------------------- */
   stoc.getHeadLineSources(blogPage, canListUpPages);
   stoc.generateHeadingList(hasTocOnBody, canListUpPages);
 
-  // モジュールタイトルの追加
+  /* -------------------------------------------
+     モジュールタイトルの追加（設定によっては追加しない）
+   --------------------------------------------- */
+  const stocModule      = stoc.module;
+  const stocModuleElems = stocModule.elements;
+
+  // 最初に設定されているタイトルを削除して、設定し直す
   const pageListTitle = pageCategory.title;
-  let sidebarTocTitle = stoc.getModuleTitle(pageListTitle, canListUpPages, blogPage);
+  let newStocTitleElem = stoc.setModuleTitle(pageListTitle, canListUpPages, classDefs);
 
-  // // 最初に設定されているタイトルを削除
-  const classDefs = blogPage.selector.class;
-  const clsModuleTitle   = classDefs.moduleTitle;
-  const elmSidebarModule = stoc.module.element;
-  const elmModuleTitles  = elmSidebarModule.getElementsByClassName(clsModuleTitle);
-  const elmModuleTitle   = elmModuleTitles[0];
-  if (elmModuleTitle) elmSidebarModule.removeChild(elmModuleTitle);
+  // ページ頂点への移動を追加
+  const canLinkTitle = stoc.link.canLinkModuleTitle;
+  setScrollToTop(canLinkTitle, stoc, blogPage.window, newStocTitleElem);
 
-  let elmStocTitle = setModuleTitle(
-    sidebarTocTitle, blogPage, stoc, elmSidebarModule
-  );
-
-  // module-bodyにIDを設定
+  /* -------------------------------------------
+     目次本体の追加
+   --------------------------------------------- */
+  // module-bodyにidを設定
   const stocIds = stoc.ids;
-  stoc.module.elementBody.id = stoc.ids.body;
+  stocModuleElems.body.id = stocIds.body;
+  stocModule.element.setAttribute("id", stocIds.module);
 
-  // 目次本体の追加
-  const ol     = doc.createElement("ol");
-  ol.innerHTML = stoc.headlines.join("");
-
-  let elmStoc = stoc.element.main;
-  stoc.element.main.appendChild(ol);
-
-  elmSidebarModule.setAttribute("id", stocIds.module);
+  // 目次本体を追加
+  let elmStoc = stoc.addBody();
   console.log("%c--add toc--", "color:blue");
 
   // a要素一覧の取得とスムーズスクロールの設定
-  const elmStocAnchors = elmStoc.getElementsByTagName("a");
-  const clsSidebarTocAnchors = [];
-  for (let i = 0; i < elmStocAnchors.length; i++) {
-    elmStocAnchors[i].addEventListener("click", clickEvent, false);
-    clsSidebarTocAnchors[i] = elmStocAnchors[i].classList;
-  }
+  const elmStocAnchors = stoc.addAnchors(elmStoc, clickEvent);
+
+
+
 
 
   // 未使用
   const pageCategories = blogPage.categories;
 
-
 }
-
-/**
- * ページ内容に沿ったモジュール名を付与する
- *
- * @param {string}     sidebarTocTitle 
- * @param {BlogPage}   blogPage 
- * @param {SidebarToc} stoc 
- * @param {Element}    elmSidebarModule 
- */
-const setModuleTitle = (sidebarTocTitle, blogPage, stoc, elmSidebarModule) => {
-  if (!sidebarTocTitle) return;
-
-  const htmlOps   = new HtmlOps();
-  const title     = htmlOps.escape(sidebarTocTitle);
-  const titleDiv  = htmlOps.addDiv(blogPage.doc);
-  const classDefs = blogPage.selector.class;
-  titleDiv.id        = stoc.ids.title;
-  titleDiv.className = classDefs.moduleTitle;
-
-  // リンクとスムーズスクロールも追加
-  const canLinkTitle = stoc.link.canLinkModuleTitle;
-  titleDiv.innerHTML = canLinkTitle ? `<a href="#">${title}</a>` : title;
-
-  let elmStocTitle = false;
-  elmStocTitle     = elmSidebarModule.insertBefore(
-    titleDiv,
-    elmSidebarModule.firstElementChild
-  );
-
-  // ページの頂点に移動
-  setScrollToTop(canLinkTitle, stoc, blogPage.window, elmStocTitle);
-
-  return elmStocTitle;
-}
-
 
 /*********************************************
  * 関数宣言

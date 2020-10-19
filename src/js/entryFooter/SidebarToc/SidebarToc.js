@@ -1,4 +1,5 @@
 // import { BlogPage } from "./BlogPage.js";
+import { BlogPage } from "./BlogPage.js";
 import { HtmlOperator as HtmlOps } from "./HtmlOperator.js";
 
 class SidebarToc {
@@ -9,7 +10,7 @@ class SidebarToc {
    * @param {Document} doc ページ
    *
    */
-  constructor(doc) {
+  constructor(doc, moduleTitleClass) {
     this.doc = doc;
 
     // 目次モジュール
@@ -23,10 +24,16 @@ class SidebarToc {
     }
 
     const moduleElement = elmSidebarToc.parentNode.parentNode;
+    const titleElements = moduleElement.getElementsByClassName(moduleTitleClass);
     this.module = {
       element: moduleElement,
       style  : moduleElement.style,
-      elementBody: elmSidebarToc.parentElement,
+
+      elements: {
+        body  : elmSidebarToc.parentElement,
+        titles: titleElements,
+        title : titleElements[0],
+      },
 
       size: {
         marginTop   : 10,
@@ -340,17 +347,44 @@ class SidebarToc {
   /**
    * モジュールタイトルの追加（設定によっては追加しない）
    *
-   * @param {string}   pageListTitle 
-   * @param {boolean}  canListUpPages 
-   * @param {BlogPage} blogPage 
+   * @param {string}  pageListTitle 
+   * @param {boolean} canListUpPages 
+   * @param {object}  classDefs      クラス名のリスト
    *
    * @return {string} 表示用のモジュール名
    */
-  getModuleTitle(pageListTitle, canListUpPages, blogPage) {
+  setModuleTitle(pageListTitle, canListUpPages, classDefs) {
+    const stocModule      = this.module;
+    const stocModuleElems = stocModule.elements;
+    const stocModuleElem  = stocModule.element;
+    const stocTitleElemOrigin = stocModuleElems.title;
+
+    // 最初に設定されているタイトルを削除
+    let newStocTitle
+    = this.getModuleTitle_(pageListTitle, canListUpPages, classDefs);
+
+    if (stocTitleElemOrigin) stocModuleElem.removeChild(stocTitleElemOrigin);
+
+    let newStocTitleElem
+    = this.addModuleTitle_(newStocTitle, stocModuleElem, this.doc, classDefs);
+
+    return newStocTitleElem;
+  }
+
+  /**
+   * モジュールタイトルの追加（設定によっては追加しない）
+   *
+   * @param {string}  pageListTitle 
+   * @param {boolean} canListUpPages 
+   * @param {object}  classDefs      クラス名のリスト
+   *
+   * @return {string} 表示用のモジュール名
+   */
+  getModuleTitle_(pageListTitle, canListUpPages, classDefs) {
     let title = "";
     if (pageListTitle === "") return title;
 
-    const classDefs = blogPage.selector.class;
+    // const classDefs = blogPage.selector.class;
     if ((!canListUpPages) && (pageListTitle === classDefs.entryTitle)) {
       title = elmMainInner.getElementsByClassName(classDefs.entryLink)[0]
                           .textContent;
@@ -365,6 +399,73 @@ class SidebarToc {
     return title;
   }
 
+  /**
+   * ページ内容に沿ったモジュール名を付与する
+   *
+   * @param {string}   newStocTitle 
+   * @param {Element}  stocModuleElem 
+   * @param {Document} doc 
+   * @param {object}   classDefs      クラス名のリスト
+   *
+   * @return {Element} モジュール名の要素
+   */
+  addModuleTitle_(newStocTitle, stocModuleElem, doc, classDefs) {
+    if (!newStocTitle) return;
+
+    const htmlOps   = new HtmlOps();
+    const title     = htmlOps.escape(newStocTitle);
+    const titleDiv  = htmlOps.addDiv(doc);
+    // const classDefs = blogPage.selector.class;
+    titleDiv.id        = this.ids.title;
+    titleDiv.className = classDefs.moduleTitle;
+
+    // リンクとスムーズスクロールも追加
+    const canLinkTitle = this.link.canLinkModuleTitle;
+    titleDiv.innerHTML = canLinkTitle ? `<a href="#">${title}</a>` : title;
+
+    let elmStocTitle = false;
+    elmStocTitle     = stocModuleElem.insertBefore(
+      titleDiv,
+      stocModuleElem.firstElementChild
+    );
+
+    return elmStocTitle;
+  }
+
+  /**
+   * ページ内容に沿ったモジュール名を付与する
+   *
+   * @return {Element} モジュール名の要素
+   */
+  addBody() {
+    const ol     = this.doc.createElement("ol");
+    ol.innerHTML = this.headlines.join("");
+
+    let elemStocBody = this.element.main;
+    elemStocBody.appendChild(ol);
+
+    return elemStocBody;
+  }
+
+  /**
+   * a要素一覧を取得し、スムーズスクロールを設定する
+   *
+   * @param {Element}  elmStoc 
+   * @param {function} reaction 
+   *
+   * @return {Element} elmStocAnchors
+   */
+  addAnchors(elmStoc, reaction) {
+    const elmStocAnchors = elmStoc.getElementsByTagName("a");
+
+    const clsStocAnchors = [];
+    for (let i = 0; i < elmStocAnchors.length; i++) {
+      elmStocAnchors[i].addEventListener("click", reaction, false);
+      clsStocAnchors[i] = elmStocAnchors[i].classList;
+    }
+
+    return elmStocAnchors;
+  }
 
 }
 
