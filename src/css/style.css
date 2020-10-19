@@ -2049,6 +2049,7 @@ footer .comment-box {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
+  /* 各種ラベル */
   /* 文中の文字 */
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
@@ -2311,14 +2312,55 @@ footer .comment-box {
 }
 
 .entry-content .serialized-label {
-  margin-left: 8px;
-  padding: 2px !important;
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
   background: #d32f2f;
   color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .red-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: #d32f2f;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .blue-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: darkblue;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .green-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: #009130;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
 }
 
 .entry-content .red {
   color: #d32f2f;
+}
+
+.entry-content .blue {
+  color: darkblue;
+}
+
+.entry-content .green {
+  color: #009130;
 }
 
 .entry-content .note {
