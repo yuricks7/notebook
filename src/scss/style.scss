@@ -1123,6 +1123,10 @@ footer {
   /*--------------------------------------
     コードブロック
   --------------------------------------*/
+  pre[data-lang=""] {
+    padding-top: 10px !important;
+  }
+
   pre.code {
     margin : 15px ($side-margin + 6px);
     padding: 20px 10px 10px 10px;

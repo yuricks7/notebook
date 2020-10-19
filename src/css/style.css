@@ -2580,6 +2580,10 @@ footer .comment-box {
   vertical-align: top !important;
 }
 
+.entry-content pre[data-lang=""] {
+  padding-top: 10px !important;
+}
+
 .entry-content pre.code {
   margin: 15px 16px;
   padding: 20px 10px 10px 10px;
