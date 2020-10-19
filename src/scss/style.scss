@@ -1207,7 +1207,7 @@ footer {
   --------------------------------------*/
   table {
     margin-left : $side-margin;
-    margin-right: $side-margin;
+    margin-right: calc($side-margin + 30px);
 
     // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
     // https://qiita.com/ymeeto/items/f165576f49f37e28e253
@@ -1215,8 +1215,12 @@ footer {
 
     /* 横スクロール */
     overflow-x: scroll;
-    width: auto;
-    max-width: 980px;
+
+    table-layout: auto;
+    width : 100% !important;
+    height: auto;
+    max-width: 940px;
+    min-width: 100px;
 
     // /* 縦スクロール */
     // overflow-y: scroll;
@@ -1224,13 +1228,18 @@ footer {
     // max-height: 980px;
 
     white-space: nowrap;               /* 自動改行をoff */
-    -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
+    -webkit-overflow-scrolling: touch !important; /* スマホでも滑らかに */
 
     border-radius: 3px;
     border: 1px solid charBlack(.05);
   }
 
+  tbody {
+    width: auto !important;
+  }
+
   th {
+    // width : auto !important;
     background: charBlack(.03) !important;
     line-height: 1.3em;
   }
