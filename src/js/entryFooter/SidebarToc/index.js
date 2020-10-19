@@ -167,8 +167,14 @@ const clickEvent = (e) => {
   const stoc   = new SidebarToc(doc);
   const scroll = stoc.scroll;
 
+  // 一時的に元のコードからコピペ-----------
+  const winHeight   = win.innerHeight;
+  let scrollRange   = Math.max(doc.documentElement.scrollHeight - winHeight, 0);
+  let ghFixedHeight = 0;
+  // ----------------------------------
+
   const hash   = decodeURIComponent(e.currentTarget.hash);
-  const target = scrollTopJs(doc.getElementById(hash.substr(1)))
+  const target = scrollTopJs(win, doc.getElementById(hash.substr(1)))
                - ghFixedHeight + scroll.reactionTime;
 
   if (scroll.isSmooth) {
@@ -180,6 +186,22 @@ const clickEvent = (e) => {
 
   }
 }
+
+/**
+ * $.scrollTop()
+ *
+ * @param {Element} elem
+ * @param {number}  scrollTop
+ *
+ * @return {number} スクロール位置
+ */
+function scrollTopJs(win, elem, scrollTop) {
+  const boundaryTop = elem.getBoundingClientRect().top;
+  const offsetY     = (scrollTop !== void 0 ? scrollTop : win.pageYOffset); // 変数名が不適切かも…
+
+  return boundaryTop + offsetY;
+}
+
 
 /**
  * 縦方向のスムーズスクロール
