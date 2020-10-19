@@ -504,639 +504,431 @@
                       </header>
 
                       <div class="entry-content">
+    <p>Node.js、Claspの順にインストールしていきます。</p>
 
-                        <p>標準モジュールに書いていた処理を、何とか<strong style="font-weight: normal;">クラスモジュール</strong>に移行出来るようになってきました。</p>
+<ul class="table-of-contents">
+    <li><a href="#Claspをインストール">Claspをインストール</a><ul>
+            <li><a href="#nodejsを入れる">node.jsを入れる</a><ul>
+                    <li><a href="#ダウンロード">ダウンロード</a><ul>
+                            <li><a href="#Windowsの64bit版の場合">Windowsの64bit版の場合</a></li>
+                            <li><a href="#それ以外の場合">それ以外の場合</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#インストール">インストール</a></li>
+                    <li><a href="#バージョンを確認">バージョンを確認</a></li>
+                </ul>
+            </li>
+            <li><a href="#Claspを入れる">Claspを入れる</a><ul>
+                    <li><a href="#インストール-1">インストール</a><ul>
+                            <li><a href="#コマンドの意味">コマンドの意味</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#バージョンを確認-1">バージョンを確認</a><ul>
+                            <li><a href="#そんなコマンドは無いよと言われたら">「そんなコマンドは無いよ」と言われたら…</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#Googleアカウントの登録">Googleアカウントの登録</a><ul>
+            <li><a href="#GAS側の設定">GAS側の設定</a><ul>
+                    <li><a href="#GASのプロジェクトを外部から操作できるようにする">GASのプロジェクトを外部から操作できるようにする</a></li>
+                </ul>
+            </li>
+            <li><a href="#Clasp側の設定">Clasp側の設定</a><ul>
+                    <li><a href="#作業用のChromeをアクティブにしておく">作業用のChromeを「アクティブ」にしておく</a></li>
+                    <li><a href="#ClaspにGoogleアカウントを紐付ける">ClaspにGoogleアカウントを紐付ける</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#このシリーズについて">このシリーズについて</a><ul>
+            <li><a href="#連載目次">連載目次</a></li>
+        </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+    <li><a href="#注釈">注釈</a></li>
+</ul>
 
-                        <p>まだ世界がごちゃごちゃですが、記憶の新しいうちにメモを残してみます。</p>
-                        
-                        <p>基本用語・概念については、こちらからどうぞ。
-                        <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FVBA%2FClass-Glossary" title="【VBA】クラスの作り方を整理してみた（基本用語編） - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://www.yuru-wota.com/entry/VBA/Class-Glossary">&#x3010;VBA&#x3011;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F5C;&#x308A;&#x65B9;&#x3092;&#x6574;&#x7406;&#x3057;&#x3066;&#x307F;&#x305F;&#xFF08;&#x57FA;&#x672C;&#x7528;&#x8A9E;&#x7DE8;&#xFF09; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></p>
-                        
-                        <ul class="table-of-contents">
-                          <li><a href="#手順">手順</a>
-                            <ul>
-                              <li><a href="#手続きの流れを考える">手続きの流れを考える</a>
-                                <ul>
-                                  <li><a href="#処理のテーマ">処理のテーマ</a>
-                                    <ul>
-                                      <li><a href="#例手続きの流れ">［例］手続きの流れ</a></li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li><a href="#処理の分解">処理の分解</a>
-                                <ul>
-                                  <li><a href="#処理を区切ってプロシージャを分ける">処理を区切ってプロシージャを分ける</a>
-                                    <ul>
-                                      <li><a href="#例処理をざっくり分割">［例］処理をざっくり分割</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="#出来るだけ共通の処理を抽象化する">出来るだけ共通の処理を抽象化する</a>
-                                    <ul>
-                                      <li><a href="#例処理の抽象化">［例］処理の抽象化</a></li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li><a href="#処理を分類してメソッド化">処理を分類してメソッド化</a>
-                                <ul>
-                                  <li><a href="#似たようなプロシージャをまとめる">似たようなプロシージャをまとめる</a>
-                                    <ul>
-                                      <li><a href="#例プロシージャの分類">［例］プロシージャの分類</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a
-                                      href="#メイン処理以外をオブジェクトモジュール化する">メイン処理以外をオブジェクトモジュール化する</a>
-                                  </li>
-                                  <li><a href="#プロシージャのスコープを分ける">プロシージャのスコープを分ける</a>
-                                    <ul>
-                                      <li><a href="#スコープのキーワード">スコープのキーワード</a></li>
-                                      <li><a href="#クラス化のメリット">クラス化のメリット</a></li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li><a href="#プロパティの設定">プロパティの設定</a>
-                                <ul>
-                                  <li><a href="#共通の引数を探す">共通の引数を探す</a></li>
-                                  <li><a
-                                      href="#プロパティの値をモジュールレベル変数とする">プロパティの値をモジュールレベル変数とする</a>
-                                    <ul>
-                                      <li><a href="#例変数を経由するよう変更">［例］変数を経由するよう変更</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="#変数のスコープを分ける">変数のスコープを分ける</a>
-                                    <ul>
-                                      <li><a href="#スコープのキーワード-1">スコープのキーワード</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="#コンストラクタで隠し変数に代入する">コンストラクタで「隠し変数」に代入する</a>
-                                    <ul>
-                                      <li><a href="#例コンストラクタで隠し変数に代入">［例］コンストラクタで隠し変数に代入</a>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="#コンストラクタを使いやすくする">コンストラクタを使いやすくする</a>
-                                    <ul>
-                                      <li><a href="#例引数が使えるコンストラクタ">［例］引数が使えるコンストラクタ</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="#終了処理を追加する">終了処理を追加する</a>
-                                    <ul>
-                                      <li><a href="#例終了処理">［例］終了処理</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a
-                                      href="#Property-Getプロシージャでプロパティに隠し変数を代入する">Property Getプロシージャでプロパティに隠し変数を代入する</a>
-                                    <ul>
-                                      <li><a href="#例値を代入">［例］値を代入</a></li>
-                                      <li><a href="#例オブジェクトの参照値を代入">［例］オブジェクトの参照値を代入</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="#ちなみに">ちなみに…</a>
-                                    <ul>
-                                      <li><a href="#例同クラス内で呼び出し">［例］同クラス内で呼び出し</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a
-                                      href="#Property-LetSetプロシージャでプロパティに代入出来るようにする">Property Let/Setプロシージャで、プロパティに代入出来るようにする</a>
-                                    <ul>
-                                      <li><a
-                                          href="#例プロパティに代入するプロシージャを追加">［例］プロパティに代入するプロシージャを追加</a>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a href="#あとがき">あとがき</a></li>
-                          <li><a href="#このシリーズについて">このシリーズについて</a>
-                            <ul>
-                              <li><a href="#連載目次">連載目次</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="#注釈">注釈</a></li>
-                        </ul>
-                        
-                        <h3 id="手順">手順</h3>
-                        
-                        <h4 id="手続きの流れを考える">手続きの流れを考える</h4>
-                        
-                        <h5 id="処理のテーマ">処理のテーマ</h5>
-                        
-                        <p>今回は、例として<b>「フォルダ内の複数のブックで、シートの値を置き換えて名前を変えて保存する」</b>場合を考える。</p>
-                        
-                        <h6 id="例手続きの流れ">［例］手続きの流れ</h6>
-                        
-                        <p>だいたいこんな処理を書くと思う。（日本語でごめんなさい）</p>
-                        
-                        <hr />
-                        
-                        <ul>
-                          <li>フォルダ内に処理対象のブックがあるか確認する</li>
-                          <li>拡張子付きファイル名を取得</li>
-                          <li>パスを取得</li>
-                          <li>パスを指定してブックを開く</li>
-                          <li>シートを取得</li>
-                          <li>テーブルを取得</li>
-                          <li>セルの値を取得</li>
-                          <li>文字列に変換</li>
-                          <li>文字列を置き換える</li>
-                          <li>ブックの拡張子付きファイル名を取得</li>
-                          <li>現在のファイル名から新しいファイル名を取得</li>
-                          <li>格納先のフォルダを取得</li>
-                          <li>ファイル名とフォルダの場所からフルパスを取得</li>
-                          <li>新しいパスでブックを保存する</li>
-                          <li>ここまでの処理を同じフォルダのブックの数だけ繰り返す</li>
-                          <li>メッセージボックスで「完了」をお知らせ。</li>
-                        </ul>
-                        
-                        <hr />
-                        
-                        <h4 id="処理の分解">処理の分解</h4>
-                        
-                        <h5 id="処理を区切ってプロシージャを分ける">処理を区切ってプロシージャを分ける</h5>
-                        
-                        <p>「〜して、〜して、〜して、…」のように、<b>「『〜して』毎」<a href="#f-9a0f2900" name="fn-9a0f2900" title="日本語の文法的に言うと「文節単位」？">*1</a>に1つのプロシージャ</b>にしてみる。<br>
-                        これを、一般に<b>「<strong>部品化</strong>」</b>と呼ぶ。</p>
-                        
-                        <p><span class="note">※詳しくはこちらが参考になります<a href="#f-02c622ad" name="fn-02c622ad" title="
-                        いつもお世話になっております！！
-                        この記事に限らず、VBA使いの人は読んで損はないブログです。
-                        ">*2</a>。</span>
-                        <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fthom.hateblo.jp%2Fentry%2F2017%2F02%2F04%2F215446" title="VBA 中級者を悩ませるプロシージャ分割をマスターする極意 - t-hom’s diary" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://thom.hateblo.jp/entry/2017/02/04/215446">VBA &#x4E2D;&#x7D1A;&#x8005;&#x3092;&#x60A9;&#x307E;&#x305B;&#x308B;&#x30D7;&#x30ED;&#x30B7;&#x30FC;&#x30B8;&#x30E3;&#x5206;&#x5272;&#x3092;&#x30DE;&#x30B9;&#x30BF;&#x30FC;&#x3059;&#x308B;&#x6975;&#x610F; - t-hom&rsquo;s diary</a></p>
-                        
-                        <p>ただし、あまり細かくし過ぎると行数が増えてかえって管理が大変になるばかりなので、内容によっては2～3個の処理を1つのプロシージャにまとめることもある。</p>
-                        
-                        <p>目安としては、<b>1プロシージャあたりPCのディスプレイ1枚分（20～30行）</b>くらい。<br>
-                        …区切るサイズや場所には個人差もあると思うので、絶対ではない。</p>
-                        
-                        <h6 id="例処理をざっくり分割">［例］処理をざっくり分割</h6>
-                        
-                        <p>上記の<a href="#%E4%BE%8B%E6%89%8B%E7%B6%9A%E3%81%8D%E3%81%AE%E6%B5%81%E3%82%8C%E3%82%92%E6%9B%B8%E3%81%8D%E5%87%BA%E3%81%99">例</a>の場合、ざっくり下記のように分けられると思う。</p>
-                        
-                        <hr />
-                        
-                        <ul>
-                          <li>フォルダを確認</li>
-                          <li>フォルダ内に処理対象のブックがあるか確認する</li>
-                          <li>パスを取得
-                        
-                            <ul>
-                              <li>1つ目のファイル名を取得</li>
-                              <li>ファイル名とフォルダの場所からフルパスを取得</li>
-                              <li>パスを取得</li>
-                            </ul>
-                          </li>
-                          <li>値を取得
-                        
-                            <ul>
-                              <li>パスを指定してブックを開く</li>
-                              <li>シートを取得</li>
-                              <li>テーブルを取得</li>
-                              <li>データ範囲を取得</li>
-                              <li>二次元配列として値を取得</li>
-                            </ul>
-                          </li>
-                          <li>値を置き換える
-                        
-                            <ul>
-                              <li>セルの値を取得</li>
-                              <li>文字列に変換</li>
-                              <li>文字列を置き換える</li>
-                              <li>セルの値を置き換える</li>
-                              <li>シートの数だけ繰り返す</li>
-                            </ul>
-                          </li>
-                          <li>ブックを保存する
-                        
-                            <ul>
-                              <li>ブックの拡張子付きファイル名を取得</li>
-                              <li>現在のファイル名から新しいファイル名を取得</li>
-                              <li>格納先のフォルダを取得</li>
-                              <li>ファイル名とフォルダの場所からフルパスを取得</li>
-                              <li>新しいパスでブックを保存する</li>
-                            </ul>
-                          </li>
-                          <li>ブックの数だけ繰り返す</li>
-                          <li>メッセージボックスで「完了」をお知らせ。</li>
-                        </ul>
-                        
-                        <hr />
-                        
-                        <h5 id="出来るだけ共通の処理を抽象化する">出来るだけ共通の処理を抽象化する</h5>
-                        
-                        <p>「他のブックでもこのマクロを使うとしたら？」と考えながら、プロシージャや変数、引数の名前を考える。</p>
-                        
-                        <h6 id="例処理の抽象化">［例］処理の抽象化</h6>
-                        
-                        <p>たとえば…</p>
-                        
-                        <table>
-                          <thead>
-                            <tr>
-                              <th style="text-align:center;">変更 </th>
-                              <th> 関数名</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="text-align:center;">前 </td>
-                              <td> <code>⚫️⚫️社Book</code>の全シートの文字列を<code>▼▼</code>に置き換える</td>
-                            </tr>
-                            <tr>
-                              <td style="text-align:center;">後 </td>
-                              <td>
-                                全文字列を置き換える（<code>ワークブック</code>、<code>置き換え前</code>、<code>置き換え後</code>）
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        
-                        <h4 id="処理を分類してメソッド化">処理を分類してメソッド化</h4>
-                        
-                        <h5 id="似たようなプロシージャをまとめる">似たようなプロシージャをまとめる</h5>
-                        
-                        <p>今回の例であれば、「ファイル名とフォルダの場所からフルパスを取得」という処理が複数回登場していて、やることは共通している。</p>
-                        
-                        <p>その前後にある「フォルダのパスやファイル名を『なんやかんや』する」処理も、「パスの操作」という意味で似ている。<br>
-                        このように、<b>似たものを操作するプロシージャを分類</b>して、いくつかのカテゴリに分けてみる。</p>
-                        
-                        <p>さらに、標準モジュール（もしくはシートモジュール）に<b>メイン処理用のプロシージャを作って、こちらから部品化・カテゴリ分けしたプロシージャを呼び出す</b>ことにする。</p>
-                        
-                        <h6 id="例プロシージャの分類">［例］プロシージャの分類</h6>
-                        
-                        <p>今回の例であれば、ざっくりこんな感じに分けられそう。</p>
-                        
-                        <ul>
-                          <li>メイン・プロシージャ</li>
-                          <li>処理対象のブックの判定</li>
-                          <li>パスの操作</li>
-                          <li>ブックを開く、保存する</li>
-                          <li>シートの値の取得</li>
-                          <li>文字列の操作</li>
-                        </ul>
-                        
-                        <p><span class="small-chars">※「パスの操作」は、プロシージャのサイズによっては「文字列の操作」にまとめても良いかもしれない。</span></p>
-                        
-                        <h5 id="メイン処理以外をオブジェクトモジュール化する">メイン処理以外をオブジェクトモジュール化する</h5>
-                        
-                        <p>メインのプロシージャ以外を、<b>プロシージャのカテゴリごとに別々の<strong style="font-weight: normal;">クラスモジュール</strong>（やシートモジュール）として独立</b>させる。</p>
-                        
-                        <h5 id="プロシージャのスコープを分ける">プロシージャのスコープを分ける</h5>
-                        
-                        <p><b>モジュール内専用の処理</b>と<b>外部から呼び出せる処理（=メソッド）</b>をそれぞれ区別し、スコープを設定しておく。<br>
-                        こうすることで、パブリックのものだけ入力補完が効くようになり、この後のコーディングが楽になる。</p>
-                        
-                        <h6 id="スコープのキーワード">スコープのキーワード</h6>
-                        
-                        <table>
-                          <thead>
-                            <tr>
-                              <th style="text-align:center;">スコープ </th>
-                              <th style="text-align:center;"> キーワード</th>
-                              <th style="text-align:center;"> 呼び方</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="text-align:center;">全モジュール共通 </td>
-                              <td style="text-align:center;"> <code>Public</code></td>
-                              <td style="text-align:center;"> パブリック・モジュール・レベル</td>
-                            </tr>
-                            <tr>
-                              <td style="text-align:center;">モジュール内専用 </td>
-                              <td style="text-align:center;"> <code>Private</code></td>
-                              <td style="text-align:center;"> プライベート・モジュール・レベル</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        
-                        <h6 id="クラス化のメリット">クラス化のメリット</h6>
-                        
-                        <p>クラスの中で処理や値のスコープを<code>Private</code>以下にすると、<b>外部のモジュールからは内部処理やデータの状態が見えなくなる。</b><br>
-                        このことを<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AA%A5%D6%A5%B8%A5%A7%A5%AF%A5%C8%BB%D8%B8%FE">オブジェクト指向</a>的には<b>「<strong>隠蔽（いんぺい）</strong>」</b>と呼び、特に「クラス」といった<b>枠の中に閉じ込めること</b>を<b>「<strong><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AB%A5%D7%A5%BB%A5%EB%B2%BD">カプセル化</a></strong>」</b>という。</p>
-                        
-                        <p>こうすることで、外部から値の変更などの干渉を受けづらくなり、コードが少し安全になる（はず）。</p>
-                        
-                        <p><span class="note">※「隠蔽」や「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AB%A5%D7%A5%BB%A5%EB%B2%BD">カプセル化</a>」の目的について、詳しくはこちらもご参照いただけたら幸いです。</span>
-                        <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2Fparadigm%2Fwhat-is-oop" title="オブジェクト指向って、なんだ？ - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://www.yuru-wota.com/entry/paradigm/what-is-oop#手続き型プログラミングとその問題">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x3063;&#x3066;&#x3001;&#x306A;&#x3093;&#x3060;&#xFF1F; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></p>
-                        
-                        <h4 id="プロパティの設定">プロパティの設定</h4>
-                        
-                        <h5 id="共通の引数を探す">共通の引数を探す</h5>
-                        
-                        <p>同じものを参照・利用しているのであれば、まとめて「プロパティ」にする。<br>
-                        値や参照はプロパティに代入して、メソッド内ではプロパティから呼び出すようにすることで引数を減らせる。</p>
-                        
-                        <p>また、<strong style="font-weight: normal;">クラスモジュール</strong>内でも、メソッドの中から<code>Me.プロパティ名</code>で呼び出せるようになる（<a href="#%E3%81%A1%E3%81%AA%E3%81%BF%E3%81%AB">後述</a>）。<br>
-                        入力補完も効くので、コーディングの効率や可読性も上がる<a href="#f-92811823" name="fn-92811823" title="入力は補完に任せられるから、多少長い名前をつけても大丈夫。">*3</a>。</p>
-                        
-                        <h5 id="プロパティの値をモジュールレベル変数とする">プロパティの値をモジュールレベル変数とする</h5>
-                        
-                        <p>プロパティの中身を参照する時は<code>Property Getプロシージャ</code>を呼び出す。<br>
-                        <s>しかし、<b><code>Property Getプロシージャ</code>の戻り値には値を直接代入できない</b>ので、下記のような書き方はできない</s>。<br>
-                        <span class="additional-note">&lt;2019/10/14追記></span><br>
-                        <span class="small-chars" style="color: darkblue;">「戻り値に代入」はできます。作例も差し替えております。失礼いたしました…</span></p>
-                        
-                        <p><b><code>Property Getプロシージャ</code>には値を直接代入できない</b>ので、下記のような書き方はできない。</p>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synComment">'[クラスモジュール] Exampleクラス</span>
-                        <span class="synStatement">Property</span> <span class="synStatement">Get</span> プロパティ名<span class="synStatement">()As</span> 型
-                            プロパティ名 <span class="synStatement">=</span> 値<span class="synComment"> '←直接の代入は出来ない</span>
-                        <span class="synStatement">End</span> <span class="synStatement">Property</span>
-                        </pre>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink>
-                        <span class="synComment">'[標準モジュール]</span>
-                        <span class="synStatement">Sub</span> test<span class="synStatement">()</span>
-                            <span class="synStatement">Dim</span> ex <span class="synStatement">As</span> <span class="synStatement">New</span> Example
-                            ex<span class="synStatement">.</span>プロパティ名 <span class="synStatement">=</span> 新しい値
-                        <span class="synStatement">End</span> <span class="synStatement">Sub</span>
-                        </pre>
-                        
-                        <p>実行すると、下記のような<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%D1%A5%A4%A5%EB">コンパイル</a>エラーが発生する。</p>
-                        
-                        <blockquote>
-                          <p>値の取得のみ可能なプロパティに値を設定することはできません。</p>
-                        </blockquote>
-                        
-                        <p>このため、<code>Property Letプロシージャ</code>や<code>Property Setプロシージャ</code>を使って「値を設定」できるようにする（詳細は<a href="#Property-LetSet%E3%83%97%E3%83%AD%E3%82%B7%E3%83%BC%E3%82%B8%E3%83%A3%E3%81%A7%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%AB%E4%BB%A3%E5%85%A5%E5%87%BA%E6%9D%A5%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B">後述</a>）。</p>
-                        
-                        <p>このときに、プロパティではなく<b>「変数」を経由して「値」を代入することで、間接的にプロパティの中身を変更</b>できるようになる。<br>
-                        そんなわけで、今の段階で<code>Property Getプロシージャ</code>も変数の値を返すようにしておく。</p>
-                        
-                        <h6 id="例変数を経由するよう変更">［例］変数を経由するよう変更</h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synComment">'[クラスモジュール] Exampleクラス</span>
-                        <span class="synStatement">Private</span> 変数 <span class="synStatement">As</span> 型
-                         
-                        <span class="synStatement">Property</span> <span class="synStatement">Get</span> プロパティ名<span class="synStatement">()As</span> 型
-                            プロパティ名 <span class="synStatement">=</span> 変数
-                        <span class="synStatement">End</span> <span class="synStatement">Property</span>
-                        </pre>
-                        
-                        <h5 id="変数のスコープを分ける">変数のスコープを分ける</h5>
-                        
-                        <p>この時に、プロシージャと同じように「プロジェクト全体で使用するもの」と「モジュール内で完結するもの」、「プロシージャ内で完結するもの」を整理して、スコープを調整しておく。</p>
-                        
-                        <p><b>プロパティ用の変数でスコープを「プライベート・モジュール・レベル」にしておくことで、「このクラス専用」の変数とする</b>ことができる。</p>
-                        
-                        <p>つまり、「このクラス専用」の変数は、プライベートなプロシージャと同じように他のモジュールからは呼び出せなくなり、「隠蔽」されていることになる。<br>
-                        <span class="small-chars">（以下、当記事ではこの変数のことを便宜上「隠し変数」と呼ぶことにする。）</span></p>
-                        
-                        <h6 id="スコープのキーワード-1">スコープのキーワード</h6>
-                        
-                        <table>
-                          <thead>
-                            <tr>
-                              <th style="text-align:center;">スコープ </th>
-                              <th style="text-align:center;"> キーワード </th>
-                              <th> 呼び方</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td style="text-align:center;">全モジュール共通 </td>
-                              <td style="text-align:center;"> <code>Public</code> </td>
-                              <td> パブリック・モジュール・レベル</td>
-                            </tr>
-                            <tr>
-                              <td style="text-align:center;">モジュール内専用 </td>
-                              <td style="text-align:center;">
-                                <code>Private</code>/<code>Dim</code> </td>
-                              <td> プライベート・モジュール・レベル</td>
-                            </tr>
-                            <tr>
-                              <td style="text-align:center;">プロシージャ内専用 </td>
-                              <td style="text-align:center;"> <code>Dim</code> </td>
-                              <td> プロシージャレベル</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        
-                        <h5 id="コンストラクタで隠し変数に代入する"><strong>コンスト<a class="keyword"
-                              href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タ</strong>で「隠し変数」に代入する
-                        </h5>
-                        
-                        <p><code>Class_Initialize</code>という特別なプロシージャを作ると、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>の生成時に必ず呼び出され、自動でプロパティに値を設定するように出来る<a href="#f-25bf8f39" name="fn-25bf8f39" title="Initializeは「初期化」のこと">*4</a>。</p>
-                        
-                        <p>ただし、<a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%AE%E5%80%A4%E3%82%92%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%83%AC%E3%83%99%E3%83%AB%E5%A4%89%E6%95%B0%E3%81%A8%E3%81%99%E3%82%8B">上述</a>のように<b>プロパティではなく隠し変数</b>に値を代入するように書いておく。</p>
-                        
-                        <h6 id="例コンストラクタで隠し変数に代入">［例］<strong>コンスト<a class="keyword"
-                              href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タ</strong>で隠し変数に代入
-                        </h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synStatement">Private</span> 隠し変数<span class="synConstant">1</span> <span class="synStatement">As</span> 型
-                        <span class="synStatement">Private</span> 隠し変数<span class="synConstant">2</span> <span class="synStatement">As</span> 型
-                        <span class="synStatement">Private</span> 隠し変数<span class="synConstant">3</span> <span class="synStatement">As</span> オブジェクト系の型
-                        <span class="synStatement">Private</span> 隠し変数<span class="synConstant">4</span> <span class="synStatement">As</span> オブジェクト系の型
-                         
-                        <span class="synStatement">Public</span> <span class="synStatement">Sub</span> Class_Initialize<span class="synStatement">()</span>
-                            隠し変数<span class="synConstant">1</span> <span class="synStatement">=</span> 値
-                            
-                            <span class="synStatement">Call</span> 必ず実行する処理<span class="synComment"> '追加処理を入れても良い</span>
-                            隠し変数<span class="synConstant">2</span> <span class="synStatement">=</span> 値
-                            
-                            <span class="synStatement">Set</span> 隠し変数<span class="synConstant">3</span> <span class="synStatement">=</span> オブジェクト
-                            <span class="synStatement">Set</span> 隠し変数<span class="synConstant">4</span> <span class="synStatement">=</span> 値の準備とか<span class="synStatement">(</span>引数<span class="synStatement">)</span><span class="synComment"> '関数も使える</span>
-                        <span class="synStatement">End</span> <span class="synStatement">Sub</span>
-                        </pre>
-                        
-                        <h5 id="コンストラクタを使いやすくする"><strong>コンスト<a class="keyword"
-                              href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タ</strong>を使いやすくする
-                        </h5>
-                        
-                        <p><code>Class_Initializeプロシージャ</code>は「引数を設定できない仕様」になっているので、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>の初期値は固定になってしまう。<br>
-                        いつも同じ値にしたいとは限らないので、これでは少し使いづらいことがある。</p>
-                        
-                        <p>そこで一工夫。</p>
-                        
-                        <p><code>Initializeメソッド</code>（名前は自分で分かりやすいように変えてもOK）を別途作って、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>生成時に引数として値を渡しつつ呼び出すことにする。<br>
-                        <span class="small-chars">※この場合は、<code>Class_Initializeプロシージャ</code>は作成しなくても良い。</span></p>
-                        
-                        <p>これで、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>の生成時にまとめて任意の値を設定できる。<br>
-                        （別の言語では、このような処理をするメソッドを「<strong style="font-weight: normal;">コンスト<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タ</strong>」と言う。）</p>
-                        
-                        <h6 id="例引数が使えるコンストラクタ">［例］引数が使える<strong>コンスト<a class="keyword"
-                              href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タ</strong>
-                        </h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink>
-<span class="synComment">'[クラスモジュール] Exampleクラス</span>
-<span class="synStatement">Private</span> 隠し変数<span class="synConstant">1</span> <span class="synStatement">As</span> 型
-<span class="synStatement">Private</span> 隠し変数<span class="synConstant">2</span> <span class="synStatement">As</span> 型
-<span class="synStatement">Private</span> 隠し変数<span class="synConstant">3</span> <span class="synStatement">As</span> オブジェクト系の型
-<span class="synStatement">Private</span> 隠し変数<span class="synConstant">4</span> <span class="synStatement">As</span> オブジェクト系の型
-<span class="synStatement">Private</span> 隠し変数<span class="synConstant">5</span> <span class="synStatement">As</span> オブジェクト系の型
-                         
-<span class="synStatement">Public</span> <span class="synStatement">Sub</span> <span class="synSpecial">Initialize</span><span class="synStatement">(ByVal</span> 仮引数<span class="synConstant">1</span> <span class="synStatement">As</span> 型<span class="synStatement">, _</span>
-                      <span class="synStatement">ByRef</span> 仮引数<span class="synConstant">2</span> <span class="synStatement">As</span> オブジェクト系の型<span class="synStatement">)</span>
-    隠し変数<span class="synConstant">1</span> <span class="synStatement">=</span> 仮引数<span class="synConstant">1</span>
-    
-    <span class="synStatement">Call</span> 必ず実行する処理
-    隠し変数<span class="synConstant">2</span> <span class="synStatement">=</span> 値<span class="synComment"> '引数ではなく値を指定しても大丈夫</span>
-    
-    <span class="synStatement">Set</span> 隠し変数<span class="synConstant">3</span> <span class="synStatement">=</span> 仮引数<span class="synConstant">2</span>
-    <span class="synStatement">Set</span> 隠し変数<span class="synConstant">4</span> <span class="synStatement">=</span> 値の準備とか<span class="synStatement">(</span>引数<span class="synStatement">)</span>
-    <span class="synStatement">Set</span> 隠し変数<span class="synConstant">5</span> <span class="synStatement">=</span> オブジェクト<span class="synComment"> 'オブジェクトも大丈夫</span>
-    
-<span class="synStatement">End</span> <span class="synStatement">Sub</span>
+<h3 id="Claspをインストール">Claspをインストール</h3>
+
+<h4 id="nodejsを入れる">node.jsを入れる</h4>
+
+<h5 id="ダウンロード">ダウンロード</h5>
+
+<p>OSにより選択してください。</p>
+
+<ul>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の64bit版の場合：<a href="#Windows%E3%81%AE64bit%E7%89%88%E3%81%AE%E5%A0%B4%E5%90%88">ジャンプ！</a></li>
+<li>それ以外の場合：<a href="#%E3%81%9D%E3%82%8C%E4%BB%A5%E5%A4%96%E3%81%AE%E5%A0%B4%E5%90%88">ジャンプ！</a></li>
+</ul>
+
+
+<h6 id="Windowsの64bit版の場合"><a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の64bit版の場合</h6>
+
+<ol>
+<li><p><u>公式サイトにアクセス</u></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fnodejs.org%2Fja%2F" title="Node.js" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://nodejs.org/ja/">Node.js</a></p></li>
+<li><p><u>左側の「推奨版」を任意の場所にダウンロード</u></p>
+
+<p>※当記事の執筆時点で、推奨版は<b>12.18.4 LTS</b>です。<br>
+<span itemscope itemtype="http://schema.org/Photograph">
+<img class="hatena-fotolife lazy"
+     alt="Node.jsのダウンロード・ページ"
+     title="f:id:yuricks7:20200929173216p:plain"
+     data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929173216.png"
+     src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929173216.png"
+     itemprop="image" />
+</span></p></li>
+</ol>
+
+
+<h6 id="それ以外の場合">それ以外の場合</h6>
+
+<ol>
+<li><p><u>公式サイトのバージョン一覧にアクセス</u></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fnodejs.org%2Fja%2Fdownload%2F" title="ダウンロード | Node.js" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://nodejs.org/ja/download/">&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9; | Node.js</a></p></li>
+<li><p><u>「推奨版」タブから、自分のOSや目的に合うものを任意の場所にダウンロード</u></p>
+
+<p>例えば<a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の32bit版であれば、画像中央あたりの<b><code>Windows Installer (.msi)</code>の<code>32-bit</code>版</b>が良いようです。<br>
+<span itemscope itemtype="http://schema.org/Photograph">
+<img class="hatena-fotolife lazy"
+     alt="Node.jsのインストーラーの一覧"
+     title="f:id:yuricks7:20200929190614p:plain"
+     data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929190614.png"
+     src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929190614.png"
+     itemprop="image" />
+</span></p></li>
+</ol>
+
+
+<h5 id="インストール">インストール</h5>
+
+<ol>
+<li><p><u><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%E9">インストーラ</a>を起動して、画面の指示に従い<code>Node.js</code>をインストールする</u></p>
+
+<p>詳しい手順はこちら↓が参考になるかと思います。<br>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgas.excelspeedup.com%2Fnodejs%2F" title="claspを使う事前準備-Node.jsをインストールする" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://gas.excelspeedup.com/nodejs/">clasp&#x3092;&#x4F7F;&#x3046;&#x4E8B;&#x524D;&#x6E96;&#x5099;-Node.js&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B; &ndash; &#x7D4C;&#x7406;&#x696D;&#x52D9;&#x5411;&#x3051;Google Apps Script&#x8B1B;&#x5EA7;</a></p>
+
+<p><code>Node.js</code>を入れる過程で、このあと使用する<code>npm</code>というツールもインストールされます。</p></li>
+</ol>
+
+
+<h5 id="バージョンを確認">バージョンを確認</h5>
+
+<ol>
+<li><p><u><code>Node.js</code>のインストールができたら、ターミナルを起動する</u></p>
+
+<p>特に理由が無ければ<code>PowerShell</code>か<code>Git Bash</code>がおすすめです。<br>
+以下、原則<b><code>Git Bash</code>を使用する場合</b>を前提に説明します。</p></li>
+<li><p><u>下記のコマンドを入力して、インストールができているか確認する</u></p>
+
+<p><pre class="code lang-sh" data-lang="sh" data-unlink>npm <span class="synSpecial">-v</span></pre></p>
+
+<p>こんな風に<code>npm</code>のバージョンが出力されればOK。</p>
+
+<p><span class="small-chars">※バージョンは執筆時点のものです。</span><br>
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synConstant">6</span>.<span class="synConstant">9</span>.<span class="synConstant">0</span></pre></p></li>
+</ol>
+
+
+<h4 id="Claspを入れる">Claspを入れる</h4>
+
+<h5 id="インストール-1">インストール</h5>
+
+<p><code>npm</code>というNode.js版のパッケージ管理ツールを使用して<code>Clasp</code>をインストールします。</p>
+
+<p><span class="small-chars">※<a class="keyword" href="http://d.hatena.ne.jp/keyword/PowerShell">PowerShell</a>用の記事ですが、「パッケージとは何ぞや？」な方はこちらへ。</span><br>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FPowerShell%2Fwhat-is-package" title="【PowerShell】「そもそもパッケージって何？」っていうあなたに、少し説明します。 - ゆるおたノート" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://www.yuru-wota.com/entry/PowerShell/what-is-package">&#x3010;PowerShell&#x3011;&#x300C;&#x305D;&#x3082;&#x305D;&#x3082;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3063;&#x3066;&#x4F55;&#xFF1F;&#x300D;&#x3063;&#x3066;&#x3044;&#x3046;&#x3042;&#x306A;&#x305F;&#x306B;&#x3001;&#x5C11;&#x3057;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></p>
+
+<ol>
+<li><u>下記のコマンドを入力して、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>社が配布している<code>Clasp</code>の公式パッケージ（<code>@google/clasp</code>）をインストール</u>
+<pre class="code lang-sh" data-lang="sh" data-unlink>npm i @google/clasp <span class="synSpecial">-g</span></pre></li>
+</ol>
+
+
+<h6 id="コマンドの意味">コマンドの意味</h6>
+
+<p><code>npm i [パッケージ名]</code>で、<b>「<strong>パッケージ</strong>をダウンロードしてインストールする」</b>という意味のコマンドです。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment">
+# パッケージをインストール</span>
+npm i <span class="synStatement">[</span>パッケージ名<span class="synStatement">]</span>
 </pre>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synComment">'[標準モジュール]</span>
-                        <span class="synStatement">Public</span> <span class="synStatement">Sub</span> Main<span class="synStatement">()</span>
-                            
-                            <span class="synStatement">Dim</span> test <span class="synStatement">As</span> <span class="synStatement">New</span> Example
-                           <span class="synComment"> 'Initializeメソッドを呼び出してプロパティの初期化</span>
-                            test<span class="synStatement">.</span><span class="synSpecial">Initialize</span> 仮引数<span class="synConstant">1</span>:<span class="synStatement">=</span>引数<span class="synConstant">1</span><span class="synStatement">, _</span>
-                                            仮引数<span class="synConstant">2</span>:<span class="synStatement">=</span>引数<span class="synConstant">2</span>    
-                        <span class="synStatement">End</span> <span class="synStatement">Sub</span>
-                        </pre>
-                        
-                        <h5 id="終了処理を追加する">終了処理を追加する</h5>
-                        
-                        <p><s><b>モジュールレベル以上の変数は、マクロの実行が完了しても値が破棄されない</b>ので、マクロを複数回実行する時などは注意が必要になってしまう。</s><br>
-                        <code>Class_Terminate</code>という特別なプロシージャを作ると、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>が不要になった時に自動で終了処理（=Terminate）されるようにできる。</p>
-                        
-                        <p><span class="additional-note">&lt;2019/10/14追記></span><br>
-                        <span class="small-chars" style="color:darkblue;">当初、<a href="#%E4%BE%8B%E5%BC%95%E6%95%B0%E3%81%8C%E4%BD%BF%E3%81%88%E3%82%8B%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF">上記例</a>の中で変数の初期化・破棄処理を書いておりましたが、<a href="https://www.excel-chunchun.com/">ことりちゅん (id:Kotori-ChunChun)</a>さんより下記の通りアド<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>を頂きました。</span><br></p>
-                        
-                        <blockquote>
-                          <p><b>クラスは<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>を破棄した時点でメンバの変数は一緒に消失します</b>から、サンプルの<code>Terminate</code>のように変数の初期化は意味が無いです。</p>
-                        
-                          <p><cite><a href="https://twitter.com/KotorinChunChun/status/1183692148652167169">ことりちゅん (id:Kotori-ChunChun)さんのツイート</a>より</cite></p>
-                        </blockquote>
-                        
-                        <p><span class="small-chars" style="color:darkblue;">これに従い、作例は<a href="#%E4%BE%8B%E7%B5%82%E4%BA%86%E5%87%A6%E7%90%86">下記</a>に修正いたしました。ご指摘ありがとうございます！</span></p>
-                        
-                        <h6 id="例終了処理">［例］終了処理</h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synStatement">Public</span> <span class="synStatement">Sub</span> Class_Terminate<span class="synStatement">()</span>
-                            <span class="synStatement">Call</span> 必ず実行する処理<span class="synComment"> 'ゴミデータのお掃除など</span>
-                        <span class="synStatement">End</span> <span class="synStatement">Sub</span>
-                        </pre>
-                        
-                        <h5 id="Property-Getプロシージャでプロパティに隠し変数を代入する">Property
-                          Getプロシージャでプロパティに隠し変数を代入する</h5>
-                        
-                        <p>ここまで準備ができたら、プロパティの値を設定していく。</p>
-                        
-                        <p><a href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF%E3%81%A7%E9%9A%A0%E3%81%97%E5%A4%89%E6%95%B0%E3%81%AB%E4%BB%A3%E5%85%A5%E3%81%99%E3%82%8B">上述</a>のように<b>隠し変数を経由してプロパティに値を設定</b>することで、外部のプロシージャからは<code>インスタンス名.プロパティ名</code>でプロパティの中身を見られるようになる。</p>
-                        
-                        <h6 id="例値を代入">［例］値を代入</h6>
-                        
-<pre class="code lang-vb" data-lang="vb" data-unlink>
-<span class="synStatement">Private</span> 隠し変数 <span class="synStatement">As</span> 型
 
-<span class="synStatement">Property</span> <span class="synStatement">Get</span> プロパティ名<span class="synStatement">()As</span> 型
 
-    <span class="synComment"> '～処理～</span>
-    隠し変数 <span class="synStatement">=</span> 値
-    プロパティ名 <span class="synStatement">=</span> 隠し変数
+<p>インストール先はカレント<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リの周辺（<a href="https://qiita.com/kijitoraneko/items/175ef29d45d155b3f405">参考</a>）で、基本はプロジェクト内の展開になると思います。</p>
 
-    <span class="synStatement">End</span> <span class="synStatement">Property</span>
+<p>そこに<code>-g</code>というオプションをつけると、展開範囲は<b>「OSのユーザー単位（=<strong>グローバル</strong>）」</b>になります。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># パッケージをグローバルでインストール</span>
+npm i <span class="synStatement">[</span>パッケージ名<span class="synStatement">]</span> <span class="synSpecial">-g</span>
 </pre>
-                        
-                        <h6 id="例オブジェクトの参照値を代入">［例］オブジェクトの参照値を代入</h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synStatement">Private</span> 隠し変数 <span class="synStatement">As</span> オブジェクト系の型
-                         
-                        <span class="synStatement">Property</span> <span class="synStatement">Get</span> プロパティ名<span class="synStatement">()As</span> オブジェクト系の型
-                            
-                           <span class="synComment"> '～処理～</span>
-                            <span class="synStatement">Set</span> 隠し変数 <span class="synStatement">=</span> オブジェクト
-                            <span class="synStatement">Set</span> プロパティ名 <span class="synStatement">=</span> 隠し変数
-                            
-                        <span class="synStatement">End</span> <span class="synStatement">Property</span>
-                        </pre>
-                        
-                        <h5 id="ちなみに">ちなみに…</h5>
-                        
-                        <p>外部ではなく同クラス内で呼び出す時は、<code>Me.プロパティ名</code>と書くことができる。</p>
-                        
-                        <h6 id="例同クラス内で呼び出し">［例］同クラス内で呼び出し</h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synComment">'[クラスモジュール] Exampleクラス</span>
-                        <span class="synComment">'▼プロパティ</span>
-                        <span class="synStatement">Private</span> 変数 <span class="synStatement">As</span> 型
-                        <span class="synStatement">Property</span> <span class="synStatement">Get</span> プロパティA<span class="synStatement">()As</span> 型
-                            プロパティA <span class="synStatement">=</span> 変数
-                        <span class="synStatement">End</span> <span class="synStatement">Property</span>
-                         
-                        <span class="synComment">'▼メソッド</span>
-                        <span class="synStatement">Public</span> <span class="synStatement">Function</span> test<span class="synStatement">()</span>
-                            Debug<span class="synStatement">.Print</span> <span class="synConstant">&quot;このインスタンスのプロパティAは、現在&quot;</span> <span class="synStatement">&amp;</span> <span class="synStatement">Me.</span>プロパティA <span class="synStatement">&amp;</span> <span class="synConstant">&quot;の状態です。&quot;</span>
-                        <span class="synStatement">End</span> <span class="synStatement">Function</span>
-                        </pre>
-                        
-                        <h5 id="Property-LetSetプロシージャでプロパティに代入出来るようにする">Property
-                          Let/Setプロシージャで、プロパティに代入出来るようにする</h5>
-                        
-                        <p>プロパティは、中身を見るだけでなく処理の途中で値を変えたくなるときもある。<br>
-                        そういう時は、<code>Property Let/Setプロシージャ</code>で値を設定できるようにしておく。</p>
-                        
-                        <p>これで、外部のモジュールからプロパティに値を代入できるようになるので、実用に耐える（はず）。</p>
-                        
-                        <h6 id="例プロパティに代入するプロシージャを追加">［例］プロパティに代入するプロシージャを追加</h6>
-                        
-                        <pre class="code lang-vb" data-lang="vb" data-unlink><span class="synStatement">Private</span> 隠し変数 <span class="synStatement">As</span> 型
-                         
-                        <span class="synStatement">Property</span> <span class="synStatement">Let</span> プロパティ名<span class="synStatement">(</span>仮引数 <span class="synStatement">As</span> 型<span class="synStatement">)</span>
-                           <span class="synComment"> '処理</span>
-                            隠し変数 <span class="synStatement">=</span> 仮引数
-                        <span class="synStatement">End</span> <span class="synStatement">Property</span>
-                        </pre>
-                        
-                        <p>繰り返しになるが、プロパティの設定は隠し変数を経由する。</p>
-                        
-                        <p>そうしないと、プロパティに代入後も「隠し変数」の値は変わらず、改めてプロパティを呼び出して中身を見たら「元の値に戻ってる？」なんて混乱することに…</p>
-                        
-                        <h3 id="あとがき">あとがき</h3>
-                        
-                        <p><a class="keyword" href="http://d.hatena.ne.jp/keyword/VBA">VBA</a>の神々によれば、<s>ここまでが<code>クラス</code><kbd><kbd class="btn-square-emboss">入門編</kbd></kbd>入門編</s>だそうです。<br>
-                        私はここに至るまで半年以上かかってしまいました…</p>
-                        
-                        <p>「分かったような分かんないような…」で何度も書いては消してを繰り返してるので、キレイな文章はもう放棄です。<br>
-                        話の整理は未来の私に託します。笑</p>
-                        
-                        <p>慣れてきたら、プロパティを先に作り込んでからメソッドcodeを作り始める方が、<u><code>入力補完</code>の助けも得られて<kbd><kbd class="btn-square-emboss">もっと書きやすいcode</kbd>→コードcode<kbd class="btn-square-emboss">●●</kbd>+<kbd class="btn-square-emboss">●●</kbd></kbd></kbd>もっと書きやすい</u>かもですね。<br>
-                        「どの基準・どの単位でクラスにまとめるか？」もまだ感覚が掴めてないです。<br>
-                        数をこなして慣れるしかないんですかね…</p>
-                        
-                        <h3 id="このシリーズについて">このシリーズについて</h3>
-                        
-                        <p>初心者の頭で<a class="keyword" href="http://d.hatena.ne.jp/keyword/VBA">VBA</a>でクラスを作成する方法の整理に挑戦しています。</p>
-                        
-                        <h4 id="連載目次"  class="green">連載目次</h4>
-                        
-                        <ol>
-                          <li><a
-                              href="https://www.yuru-wota.com/entry/paradigm/what-is-oop">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x3063;&#x3066;&#x3001;&#x306A;&#x3093;&#x3060;&#xFF1F; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
-                          </li>
-                          <li><span class="serialized-label">当記事</span><a
-                              href="https://www.yuru-wota.com/entry/VBA/Define-the-Class">&#x3010;VBA&#x3011;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F5C;&#x308A;&#x65B9;&#x3092;&#x6574;&#x7406;&#x3057;&#x3066;&#x307F;&#x305F;&#xFF08;&#x79FB;&#x884C;&#x624B;&#x9806;&#x7DE8;&#xFF09; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
-                          </li>
-                          <li><a
-                              href="https://www.yuru-wota.com/entry/VBA/Class-Glossary">&#x3010;VBA&#x3011;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F5C;&#x308A;&#x65B9;&#x3092;&#x6574;&#x7406;&#x3057;&#x3066;&#x307F;&#x305F;&#xFF08;&#x57FA;&#x672C;&#x7528;&#x8A9E;&#x7DE8;&#xFF09; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a>
-                          </li>
-                        </ol>
-                        
-                        <h3 id="注釈">注釈</h3>
-                        <div class="footnote">
-                          <p
-                            class="footnote"><a href="#fn-9a0f2900" name="f-9a0f2900" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">日本語の文法的に言うと「文節単位」？</span></p>
-                          <p class="footnote"><a href="#fn-02c622ad" name="f-02c622ad" class="footnote-number">*2</a><span class="footnote-delimiter">:</span><span class="footnote-text">いつもお世話になっております！！<br>
-                        この記事に限らず、<a class="keyword" href="http://d.hatena.ne.jp/keyword/VBA">VBA</a>使いの人は読んで損はないブログです。
-                        </span></p>
-                          <p
-                            class="footnote"><a href="#fn-92811823" name="f-92811823" class="footnote-number">*3</a><span class="footnote-delimiter">:</span><span class="footnote-text">入力は補完に任せられるから、多少長い名前をつけても大丈夫。</span></p>
-                          <p
-                            class="footnote"><a href="#fn-25bf8f39" name="f-25bf8f39" class="footnote-number">*4</a><span class="footnote-delimiter">:</span><span class="footnote-text">Initializeは「初期化」のこと</span></p>
-                        
-                        </div>
 
+
+<p>パッケージ自体のインストール先も<b>「<code>npm</code>のインストール場所」</b>に変更されます。</p>
+
+<p>ちなみに<code>i</code>は<code>install</code>のショートハンドなので、下記のように書いてもOKです。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># パッケージをグローバルでインストール</span>
+npm install <span class="synSpecial">-g</span> <span class="synStatement">[</span>パッケージ名<span class="synStatement">]</span>
+</pre>
+
+
+<h5 id="バージョンを確認-1">バージョンを確認</h5>
+
+<p>インストールが出来たら、念のため<code>Clasp</code>が正しくインストール出来ているか確認します。</p>
+
+<ol>
+<li><p><u> <code>Clasp</code>のバージョンを確認</u></p>
+
+<p><span class="small-chars">※バージョンは執筆時点のものです。</span><br>
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
+clasp <span class="synSpecial">-v</span>
+<span></span>
+<span class="synComment"># 出力（例）</span>
+<span class="synConstant">2</span>.<span class="synConstant">1</span>.<span class="synConstant">0</span></pre></p></li>
+</ol>
+
+
+<h6 id="そんなコマンドは無いよと言われたら">「そんなコマンドは無いよ」と言われたら…</h6>
+
+<p>Claspのコマンドを使用する時、コマンドがシェル<a href="#f-d895aa7e" name="fn-d895aa7e" title="
+  シェルとは？
+
+シェル（英：shell）とは
+ 
+コンピュータ株式会社の受付のおねーさんのこと。
+ 
+もう少し真面目に書くと
+人間様からの入力をコンピュータさんに伝えるプログラムのこと
+です。
+ 
+イメージしにくければ
+Windowsにおける「コマンドプロンプト」みたいなもの
+と考えても構いません。
+ 
+シェル (shell)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典
+">*1</a>に登録できていないと下記のようなエラー文が出力されます。</p></blockquote>
+
+<pre class="code" data-lang="" data-unlink>command not found</pre>
+
+
+
+
+<p class="translation">コマンドが見つかりません。</p>
+
+
+<p>この場合は、Claspのコマンド達を「Claspという名のコマンド」として端末に登録して、<b>シェルがClaspコマンドを認識できるようにしておく</b>必要があります。<br></p>
+
+<p>書き方は、こんな感じ。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># コマンドを登録する</span>
+<span class="synStatement">alias</span> <span class="synStatement">[</span>コマンド名<span class="synStatement">]=[</span>ソースコード<span class="synStatement">]</span>
+</pre>
+
+
+<p><code>alias</code>は、別名・通称という意味です。「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9">エイリアス</a>」と読むことが多いと思います。</p>
+
+<p>Claspを登録する場合は、こんな感じに書きます。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># Claspコマンドを登録する</span>
+<span class="synStatement">alias </span><span class="synIdentifier">Clasp</span><span class="synStatement">=</span>～/clasp/src/index.js
+</pre>
+
+
+<p>今回はClaspのパッケージを<a href="#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E6%84%8F%E5%91%B3">グローバルでインストール</a>しているので、Claspコマンドの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9">ソースコード</a>も端末の「ユーザーごと」に入っています。</p>
+
+<p>そこで、<b><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9">エイリアス</a>にもユーザー用のファイルを指定</b>します。<br>
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>の場合、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9">ソースコード</a>の保存場所はこちら。</p>
+
+<pre class="code" data-lang="" data-unlink>/C/Users/[ユーザー名]/AppData/Roaming/npm/node_modules/\@google/clasp/src/index.js</pre>
+
+
+<p>なお、これは<a class="keyword" href="http://d.hatena.ne.jp/keyword/Bash">Bash</a>用の表記で、パスは<code>C:\Users\～</code>ではなく<b><code>/C/Users/～</code>のようにバックスラッシュ<code>/</code>で区切る</b>ことに注意してください。</p>
+
+<p>これをコマンドに適用すると、こんな感じになります。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># aliasコマンドで「Claspコマンド」のソースを指定する</span>
+<span class="synStatement">alias </span><span class="synIdentifier">clasp</span><span class="synStatement">=</span>/C/Users/<span class="synStatement">[</span>ユーザー名<span class="synStatement">]</span>/AppData/Roaming/npm/node_modules/\@google/clasp/src/index.js
+</pre>
+
+
+<p>ターミナル上で上記のように入力し、<kbd><kbd class="btn-square-emboss">Enter</kbd></kbd>で実行します。</p>
+
+<p>しかし、これを実行してもターミナルでは特に何も出力されません。<span class="small-chars">（不安…）</span><br>
+そこで、ちゃんと登録できたか確認する意味も込めて、改めてClaspコマンドを使ってみます。</p>
+
+<pre class="code lang-sh" data-lang="sh" data-unlink><span class="synComment"># 入力</span>
+clasp <span class="synSpecial">-v</span>
+ 
+<span class="synComment"># 出力（例）</span>
+<span class="synConstant">2</span>.<span class="synConstant">1</span>.<span class="synConstant">0</span>
+</pre>
+
+
+<p>このようにバージョンが出力されればOKです。</p>
+
+<h3 id="Googleアカウントの登録"><a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントの登録</h3>
+
+<h4 id="GAS側の設定">GAS側の設定</h4>
+
+<h5 id="GASのプロジェクトを外部から操作できるようにする">GASのプロジェクトを外部から操作できるようにする</h5>
+
+<p><code>Google Apps Script API</code>を有効化します。</p>
+
+<ol>
+<li><p><u>Clasp作業用の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントで<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>にログイン</u></p></li>
+<li><p><u>下記の設定ページにアクセス</u></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fscript.google.com%2Fhome%2Fusersettings" title="Apps Script – Google Apps Script" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><a href="https://script.google.com/home/usersettings">Apps Script &ndash; Google Apps Script</a></p></li>
+<li><p><u>背景が青い辺りにカーソルを合わせてクリック</u></p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph">
+<img class="hatena-fotolife lazy"
+     alt="背景が青い辺りにカーソルを合わせてクリック"
+     title="f:id:yuricks7:20200929193456p:plain"
+     data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193456.png"
+     src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193456.png"
+     itemprop="image" />
+</span></p></li>
+<li><p><u>画面右側のスイッチをクリックして、<code>Google Apps Script API</code>を<kbd><kbd class="btn-square-emboss">オン</kbd></kbd>に変更</u></p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph">
+<img class="hatena-fotolife lazy"
+     alt="Google Apps Script APIを「オン」にする"
+     title="f:id:yuricks7:20200929193752p:plain"
+     data-original="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193752.png"
+     src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/yuricks7/20200929/20200929193752.png"
+     itemprop="image" />
+</span></p></li>
+</ol>
+
+
+<h4 id="Clasp側の設定">Clasp側の設定</h4>
+
+<h5 id="作業用のChromeをアクティブにしておく">作業用の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Chrome">Chrome</a>を「アクティブ」にしておく</h5>
+
+<p>※ここは<a class="keyword" href="http://d.hatena.ne.jp/keyword/Chrome">Chrome</a>で<b>ブラウザを複数ユーザー分作成している方</b>向けです。<br>
+それ以外の方は<a href="#Clasp%E3%81%ABGoogle%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E7%B4%90%E4%BB%98%E3%81%91%E3%82%8B">次へ</a>。</p>
+
+<ol>
+<li><u>Claspで作業したいユーザーのブラウザで任意のページを開いてウィンドウをアクティブにしておく</u></li>
+</ol>
+
+
+<h5 id="ClaspにGoogleアカウントを紐付ける">Claspに<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントを紐付ける</h5>
+
+<ol>
+<li><p><u>ターミナルに戻って下記のコマンドを入力</u></p>
+
+<p><pre class="code lang-sh" data-lang="sh" data-unlink>clasp login</pre></p>
+
+<p>自動でブラウザが開きます。</p></li>
+<li><p><u>Clasp作業用の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Google">Google</a>アカウントでログイン</u></p>
+
+<p>アカウントが認証されると、ブラウザの上の方に下記のメッセージが表示されます。<br>
+<pre class="code" data-lang="" data-unlink>Logged in! You may close this page.</pre></p>
+
+<p><p class="translation">ログインしました！このページは閉じて構いません。</p></p>
+
+<p>ここまで来たら、ブラウザは一旦閉じてもOKです。</p></li>
+</ol>
+
+
+<h3 id="このシリーズについて">このシリーズについて</h3>
+
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Google%20Apps">Google Apps</a> Scriptをローカルで編集する方法について、まとめています。</p>
+
+<h4 id="連載目次">連載目次</h4>
+
+<ol>
+<li><a href="https://www.yuru-wota.com/entry/GAS/What-a-good-clasp">&#x3010;Clasp&#x3011;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x3067;GAS&#x3092;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x3068;&#x30C7;&#x30E1;&#x30EA;&#x30C3;&#x30C8; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><span class="serialized-label">当記事</span><a href="https://www.yuru-wota.com/entry/GAS/How-to-Install-Clasp">&#x3010;Clasp&#x3011;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x3067;GAS&#x3092;&#x66F8;&#x304F;&#x6E96;&#x5099; &#xFF5E;Clasp&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#xFF5E; - &#x3086;&#x308B;&#x304A;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+</ol>
+
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><p>全体の手順</p>
+
+<ul>
+<li><a href="https://gas.excelspeedup.com/">&#x7D4C;&#x7406;&#x696D;&#x52D9;&#x5411;&#x3051;Google Apps Script&#x8B1B;&#x5EA7; &ndash; GAS&#x306F;&#x7D4C;&#x7406;&#x696D;&#x52D9;&#x306E;&#x5408;&#x7406;&#x5316;&#x306B;&#x306F;&#x3068;&#x3066;&#x3082;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3088;</a></li>
+<li><a href="https://qiita.com/HeRo/items/4e65dcc82783b2766c03">GAS &#x306E;Google&#x8B39;&#x88FD;CLI&#x30C4;&#x30FC;&#x30EB; clasp - Qiita</a></li>
+</ul>
+</li>
+<li><p>シェル、ターミナルの使い方</p>
+
+<ul>
+<li><p>npmとは</p>
+
+<ul>
+<li><a href="https://techacademy.jp/magazine/16105">&#x4FBF;&#x5229;&#x306A;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;&#x30C4;&#x30FC;&#x30EB;&#xFF01;npm&#x3068;&#x306F;&#x3010;&#x521D;&#x5FC3;&#x8005;&#x5411;&#x3051;&#x3011; | TechAcademy&#x30DE;&#x30AC;&#x30B8;&#x30F3;</a></li>
+</ul>
+</li>
+<li><p>alias</p>
+
+<ul>
+<li><a href="https://github.com/google/clasp/issues/687">Install clasp without sudo instructions &middot; Issue #687 &middot; google/clasp &middot; GitHub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Clasp</p>
+
+<ul>
+<li><p>公式ドキュメント</p>
+
+<ul>
+<li><p>概要</p>
+
+<ul>
+<li><a href="https://developers.google.com/apps-script/guides/clasp">Command Line Interface using clasp &nbsp;|&nbsp; Apps Script &nbsp;|&nbsp; Google Developers</a></li>
+</ul>
+</li>
+<li><p><a class="keyword" href="http://d.hatena.ne.jp/keyword/GitHub">GitHub</a>のREADME</p>
+
+<ul>
+<li><a href="https://github.com/google/clasp/blob/master/README.md">clasp/README.md at master &middot; google/clasp &middot; GitHub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使い方のコツなど</p>
+
+<ul>
+<li><a href="https://qiita.com/kjfsm4/items/a8d59a660176deac62cb">clasp&#x306E;README&#x3092;&#x65E5;&#x672C;&#x8A9E;&#x8A33; - Qiita</a></li>
+<li><a href="https://qiita.com/rf_p/items/7492375ddd684ba734f8">clasp&#x3092;&#x4F7F;&#x3044;&#x3001;Google Apps Script&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;git&#x3067;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;&#x3059;&#x308B; - Qiita</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="注釈">注釈</h3>
+<div class="footnote">
+<p class="footnote"><a href="#fn-d895aa7e" name="f-d895aa7e" class="footnote-number">*1</a><span class="footnote-delimiter">:</span><span class="footnote-text">  シェルとは？<br></p>
+
+<blockquote><p>シェル（英：shell）とは<br>
+ <br>
+コンピュータ株式会社の受付のおねーさんのこと。<br>
+ <br>
+もう少し真面目に書くと<br>
+人間様からの入力をコンピュータさんに伝えるプログラムのこと<br>
+です。<br>
+ <br>
+イメージしにくければ<br>
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/Windows">Windows</a>における「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%DE%A5%F3%A5%C9%A5%D7%A5%ED%A5%F3%A5%D7%A5%C8">コマンドプロンプト</a>」みたいなもの<br>
+と考えても構いません。<br>
+ <br>
+<cite><a href="https://wa3.i-3-i.info/word11219.html">シェル (shell)とは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典</a></cite>
+</span></p>
+</div>
                       </div>
 
                       <footer class="entry-footer">
