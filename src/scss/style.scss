@@ -918,6 +918,9 @@ footer {
   /*--------------------------------------
     <kbd>タグ
   --------------------------------------*/
+  kbd {
+    @include standardFonts();
+  }
   /*
     mac風
     https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-style-by-nrjmadan.html

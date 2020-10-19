@@ -2407,6 +2407,10 @@ footer .comment-box {
   text-align: center;
 }
 
+.entry-content kbd {
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+}
+
 .entry-content .mac-key {
   /* ----Box Properties---- */
   display: inline-block;
