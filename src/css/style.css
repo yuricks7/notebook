@@ -2170,15 +2170,21 @@ footer .comment-box {
 }
 
 .entry-content s {
-  text-decoration: none;
-  /* 赤線 */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d32f2f), to(#d32f2f));
-  background-image: linear-gradient(#d32f2f, #d32f2f);
-  background-position: 0 50%;
-  background-size: 100% 3px;
-  background-repeat: repeat-x;
   /* グレーアウト */
   color: #949494;
+  font-style: italic;
+}
+
+.entry-content s code {
+  background: #c8c8c8;
+  color: #f0f0f0 !important;
+  font-style: italic;
+}
+
+.entry-content s kbd {
+  color: rgba(5, 5, 5, 0.4) !important;
+  font-style: italic;
+  text-decoration: line-through !important;
 }
 
 .entry-content img[alt] {

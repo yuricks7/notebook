@@ -716,18 +716,27 @@ footer {
     font-size: 1.03em;
   }
 
+  u {
+
+  }
+
   s {
-    text-decoration: none;
-
-    /* 赤線 */
-    background-image:
-      linear-gradient($char-red, $char-red);
-    background-position: 0 50%;
-    background-size    : 100% 3px;
-    background-repeat  : repeat-x;
-
     /* グレーアウト */
     color: rgb(148, 148, 148);
+    font-style: italic;
+
+    code {
+      background: rgb(200, 200, 200);
+
+      color: $char-white !important;
+      font-style: italic;
+    }
+
+    kbd {
+      color: charBlack(.4) !important;
+      font-style: italic;
+      text-decoration: line-through !important;
+    }
   }
 
   img[alt] {
