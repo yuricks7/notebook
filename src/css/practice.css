@@ -2050,6 +2050,7 @@ footer .comment-box {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
+  /* 各種ラベル */
   /* 文中の文字 */
   /*--------------------------------------
     テキストボックス（まとめ、強調など）
@@ -2169,16 +2170,26 @@ footer .comment-box {
   font-size: 1.03em;
 }
 
+.entry-content u kbd {
+  text-decoration: underline !important;
+}
+
 .entry-content s {
-  text-decoration: none;
-  /* 赤線 */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d32f2f), to(#d32f2f));
-  background-image: linear-gradient(#d32f2f, #d32f2f);
-  background-position: 0 50%;
-  background-size: 100% 3px;
-  background-repeat: repeat-x;
   /* グレーアウト */
   color: #949494;
+  font-style: italic;
+}
+
+.entry-content s code {
+  background: #c8c8c8;
+  color: #f0f0f0 !important;
+  font-style: italic;
+}
+
+.entry-content s kbd {
+  color: rgba(5, 5, 5, 0.4) !important;
+  font-style: italic;
+  text-decoration: line-through !important;
 }
 
 .entry-content img[alt] {
@@ -2312,14 +2323,55 @@ footer .comment-box {
 }
 
 .entry-content .serialized-label {
-  margin-left: 8px;
-  padding: 2px !important;
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
   background: #d32f2f;
   color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .red-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: #d32f2f;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .blue-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: darkblue;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.entry-content .green-label {
+  margin: auto 4px auto 0;
+  padding: 4px;
+  border-radius: 3px;
+  background: #009130;
+  color: white;
+  text-align: center;
+  font-size: 0.85em;
 }
 
 .entry-content .red {
   color: #d32f2f;
+}
+
+.entry-content .blue {
+  color: darkblue;
+}
+
+.entry-content .green {
+  color: #009130;
 }
 
 .entry-content .note {
@@ -2354,6 +2406,10 @@ footer .comment-box {
   border: 1px dashed;
   border-radius: 5px;
   text-align: center;
+}
+
+.entry-content kbd {
+  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
 .entry-content .mac-key {

@@ -33,8 +33,13 @@ const addRowNumbers = (e) => {
   const close_tag = '</div>';
   const lines   = e.innerHTML.split(/\n/); // 改行で区切り
   lines.forEach((line, i) => {
-    // if (line === "") return; 　　　　  // 空行は飛ばさない！
-    if (i === lines.length - 1) return; // 最終行は飛ばす（<pre>が改行されている前提）
+
+    // if (i === 0) codeLine += open_tag + line + close_tag;
+
+    if (i !== 0) {
+      // if (line === "") return; 　　　　  // 空行は飛ばさない！
+      if (i === lines.length - 1) return; // 最終行は飛ばす（<pre>が改行されている前提）
+    }
 
     codeLine += open_tag + line + close_tag;
   });

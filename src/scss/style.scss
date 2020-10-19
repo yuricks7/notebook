@@ -716,18 +716,29 @@ footer {
     font-size: 1.03em;
   }
 
+  u {
+    kbd {
+      text-decoration: underline !important;
+    }
+  }
+
   s {
-    text-decoration: none;
-
-    /* 赤線 */
-    background-image:
-      linear-gradient($char-red, $char-red);
-    background-position: 0 50%;
-    background-size    : 100% 3px;
-    background-repeat  : repeat-x;
-
     /* グレーアウト */
     color: rgb(148, 148, 148);
+    font-style: italic;
+
+    code {
+      background: rgb(200, 200, 200);
+
+      color: $char-white !important;
+      font-style: italic;
+    }
+
+    kbd {
+      color: charBlack(.4) !important;
+      font-style: italic;
+      text-decoration: line-through !important;
+    }
   }
 
   img[alt] {
@@ -852,18 +863,18 @@ footer {
     文字装飾いろいろ
   --------------------------------------*/
   /* 連載目次 */
-  .serialized-label {
-    margin-left: 8px;
-    padding    : 2px !important; // 効いてないかも？
+  .serialized-label { @include labels($char-red,  .85em); }
 
-    background: $char-red;
-    color           : white;
-  }
+  /* 各種ラベル */
+    .red-label { @include labels($char-red,   .85em); }
+   .blue-label { @include labels($char-blue,  .85em); }
+  .green-label { @include labels($char-green, .85em); }
+
 
   /* 文中の文字 */
-  .red {
-    color: $char-red;
-  }
+  .red   { color: $char-red;   }
+  .blue  { color: $char-blue;  }
+  .green { color: $char-green; }
 
   .note {
     font-size  : .8em;
@@ -907,6 +918,9 @@ footer {
   /*--------------------------------------
     <kbd>タグ
   --------------------------------------*/
+  kbd {
+    @include standardFonts();
+  }
   /*
     mac風
     https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-style-by-nrjmadan.html
@@ -1109,6 +1123,10 @@ footer {
   /*--------------------------------------
     コードブロック
   --------------------------------------*/
+  pre[data-lang=""] {
+    padding-top: 10px !important;
+  }
+
   pre.code {
     margin : 15px ($side-margin + 6px);
     padding: 20px 10px 10px 10px;
@@ -1189,7 +1207,7 @@ footer {
   --------------------------------------*/
   table {
     margin-left : $side-margin;
-    margin-right: $side-margin;
+    margin-right: calc($side-margin + 30px);
 
     // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
     // https://qiita.com/ymeeto/items/f165576f49f37e28e253
@@ -1197,8 +1215,12 @@ footer {
 
     /* 横スクロール */
     overflow-x: scroll;
-    width: auto;
-    max-width: 980px;
+
+    table-layout: auto;
+    width : 100% !important;
+    height: auto;
+    max-width: 940px;
+    min-width: 100px;
 
     // /* 縦スクロール */
     // overflow-y: scroll;
@@ -1206,19 +1228,25 @@ footer {
     // max-height: 980px;
 
     white-space: nowrap;               /* 自動改行をoff */
-    -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
+    -webkit-overflow-scrolling: touch !important; /* スマホでも滑らかに */
 
     border-radius: 3px;
     border: 1px solid charBlack(.05);
   }
 
+  tbody {
+    width: auto !important;
+  }
+
   th {
+    // width : auto !important;
     background: charBlack(.03) !important;
+    line-height: 1.3em;
   }
 
   td {
     font-size  :  .9em;
-    line-height: 1.3em;
+    line-height: 1.8em;
   }
 
 
