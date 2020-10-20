@@ -39,18 +39,14 @@ body {
 
   /* 画像 */
   .hatena-fotolife {
-    @include lightenImgs();
+    @include lightenImgs(.7);
   }
 
   /* カード形式リンク */
-  .embed-card {
-    @include linkBelowCards();
-  }
-
   iframe {
     margin-top   : 20px !important;
 
-    @include lightenImgs();
+    @include lightenImgs(.7);
     @include linkBelowCards();
   }
 

@@ -2208,6 +2208,12 @@ footer .comment-box {
   /* スマホでも滑らかに */
 }
 
+.entry-content .hatena-fotolife:hover {
+  opacity: 0.7;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
 .entry-content .embed-card {
   margin-bottom: 0 !important;
 }

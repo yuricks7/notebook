@@ -219,9 +219,9 @@ $side-margin  : 10px;
   img { display: none; }
 }
 
-@mixin lightenImgs {
+@mixin lightenImgs($opacity) {
   &:hover {
-    opacity: 0.7;
+    opacity: $opacity;
     transition-duration: 0.3s;
   }
 }
