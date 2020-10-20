@@ -219,6 +219,20 @@ $side-margin  : 10px;
   img { display: none; }
 }
 
+@mixin lightenImgs {
+  &:hover {
+    opacity: 0.7;
+    transition-duration: 0.3s;
+  }
+}
+
+@mixin extendImgs {
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+  }
+}
+
 @mixin linkBelowCards() {
   margin-bottom: 0px !important;
   min-width: 100px;
@@ -241,10 +255,8 @@ $side-margin  : 10px;
 
       font-weight: bold;
     }
-
   }
 }
-
 
 @mixin footnoteParts() {
   font-size  : .85em;

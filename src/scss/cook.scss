@@ -14,20 +14,6 @@
                'sans-serif' !important;
 }
 
-/* カード形式リンク */
-.embed-card {
-  @include linkBelowCards();
-}
-
-iframe {
-  margin-top   : 20px !important;
-
-  @include linkBelowCards();
-}
-
-
-
-
 body {
   @include standardFonts();
 }
@@ -50,6 +36,23 @@ body {
   @include standardFonts();
   font-size  : 17px;
   line-height: 1.8em;
+
+  /* 画像 */
+  .hatena-fotolife {
+    @include lightenImgs();
+  }
+
+  /* カード形式リンク */
+  .embed-card {
+    @include linkBelowCards();
+  }
+
+  iframe {
+    margin-top   : 20px !important;
+
+    @include lightenImgs();
+    @include linkBelowCards();
+  }
 
   /*--------------------------------------
     目次の表示・非表示ボタン
