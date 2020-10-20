@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin standardFonts() {
   font-family: 'M PLUS 1p',
                'Sawarabi Mincho',
@@ -157,6 +159,15 @@ body {
     }
 
     @include verticalLines();
+  }
+
+  .footnote {
+    margin : 0;
+    padding: 6px;
+
+    .footnote-number, .footnote-delimiter {
+      @include footnoteParts();
+    }
   }
 }
 

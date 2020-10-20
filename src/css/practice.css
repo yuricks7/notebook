@@ -2581,6 +2581,10 @@ footer .comment-box {
   vertical-align: top !important;
 }
 
+.entry-content pre[data-lang=""] {
+  padding-top: 10px !important;
+}
+
 .entry-content pre.code {
   margin: 15px 16px;
   padding: 20px 10px 10px 10px;
@@ -2684,27 +2688,35 @@ footer .comment-box {
 
 .entry-content table {
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: calc($side-margin + 30px);
   display: block;
   /* 横スクロール */
   overflow-x: scroll;
-  width: auto;
-  max-width: 980px;
+  table-layout: auto;
+  width: 100% !important;
+  height: auto;
+  max-width: 940px;
+  min-width: 100px;
   white-space: nowrap;
   /* 自動改行をoff */
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch !important;
   /* スマホでも滑らかに */
   border-radius: 3px;
   border: 1px solid rgba(5, 5, 5, 0.05);
 }
 
+.entry-content tbody {
+  width: auto !important;
+}
+
 .entry-content th {
   background: rgba(5, 5, 5, 0.03) !important;
+  line-height: 1.3em;
 }
 
 .entry-content td {
   font-size: .9em;
-  line-height: 1.3em;
+  line-height: 1.8em;
 }
 
 .entry-content hr {

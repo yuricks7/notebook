@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/**
+ * 変数まとめ
+ */
+/*--------------------------------------
+  フォント
+--------------------------------------*/
+/*--------------------------------------
+  色
+--------------------------------------*/
+/*--------------------------------------
+  サイズ
+--------------------------------------*/
+/*--------------------------------------
+  パーツ
+--------------------------------------*/
 /* カード形式リンク */
 .embed-card {
   margin-bottom: 0 !important;
@@ -132,6 +147,17 @@ body {
 
 .entry-content td:nth-child(3) {
   border-right: 2px solid #afb8ca !important;
+}
+
+.entry-content .footnote {
+  margin: 0;
+  padding: 6px;
+}
+
+.entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
+  font-size: .85em;
+  font-weight: bold;
+  vertical-align: top;
 }
 
 @media (max-width: 480px) {
