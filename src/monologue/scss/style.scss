@@ -1,4 +1,5 @@
 // @import "../../scss/sanitize";
+@import "../../scss/variables";
 
 .entry-content {
  /*--------------------------------------
@@ -55,6 +56,30 @@
     text-align   : center;
     border       : 1px dashed;
     border-radius: 5px;
+  }
+
+  img[alt] {
+    color    : charBlack(.5);
+    font-size: .8em;
+  }
+
+  .hatena-fotolife {
+    margin: 15px auto;
+
+    width : 100%;
+    height: auto;
+    max-width: 680px;
+    min-width: 100px;
+
+    @include lightenImgs(.5);
+  }
+
+  /* カード形式リンク */
+  iframe {
+    margin-top: 20px !important;
+
+    @include lightenImgs(.7);
+    @include linkBelowCards();
   }
 
  /*--------------------------------------
