@@ -3,141 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
+    <!-- フォント -->
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Roboto+Mono:wght@460&display=swap" />
     <!-- このページ用のCSS -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./note/css/style.css" />
     <title>サイトマップ</title>
   </head>
   <body>
-    <div class="header">
-      <h1>ゆるメモ</h1>
-        ブログに書くまでもなさそうなこととか、下書きとか。<br/>
-      <h2>サイトマップ</h2>
-      <span class="small-chars">※Markdownだからか(?)、ブログ以外のリンク先は文字化けしてます…（勉強中）</span>
+    <div id="container">
+      <div class="entry-header">
+        <h1>ゆるメモ</h1>
+        <s>ブログに書くまでもなさそうなこととか、下書きとか。</s><br/>
+        <span class="additional-note"><2020/10/21追記></span><br>
+        テスト用ページのリンク集に変更しました。
+        <h2>サイトマップ</h2>
+        テーブルの大きさは調整中…
+      </div>
+      <div class="entry-content">
+        <h3>ゆるおたノート</h3>
+          <table border="1">
+            <tbody>
+              <tr">
+                <th>分類</th>
+                <th>項目</th>
+                <th>Link</th>
+              </tr>
+              <tr>
+                <td>記事</td>
+                <td></td>
+                <td><a href="./note/html/entry.html">▶</a></td>
+              </tr>
+              <tr>
+                <td>記事</td>
+                <td>AMP</td>
+                <td><a href="./note/html/amp.html">▶</a></td>
+              </tr>
+              <tr>
+                <td>記事</td>
+                <td>コードブロック</td>
+                <td><a href="./note/html/codes.html">▶</a></td>
+              </tr>
+              <tr>
+                <td>記事一覧</td>
+                <td>Top</td>
+                <td><a href="./note/html/home.html">▶</a></td>
+              </tr>
+              <tr>
+                <td>記事一覧</td>
+                <td>カテゴリー等</td>
+                <td><a href="./note/html/archive.html">▶</a></td>
+              </tr>
+              <tr>
+                <td>モジュール</td>
+                <td>アカウント一覧</td>
+                <td><a href="./note/html/module/accounts.html">▶</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+        <h3>ゆるオタクのつぶやき</h3>
+        <table border="1">
+          <tbody>
+            <tr">
+              <th>分類</th>
+              <th>項目</th>
+              <th>Link</th>
+            </tr>
+            <tr>
+              <td>記事</td>
+              <td>記事</td>
+              <td><a href="./monologue/html/entry.html">▶</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>料理練習家の手帖</h3>
+        <table border="1">
+          <tbody>
+            <tr">
+              <th>分類</th>
+              <th>項目</th>
+              <th>Link</th>
+            </tr>
+            <tr>
+              <td>記事</td>
+              <td>記事</td>
+              <td><a href="./cook/html/entry.html">▶</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <!-- ↑contentここまで -->
+
     </div>
-    <div class="content">
-      <div class="category">
-        <div class="category-index">
-          <h3>DevTools</h3>
-        </div>
-        <div class="category-contents">
-          <h4>Git</h4>
-          <ul>
-            <li>
-              <a href="notebook/Git/Commands.md">コマンド集</a>
-            </li>
-            <li>
-              <a href="notebook/Git/Git-GitHub.md">Git/GitHubの資料集</a><br />
-            </li>
-            <li>
-              <a href="notebook/Git/Git-Windows10_gitignore_global.md"
-              >グローバルのignoreリストの作成について</a>
-            </li>
-          </ul>
-          <h4>Google Chrome拡張機能</h4>
-          <ul>
-            <li>
-              <a href="notebook/ChromeExtenstions/GitHub.md">GitHub関係</a>
-            </li>
-          </ul>
-          <h4>VS Code</h4>
-          <ul>
-            <li>
-              <a href="notebook/ChromeExtenstions/GitHub.md">コマンド集</a>
-            </li>
-            <li>
-              ブログ
-              <ul>
-                <li>
-                  <a href="https://www.yuru-wota.com/archive/category/VS%20Code-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">カスタマイズ</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!--- ↑category-contentsここまで -->
-      </div>
-      <!--- ↑categoryここまで -->
-      <div class="category">
-        <div class="category-index">
-          <h3>Language</h3>
-        </div>
-        <div class="category-contents">
-          <h4>Google Apps Script</h4>
-          <ul>
-            <li>
-              ブログ
-              <ul>
-                <li>
-                  文法メモ
-                  <ul>
-                    <li><a href="https://www.yuru-wota.com/entry/JavaScript/CallbackFunction"
-                      >コールバック関数</a></li>
-                    <li><a href="https://www.yuru-wota.com/entry/JavaScript/ControlSyntax"
-                      >制御構文</a></li>
-                    <li><a href="https://www.yuru-wota.com/entry/GAS/instance-calculation-training"
-                      >クラス</a></li>
-                  </ul>
-                </li>
-                <li>
-                  自動化
-                  <ul>
-                    <li>
-                      <a href="https://www.yuru-wota.com/entry/Slack/kind-words-bot">歌詞bot</a>
-                    </li>
-                    <li>
-                      <a href="https://www.yuru-wota.com/entry/Slack/Google-Analytics-Report">日次レポート</a>
-                    </li>
-                    <li>
-                      <a href="https://www.yuru-wota.com/entry/GAS/comp-ranking-sheet/01">シートの転記</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <h4>PowerShell</h4>
-          <ul>
-            <li>
-              <a href="notebook/PowerShell/PowerShell.md">コマンド集</a>
-            </li>
-            <li>
-              ブログ
-              <ul>
-                <li>
-                  <a href="">パッケージ管理</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!--- ↑category-contentsここまで -->
-      </div>
-      <!--- ↑categoryここまで -->
-      <div class="category">
-        <div class="category-index">
-          <h3>Gadget</h3>
-        </div>
-        <div class="category-contents">
-          <h4>HP Pavilion 15-CS0020TU</h4>
-          <ul>
-            <li>
-              <a href="notebook/PC/ショートカット集.md">ショートカット</a>
-            </li>
-            <li>
-              ブログ
-              <ul>
-                <li>
-                  <a href="//www.yuru-wota.com/entry/keyboard/change-key-bindings">キーボードのカスタマイズ</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!--- ↑category-contentsここまで -->
-      </div>
-      <!--- ↑categoryここまで -->
-    </div>
-    <!-- ↑contentここまで -->
   </div>
+  <style>
+    .entry-content table {
+      width: 600px !important;
+    }
+
+    th {
+      padding: 2px 4px;
+    }
+
+    td {
+      text-align: center;
+      padding: 2px 4px;
+    }
+  </style>
 </body>
 </html>
