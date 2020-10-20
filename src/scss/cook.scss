@@ -16,22 +16,17 @@
 
 /* カード形式リンク */
 .embed-card {
-  margin-bottom: 0 !important;
-
-  &+a {
-    text-decoration: none;
-
-    &:before {
-      margin-left : 8px;
-      margin-right: 8px;
-      content: ">>";
-
-      font-weight: bold;
-    }
-
-    font-size: .8em;
-  }
+  @include linkBelowCards();
 }
+
+iframe {
+  margin-top   : 20px !important;
+
+  @include linkBelowCards();
+}
+
+
+
 
 body {
   @include standardFonts();
