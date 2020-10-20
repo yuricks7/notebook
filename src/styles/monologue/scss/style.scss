@@ -1,5 +1,4 @@
-// @import "../../scss/sanitize";
-@import "../../scss/variables";
+@import "../../../scss/variables";
 
 .entry-content {
  /*--------------------------------------
@@ -7,6 +6,7 @@
   --------------------------------------*/
   font-family: 'Kosugi Maru';
   font-size: 15px;
+  line-height: 2.3em;
   color: #000000;
 
  /*--------------------------------------
