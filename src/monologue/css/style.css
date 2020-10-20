@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.entry-content {
+  /*--------------------------------------
+    フォント
+  --------------------------------------*/
+  font-family: 'Kosugi Maru';
+  font-size: 15px;
+  color: #000000;
+  /*--------------------------------------
+    文字サイズいろいろ
+  --------------------------------------*/
+  /*
+  【CSS】ブログの文章を下線だけ蛍光ペンを引いたように装飾する方法 | AffiliateLAB
+  https://gucciz03.com/keikoupen-5423
+  */
+  /*--------------------------------------
+    テキストボックス
+  --------------------------------------*/
+  /*--------------------------------------
+    ヨメレバ・カエレバ
+  --------------------------------------*/
+  /* 色の追加 */
+}
+
+.entry-content b {
+  font-weight: bold;
+}
+
+.entry-content strong {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(40%, #ffff99));
+  background: linear-gradient(transparent 60%, #ffff99 40%);
+  font-weight: bolder;
+}
+
+.entry-content .note {
+  font-size: 80%;
+  line-height: 120%;
+  color: #d32f2f;
+}
+
+.entry-content .additional-note {
+  font-size: 80%;
+  line-height: 120%;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.entry-content .small-chars {
+  font-size: 80%;
+  line-height: 120%;
+}
+
+.entry-content .large-chars {
+  font-size: 120%;
+}
+
+.entry-content .text-box-dashed {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px dashed;
+  border-radius: 5px;
+}
+
+.entry-content .shoplinkrakukobo a {
+  background-color: #c20004 !important;
+  border: 1px solid #c20004 !important;
+}
+
+.entry-content .shoplinkseven a {
+  background-color: #006e54 !important;
+  border: 1px solid #006e54 !important;
+}
+
+.entry-content .shoplinktoshokan a {
+  background-color: #888e7e !important;
+  border: 1px solid #888e7e !important;
+}
+
+.entry-content .shoplinkkakakucom a {
+  background-color: #051D93 !important;
+  border: 1px solid #051D93 !important;
+}
+/*# sourceMappingURL=style.css.map */
