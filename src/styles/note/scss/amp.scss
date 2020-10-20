@@ -1,6 +1,6 @@
-@import "sanitize";
-@import "responsive";
-@import "variables";
+@import "../../shared/scss/sanitize";
+@import "./responsive";
+@import "../../shared/scss/variables";
 
 /*--------------------------------------
   ブログ全体のレイアウト

@@ -1,21 +1,19 @@
 @charset "UTF-8";
-/* カード形式リンク */
-.embed-card {
-  margin-bottom: 0 !important;
-}
-
-.embed-card + a {
-  text-decoration: none;
-  font-size: .8em;
-}
-
-.embed-card + a:before {
-  margin-left: 8px;
-  margin-right: 8px;
-  content: ">>";
-  font-weight: bold;
-}
-
+/**
+ * 変数まとめ
+ */
+/*--------------------------------------
+  フォント
+--------------------------------------*/
+/*--------------------------------------
+  色
+--------------------------------------*/
+/*--------------------------------------
+  サイズ
+--------------------------------------*/
+/*--------------------------------------
+  パーツ
+--------------------------------------*/
 body {
   font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
@@ -36,6 +34,8 @@ body {
   font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: 17px;
   line-height: 1.8em;
+  /* 画像 */
+  /* カード形式リンク */
   /*--------------------------------------
     目次の表示・非表示ボタン
   --------------------------------------*/
@@ -47,6 +47,41 @@ body {
   /*--------------------------------------
     テーブルの表示
   --------------------------------------*/
+}
+
+.entry-content .hatena-fotolife:hover {
+  opacity: 0.7;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.entry-content iframe {
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
+  min-width: 100px;
+}
+
+.entry-content iframe:hover {
+  opacity: 0.7;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.entry-content iframe + a {
+  display: block;
+  margin-top: 0px;
+  width: 100%;
+  min-width: 100px;
+  font-size: .8em;
+  line-height: 1.6em;
+  text-decoration: none;
+}
+
+.entry-content iframe + a:before {
+  margin-left: 4px;
+  margin-right: 8px;
+  content: ">>";
+  font-weight: bold;
 }
 
 .entry-content .show-area {
@@ -134,10 +169,21 @@ body {
   border-right: 2px solid #afb8ca !important;
 }
 
+.entry-content .footnote {
+  margin: 0;
+  padding: 6px;
+}
+
+.entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
+  font-size: .85em;
+  font-weight: bold;
+  vertical-align: top;
+}
+
 @media (max-width: 480px) {
   /* 本文 */
   .entry-content {
     font-size: 14px !important;
   }
 }
-/*# sourceMappingURL=cook.css.map */
+/*# sourceMappingURL=style.css.map */

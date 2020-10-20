@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/**
+ * 変数まとめ
+ */
+/*--------------------------------------
+  フォント
+--------------------------------------*/
+/*--------------------------------------
+  色
+--------------------------------------*/
+/*--------------------------------------
+  サイズ
+--------------------------------------*/
+/*--------------------------------------
+  パーツ
+--------------------------------------*/
+.entry-content {
+  /*--------------------------------------
+    フォント
+  --------------------------------------*/
+  font-family: 'Kosugi Maru';
+  font-size: 15px;
+  line-height: 2.3em;
+  color: #000000;
+  /*--------------------------------------
+    文字サイズいろいろ
+  --------------------------------------*/
+  /*
+  【CSS】ブログの文章を下線だけ蛍光ペンを引いたように装飾する方法 | AffiliateLAB
+  https://gucciz03.com/keikoupen-5423
+  */
+  /*--------------------------------------
+    テキストボックス
+  --------------------------------------*/
+  /* カード形式リンク */
+  /*--------------------------------------
+    ヨメレバ・カエレバ
+  --------------------------------------*/
+  /* 色の追加 */
+}
+
+.entry-content b {
+  font-weight: bold;
+}
+
+.entry-content strong {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(40%, #ffff99));
+  background: linear-gradient(transparent 60%, #ffff99 40%);
+  font-weight: bolder;
+}
+
+.entry-content .note {
+  font-size: 80%;
+  line-height: 120%;
+  color: #d32f2f;
+}
+
+.entry-content .additional-note {
+  font-size: 80%;
+  line-height: 120%;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.entry-content .small-chars {
+  font-size: 80%;
+  line-height: 120%;
+}
+
+.entry-content .large-chars {
+  font-size: 120%;
+}
+
+.entry-content .text-box-dashed {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px dashed;
+  border-radius: 5px;
+}
+
+.entry-content img[alt] {
+  color: rgba(5, 5, 5, 0.5);
+  font-size: .8em;
+}
+
+.entry-content .hatena-fotolife {
+  margin: 15px auto;
+  width: 100%;
+  height: auto;
+  max-width: 680px;
+  min-width: 100px;
+}
+
+.entry-content .hatena-fotolife:hover {
+  opacity: 0.5;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.entry-content iframe {
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
+  min-width: 100px;
+}
+
+.entry-content iframe:hover {
+  opacity: 0.7;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.entry-content iframe + a {
+  display: block;
+  margin-top: 0px;
+  width: 100%;
+  min-width: 100px;
+  font-size: .8em;
+  line-height: 1.6em;
+  text-decoration: none;
+}
+
+.entry-content iframe + a:before {
+  margin-left: 4px;
+  margin-right: 8px;
+  content: ">>";
+  font-weight: bold;
+}
+
+.entry-content .shoplinkrakukobo a {
+  background-color: #c20004 !important;
+  border: 1px solid #c20004 !important;
+}
+
+.entry-content .shoplinkseven a {
+  background-color: #006e54 !important;
+  border: 1px solid #006e54 !important;
+}
+
+.entry-content .shoplinktoshokan a {
+  background-color: #888e7e !important;
+  border: 1px solid #888e7e !important;
+}
+
+.entry-content .shoplinkkakakucom a {
+  background-color: #051D93 !important;
+  border: 1px solid #051D93 !important;
+}
+/*# sourceMappingURL=style.css.map */

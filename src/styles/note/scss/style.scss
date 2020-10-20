@@ -1,6 +1,6 @@
-@import "sanitize";
-@import "responsive";
-@import "variables";
+@import "../../shared/scss/sanitize";
+@import "./responsive";
+@import "../../shared/scss/variables";
 
 /*--------------------------------------
   ブログ全体のレイアウト
@@ -755,22 +755,16 @@ footer {
     min-width: 100px;
     overflow-x: scroll; // 効かないかも
     -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
+
+    @include lightenImgs(.5);
   }
 
   /* カード形式リンク */
-  .embed-card {
-    margin-bottom: 0 !important;
+  iframe {
+    margin-top: 20px !important;
 
-    &+a {
-      &:before {
-        margin-left : 8px;
-        margin-right: 8px;
-        content: ">>";
-        font-weight: bold;
-      }
-
-      font-size: .8em;
-    }
+    @include lightenImgs(.7);
+    @include linkBelowCards();
   }
 
   /* ツイート・カード */

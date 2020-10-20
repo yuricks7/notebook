@@ -219,6 +219,45 @@ $side-margin  : 10px;
   img { display: none; }
 }
 
+@mixin lightenImgs($opacity) {
+  &:hover {
+    opacity: $opacity;
+    transition-duration: 0.3s;
+  }
+}
+
+@mixin extendImgs {
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+  }
+}
+
+@mixin linkBelowCards() {
+  margin-bottom: 0px !important;
+  min-width: 100px;
+
+  &+a {
+    display: block;
+    margin-top: 0px;
+
+    width: 100%;
+    min-width: 100px;
+
+    font-size  :  .8em;
+    line-height: 1.6em;
+    text-decoration: none;
+
+    &:before {
+      margin-left : 4px;
+      margin-right: 8px;
+      content: ">>";
+
+      font-weight: bold;
+    }
+  }
+}
+
 @mixin footnoteParts() {
   font-size  : .85em;
   font-weight: bold;
