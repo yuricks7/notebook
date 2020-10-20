@@ -1010,24 +1010,24 @@ clasp <span class="synSpecial">-v</span>
 <!-- jQuery (3.3.1)  -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- main -->
-<script type="module" src="../js/underArticle/modifyDate.js"></script>
+<script type="module" src="../js/body/underArticle/modifyDate.js"></script>
 
 <!-- *********************************************
- * 目次（クリックで表示/非表示）
- * 【参考】
- * 『目次』をカスタム！【表示】【隠す】機能を追加する方法 - 人生RPG
- * https://www.life-is-rpg.com/entry/2018/03/16/110000
-************************************************ -->
-<!-- jQuery (1.9.1)  -->
-<script type="module" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-
-<!-- *********************************************
- * コードブロックに行番号を追加
+ * - コードブロックに行番号を追加
  * 【参考】
  * 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
  * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
-************************************************ -->
-<script type="module" src="../js/underArticle/index.js"></script>
+
+ * - 目次（クリックで表示/非表示）
+ * 【参考】
+ * 『目次』をカスタム！【表示】【隠す】機能を追加する方法 - 人生RPG
+ * https://www.life-is-rpg.com/entry/2018/03/16/110000
+
+ ************************************************ -->
+<!-- jQuery (1.9.1)  -->
+<script type="module" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- main -->
+<script type="module" src="../js/body/underArticle/index.js"></script>
 
 <!-- *********************************************
  * シェアボタン
@@ -2032,32 +2032,27 @@ clasp <span class="synSpecial">-v</span>
             src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
           <!-- main -->
 
-          <script type="text/javascript"
+          <script type="module"
             src="https://hatena.wackwack.net/v1.1/js/breadcrumb.min.js"></script>
 
-          <script type="text/javascript"
+          <script type="module"
             src="https://hatena.wackwack.net/v1.1/js/category_archive.min.js"></script>
 
-          <!-- *********************************************
+<!-- *********************************************
  * lazy load
  * 【参考】
  * はてなブログでLazy Loadを使う方法！コピペで簡単に使える！｜パソコン・ブログガイド
  * https://www.gipsyjazznyumon.com/lazy-load-for-hatenablog/
-************************************************ -->
-<script type="module"
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
-<script type="module"
-  src="../js/entryFooter/index.js"></script>
-
-<!-- *********************************************
  * 追尾する目次（ver3.3.0）
  * 【参考】
  * https://git.io/stoc
-************************************************ -->
+ ************************************************ -->
+<script type="module"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
-<!-- <script type="module"
-  src="../js/entryFooter/tocOnSideBar.js"></script> -->
+<script type="module"
+        src="../js/body/article/underEntry/index.js"></script>
 
         </div>
 
@@ -2242,8 +2237,8 @@ clasp <span class="synSpecial">-v</span>
     <script
       type="text/javascript">Hatena.Diary.GlobalHeader.init()</script>
 
-    <script src="https://www.google.com/recaptcha/api.js" async
-      defer></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async
+      defer></script> -->
 
   </body>
 </html>
