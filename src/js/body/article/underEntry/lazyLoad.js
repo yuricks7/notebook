@@ -16,6 +16,7 @@ function main() {
     effect    : 'fadeIn',
     threshold : 200 // 表示位置の閾値（10pxの距離まで近づいたら表示する）
   });
+
 }
 
 /**

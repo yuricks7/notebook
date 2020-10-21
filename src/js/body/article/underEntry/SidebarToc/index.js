@@ -1,6 +1,7 @@
 import { SidebarToc } from "./SidebarToc.js";
 import { BlogPage }   from "./BlogPage.js";
-import { HtmlOperator as HtmlOps } from "./HtmlOperator.js";
+import { CssProperties } from "./CssProperties.js";
+import { HtmlOperator, HtmlOperator as HtmlOps } from "./HtmlOperator.js";
 import { ScrollEvent } from "./ScrollEvent.js"
 
 /**
@@ -10,7 +11,7 @@ import { ScrollEvent } from "./ScrollEvent.js"
  * はてなブログ向けのサイドバーで追尾する目次【ver3】 http://twilyze.hatenablog.jp/entry/sidebar-toc-3
  * https://gist.github.com/twilyze/30809fa76691983312dced621eb1040a
  */
-const index = () => {
+const main = () => {
 
   //# sourceURL=sidebar_toc.js
 
@@ -83,12 +84,54 @@ const index = () => {
   // a要素一覧の取得とスムーズスクロールの設定
   const elmStocAnchors = stoc.addAnchors(elmStoc, clickEvent);
 
+  /* -------------------------------------------
+     スクロール用
+   --------------------------------------------- */
+  const stocModuleClassList = stocModule.classList;
+  const stocLastIndex = stoc.headlines.length -1;
+  let canTrackScroll  = false;
+
+  const stocModuleStyles = {};
+  const cssProps = new CssProperties();
+  const positions = cssProps.values.position;
+  stocModuleStyles[positions.absolute] = { left: "" };
+  stocModuleStyles[positions.fixed]    = {};
+  stocModuleStyles[positions.static]   = {};
+
+  // スクロール可能か判別しやすくする
+  stoc.addShadowBar(classDefs.shadow);
+
+  // タッチデバイス用の処理
+  stoc.addTouchClass(classDefs.touch);
+
+  // （ブラウザが`position:sticky`に対応していれば）クラス追加
+  const isStickyMode = stoc.addStickyClass();
+
+  /* -------------------------------------------
+     ガイド要素の作成と追加
+   --------------------------------------------- */
+  const htmlOps  = new HtmlOperator;
+  const divGuide = htmlOps.addDiv();
+  guideCss = [
+    "visibility: hidden;",
+    "height: 0;",
+    "margin-top: 0;",
+    "margin-bottom: 0;",
+    "padding-top: 0;",
+    "padding-bottom: 0;",
+    "border-top: 0;",
+    "border-bottom: 0;",
+  ];
+  divGuide.id            = stocIds.guide;
+  divGuide.className     = "hatena-module";
+  divGuide.style.cssText = guideCss.join("");
 
 
 
 
   // 未使用
   const pageCategories = blogPage.categories;
+
 
 }
 
@@ -277,4 +320,4 @@ const setScrollToTop = (canLinkTitle, stoc, win, elmStocTitle) => {
 /**
  * 外部から呼び出し可
  */
-export { index };
+export { main };

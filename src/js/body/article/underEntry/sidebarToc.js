@@ -163,7 +163,7 @@ const index = () => {
   /**
    * divブロックを追加
    *
-   * @return {Document} divブロック追加後のdocument
+   * @return {Element} 新しいElement
    */
   const addDiv = () => {
     return doc.createElement("div");
@@ -502,7 +502,7 @@ const index = () => {
         const elmTocOnBodyAnchor = elmTocOnBody.getElementsByTagName("a");
         for (let i = 0; i < elmTocOnBodyAnchor.length; i++) {
           elmTocOnBodyAnchor[i].addEventListener("click", clickEvent, false);
-          hasHatenaToc = true;
+          hasTocOnBody = true;
         }
       }
     }
@@ -557,7 +557,7 @@ const index = () => {
       // a要素を作成
       // （目次記法がある時は、すでにIDが設定されているのでそれを使う）
       let idName;
-      if (hasHatenaToc) {
+      if (hasTocOnBody) {
         idName = elem.id;
 
       } else {

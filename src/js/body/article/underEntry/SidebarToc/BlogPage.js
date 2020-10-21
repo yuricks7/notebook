@@ -1,18 +1,11 @@
+import { HtmlOperator } from "./HtmlOperator.js";
+
 class BlogPage {
 
   /**
    * ページの操作を扱う
    */
   constructor() {
-
-    this.window = window;
-
-    const doc = document;
-    this.doc  = doc;
-
-    this.element = {
-      mainInner: doc.getElementById("main-inner")
-    }
 
     // 目次モジュール用
     this.categories = [{
@@ -62,9 +55,46 @@ class BlogPage {
       }
     }
 
+    this.window = window;
+
+    const doc = document;
+    this.doc  = doc;
+
+    this.element = {
+      main     : doc.getElementById("main"),
+      mainInner: doc.getElementById("main-inner"),
+      box2     : doc.getElementById("box2"),
+      globalHeaders: this.getGlobalHeaderElements_(),
+    }
 
 
+  }
 
+  /**
+   * グローバルのヘッダー要素の配列を取得
+   *
+   * @return {[Element]}
+   */
+  getGlobalHeaderElements_() {
+    const htmlOps = new HtmlOperator();
+    const globalHeaders = this.selector.id.globalHeaders;
+
+    const elems   = [];
+    for (let i = 0; i < globalHeaders.length; i++) {
+      const globalHeader = globalHeaders[i];
+
+
+      const globalElems  = htmlOps.getElements(this.doc, globalHeader);
+
+      if (!globalElems[0]) {
+        console.error("GLOBAL_HEADERS: %s が見つかりません", globalHeader);
+        return;
+      }
+
+      elems.push(globalElems[0]);
+    }
+
+    return elems;
   }
 
   /**

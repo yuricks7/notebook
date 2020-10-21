@@ -35,3 +35,5 @@ class CssProperties {
     }
   }
 }
+
+export { CssProperties }

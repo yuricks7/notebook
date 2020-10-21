@@ -467,6 +467,55 @@ class SidebarToc {
     return elmStocAnchors;
   }
 
+  /**
+   * スクロール可能か判別しやすいように、スクロールバーに影をつける
+   *
+   * @param {string} shadowClass 影用のクラス名
+   */
+  addShadowBar(shadowClass) {
+    if (this.scroll.canShowBarShadow) this.element.main.classList.add(shadowClass);
+
+  }
+
+  /**
+   * タッチデバイス用にクラスを追加する
+   *
+   * @param {string} touchClass タッチデバイス用のクラス名
+   */
+  addTouchClass(touchClass) {
+    if (!this.touch.device) return;
+
+    // 判定用にクラスを追加する
+    this.element.main.classList.add(touchClass);
+    this.module.element.classList.add(touchClass);
+  }
+
+  /**
+   * "sticky"用にクラスを追加する
+   *
+   * @return {boolean} "sticky mode"の要否
+   */
+  addStickyClass() {
+    const isStickyMode = false;
+    if (!this.touch.device && !this.module.position.isStickyMode) return isStickyMode;
+
+    const sticky    = positions.sticky;
+    const propNames = [`-webkit-${sticky}`, sticky];
+
+    const htmlOps  = new HtmlOperator();
+    const divStyle = htmlOps.addDiv().style;
+
+    for (let i = 0; i < propNames.length; i++) {
+      divStyle.position = propNames[i];
+      isStickyMode = divStyle.position.indexOf(sticky) !== -1;
+      if (!isStickyMode) continue;
+
+      this.module.element.classList.add("sticky");
+      break;
+    }
+
+    return isStickyMode;
+  }
 }
 
 export { SidebarToc }
