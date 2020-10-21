@@ -1,0 +1,527 @@
+/**
+ * レスポンシブ対応
+ */
+
+ /*--------------------------------------
+  （最大）PC
+--------------------------------------*/
+@media (max-width: 1340px) {
+
+  #content {
+    margin: 0 auto 10px;
+    width : 88%;
+
+    #main {
+      margin: 0 auto;
+      width : 100%;
+    }
+  }
+
+  #box2 {
+    margin: 0px auto;
+    width : 100%;
+    max-width: 1340px;
+  }
+
+  /* アカウント一覧 */
+  .account-btns-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .accounts-header {
+    margin-top: 0 !important;
+    text-align: center;
+  }
+
+  $btns-area: 49%;
+  .follow-blog-btns {
+    display: block;
+    width  : $btns-area;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+
+    .color-share-btns {
+      min-width : 55% !important;
+    }
+  }
+
+  .follow-account-btns {
+    display: block !important;
+    width: $btns-area;
+    margin-left: auto;
+    margin-right: auto;
+
+    .color-share-btns {
+      min-width : 65% !important;
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    width: 100%;
+    display: flex;
+    margin: 10px auto 0;
+  }
+
+  .page-lists {
+    display: block;
+    width: 49%;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .module-sub-header {
+    margin-top: 0 !important;
+    text-align: center
+  }
+
+  .page-list {
+    li {
+      height: 4em !important;
+    }
+
+    a {
+      display: inline-block;
+      padding:  4px 8px;
+
+      br {
+        display: none;
+      }
+
+      i {
+        padding-top: 4px !important;
+        font-size: 22px !important;
+      }
+
+      .blogicon-private {
+        font-size: 26px;
+      }
+    }
+  }
+
+  /* 追尾する目次 */
+  #stoc-module {
+    display: none !important;
+  }
+}
+
+/*--------------------------------------
+  （大）PC
+--------------------------------------*/
+@media (max-width: 1138px) {
+
+  #blog-title {
+    height    : 140px;
+    margin-top:  40px !important; // はてなのヘッダーに隠れないように…
+
+    #title {
+      margin-top: 20px !important;
+    }
+
+    #blog-description {
+      margin-bottom: 20px !important;
+    }
+  }
+}
+
+/*--------------------------------------
+  （中）タブレット
+--------------------------------------*/
+@media screen and (max-width: 680px) {
+
+  /* サイト名 */
+  #blog-title {
+    margin-top: 0px !important;
+  }
+
+  .entry-title {
+    font-family: -apple-system,
+                 'Kosugi Maru' !important;
+  }
+
+  /* コンテナ */
+  #container {
+    border-radius: 0 !important;
+  }
+
+  /* コンテンツ */
+  #content {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .breadcrumb {
+    border-radius: 0 !important;
+  }
+
+  .entry-inner header {
+    border-radius: 0 !important;
+  }
+
+  .entry-content {
+    padding-left : 6px !important;
+    padding-right: 6px !important;
+
+    .hatena-fotolife {
+      margin-right: 10px;
+    }
+  }
+
+  .hatena-star-container {
+    border-radius: 0 !important;
+  }
+
+  footer {
+    .hatena-module-related-entries {
+      border-radius: 0 !important;
+    }
+
+    .comment-box {
+      border-radius: 0 !important;
+    }
+  }
+
+//  /**
+//   * フッターナビゲーション
+//   *
+//   * 【参考】
+//   *  はてなブログのSNSボタンをおしゃれにカスタマイズする方法｜パソコン・ブログガイド
+//   *  https://www.gipsyjazznyumon.com/hatenablog-social-media-buttons-custmize/
+//   */
+//   .mini-text{font-size:10px;}/*文字大きさ*/
+
+//   ul.bottom-menu {
+//       position: fixed;
+//       left:0;
+//       bottom:0;
+//       width: 100%;
+//       height:45px;/*高さ*/
+//       margin:0;
+//       padding:0;
+//       background-color:#f5f5f5;/*背景色*/
+//       border-top:2px solid #808080;/*バーの上の線*/
+//       border-bottom:2px solid #808080;/*バーの下の線*/
+//       z-index:30;}
+
+//   ul.bottom-menu li {
+//       float:left;
+//       width:25%;
+//       background-color:#f5f5f5;/*背景色*/
+//       list-style-type:none;
+//       text-align:center;
+//       font-size:25px;/*アイコンのサイズ*/}
+
+//   .bottom-menu li a {
+//       display: block;
+//       color:#808080;/*アイコン＆文字の色*/
+//       padding-top:10px;
+//       padding-bottom:5px;
+//       line-height:10px;
+//       text-decoration:none;}
+
+//   .bottom-menu li a:hover {
+//       color:#a9a9a9;/*マウスオーバー時の色*/}
+
+//   /* === 展開メニュー === */
+
+//   ul.menu-second-level {
+//       visibility: hidden;
+//       opacity: 0;
+//       z-index:1;}
+
+//   ul.menu-second-level li a{
+//       border-top:1px dashed #a9a9a9;/*展開の枠点線*/
+//           font-size:15px;/*展開メニューの文字サイズ*/
+//           line-height:30px;/*文字の縦幅*/}
+
+//   .menu-second-level li a:hover {
+//       height:100%;
+//       background: lightgrey;/*マウスオーバーの色*/}
+
+//   li.menu-width-max ul.menu-second-level {
+//       position: absolute;
+//       bottom: 47px;/*高さ*/
+//       left: 0;
+//       box-sizing: border-box;
+//       width: 100%;
+//       padding:0;}
+
+//   li.menu-width-max:hover ul.menu-second-level {
+//       bottom: 47px;/*高さ*/
+//       visibility: visible;
+//       opacity: 1;}
+
+//   li.menu-width-max ul.menu-second-level li {
+//       float: left;
+//       width: 100%;
+//       border: none;}
+
+  .hatena-module {
+    border-radius: 0 !important;
+  }
+
+  /* プロフィール */
+  .accounts-header {
+    text-align: left;
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: flex;
+    margin : 10px auto 0;
+  }
+
+  .module-sub-header {
+    text-align: left !important;
+  }
+
+  .page-lists {
+    display: block;
+
+    .module-sub-header {
+      margin : 10px auto 0;
+    }
+
+    li {
+      height : 100px !important;
+      padding: 4px 4px !important;
+    }
+
+    a {
+      display: inline-block;
+      padding: 4px !important;
+
+      font-size: 1em !important;
+
+      br {
+        display: inline !important;
+      }
+
+      i {
+        display: inline-block;
+
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  /* 記事一覧 */
+  .archive-heading {
+    padding-left: 10px;
+  }
+
+  .archive-entry {
+    padding: 10px 10px !important;
+    font-size: .7em;
+
+    .entry-thum {
+      width: 400px !important;
+    }
+  }
+
+  /*
+    更新日時表示
+
+    【参考】
+    【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+    https://account-it-dentist.hatenablog.com/entry/blog-custom003
+  */
+  .lastmod {
+    padding  :  0   !important;
+    font-size: 12px !important;
+  }
+
+  .entry-date a {
+    padding-left: 0 !important;
+  }
+
+  /* トップページ等の記事カード */
+  .archive-entry h1 {
+    font-size: 1.6em !important;
+  }
+
+  /*--------------------------------------
+    改行をレスポンシブに(?)
+
+    【参考】
+    スマホ表示とデスクトップ表示でレスポンシブに改行位置を変える時はbrタグにクラスを付けてcssだけで管理すると超楽な件 | WEMO
+    https://wemo.tech/1224
+  --------------------------------------*/
+  .resp_break{
+    display: none;
+  }
+
+  /*--------------------------------------
+    ヨメレバ・カエレバ（レスポンシブ対応用）
+  --------------------------------------*/
+  .booklink-box, .kaerebalink-box {
+    padding: 15px !important;
+    overflow: scroll;
+
+    .booklink-image, .kaerebalink-image {
+      width    : 100px !important;
+      min-width: initial;
+    }
+
+    .booklink-name, .kaerebalink-name {
+      margin-bottom: 12px;
+    }
+
+    .booklink-name > a, .kaerebalink-name > a {
+      font-size  : 15px;
+      font-weight: bold;
+    }
+
+    .booklink-powered-date, .kaerebalink-powered-date {
+      margin-top: 5px;
+    }
+
+    .booklink-link2, .kaerebalink-link1 {
+      a {
+        width        : calc(100% - 4px);
+        border-radius:  5px;
+        margin       :  2px 0px;
+        padding      : 10px 0px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------
+  （小）スマホ
+--------------------------------------*/
+@media (max-width: 480px) {
+
+  /* 本文 */
+  .entry-content {
+    font-size: 14px !important;
+  }
+
+  /* カエレバ */
+  .booklink-box, .kaerebalink-box {
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px !important;
+
+    .booklink-image, .kaerebalink-image {
+      margin: 0 auto !important;
+      width : 100%;
+      min-width: 80px;
+
+      display: inline-block;
+      clear: both !important;
+
+      img {
+        text-align: center !important;
+      }
+    }
+
+    .booklink-info, .kaerebalink-info {
+      margin: 0 auto !important;
+      width : 100%;
+
+      display: inline-block;
+
+      .booklink-name, .kaerebalink-name {
+        text-align: center;
+      }
+    }
+  }
+
+  /* このブログについて */
+  .page-lists-container {
+    display: block !important;
+  }
+
+  .page-lists {
+    display: block !important;
+    width  : 100%  !important;
+
+    li {
+      height: 5em !important;
+    }
+
+    a {
+      display: inline;
+      padding: 0 4px 10px !important;
+
+      br {
+        display: none !important;
+      }
+
+      i {
+        display: inline;
+        padding-top: 10px !important;
+        position: relative; // 微調整
+        top     : 1px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------
+  （極小）スマホ
+--------------------------------------*/
+@media (max-width: 380px) {
+
+  /* アカウント一覧 */
+  .account-btns-container {
+    display: block;
+    width  : 100%;
+  }
+
+  .accounts-header {
+    width : 100%;
+    margin: 0 auto 10px !important;
+
+    text-align: left;
+  }
+
+  .follow-blog-btns {
+    clear: left;
+    width: 100%;
+    margin-bottom: 10px !important;
+
+    .color-share-btns {
+      // width: min(80%, 100px); // ruby-sassが未対応
+      min-width : 100px;
+      max-width :  80% !important;
+    }
+  }
+
+  .follow-account-btns {
+    clear: right;
+    width: 100%;
+    margin-bottom: 10px !important;
+
+    .color-share-btns {
+      min-width : 130px !important;
+      max-width :  90%  !important;
+    }
+  }
+
+  /* このブログについて */
+  .page-lists {
+    li {
+      height: 100px !important; // できれば可変にしたい
+
+      a {
+        display: inline-block;
+        padding-bottom: 4px !important;
+
+        br {
+          display: inline !important;
+        }
+
+        i {
+          display: inline-block;
+          padding-top   : 12px !important;
+          padding-bottom:  8px !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1366 @@
+@import "../../shared/scss/sanitize";
+@import "./responsive";
+@import "../../shared/scss/variables";
+
+/*--------------------------------------
+  ブログ全体のレイアウト
+--------------------------------------*/
+/* ページ全体 */
+body {
+  margin: 0 auto;
+  width : 100%;
+
+  background-color: rgba(1, 1, 1, .1);
+  @include amp-standardFonts();
+}
+
+/* ヘッダー */
+/* https://hitsuzi.hatenablog.com/entry/minimalism */
+#blog-title {
+  margin : 0 auto;
+  width  : 100%;
+  padding: 20px 30px;
+
+  @include amp-titleFonts(bold);
+  background-color: themeColor(1) !important;
+}
+
+/* ブログタイトル */
+#title a {
+  color: $char-white !important;
+}
+
+/* ブログ説明 */
+#blog-description {
+  color: $char-white !important;
+  @include amp-siteDescriptionFonts();
+}
+
+/* ナビゲーション */
+#gnav {
+  display: flex;
+  padding: 0;
+  border : 0;
+
+  background-color: themeColor(.3);
+
+  .gnav-inner {
+    height : 100%;
+    padding: 0;
+    margin : 0;
+
+    .menu {
+      height: 100%;
+
+      margin : 0px  0px 5px;
+      padding: 8px 18px 6px !important;
+
+      box-shadow: 0 4px themeColor(.6);
+      border-left : 1px solid themeColor(.3);
+      border-right: 1px solid themeColor(.3);
+      border-bottom-left-radius : 3px;
+      border-bottom-right-radius: 3px;
+
+      a {
+        vertical-align: middle;
+      }
+
+      // .hidden-list {
+      //   display: none;
+      // }
+
+      transition : all .3s;
+      &:hover {
+        // transform: scale(1.2, 1.2);
+        transform: translateY(4px);
+        box-shadow: 0 0 #333;
+
+        // .hidden-list {
+        //   display: block;
+        //   overflow: visible;
+        // }
+      }
+      .content {
+        width: 750px;
+        height: 200px;
+        background: #eee;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+
+/**
+ * 階層化（ホバーで子要素を表示）
+ *
+ * HTMLとCSSだけでできるドロップダウンメニューの作り方 | Public Constructor
+ * https://public-constructor.com/html-css-dropdown-menu/
+ */
+// .dropdown {
+//   display: flex;
+// }
+
+// .menu-new {
+//   width: 300px;
+//   text-align: center;
+// }
+
+// .menu-title {
+//   background: #090032;
+//   color: #ffffff;
+// }
+
+// .sub-menu {
+//   display: none;
+//   background: #B9B9B9;
+//   position: relative;
+// }
+
+// .sub-menu > ul {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   width: 300px;
+// }
+
+// .sub-menu > ul > li > a {
+//   text-decoration: none;
+//   color: #ffffff;
+// }
+
+// .menu-new:hover .sub-menu {
+//   display: inline-block;
+// }
+
+/* パンくずリスト */
+#breadcrumb div {
+  display  : inline;
+  font-size: 13px;
+}
+
+.breadcrumb {
+  margin       : 1px 0 !important;
+  width        : 100%;
+  padding      : 10px;
+  border-radius: $module-radius;
+
+  @include linkColors();
+  background-color: bodyColor(.6);
+
+  .breadcrumb-innner {
+    margin : 0 !important;
+    padding: 0;
+  }
+}
+
+#header {
+  padding: 10px;
+  background-color: themeColor(1);
+}
+
+/* ブログ本体 */
+#container {
+  margin-bottom: 10px;
+  border       : 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
+  border-radius: $module-radius;
+  background-color: bodyColor(.5);
+
+  #container-inner {
+    padding: 0 0;
+  }
+}
+
+/* コンテンツ */
+#content {
+  margin: 0 auto 10px;
+  width: 88%;
+}
+
+/* 記事タイトル */
+.entry-inner {
+    header {
+    margin-bottom: 0;
+    padding      : 10px;
+    border-top-left-radius : $module-radius;
+    border-top-right-radius: $module-radius;
+
+    .entry-date, .entry-header {
+      margin : 0;
+      padding: 4px 10px 0;
+
+    }
+
+    .entry-categories{
+      margin : 0;
+      padding: 8px 0 4px;
+
+    }
+  }
+}
+
+/* 記事フッター */
+.entry-footer {
+  margin-top   : 0;
+}
+
+.entry-footer-section {
+  margin-top   : 0;
+  margin-bottom: 0;
+  padding      : 10px 10px 0;
+
+  background-color: bodyColor(.7);
+}
+
+/* はてなスター */
+.hatena-star-container {
+  height: 40px !important;
+  margin : 0;
+  padding: 0 10px 10px;
+  background-color: bodyColor(.7);
+
+  .hatena-star-add-button {
+    margin:  8px;
+    width : 45px;
+    height: 28px;
+
+    transition : all .3s;
+
+    &:hover {
+      transform : scale(1.1, 1.1);
+      box-shadow: 0 0 #333;
+    }
+  }
+}
+
+/* 記事一覧ページ */
+.archive-heading {
+  font-size  : 1.8em !important;
+  font-weight: bold;
+  font-family: -apple-system,
+               'Kosugi Maru' !important;
+  &:before {
+    margin-right: 10px;
+
+    content: '\f02b'; /* ふせんマーク */
+    vertical-align: middle;
+    font-family: FontAwesome;
+  }
+
+  @at-root header#{&} { /* 親セレクタ（=記事一覧ページ限定） */
+    margin-top:    4px !important;
+    margin-bottom: 4px !important;
+  }
+}
+
+.archive-entry {
+  margin : 10px 5px !important;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 2px 2px btnColor(.1);
+  background-color: bodyColor(.5);
+
+  @include linkColors(
+    $default: charBlack(1),
+    $visited: charBlack(1));
+
+  .archive-date {
+    margin: 0;
+
+    font-weight: bold;
+    time {
+      // 効いてないかも
+      @include linkColors(
+        $default: highlighter(.9),
+        $visited: charBlack(1)
+      );
+      //   border-bottom: 3px solid themeColor(.3);
+    }
+  }
+
+  .entry-title {
+    margin : 4px 10px 0 !important;
+    padding: 0;
+
+    font-size: 1.4em !important;
+  }
+
+  .categories {
+    margin : 4px 1px !important;
+    padding: 3px 8px !important;
+
+    .archive-category-link {
+      @include categoryBtns(3px);
+    }
+  }
+
+  .archive-entry-body {
+    margin-top: 0;
+    padding: 4px;
+  }
+}
+
+.social-buttons {
+  display: none;
+}
+
+.entry-footer-html {
+  margin :  0;
+  padding: 10px 4px;
+
+  border: 4px solid bodyColor(.8);
+  background-color: bodyColor(.1);
+  // background: rgb(37, 31, 31);
+
+  text-align: center;
+
+  p {
+    margin: 24px 10px 10px;
+  }
+
+  .footer-share-btns {
+    @include shareBtns(19%, 34px);
+
+    /* 微調整 */
+    .hateblo {
+      i {
+        font-size  : 28px !important;
+        position: relative !important;
+        top: 2px !important;
+      }
+    }
+  }
+
+  .footer-subscription-btns {
+    margin-top  : 30px;
+    margin-left : auto;
+    margin-right: auto;
+    max-width: 50%;
+
+    @include shareBtns(40%, 34px);
+  }
+}
+
+/* ブログフッター */
+#footer{
+  padding: 10px 20px 20px;
+}
+
+footer {
+  margin : 0;
+  padding: 0;
+
+  .entry-footer-modules {
+    .hatena-module-related-entries {
+      margin : 0;
+      padding: 10px;
+      border-radius: $module-radius;
+
+      background-color: bodyColor(.7);
+    }
+  }
+
+  .shrbtn a {
+    margin : 0;
+    padding: 0;
+    border-radius: 4px;
+  }
+
+  .comment-box {
+    margin-top: 0;
+    padding   : 10px;
+    border-bottom-left-radius : $module-radius;
+    border-bottom-right-radius: $module-radius;
+
+    background-color: bodyColor(.7);
+  }
+}
+
+.pager {
+  margin-top: 0;
+  padding   : 10px;
+  border-radius: $module-radius;
+
+  background-color: bodyColor(.7);
+  @include linkColors();
+}
+
+/* サイドバー（はてなモジュール） */
+#box2 {
+  margin : 0;
+  padding: 0;
+}
+
+.hatena-module {
+  margin :  0px 0 8px;
+  padding: 10px;
+  border-radius: $module-radius;
+
+  background-color: bodyColor(.7);
+
+  .hatena-module-title {
+    border-bottom: 2px double themeColor(1);
+  }
+
+  .hatena-module-body {
+    @include amp-standardFonts();
+    @include linkColors(
+      $default: charBlack(.9),
+      $visited: charBlack(.9)
+    );
+    font-size: .9em;
+
+    /* 検索フォーム */
+    .search-form {
+      padding: 4px;
+      border : 1px solid btnColor(.1);
+
+      font-size: 1.2em;
+
+      &:hover {
+        border-color: btnColor(.3);
+      }
+    }
+
+    /* プロフィール */
+    .profile-description {
+      @include amp-standardFonts();
+      font-size: .95em;
+      @include linkColors();
+    }
+
+    /* 最新記事など */
+    time {
+      color  : charBlack(.8);
+      @include linkColors($visited: charBlack(1));
+      font-weight: bold;
+      // border-bottom: 3px solid themeColor(.3);
+    }
+
+    img[alt] {
+      color    : charBlack(.6);
+      font-size: .8em;
+    }
+
+    // img:hover {
+    //   transition : all .3s;
+    //   transform: scale(1.05, 1.05);
+    // }
+
+    .urllist-title-link {
+      display: block;
+      // float: right;
+      font-size  : 1.1em;
+      line-height: 2.2em;
+    }
+
+    .urllist-see-more {
+      @include linkColors(
+        $default: charBlack(1),
+        $visited: charBlack(1)
+      );
+    }
+
+  }
+}
+
+/*--------------------------------------
+  記事タイトルのデザイン
+  https://hitsuzi.hatenablog.com/entry/minimalism
+--------------------------------------*/
+.entry-date {
+  margin : 0;
+  padding: 0 20px;
+
+  @include amp-titleFonts(normal);
+  a { padding: 5px 6px 5px 0 !important; }
+}
+
+/*
+  更新日時表示
+  【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+  https://account-it-dentist.hatenablog.com/entry/blog-custom003
+*/
+.lastmod {
+	display: inline;
+  margin : 0;
+  padding: 0 10px;
+
+  font-size: 15px;
+	text-decoration: none;
+
+  &:before {
+    margin-right: 10px;
+
+    // content: "f02b";
+    // font-family: "blogicon-repeat";
+    content: "\f021"; /* 更新マーク */
+    font-family: FontAwesome;
+    font-size: 16px !important;
+  }
+}
+
+.entry-title {
+  margin : 0;
+  padding: 0 10px;
+
+  font-size: 1.2em;
+  @include amp-titleFonts(bold);
+}
+
+.entry-categories {
+  margin    : 0 10px;
+  text-align: left;
+
+  .entry-category-link {
+    @include categoryBtns(2px);
+  }
+}
+
+/*--------------------------------------
+  記事本体のデザイン
+--------------------------------------*/
+.entry-content {
+  margin-top: 0;
+  padding   : 10px 16px;
+
+  background-color: bodyColor(.9);
+
+  @include linkColors();
+
+  /*--------------------------------------
+    見出し
+  --------------------------------------*/
+  h3 {
+    margin : 40px  0px 30px;
+    padding:  8px 10px  3px;
+
+    background-color: themeColor(.1);
+    border-left  : 8px solid themeColor(1);
+    border-bottom: 3px solid themeColor(1);
+
+    font-size: 1.4em;
+    color    : charBlack(1);
+  }
+
+  h4 {
+    margin : 40px  3px 30px;
+    padding:  3px 10px;
+
+    background-color: themeColor(.1);
+    border-top   : 2px solid themeColor(1);
+    border-bottom: 2px solid themeColor(1);
+
+    font-size: 1.32em;
+    color    : charBlack(1);
+  }
+
+  h5 {
+    margin : 36px 4px 20px;
+    padding:  4px 6px;
+
+    border-left: 6px solid themeColor(1);
+
+    font-size: 1.2em;
+    color    : charBlack(1);
+  }
+
+  h6 {
+    margin : 26px 0 20px;
+    padding:  4px;
+
+    border-top   : 2px solid themeColor(1);
+    border-bottom: 2px solid themeColor(1);
+
+    font-size: 1.16em;
+    color    : charBlack(1);
+  }
+
+  /*--------------------------------------
+    本文のフォント
+  --------------------------------------*/
+  @include amp-standardFonts();
+  font-size  : 16px;
+  line-height:  2em;
+
+  color: charBlack(1);
+
+  /* 段落 */
+  p {
+    margin-bottom: 1.4em;
+    margin-left : $side-margin;
+    margin-right: $side-margin;
+  }
+
+  b, strong {
+    font-size: 1.03em;
+  }
+
+  /* リスト */
+  ul, ol {
+    margin-top : 10px;
+    margin-left:  0;
+    padding-top   : 4px;
+    padding-bottom: 4px;
+    padding-left  : 2em;
+
+    li {
+      margin-top  : 4px;
+      padding-left: 4px;
+      font-size: .98em;
+
+      p {
+        margin: 0;
+      }
+
+      ul {
+        margin-top: 0;
+      }
+    }
+
+    img {
+      max-width : 80% !important; // システムでサイズ直書きされてるので効かないみたい。
+      box-shadow: 0px 1px 3px 1px btnColor(.5);
+    }
+  }
+
+  /*--------------------------------------
+    目次の表示・非表示
+  --------------------------------------*/
+  /* 「.table-of-contents」にネストすると
+     カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
+  .show-area {
+    display: inline-block;
+    cursor : pointer;
+
+    margin-bottom: 0;
+    margin-left  : $side-margin;
+    margin-right : $side-margin;
+    padding      : 0px;
+    border-radius: 5px;
+
+    font-size: .9em;
+
+    &:hover {
+      font-weight: bold;
+      @include linkColors(#1e366a);
+    }
+  }
+
+  /*--------------------------------------
+    目次
+  --------------------------------------*/
+  .table-of-contents {
+    display: none; /* デフォルトで非表示 */
+
+    /* 外枠 */
+    margin : 4px 10px 0;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border : dotted #1541a1 1.6px;
+
+    /* フォント */
+    @include linkColors(#1e366a);
+    line-height: 80% !important;
+
+    &:before {
+      content : ""; /* スクリプトで文字が追加されてしまうので消しておく */
+    }
+
+    /* 中身 */
+    ul, ol {
+      margin-left   :  0;
+      padding-top   :  4px;
+      padding-bottom:  4px;
+      padding-left  : 16px;
+    }
+
+    ul li, ol li {
+      padding-left: 4px;
+
+      font-size: .98em;
+    }
+  }
+
+  /*--------------------------------------
+    文字装飾いろいろ
+  --------------------------------------*/
+  /* 連載目次 */
+  .serialized-label {
+    margin-left: 8px;
+    padding    : 2px !important; // 効いてないかも？
+
+    background-color: $char-red;
+    color           : white;
+  }
+
+  /* 文中の文字 */
+  .red {
+    color: $char-red;
+  }
+
+  .note {
+    font-size  : .8em;
+    line-height: 120%;
+    color      : $char-red;
+  }
+
+  .additional-note {
+    font-size  : .8em;
+    line-height: 120%;
+    color      : $char-red;
+    font-weight: bold;
+  }
+
+  .small-chars {
+    font-size  : .8em;
+    line-height: 120%;
+
+    code {
+      vertical-align: middle !important;
+    }
+  }
+
+  .large-chars {
+    font-size: 1.2em;
+  }
+
+  /*--------------------------------------
+    テキストボックス（まとめ、強調など）
+  --------------------------------------*/
+  .text-box-dashed {
+    margin : 10px calc(10px + $side-margin);
+    padding: 10px;
+
+    border       : 1px dashed;
+    border-radius: 5px;
+
+    text-align   : center;
+  }
+
+  /*--------------------------------------
+    <kbd>タグ
+  --------------------------------------*/
+  /*
+    mac風
+    https://coliss.com/articles/build-websites/operation/css/css-apple-keyboard-style-by-nrjmadan.html
+  */
+  .mac-key {
+    /* ----Box Properties---- */
+    display      : inline-block;
+    padding      : 0.05em 0.6em;
+    margin       : 0px 4px;
+    background   : #fff;
+    border-radius: 4px;
+    box-shadow   : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+
+    /* ----Text Properties---- */
+    font-family: Helvetica, serif;
+    text-align : center;
+    color      : #666;
+  }
+
+  /*
+    立体ボタン風
+    https://saruwakakun.com/html-css/reference/buttons
+  */
+  .btn-square-emboss {
+    display: inline-block;
+    margin : 0px 4px;
+    padding: 0.05em 0.6em;
+
+    border-bottom: solid 3px btnColor(.3);
+    border-radius: 3px;
+    box-shadow   : 0px 1px 3px 1px btnColor(.5);
+    background   : #f0f0f0; /*ボタン色*/
+
+    color    : #666666; /*ボタン色より暗く*/
+    font-size: 90%;
+    @include amp-monospacedFonts();
+    text-decoration: none;
+    text-shadow: 1px 1px 1px $char-white;
+
+    /*
+      テキスト選択はOffに。
+      https://its-office.jp/blog/css/2017/04/30/user-select.html
+    */
+    user-select: none;
+
+    &:active  {
+      transform    : translateY(4px);
+      box-shadow   : 0px 1px 0px btnColor(.3);
+      border-bottom: solid 3px btnColor(.1);
+    }
+  }
+
+  /*--------------------------------------
+    引用
+    CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
+    https://saruwakakun.com/html-css/reference/blockquote
+  --------------------------------------*/
+  blockquote {
+    position  : relative;
+    box-sizing: border-box;
+
+    margin-left  : $side-margin;
+    margin-right : $side-margin;
+    padding: 5px 10px 5px 32px;
+
+    width    : auto;
+    max-width: 100%;
+
+    border: 1px solid rgba(204, 204, 204, .5);
+    border-radius: 3px;
+    background   : #f3f3f3;
+
+    color: charBlack(.7);
+
+    /* 引用符 */
+    &:before{
+      display : inline-block;
+      position: absolute;
+      top   :  10px;
+      left  : -15px;
+      width :  40px;
+      height:  30px;
+
+      text-align : center;
+      content    : "\f10d"; // 引用符
+      font-family: FontAwesome;
+      font-size  : 18px;
+      font-weight: 900;
+      color      : #FFF;
+      line-height: 30px;
+
+      background: themeColor(.7);
+      box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
+    }
+
+    /* 折り込み */
+    &:after{
+      position: absolute;
+      top :  40px;
+      left: -15px;
+
+      border: none;
+      border-bottom: solid  8px transparent;
+      border-right : solid 15px themeColor(1);
+
+      content: "";
+    }
+
+    &:hover {
+      border: 1px solid rgba(204, 204, 204, .4);
+      background-color: #fff;
+      color: charBlack(.9);
+      font-style: normal;
+    }
+
+    p {
+      position: relative;
+      margin : 10px 0;
+      padding: 0;
+      z-index: 3;
+
+      line-height: 1.7;
+    }
+
+    /* 引用元 */
+    cite {
+      display: block;
+
+      color: #888888;
+      font-size : 0.9em;
+      font-style: italic;
+      text-align: right;
+    }
+  }
+
+  /*--------------------------------------
+    文中のコード
+  --------------------------------------*/
+  code {
+    margin-left:  2px;
+    margin-right: 2px;
+    padding-top  : 1px;
+    border-radius: 3px;
+    border: 1px solid rgba(204, 204, 204, .5);
+
+    color     : black !important;
+    background: #dfdbd4; /* 背景 黄みがかったgray */
+
+    font-size: 1em !important;
+    @include amp-monospacedFonts();
+    vertical-align: top !important;
+  }
+
+  /*--------------------------------------
+    コードブロック
+  --------------------------------------*/
+  pre.code {
+    margin-left  : $side-margin;
+    margin-right : $side-margin;
+    padding      : 20px 10px 10px;
+    border-radius: 3px;
+
+    /* 横スクロール */
+    width    : auto;
+    max-width: 100%;
+    overflow-x : scroll;
+    white-space: pre; /* 自動改行をoff */
+
+    /* フォント・メインカラーを変更 */
+    @include amp-monospacedFonts();
+    font-size  : .96em;
+    line-height: 1.3em;
+    color      : $char-white;         /* white 文字色 */
+    background-color: charBlack(.85); /* black 背景 */
+
+    /* シンタックス・ハイライト */
+    .synSpecial    { color: #66FFFF; } /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
+    .synType       { color: #66FFFF; } /* (明るめの水色) 型 */
+    .synComment    { color: #FF33CC; } /* (ピンク)      コメント */
+    .synPreProc    { color: $char-white; } /* White プリプロセッサ */
+    .synIdentifier { color: #FFD700; } /* Gold  識別子 */
+    .synConstant   { color: #F0E68C; } /* Khaki 定数 */
+    .synStatement  { color: #00CCCC; } /* DarkTurquouse ステートメント */
+
+    /*
+      左上に言語名を表示
+      https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
+    */
+    &:before {
+      display : inline-block;
+      position: absolute;
+
+      margin-left: -18px;
+      margin-top : -25px;
+      padding    :   2px 10px;
+
+      border:  1px solid rgba(204, 204, 204, .5);
+      border-radius: 3px;
+      box-shadow   : 0 0 1px 1px charBlack(.2);
+
+      content   : attr(data-lang);
+      color     : black;
+      background: $char-white;
+    }
+  }
+
+  /*
+    左側に行番号を表示
+    https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
+  */
+  .code-line {
+    counter-increment: linenumber;  /* code-lineクラスの数 */
+
+    &:before {
+      display: inline-block;
+      width  : 30px;
+      margin-right : 10px;
+      padding-right:  6px;
+      border-right :  1px solid rgba(204, 204, 204, .5);
+
+      text-align: right;
+      content: counter(linenumber); /* 擬似要素として行番号を表示 */
+      color: rgba(204, 204, 204, 1);
+    }
+  }
+
+  /*--------------------------------------
+    テーブルの表示
+  --------------------------------------*/
+  table {
+    margin-left : $side-margin;
+    margin-right: $side-margin;
+
+    // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
+    // https://qiita.com/ymeeto/items/f165576f49f37e28e253
+    display: block !important;
+
+    /* 横スクロール */
+    overflow-x: scroll;
+    width    : auto !important;
+    max-width: 100%;
+
+    // /* 縦スクロール */
+    // overflow-y: scroll;
+    // height: auto;
+    // max-height: 980px;
+
+    white-space: nowrap;               /* 自動改行をoff */
+    -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
+
+    border-radius: 3px;
+    border: 1px solid charBlack(.05);
+
+    font-size  : .98em;
+    line-height: 1.1em;
+  }
+
+  th {
+    background-color: charBlack(.03) !important;
+  }
+
+  td {
+    font-size  :  .94em;
+    line-height: 1.3em;
+  }
+
+
+  /*--------------------------------------
+    キリトリ線
+    CSSだけで実装！区切り線（hrタグ）のデザインサンプル集まとめ：SwitchBox
+    https://switch-box.net/css-hr-decorations.html
+  --------------------------------------*/
+  hr {
+    /* 一旦リセット */
+    height : 0;
+    margin : 0;
+    padding: 0;
+    border : 0;
+
+    /* キリトリ線 */
+    height    : 1em;
+    border-top: 1px dashed charBlack(.4);
+    text-align: center;
+    overflow  : visible;
+
+    &:after {
+      display : inline-block;
+      position: relative;
+      height  : 2em;
+      top     : -1em;
+      padding : 0 0.5em;
+
+      content    : "\002702"; /* ハサミ記号✂（機種依存？） */
+      line-height: 2em;
+      color      : charBlack(1);
+    }
+  }
+
+  .footnote {
+    margin : 0;
+    padding: 6px;
+
+    .footnote-number, .footnote-delimiter {
+      @include footnoteParts();
+    }
+  }
+}
+
+/*--------------------------------------
+  ヨメレバ・カエレバ（レスポンシブ対応用）
+--------------------------------------*/
+/* 外枠 */
+.booklink-box, .kaerebalink-box {
+  margin  : 10px auto;
+  padding : 25px;
+  overflow: hidden;
+  border  : double #CCC;
+
+  font-size: .85em;
+
+  /* 画像 */
+  .booklink-image, .kaerebalink-image {
+    margin   : 0 15px 0 0;
+    float    : left;
+    min-width: 160px;
+
+    text-align: center;
+
+    img {
+      margin    : 0 auto;
+      text-align: center;
+    }
+  }
+
+  /* 商品概要 */
+  .booklink-info, .kaerebalink-info {
+      margin     : 0;
+
+      overflow   : hidden;
+      line-height: 1.2em;
+  }
+
+  /* 商品名 */
+  .booklink-name, .kaerebalink-name {
+      margin-bottom: 24px;
+
+      font-size  :   1em;
+      line-height: 1.5em;
+  }
+
+  /* "posted with ヨメレバ" */
+  .booklink-powered-date {
+    margin-top   : 10px;
+    margin-bottom: 15px;
+
+    font-size  :  .7em;
+    font-family: verdana;
+    line-height: 1.2em;
+  }
+
+  /* "posted with カエレバ" */
+  .kaerebalink-powered-date {
+    margin-top: 10px;
+
+    font-size  :  .7em;
+    font-family: verdana;
+    line-height: 1.2em;
+  }
+
+  /* 商品説明(?) */
+  .booklink-detail {
+    font-size: 12px;
+  }
+
+  .kaerebalink-detail {
+    margin-bottom: 15px;
+
+    font-size: 12px;
+  }
+
+  /* ボタンエリア */
+  .booklink-link2, .kaerebalink-link1 {
+    margin-top: 10px;
+
+    @include kaerebaLinkBtns();
+  }
+
+  /* ------- リンクボタンここから ------- */
+  .shoplinkrakuten   { @include kaerebaShopBtn(#c20004); }
+  .shoplinkamazon    { @include kaerebaShopBtn(#FF9901); }
+  .shoplinkkindle    { @include kaerebaShopBtn(#007dcd); }
+  .shoplinkkakakucom { @include kaerebaShopBtn(#314995); }
+  .shoplinkyahoo     { @include kaerebaShopBtn(#7b0099); }
+
+  // 追加
+  .shoplinkrakukobo  { @include kaerebaShopBtn(#c20004); }
+  .shoplinkseven     { @include kaerebaShopBtn(#006e54); }
+  .shoplinktoshokan  { @include kaerebaShopBtn(#888e7e); }
+  /* ------------ リンクボタンここまで ------------ */
+
+  .booklink-footer   { display: none; }
+}
+
+/*--------------------------------------
+  コメント欄に「ブログ主」の表示
+  https://www.foxism.jp/entry/2017/06/30/193115
+--------------------------------------*/
+.comment-nickname[data-user-name="yuricks7"]::after{
+  display      : inline-block;
+  margin       : 0 0 0 3px;
+  padding      : 0 3px;
+  border-radius: 2px;  /* 角丸 */
+
+  content      : 'Author!'; /* 表示する言葉 */
+  font-size    : 0.65rem;
+  line-height  : 1.8;
+  color        : $char-white; /* 文字色 */
+  background   : #00008b;   /* 背景色 */
+}
+
+/*--------------------------------------
+  「コメントを書く」ボタンを拡大
+  https://blog.minimal-green.com/entry/2016/08/08/210000
+--------------------------------------*/
+.leave-comment-title {
+  cursor: pointer;
+
+  // *zoom  : 1 !important;
+  margin : 0 20px 20px;
+  padding: 1%;
+  border-radius: 4px;
+
+  background-color: highlighter(1);
+  background-clip : padding-box;
+  box-shadow: 0 4px highlighter(.5);
+
+  line-height: 2em;
+  text-align : center;
+  vertical-align: middle;
+
+  color      : $char-white;
+  font-size  : 16px;
+  font-weight: bold;
+  text-decoration: none !important;
+
+  &:before {
+    padding-right: 5px;
+
+    content    : "\f009";
+    font-family: "blogicon";
+  }
+
+  transition : all .3s;
+  &:hover {
+    transform: translateY(4px);
+    box-shadow: 0 0 #333;
+
+    color      : $char-white;
+    background-color: highlighter(1);
+  }
+}
+
+/**
+ * 追尾する目次
+ *
+ * 【参考】
+ * はてなブログ向けのサイドバーで追尾する目次【ver3】 http://twilyze.hatenablog.jp/entry/sidebar-toc-3
+ * https://gist.github.com/Twilyze/30809fa76691983312dced621eb1040a#file-changelog-md
+ */
+/* モジュール */
+#stoc-module {
+  backface-visibility: hidden;
+
+  .tracking {
+    margin-bottom: 0;
+  }
+
+  .fixed {
+    position: fixed;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  @keyframes fadeIn {
+      0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  .fade-in {
+    animation: fadeIn 300ms;
+  }
+}
+
+/* コンテンツ */
+#stoc {
+  overflow-y: auto;
+
+  @include linkColors($default: charBlack(1));
+
+  /* Shadows */
+  .shadow {
+    background:
+      radial-gradient(
+        farthest-side at top,
+        rgba(0, 0, 0, .17),
+        transparent
+      ) top / 100% 11px,
+      radial-gradient(
+        farthest-side at bottom,
+        rgba(0, 0, 0, .17),
+        transparent
+      ) bottom / 100% 11px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0 0 0 1em;
+    list-style-type: none;
+  }
+
+  > ol {
+    padding-left: 0;
+  }
+
+  /* Shadow covers */
+  .shadow > ol {
+    background:
+      linear-gradient(
+        #fff 30%,
+        transparent
+      ) top / 100% 40px,
+      linear-gradient(
+        transparent,
+        #fff 70%
+      ) bottom / 100% 40px;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    overflow-y: hidden;
+  }
+
+  a {
+    padding: 2px 2px 2px 6px;
+    display: block;
+    text-decoration: none;
+  }
+
+  &:not(.touch) a:hover {
+    background-color: rgba(0, 0, 0, .05);
+    text-decoration: underline;
+  }
+
+  .active {
+    background-color: rgba(0, 0, 0, .05);
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: #ececec;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
+  }
+}
+
+/**
+ * シェアボタン
+ *
+ * 【参考】
+ *  はてなブログのSNSボタンをおしゃれにカスタマイズする方法｜パソコン・ブログガイド
+ *  https://www.gipsyjazznyumon.com/hatenablog-social-media-buttons-custmize/
+ */
+.header-share-btns{
+  @include shareBtns(13.5%, 30px);
+}
+
+/*--------------------------------------
+  フォローボタン
+--------------------------------------*/
+.hatena-module-body {
+
+  .follow-blog-btns {
+    @include followBtns(36px, 70%);
+
+    /* 微調整 */
+    .hateblo {
+      i {
+        font-size  : 36px;
+        position: relative !important;
+        top: 4px !important;
+      }
+    }
+  }
+
+  .follow-account-btns {
+    @include followBtns(36px, 80%);
+
+    /* 微調整 */
+    .github {
+      i {
+        font-size  : 41px;
+        position: relative !important;
+        top: -2px !important;
+      }
+    }
+  }
+}
