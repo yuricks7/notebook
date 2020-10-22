@@ -1,8 +1,8 @@
-import { SidebarToc } from "./SidebarToc.js";
-import { BlogPage }   from "./BlogPage.js";
-import { CssProperties } from "./CssProperties.js";
-import { HtmlOperator, HtmlOperator as HtmlOps } from "./HtmlOperator.js";
-import { ScrollEvent } from "./ScrollEvent.js"
+import { SidebarToc } from "./class/SidebarToc.js";
+import { BlogPage }   from "./class/BlogPage.js";
+import { CssProperties } from "./class/CssProperties.js";
+import { HtmlOperator, HtmlOperator as HtmlOps } from "./class/HtmlOperator.js";
+import { ScrollEvent } from "./class/ScrollEvent.js"
 
 /**
  * 追尾する目次（ver3.3.0）
