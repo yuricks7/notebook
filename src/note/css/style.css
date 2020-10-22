@@ -1577,7 +1577,28 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .profile-description p {
-  margin-bottom: .8em;
+  margin-bottom: .4em;
+}
+
+.hatena-module .hatena-module-body .profile-description ul, .hatena-module .hatena-module-body .profile-description ol {
+  margin-top: 4px;
+  margin-left: -1em;
+}
+
+.hatena-module .hatena-module-body .profile-description ul li, .hatena-module .hatena-module-body .profile-description ol li {
+  margin-top: .3em;
+  margin-bottom: 0;
+  padding-left: .1em !important;
+  font-size: .98em;
+}
+
+.hatena-module .hatena-module-body .profile-description ul li p, .hatena-module .hatena-module-body .profile-description ol li p {
+  margin: 0 0 .8em 0;
+}
+
+.hatena-module .hatena-module-body .profile-description ul li ul, .hatena-module .hatena-module-body .profile-description ul li ol, .hatena-module .hatena-module-body .profile-description ol li ul, .hatena-module .hatena-module-body .profile-description ol li ol {
+  margin-top: 0;
+  padding-left: 2.2em;
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns {

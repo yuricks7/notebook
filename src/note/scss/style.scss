@@ -438,7 +438,28 @@ footer {
       line-height: 1.8em;
 
       p {
-        margin-bottom: .8em;
+        margin-bottom: .4em;
+      }
+
+      ul, ol {
+        margin-top : 4px;
+        margin-left: -1em;
+
+        li {
+          margin-top   : .3em;
+          margin-bottom: 0;
+          padding-left :  .1em !important;
+          font-size: .98em;
+
+          p {
+            margin: 0 0 .8em 0;
+          }
+
+          ul, ol {
+            margin-top: 0;
+            padding-left: 2.2em;
+          }
+        }
       }
     }
 
