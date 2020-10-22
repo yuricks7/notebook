@@ -183,7 +183,9 @@ body {
 
 /* 記事タイトル */
 .entry-inner {
-    header {
+  font-size: 1.2em;
+
+  header {
     margin-bottom: 0;
     padding      : 10px;
     border-top-left-radius : $module-radius;

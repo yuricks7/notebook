@@ -1067,6 +1067,10 @@ body {
 }
 
 /* 記事タイトル */
+.entry-inner {
+  font-size: 1.2em;
+}
+
 .entry-inner header {
   margin-bottom: 0;
   padding: 10px;
