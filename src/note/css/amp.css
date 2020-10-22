@@ -559,71 +559,123 @@ textarea,
     width: 100%;
     max-width: 1340px;
   }
-  /* アカウント一覧 */
-  .account-btns-container {
+  #box2-inner {
+    height: auto;
+    display: -ms-grid;
+    display: grid;
+    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"    2px "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"    2px "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"    2px "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  24.5%   1%      24.0%    1%       49.5%;
+  }
+  #box2-inner .hatena-module-search-box {
+    grid-area: search;
+  }
+  #box2-inner .hatena-module-profile {
+    grid-area: profile;
+    /* アカウント一覧 */
+  }
+  #box2-inner .hatena-module-profile + .hatena-module-html {
+    grid-area: accounts;
+    /* このブログについて */
+  }
+  #box2-inner .hatena-module-profile + .hatena-module-html .account-btns-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
-  .accounts-header {
+  #box2-inner .hatena-module-profile + .hatena-module-html .accounts-header {
     margin-top: 0 !important;
     text-align: center;
   }
-  .follow-blog-btns {
+  #box2-inner .hatena-module-profile + .hatena-module-html .follow-blog-btns {
     display: block;
     width: 49%;
     margin-top: 0 !important;
     margin-left: auto;
     margin-right: auto;
   }
-  .follow-blog-btns .color-share-btns {
+  #box2-inner .hatena-module-profile + .hatena-module-html .follow-blog-btns .color-share-btns {
     min-width: 55% !important;
   }
-  .follow-account-btns {
+  #box2-inner .hatena-module-profile + .hatena-module-html .follow-account-btns {
     display: block !important;
     width: 49%;
     margin-left: auto;
     margin-right: auto;
   }
-  .follow-account-btns .color-share-btns {
+  #box2-inner .hatena-module-profile + .hatena-module-html .follow-account-btns .color-share-btns {
     min-width: 65% !important;
   }
-  /* このブログについて */
-  .page-lists-container {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html {
+    grid-area: pages;
+  }
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-lists-container {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin: 10px auto 0;
   }
-  .page-lists {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-lists {
     display: block;
     width: 49%;
     margin-top: 0 !important;
     margin-left: auto;
     margin-right: auto;
   }
-  .module-sub-header {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .module-sub-header {
     margin-top: 0 !important;
     text-align: center;
   }
-  .page-list li {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list li {
     height: 4em !important;
   }
-  .page-list a {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a {
     display: inline-block;
     padding: 4px 8px;
   }
-  .page-list a br {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a br {
     display: none;
   }
-  .page-list a i {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a i {
     padding-top: 4px !important;
     font-size: 22px !important;
   }
-  .page-list a .blogicon-private {
+  #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a .blogicon-private {
     font-size: 26px;
+  }
+  #box2-inner .hatena-module-entries-access-ranking {
+    grid-area: ranking;
+  }
+  #box2-inner .hatena-module-recent-entries {
+    grid-area: recent;
+  }
+  #box2-inner .hatena-module-archive {
+    grid-area: monthly;
+  }
+  #box2-inner .hatena-module-category {
+    grid-area: category;
+  }
+  #box2-inner .hatena-module-category .hatena-module-body ul {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  #box2-inner .hatena-module-category .hatena-module-body ul li a {
+    display: inline-block;
+  }
+  #box2-inner .hatena-module-category .hatena-module-body ul li ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 6px;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
   }
   /* 追尾する目次 */
   #stoc-module {
