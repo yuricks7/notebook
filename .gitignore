@@ -3,5 +3,3 @@ vscode/
 docs/
 
 # 拡張子ごと除外
-
-*.map
