@@ -165,11 +165,9 @@
             border-bottom: 1px black solid;
           }
         }
-
       }
     }
   }
-
 
   /* 追尾する目次 */
   #stoc-module {
@@ -327,6 +325,20 @@
 //       float: left;
 //       width: 100%;
 //       border: none;}
+
+  #box2-inner {
+    grid-template:
+      "search   search   search"   auto
+      "......   ...      ......"      0
+      "profile  ...      monthly"  auto
+      "......   ...      ......"      0
+      "accounts ...      pages"    auto
+      "......   ...      ......"      0
+      "ranking  ...      recent"   auto
+      "......   ...      ......"      0
+      "category category category" auto
+    /  49.5%    1%       49.5%;
+  }
 
   .hatena-module {
     border-radius: 0 !important;
@@ -496,6 +508,17 @@
 
       .booklink-name, .kaerebalink-name {
         text-align: center;
+      }
+    }
+  }
+
+  /* モジュール */
+  #box2-inner {
+    display: block;
+
+    .hatena-module-category {
+      .hatena-module-body ul {
+        column-count: 2;
       }
     }
   }

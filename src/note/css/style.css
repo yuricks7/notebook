@@ -741,6 +741,9 @@ textarea,
   footer .comment-box {
     border-radius: 0 !important;
   }
+  #box2-inner {
+    grid-template: "search   search   search"   auto "......   ...      ......"      0 "profile  ...      monthly"  auto "......   ...      ......"      0 "accounts ...      pages"    auto "......   ...      ......"      0 "ranking  ...      recent"   auto "......   ...      ......"      0 "category category category" auto /  49.5%    1%       49.5%;
+  }
   .hatena-module {
     border-radius: 0 !important;
   }
@@ -879,6 +882,14 @@ textarea,
   }
   .booklink-box .booklink-info .booklink-name, .booklink-box .booklink-info .kaerebalink-name, .booklink-box .kaerebalink-info .booklink-name, .booklink-box .kaerebalink-info .kaerebalink-name, .kaerebalink-box .booklink-info .booklink-name, .kaerebalink-box .booklink-info .kaerebalink-name, .kaerebalink-box .kaerebalink-info .booklink-name, .kaerebalink-box .kaerebalink-info .kaerebalink-name {
     text-align: center;
+  }
+  /* モジュール */
+  #box2-inner {
+    display: block;
+  }
+  #box2-inner .hatena-module-category .hatena-module-body ul {
+    -webkit-column-count: 2;
+            column-count: 2;
   }
   /* このブログについて */
   .page-lists-container {
