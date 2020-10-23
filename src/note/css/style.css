@@ -1299,6 +1299,7 @@ header.archive-heading {
 
 .entry-footer-html p {
   margin: 24px 10px 10px;
+  font-size: .85em !important;
 }
 
 .entry-footer-html .footer-share-btns {
