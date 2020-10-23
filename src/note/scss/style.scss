@@ -1303,6 +1303,10 @@ footer {
     margin : 0;
     padding: 6px;
 
+    > p {
+      margin: 10px 2px;
+    }
+
     .footnote-number, .footnote-delimiter {
       @include footnoteParts();
     }

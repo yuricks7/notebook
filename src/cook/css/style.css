@@ -175,9 +175,10 @@ body {
 }
 
 .entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
-  font-size: .85em;
+  position: relative;
+  top: -.4em;
+  font-size: .84em;
   font-weight: bold;
-  vertical-align: top;
 }
 
 @media (max-width: 480px) {

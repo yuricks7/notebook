@@ -259,9 +259,11 @@ $side-margin  : 10px;
 }
 
 @mixin footnoteParts() {
-  font-size  : .85em;
+  position: relative;
+  top: -.4em;
+
+  font-size  : .84em;
   font-weight: bold;
-  vertical-align: top;
 }
 
 @mixin shareBtns($width, $height) {

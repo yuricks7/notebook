@@ -2857,10 +2857,15 @@ footer .comment-box {
   padding: 6px;
 }
 
+.entry-content .footnote > p {
+  margin: 10px 2px;
+}
+
 .entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
-  font-size: .85em;
+  position: relative;
+  top: -.4em;
+  font-size: .84em;
   font-weight: bold;
-  vertical-align: top;
 }
 
 /*--------------------------------------
