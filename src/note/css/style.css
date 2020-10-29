@@ -2571,6 +2571,10 @@ footer .comment-box {
   border-bottom: solid 3px rgba(0, 0, 0, 0.1);
 }
 
+.entry-content li > blockquote {
+  padding-top: 15px !important;
+}
+
 .entry-content blockquote {
   position: relative;
   -webkit-box-sizing: border-box;
@@ -2634,9 +2638,18 @@ footer .comment-box {
   display: block;
   padding-right: 40px;
   color: #888888;
-  font-size: 0.9em;
-  font-style: italic;
+  font-size: 0.85em;
   text-align: right;
+}
+
+.entry-content blockquote cite:before {
+  margin-right: 4px;
+  content: ">>";
+  font-weight: bold;
+}
+
+.entry-content blockquote cite a {
+  font-style: italic !important;
 }
 
 .entry-content .translation {

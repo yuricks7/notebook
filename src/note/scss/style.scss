@@ -998,6 +998,10 @@ footer {
     CSSで作る！魅力的な引用デザインのサンプル30（blockquote）
     https://saruwakakun.com/html-css/reference/blockquote
   --------------------------------------*/
+  li > blockquote {
+    padding-top: 15px !important;
+  }
+
   blockquote {
     position  : relative;
     box-sizing: border-box;
@@ -1067,9 +1071,20 @@ footer {
       padding-right: 40px;
 
       color: #888888;
-      font-size : 0.9em;
-      font-style: italic;
+      font-size : 0.85em;
+      // font-style: italic;
       text-align: right;
+
+      &:before {
+        margin-right: 4px;
+
+        content: ">>";
+        font-weight: bold;
+      }
+
+      a {
+        font-style: italic !important;
+      }
     }
   }
 
