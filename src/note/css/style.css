@@ -563,7 +563,7 @@ textarea,
     height: auto;
     display: -ms-grid;
     display: grid;
-    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"    2px "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"    2px "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"    2px "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  18.0%   1%      30.5%    1%       49.5%;
+    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"    2px "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"    2px "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"    2px "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  20.0%   1%      28.5%    1%       49.5%;
   }
   #box2-inner .hatena-module-search-box {
     grid-area: search;
@@ -587,7 +587,6 @@ textarea,
     text-align: center;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html .follow-blog-btns {
-    display: block;
     width: 49%;
     margin-top: 0 !important;
     margin-left: auto;
@@ -673,9 +672,6 @@ textarea,
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    margin-left: 6px;
-    border-left: 1px black solid;
-    border-bottom: 1px black solid;
   }
   /* 追尾する目次 */
   #stoc-module {
@@ -985,6 +981,10 @@ textarea,
 /*--------------------------------------
   ブログ全体のレイアウト
 --------------------------------------*/
+html {
+  font-size: 62.5% !important;
+}
+
 /* ページ全体 */
 body {
   margin: 0 auto;
@@ -998,12 +998,12 @@ body {
 #blog-title {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 30px;
+  padding: 2rem 3rem;
   font-weight: bold;
   font-family: -apple-system, 'Kosugi Maru';
   background: #1d8aff !important;
-  -webkit-box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 3px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0.5rem 0.3rem -0.1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.5rem 0.3rem -0.1rem rgba(0, 0, 0, 0.3);
 }
 
 /* ブログタイトル */
@@ -1035,16 +1035,16 @@ body {
 
 #gnav .gnav-inner .menu {
   width: calc(100% / 8);
-  min-width: 116px;
-  margin: 0px auto 5px;
-  padding: 8px  4px 6px !important;
+  min-width: 11.6rem;
+  margin: 0 auto .5rem;
+  padding: .8rem  .4rem .6rem !important;
   background: rgba(29, 138, 255, 0.1);
-  -webkit-box-shadow: 0 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0.4rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.4rem rgba(0, 0, 0, 0.3);
   border-left: 1px solid rgba(0, 0, 0, 0.3);
   border-right: 1px solid rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: .3rem;
+  border-bottom-right-radius: .3rem;
   -webkit-transition: all .25s;
   transition: all .25s;
 }
@@ -1054,17 +1054,17 @@ body {
 }
 
 #gnav .gnav-inner .menu:hover {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
+  -webkit-transform: translateY(0.4rem);
+          transform: translateY(0.4rem);
   -webkit-box-shadow: 0 0 #333;
           box-shadow: 0 0 #333;
 }
 
 #gnav .gnav-inner .menu .content {
   margin: 0 auto;
-  padding: 10px;
-  width: 750px;
-  height: 200px;
+  padding: 1rem;
+  width: 75rem;
+  height: 20rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #eee;
@@ -1077,16 +1077,19 @@ body {
  * HTMLとCSSだけでできるドロップダウンメニューの作り方 | Public Constructor
  * https://public-constructor.com/html-css-dropdown-menu/
  */
+#top-box {
+  font-size: 1.4rem;
+}
+
 /* パンくずリスト */
 #breadcrumb div {
   display: inline;
-  font-size: 13px;
 }
 
 .breadcrumb {
-  margin: 1px 0 !important;
+  margin: .1rem 0 !important;
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 8px;
   text-decoration: none !important;
 }
@@ -1113,7 +1116,7 @@ body {
 
 /* ブログ本体 */
 #container {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   border: 0 1px 1px 1px solid rgba(10, 10, 10, 0.9) !important;
   border-radius: 8px;
   background: rgba(250, 250, 250, 0.5);
@@ -1125,18 +1128,18 @@ body {
 
 /* コンテンツ */
 #content {
-  margin: 0 auto 10px;
+  margin: 0 auto 1rem;
   width: 88%;
 }
 
 /* 記事タイトル */
 .entry-inner {
-  font-size: 1.2em;
+  font-size: 1.8rem;
 }
 
 .entry-inner header {
   margin-bottom: 0;
-  padding: 10px;
+  padding: 1rem;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background: #fafafa;
@@ -1144,12 +1147,12 @@ body {
 
 .entry-inner header .entry-date, .entry-inner header .entry-header {
   margin: 0;
-  padding: 4px 10px 0;
+  padding: .4rem 1rem 0;
 }
 
 .entry-inner header .entry-categories {
   margin: 0;
-  padding: 8px 0 4px;
+  padding: .8rem 0 .4rem;
 }
 
 /* 記事フッター */
@@ -1160,22 +1163,22 @@ body {
 .entry-footer-section {
   margin-top: 0;
   margin-bottom: 0;
-  padding: 10px 10px 0;
+  padding: 1rem 1rem 0;
   background: rgba(250, 250, 250, 0.7);
 }
 
 /* はてなスター */
 .hatena-star-container {
-  height: 40px !important;
+  height: 4rem !important;
   margin: 0;
-  padding: 0 10px 10px;
+  padding: 0 1rem 1rem;
   background: rgba(250, 250, 250, 0.7);
 }
 
 .hatena-star-container .hatena-star-add-button {
-  margin: 8px;
-  width: 45px;
-  height: 28px;
+  margin: .8rem;
+  width: 4.5rem;
+  height: 2.8rem;
   -webkit-transition: all .25s;
   transition: all .25s;
 }
@@ -1189,13 +1192,14 @@ body {
 
 /* 記事一覧ページ */
 .archive-heading {
-  font-size: 1.8em !important;
+  margin-bottom: 1rem;
+  font-size: 2rem !important;
   font-weight: bold;
-  font-family: -apple-system, 'Kosugi Maru' !important;
+  font-family: -apple-system, 'Kosugi Maru' !important;
 }
 
 .archive-heading:before {
-  margin-right: 10px;
+  margin-right: 1rem;
   content: '\f02b';
   /* ふせんマーク */
   vertical-align: middle;
@@ -1204,17 +1208,17 @@ body {
 
 header.archive-heading {
   /* 親セレクタ（=記事一覧ページ限定） */
-  margin-top: 4px !important;
-  margin-bottom: 4px !important;
+  margin-top: .4rem !important;
+  margin-bottom: .4rem !important;
 }
 
 .archive-entry {
-  margin: 10px 5px !important;
-  padding: 10px;
-  border-radius: 6px;
+  margin: 1rem .5rem !important;
+  padding: 1rem;
+  border-radius: .6rem;
   background: rgba(250, 250, 250, 0.5);
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
   text-decoration: none !important;
 }
 
@@ -1258,19 +1262,21 @@ header.archive-heading {
 }
 
 .archive-entry .entry-title {
-  margin: 4px 10px 0 !important;
+  margin: .4rem 1rem 0 !important;
   padding: 0;
-  font-size: 1.4em !important;
+  font-size: 1.6rem !important;
 }
 
 .archive-entry .categories {
-  margin: 4px 1px !important;
-  padding: 3px 8px !important;
+  margin: .4rem .1rem !important;
+  padding: .2rem .8rem !important;
+  vertical-align: bottom;
 }
 
 .archive-entry .categories .archive-category-link {
   padding: 2px 10px;
-  border-radius: 3px;
+  border-radius: 0.3rem;
+  vertical-align: bottom;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   color: #fafafa;
   background: rgba(29, 138, 255, 0.8);
@@ -1282,7 +1288,7 @@ header.archive-heading {
 
 .archive-entry .archive-entry-body {
   margin-top: 0;
-  padding: 4px;
+  padding: .4rem;
 }
 
 .social-buttons {
@@ -1291,15 +1297,15 @@ header.archive-heading {
 
 .entry-footer-html {
   margin: 0;
-  padding: 10px 4px;
+  padding: 1rem .4rem;
   background: rgba(250, 250, 250, 0.1);
   border: 4px solid rgba(250, 250, 250, 0.8);
   text-align: center;
 }
 
 .entry-footer-html p {
-  margin: 24px 10px 10px;
-  font-size: .85em !important;
+  margin: 2.4rem 1rem 1rem;
+  font-size: 1.4rem !important;
 }
 
 .entry-footer-html .footer-share-btns {
@@ -1318,12 +1324,12 @@ header.archive-heading {
 
 .entry-footer-html .footer-share-btns .color-share-btns .share-btn-item {
   width: 19%;
-  height: 34px;
+  height: 3.4rem;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
   text-align: center;
-  line-height: 34px;
+  line-height: 3.4rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -1402,13 +1408,13 @@ header.archive-heading {
 }
 
 .entry-footer-html .footer-share-btns .hateblo i {
-  font-size: 28px !important;
+  font-size: 2.8rem !important;
   position: relative !important;
-  top: 2px !important;
+  top: .2rem !important;
 }
 
 .entry-footer-html .footer-subscription-btns {
-  margin-top: 30px;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 50%;
@@ -1426,12 +1432,12 @@ header.archive-heading {
 
 .entry-footer-html .footer-subscription-btns .color-share-btns .share-btn-item {
   width: 40%;
-  height: 34px;
+  height: 3.4rem;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
   text-align: center;
-  line-height: 34px;
+  line-height: 3.4rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -1511,7 +1517,7 @@ header.archive-heading {
 
 /* ブログフッター */
 #footer {
-  padding: 10px 20px 20px;
+  padding: 1rem 2rem 2rem;
 }
 
 footer {
@@ -1521,7 +1527,7 @@ footer {
 
 footer .entry-footer-modules .hatena-module-related-entries {
   margin: 0;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 8px;
   background: rgba(250, 250, 250, 0.7);
 }
@@ -1529,12 +1535,12 @@ footer .entry-footer-modules .hatena-module-related-entries {
 footer .shrbtn a {
   margin: 0;
   padding: 0;
-  border-radius: 4px;
+  border-radius: .4rem;
 }
 
 footer .comment-box {
   margin-top: 0;
-  padding: 10px;
+  padding: 1rem;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   background: rgba(250, 250, 250, 0.7);
@@ -1542,7 +1548,7 @@ footer .comment-box {
 
 .pager {
   margin-top: 0;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 8px;
   background: rgba(250, 250, 250, 0.7);
   text-decoration: none !important;
@@ -1572,9 +1578,10 @@ footer .comment-box {
 .hatena-module {
   clear: both;
   display: block;
-  margin: 0px 0 8px;
-  padding: 10px;
+  margin: 0 0 .8rem;
+  padding: 1rem;
   border-radius: 8px;
+  font-size: 1.2rem;
   background: rgba(250, 250, 250, 0.7);
 }
 
@@ -1585,7 +1592,7 @@ footer .comment-box {
 .hatena-module .hatena-module-body {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
-  font-size: .9em;
+  font-size: 1.2rem;
   /* 検索フォーム */
   /* プロフィール */
   /* アカウント一覧 */
@@ -1609,9 +1616,9 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .search-form {
-  padding: 4px;
+  padding: .4rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .hatena-module .hatena-module-body .search-form:hover {
@@ -1621,7 +1628,7 @@ footer .comment-box {
 .hatena-module .hatena-module-body .profile-description {
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   text-decoration: none !important;
-  font-size: .95em;
+  font-size: .9em;
   line-height: 1.8em;
 }
 
@@ -1645,14 +1652,14 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .profile-description ul, .hatena-module .hatena-module-body .profile-description ol {
-  margin-top: 4px;
-  margin-left: -1em;
+  margin-top: .4rem;
+  margin-left: -1rem;
 }
 
 .hatena-module .hatena-module-body .profile-description ul li, .hatena-module .hatena-module-body .profile-description ol li {
-  margin-top: .3em;
+  margin-top: .3rem;
   margin-bottom: 0;
-  padding-left: .1em !important;
+  padding-left: .1rem !important;
   font-size: .98em;
 }
 
@@ -1666,7 +1673,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns {
-  margin-top: 16px;
+  margin-top: 1.6rem;
   /* 微調整 */
 }
 
@@ -1687,8 +1694,8 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item {
   overflow: hidden;
-  width: 36px;
-  height: 36px;
+  width: 3.6rem;
+  height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
   -webkit-box-shadow: none !important;
@@ -1696,7 +1703,7 @@ footer .comment-box {
   color: #fff;
   font-size: 1.2em;
   text-align: center;
-  line-height: 36px;
+  line-height: 3.6rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -1792,9 +1799,9 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-blog-btns .hateblo i {
-  font-size: 36px;
+  font-size: 3.6rem;
   position: relative !important;
-  top: 4px !important;
+  top: .4rem !important;
 }
 
 .hatena-module .hatena-module-body .follow-account-btns {
@@ -1818,8 +1825,8 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item {
   overflow: hidden;
-  width: 36px;
-  height: 36px;
+  width: 3.6rem;
+  height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
   -webkit-box-shadow: none !important;
@@ -1827,7 +1834,7 @@ footer .comment-box {
   color: #fff;
   font-size: 1.2em;
   text-align: center;
-  line-height: 36px;
+  line-height: 3.6rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -1923,9 +1930,9 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body .follow-account-btns .github i {
-  font-size: 41px;
+  font-size: 4.1rem;
   position: relative !important;
-  top: -2px !important;
+  top: -.2rem !important;
 }
 
 .hatena-module .hatena-module-body .module-sub-header {
@@ -1948,8 +1955,8 @@ footer .comment-box {
 
 .hatena-module .hatena-module-body .page-list li {
   width: 50%;
-  height: 80px;
-  margin: 0.4em auto 0;
+  height: 8rem;
+  margin: .4em auto 0;
   list-style: none;
   text-align: center;
 }
@@ -1957,33 +1964,33 @@ footer .comment-box {
 .hatena-module .hatena-module-body .page-list li a {
   display: block;
   height: 80%;
-  margin: 4px;
-  border-radius: 4px;
+  margin: .4rem;
+  border-radius: .4rem;
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.04);
   color: rgba(5, 5, 5, 0.7);
-  font-size: 12px;
+  font-size: 1.2rem;
   -webkit-transition: all .25s;
   transition: all .25s;
 }
 
 .hatena-module .hatena-module-body .page-list li a i {
   display: inline-block;
-  padding-top: 14px;
-  padding-bottom: 4px;
+  padding-top: 1.4rem;
+  padding-bottom: .4rem;
   color: rgba(5, 5, 5, 0.6);
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .hatena-module .hatena-module-body .page-list li a .blogicon-private {
-  font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 2px;
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: .2rem;
 }
 
 .hatena-module .hatena-module-body .page-list li a:hover {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
+  -webkit-transform: translateY(0.4rem);
+          transform: translateY(0.4rem);
   -webkit-box-shadow: 0 0 #333;
           box-shadow: 0 0 #333;
   color: #050505;
@@ -2019,9 +2026,14 @@ footer .comment-box {
   font-size: .8em;
 }
 
+.hatena-module .hatena-module-body img {
+  -webkit-box-shadow: #cecece 0px 0px 1px 1px;
+          box-shadow: #cecece 0px 0px 1px 1px;
+}
+
 .hatena-module .hatena-module-body .urllist-title-link {
   display: block;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 2.2em;
 }
 
@@ -2050,13 +2062,13 @@ footer .comment-box {
 --------------------------------------*/
 .entry-date {
   margin: 0;
-  padding: 0 20px;
+  padding: 0 2rem;
   font-weight: normal;
   font-family: -apple-system, 'Kosugi Maru';
 }
 
 .entry-date a {
-  padding: 5px 6px 5px 0 !important;
+  padding: .5rem .6rem .5rem 0 !important;
 }
 
 /*
@@ -2067,35 +2079,36 @@ footer .comment-box {
 .lastmod {
   display: inline;
   margin: 0;
-  padding: 0 10px;
-  font-size: 15px;
+  padding: 0 1rem;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
 .lastmod:before {
-  margin-right: 10px;
+  margin-right: 1rem;
   content: "\f021";
   /* 更新マーク */
   font-family: FontAwesome;
-  font-size: 16px !important;
+  font-size: 1.6rem !important;
 }
 
 .entry-title {
   margin: 0;
-  padding: 0 10px;
+  padding: 0 1rem;
   font-size: 1.2em;
   font-weight: bold;
   font-family: -apple-system, 'Kosugi Maru';
 }
 
 .entry-categories {
-  margin: 0 10px;
+  margin: 0 1rem;
   text-align: left;
 }
 
 .entry-categories .entry-category-link {
   padding: 2px 10px;
-  border-radius: 2px;
+  border-radius: 0.2rem;
+  vertical-align: bottom;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   color: #fafafa;
   background: rgba(29, 138, 255, 0.8);
@@ -2110,7 +2123,7 @@ footer .comment-box {
 --------------------------------------*/
 .entry-content {
   margin-top: 0;
-  padding: 10px 16px;
+  padding: 1rem 1.6rem;
   background: rgba(250, 250, 250, 0.9);
   text-decoration: none !important;
   /*--------------------------------------
@@ -2120,7 +2133,7 @@ footer .comment-box {
     本文のフォント
   --------------------------------------*/
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 2em;
   color: #050505;
   /* カード形式リンク */
@@ -2200,8 +2213,8 @@ footer .comment-box {
 }
 
 .entry-content h3 {
-  margin: 40px  0px 30px;
-  padding: 8px 10px  3px;
+  margin: 4rem 0     3rem;
+  padding: .8rem 1rem .3rem;
   background: rgba(29, 138, 255, 0.1);
   border-left: 8px solid #1d8aff;
   border-bottom: 3px solid #1d8aff;
@@ -2210,8 +2223,8 @@ footer .comment-box {
 }
 
 .entry-content h4 {
-  margin: 40px  3px 30px;
-  padding: 3px 10px;
+  margin: 4rem .3rem 3rem;
+  padding: .3rem  1rem;
   background: rgba(29, 138, 255, 0.1);
   border-top: 2px solid #1d8aff;
   border-bottom: 2px solid #1d8aff;
@@ -2220,22 +2233,22 @@ footer .comment-box {
 }
 
 .entry-content h5 {
-  margin: 36px 4px 26px;
-  padding: 4px 6px;
-  border-left: 6px solid #1d8aff;
+  margin: 3.6rem .4rem 2.6rem;
+  padding: .4rem .6rem;
+  border-left: 0.6rem solid #1d8aff;
   font-size: 1.26em;
   color: #050505;
 }
 
 .entry-content h6 {
-  margin: 30px 0 26px;
+  margin: 3rem 0 2.6rem;
   position: relative;
   border-bottom: solid 2.6px rgba(0, 0, 0, 0.1);
   font-size: 1.2em;
 }
 
 .entry-content h6:before {
-  padding: 0 2px;
+  padding: 0 .2rem;
   content: " ";
 }
 
@@ -2250,8 +2263,8 @@ footer .comment-box {
 
 .entry-content p {
   margin-bottom: 1.4em;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .entry-content b, .entry-content strong {
@@ -2286,11 +2299,11 @@ footer .comment-box {
 }
 
 .entry-content .hatena-fotolife {
-  margin: 15px auto 30px;
+  margin: 1.5rem auto 3rem;
   width: 100%;
   height: auto;
-  max-width: 680px;
-  min-width: 100px;
+  max-width: 68rem;
+  min-width: 10rem;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   /* スマホでも滑らかに */
@@ -2303,7 +2316,7 @@ footer .comment-box {
 }
 
 .entry-content iframe {
-  margin-top: 20px !important;
+  margin-top: 2rem !important;
   margin-bottom: 0px !important;
   min-width: 100px;
 }
@@ -2332,7 +2345,7 @@ footer .comment-box {
 }
 
 .entry-content ul, .entry-content ol {
-  margin-top: 10px;
+  margin-top: 1rem;
   margin-left: 0;
 }
 
@@ -2356,10 +2369,10 @@ footer .comment-box {
   display: inline-block;
   cursor: pointer;
   margin-bottom: 0;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 0px;
-  border-radius: 5px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  border-radius: .5rem;
   font-size: .9em;
 }
 
@@ -2387,10 +2400,10 @@ footer .comment-box {
   display: none;
   /* デフォルトで非表示 */
   /* 外枠 */
-  margin: 4px 10px 0;
-  padding: 20px 50px;
-  border-radius: 5px;
-  border: dotted #1541a1 1.6px;
+  margin: .4rem 1rem 0;
+  padding: 2rem 5rem;
+  border-radius: .5rem;
+  border: dotted #1541a1 1.6rem;
   /* フォント */
   text-decoration: none !important;
   line-height: 80% !important;
@@ -2425,8 +2438,8 @@ footer .comment-box {
 
 .entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
   margin: 0 !important;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
   padding-left: 1.5em;
 }
 
@@ -2509,10 +2522,10 @@ footer .comment-box {
 }
 
 .entry-content .text-box-dashed {
-  margin: 10px calc(10px + $side-margin);
-  padding: 10px;
+  margin: 1rem calc(1rem + $side-margin);
+  padding: 1rem;
   border: 1px dashed;
-  border-radius: 5px;
+  border-radius: .5rem;
   text-align: center;
 }
 
@@ -2524,11 +2537,11 @@ footer .comment-box {
   /* ----Box Properties---- */
   display: inline-block;
   padding: 0.05em 0.6em;
-  margin: 0px 4px;
+  margin: 0 .4rem;
   background: #fff;
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border-radius: .4rem;
+  -webkit-box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.5);
   /* ----Text Properties---- */
   font-family: Helvetica, serif;
   text-align: center;
@@ -2537,12 +2550,12 @@ footer .comment-box {
 
 .entry-content .btn-square-emboss {
   display: inline-block;
-  margin: 0px 4px;
+  margin: 0 .4rem;
   padding: 0.01em 0.6em;
   border-bottom: solid 3px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.5);
+  border-radius: .4rem;
+  -webkit-box-shadow: 0 0.1rem 0.3rem -0.1rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.1rem 0.3rem -0.1rem rgba(0, 0, 0, 0.5);
   background: #f0f0f0;
   /*ボタン色*/
   color: #666666;
@@ -2551,7 +2564,7 @@ footer .comment-box {
   line-height: 1.75em;
   font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   text-decoration: none;
-  text-shadow: 1px 1px 1px #f0f0f0;
+  text-shadow: 0.1rem 0.1rem 0.1rem #f0f0f0;
   /* 文字色より明るく */
   /*
       テキスト選択はOffに。
@@ -2564,25 +2577,25 @@ footer .comment-box {
 }
 
 .entry-content .btn-square-emboss:active {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
-  -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(0.4rem);
+          transform: translateY(0.4rem);
+  -webkit-box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
   border-bottom: solid 3px rgba(0, 0, 0, 0.1);
 }
 
 .entry-content li > blockquote {
-  padding-top: 15px !important;
+  padding-top: 1.5rem !important;
 }
 
 .entry-content blockquote {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 15px 16px;
-  padding: 5px 10px 5px 32px;
+  margin: 1.5rem 1.6rem;
+  padding: .5rem 1rem .5rem 3.2rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: 3px;
+  border-radius: .3rem;
   background: #f3f3f3;
   color: rgba(5, 5, 5, 0.7);
   /* 引用符 */
@@ -2593,26 +2606,26 @@ footer .comment-box {
 .entry-content blockquote:before {
   display: inline-block;
   position: absolute;
-  top: 10px;
-  left: -15px;
-  width: 40px;
-  height: 30px;
+  top: 1rem;
+  left: -1.5rem;
+  width: 4rem;
+  height: 3rem;
   text-align: center;
   content: "\f10d";
   font-family: FontAwesome;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 900;
   color: #FFF;
-  line-height: 30px;
+  line-height: 3rem;
   background: rgba(29, 138, 255, 0.7);
-  -webkit-box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
-          box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
+  -webkit-box-shadow: 0 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
+          box-shadow: 0 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
 }
 
 .entry-content blockquote:after {
   position: absolute;
-  top: 40px;
-  left: -15px;
+  top: 4rem;
+  left: -1.5rem;
   border: none;
   border-bottom: solid  8px transparent;
   border-right: solid 15px #1d8aff;
@@ -2628,7 +2641,7 @@ footer .comment-box {
 
 .entry-content blockquote p {
   position: relative;
-  margin: 10px 0;
+  margin: 1rem 0;
   padding: 0;
   z-index: 3;
   line-height: 1.7;
@@ -2636,14 +2649,14 @@ footer .comment-box {
 
 .entry-content blockquote cite {
   display: block;
-  padding-right: 40px;
+  padding-right: 4rem;
   color: #888888;
   font-size: 0.85em;
   text-align: right;
 }
 
 .entry-content blockquote cite:before {
-  margin-right: 4px;
+  margin-right: .4rem;
   content: ">>";
   font-weight: bold;
 }
@@ -2656,10 +2669,10 @@ footer .comment-box {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 15px 16px;
-  padding: 5px 10px 5px 32px;
+  margin: 1.5rem 1.6rem;
+  padding: .5rem 1rem .5rem 3.2rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: 3px;
+  border-radius: .3rem;
   background: #f3f3f3;
   color: rgba(5, 5, 5, 0.7);
   /* ラベル */
@@ -2678,21 +2691,21 @@ footer .comment-box {
   line-height: 1.9em;
   color: #f0f0f0;
   background: rgba(10, 33, 230, 0.8);
-  -webkit-box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
-          box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
+  -webkit-box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
+          box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
 }
 
 .entry-content .translation p {
   position: relative;
-  margin: 10px 0;
+  margin: 1rem 0;
   padding: 0;
   z-index: 3;
   line-height: 1.7;
 }
 
 .entry-content code {
-  padding-top: 1px;
-  border-radius: 3px;
+  padding-top: .1rem;
+  border-radius: .3rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
   color: black !important;
   background: #dfdbd4;
@@ -2703,13 +2716,13 @@ footer .comment-box {
 }
 
 .entry-content pre[data-lang=""] {
-  padding-top: 10px !important;
+  padding-top: 1rem !important;
 }
 
 .entry-content pre.code {
-  margin: 15px 16px;
-  padding: 20px 10px 10px 10px;
-  border-radius: 3px;
+  margin: 1.5rem 1.6rem;
+  padding: 2rem 1rem 1rem 1rem;
+  border-radius: .3rem;
   /* フォント・メインカラーを変更 */
   font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
   font-size: .85em;
@@ -2772,13 +2785,13 @@ footer .comment-box {
 .entry-content pre.code:not([data-lang=""]):before {
   display: inline-block;
   position: absolute;
-  margin-left: -18px;
-  margin-top: -25px;
-  padding: 2px 10px;
+  margin-left: -1.8rem;
+  margin-top: -2.5rem;
+  padding: .2rem 1rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 1px 1px rgba(5, 5, 5, 0.2);
-          box-shadow: 0 0 1px 1px rgba(5, 5, 5, 0.2);
+  border-radius: .3rem;
+  -webkit-box-shadow: 0 0 0.1rem 0.1rem rgba(5, 5, 5, 0.2);
+          box-shadow: 0 0 0.1rem 0.1rem rgba(5, 5, 5, 0.2);
   content: attr(data-lang);
   color: black;
   background: #f0f0f0;
@@ -2791,9 +2804,9 @@ footer .comment-box {
 
 .entry-content .code-line:before {
   display: inline-block;
-  width: 30px;
-  margin-right: 10px;
-  padding-right: 6px;
+  width: 3rem;
+  margin-right: 1rem;
+  padding-right: .6rem;
   border-right: 1px solid rgba(204, 204, 204, 0.5);
   text-align: right;
   content: counter(linenumber);
@@ -2808,21 +2821,21 @@ footer .comment-box {
 }
 
 .entry-content table {
-  margin-left: 10px;
-  margin-right: calc($side-margin + 30px);
+  margin-left: 1rem;
+  margin-right: calc($side-margin + 3rem);
   display: block;
   /* 横スクロール */
   overflow-x: scroll;
   table-layout: auto;
   width: 100% !important;
   height: auto;
-  max-width: 940px;
-  min-width: 100px;
+  max-width: 94rem;
+  min-width: 10rem;
   white-space: nowrap;
   /* 自動改行をoff */
   -webkit-overflow-scrolling: touch !important;
   /* スマホでも滑らかに */
-  border-radius: 3px;
+  border-radius: .3rem;
   border: 1px solid rgba(5, 5, 5, 0.05);
 }
 
@@ -2867,11 +2880,11 @@ footer .comment-box {
 
 .entry-content .footnote {
   margin: 0;
-  padding: 6px;
+  padding: .6rem;
 }
 
 .entry-content .footnote > p {
-  margin: 0 2px 10px;
+  margin: 0 .2rem 1rem;
 }
 
 .entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
@@ -2886,8 +2899,8 @@ footer .comment-box {
 --------------------------------------*/
 /* 外枠 */
 .booklink-box, .kaerebalink-box {
-  margin: 10px auto;
-  padding: 25px;
+  margin: 1rem auto;
+  padding: 2.5rem;
   overflow: hidden;
   border: double #CCC;
   font-size: .85em;
@@ -2903,9 +2916,9 @@ footer .comment-box {
 }
 
 .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
-  margin: 0 15px 0 0;
+  margin: 0 1.5rem 0 0;
   float: left;
-  min-width: 160px;
+  min-width: 16rem;
   text-align: center;
 }
 
@@ -2921,37 +2934,37 @@ footer .comment-box {
 }
 
 .booklink-box .booklink-name, .booklink-box .kaerebalink-name, .kaerebalink-box .booklink-name, .kaerebalink-box .kaerebalink-name {
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
   font-size: 1em;
   line-height: 1.5em;
 }
 
 .booklink-box .booklink-powered-date, .kaerebalink-box .booklink-powered-date {
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   font-size: .7em;
   font-family: verdana;
   line-height: 1.2em;
 }
 
 .booklink-box .kaerebalink-powered-date, .kaerebalink-box .kaerebalink-powered-date {
-  margin-top: 10px;
+  margin-top: 1rem;
   font-size: .7em;
   font-family: verdana;
   line-height: 1.2em;
 }
 
 .booklink-box .booklink-detail, .kaerebalink-box .booklink-detail {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .booklink-box .kaerebalink-detail, .kaerebalink-box .kaerebalink-detail {
-  margin-bottom: 15px;
-  font-size: 12px;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .booklink-box .booklink-link2, .booklink-box .kaerebalink-link1, .kaerebalink-box .booklink-link2, .kaerebalink-box .kaerebalink-link1 {
-  margin-top: 10px;
+  margin-top: 1rem;
   /* ボタン化 */
 }
 
@@ -3187,9 +3200,9 @@ footer .comment-box {
 --------------------------------------*/
 .comment-nickname[data-user-name="yuricks7"]::after {
   display: inline-block;
-  margin: 0 0 0 3px;
-  padding: 0 3px;
-  border-radius: 2px;
+  margin: 0 0 0 .3rem;
+  padding: 0 .3rem;
+  border-radius: .2rem;
   /* 角丸 */
   content: 'Author!';
   /* 表示する言葉 */
@@ -3207,18 +3220,18 @@ footer .comment-box {
 --------------------------------------*/
 .leave-comment-title {
   cursor: pointer;
-  margin: 0 20px 20px;
+  margin: 0 2rem 2rem;
   padding: 1%;
-  border-radius: 4px;
+  border-radius: .4rem;
   background-clip: padding-box;
   background: #0a21e6;
-  -webkit-box-shadow: 0 4px rgba(10, 33, 230, 0.5);
-          box-shadow: 0 4px rgba(10, 33, 230, 0.5);
+  -webkit-box-shadow: 0 0.4rem rgba(10, 33, 230, 0.5);
+          box-shadow: 0 0.4rem rgba(10, 33, 230, 0.5);
   line-height: 2em;
   text-align: center;
   vertical-align: middle;
   color: #f0f0f0;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   text-decoration: none !important;
   -webkit-transition: all .25s;
@@ -3226,14 +3239,14 @@ footer .comment-box {
 }
 
 .leave-comment-title:before {
-  padding-right: 5px;
+  padding-right: .5rem;
   content: "\f009";
   font-family: "blogicon";
 }
 
 .leave-comment-title:hover {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
+  -webkit-transform: translateY(0.4rem);
+          transform: translateY(0.4rem);
   background: #0a21e6;
   -webkit-box-shadow: 0 0 #333;
           box-shadow: 0 0 #333;
@@ -3317,7 +3330,7 @@ footer .comment-box {
 }
 
 #stoc .shadow {
-  background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.17), transparent) top/100% 11px, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.17), transparent) bottom/100% 11px;
+  background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.17), transparent) top/100% 1.1rem, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.17), transparent) bottom/100% 1.1rem;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
@@ -3333,8 +3346,8 @@ footer .comment-box {
 }
 
 #stoc .shadow > ol {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 40px, -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #fff)) bottom/100% 40px;
-  background: linear-gradient(#fff 30%, transparent) top/100% 40px, linear-gradient(transparent, #fff 70%) bottom/100% 40px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 4rem, -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #fff)) bottom/100% 4rem;
+  background: linear-gradient(#fff 30%, transparent) top/100% 4rem, linear-gradient(transparent, #fff 70%) bottom/100% 4rem;
   background-repeat: no-repeat;
   background-attachment: local;
   overflow-y: hidden;
@@ -3342,7 +3355,7 @@ footer .comment-box {
 
 #stoc a {
   display: block;
-  padding: 2px 2px 2px 6px;
+  padding: .2rem .2rem .2rem .6rem;
   color: #050505 !important;
   text-decoration: none;
 }
@@ -3357,7 +3370,7 @@ footer .comment-box {
 }
 
 #stoc::-webkit-scrollbar {
-  width: 8px;
+  width: .8rem;
   background: #ececec;
 }
 
@@ -3388,12 +3401,12 @@ footer .comment-box {
 
 .header-share-btns .color-share-btns .share-btn-item {
   width: 13.5%;
-  height: 30px;
+  height: 3rem;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
   text-align: center;
-  line-height: 30px;
+  line-height: 3rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -3495,8 +3508,8 @@ footer .comment-box {
 
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item {
   overflow: hidden;
-  width: 36px;
-  height: 36px;
+  width: 3.6rem;
+  height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
   -webkit-box-shadow: none !important;
@@ -3504,7 +3517,7 @@ footer .comment-box {
   color: #fff;
   font-size: 1.2em;
   text-align: center;
-  line-height: 36px;
+  line-height: 3.6rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -3590,9 +3603,9 @@ footer .comment-box {
 }
 
 .hatena-module-body .follow-blog-btns .hateblo i {
-  font-size: 36px;
+  font-size: 3.6rem;
   position: relative !important;
-  top: 4px !important;
+  top: .4rem !important;
 }
 
 .hatena-module-body .follow-account-btns {
@@ -3616,8 +3629,8 @@ footer .comment-box {
 
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item {
   overflow: hidden;
-  width: 36px;
-  height: 36px;
+  width: 3.6rem;
+  height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
   -webkit-box-shadow: none !important;
@@ -3625,7 +3638,7 @@ footer .comment-box {
   color: #fff;
   font-size: 1.2em;
   text-align: center;
-  line-height: 36px;
+  line-height: 3.6rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -3711,8 +3724,8 @@ footer .comment-box {
 }
 
 .hatena-module-body .follow-account-btns .github i {
-  font-size: 41px;
+  font-size: 4.1rem;
   position: relative !important;
-  top: -2px !important;
+  top: -.2rem !important;
 }
 /*# sourceMappingURL=style.css.map */

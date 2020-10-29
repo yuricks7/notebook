@@ -145,14 +145,15 @@ $char-green: #009130;
   サイズ
 --------------------------------------*/
 $module-radius:  8px;
-$side-margin  : 10px;
+$side-margin  : 1rem;
 
 /*--------------------------------------
   パーツ
 --------------------------------------*/
 @mixin categoryBtns($radius) {
   padding: 2px 10px;
-  border-radius: $radius;
+  border-radius : $radius;
+  vertical-align: bottom;
 
   @include standardFonts();
   color  : bodyColor(1);

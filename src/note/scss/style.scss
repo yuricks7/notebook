@@ -5,6 +5,10 @@
 /*--------------------------------------
   ブログ全体のレイアウト
 --------------------------------------*/
+html {
+  font-size: 62.5% !important; // -> 10px
+}
+
 /* ページ全体 */
 body {
   margin: 0 auto;
@@ -19,12 +23,12 @@ body {
 #blog-title {
   width: 100%;
   margin : 0 auto;
-  padding: 20px 30px;
+  padding: 2rem 3rem;
 
   @include titleFonts(bold);
   background: themeColor(1) !important;
 
-  box-shadow: 0 5px 3px -1px btnColor(.3); // 下方向のみ
+  box-shadow: 0 .5rem .3rem -.1rem btnColor(.3); // 下方向のみ
 }
 
 /* ブログタイトル */
@@ -53,18 +57,18 @@ body {
 
     .menu {
       width: calc(100% / 8);
-      min-width: 116px;
+      min-width: 11.6rem;
 
-      margin : 0px auto 5px;
-      padding: 8px  4px 6px !important;
+      margin : 0 auto .5rem;
+      padding: .8rem  .4rem .6rem !important;
 
       background: themeColor(.1);
 
-      box-shadow  : 0 4px btnColor(.3);
+      box-shadow  : 0 .4rem btnColor(.3);
       border-left : 1px solid btnColor(.3);
       border-right: 1px solid btnColor(.3);
-      border-bottom-left-radius : 3px;
-      border-bottom-right-radius: 3px;
+      border-bottom-left-radius : .3rem;
+      border-bottom-right-radius: .3rem;
 
       a {
         vertical-align: middle;
@@ -77,7 +81,7 @@ body {
       transition : all .25s;
       &:hover {
         // transform: scale(1.2, 1.2);
-        transform: translateY(4px);
+        transform: translateY(.4rem);
         box-shadow: 0 0 #333;
 
         // .hidden-list {
@@ -87,9 +91,9 @@ body {
       }
       .content {
         margin : 0 auto;
-        padding: 10px;
-        width : 750px;
-        height: 200px;
+        padding: 1rem;
+        width : 75rem;
+        height: 20rem;
         box-sizing: border-box;
         background: #eee;
 
@@ -142,16 +146,19 @@ body {
 //   display: inline-block;
 // }
 
+#top-box {
+  font-size: 1.4rem;
+}
+
 /* パンくずリスト */
 #breadcrumb div {
   display  : inline;
-  font-size: 13px;
 }
 
 .breadcrumb {
-  margin       : 1px 0 !important;
+  margin       : .1rem 0 !important;
   width        : 100%;
-  padding      : 10px;
+  padding      : 1rem;
   border-radius: $module-radius;
 
   @include linkColors();
@@ -164,7 +171,7 @@ body {
 
 /* ブログ本体 */
 #container {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   border       : 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
   border-radius: $module-radius;
 
@@ -177,29 +184,29 @@ body {
 
 /* コンテンツ */
 #content {
-  margin: 0 auto 10px;
+  margin: 0 auto 1rem;
   width: 88%;
 }
 
 /* 記事タイトル */
 .entry-inner {
-  font-size: 1.2em;
+  font-size: 1.8rem;
 
   header {
     margin-bottom: 0;
-    padding      : 10px;
+    padding      : 1rem;
     border-top-left-radius : $module-radius;
     border-top-right-radius: $module-radius;
     background: bodyColor(1);
 
     .entry-date, .entry-header {
       margin : 0;
-      padding: 4px 10px 0;
+      padding: .4rem 1rem 0;
     }
 
     .entry-categories{
       margin : 0;
-      padding: 8px 0 4px;
+      padding: .8rem 0 .4rem;
 
     }
   }
@@ -213,22 +220,22 @@ body {
 .entry-footer-section {
   margin-top   : 0;
   margin-bottom: 0;
-  padding      : 10px 10px 0;
+  padding      : 1rem 1rem 0;
 
   background: bodyColor(.7);
 }
 
 /* はてなスター */
 .hatena-star-container {
-  height: 40px !important;
+  height: 4rem !important;
   margin : 0;
-  padding: 0 10px 10px;
+  padding: 0 1rem 1rem;
   background: bodyColor(.7);
 
   .hatena-star-add-button {
-    margin:  8px;
-    width : 45px;
-    height: 28px;
+    margin:  .8rem;
+    width : 4.5rem;
+    height: 2.8rem;
 
     transition : all .25s;
 
@@ -241,12 +248,13 @@ body {
 
 /* 記事一覧ページ */
 .archive-heading {
-  font-size  : 1.8em !important;
+  margin-bottom: 1rem;
+
+  font-size  : 2rem !important;
   font-weight: bold;
-  font-family: -apple-system,
-               'Kosugi Maru' !important;
+  font-family: -apple-system, 'Kosugi Maru' !important;
   &:before {
-    margin-right: 10px;
+    margin-right: 1rem;
 
     content: '\f02b'; /* ふせんマーク */
     vertical-align: middle;
@@ -254,17 +262,17 @@ body {
   }
 
   @at-root header#{&} { /* 親セレクタ（=記事一覧ページ限定） */
-    margin-top:    4px !important;
-    margin-bottom: 4px !important;
+    margin-top:    .4rem !important;
+    margin-bottom: .4rem !important;
   }
 }
 
 .archive-entry {
-  margin : 10px 5px !important;
-  padding: 10px;
-  border-radius: 6px;
+  margin : 1rem .5rem !important;
+  padding: 1rem;
+  border-radius: .6rem;
   background: bodyColor(.5);
-  box-shadow: 0 0 2px 2px btnColor(.1);
+  box-shadow: 0 0 .2rem .2rem btnColor(.1);
 
   @include linkColors(
     $default: charBlack(1),
@@ -285,24 +293,25 @@ body {
   }
 
   .entry-title {
-    margin : 4px 10px 0 !important;
+    margin : .4rem 1rem 0 !important;
     padding: 0;
 
-    font-size: 1.4em !important;
+    font-size: 1.6rem !important;
   }
 
   .categories {
-    margin : 4px 1px !important;
-    padding: 3px 8px !important;
+    margin : .4rem .1rem !important;
+    padding: .2rem .8rem !important;
+    vertical-align: bottom;
 
     .archive-category-link {
-      @include categoryBtns(3px);
+      @include categoryBtns(.3rem);
     }
   }
 
   .archive-entry-body {
     margin-top: 0;
-    padding: 4px;
+    padding: .4rem;
   }
 }
 
@@ -312,7 +321,7 @@ body {
 
 .entry-footer-html {
   margin :  0;
-  padding: 10px 4px;
+  padding: 1rem .4rem;
 
   background: bodyColor(.1);
   border: 4px solid bodyColor(.8);
@@ -320,36 +329,36 @@ body {
   text-align: center;
 
   p {
-    margin: 24px 10px 10px;
-    font-size: .85em !important;
+    margin: 2.4rem 1rem 1rem;
+    font-size: 1.4rem !important;
   }
 
   .footer-share-btns {
-    @include shareBtns(19%, 34px);
+    @include shareBtns(19%, 3.4rem);
 
     /* 微調整 */
     .hateblo {
       i {
-        font-size  : 28px !important;
+        font-size  : 2.8rem !important;
         position: relative !important;
-        top: 2px !important;
+        top: .2rem !important;
       }
     }
   }
 
   .footer-subscription-btns {
-    margin-top  : 30px;
+    margin-top  : 3rem;
     margin-left : auto;
     margin-right: auto;
     max-width: 50%;
 
-    @include shareBtns(40%, 34px);
+    @include shareBtns(40%, 3.4rem);
   }
 }
 
 /* ブログフッター */
 #footer{
-  padding: 10px 20px 20px;
+  padding: 1rem 2rem 2rem;
 }
 
 footer {
@@ -359,7 +368,7 @@ footer {
   .entry-footer-modules {
     .hatena-module-related-entries {
       margin : 0;
-      padding: 10px;
+      padding: 1rem;
       border-radius: $module-radius;
 
       background: bodyColor(.7);
@@ -369,12 +378,12 @@ footer {
   .shrbtn a {
     margin : 0;
     padding: 0;
-    border-radius: 4px;
+    border-radius: .4rem;
   }
 
   .comment-box {
     margin-top: 0;
-    padding   : 10px;
+    padding   : 1rem;
     border-bottom-left-radius : $module-radius;
     border-bottom-right-radius: $module-radius;
 
@@ -384,7 +393,7 @@ footer {
 
 .pager {
   margin-top: 0;
-  padding   : 10px;
+  padding   : 1rem;
   border-radius: $module-radius;
 
   background: bodyColor(.7);
@@ -401,10 +410,11 @@ footer {
   clear  : both;
   display: block;
 
-  margin :  0px 0 8px;
-  padding: 10px;
+  margin : 0 0 .8rem;
+  padding: 1rem;
   border-radius: $module-radius;
 
+  font-size: 1.2rem;
   background: bodyColor(.7);
 
   .hatena-module-title {
@@ -417,14 +427,15 @@ footer {
       $default: charBlack(.9),
       $visited: charBlack(.9)
     );
-    font-size: .9em;
+
+    font-size: 1.2rem;
 
     /* 検索フォーム */
     .search-form {
-      padding: 4px;
+      padding: .4rem;
       border : 1px solid btnColor(.1);
 
-      font-size: 1.2em;
+      font-size: 1.2rem;
 
       &:hover {
         border-color: btnColor(.3);
@@ -435,7 +446,7 @@ footer {
     .profile-description {
       @include standardFonts();
       @include linkColors();
-      font-size  : .95em;
+      font-size  :  .9em;
       line-height: 1.8em;
 
       p {
@@ -443,13 +454,13 @@ footer {
       }
 
       ul, ol {
-        margin-top : 4px;
-        margin-left: -1em;
+        margin-top : .4rem;
+        margin-left: -1rem;
 
         li {
-          margin-top   : .3em;
-          margin-bottom: 0;
-          padding-left :  .1em !important;
+          margin-top   : .3rem;
+          margin-bottom:  0;
+          padding-left : .1rem !important;
           font-size: .98em;
 
           p {
@@ -466,8 +477,8 @@ footer {
 
     /* アカウント一覧 */
     .follow-blog-btns {
-      margin-top: 16px;
-      @include followBtns(36px, 70%);
+      margin-top: 1.6rem;
+      @include followBtns(3.6rem, 70%);
 
       .accounts-header {
         @include sumModuleHeaders();
@@ -476,15 +487,15 @@ footer {
       /* 微調整 */
       .hateblo {
         i {
-          font-size  : 36px;
+          font-size  : 3.6rem;
           position: relative !important;
-          top: 4px !important;
+          top: .4rem !important;
         }
       }
     }
 
     .follow-account-btns {
-      @include followBtns(36px, 80%);
+      @include followBtns(3.6rem, 80%);
 
       .accounts-header {
         @include sumModuleHeaders();
@@ -493,9 +504,9 @@ footer {
       /* 微調整 */
       .github {
         i {
-          font-size: 41px;
+          font-size: 4.1rem;
           position : relative !important;
-          top: -2px !important;
+          top: -.2rem !important;
         }
       }
     }
@@ -512,8 +523,8 @@ footer {
 
       li {
         width : 50%;
-        height: 80px;
-        margin: 0.4em auto 0;
+        height: 8rem;
+        margin: .4em auto 0;
 
         list-style: none;
         text-align: center;
@@ -521,33 +532,33 @@ footer {
         a {
           display: block;
           height : 80%;
-          margin : 4px;
-          border-radius: 4px;
+          margin : .4rem;
+          border-radius: .4rem;
 
           background: btnColor(.03);
           border: 1px solid btnColor(.04);
 
           color: charBlack(.7);
-          font-size: 12px;
+          font-size: 1.2rem;
 
           i {
             display: inline-block;
-            padding-top   : 14px;
-            padding-bottom:  4px;
+            padding-top   : 1.4rem;
+            padding-bottom:  .4rem;
 
             color: charBlack(.6);
-            font-size: 18px;
+            font-size: 1.8rem;
           }
 
           .blogicon-private {
-            font-size: 20px;
-            padding-top   : 10px;
-            padding-bottom:  2px;
+            font-size: 2rem;
+            padding-top   : 1rem;
+            padding-bottom:  .2rem;
           }
 
           transition : all .25s;
           &:hover {
-            transform: translateY(4px);
+            transform: translateY(.4rem);
             box-shadow: 0 0 #333;
             color: charBlack(1);
             i {
@@ -564,7 +575,6 @@ footer {
       color  : charBlack(.8);
       @include linkColors($visited: charBlack(1));
       font-weight: bold;
-      // border-bottom: 3px solid themeColor(.3);
     }
 
     img[alt] {
@@ -572,15 +582,13 @@ footer {
       font-size: .8em;
     }
 
-    // img:hover {
-    //   transition : all .25s;
-    //   transform: scale(1.05, 1.05);
-    // }
+    img {
+      box-shadow: #cecece 0px 0px 1px 1px;
+    }
 
     .urllist-title-link {
       display: block;
-      // float: right;
-      font-size  : 1.1em;
+      font-size  :   1em;
       line-height: 2.2em;
     }
 
@@ -600,10 +608,10 @@ footer {
 --------------------------------------*/
 .entry-date {
   margin : 0;
-  padding: 0 20px;
+  padding: 0 2rem;
 
   @include titleFonts(normal);
-  a { padding: 5px 6px 5px 0 !important; }
+  a { padding: .5rem .6rem .5rem 0 !important; }
 }
 
 /*
@@ -614,36 +622,36 @@ footer {
 .lastmod {
 	display: inline;
   margin : 0;
-  padding: 0 10px;
+  padding: 0 1rem;
 
-  font-size: 15px;
+  font-size: 1.5rem;
 	text-decoration: none;
 
   &:before {
-    margin-right: 10px;
+    margin-right: 1rem;
 
     // content: "f02b";
     // font-family: "blogicon-repeat";
     content: "\f021"; /* 更新マーク */
     font-family: FontAwesome;
-    font-size: 16px !important;
+    font-size: 1.6rem !important;
   }
 }
 
 .entry-title {
   margin : 0;
-  padding: 0 10px;
+  padding: 0 1rem;
 
   font-size: 1.2em;
   @include titleFonts(bold);
 }
 
 .entry-categories {
-  margin    : 0 10px;
+  margin    : 0 1rem;
   text-align: left;
 
   .entry-category-link {
-    @include categoryBtns(2px);
+    @include categoryBtns(.2rem);
   }
 }
 
@@ -652,7 +660,7 @@ footer {
 --------------------------------------*/
 .entry-content {
   margin-top: 0;
-  padding   : 10px 16px;
+  padding   : 1rem 1.6rem;
 
   background: bodyColor(.9);
 
@@ -662,8 +670,8 @@ footer {
     見出し
   --------------------------------------*/
   h3 {
-    margin : 40px  0px 30px;
-    padding:  8px 10px  3px;
+    margin :  4rem 0     3rem;
+    padding: .8rem 1rem .3rem;
 
     background: themeColor(.1);
     border-left  : 8px solid themeColor(1);
@@ -674,8 +682,8 @@ footer {
   }
 
   h4 {
-    margin : 40px  3px 30px;
-    padding:  3px 10px;
+    margin :  4rem .3rem 3rem;
+    padding: .3rem  1rem;
 
     background: themeColor(.1);
     border-top   : 2px solid themeColor(1);
@@ -686,17 +694,17 @@ footer {
   }
 
   h5 {
-    margin : 36px 4px 26px;
-    padding:  4px 6px;
+    margin : 3.6rem .4rem 2.6rem;
+    padding:  .4rem .6rem;
 
-    border-left: 6px solid themeColor(1);
+    border-left: .6rem solid themeColor(1);
 
     font-size: 1.26em;
     color    : charBlack(1);
   }
 
   h6 {
-    margin : 30px 0 26px;
+    margin : 3rem 0 2.6rem;
 
     $border-weight: 2.6px;
     position: relative;
@@ -705,7 +713,7 @@ footer {
     font-size: 1.2em;
 
     &:before {
-      padding: 0 2px;
+      padding: 0 .2rem;
 
       content: " ";
     }
@@ -725,8 +733,8 @@ footer {
     本文のフォント
   --------------------------------------*/
   @include standardFonts();
-  font-size  : 16px;
-  line-height:  2em;
+  font-size  : 1.6rem;
+  line-height:   2em;
 
   color: charBlack(1);
 
@@ -771,12 +779,12 @@ footer {
   }
 
   .hatena-fotolife {
-    margin: 15px auto 30px;
+    margin: 1.5rem auto 3rem;
 
     width : 100%;
     height: auto;
-    max-width: 680px;
-    min-width: 100px;
+    max-width: 68rem;
+    min-width: 10rem;
     overflow-x: scroll; // 効かないかも
     -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
 
@@ -785,7 +793,7 @@ footer {
 
   /* カード形式リンク */
   iframe {
-    margin-top: 20px !important;
+    margin-top: 2rem !important;
 
     @include lightenImgs(.7);
     @include linkBelowCards();
@@ -798,7 +806,7 @@ footer {
 
   /* リスト */
   ul, ol {
-    margin-top : 10px;
+    margin-top : 1rem;
     margin-left:  0;
 
     li {
@@ -830,8 +838,8 @@ footer {
     margin-bottom: 0;
     margin-left  : $side-margin;
     margin-right : $side-margin;
-    padding      : 0px;
-    border-radius: 5px;
+    padding      : 0;
+    border-radius: .5rem;
 
     font-size: .9em;
 
@@ -848,10 +856,10 @@ footer {
     display: none; /* デフォルトで非表示 */
 
     /* 外枠 */
-    margin : 4px 10px 0;
-    padding: 20px 50px;
-    border-radius: 5px;
-    border : dotted #1541a1 1.6px;
+    margin : .4rem 1rem 0;
+    padding: 2rem 5rem;
+    border-radius: .5rem;
+    border : dotted #1541a1 1.6rem;
 
     /* フォント */
     @include linkColors(#1e366a);
@@ -871,8 +879,8 @@ footer {
 
     ul, ol {
       margin: 0 !important;
-      padding-top   :   4px;
-      padding-bottom:   4px;
+      padding-top   :   .4rem;
+      padding-bottom:   .4rem;
       padding-left  : 1.5em;
     }
   }
@@ -924,11 +932,11 @@ footer {
     テキストボックス（まとめ、強調など）
   --------------------------------------*/
   .text-box-dashed {
-    margin : 10px calc(10px + $side-margin);
-    padding: 10px;
+    margin : 1rem calc(1rem + $side-margin);
+    padding: 1rem;
 
     border       : 1px dashed;
-    border-radius: 5px;
+    border-radius: .5rem;
 
     text-align   : center;
   }
@@ -947,10 +955,10 @@ footer {
     /* ----Box Properties---- */
     display      : inline-block;
     padding      : 0.05em 0.6em;
-    margin       : 0px 4px;
+    margin       : 0 .4rem;
     background   : #fff;
-    border-radius: 4px;
-    box-shadow   : 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+    border-radius: .4rem;
+    box-shadow   : 0 .1rem .3rem .1rem rgba(0, 0, 0, 0.5);
 
     /* ----Text Properties---- */
     font-family: Helvetica, serif;
@@ -964,12 +972,12 @@ footer {
   */
   .btn-square-emboss {
     display: inline-block;
-    margin : 0px 4px;
+    margin : 0 .4rem;
     padding: 0.01em 0.6em;
 
     border-bottom: solid 3px btnColor(.3);
-    border-radius: 4px;
-    box-shadow   : 0px 1px 3px -1px btnColor(.5);
+    border-radius: .4rem;
+    box-shadow   : 0 .1rem .3rem -.1rem btnColor(.5);
     background   : #f0f0f0; /*ボタン色*/
 
     color    : #666666; /*ボタン色より暗く*/
@@ -978,7 +986,7 @@ footer {
     @include monospacedFonts();
 
     text-decoration: none;
-    text-shadow: 1px 1px 1px $char-white; /* 文字色より明るく */
+    text-shadow: .1rem .1rem .1rem $char-white; /* 文字色より明るく */
 
     /*
       テキスト選択はOffに。
@@ -987,8 +995,8 @@ footer {
     user-select: none !important;
 
     &:active  {
-      transform    : translateY(4px);
-      box-shadow   : 0px 1px 0px btnColor(.3);
+      transform    : translateY(.4rem);
+      box-shadow   : 0 .1rem 0 btnColor(.3);
       border-bottom: solid 3px btnColor(.1);
     }
   }
@@ -999,18 +1007,18 @@ footer {
     https://saruwakakun.com/html-css/reference/blockquote
   --------------------------------------*/
   li > blockquote {
-    padding-top: 15px !important;
+    padding-top: 1.5rem !important;
   }
 
   blockquote {
     position  : relative;
     box-sizing: border-box;
 
-    margin : 15px ($side-margin + 6px);
-    padding:  5px 10px 5px 32px;
+    margin : 1.5rem ($side-margin + .6rem);
+    padding:  .5rem 1rem .5rem 3.2rem;
 
     border: 1px solid rgba(204, 204, 204, .5);
-    border-radius: 3px;
+    border-radius: .3rem;
     background   : #f3f3f3;
 
     color: charBlack(.7);
@@ -1019,28 +1027,28 @@ footer {
     &:before{
       display : inline-block;
       position: absolute;
-      top   :  10px;
-      left  : -15px;
-      width :  40px;
-      height:  30px;
+      top   :  1rem;
+      left  : -1.5rem;
+      width :  4rem;
+      height:  3rem;
 
       text-align : center;
       content    : "\f10d"; // 引用符
       font-family: FontAwesome;
-      font-size  : 18px;
+      font-size  : 1.8rem;
       font-weight: 900;
       color      : #FFF;
-      line-height: 30px;
+      line-height: 3rem;
 
       background: themeColor(.7);
-      box-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
+      box-shadow: 0 .2rem .2rem rgba(26, 26, 26, 0.14);
     }
 
     /* 折り込み */
     &:after{
       position: absolute;
-      top :  40px;
-      left: -15px;
+      top :  4rem;
+      left: -1.5rem;
 
       border: none;
       border-bottom: solid  8px transparent;
@@ -1058,7 +1066,7 @@ footer {
 
     p {
       position: relative;
-      margin : 10px 0;
+      margin : 1rem 0;
       padding: 0;
       z-index: 3;
 
@@ -1068,7 +1076,7 @@ footer {
     /* 引用元 */
     cite {
       display: block;
-      padding-right: 40px;
+      padding-right: 4rem;
 
       color: #888888;
       font-size : 0.85em;
@@ -1076,7 +1084,7 @@ footer {
       text-align: right;
 
       &:before {
-        margin-right: 4px;
+        margin-right: .4rem;
 
         content: ">>";
         font-weight: bold;
@@ -1097,11 +1105,11 @@ footer {
     position  : relative;
     box-sizing: border-box;
 
-    margin : 15px ($side-margin + 6px);
-    padding:  5px 10px 5px 32px;
+    margin : 1.5rem ($side-margin + .6rem);
+    padding:  .5rem 1rem .5rem 3.2rem;
 
     border: 1px solid rgba(204, 204, 204, .5);
-    border-radius: 3px;
+    border-radius: .3rem;
     background   : #f3f3f3;
 
     color: charBlack(.7);
@@ -1124,12 +1132,12 @@ footer {
       color      : $char-white;
 
       background: highlighter(.8);
-      box-shadow: 0 2px 2px 2px rgba(26, 26, 26, 0.14);
+      box-shadow: 0 .2rem .2rem .2rem rgba(26, 26, 26, 0.14);
     }
 
     p {
       position: relative;
-      margin : 10px 0;
+      margin : 1rem 0;
       padding: 0;
       z-index: 3;
 
@@ -1141,8 +1149,8 @@ footer {
     文中のコード
   --------------------------------------*/
   code {
-    padding-top  : 1px;
-    border-radius: 3px;
+    padding-top  : .1rem;
+    border-radius: .3rem;
     border: 1px solid rgba(204, 204, 204, .5);
 
     color     : black !important;
@@ -1157,13 +1165,13 @@ footer {
     コードブロック
   --------------------------------------*/
   pre[data-lang=""] {
-    padding-top: 10px !important;
+    padding-top: 1rem !important;
   }
 
   pre.code {
-    margin : 15px ($side-margin + 6px);
-    padding: 20px 10px 10px 10px;
-    border-radius: 3px;
+    margin : 1.5rem ($side-margin + .6rem);
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: .3rem;
 
     /* フォント・メインカラーを変更 */
     @include monospacedFonts();
@@ -1194,13 +1202,13 @@ footer {
         display : inline-block;
         position: absolute;
 
-        margin-left: -18px;
-        margin-top : -25px;
-        padding    :   2px 10px;
+        margin-left: -1.8rem;
+        margin-top : -2.5rem;
+        padding    :   .2rem 1rem;
 
         border:  1px solid rgba(204, 204, 204, .5);
-        border-radius: 3px;
-        box-shadow   : 0 0 1px 1px charBlack(.2);
+        border-radius: .3rem;
+        box-shadow   : 0 0 .1rem .1rem charBlack(.2);
 
         content   : attr(data-lang);
         color     : black;
@@ -1218,9 +1226,9 @@ footer {
 
     &:before {
       display: inline-block;
-      width  : 30px;
-      margin-right : 10px;
-      padding-right:  6px;
+      width  : 3rem;
+      margin-right : 1rem;
+      padding-right:  .6rem;
       border-right :  1px solid rgba(204, 204, 204, .5);
 
       text-align: right;
@@ -1240,7 +1248,7 @@ footer {
   --------------------------------------*/
   table {
     margin-left : $side-margin;
-    margin-right: calc($side-margin + 30px);
+    margin-right: calc($side-margin + 3rem);
 
     // はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
     // https://qiita.com/ymeeto/items/f165576f49f37e28e253
@@ -1252,18 +1260,18 @@ footer {
     table-layout: auto;
     width : 100% !important;
     height: auto;
-    max-width: 940px;
-    min-width: 100px;
+    max-width: 94rem;
+    min-width: 10rem;
 
     // /* 縦スクロール */
     // overflow-y: scroll;
     // height: auto;
-    // max-height: 980px;
+    // max-height: 98rem;
 
     white-space: nowrap;               /* 自動改行をoff */
     -webkit-overflow-scrolling: touch !important; /* スマホでも滑らかに */
 
-    border-radius: 3px;
+    border-radius: .3rem;
     border: 1px solid charBlack(.05);
   }
 
@@ -1316,10 +1324,10 @@ footer {
 
   .footnote {
     margin : 0;
-    padding: 6px;
+    padding: .6rem;
 
     > p {
-      margin: 0 2px 10px;
+      margin: 0 .2rem 1rem;
     }
 
     .footnote-number, .footnote-delimiter {
@@ -1333,8 +1341,8 @@ footer {
 --------------------------------------*/
 /* 外枠 */
 .booklink-box, .kaerebalink-box {
-  margin  : 10px auto;
-  padding : 25px;
+  margin  : 1rem auto;
+  padding : 2.5rem;
   overflow: hidden;
   border  : double #CCC;
 
@@ -1342,9 +1350,9 @@ footer {
 
   /* 画像 */
   .booklink-image, .kaerebalink-image {
-    margin   : 0 15px 0 0;
+    margin   : 0 1.5rem 0 0;
     float    : left;
-    min-width: 160px;
+    min-width: 16rem;
 
     text-align: center;
 
@@ -1364,7 +1372,7 @@ footer {
 
   /* 商品名 */
   .booklink-name, .kaerebalink-name {
-      margin-bottom: 24px;
+      margin-bottom: 2.4rem;
 
       font-size  :   1em;
       line-height: 1.5em;
@@ -1372,8 +1380,8 @@ footer {
 
   /* "posted with ヨメレバ" */
   .booklink-powered-date {
-    margin-top   : 10px;
-    margin-bottom: 15px;
+    margin-top   : 1rem;
+    margin-bottom: 1.5rem;
 
     font-size  :  .7em;
     font-family: verdana;
@@ -1382,7 +1390,7 @@ footer {
 
   /* "posted with カエレバ" */
   .kaerebalink-powered-date {
-    margin-top: 10px;
+    margin-top: 1rem;
 
     font-size  :  .7em;
     font-family: verdana;
@@ -1391,18 +1399,18 @@ footer {
 
   /* 商品説明(?) */
   .booklink-detail {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 
   .kaerebalink-detail {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 
   /* ボタンエリア */
   .booklink-link2, .kaerebalink-link1 {
-    margin-top: 10px;
+    margin-top: 1rem;
 
     @include kaerebaLinkBtns();
   }
@@ -1429,9 +1437,9 @@ footer {
 --------------------------------------*/
 .comment-nickname[data-user-name="yuricks7"]::after{
   display      : inline-block;
-  margin       : 0 0 0 3px;
-  padding      : 0 3px;
-  border-radius: 2px;  /* 角丸 */
+  margin       : 0 0 0 .3rem;
+  padding      : 0 .3rem;
+  border-radius: .2rem;  /* 角丸 */
 
   content      : 'Author!'; /* 表示する言葉 */
   font-size    : 0.65rem;
@@ -1448,25 +1456,25 @@ footer {
   cursor: pointer;
 
   // *zoom  : 1 !important;
-  margin : 0 20px 20px;
+  margin : 0 2rem 2rem;
   padding: 1%;
-  border-radius: 4px;
+  border-radius: .4rem;
 
   background-clip : padding-box;
   background: highlighter(1);
-  box-shadow: 0 4px highlighter(.5);
+  box-shadow: 0 .4rem highlighter(.5);
 
   line-height: 2em;
   text-align : center;
   vertical-align: middle;
 
   color      : $char-white;
-  font-size  : 16px;
+  font-size  : 1.6rem;
   font-weight: bold;
   text-decoration: none !important;
 
   &:before {
-    padding-right: 5px;
+    padding-right: .5rem;
 
     content    : "\f009";
     font-family: "blogicon";
@@ -1474,7 +1482,7 @@ footer {
 
   transition : all .25s;
   &:hover {
-    transform : translateY(4px);
+    transform : translateY(.4rem);
     background: highlighter(1);
     box-shadow: 0 0 #333;
 
@@ -1533,13 +1541,13 @@ footer {
       farthest-side at top,
       btnColor(.17),
       transparent
-    ) top / 100% 11px,
+    ) top / 100% 1.1rem,
 
     radial-gradient(
       farthest-side at bottom,
       btnColor(.17),
       transparent
-    ) bottom / 100% 11px;
+    ) bottom / 100% 1.1rem;
 
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -1561,11 +1569,11 @@ footer {
       linear-gradient(
         #fff 30%,
         transparent
-      ) top / 100% 40px,
+      ) top / 100% 4rem,
       linear-gradient(
         transparent,
         #fff 70%
-      ) bottom / 100% 40px;
+      ) bottom / 100% 4rem;
     background-repeat: no-repeat;
     background-attachment: local;
     overflow-y: hidden;
@@ -1573,7 +1581,7 @@ footer {
 
   a {
     display: block;
-    padding: 2px 2px 2px 6px;
+    padding: .2rem .2rem .2rem .6rem;
 
     color: charBlack(1) !important;
     text-decoration: none;
@@ -1590,7 +1598,7 @@ footer {
   }
 
   &::-webkit-scrollbar {
-    width: 8px;
+    width: .8rem;
     background: #ececec;
   }
 
@@ -1611,7 +1619,7 @@ footer {
  *  https://www.gipsyjazznyumon.com/hatenablog-social-media-buttons-custmize/
  */
 .header-share-btns{
-  @include shareBtns(13.5%, 30px);
+  @include shareBtns(13.5%, 3rem);
 }
 
 /*--------------------------------------
@@ -1619,7 +1627,7 @@ footer {
 --------------------------------------*/
 .hatena-module-body {
 
-  $icon-size: 36px;
+  $icon-size: 3.6rem;
   .follow-blog-btns {
     @include followBtns($icon-size, 70%);
 
@@ -1628,7 +1636,7 @@ footer {
       i {
         font-size: $icon-size;
         position : relative !important;
-        top: 4px !important;
+        top: .4rem !important;
       }
     }
   }
@@ -1639,9 +1647,9 @@ footer {
     /* 微調整 */
     .github {
       i {
-        font-size: 41px;
+        font-size: 4.1rem;
         position : relative !important;
-        top: -2px !important;
+        top: -.2rem !important;
       }
     }
   }
