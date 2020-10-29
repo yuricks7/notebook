@@ -563,7 +563,7 @@ textarea,
     height: auto;
     display: -ms-grid;
     display: grid;
-    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"    2px "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"    2px "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"    2px "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  24.5%   1%      24.0%    1%       49.5%;
+    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"    2px "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"    2px "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"    2px "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  18.0%   1%      30.5%    1%       49.5%;
   }
   #box2-inner .hatena-module-search-box {
     grid-area: search;

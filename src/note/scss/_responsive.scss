@@ -35,7 +35,7 @@
       "......  ......  ......   ...      ......"    2px
       "ranking ranking ranking  ...      recent"   auto
       "monthly ...     category category category" auto
-    /  24.5%   1%      24.0%    1%       49.5%;
+    /  20.0%   1%      28.5%    1%       49.5%;
 
     .hatena-module-search-box {
       grid-area: search;
@@ -160,9 +160,9 @@
             flex-direction : column;
             justify-content: flex-start;
 
-            margin-left: 6px;
-            border-left  : 1px black solid;
-            border-bottom: 1px black solid;
+            // margin-left: 6px;
+            // border-left  : 1px black solid;
+            // border-bottom: 1px black solid;
           }
         }
       }
