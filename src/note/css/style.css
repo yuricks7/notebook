@@ -2858,7 +2858,7 @@ footer .comment-box {
 }
 
 .entry-content .footnote > p {
-  margin: 10px 2px;
+  margin: 0 2px 10px;
 }
 
 .entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
