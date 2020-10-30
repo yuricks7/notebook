@@ -126,7 +126,7 @@ $char-green: #009130;
   a {
     &:link { // 未訪問
       color: $default;
-      font-style:normal;
+      font-style: normal;
       text-decoration: none !important;
     }
 
@@ -136,7 +136,7 @@ $char-green: #009130;
 
     &:hover {
       color: highlighter(1);
-      font-weight:bold;
+      font-weight: bold;
     }
   }
 }
@@ -144,14 +144,14 @@ $char-green: #009130;
 /*--------------------------------------
   サイズ
 --------------------------------------*/
-$module-radius:  8px;
-$side-margin  : 1rem;
+$module-radius: .8rem;
+$side-margin  :  1rem;
 
 /*--------------------------------------
   パーツ
 --------------------------------------*/
 @mixin categoryBtns($radius) {
-  padding: 2px 10px;
+  padding: .2rem 1rem;
   border-radius : $radius;
   vertical-align: bottom;
 
@@ -166,9 +166,9 @@ $side-margin  : 1rem;
 
 @mixin labels($color,
               $font-size: .85em) {
-  margin : auto 4px auto 0;
-  padding: 4px;
-  border-radius: 3px;
+  margin :  auto .4rem auto 0;
+  padding: .4rem;
+  border-radius: .3rem;
 
   background: $color;
   color     : white;
@@ -179,16 +179,16 @@ $side-margin  : 1rem;
 @mixin kaerebaLinkBtns() {
   /* ボタン化 */
   a {
-    width          : 30%;
-    border-radius  : 5px;
+    width          :  30%;
+    border-radius  : .5rem;
     display        : inline-block;
-    margin         : 5px 2px 0 0;
-    padding        : 10px 1px;
+    margin         : .5rem .2rem 0 0;
+    padding        :  1rem .1rem;
     text-align     : center;
   /*  float                : left; */
     text-decoration: none;
     font-weight    : 800;
-    font-size      : 12px;
+    font-size      : 1.2rem;
     color          : #fff !important;
   }
 
@@ -213,7 +213,7 @@ $side-margin  : 1rem;
 
     &:active {
       position: relative;
-      top     : 1px;
+      top     : .1rem;
     }
   }
 
@@ -235,23 +235,23 @@ $side-margin  : 1rem;
 }
 
 @mixin linkBelowCards() {
-  margin-bottom: 0px !important;
-  min-width: 100px;
+  margin-bottom: 0 !important;
+  min-width: 10rem;
 
   &+a {
     display: block;
-    margin-top: 0px;
+    margin-top: 0;
 
     width: 100%;
-    min-width: 100px;
+    min-width: 10rem;
 
     font-size  :  .8em;
     line-height: 1.6em;
     text-decoration: none;
 
     &:before {
-      margin-left : 4px;
-      margin-right: 8px;
+      margin-left : .4rem;
+      margin-right: .8rem;
       content: ">>";
 
       font-weight: bold;
@@ -276,17 +276,17 @@ $side-margin  : 1rem;
     .share-btn-item {
       width : $width;
       height: $height;
-      border-radius: 4px;
+      border-radius: .4rem;
 
       color: #fff;
-      font-size  : 16px;
+      font-size  : 1.6rem;
       text-align : center;
       line-height: $height;
 
       transition : all .3s;
 
       &:hover {
-        transform: translateY(4px);
+        transform: translateY(.4rem);
         box-shadow: 0 0 #333;
       }
     }
@@ -299,21 +299,20 @@ $side-margin  : 1rem;
   display: block;
   clear  : right;
 
-  margin : 16px auto 4px;
-  padding: 2px 6px 0px;
+  margin : 1.6rem auto .4rem;
+  padding:  .2rem .6rem 0;
   background: btnColor(.04);
 
   color: charBlack(.9);
   font-size: 1.1em;
 }
 
-
 @mixin followBtns($icon-size, $area-width) {
   .color-share-btns {
     display: flex;
+    margin : 0.8em auto;
+    max-width: $area-width;
     justify-content: space-between;
-    margin: 0.8em auto;
-    max-width : $area-width;
 
     a {
       padding: 0 !important;
@@ -326,12 +325,13 @@ $side-margin  : 1rem;
       height: $icon-size; // トリミング
 
       /* 円形にする */
-      border-radius: 50%;
+      $circle: 50%;
+      border-radius: $circle;
       img {
         margin : 0;
-        padding: 0 0 4px; // 画像の中心を合わせる
+        padding: 0 0 .4rem; // 画像の中心を合わせる
         vertical-align: middle;
-        border-radius: 50%;
+        border-radius: $circle;
       }
 
       box-shadow: none !important;
@@ -353,61 +353,68 @@ $side-margin  : 1rem;
   }
 }
 
+@mixin iconFont_($body, $shadow) {
+  background: $body;
+  box-shadow: 0 .4rem $shadow;
+}
+
+@mixin iconImage_($shadow) {
+  box-shadow: 0 .4rem $shadow;
+}
+
 @mixin shareBtnColors() {
   .tumblr {
-    background: #35465c;
-    box-shadow: 0 4px #010101;
+    @include iconFont_($body  : #35465c,
+                       $shadow: #010101);
   }
 
   .facebook {
-    background: #1778F2;
-    box-shadow: 0 4px #1366ce;
+    @include iconFont_($body  : #1778F2,
+                       $shadow: #1366ce);
   }
 
   .twitter {
-    background: #1BA1F3;
-    box-shadow: 0 4px #1280c3;
+    @include iconFont_($body  : #1BA1F3,
+                       $shadow: #1280c3);
   }
 
   .hatebu {
-    background: #00A4DE;
-    box-shadow: 0 4px #038ebf;
+    @include iconFont_($body  : #00A4DE,
+                       $shadow: #038ebf);
   }
 
   .pocket {
-    background: #EF4155;
-    box-shadow: 0 4px #c3293b;
+    @include iconFont_($body  : #EF4155,
+                       $shadow: #c3293b);
   }
 
   .feedly { // 画像
-    box-shadow: 0 4px #176b2c;
+    @include iconImage_($shadow: #176b2c);
   }
 
   .rss {
-    background: #f26522;
-    box-shadow: 0 4px #9e531d;
+    @include iconFont_($body  : #f26522,
+                       $shadow: #9e531d);
   }
 
   .hateblo {
-    background: #dfdfdf;
-    box-shadow: 0 4px #515151;
-
+    @include iconFont_($body  : #dfdfdf,
+                       $shadow: #515151);
     color: #000;
   }
 
   .github {
-    background: #fafafa;
-    box-shadow: 0 4px #989898;
-
+    @include iconFont_($body  : #fafafa,
+                       $shadow: #989898);
     color: #333;
   }
 
   .amazon {
-    background: #ff9900;
-    box-shadow: 0 4px #8a5300;
+    @include iconFont_($body  : #ff9900,
+                       $shadow: #8a5300);
   }
 
   .coconala { // 画像
-    box-shadow: 0 4px #989898;
+    @include iconImage_($shadow: #989898);
   }
 }
