@@ -1364,23 +1364,35 @@ footer {
 --------------------------------------*/
 /* 外枠 */
 .booklink-box, .kaerebalink-box {
-  margin  :   1rem auto;
+  margin  :   1rem auto 1rem 0;
   padding : 2.5rem;
   overflow: hidden;
   border  : double #CCC;
+
+  width: 100%;
+  max-width: 68rem;
+  min-width: 10rem;
 
   font-size: .85em;
 
   /* 画像 */
   .booklink-image, .kaerebalink-image {
-    margin   : 0 1.5rem 0 0;
-    float    : left;
-    min-width: 16rem;
+    float : left;
+    margin: 0 1.5rem 0 0;
+
+    width: 100%;
+    max-width: 24rem;
+    min-width:  8rem;
 
     text-align: center;
 
     img {
-      margin    : 0 auto;
+      margin: 0 auto;
+
+      width: 100%;
+      // max-width: 200px;
+      // min-width: 16rem;
+
       text-align: center;
     }
   }

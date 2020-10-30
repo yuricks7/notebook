@@ -2921,10 +2921,13 @@ footer .comment-box {
 --------------------------------------*/
 /* 外枠 */
 .booklink-box, .kaerebalink-box {
-  margin: 1rem auto;
+  margin: 1rem auto 1rem 0;
   padding: 2.5rem;
   overflow: hidden;
   border: double #CCC;
+  width: 100%;
+  max-width: 68rem;
+  min-width: 10rem;
   font-size: .85em;
   /* 画像 */
   /* 商品概要 */
@@ -2938,14 +2941,17 @@ footer .comment-box {
 }
 
 .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
-  margin: 0 1.5rem 0 0;
   float: left;
-  min-width: 16rem;
+  margin: 0 1.5rem 0 0;
+  width: 100%;
+  max-width: 24rem;
+  min-width: 8rem;
   text-align: center;
 }
 
 .booklink-box .booklink-image img, .booklink-box .kaerebalink-image img, .kaerebalink-box .booklink-image img, .kaerebalink-box .kaerebalink-image img {
   margin: 0 auto;
+  width: 100%;
   text-align: center;
 }
 
