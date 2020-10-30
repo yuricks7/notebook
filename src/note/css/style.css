@@ -990,6 +990,7 @@ body {
   margin: 0 auto;
   width: 100%;
   background: rgba(1, 1, 1, 0.1);
+  font-size: 1.4rem;
   font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
 }
 
