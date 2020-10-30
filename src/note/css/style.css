@@ -2942,8 +2942,8 @@ footer .comment-box {
 .booklink-box .booklink-powered-date, .kaerebalink-box .booklink-powered-date {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
-  font-size: .7em;
   font-family: verdana;
+  font-size: .7em;
   line-height: 1.2em;
 }
 
@@ -3200,13 +3200,13 @@ footer .comment-box {
 --------------------------------------*/
 .comment-nickname[data-user-name="yuricks7"]::after {
   display: inline-block;
-  margin: 0 0 0 .3rem;
+  margin: 0  0 0 .3rem;
   padding: 0 .3rem;
   border-radius: .2rem;
   /* 角丸 */
   content: 'Author!';
   /* 表示する言葉 */
-  font-size: 0.65rem;
+  font-size: .65rem;
   line-height: 1.8;
   color: #f0f0f0;
   /* 文字色 */
@@ -3346,8 +3346,8 @@ footer .comment-box {
 }
 
 #stoc .shadow > ol {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 4rem, -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, #fff)) bottom/100% 4rem;
-  background: linear-gradient(#fff 30%, transparent) top/100% 4rem, linear-gradient(transparent, #fff 70%) bottom/100% 4rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 4rem, -webkit-gradient(linear, left top, left bottom, color-stop(70%, #fff), to(transparent)) bottom/100% 4rem;
+  background: linear-gradient(#fff 30%, transparent) top/100% 4rem, linear-gradient(#fff 70%, transparent) bottom/100% 4rem;
   background-repeat: no-repeat;
   background-attachment: local;
   overflow-y: hidden;
@@ -3369,13 +3369,13 @@ footer .comment-box {
   background: rgba(0, 0, 0, 0.07);
 }
 
+#stoc::-webkit-scrollbar-button {
+  display: none;
+}
+
 #stoc::-webkit-scrollbar {
   width: .8rem;
   background: #ececec;
-}
-
-#stoc::-webkit-scrollbar-button {
-  display: none;
 }
 
 #stoc::-webkit-scrollbar-thumb {

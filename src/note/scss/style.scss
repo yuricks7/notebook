@@ -1175,7 +1175,7 @@ footer {
 
     /* フォント・メインカラーを変更 */
     @include monospacedFonts();
-    font-size  : .85em;
+    font-size  :  .85em;
     line-height: 1.5em;
     color      : $char-white;    /* white 文字色 */
     background : charBlack(.85); /* black 背景 */
@@ -1206,7 +1206,7 @@ footer {
         margin-top : -2.5rem;
         padding    :   .2rem 1rem;
 
-        border:  1px solid rgba(204, 204, 204, .5);
+        border: 1px solid rgba(204, 204, 204, .5);
         border-radius: .3rem;
         box-shadow   : 0 0 .1rem .1rem charBlack(.2);
 
@@ -1227,8 +1227,8 @@ footer {
     &:before {
       display: inline-block;
       width  : 3rem;
-      margin-right : 1rem;
-      padding-right:  .6rem;
+      margin-right :  1rem;
+      padding-right: .6rem;
       border-right :  1px solid rgba(204, 204, 204, .5);
 
       text-align: right;
@@ -1312,7 +1312,7 @@ footer {
     &:after {
       display : inline-block;
       position: relative;
-      height  : 2em;
+      height  :  2em;
       top     : -1em;
       padding : 0 0.5em;
 
@@ -1323,7 +1323,7 @@ footer {
   }
 
   .footnote {
-    margin : 0;
+    margin :  0;
     padding: .6rem;
 
     > p {
@@ -1341,7 +1341,7 @@ footer {
 --------------------------------------*/
 /* 外枠 */
 .booklink-box, .kaerebalink-box {
-  margin  : 1rem auto;
+  margin  :   1rem auto;
   padding : 2.5rem;
   overflow: hidden;
   border  : double #CCC;
@@ -1380,11 +1380,11 @@ footer {
 
   /* "posted with ヨメレバ" */
   .booklink-powered-date {
-    margin-top   : 1rem;
+    margin-top   :   1rem;
     margin-bottom: 1.5rem;
 
-    font-size  :  .7em;
     font-family: verdana;
+    font-size  :  .7em;
     line-height: 1.2em;
   }
 
@@ -1437,12 +1437,12 @@ footer {
 --------------------------------------*/
 .comment-nickname[data-user-name="yuricks7"]::after{
   display      : inline-block;
-  margin       : 0 0 0 .3rem;
-  padding      : 0 .3rem;
+  margin       :  0  0 0 .3rem;
+  padding      :  0 .3rem;
   border-radius: .2rem;  /* 角丸 */
 
   content      : 'Author!'; /* 表示する言葉 */
-  font-size    : 0.65rem;
+  font-size    :  .65rem;
   line-height  : 1.8;
   color        : $char-white; /* 文字色 */
   background   : #00008b;   /* 背景色 */
@@ -1497,6 +1497,7 @@ footer {
  * はてなブログ向けのサイドバーで追尾する目次【ver3】 http://twilyze.hatenablog.jp/entry/sidebar-toc-3
  * https://gist.github.com/Twilyze/30809fa76691983312dced621eb1040a#file-changelog-md
  */
+
 /* モジュール */
 #stoc-module {
   backface-visibility: hidden;
@@ -1537,24 +1538,20 @@ footer {
   /* Shadows */
   .shadow {
     background:
-    radial-gradient(
-      farthest-side at top,
-      btnColor(.17),
-      transparent
-    ) top / 100% 1.1rem,
+      radial-gradient(
+        farthest-side at top,    btnColor(.17), transparent
+      ) top / 100% 1.1rem,
 
-    radial-gradient(
-      farthest-side at bottom,
-      btnColor(.17),
-      transparent
-    ) bottom / 100% 1.1rem;
+      radial-gradient(
+        farthest-side at bottom, btnColor(.17), transparent
+      ) bottom / 100% 1.1rem;
 
-    background-repeat: no-repeat;
+    background-repeat    : no-repeat;
     background-attachment: scroll;
   }
 
   ol {
-    margin: 0;
+    margin : 0;
     padding: 0 0 0 1.2em;
     list-style-type: none;
   }
@@ -1566,15 +1563,9 @@ footer {
   /* Shadow covers */
   .shadow > ol {
     background:
-      linear-gradient(
-        #fff 30%,
-        transparent
-      ) top / 100% 4rem,
-      linear-gradient(
-        transparent,
-        #fff 70%
-      ) bottom / 100% 4rem;
-    background-repeat: no-repeat;
+      linear-gradient(#fff 30%, transparent) top    / 100% 4rem,
+      linear-gradient(#fff 70%, transparent) bottom / 100% 4rem;
+    background-repeat    : no-repeat;
     background-attachment: local;
     overflow-y: hidden;
   }
@@ -1597,15 +1588,17 @@ footer {
     background: btnColor(.07);
   }
 
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  // スクロールバー
   &::-webkit-scrollbar {
     width: .8rem;
     background: #ececec;
   }
 
-  &::-webkit-scrollbar-button {
-    display: none;
-  }
-
+  // 可動部
   &::-webkit-scrollbar-thumb {
     background: #b1b1b1;
   }
