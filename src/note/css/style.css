@@ -1255,6 +1255,8 @@ header.archive-heading {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-left: -40px;
+  width: 710px;
 }
 
 .archive-entry {
