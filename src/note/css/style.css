@@ -678,6 +678,9 @@ textarea,
   #stoc-module {
     display: none !important;
   }
+  .archive-entries {
+    width: 100% !important;
+  }
 }
 
 /*--------------------------------------
@@ -1256,7 +1259,7 @@ header.archive-heading {
 
 .archive-entry {
   width: 49%;
-  min-width: 400px;
+  min-width: 300px;
   margin: 1rem auto !important;
   padding: 1rem;
   border-radius: .6rem;
