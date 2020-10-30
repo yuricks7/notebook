@@ -3429,12 +3429,12 @@ footer .comment-box {
 
 .header-share-btns .color-share-btns .share-btn-item {
   width: 13.5%;
-  height: 3rem;
+  height: 2.4rem;
   border-radius: .4rem;
   color: #fff;
   font-size: 1.6rem;
   text-align: center;
-  line-height: 3rem;
+  line-height: 2.4rem;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
