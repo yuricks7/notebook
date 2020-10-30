@@ -678,7 +678,9 @@ textarea,
   #stoc-module {
     display: none !important;
   }
+  /* 記事一覧 */
   .archive-entries {
+    margin-left: 0 !important;
     width: 100% !important;
   }
 }
