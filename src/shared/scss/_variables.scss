@@ -99,27 +99,27 @@ $char-red  : #d32f2f;
 $char-blue : darkblue;
 $char-green: #009130;
 
-@function themeColor($density) {
+@function themeBlue($density) {
   @return rgba(29, 138, 255, $density);
 }
 
-@function bodyColor($density) {
-  @return rgba(250, 250, 250, $density);
+@function highlightBlue($density) {
+  @return rgba(10, 33, 230, $density);
 }
 
-@function highlighter($density) {
-  @return rgba(10, 33, 230, $density);
+@function bodyBeige($density) {
+  @return rgba(250, 250, 250, $density);
 }
 
 @function charBlack($density) {
   @return rgba(5, 5, 5, $density);
 }
 
-@function btnColor($density) {
+@function btnBlack($density) {
   @return rgba(0, 0, 0, $density);
 }
 
-@mixin linkColors($default: highlighter(.9),
+@mixin linkColors($default: highlightBlue(.9),
                   $visited: $char-green) {
   text-decoration: none !important;
 
@@ -135,7 +135,7 @@ $char-green: #009130;
     }
 
     &:hover {
-      color: highlighter(1);
+      color: highlightBlue(1);
       font-weight: bold;
     }
   }
@@ -150,14 +150,14 @@ $side-margin  :  1rem;
 /*--------------------------------------
   パーツ
 --------------------------------------*/
-@mixin categoryBtns($radius) {
-  padding: .2rem 1rem;
+@mixin categoryBtns($padding, $radius) {
+  padding: $padding 1rem;
   border-radius : $radius;
   vertical-align: bottom;
 
   @include standardFonts();
-  color  : bodyColor(1);
-  background: themeColor(.8);
+  color  : bodyBeige(1);
+  background: themeBlue(.8);
 
   &:last-child {
     margin-right: 0;
@@ -301,7 +301,7 @@ $side-margin  :  1rem;
 
   margin : 1.6rem auto .4rem;
   padding:  .2rem .6rem 0;
-  background: btnColor(.04);
+  background: btnBlack(.04);
 
   color: charBlack(.9);
   font-size: 1.1em;

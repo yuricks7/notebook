@@ -190,6 +190,40 @@
   }
 }
 
+@media (max-width: 930px) {
+  .archive-entry {
+    min-width: 200px !important;
+
+    display: grid !important;
+    grid-template:
+      ".... ... header"   3rem
+      "thum ... header"   1fr
+      "thum ... category" auto
+      / 30% 5% 1fr;
+
+    .archive-entry-header {
+      grid-area: header;
+    }
+
+    .categories {
+      grid-area: category;
+    }
+
+    .entry-thumb-link {
+      grid-area: thum;
+
+      .entry-thumb {
+        width:     100% !important;
+        min-width: 80px !important
+      }
+    }
+
+    .entry-description {
+      display: none;
+    }
+  }
+}
+
 /*--------------------------------------
   （中）タブレット
 --------------------------------------*/
@@ -390,11 +424,16 @@
   }
 
   .archive-entry {
+    width: 98% !important;
+    .archive-entry-header {
+      width: 100%;
+    }
+
     padding: 1rem !important;
     font-size: .7em;
 
     .entry-thum {
-      width: 400px !important;
+      min-width: 40px !important;
     }
   }
 

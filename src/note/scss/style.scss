@@ -27,9 +27,9 @@ body {
   padding: 2rem 3rem;
 
   @include titleFonts(bold);
-  background: themeColor(1) !important;
+  background: themeBlue(1) !important;
 
-  box-shadow: 0 .5rem .3rem -.1rem btnColor(.3); // 下方向のみ
+  box-shadow: 0 .5rem .3rem -.1rem btnBlack(.3); // 下方向のみ
 }
 
 /* ブログタイトル */
@@ -49,7 +49,7 @@ body {
   padding: 0;
   border : 0;
 
-  background: themeColor(.3);
+  background: themeBlue(.3);
 
   .gnav-inner {
     height : 100%;
@@ -63,11 +63,11 @@ body {
       margin : 0 auto .5rem;
       padding: .8rem  .4rem .6rem !important;
 
-      background: themeColor(.1);
+      background: themeBlue(.1);
 
-      box-shadow  : 0 .4rem btnColor(.3);
-      border-left : 1px solid btnColor(.3);
-      border-right: 1px solid btnColor(.3);
+      box-shadow  : 0 .4rem btnBlack(.3);
+      border-left : 1px solid btnBlack(.3);
+      border-right: 1px solid btnBlack(.3);
       border-bottom-left-radius : .3rem;
       border-bottom-right-radius: .3rem;
 
@@ -176,7 +176,7 @@ body {
   border       : 0 1px 1px 1px solid rgba(10, 10, 10, .9) !important;
   border-radius: $module-radius;
 
-  background: bodyColor(.5);
+  background: bodyBeige(.5);
 
   #container-inner {
     padding: 0 0;
@@ -198,7 +198,7 @@ body {
     padding      : 1rem;
     border-top-left-radius : $module-radius;
     border-top-right-radius: $module-radius;
-    background: bodyColor(1);
+    background: bodyBeige(1);
 
     .entry-date, .entry-header {
       margin : 0;
@@ -223,7 +223,7 @@ body {
   margin-bottom: 0;
   padding      : 1rem 1rem 0;
 
-  background: bodyColor(.7);
+  background: bodyBeige(.7);
 }
 
 /* はてなスター */
@@ -231,7 +231,7 @@ body {
   height: 4rem !important;
   margin : 0;
   padding: 0 1rem 1rem;
-  background: bodyColor(.7);
+  background: bodyBeige(.7);
 
   .hatena-star-add-button {
     margin:  .8rem;
@@ -268,16 +268,26 @@ body {
   }
 }
 
+.archive-entries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .archive-entry {
-  margin : 1rem .5rem !important;
+  width: 49%;
+  min-width: 400px;
+
+  margin : 1rem auto !important;
   padding: 1rem;
   border-radius: .6rem;
-  background: bodyColor(.5);
-  box-shadow: 0 0 .2rem .2rem btnColor(.1);
+  background: bodyBeige(.5);
+  box-shadow: 0 0 .2rem .2rem btnBlack(.1);
 
   @include linkColors(
     $default: charBlack(1),
-    $visited: charBlack(1));
+    $visited: charBlack(1)
+  );
 
   .archive-date {
     margin: 0;
@@ -286,10 +296,9 @@ body {
     time {
       // 効いてないかも
       @include linkColors(
-        $default: highlighter(.9),
+        $default: highlightBlue(.9),
         $visited: charBlack(1)
       );
-      //   border-bottom: 3px solid themeColor(.3);
     }
   }
 
@@ -302,17 +311,31 @@ body {
 
   .categories {
     margin : .4rem .1rem !important;
-    padding: .2rem .8rem !important;
+    padding: .1rem .8rem !important;
     vertical-align: bottom;
 
     .archive-category-link {
-      @include categoryBtns(.3rem);
+      @include categoryBtns(0, .3rem);
+      font-size: .85em;
     }
+  }
+
+  .entry-thumb[alt] {
+    color    : charBlack(.6);
+    font-size: .8em;
+  }
+
+  .entry-thumb {
+    border: 1px solid btnBlack(.1);
   }
 
   .archive-entry-body {
     margin-top: 0;
     padding: .4rem;
+
+    .entry-description {
+      font-size: .85em;
+    }
   }
 }
 
@@ -324,8 +347,8 @@ body {
   margin :  0;
   padding: 1rem .4rem;
 
-  background: bodyColor(.1);
-  border: 4px solid bodyColor(.8);
+  background: bodyBeige(.1);
+  border: 4px solid bodyBeige(.8);
 
   text-align: center;
 
@@ -372,7 +395,7 @@ footer {
       padding: 1rem;
       border-radius: $module-radius;
 
-      background: bodyColor(.7);
+      background: bodyBeige(.7);
     }
   }
 
@@ -388,7 +411,7 @@ footer {
     border-bottom-left-radius : $module-radius;
     border-bottom-right-radius: $module-radius;
 
-    background: bodyColor(.7);
+    background: bodyBeige(.7);
   }
 }
 
@@ -397,7 +420,7 @@ footer {
   padding   : 1rem;
   border-radius: $module-radius;
 
-  background: bodyColor(.7);
+  background: bodyBeige(.7);
   @include linkColors();
 }
 
@@ -416,10 +439,10 @@ footer {
   border-radius: $module-radius;
 
   font-size: 1.2rem;
-  background: bodyColor(.7);
+  background: bodyBeige(.7);
 
   .hatena-module-title {
-    border-bottom: 2px double themeColor(1);
+    border-bottom: 2px double themeBlue(1);
   }
 
   .hatena-module-body {
@@ -434,12 +457,12 @@ footer {
     /* 検索フォーム */
     .search-form {
       padding: .4rem;
-      border : 1px solid btnColor(.1);
+      border : 1px solid btnBlack(.1);
 
       font-size: 1.2rem;
 
       &:hover {
-        border-color: btnColor(.3);
+        border-color: btnBlack(.3);
       }
     }
 
@@ -536,8 +559,8 @@ footer {
           margin : .4rem;
           border-radius: .4rem;
 
-          background: btnColor(.03);
-          border: 1px solid btnColor(.04);
+          background: btnBlack(.03);
+          border: 1px solid btnBlack(.04);
 
           color: charBlack(.7);
           font-size: 1.2rem;
@@ -580,7 +603,7 @@ footer {
 
     .hatena-urllist li{
       border-top: none;
-      border-bottom: 1px solid btnColor(.1);
+      border-bottom: 1px solid btnBlack(.1);
       box-shadow:    0   1px 0 rgba(255, 255, 255,  1);
 
       ul {
@@ -603,7 +626,7 @@ footer {
     }
 
     img {
-      border: 1px solid btnColor(.1);
+      border: 1px solid btnBlack(.1);
     }
 
     .urllist-title-link {
@@ -674,7 +697,7 @@ footer {
   text-align: left;
 
   .entry-category-link {
-    @include categoryBtns(.2rem);
+    @include categoryBtns(.2rem, .2rem);
   }
 }
 
@@ -685,7 +708,7 @@ footer {
   margin-top: 0;
   padding   : 1rem 1.6rem;
 
-  background: bodyColor(.9);
+  background: bodyBeige(.9);
 
   @include linkColors();
 
@@ -696,9 +719,9 @@ footer {
     margin :  4rem 0     3rem;
     padding: .8rem 1rem .3rem;
 
-    background: themeColor(.1);
-    border-left  : 8px solid themeColor(1);
-    border-bottom: 3px solid themeColor(1);
+    background: themeBlue(.1);
+    border-left  : 8px solid themeBlue(1);
+    border-bottom: 3px solid themeBlue(1);
 
     font-size: 1.4em;
     color    : charBlack(1);
@@ -708,9 +731,9 @@ footer {
     margin :  4rem .3rem 3rem;
     padding: .3rem  1rem;
 
-    background: themeColor(.1);
-    border-top   : 2px solid themeColor(1);
-    border-bottom: 2px solid themeColor(1);
+    background: themeBlue(.1);
+    border-top   : 2px solid themeBlue(1);
+    border-bottom: 2px solid themeBlue(1);
 
     font-size: 1.32em;
     color    : charBlack(1);
@@ -720,7 +743,7 @@ footer {
     margin : 3.6rem .4rem 2.6rem;
     padding:  .4rem .6rem;
 
-    border-left: .6rem solid themeColor(1);
+    border-left: .6rem solid themeBlue(1);
 
     font-size: 1.26em;
     color    : charBlack(1);
@@ -731,7 +754,7 @@ footer {
 
     $border-weight: 2.6px;
     position: relative;
-    border-bottom: solid $border-weight btnColor(.1);
+    border-bottom: solid $border-weight btnBlack(.1);
 
     font-size: 1.2em;
 
@@ -746,7 +769,7 @@ footer {
       width   : 24%;
       position: absolute;
       bottom  : -$border-weight;
-      border-bottom: solid $border-weight themeColor(1);
+      border-bottom: solid $border-weight themeBlue(1);
 
       content: " ";
     }
@@ -998,9 +1021,9 @@ footer {
     margin : 0 .4rem;
     padding: 0.01em 0.6em;
 
-    border-bottom: solid 3px btnColor(.3);
+    border-bottom: solid 3px btnBlack(.3);
     border-radius: .4rem;
-    box-shadow   : 0 .1rem .3rem -.1rem btnColor(.5);
+    box-shadow   : 0 .1rem .3rem -.1rem btnBlack(.5);
     background   : #f0f0f0; /*ボタン色*/
 
     color    : #666666; /*ボタン色より暗く*/
@@ -1019,8 +1042,8 @@ footer {
 
     &:active  {
       transform    : translateY(.4rem);
-      box-shadow   : 0 .1rem 0 btnColor(.3);
-      border-bottom: solid 3px btnColor(.1);
+      box-shadow   : 0 .1rem 0 btnBlack(.3);
+      border-bottom: solid 3px btnBlack(.1);
     }
   }
 
@@ -1063,7 +1086,7 @@ footer {
       color      : #FFF;
       line-height: 3rem;
 
-      background: themeColor(.7);
+      background: themeBlue(.7);
       box-shadow: 0 .2rem .2rem rgba(26, 26, 26, 0.14);
     }
 
@@ -1075,7 +1098,7 @@ footer {
 
       border: none;
       border-bottom: solid  8px transparent;
-      border-right : solid 15px themeColor(1);
+      border-right : solid 15px themeBlue(1);
 
       content: "";
     }
@@ -1154,7 +1177,7 @@ footer {
       line-height: $height;
       color      : $char-white;
 
-      background: highlighter(.8);
+      background: highlightBlue(.8);
       box-shadow: 0 .2rem .2rem .2rem rgba(26, 26, 26, 0.14);
     }
 
@@ -1388,10 +1411,7 @@ footer {
 
     img {
       margin: 0 auto;
-
-      width: 100%;
-      // max-width: 200px;
-      // min-width: 16rem;
+      width : 100%;
 
       text-align: center;
     }
@@ -1496,8 +1516,8 @@ footer {
   border-radius: .4rem;
 
   background-clip : padding-box;
-  background: highlighter(1);
-  box-shadow: 0 .4rem highlighter(.5);
+  background: highlightBlue(1);
+  box-shadow: 0 .4rem highlightBlue(.5);
 
   line-height: 2em;
   text-align : center;
@@ -1518,7 +1538,7 @@ footer {
   transition : all .25s;
   &:hover {
     transform : translateY(.4rem);
-    background: highlighter(1);
+    background: highlightBlue(1);
     box-shadow: 0 0 #333;
 
     color: $char-white;
@@ -1574,11 +1594,11 @@ footer {
   .shadow {
     background:
       radial-gradient(
-        farthest-side at top,    btnColor(.17), transparent
+        farthest-side at top,    btnBlack(.17), transparent
       ) top / 100% 1.1rem,
 
       radial-gradient(
-        farthest-side at bottom, btnColor(.17), transparent
+        farthest-side at bottom, btnBlack(.17), transparent
       ) bottom / 100% 1.1rem;
 
     background-repeat    : no-repeat;
@@ -1614,13 +1634,13 @@ footer {
   }
 
   &:not(.touch) a:hover {
-    background: btnColor(.1);
+    background: btnBlack(.1);
 
     text-decoration: underline;
   }
 
   .active {
-    background: btnColor(.07);
+    background: btnBlack(.07);
   }
 
   &::-webkit-scrollbar-button {
