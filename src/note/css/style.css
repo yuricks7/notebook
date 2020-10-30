@@ -547,7 +547,7 @@ textarea,
 --------------------------------------*/
 @media (max-width: 1340px) {
   #content {
-    margin: 0 auto 10px;
+    margin: 0 auto 1rem;
     width: 88%;
   }
   #content #main {
@@ -555,15 +555,15 @@ textarea,
     width: 100%;
   }
   #box2 {
-    margin: 0px auto;
+    margin: 0 auto;
     width: 100%;
-    max-width: 1340px;
+    max-width: 134rem;
   }
   #box2-inner {
     height: auto;
     display: -ms-grid;
     display: grid;
-    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"    2px "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"    2px "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"    2px "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  20.0%   1%      28.5%    1%       49.5%;
+    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"   .2rem "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"   .2rem "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"   .2rem "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  20.0%   1%      28.5%    1%       49.5%;
   }
   #box2-inner .hatena-module-search-box {
     grid-area: search;
@@ -587,6 +587,7 @@ textarea,
     text-align: center;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html .follow-blog-btns {
+    display: block;
     width: 49%;
     margin-top: 0 !important;
     margin-left: auto;
@@ -608,11 +609,11 @@ textarea,
     grid-area: pages;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-lists-container {
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 10px auto 0;
+    margin: 1rem auto 0;
+    width: 100%;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-lists {
     display: block;
@@ -630,17 +631,17 @@ textarea,
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a {
     display: inline-block;
-    padding: 4px 8px;
+    padding: .4rem .8rem;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a br {
     display: none;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a i {
-    padding-top: 4px !important;
-    font-size: 22px !important;
+    padding-top: .4rem !important;
+    font-size: 2.2rem !important;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a .blogicon-private {
-    font-size: 26px;
+    font-size: 2.6rem;
   }
   #box2-inner .hatena-module-entries-access-ranking {
     grid-area: ranking;
@@ -684,14 +685,14 @@ textarea,
 --------------------------------------*/
 @media (max-width: 1138px) {
   #blog-title {
-    height: 140px;
-    margin-top: 40px !important;
+    height: 14rem;
+    margin-top: 4rem !important;
   }
   #blog-title #title {
-    margin-top: 20px !important;
+    margin-top: 2rem !important;
   }
   #blog-title #blog-description {
-    margin-bottom: 20px !important;
+    margin-bottom: 2rem !important;
   }
 }
 
@@ -701,10 +702,10 @@ textarea,
 @media screen and (max-width: 680px) {
   /* サイト名 */
   #blog-title {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
   }
   .entry-title {
-    font-family: -apple-system, 'Kosugi Maru' !important;
+    font-family: -apple-system, 'Kosugi Maru' !important;
   }
   /* コンテナ */
   #container {
@@ -722,11 +723,11 @@ textarea,
     border-radius: 0 !important;
   }
   .entry-content {
-    padding-left: 6px !important;
-    padding-right: 6px !important;
+    padding-left: .6rem !important;
+    padding-right: .6rem !important;
   }
   .entry-content .hatena-fotolife {
-    margin-right: 10px;
+    margin-right: 1rem;
   }
   .hatena-star-container {
     border-radius: 0 !important;
@@ -738,7 +739,7 @@ textarea,
     border-radius: 0 !important;
   }
   #box2-inner {
-    grid-template: "search   search   search"   auto "......   ...      ......"      0 "profile  ...      monthly"  auto "......   ...      ......"      0 "accounts ...      pages"    auto "......   ...      ......"      0 "ranking  ...      recent"   auto "......   ...      ......"      0 "category category category" auto /  49.5%    1%       49.5%;
+    grid-template: "search   search   search" auto "profile  ...      monthly" auto "accounts ...      pages" auto "ranking  ...      recent" auto "category category category" auto/49.5% 1% 49.5%;
   }
   .hatena-module {
     border-radius: 0 !important;
@@ -752,7 +753,7 @@ textarea,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 10px auto 0;
+    margin: 1rem auto 0;
   }
   .module-sub-header {
     text-align: left !important;
@@ -761,15 +762,15 @@ textarea,
     display: block;
   }
   .page-lists .module-sub-header {
-    margin: 10px auto 0;
+    margin: 1rem auto 0;
   }
   .page-lists li {
-    height: 100px !important;
-    padding: 4px 4px !important;
+    height: 10rem !important;
+    padding: .4rem .4rem !important;
   }
   .page-lists a {
     display: inline-block;
-    padding: 4px !important;
+    padding: .4rem !important;
     font-size: 1em !important;
   }
   .page-lists a br {
@@ -777,18 +778,18 @@ textarea,
   }
   .page-lists a i {
     display: inline-block;
-    font-size: 22px !important;
+    font-size: 2.2rem !important;
   }
   /* 記事一覧 */
   .archive-heading {
-    padding-left: 10px;
+    padding-left: 1rem;
   }
   .archive-entry {
-    padding: 10px 10px !important;
+    padding: 1rem 1rem !important;
     font-size: .7em;
   }
   .archive-entry .entry-thum {
-    width: 400px !important;
+    width: 40rem !important;
   }
   /*
     更新日時表示
@@ -799,7 +800,7 @@ textarea,
   */
   .lastmod {
     padding: 0   !important;
-    font-size: 12px !important;
+    font-size: 1.2rem !important;
   }
   .entry-date a {
     padding-left: 0 !important;
@@ -822,28 +823,28 @@ textarea,
     ヨメレバ・カエレバ（レスポンシブ対応用）
   --------------------------------------*/
   .booklink-box, .kaerebalink-box {
-    padding: 15px !important;
+    padding: 1.5rem !important;
     overflow: scroll;
   }
   .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
-    width: 100px !important;
+    width: 10rem !important;
     min-width: initial;
   }
   .booklink-box .booklink-name, .booklink-box .kaerebalink-name, .kaerebalink-box .booklink-name, .kaerebalink-box .kaerebalink-name {
-    margin-bottom: 12px;
+    margin-bottom: 1.2rem;
   }
   .booklink-box .booklink-name > a, .booklink-box .kaerebalink-name > a, .kaerebalink-box .booklink-name > a, .kaerebalink-box .kaerebalink-name > a {
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   .booklink-box .booklink-powered-date, .booklink-box .kaerebalink-powered-date, .kaerebalink-box .booklink-powered-date, .kaerebalink-box .kaerebalink-powered-date {
-    margin-top: 5px;
+    margin-top: .5rem;
   }
   .booklink-box .booklink-link2 a, .booklink-box .kaerebalink-link1 a, .kaerebalink-box .booklink-link2 a, .kaerebalink-box .kaerebalink-link1 a {
-    width: calc(100% - 4px);
-    border-radius: 5px;
-    margin: 2px 0px;
-    padding: 10px 0px;
+    width: calc(100% - .4rem);
+    border-radius: .5rem;
+    margin: .2rem 0;
+    padding: 1rem 0;
   }
 }
 
@@ -853,18 +854,18 @@ textarea,
 @media (max-width: 480px) {
   /* 本文 */
   .entry-content {
-    font-size: 14px !important;
+    font-size: 1.4rem !important;
   }
   /* カエレバ */
   .booklink-box, .kaerebalink-box {
     margin: 0 auto;
     width: 100%;
-    padding: 15px !important;
+    padding: 1.5rem !important;
   }
   .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
     margin: 0 auto !important;
     width: 100%;
-    min-width: 80px;
+    min-width: 8rem;
     display: inline-block;
     clear: both !important;
   }
@@ -900,16 +901,16 @@ textarea,
   }
   .page-lists a {
     display: inline;
-    padding: 0 4px 10px !important;
+    padding: 0 .4rem 1rem !important;
   }
   .page-lists a br {
     display: none !important;
   }
   .page-lists a i {
     display: inline;
-    padding-top: 10px !important;
+    padding-top: 1rem !important;
     position: relative;
-    top: 1px;
+    top: .1rem;
   }
 }
 
@@ -924,42 +925,42 @@ textarea,
   }
   .accounts-header {
     width: 100%;
-    margin: 0 auto 10px !important;
+    margin: 0 auto 1rem !important;
     text-align: left;
   }
   .follow-blog-btns {
     clear: left;
     width: 100%;
-    margin-bottom: 10px !important;
+    margin-bottom: 1rem !important;
   }
   .follow-blog-btns .color-share-btns {
-    min-width: 100px;
+    min-width: 10rem;
     max-width: 80% !important;
   }
   .follow-account-btns {
     clear: right;
     width: 100%;
-    margin-bottom: 10px !important;
+    margin-bottom: 1rem !important;
   }
   .follow-account-btns .color-share-btns {
-    min-width: 130px !important;
+    min-width: 13rem !important;
     max-width: 90%  !important;
   }
   /* このブログについて */
   .page-lists li {
-    height: 100px !important;
+    height: 10rem !important;
   }
   .page-lists li a {
     display: inline-block;
-    padding-bottom: 4px !important;
+    padding-bottom: .4rem !important;
   }
   .page-lists li a br {
     display: inline !important;
   }
   .page-lists li a i {
     display: inline-block;
-    padding-top: 12px !important;
-    padding-bottom: 8px !important;
+    padding-top: 1.2rem !important;
+    padding-bottom: .8rem !important;
   }
 }
 
