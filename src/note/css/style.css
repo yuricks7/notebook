@@ -739,7 +739,7 @@ textarea,
     border-radius: 0 !important;
   }
   #box2-inner {
-    grid-template: "search   search   search" auto "profile  ...      monthly" auto "accounts ...      pages" auto "ranking  ...      recent" auto "category category category" auto/49.5% 1% 49.5%;
+    grid-template: "search   search   search"   auto "......   ...      ......"      0 "profile  ...      monthly"  auto "......   ...      ......"      0 "accounts ...      pages"    auto "......   ...      ......"      0 "ranking  ...      recent"   auto "......   ...      ......"      0 "category category category" auto /  49.5%    1%       49.5%;
   }
   .hatena-module {
     border-radius: 0 !important;
@@ -766,7 +766,7 @@ textarea,
   }
   .page-lists li {
     height: 10rem !important;
-    padding: .4rem .4rem !important;
+    padding: .4rem !important;
   }
   .page-lists a {
     display: inline-block;
@@ -785,11 +785,11 @@ textarea,
     padding-left: 1rem;
   }
   .archive-entry {
-    padding: 1rem 1rem !important;
+    padding: 1rem !important;
     font-size: .7em;
   }
   .archive-entry .entry-thum {
-    width: 40rem !important;
+    width: 400px !important;
   }
   /*
     更新日時表示
@@ -799,7 +799,7 @@ textarea,
     https://account-it-dentist.hatenablog.com/entry/blog-custom003
   */
   .lastmod {
-    padding: 0   !important;
+    padding: 0      !important;
     font-size: 1.2rem !important;
   }
   .entry-date a {
@@ -827,7 +827,7 @@ textarea,
     overflow: scroll;
   }
   .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
-    width: 10rem !important;
+    width: 100px !important;
     min-width: initial;
   }
   .booklink-box .booklink-name, .booklink-box .kaerebalink-name, .kaerebalink-box .booklink-name, .kaerebalink-box .kaerebalink-name {
@@ -859,8 +859,8 @@ textarea,
   /* カエレバ */
   .booklink-box, .kaerebalink-box {
     margin: 0 auto;
-    width: 100%;
     padding: 1.5rem !important;
+    width: 100%;
   }
   .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
     margin: 0 auto !important;
@@ -943,8 +943,8 @@ textarea,
     margin-bottom: 1rem !important;
   }
   .follow-account-btns .color-share-btns {
-    min-width: 13rem !important;
-    max-width: 90%  !important;
+    min-width: 130px !important;
+    max-width: 90%   !important;
   }
   /* このブログについて */
   .page-lists li {
@@ -2002,6 +2002,23 @@ footer .comment-box {
   color: #050505;
 }
 
+.hatena-module .hatena-module-body .hatena-module-category {
+  border: none;
+}
+
+.hatena-module .hatena-module-body .hatena-urllist li {
+  border-top: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 0 white;
+          box-shadow: 0 1px 0 white;
+}
+
+.hatena-module .hatena-module-body .hatena-urllist li ul li {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .hatena-module .hatena-module-body time {
   color: rgba(5, 5, 5, 0.8);
   text-decoration: none !important;
@@ -2029,8 +2046,7 @@ footer .comment-box {
 }
 
 .hatena-module .hatena-module-body img {
-  -webkit-box-shadow: #cecece 0px 0px 1px 1px;
-          box-shadow: #cecece 0px 0px 1px 1px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .hatena-module .hatena-module-body .urllist-title-link {
@@ -2056,6 +2072,10 @@ footer .comment-box {
 .hatena-module .hatena-module-body .urllist-see-more a:hover {
   color: #0a21e6;
   font-weight: bold;
+}
+
+.hatena-module .hatena-module-body .hatena-breadcrumb-plus-toggle-button {
+  color: rgba(5, 5, 5, 0.5);
 }
 
 /*--------------------------------------

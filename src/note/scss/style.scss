@@ -572,6 +572,25 @@ footer {
 
 
     /* 最新記事など */
+    // CSSで区切り線と文字に1pxの影をつけるとかっこいいデザインに！
+    // https://naifix.com/smart-shadow/
+     .hatena-module-category {
+      border: none;
+    }
+
+    .hatena-urllist li{
+      border-top: none;
+      border-bottom: 1px solid btnColor(.1);
+      box-shadow:    0   1px 0 rgba(255, 255, 255,  1);
+
+      ul {
+        li{
+          border: none;
+          box-shadow: none;
+        }
+      }
+    }
+
     time {
       color  : charBlack(.8);
       @include linkColors($visited: charBlack(1));
@@ -584,7 +603,7 @@ footer {
     }
 
     img {
-      box-shadow: #cecece 0px 0px 1px 1px;
+      border: 1px solid btnColor(.1);
     }
 
     .urllist-title-link {
@@ -600,6 +619,9 @@ footer {
       );
     }
 
+    .hatena-breadcrumb-plus-toggle-button {
+      color: charBlack(.5); // 少し明るく
+    }
   }
 }
 
