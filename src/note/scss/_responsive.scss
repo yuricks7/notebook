@@ -245,23 +245,27 @@
     font-family: -apple-system, 'Kosugi Maru' !important;
   }
 
-  /* コンテナ */
-  #container {
+  @mixin cancellRadius() {
     border-radius: 0 !important;
+  }
+
+  /* ページ全体のコンテナ */
+  #container {
+    @include cancellRadius();
   }
 
   /* コンテンツ */
   #content {
     width: 100% !important;
-    border-radius: 0 !important;
+    @include cancellRadius();
   }
 
   .breadcrumb {
-    border-radius: 0 !important;
+    @include cancellRadius();
   }
 
   .entry-inner header {
-    border-radius: 0 !important;
+    @include cancellRadius();
   }
 
   .entry-content {
@@ -273,22 +277,14 @@
     }
   }
 
-  // .hatena-star-container {
-  //   // border-radius: 0 !important;
-  // }
-
   .entry-footer-html {
-    border-radius : 0 !important;
+    @include cancellRadius();
   }
 
   footer {
     .hatena-module-related-entries {
-      border-radius: 0 !important;
+      @include cancellRadius();
     }
-
-    // .comment-box {
-    //   border-radius: 0 !important;
-    // }
   }
 
 //  /**
