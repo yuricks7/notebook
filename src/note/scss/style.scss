@@ -392,9 +392,44 @@ footer {
   margin : 0;
   padding: 0;
 
+  display: flex;
+  flex-direction: column;
+
+  .entry-footer-section {
+    order: -3;
+  }
+
+  .hatena-star-container {
+    order: -2;
+  }
+
+  .comment-box {
+    order: -1;
+  }
+
+  // .hatena-star-metadata {
+  // }
+
+  // .social-buttons {
+  // }
+
+  // .customized-footer {
+  // }
+
+  .customized-footer {
+    display: flex;
+    flex-direction: column-reverse; // 関連記事を下に
+
+    .entry-footer-html {
+      border-bottom-left-radius : $module-radius;
+      border-bottom-right-radius: $module-radius;
+    }
+  }
+
   .entry-footer-modules {
     .hatena-module-related-entries {
       margin : 0;
+      margin-top: 1.5rem;
       padding: 1rem;
       border-radius: $module-radius;
 
@@ -411,8 +446,9 @@ footer {
   .comment-box {
     margin-top: 0;
     padding   : 1rem;
-    border-bottom-left-radius : $module-radius;
-    border-bottom-right-radius: $module-radius;
+    border-radius: 0;
+    // border-bottom-left-radius : $module-radius;
+    // border-bottom-right-radius: $module-radius;
 
     background: bodyBeige(.7);
   }

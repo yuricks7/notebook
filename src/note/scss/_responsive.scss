@@ -273,8 +273,12 @@
     }
   }
 
-  .hatena-star-container {
-    border-radius: 0 !important;
+  // .hatena-star-container {
+  //   // border-radius: 0 !important;
+  // }
+
+  .entry-footer-html {
+    border-radius : 0 !important;
   }
 
   footer {
@@ -282,9 +286,9 @@
       border-radius: 0 !important;
     }
 
-    .comment-box {
-      border-radius: 0 !important;
-    }
+    // .comment-box {
+    //   border-radius: 0 !important;
+    // }
   }
 
 //  /**
