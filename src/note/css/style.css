@@ -2936,6 +2936,7 @@ footer .comment-box {
 }
 
 .entry-content .code-line:after {
+  display: inline-block;
   margin-right: 1em;
   content: "";
   /* margin用 */

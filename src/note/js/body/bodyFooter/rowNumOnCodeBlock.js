@@ -1,4 +1,9 @@
 /**
+ * 外部から呼び出し可
+ */
+export { main };
+
+/**
  * コードブロックに行番号を追加
  *
  * 【参考】
@@ -6,7 +11,6 @@
  * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
  */
 const main = () => {
-
   let codeBlocks = document.getElementsByClassName('code');
 
   // ノードのリストで配列ライクに`forEachメソッド`を使う
@@ -38,13 +42,15 @@ const addRowNumbers = (e) => {
       if (i === lines.length - 1) return; // 最終行は飛ばす（<pre>が改行されている前提）
     }
 
-    codeLine += open_tag + line + close_tag;
+    // // （空行に改行文字だけ入れたい）
+    // if (line === '<span></span>' || line === '')  {
+    //   codeLine += open_tag + '\n' + close_tag;
+
+    // } else {
+      codeLine += open_tag + line + close_tag;
+
+    // }
   });
 
   return codeLine;
 };
-
-/**
- * 外部から呼び出し可
- */
-export { main };

@@ -1304,6 +1304,7 @@ footer {
     https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
   */
   .code-line {
+    // display: block;
     counter-increment: linenumber;  /* code-lineクラスの数 */
 
     &:before {
@@ -1319,6 +1320,7 @@ footer {
     }
 
     &:after {
+      display: inline-block;
       margin-right: 1em;
       content: ""; /* margin用 */
     }
