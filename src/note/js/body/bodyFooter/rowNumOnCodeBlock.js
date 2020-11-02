@@ -1,9 +1,4 @@
 /**
- * 外部から呼び出し可
- */
-export { main };
-
-/**
  * コードブロックに行番号を追加
  *
  * 【参考】
@@ -54,3 +49,8 @@ const addRowNumbers = (e) => {
 
   return codeLine;
 };
+
+/**
+ * 外部から呼び出し可
+ */
+export { main };

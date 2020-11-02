@@ -2263,8 +2263,6 @@ footer .comment-box {
   /*--------------------------------------
     目次の表示・非表示
   --------------------------------------*/
-  /* 「.table-of-contents」にネストすると
-     カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
   /*--------------------------------------
     目次
   --------------------------------------*/
@@ -2486,7 +2484,7 @@ footer .comment-box {
   padding-left: 1.3em;
 }
 
-.entry-content .show-area {
+.entry-content .toc-switch {
   display: inline-block;
   cursor: pointer;
   margin-bottom: 0;
@@ -2497,22 +2495,22 @@ footer .comment-box {
   font-size: .9em;
 }
 
-.entry-content .show-area:hover {
+.entry-content .toc-switch:hover {
   font-weight: bold;
   text-decoration: none !important;
 }
 
-.entry-content .show-area:hover a:link {
+.entry-content .toc-switch:hover a:link {
   color: #1e366a;
   font-style: normal;
   text-decoration: none !important;
 }
 
-.entry-content .show-area:hover a:visited {
+.entry-content .toc-switch:hover a:visited {
   color: #009130;
 }
 
-.entry-content .show-area:hover a:hover {
+.entry-content .toc-switch:hover a:hover {
   color: #0a21e6;
   font-weight: bold;
 }
@@ -2521,10 +2519,10 @@ footer .comment-box {
   display: none;
   /* デフォルトで非表示 */
   /* 外枠 */
-  margin: .4rem 1rem 0;
-  padding: 2rem 5rem;
+  margin: .4rem  1rem 0;
+  padding: 2rem  5rem;
   border-radius: .5rem;
-  border: dotted #1541a1 1.6rem;
+  border: dotted #1541a1 .16rem;
   /* フォント */
   text-decoration: none !important;
   line-height: 80% !important;
