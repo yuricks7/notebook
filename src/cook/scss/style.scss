@@ -55,11 +55,12 @@ body {
   --------------------------------------*/
   /* 「.table-of-contents」にネストすると
       カーソル（ポインター）やフォントサイズが効かないので逃がしておく… */
-  .show-area {
+  .toc-switch {
     display: inline-block;
     cursor : pointer;
 
-    font-size: .8em;
+    color: highlightBlue(1);
+    font-size: .9em;
 
     &:hover {
       font-weight: bold;
