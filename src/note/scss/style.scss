@@ -918,11 +918,11 @@ footer {
     cursor : pointer;
 
     margin-bottom: 0;
-    margin-left  : $side-margin;
-    margin-right : $side-margin;
-    padding      : 0;
-    border-radius: .5rem;
+    margin-left  : .4rem;
+    margin-right : .4rem;
+    padding      :  0;
 
+    color: highlightBlue(1);
     font-size: .9em;
 
     &:hover {

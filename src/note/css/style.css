@@ -2488,10 +2488,10 @@ footer .comment-box {
   display: inline-block;
   cursor: pointer;
   margin-bottom: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: .4rem;
+  margin-right: .4rem;
   padding: 0;
-  border-radius: .5rem;
+  color: #0a21e6;
   font-size: .9em;
 }
 

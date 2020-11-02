@@ -9,7 +9,7 @@
  */
 const main = () => {
   const tocButton = "toc-switch";
-  const buttons = {
+  const btnTexts = {
     open : '[▼表示]',
     close: '[▲隠す]',
   }
@@ -17,15 +17,15 @@ const main = () => {
   // ボタンのデフォルト状態を設定
   let $TocBody = $(".table-of-contents");
   const tags = {
-    open : `<span class="${tocButton}" style="color: blue;">`,
+    open : `<span class="${tocButton}">`,
     close: `</span>`,
   }
-  initButtonText($TocBody, buttons, tags);
+  initButtonText($TocBody, btnTexts, tags);
 
   // CSSを編集して切り替える
   $("." + tocButton).click(function() {
     let $this = $(this);
-    switchTocBody($this, $TocBody, buttons);
+    switchTocBody($this, $TocBody, btnTexts);
   });
 }
 
@@ -33,18 +33,18 @@ const main = () => {
  * `display`プロパティの値からボタンの初期値を設定する
  *
  * @param {jQuery} $TocBody 
- * @param {object} buttons 
+ * @param {object} btnTexts 
  * @param {object} tags 
  *
  * @return {jQuery} $TocBody
  */
-const initButtonText = ($TocBody, buttons, tags) => {
+const initButtonText = ($TocBody, btnTexts, tags) => {
   let text;
   if ($TocBody.css('display') === 'none') {
-    text = buttons.open;
+    text = btnTexts.open;
 
   } else {
-    text = buttons.close;
+    text = btnTexts.close;
 
   }
 
@@ -54,20 +54,20 @@ const initButtonText = ($TocBody, buttons, tags) => {
 /**
  * 目次の表示/非表示を切り替える
  *
- * @param {jQuery} $this 
+ * @param {jQuery} $tocButton 
  * @param {jQuery} $TocBody 
- * @param {object} buttons 
+ * @param {object} btnTexts 
  */
-const switchTocBody = ($this, $TocBody, buttons) => {
+const switchTocBody = ($tocButton, $TocBody, btnTexts) => {
   const msDuration = 100;
 
   if ($TocBody.css('display') === 'none') {
-    $TocBody.slideDown(msDuration),
-    $this.text(buttons.close);
+    $TocBody.slideDown(msDuration);
+    $tocButton.text(btnTexts.close);
 
   } else {
-    $TocBody.slideUp(msDuration),
-    $this.text(buttons.open);
+    $TocBody.slideUp(msDuration);
+    $tocButton.text(btnTexts.open);
 
   }
 }
