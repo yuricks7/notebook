@@ -913,7 +913,7 @@ footer {
   --------------------------------------*/
   // 「.table-of-contents」にネストすると
   // カーソル（ポインター）やフォントサイズが効かないので逃がしておく…
-  .toc-switch{
+  .toc-switch {
     display: inline-block;
     cursor : pointer;
 
@@ -980,35 +980,7 @@ footer {
 
 
   /* 文中の文字 */
-  .red   { color: $char-red;   }
-  .blue  { color: $char-blue;  }
-  .green { color: $char-green; }
-
-  .note {
-    font-size  : .8em;
-    line-height: 120%;
-    color      : $char-red;
-  }
-
-  .additional-note {
-    font-size  : .8em;
-    line-height: 120%;
-    color      : $char-red;
-    font-weight: bold;
-  }
-
-  .small-chars {
-    font-size  : .8em;
-    line-height: 120%;
-
-    code {
-      vertical-align: middle !important;
-    }
-  }
-
-  .large-chars {
-    font-size: 1.2em;
-  }
+  @include fontSizes();
 
   /*--------------------------------------
     テキストボックス（まとめ、強調など）

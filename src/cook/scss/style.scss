@@ -37,6 +37,8 @@ body {
   font-size  : 17px;
   line-height: 1.8em;
 
+  @include fontSizes();
+
   /* 画像 */
   .hatena-fotolife {
     @include lightenImgs(.7);

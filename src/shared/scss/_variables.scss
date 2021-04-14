@@ -150,6 +150,39 @@ $side-margin  :  1rem;
 /*--------------------------------------
   パーツ
 --------------------------------------*/
+@mixin fontSizes {
+  /* 文中の文字 */
+  .red   { color: $char-red;   }
+  .blue  { color: $char-blue;  }
+  .green { color: $char-green; }
+
+  .note {
+    font-size  : .8em;
+    line-height: 120%;
+    color      : $char-red;
+  }
+
+  .additional-note {
+    font-size  : .8em;
+    line-height: 120%;
+    color      : $char-red;
+    font-weight: bold;
+  }
+
+  .small-chars {
+    font-size  : .8em;
+    line-height: 120%;
+
+    code {
+      vertical-align: middle !important;
+    }
+  }
+
+  .large-chars {
+    font-size: 1.2em;
+  }
+}
+
 @mixin categoryBtns($padding, $radius) {
   padding: $padding 1rem;
   border-radius : $radius;

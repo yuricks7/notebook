@@ -34,6 +34,7 @@ body {
   font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
   font-size: 17px;
   line-height: 1.8em;
+  /* 文中の文字 */
   /* 画像 */
   /* カード形式リンク */
   /*--------------------------------------
@@ -47,6 +48,44 @@ body {
   /*--------------------------------------
     テーブルの表示
   --------------------------------------*/
+}
+
+.entry-content .red {
+  color: #d32f2f;
+}
+
+.entry-content .blue {
+  color: darkblue;
+}
+
+.entry-content .green {
+  color: #009130;
+}
+
+.entry-content .note {
+  font-size: .8em;
+  line-height: 120%;
+  color: #d32f2f;
+}
+
+.entry-content .additional-note {
+  font-size: .8em;
+  line-height: 120%;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.entry-content .small-chars {
+  font-size: .8em;
+  line-height: 120%;
+}
+
+.entry-content .small-chars code {
+  vertical-align: middle !important;
+}
+
+.entry-content .large-chars {
+  font-size: 1.2em;
 }
 
 .entry-content .hatena-fotolife:hover {
