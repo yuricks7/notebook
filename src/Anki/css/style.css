@@ -12,10 +12,10 @@
   font-weight: bold;
   color: blue;
 }
+
 .nightMode .cloze {
   color: lightblue;
 }
-
 
 /** 見出し **/
 h3 {
@@ -33,6 +33,12 @@ h4 {
 h5 {
   padding: 0rem;
   margin-bottom: 0rem;
+}
+
+/** 画像 **/
+img {
+  max-width:  500px;
+  max-height: 300px;
 }
 
 /** 文意 **/
