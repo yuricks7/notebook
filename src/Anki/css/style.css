@@ -1,0 +1,131 @@
+/** 基本設定 **/
+.card {
+  font-family: BIZ UDPゴシック, Meiryo UI, arial !important;
+  font-size:   16px;
+  text-align:  left;
+  line-height: 1.5em;
+  color:       black;
+  background-color: white;
+}
+
+.cloze {
+  font-weight: bold;
+  color: blue;
+}
+.nightMode .cloze {
+  color: lightblue;
+}
+
+/** 見出し **/
+h3 {
+  padding: 0rem;
+  margin: 0;
+}
+
+h4 {
+  padding: 0rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 3px solid #b2d5de;
+}
+
+h5 {
+  padding: 0rem;
+  margin-bottom: 0rem;
+}
+
+/** 文意 **/
+.SentenceMeaning {
+  color: #b8b8b8;
+}
+
+/** 出典 **/
+.source {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+/**  width: fit-content; **/
+  font-size: 12px;
+  color: #474747;
+  border: solid 2px #b8b8b8;
+}
+
+.source p {
+  margin:  0; 
+  padding: 0;
+}
+
+/** 文章 **/
+p {
+  margin: 0.5em; 
+}
+
+b {
+  color: darkblue;
+}
+
+/** 表 **/
+table {
+  margin:        auto;
+  margin-top:    .8em;
+  margin-bottom: .8em;
+}
+
+table, th, td {
+  border: solid 1px #595959;
+  border-collapse: collapse;
+}
+
+th {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+th, td {
+  padding: 10px;
+}
+
+/** 箇条書き **/
+ul, ol {
+  padding-top:    .3em;
+  padding-bottom: .3em;
+}
+
+li ul {
+  padding-top: .3em; // 効かない？
+}
+
+/** 説明系 **/
+.vocab {
+  color: green;
+  font-weight: bold;
+}
+
+.exp {
+  font-size: 80%;
+  color: #5858b8;
+}
+
+/** 正答 **/
+.correct {
+  color: red;
+  font-weight: bold;
+}
+
+.correct:empty:before, .correct:empty:after {
+  content: none;
+}
+
+.correct::before {
+  content: "【";
+}
+
+.correct::after {
+  content: "】";
+}
+
+/** 要素がないときは消す **/
+li:empty {
+  display: none;
+}
