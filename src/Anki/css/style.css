@@ -16,16 +16,18 @@
   color: lightblue;
 }
 
+
 /** 見出し **/
 h3 {
   padding: 0rem;
   margin: 0;
+  border-bottom: 3px solid #b2d5de;
 }
 
 h4 {
   padding: 0rem;
   margin-bottom: 0.5rem;
-  border-bottom: 3px solid #b2d5de;
+  border-bottom: solid 1px #b8b8b8;
 }
 
 h5 {
@@ -96,6 +98,10 @@ li ul {
   padding-top: .3em; // 効かない？
 }
 
+li:empty {
+  display: none; /** 要素がないときは消す **/
+}
+
 /** 説明系 **/
 .vocab {
   color: green;
@@ -123,9 +129,4 @@ li ul {
 
 .correct::after {
   content: "】";
-}
-
-/** 要素がないときは消す **/
-li:empty {
-  display: none;
 }
