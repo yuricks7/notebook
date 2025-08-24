@@ -163,3 +163,12 @@ li:empty {
   color:   #474747;
   border:  solid 2px #b8b8b8;
 }
+
+cite {
+  padding: 0.5em 1em;
+  margin:    2em 0;
+  width:   fit-content;
+  font-size: 0.8em;
+  color:   #474747;
+  border:  solid 2px #b8b8b8;
+}
