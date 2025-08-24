@@ -1,6 +1,6 @@
 /** 基本設定 **/
 .card {
-  font-family: BIZ UDPゴシック, Meiryo UI, arial !important;
+  font-family: BIZ UDPゴシック, Meiryo UI, arial;
   font-size:   16px;
   text-align:  left;
   line-height: 1.5em;
@@ -49,13 +49,13 @@ h5 {
 }
 
 .source p {
-  margin:  0; 
+  margin:  0;
   padding: 0;
 }
 
 /** 文章 **/
 p {
-  margin: 0.5em; 
+  margin: 0.5em;
 }
 
 b {
