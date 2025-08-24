@@ -50,7 +50,7 @@ img {
 .source {
   padding: 0.5em 1em;
   margin: 2em 0;
-/**  width: fit-content; **/
+  width: fit-content;
   font-size: 12px;
   color: #474747;
   border: solid 2px #b8b8b8;
