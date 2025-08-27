@@ -1,3 +1,4 @@
+<!-- ●新記事URL●にリダイレクト -->
 <meta http-equiv="Refresh" content="0;URL=https://yuru-note.hateblo.jp/">
 
 こちらの記事は、下記URLに移転しました。<br>
@@ -10,10 +11,12 @@
 [https://yuru-wota.hateblo.jp/entry/nonproLab/Workshop/08/mySkill:embed:cite]
 
 <script type="text/javascript" language="javascript">
-  import { setTimeout, redirect } from "//yuricks7.github.io/notebook/src/shared/js/body/entryContent/redirect.js"
+//   import { redirectTo } from "redirect.js"
+  import { redirectTo } from "//yuricks7.github.io/notebook/src/shared/js/body/entryContent/redirect.js"
 
   setTimeout();
 
+  // ●新記事URL●を格納
   const url = "https://yuru-note.hateblo.jp/entry/girlGroup/MusicVideos"
-  redirect(url);
+  redirectTo(url);
 </script>
