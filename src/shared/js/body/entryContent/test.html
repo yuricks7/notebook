@@ -1,5 +1,5 @@
 <!-- ●新記事URL●にリダイレクト -->
-<meta http-equiv="Refresh" content="0;URL=https://yuru-note.hateblo.jp/">
+<!-- <meta http-equiv="Refresh" content="0;URL=●フルパス●"> -->
 
 こちらの記事は、下記URLに移転しました。<br>
 約3秒後に自動的にリダイレクトします。
@@ -8,15 +8,26 @@
 
 ### 新記事はこちら
 
-[https://yuru-wota.hateblo.jp/entry/nonproLab/Workshop/08/mySkill:embed:cite]
+[●フルパス●:embed:cite]
 
 <script type="text/javascript" language="javascript">
-//   import { redirectTo } from "redirect.js"
-  import { redirectTo } from "//yuricks7.github.io/notebook/src/shared/js/body/entryContent/redirect.js"
+  /**
+   *  リダイレクト
+   *
+   * [note]
+   *  - まだ使い方がよくわかっていない
+   *
+   * 【参考】
+   *  - 記事のURLを変更したときなどに新しい記事URLへリダイレクトする方法 | はてなブログカスタマイズメモ
+   *    https://hatebu-memo.scriptlife.jp/entry/2018/01/21/url-redirect
+   *  - はてなブログから引越し後のはてなブログのリダイレクト設定方法 | 羽田空港サーバー
+   *    https://www.haneda-airport-server.com/entry/hatena-redirect#i
+   */
+  setTimeout("redirect()", 3000); // = 3 sec
 
-  setTimeout();
-
-  // ●新記事URL●を格納
-  const url = "https://yuru-note.hateblo.jp/entry/girlGroup/MusicVideos"
-  redirectTo(url);
+  function redirect() {
+    // ●新記事URL●を格納
+    var url = "●フルパス●"
+    location.href = url;
+  }
 </script>
