@@ -7,15 +7,12 @@
  *  - はてなブログから引越し後のはてなブログのリダイレクト設定方法 | 羽田空港サーバー
  *    https://www.haneda-airport-server.com/entry/hatena-redirect#i
  */
-// import timeout  from "//yuricks7.github.io/notebook/src/shared/js/body/entryContent/redirect.js";
-// import redirect from "//yuricks7.github.io/notebook/src/shared/js/body/entryContent/redirect.js";
-import { url };
+function redirectTo(url) {
+  setTimeout("redirect()", 3000); // = 3 sec
 
-// timeout;
-// redirect;
-
-setTimeout("redirect()", 3000); // = 3 sec
-
-function redirect() {
-  location.href = url;
+  function redirect() {
+    location.href = url;
+  }
 }
+
+export { setTimeout, redirectTo };
