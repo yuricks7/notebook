@@ -1,5 +1,5 @@
-<!-- ●新記事URL●にリダイレクト -->
-<!-- <meta http-equiv="Refresh" content="0;URL=●フルパス●"> -->
+<!-- 新記事URLにリダイレクト -->
+<meta http-equiv="Refresh" content="0;URL=●フルパス●">
 
 こちらの記事は、下記URLに移転しました。<br>
 約3秒後に自動的にリダイレクトします。
@@ -27,7 +27,7 @@
   setTimeout("redirect()", 3000); // = 3 sec
 
   function redirect() {
-    // ●新記事URL●を格納
+    // 新記事URLを格納
     var url = "●フルパス●"
     location.href = url;
   }
