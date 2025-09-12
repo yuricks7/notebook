@@ -7,73 +7,63 @@
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**
-  * 1. Add text decoration inheritance in all browsers (opinionated).
-  * 2. Add vertical alignment inheritance in all browsers (opinionated).
-  */
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
 ::before,
 ::after {
-  text-decoration: inherit;
-  /* 1 */
-  vertical-align: inherit;
-  /* 2 */
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
 }
 
 /**
-  * 1. Use the default cursor in all browsers (opinionated).
-  * 2. Change the line height in all browsers (opinionated).
-  * 3. Use a 4-space tab width in all browsers (opinionated).
-  * 4. Remove the grey highlight on links in iOS (opinionated).
-  * 5. Prevent adjustments of font size after orientation changes in
-  *    IE on Windows Phone and in iOS.
-  * 6. Breaks words to prevent overflow in all browsers (opinionated).
-  */
+ * 1. Use the default cursor in all browsers (opinionated).
+ * 2. Change the line height in all browsers (opinionated).
+ * 3. Use a 4-space tab width in all browsers (opinionated).
+ * 4. Remove the grey highlight on links in iOS (opinionated).
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ * 6. Breaks words to prevent overflow in all browsers (opinionated).
+ */
 html {
-  cursor: default;
-  /* 1 */
-  line-height: 1.5;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
+  cursor: default; /* 1 */
+  line-height: 1.5; /* 2 */
+  -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
+     tab-size: 4; /* 3 */
   -webkit-tap-highlight-color: transparent;
-  -ms-text-size-adjust: 100%;
-  /* 5 */
-  -webkit-text-size-adjust: 100%;
-  /* 5 */
-  word-break: break-word;
-  /* 6 */
+  -ms-text-size-adjust: 100%; /* 5 */
+  -webkit-text-size-adjust: 100%; /* 5 */
+  word-break: break-word; /* 6 */
 }
 
 /* Sections
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Remove the margin in all browsers (opinionated).
-  */
+ * Remove the margin in all browsers (opinionated).
+ */
 body {
   margin: 0;
 }
 
 /**
-  * Correct the font size and margin on `h1` elements within `section` and
-  * `article` contexts in Chrome, Edge, Firefox, and Safari.
-  */
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Grouping content
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
-  */
+ * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+ */
 dl dl,
 dl ol,
 dl ul,
@@ -83,8 +73,8 @@ ul dl {
 }
 
 /**
-  * Remove the margin on nested lists in Edge 19- and IE.
-  */
+ * Remove the margin on nested lists in Edge 19- and IE.
+ */
 ol ol,
 ol ul,
 ul ol,
@@ -93,26 +83,24 @@ ul ul {
 }
 
 /**
-  * 1. Add the correct sizing in Firefox.
-  * 2. Show the overflow in Edge 19- and IE.
-  */
+ * 1. Add the correct sizing in Firefox.
+ * 2. Show the overflow in Edge 19- and IE.
+ */
 hr {
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
-  * Add the correct display in IE.
-  */
+ * Add the correct display in IE.
+ */
 main {
   display: block;
 }
 
 /**
-  * Remove the list style on navigation lists in all browsers (opinionated).
-  */
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
 nav ol,
 nav ul {
   list-style: none;
@@ -120,28 +108,26 @@ nav ul {
 }
 
 /**
-  * 1. Correct the inheritance and scaling of font size in all browsers.
-  * 2. Correct the odd `em` font sizing in all browsers.
-  */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Remove the gray background on active links in IE 10.
-  */
+ * Remove the gray background on active links in IE 10.
+ */
 a {
   background-color: transparent;
 }
 
 /**
-  * Add the correct text decoration in Edge 19-, IE, and Safari.
-  */
+ * Add the correct text decoration in Edge 19-, IE, and Safari.
+ */
 abbr[title] {
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
@@ -149,38 +135,36 @@ abbr[title] {
 }
 
 /**
-  * Add the correct font weight in Chrome, Edge, and Safari.
-  */
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
-  * 1. Correct the inheritance and scaling of font size in all browsers.
-  * 2. Correct the odd `em` font sizing in all browsers.
-  */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
-  * Add the correct font size in all browsers.
-  */
+ * Add the correct font size in all browsers.
+ */
 small {
   font-size: 80%;
 }
 
 /* Embedded content
-  * ========================================================================== */
+ * ========================================================================== */
 /*
-  * Change the alignment on media elements in all browsers (opinionated).
-  */
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
 audio,
 canvas,
 iframe,
@@ -191,63 +175,63 @@ video {
 }
 
 /**
-  * Add the correct display in IE 9-.
-  */
+ * Add the correct display in IE 9-.
+ */
 audio,
 video {
   display: inline-block;
 }
 
 /**
-  * Add the correct display in iOS 4-7.
-  */
+ * Add the correct display in iOS 4-7.
+ */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
 /**
-  * Remove the border on iframes in all browsers (opinionated).
-  */
+ * Remove the border on iframes in all browsers (opinionated).
+ */
 iframe {
   border-style: none;
 }
 
 /**
-  * Remove the border on images within links in IE 10-.
-  */
+ * Remove the border on images within links in IE 10-.
+ */
 img {
   border-style: none;
 }
 
 /**
-  * Change the fill color to match the text color in all browsers (opinionated).
-  */
+ * Change the fill color to match the text color in all browsers (opinionated).
+ */
 svg:not([fill]) {
   fill: currentColor;
 }
 
 /**
-  * Hide the overflow in IE.
-  */
+ * Hide the overflow in IE.
+ */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* Tabular data
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Collapse border spacing in all browsers (opinionated).
-  */
+ * Collapse border spacing in all browsers (opinionated).
+ */
 table {
   border-collapse: collapse;
 }
 
 /* Forms
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Remove the margin on controls in Safari.
-  */
+ * Remove the margin on controls in Safari.
+ */
 button,
 input,
 select {
@@ -255,185 +239,167 @@ select {
 }
 
 /**
-  * 1. Show the overflow in IE.
-  * 2. Remove the inheritance of text transform in Edge 19-, Firefox, and IE.
-  */
+ * 1. Show the overflow in IE.
+ * 2. Remove the inheritance of text transform in Edge 19-, Firefox, and IE.
+ */
 button {
-  overflow: visible;
-  /* 1 */
-  text-transform: none;
-  /* 2 */
+  overflow: visible; /* 1 */
+  text-transform: none; /* 2 */
 }
 
 /**
-  * Correct the inability to style buttons in iOS and Safari.
-  */
+ * Correct the inability to style buttons in iOS and Safari.
+ */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 /**
-  * 1. Change the inconsistent appearance in all browsers (opinionated).
-  * 2. Correct the padding in Firefox.
-  */
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Correct the padding in Firefox.
+ */
 fieldset {
-  border: 1px solid #a0a0a0;
-  /* 1 */
-  padding: 0.35em 0.75em 0.625em;
-  /* 2 */
+  border: 1px solid #a0a0a0; /* 1 */
+  padding: 0.35em 0.75em 0.625em; /* 2 */
 }
 
 /**
-  * Show the overflow in Edge 19- and IE.
-  */
+ * Show the overflow in Edge 19- and IE.
+ */
 input {
   overflow: visible;
 }
 
 /**
-  * 1. Correct the text wrapping in Edge 19- and IE.
-  * 2. Correct the color inheritance from `fieldset` elements in IE.
-  */
+ * 1. Correct the text wrapping in Edge 19- and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ */
 legend {
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  white-space: normal;
-  /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  white-space: normal; /* 1 */
 }
 
 /**
-  * 1. Add the correct display in Edge 19- and IE.
-  * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
-  */
+ * 1. Add the correct display in Edge 19- and IE.
+ * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
 progress {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
 }
 
 /**
-  * Remove the inheritance of text transform in Firefox.
-  */
+ * Remove the inheritance of text transform in Firefox.
+ */
 select {
   text-transform: none;
 }
 
 /**
-  * 1. Remove the margin in Firefox and Safari.
-  * 2. Remove the default vertical scrollbar in IE.
-  * 3. Change the resize direction in all browsers (opinionated).
-  */
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Remove the default vertical scrollbar in IE.
+ * 3. Change the resize direction in all browsers (opinionated).
+ */
 textarea {
-  margin: 0;
-  /* 1 */
-  overflow: auto;
-  /* 2 */
-  resize: vertical;
-  /* 3 */
+  margin: 0; /* 1 */
+  overflow: auto; /* 2 */
+  resize: vertical; /* 3 */
 }
 
 /**
-  * Remove the padding in IE 10-.
-  */
-[type="checkbox"],
-[type="radio"] {
+ * Remove the padding in IE 10-.
+ */
+[type=checkbox],
+[type=radio] {
   padding: 0;
 }
 
 /**
-  * 1. Correct the odd appearance in Chrome, Edge, and Safari.
-  * 2. Correct the outline style in Safari.
-  */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
-  * Correct the cursor style of increment and decrement buttons in Safari.
-  */
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
-  * Correct the text style of placeholders in Chrome, Edge, and Safari.
-  */
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: 0.54;
 }
 
 /**
-  * Remove the inner padding in Chrome, Edge, and Safari on macOS.
-  */
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
-  * 1. Correct the inability to style upload buttons in iOS and Safari.
-  * 2. Change font properties to `inherit` in Safari.
-  */
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /**
-  * Remove the inner border and padding of focus outlines in Firefox.
-  */
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
 ::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 /**
-  * Restore the focus outline styles unset by the previous rule in Firefox.
-  */
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
 :-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
 /**
-  * Remove the additional :invalid styles in Firefox.
-  */
+ * Remove the additional :invalid styles in Firefox.
+ */
 :-moz-ui-invalid {
   box-shadow: none;
 }
 
 /* Interactive
-  * ========================================================================== */
+ * ========================================================================== */
 /*
-  * Add the correct display in Edge 19- and IE.
-  */
+ * Add the correct display in Edge 19- and IE.
+ */
 details {
   display: block;
 }
 
 /*
-  * Add the correct styles in Edge 19-, IE, and Safari.
-  */
+ * Add the correct styles in Edge 19-, IE, and Safari.
+ */
 dialog {
   background-color: white;
   border: solid;
   color: black;
   display: block;
   height: -moz-fit-content;
-  height: -webkit-fit-content;
   height: fit-content;
   left: 0;
   margin: auto;
@@ -441,7 +407,6 @@ dialog {
   position: absolute;
   right: 0;
   width: -moz-fit-content;
-  width: -webkit-fit-content;
   width: fit-content;
 }
 
@@ -450,35 +415,35 @@ dialog:not([open]) {
 }
 
 /*
-  * Add the correct display in all browsers.
-  */
+ * Add the correct display in all browsers.
+ */
 summary {
   display: list-item;
 }
 
 /* Scripting
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Add the correct display in IE 9-.
-  */
+ * Add the correct display in IE 9-.
+ */
 canvas {
   display: inline-block;
 }
 
 /**
-  * Add the correct display in IE.
-  */
+ * Add the correct display in IE.
+ */
 template {
   display: none;
 }
 
 /* User interaction
-  * ========================================================================== */
+ * ========================================================================== */
 /*
-  * 1. Remove the tapping delay in IE 10.
-  * 2. Remove the tapping delay on clickable elements
-       in all browsers (opinionated).
-  */
+ * 1. Remove the tapping delay in IE 10.
+ * 2. Remove the tapping delay on clickable elements
+      in all browsers (opinionated).
+ */
 a,
 area,
 button,
@@ -487,54 +452,51 @@ label,
 select,
 summary,
 textarea,
-[tabindex] {
-  -ms-touch-action: manipulation;
-  /* 1 */
-  touch-action: manipulation;
-  /* 2 */
+[tabindex] { /* 1 */
+  touch-action: manipulation; /* 2 */
 }
 
 /**
-  * Add the correct display in IE 10-.
-  */
+ * Add the correct display in IE 10-.
+ */
 [hidden] {
   display: none;
 }
 
 /* Accessibility
-  * ========================================================================== */
+ * ========================================================================== */
 /**
-  * Change the cursor on busy elements in all browsers (opinionated).
-  */
-[aria-busy="true"] {
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+[aria-busy=true] {
   cursor: progress;
 }
 
 /*
-  * Change the cursor on control elements in all browsers (opinionated).
-  */
+ * Change the cursor on control elements in all browsers (opinionated).
+ */
 [aria-controls] {
   cursor: pointer;
 }
 
 /*
-  * Change the cursor on disabled, not-editable, or otherwise
-  * inoperable elements in all browsers (opinionated).
-  */
-[aria-disabled="true"],
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+[aria-disabled=true],
 [disabled] {
   cursor: not-allowed;
 }
 
 /*
-  * Change the display on visually hidden accessible elements
-  * in all browsers (opinionated).
-  */
-[aria-hidden="false"][hidden] {
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+[aria-hidden=false][hidden] {
   display: initial;
 }
 
-[aria-hidden="false"][hidden]:not(:focus) {
+[aria-hidden=false][hidden]:not(:focus) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
@@ -561,9 +523,8 @@ textarea,
   }
   #box2-inner {
     height: auto;
-    display: -ms-grid;
     display: grid;
-    grid-template: "search  search  search   search   search"   auto "......  ......  ......   ...      ......"   .2rem "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......"   .2rem "profile profile profile  ...      pages"    auto "......  ......  ......   ...      ......"   .2rem "ranking ranking ranking  ...      recent"   auto "monthly ...     category category category" auto /  20.0%   1%      28.5%    1%       49.5%;
+    grid-template: "search  search  search   search   search" auto "......  ......  ......   ...      ......" 0.2rem "profile profile profile  ...      accounts" auto "profile profile profile  ...      ......" 0.2rem "profile profile profile  ...      pages" auto "......  ......  ......   ...      ......" 0.2rem "ranking ranking ranking  ...      recent" auto "monthly ...     category category category" auto/20% 1% 28.5% 1% 49.5%;
   }
   #box2-inner .hatena-module-search-box {
     grid-area: search;
@@ -577,8 +538,6 @@ textarea,
     /* このブログについて */
   }
   #box2-inner .hatena-module-profile + .hatena-module-html .account-btns-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
@@ -609,8 +568,6 @@ textarea,
     grid-area: pages;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-lists-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 1rem auto 0;
     width: 100%;
@@ -631,13 +588,13 @@ textarea,
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a {
     display: inline-block;
-    padding: .4rem .8rem;
+    padding: 0.4rem 0.8rem;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a br {
     display: none;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a i {
-    padding-top: .4rem !important;
+    padding-top: 0.4rem !important;
     font-size: 2.2rem !important;
   }
   #box2-inner .hatena-module-profile + .hatena-module-html + .hatena-module-html .page-list a .blogicon-private {
@@ -656,23 +613,16 @@ textarea,
     grid-area: category;
   }
   #box2-inner .hatena-module-category .hatena-module-body ul {
-    -webkit-column-count: 3;
-            column-count: 3;
+    -moz-column-count: 3;
+         column-count: 3;
   }
   #box2-inner .hatena-module-category .hatena-module-body ul li a {
     display: inline-block;
   }
   #box2-inner .hatena-module-category .hatena-module-body ul li ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   /* 追尾する目次 */
   #stoc-module {
@@ -684,7 +634,6 @@ textarea,
     width: 100% !important;
   }
 }
-
 /*--------------------------------------
   （大）PC
 --------------------------------------*/
@@ -700,13 +649,11 @@ textarea,
     margin-bottom: 2rem !important;
   }
 }
-
 @media (max-width: 930px) {
   .archive-entry {
     min-width: 200px !important;
-    display: -ms-grid !important;
     display: grid !important;
-    grid-template: ".... ... header"   3rem "thum ... header"   1fr "thum ... category" auto / 30% 5% 1fr;
+    grid-template: ".... ... header" 3rem "thum ... header" 1fr "thum ... category" auto/30% 5% 1fr;
   }
   .archive-entry .archive-entry-header {
     grid-area: header;
@@ -725,7 +672,6 @@ textarea,
     display: none;
   }
 }
-
 /*--------------------------------------
   （中）タブレット
 --------------------------------------*/
@@ -735,7 +681,7 @@ textarea,
     margin-top: 0 !important;
   }
   .entry-title {
-    font-family: -apple-system, 'Kosugi Maru' !important;
+    font-family: -apple-system, "Kosugi Maru" !important;
   }
   /* ページ全体のコンテナ */
   #container {
@@ -753,8 +699,8 @@ textarea,
     border-radius: 0 !important;
   }
   .entry-content {
-    padding-left: .6rem !important;
-    padding-right: .6rem !important;
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
   }
   .entry-content .hatena-fotolife {
     margin-right: 1rem;
@@ -766,7 +712,7 @@ textarea,
     border-radius: 0 !important;
   }
   #box2-inner {
-    grid-template: "search   search   search"   auto "......   ...      ......"      0 "profile  ...      monthly"  auto "......   ...      ......"      0 "accounts ...      pages"    auto "......   ...      ......"      0 "ranking  ...      recent"   auto "......   ...      ......"      0 "category category category" auto /  49.5%    1%       49.5%;
+    grid-template: "search   search   search" auto "......   ...      ......" 0 "profile  ...      monthly" auto "......   ...      ......" 0 "accounts ...      pages" auto "......   ...      ......" 0 "ranking  ...      recent" auto "......   ...      ......" 0 "category category category" auto/49.5% 1% 49.5%;
   }
   .hatena-module {
     border-radius: 0 !important;
@@ -777,8 +723,6 @@ textarea,
   }
   /* このブログについて */
   .page-lists-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 1rem auto 0;
   }
@@ -793,11 +737,11 @@ textarea,
   }
   .page-lists li {
     height: 10rem !important;
-    padding: .4rem !important;
+    padding: 0.4rem !important;
   }
   .page-lists a {
     display: inline-block;
-    padding: .4rem !important;
+    padding: 0.4rem !important;
     font-size: 1em !important;
   }
   .page-lists a br {
@@ -814,7 +758,7 @@ textarea,
   .archive-entry {
     width: 98% !important;
     padding: 1rem !important;
-    font-size: .7em;
+    font-size: 0.7em;
   }
   .archive-entry .archive-entry-header {
     width: 100%;
@@ -830,7 +774,7 @@ textarea,
     https://account-it-dentist.hatenablog.com/entry/blog-custom003
   */
   .lastmod {
-    padding: 0      !important;
+    padding: 0 !important;
     font-size: 1.2rem !important;
   }
   .entry-date a {
@@ -869,16 +813,15 @@ textarea,
     font-weight: bold;
   }
   .booklink-box .booklink-powered-date, .booklink-box .kaerebalink-powered-date, .kaerebalink-box .booklink-powered-date, .kaerebalink-box .kaerebalink-powered-date {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
   .booklink-box .booklink-link2 a, .booklink-box .kaerebalink-link1 a, .kaerebalink-box .booklink-link2 a, .kaerebalink-box .kaerebalink-link1 a {
-    width: calc(100% - .4rem);
-    border-radius: .5rem;
-    margin: .2rem 0;
+    width: calc(100% - 0.4rem);
+    border-radius: 0.5rem;
+    margin: 0.2rem 0;
     padding: 1rem 0;
   }
 }
-
 /*--------------------------------------
   （小）スマホ
 --------------------------------------*/
@@ -916,8 +859,8 @@ textarea,
     display: block;
   }
   #box2-inner .hatena-module-category .hatena-module-body ul {
-    -webkit-column-count: 2;
-            column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
   }
   /* このブログについて */
   .page-lists-container {
@@ -925,14 +868,14 @@ textarea,
   }
   .page-lists {
     display: block !important;
-    width: 100%  !important;
+    width: 100% !important;
   }
   .page-lists li {
     height: 5em !important;
   }
   .page-lists a {
     display: inline;
-    padding: 0 .4rem 1rem !important;
+    padding: 0 0.4rem 1rem !important;
   }
   .page-lists a br {
     display: none !important;
@@ -941,10 +884,9 @@ textarea,
     display: inline;
     padding-top: 1rem !important;
     position: relative;
-    top: .1rem;
+    top: 0.1rem;
   }
 }
-
 /*--------------------------------------
   （極小）スマホ
 --------------------------------------*/
@@ -975,7 +917,7 @@ textarea,
   }
   .follow-account-btns .color-share-btns {
     min-width: 130px !important;
-    max-width: 90%   !important;
+    max-width: 90% !important;
   }
   /* このブログについて */
   .page-lists li {
@@ -983,7 +925,7 @@ textarea,
   }
   .page-lists li a {
     display: inline-block;
-    padding-bottom: .4rem !important;
+    padding-bottom: 0.4rem !important;
   }
   .page-lists li a br {
     display: inline !important;
@@ -991,10 +933,9 @@ textarea,
   .page-lists li a i {
     display: inline-block;
     padding-top: 1.2rem !important;
-    padding-bottom: .8rem !important;
+    padding-bottom: 0.8rem !important;
   }
 }
-
 /**
  * 変数まとめ
  */
@@ -1023,7 +964,7 @@ body {
   width: 100%;
   background: rgba(1, 1, 1, 0.1);
   font-size: 1.4rem;
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
 }
 
 /* ヘッダー */
@@ -1033,10 +974,9 @@ body {
   margin: 0 auto;
   padding: 2rem 3rem;
   font-weight: bold;
-  font-family: -apple-system, 'Kosugi Maru';
-  background: #1d8aff !important;
-  -webkit-box-shadow: 0 0.5rem 0.3rem -0.1rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.5rem 0.3rem -0.1rem rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, "Kosugi Maru";
+  background: rgb(29, 138, 255) !important;
+  box-shadow: 0 0.5rem 0.3rem -0.1rem rgba(0, 0, 0, 0.3);
 }
 
 /* ブログタイトル */
@@ -1047,59 +987,47 @@ body {
 /* ブログ説明 */
 #blog-description {
   color: #f0f0f0 !important;
-  font-family: 'Meiryo UI', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-family: "Meiryo UI", "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
 /* ナビゲーション */
 #gnav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 0;
   border: 0;
   background: rgba(29, 138, 255, 0.3);
 }
-
 #gnav .gnav-inner {
   height: 100%;
   padding: 0;
   margin: 0;
 }
-
 #gnav .gnav-inner .menu {
-  width: calc(100% / 8);
+  width: 12.5%;
   min-width: 11.6rem;
-  margin: 0 auto .5rem;
-  padding: .8rem  .4rem .6rem !important;
+  margin: 0 auto 0.5rem;
+  padding: 0.8rem 0.4rem 0.6rem !important;
   background: rgba(29, 138, 255, 0.1);
-  -webkit-box-shadow: 0 0.4rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.4rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.4rem rgba(0, 0, 0, 0.3);
   border-left: 1px solid rgba(0, 0, 0, 0.3);
   border-right: 1px solid rgba(0, 0, 0, 0.3);
-  border-bottom-left-radius: .3rem;
-  border-bottom-right-radius: .3rem;
-  -webkit-transition: all .25s;
-  transition: all .25s;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  transition: all 0.25s;
 }
-
 #gnav .gnav-inner .menu a {
   vertical-align: middle;
 }
-
 #gnav .gnav-inner .menu:hover {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: translateY(0.4rem);
+  box-shadow: 0 0 #333;
 }
-
 #gnav .gnav-inner .menu .content {
   margin: 0 auto;
   padding: 1rem;
   width: 75rem;
   height: 20rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: #eee;
   text-align: left;
 }
@@ -1120,28 +1048,24 @@ body {
 }
 
 .breadcrumb {
-  margin: .1rem 0 !important;
+  margin: 0.1rem 0 !important;
   width: 100%;
   padding: 1rem;
   border-radius: 0.8rem;
   text-decoration: none !important;
 }
-
 .breadcrumb a:link {
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .breadcrumb a:visited {
   color: #009130;
 }
-
 .breadcrumb a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .breadcrumb .breadcrumb-innner {
   margin: 0 !important;
   padding: 0;
@@ -1154,7 +1078,6 @@ body {
   border-radius: 0.8rem;
   background: rgba(250, 250, 250, 0.5);
 }
-
 #container #container-inner {
   padding: 0 0;
 }
@@ -1169,23 +1092,20 @@ body {
 .entry-inner {
   font-size: 1.8rem;
 }
-
 .entry-inner header {
   margin-bottom: 0;
   padding: 1rem;
   border-top-left-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
-  background: #fafafa;
+  background: rgb(250, 250, 250);
 }
-
 .entry-inner header .entry-date, .entry-inner header .entry-header {
   margin: 0;
-  padding: .4rem 1rem 0;
+  padding: 0.4rem 1rem 0;
 }
-
 .entry-inner header .entry-categories {
   margin: 0;
-  padding: .8rem 0 .4rem;
+  padding: 0.8rem 0 0.4rem;
 }
 
 /* 記事フッター */
@@ -1207,20 +1127,15 @@ body {
   padding: 0 1rem 1rem;
   background: rgba(250, 250, 250, 0.7);
 }
-
 .hatena-star-container .hatena-star-add-button {
-  margin: .8rem;
+  margin: 0.8rem;
   width: 4.5rem;
   height: 2.8rem;
-  -webkit-transition: all .25s;
-  transition: all .25s;
+  transition: all 0.25s;
 }
-
 .hatena-star-container .hatena-star-add-button:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 0 #333;
 }
 
 /* 記事一覧ページ */
@@ -1228,32 +1143,23 @@ body {
   margin-bottom: 1rem;
   font-size: 2rem !important;
   font-weight: bold;
-  font-family: -apple-system, 'Kosugi Maru' !important;
+  font-family: -apple-system, "Kosugi Maru" !important;
 }
-
 .archive-heading:before {
   margin-right: 1rem;
-  content: '\f02b';
-  /* ふせんマーク */
+  content: "\f02b"; /* ふせんマーク */
   vertical-align: middle;
   font-family: FontAwesome;
 }
-
-header.archive-heading {
-  /* 親セレクタ（=記事一覧ページ限定） */
-  margin-top: .4rem !important;
-  margin-bottom: .4rem !important;
+header.archive-heading { /* 親セレクタ（=記事一覧ページ限定） */
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
 }
 
 .archive-entries {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-left: -40px;
   width: 710px;
 }
@@ -1263,94 +1169,77 @@ header.archive-heading {
   min-width: 300px;
   margin: 1rem auto !important;
   padding: 1rem;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   background: rgba(250, 250, 250, 0.5);
-  -webkit-box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
   text-decoration: none !important;
 }
-
 .archive-entry a:link {
-  color: #050505;
+  color: rgb(5, 5, 5);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .archive-entry a:visited {
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .archive-entry a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .archive-entry .archive-date {
   margin: 0;
   font-weight: bold;
 }
-
 .archive-entry .archive-date time {
   text-decoration: none !important;
 }
-
 .archive-entry .archive-date time a:link {
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .archive-entry .archive-date time a:visited {
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .archive-entry .archive-date time a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .archive-entry .entry-title {
-  margin: .4rem 1rem 0 !important;
+  margin: 0.4rem 1rem 0 !important;
   padding: 0;
   font-size: 1.6rem !important;
 }
-
 .archive-entry .categories {
-  margin: .4rem .1rem !important;
-  padding: .1rem .8rem !important;
+  margin: 0.4rem 0.1rem !important;
+  padding: 0.1rem 0.8rem !important;
   vertical-align: bottom;
 }
-
 .archive-entry .categories .archive-category-link {
   padding: 0 1rem;
   border-radius: 0.3rem;
   vertical-align: bottom;
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  color: #fafafa;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
+  color: rgb(250, 250, 250);
   background: rgba(29, 138, 255, 0.8);
-  font-size: .85em;
+  font-size: 0.85em;
 }
-
 .archive-entry .categories .archive-category-link:last-child {
   margin-right: 0;
 }
-
 .archive-entry .entry-thumb[alt] {
   color: rgba(5, 5, 5, 0.6);
-  font-size: .8em;
+  font-size: 0.8em;
 }
-
 .archive-entry .entry-thumb {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 .archive-entry .archive-entry-body {
   margin-top: 0;
-  padding: .4rem;
+  padding: 0.4rem;
 }
-
 .archive-entry .archive-entry-body .entry-description {
-  font-size: .85em;
+  font-size: 0.85em;
 }
 
 .social-buttons {
@@ -1359,222 +1248,154 @@ header.archive-heading {
 
 .entry-footer-html {
   margin: 0;
-  padding: 1rem .4rem;
+  padding: 1rem 0.4rem;
   background: rgba(250, 250, 250, 0.1);
   border: 4px solid rgba(250, 250, 250, 0.8);
   text-align: center;
 }
-
 .entry-footer-html p {
   margin: 2.4rem 1rem 1rem;
   font-size: 1.4rem !important;
 }
-
 .entry-footer-html .footer-share-btns {
   /* 微調整 */
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns {
   margin: 1em 0 1.2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .share-btn-item {
   width: 19%;
   height: 3.4rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   color: #fff;
   font-size: 1.6rem;
   text-align: center;
   line-height: 3.4rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: translateY(0.4rem);
+  box-shadow: 0 0 #333;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .entry-footer-html .footer-share-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
-
 .entry-footer-html .footer-share-btns .hateblo i {
   font-size: 2.8rem !important;
   position: relative !important;
-  top: .2rem !important;
+  top: 0.2rem !important;
 }
-
 .entry-footer-html .footer-subscription-btns {
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 50%;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns {
   margin: 1em 0 1.2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .share-btn-item {
   width: 40%;
   height: 3.4rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   color: #fff;
   font-size: 1.6rem;
   text-align: center;
   line-height: 3.4rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: translateY(0.4rem);
+  box-shadow: 0 0 #333;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .entry-footer-html .footer-subscription-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
 
 /* ブログフッター */
@@ -1585,48 +1406,26 @@ header.archive-heading {
 footer {
   margin: 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 footer .entry-footer-section {
-  -webkit-box-ordinal-group: -2;
-      -ms-flex-order: -3;
-          order: -3;
+  order: -3;
 }
-
 footer .hatena-star-container {
-  -webkit-box-ordinal-group: -1;
-      -ms-flex-order: -2;
-          order: -2;
+  order: -2;
 }
-
 footer .comment-box {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
+  order: -1;
 }
-
 footer .customized-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
-
 footer .customized-footer .entry-footer-html {
   border-bottom-left-radius: 0.8rem;
   border-bottom-right-radius: 0.8rem;
 }
-
 footer .entry-footer-modules .hatena-module-related-entries {
   margin: 0;
   margin-top: 1.5rem;
@@ -1634,13 +1433,11 @@ footer .entry-footer-modules .hatena-module-related-entries {
   border-radius: 0.8rem;
   background: rgba(250, 250, 250, 0.7);
 }
-
 footer .shrbtn a {
   margin: 0;
   padding: 0;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
-
 footer .comment-box {
   margin-top: 0;
   padding: 1rem;
@@ -1654,19 +1451,16 @@ footer .comment-box {
   background: rgba(250, 250, 250, 0.7);
   text-decoration: none !important;
 }
-
 .pager a:link {
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .pager a:visited {
   color: #009130;
 }
-
 .pager a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
 
@@ -1679,19 +1473,17 @@ footer .comment-box {
 .hatena-module {
   clear: both;
   display: block;
-  margin: 0 0 .8rem;
+  margin: 0 0 0.8rem;
   padding: 1rem;
   border-radius: 0.8rem;
   font-size: 1.2rem;
   background: rgba(250, 250, 250, 0.7);
 }
-
 .hatena-module .hatena-module-title {
-  border-bottom: 2px double #1d8aff;
+  border-bottom: 2px double rgb(29, 138, 255);
 }
-
 .hatena-module .hatena-module-body {
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
   text-decoration: none !important;
   font-size: 1.2rem;
   /* 検索フォーム */
@@ -1700,479 +1492,359 @@ footer .comment-box {
   /* このブログについて */
   /* 最新記事など */
 }
-
 .hatena-module .hatena-module-body a:link {
   color: rgba(5, 5, 5, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .hatena-module .hatena-module-body a:visited {
   color: rgba(5, 5, 5, 0.9);
 }
-
 .hatena-module .hatena-module-body a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .hatena-module .hatena-module-body .search-form {
-  padding: .4rem;
+  padding: 0.4rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 1.2rem;
 }
-
 .hatena-module .hatena-module-body .search-form:hover {
   border-color: rgba(0, 0, 0, 0.3);
 }
-
 .hatena-module .hatena-module-body .profile-description {
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
   text-decoration: none !important;
-  font-size: .9em;
+  font-size: 0.9em;
   line-height: 1.8em;
 }
-
 .hatena-module .hatena-module-body .profile-description a:link {
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .hatena-module .hatena-module-body .profile-description a:visited {
   color: #009130;
 }
-
 .hatena-module .hatena-module-body .profile-description a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .hatena-module .hatena-module-body .profile-description p {
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
-
 .hatena-module .hatena-module-body .profile-description ul, .hatena-module .hatena-module-body .profile-description ol {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
   margin-left: -1rem;
 }
-
 .hatena-module .hatena-module-body .profile-description ul li, .hatena-module .hatena-module-body .profile-description ol li {
-  margin-top: .3rem;
+  margin-top: 0.3rem;
   margin-bottom: 0;
-  padding-left: .1rem !important;
-  font-size: .98em;
+  padding-left: 0.1rem !important;
+  font-size: 0.98em;
 }
-
 .hatena-module .hatena-module-body .profile-description ul li p, .hatena-module .hatena-module-body .profile-description ol li p {
-  margin: 0 0 .8em 0;
+  margin: 0 0 0.8em 0;
 }
-
 .hatena-module .hatena-module-body .profile-description ul li ul, .hatena-module .hatena-module-body .profile-description ul li ol, .hatena-module .hatena-module-body .profile-description ol li ul, .hatena-module .hatena-module-body .profile-description ol li ol {
   margin-top: 0;
   padding-left: 2.2em;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns {
   margin-top: 1.6rem;
   /* 微調整 */
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0.8em auto;
   max-width: 70%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns a {
   padding: 0 !important;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item {
   overflow: hidden;
   width: 3.6rem;
   height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: #fff;
   font-size: 1.2em;
   text-align: center;
   line-height: 3.6rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item img {
   margin: 0;
-  padding: 0 0 .4rem;
+  padding: 0 0 0.4rem;
   vertical-align: middle;
   border-radius: 50%;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 0 #333;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .accounts-header {
   display: block;
   clear: right;
-  margin: 1.6rem auto .4rem;
-  padding: .2rem .6rem 0;
+  margin: 1.6rem auto 0.4rem;
+  padding: 0.2rem 0.6rem 0;
   background: rgba(0, 0, 0, 0.04);
   color: rgba(5, 5, 5, 0.9);
   font-size: 1.1em;
 }
-
 .hatena-module .hatena-module-body .follow-blog-btns .hateblo i {
   font-size: 3.6rem;
   position: relative !important;
-  top: .4rem !important;
+  top: 0.4rem !important;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns {
   /* 微調整 */
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0.8em auto;
   max-width: 80%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns a {
   padding: 0 !important;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item {
   overflow: hidden;
   width: 3.6rem;
   height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: #fff;
   font-size: 1.2em;
   text-align: center;
   line-height: 3.6rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item img {
   margin: 0;
-  padding: 0 0 .4rem;
+  padding: 0 0 0.4rem;
   vertical-align: middle;
   border-radius: 50%;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 0 #333;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .accounts-header {
   display: block;
   clear: right;
-  margin: 1.6rem auto .4rem;
-  padding: .2rem .6rem 0;
+  margin: 1.6rem auto 0.4rem;
+  padding: 0.2rem 0.6rem 0;
   background: rgba(0, 0, 0, 0.04);
   color: rgba(5, 5, 5, 0.9);
   font-size: 1.1em;
 }
-
 .hatena-module .hatena-module-body .follow-account-btns .github i {
   font-size: 4.1rem;
   position: relative !important;
-  top: -.2rem !important;
+  top: -0.2rem !important;
 }
-
 .hatena-module .hatena-module-body .module-sub-header {
   display: block;
   clear: right;
-  margin: 1.6rem auto .4rem;
-  padding: .2rem .6rem 0;
+  margin: 1.6rem auto 0.4rem;
+  padding: 0.2rem 0.6rem 0;
   background: rgba(0, 0, 0, 0.04);
   color: rgba(5, 5, 5, 0.9);
   font-size: 1.1em;
 }
-
 .hatena-module .hatena-module-body .page-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
   padding: 0;
 }
-
 .hatena-module .hatena-module-body .page-list li {
   width: 50%;
   height: 8rem;
-  margin: .4em auto 0;
+  margin: 0.4em auto 0;
   list-style: none;
   text-align: center;
 }
-
 .hatena-module .hatena-module-body .page-list li a {
   display: block;
   height: 80%;
-  margin: .4rem;
-  border-radius: .4rem;
+  margin: 0.4rem;
+  border-radius: 0.4rem;
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.04);
   color: rgba(5, 5, 5, 0.7);
   font-size: 1.2rem;
-  -webkit-transition: all .25s;
-  transition: all .25s;
+  transition: all 0.25s;
 }
-
 .hatena-module .hatena-module-body .page-list li a i {
   display: inline-block;
   padding-top: 1.4rem;
-  padding-bottom: .4rem;
+  padding-bottom: 0.4rem;
   color: rgba(5, 5, 5, 0.6);
   font-size: 1.8rem;
 }
-
 .hatena-module .hatena-module-body .page-list li a .blogicon-private {
   font-size: 2rem;
   padding-top: 1rem;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
 }
-
 .hatena-module .hatena-module-body .page-list li a:hover {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
-  color: #050505;
+  transform: translateY(0.4rem);
+  box-shadow: 0 0 #333;
+  color: rgb(5, 5, 5);
 }
-
 .hatena-module .hatena-module-body .page-list li a:hover i {
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .hatena-module .hatena-module-body .hatena-module-category {
   border: none;
 }
-
 .hatena-module .hatena-module-body .hatena-urllist li {
   border-top: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 1px 0 white;
-          box-shadow: 0 1px 0 white;
+  box-shadow: 0 1px 0 rgb(255, 255, 255);
 }
-
 .hatena-module .hatena-module-body .hatena-urllist li ul li {
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 .hatena-module .hatena-module-body time {
   color: rgba(5, 5, 5, 0.8);
   text-decoration: none !important;
   font-weight: bold;
 }
-
 .hatena-module .hatena-module-body time a:link {
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .hatena-module .hatena-module-body time a:visited {
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .hatena-module .hatena-module-body time a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .hatena-module .hatena-module-body img[alt] {
   color: rgba(5, 5, 5, 0.6);
-  font-size: .8em;
+  font-size: 0.8em;
 }
-
 .hatena-module .hatena-module-body img {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 .hatena-module .hatena-module-body .urllist-title-link {
   display: block;
   font-size: 1em;
   line-height: 2.2em;
 }
-
 .hatena-module .hatena-module-body .urllist-see-more {
   text-decoration: none !important;
 }
-
 .hatena-module .hatena-module-body .urllist-see-more a:link {
-  color: #050505;
+  color: rgb(5, 5, 5);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .hatena-module .hatena-module-body .urllist-see-more a:visited {
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .hatena-module .hatena-module-body .urllist-see-more a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .hatena-module .hatena-module-body .hatena-breadcrumb-plus-toggle-button {
   color: rgba(5, 5, 5, 0.5);
 }
@@ -2185,11 +1857,10 @@ footer .comment-box {
   margin: 0;
   padding: 0 2rem;
   font-weight: normal;
-  font-family: -apple-system, 'Kosugi Maru';
+  font-family: -apple-system, "Kosugi Maru";
 }
-
 .entry-date a {
-  padding: .5rem .6rem .5rem 0 !important;
+  padding: 0.5rem 0.6rem 0.5rem 0 !important;
 }
 
 /*
@@ -2204,11 +1875,9 @@ footer .comment-box {
   font-size: 1.5rem;
   text-decoration: none;
 }
-
 .lastmod:before {
   margin-right: 1rem;
-  content: "\f021";
-  /* 更新マーク */
+  content: "\f021"; /* 更新マーク */
   font-family: FontAwesome;
   font-size: 1.6rem !important;
 }
@@ -2218,23 +1887,21 @@ footer .comment-box {
   padding: 0 1rem;
   font-size: 1.2em;
   font-weight: bold;
-  font-family: -apple-system, 'Kosugi Maru';
+  font-family: -apple-system, "Kosugi Maru";
 }
 
 .entry-categories {
   margin: 0 1rem;
   text-align: left;
 }
-
 .entry-categories .entry-category-link {
   padding: 0.2rem 1rem;
   border-radius: 0.2rem;
   vertical-align: bottom;
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
-  color: #fafafa;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
+  color: rgb(250, 250, 250);
   background: rgba(29, 138, 255, 0.8);
 }
-
 .entry-categories .entry-category-link:last-child {
   margin-right: 0;
 }
@@ -2253,10 +1920,10 @@ footer .comment-box {
   /*--------------------------------------
     本文のフォント
   --------------------------------------*/
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
   font-size: 1.6rem;
   line-height: 2em;
-  color: #050505;
+  color: rgb(5, 5, 5);
   /* カード形式リンク */
   /* ツイート・カード */
   /* リスト */
@@ -2316,413 +1983,340 @@ footer .comment-box {
     https://switch-box.net/css-hr-decorations.html
   --------------------------------------*/
 }
-
 .entry-content a:link {
   color: rgba(10, 33, 230, 0.9);
   font-style: normal;
   text-decoration: none !important;
 }
-
 .entry-content a:visited {
   color: #009130;
 }
-
 .entry-content a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .entry-content h3 {
-  margin: 4rem 0     3rem;
-  padding: .8rem 1rem .3rem;
+  margin: 4rem 0 3rem;
+  padding: 0.8rem 1rem 0.3rem;
   background: rgba(29, 138, 255, 0.1);
-  border-left: 8px solid #1d8aff;
-  border-bottom: 3px solid #1d8aff;
+  border-left: 8px solid rgb(29, 138, 255);
+  border-bottom: 3px solid rgb(29, 138, 255);
   font-size: 1.4em;
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .entry-content h4 {
-  margin: 4rem .3rem 3rem;
-  padding: .3rem  1rem;
+  margin: 4rem 0.3rem 3rem;
+  padding: 0.3rem 1rem;
   background: rgba(29, 138, 255, 0.1);
-  border-top: 2px solid #1d8aff;
-  border-bottom: 2px solid #1d8aff;
+  border-top: 2px solid rgb(29, 138, 255);
+  border-bottom: 2px solid rgb(29, 138, 255);
   font-size: 1.32em;
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .entry-content h5 {
-  margin: 3.6rem .4rem 2.6rem;
-  padding: .4rem .6rem;
-  border-left: 0.6rem solid #1d8aff;
+  margin: 3.6rem 0.4rem 2.6rem;
+  padding: 0.4rem 0.6rem;
+  border-left: 0.6rem solid rgb(29, 138, 255);
   font-size: 1.26em;
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .entry-content h6 {
   margin: 3rem 0 2.6rem;
   position: relative;
   border-bottom: solid 2.6px rgba(0, 0, 0, 0.1);
   font-size: 1.2em;
 }
-
 .entry-content h6:before {
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
   content: " ";
 }
-
 .entry-content h6:after {
   display: block;
   width: 24%;
   position: absolute;
   bottom: -2.6px;
-  border-bottom: solid 2.6px #1d8aff;
+  border-bottom: solid 2.6px rgb(29, 138, 255);
   content: " ";
 }
-
 .entry-content p {
   margin-bottom: 1.4em;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
 .entry-content b, .entry-content strong {
   font-size: 1.03em;
 }
-
 .entry-content u kbd {
   text-decoration: underline !important;
 }
-
 .entry-content s {
   /* グレーアウト */
-  color: #949494;
+  color: rgb(148, 148, 148);
   font-style: italic;
 }
-
 .entry-content s code {
-  background: #c8c8c8;
+  background: rgb(200, 200, 200);
   color: #f0f0f0 !important;
   font-style: italic;
 }
-
 .entry-content s kbd {
   color: rgba(5, 5, 5, 0.4) !important;
   font-style: italic;
   text-decoration: line-through !important;
 }
-
 .entry-content img[alt] {
   color: rgba(5, 5, 5, 0.5);
-  font-size: .8em;
+  font-size: 0.8em;
 }
-
 .entry-content .hatena-fotolife {
   margin: 1.5rem auto 3rem;
-  width: 100%;
+  max-width: 400px;
+  max-height: 800px;
   height: auto;
-  max-width: 68rem;
-  min-width: 10rem;
   overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-  /* スマホでも滑らかに */
+  -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
 }
-
 .entry-content .hatena-fotolife:hover {
   opacity: 0.5;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 .entry-content iframe {
   margin-top: 2rem !important;
   margin-bottom: 0 !important;
   min-width: 10rem;
 }
-
 .entry-content iframe:hover {
   opacity: 0.7;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 .entry-content iframe + a {
   display: block;
   margin-top: 0;
   width: 100%;
   min-width: 10rem;
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 1.6em;
   text-decoration: none;
 }
-
 .entry-content iframe + a:before {
-  margin-left: .4rem;
-  margin-right: .8rem;
+  margin-left: 0.4rem;
+  margin-right: 0.8rem;
   content: ">>";
   font-weight: bold;
 }
-
 .entry-content ul, .entry-content ol {
   margin-top: 1rem;
   margin-left: 0;
 }
-
 .entry-content ul li, .entry-content ol li {
-  margin-top: .5em;
+  margin-top: 0.5em;
   margin-bottom: 0;
-  padding-left: .1em !important;
-  font-size: .98em;
+  padding-left: 0.1em !important;
+  font-size: 0.98em;
 }
-
 .entry-content ul li p, .entry-content ol li p {
-  margin: 0 0 .8em 0;
+  margin: 0 0 0.8em 0;
 }
-
 .entry-content ul li ul, .entry-content ul li ol, .entry-content ol li ul, .entry-content ol li ol {
   margin-top: 0;
   padding-left: 1.3em;
 }
-
 .entry-content .toc-switch {
   display: inline-block;
   cursor: pointer;
   margin-bottom: 0;
-  margin-left: .4rem;
-  margin-right: .4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
   padding: 0;
-  color: #0a21e6;
-  font-size: .9em;
+  color: rgb(10, 33, 230);
+  font-size: 0.9em;
 }
-
 .entry-content .toc-switch:hover {
   font-weight: bold;
   text-decoration: none !important;
 }
-
 .entry-content .toc-switch:hover a:link {
   color: #1e366a;
   font-style: normal;
   text-decoration: none !important;
 }
-
 .entry-content .toc-switch:hover a:visited {
   color: #009130;
 }
-
 .entry-content .toc-switch:hover a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .entry-content .table-of-contents {
-  display: none;
-  /* デフォルトで非表示 */
+  display: none; /* デフォルトで非表示 */
   /* 外枠 */
-  margin: .4rem  1rem 0;
-  padding: 2rem  5rem;
-  border-radius: .5rem;
-  border: dotted #1541a1 .16rem;
+  margin: 0.4rem 1rem 0;
+  padding: 2rem 5rem;
+  border-radius: 0.5rem;
+  border: dotted #1541a1 0.16rem;
   /* フォント */
   text-decoration: none !important;
   line-height: 80% !important;
   /* 中身 */
 }
-
 .entry-content .table-of-contents a:link {
   color: #1e366a;
   font-style: normal;
   text-decoration: none !important;
 }
-
 .entry-content .table-of-contents a:visited {
   color: #009130;
 }
-
 .entry-content .table-of-contents a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 .entry-content .table-of-contents:before {
-  content: "";
-  /* スクリプトで文字が追加されてしまうので消しておく */
+  content: ""; /* スクリプトで文字が追加されてしまうので消しておく */
 }
-
 .entry-content .table-of-contents li {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  font-size: .99em;
+  font-size: 0.99em;
 }
-
 .entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
   margin: 0 !important;
-  padding-top: .4rem;
-  padding-bottom: .4rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
   padding-left: 1.5em;
 }
-
 .entry-content .serialized-label {
-  margin: auto .4rem auto 0;
-  padding: .4rem;
-  border-radius: .3rem;
+  margin: auto 0.4rem auto 0;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
   background: #d32f2f;
   color: white;
   text-align: center;
   font-size: 0.85em;
 }
-
 .entry-content .red-label {
-  margin: auto .4rem auto 0;
-  padding: .4rem;
-  border-radius: .3rem;
+  margin: auto 0.4rem auto 0;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
   background: #d32f2f;
   color: white;
   text-align: center;
   font-size: 0.85em;
 }
-
 .entry-content .blue-label {
-  margin: auto .4rem auto 0;
-  padding: .4rem;
-  border-radius: .3rem;
+  margin: auto 0.4rem auto 0;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
   background: darkblue;
   color: white;
   text-align: center;
   font-size: 0.85em;
 }
-
 .entry-content .green-label {
-  margin: auto .4rem auto 0;
-  padding: .4rem;
-  border-radius: .3rem;
+  margin: auto 0.4rem auto 0;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
   background: #009130;
   color: white;
   text-align: center;
   font-size: 0.85em;
 }
-
 .entry-content .red {
   color: #d32f2f;
 }
-
 .entry-content .blue {
   color: darkblue;
 }
-
 .entry-content .green {
   color: #009130;
 }
-
 .entry-content .note {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
   color: #d32f2f;
 }
-
 .entry-content .additional-note {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
   color: #d32f2f;
   font-weight: bold;
 }
-
 .entry-content .small-chars {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
 }
-
 .entry-content .small-chars code {
   vertical-align: middle !important;
 }
-
 .entry-content .large-chars {
   font-size: 1.2em;
 }
-
 .entry-content .text-box-dashed {
-  margin: 1rem calc(1rem + $side-margin);
+  margin: 1rem 2rem;
   padding: 1rem;
   border: 1px dashed;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-align: center;
 }
-
 .entry-content kbd {
-  font-family: 'Kosugi Maru', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "Kosugi Maru", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
 }
-
 .entry-content .mac-key {
   /* ----Box Properties---- */
   display: inline-block;
   padding: 0.05em 0.6em;
-  margin: 0 .4rem;
+  margin: 0 0.4rem;
   background: #fff;
-  border-radius: .4rem;
-  -webkit-box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.4rem;
+  box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.5);
   /* ----Text Properties---- */
   font-family: Helvetica, serif;
   text-align: center;
   color: #666;
 }
-
 .entry-content .btn-square-emboss {
   display: inline-block;
-  margin: 0 .4rem;
+  margin: 0 0.4rem;
   padding: 0.01em 0.6em;
   border-bottom: solid 3px rgba(0, 0, 0, 0.3);
-  border-radius: .4rem;
-  -webkit-box-shadow: 0 0.1rem 0.3rem -0.1rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0.1rem 0.3rem -0.1rem rgba(0, 0, 0, 0.5);
-  background: #f0f0f0;
-  /*ボタン色*/
-  color: #666666;
-  /*ボタン色より暗く*/
+  border-radius: 0.4rem;
+  box-shadow: 0 0.1rem 0.3rem -0.1rem rgba(0, 0, 0, 0.5);
+  background: #f0f0f0; /*ボタン色*/
+  color: #666666; /*ボタン色より暗く*/
   font-size: 90%;
   line-height: 1.75em;
-  font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  font-family: "Roboto Mono", "BIZ UDゴシック", Consolas, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ ゴシック", "MS Gothic", sans-serif;
   text-decoration: none;
-  text-shadow: 0.1rem 0.1rem 0.1rem #f0f0f0;
-  /* 文字色より明るく */
+  text-shadow: 0.1rem 0.1rem 0.1rem #f0f0f0; /* 文字色より明るく */
   /*
-      テキスト選択はOffに。
-      https://its-office.jp/blog/css/2017/04/30/user-select.html
-    */
+    テキスト選択はOffに。
+    https://its-office.jp/blog/css/2017/04/30/user-select.html
+  */
   -webkit-user-select: none !important;
      -moz-user-select: none !important;
-      -ms-user-select: none !important;
           user-select: none !important;
 }
-
 .entry-content .btn-square-emboss:active {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  -webkit-box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(0.4rem);
+  box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
   border-bottom: solid 3px rgba(0, 0, 0, 0.1);
 }
-
 .entry-content li > blockquote {
   padding-top: 1.5rem !important;
 }
-
 .entry-content blockquote {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 1.5rem 1.6rem;
-  padding: .5rem 1rem .5rem 3.2rem;
+  padding: 0.5rem 1rem 0.5rem 3.2rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   background: #f3f3f3;
   color: rgba(5, 5, 5, 0.7);
   /* 引用符 */
   /* 折り込み */
   /* 引用元 */
 }
-
 .entry-content blockquote:before {
   display: inline-block;
   position: absolute;
@@ -2738,27 +2332,23 @@ footer .comment-box {
   color: #FFF;
   line-height: 3rem;
   background: rgba(29, 138, 255, 0.7);
-  -webkit-box-shadow: 0 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
-          box-shadow: 0 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
+  box-shadow: 0 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
 }
-
 .entry-content blockquote:after {
   position: absolute;
   top: 4rem;
   left: -1.5rem;
   border: none;
-  border-bottom: solid  8px transparent;
-  border-right: solid 15px #1d8aff;
+  border-bottom: solid 8px transparent;
+  border-right: solid 15px rgb(29, 138, 255);
   content: "";
 }
-
 .entry-content blockquote:hover {
   border: 1px solid rgba(204, 204, 204, 0.4);
   background: #fff;
   color: rgba(5, 5, 5, 0.9);
   font-style: normal;
 }
-
 .entry-content blockquote p {
   position: relative;
   margin: 1rem 0;
@@ -2766,7 +2356,6 @@ footer .comment-box {
   z-index: 3;
   line-height: 1.7;
 }
-
 .entry-content blockquote cite {
   display: block;
   padding-right: 4rem;
@@ -2774,47 +2363,40 @@ footer .comment-box {
   font-size: 0.85em;
   text-align: right;
 }
-
 .entry-content blockquote cite:before {
-  margin-right: .4rem;
+  margin-right: 0.4rem;
   content: ">>";
   font-weight: bold;
 }
-
 .entry-content blockquote cite a {
   font-style: italic !important;
 }
-
 .entry-content .translation {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 1.5rem 1.6rem;
-  padding: .5rem 1rem .5rem 3.2rem;
+  padding: 0.5rem 1rem 0.5rem 3.2rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   background: #f3f3f3;
   color: rgba(5, 5, 5, 0.7);
   /* ラベル */
 }
-
 .entry-content .translation:before {
   display: inline-block;
   position: absolute;
-  top: -.6em;
-  left: -.6em;
+  top: -0.6em;
+  left: -0.6em;
   width: 3em;
   height: 1.9em;
   content: "意訳";
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: center;
   line-height: 1.9em;
   color: #f0f0f0;
   background: rgba(10, 33, 230, 0.8);
-  -webkit-box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
-          box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
+  box-shadow: 0 0.2rem 0.2rem 0.2rem rgba(26, 26, 26, 0.14);
 }
-
 .entry-content .translation p {
   position: relative;
   margin: 1rem 0;
@@ -2822,40 +2404,32 @@ footer .comment-box {
   z-index: 3;
   line-height: 1.7;
 }
-
 .entry-content code {
-  padding-top: .1rem;
-  border-radius: .3rem;
+  padding-top: 0.1rem;
+  border-radius: 0.3rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
   color: black !important;
-  background: #dfdbd4;
-  /* 背景 黄みがかったgray */
-  font-size: .85em;
-  font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+  background: #dfdbd4; /* 背景 黄みがかったgray */
+  font-size: 0.85em;
+  font-family: "Roboto Mono", "BIZ UDゴシック", Consolas, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ ゴシック", "MS Gothic", sans-serif;
   vertical-align: top !important;
 }
-
 .entry-content pre[data-lang=""] {
   padding-top: 1rem !important;
 }
-
 .entry-content pre.code {
   margin: 1.5rem 1.6rem;
   padding: 2rem 1rem 1rem 1rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   /* フォント・メインカラーを変更 */
-  font-family: 'Roboto Mono', 'BIZ UDゴシック', Consolas, 'メイリオ', Meiryo, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
-  font-size: .85em;
+  font-family: "Roboto Mono", "BIZ UDゴシック", Consolas, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+  font-size: 0.85em;
   line-height: 1.5em;
-  color: #f0f0f0;
-  /* white 文字色 */
-  background: rgba(5, 5, 5, 0.85);
-  /* black 背景 */
+  color: #f0f0f0; /* white 文字色 */
+  background: rgba(5, 5, 5, 0.85); /* black 背景 */
   overflow-x: scroll !important;
-  white-space: pre    !important;
-  /* 自動改行をoff、インデントは維持 */
-  -webkit-overflow-scrolling: touch !important;
-  /* スマホでも滑らかに */
+  white-space: pre !important; /* 自動改行をoff、インデントは維持 */
+  -webkit-overflow-scrolling: touch !important; /* スマホでも滑らかに */
   /* シンタックス・ハイライト */
   /* (明るめの水色) 特殊文字・記号（←変数名とか？） */
   /* (明るめの水色) 型 */
@@ -2865,85 +2439,66 @@ footer .comment-box {
   /* Khaki 定数 */
   /* DarkTurquouse ステートメント */
   /*
-      左上に言語名を表示
-      https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
-    */
+    左上に言語名を表示
+    https://code-life.hatenablog.com/entry/2018/05/22/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%A7%E6%9B%B8%E3%81%84%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AB%E8%A1%8C%E7%95%AA%E5%8F%B7%E3%82%92
+  */
 }
-
 .entry-content pre.code .synSpecial {
   color: #66FFFF;
 }
-
 .entry-content pre.code .synType {
   color: #66FFFF;
 }
-
 .entry-content pre.code .synComment {
   color: #FF33CC;
 }
-
 .entry-content pre.code .synPreProc {
   color: #f0f0f0;
 }
-
 .entry-content pre.code .synIdentifier {
   color: #FFD700;
 }
-
 .entry-content pre.code .synConstant {
   color: #F0E68C;
 }
-
 .entry-content pre.code .synStatement {
   color: #00CCCC;
 }
-
-.entry-content pre.code:not([data-lang=""]) {
-  /* 言語の指定がある時のみ */
-}
-
+.entry-content pre.code:not([data-lang=""]) { /* 言語の指定がある時のみ */ }
 .entry-content pre.code:not([data-lang=""]):before {
   display: inline-block;
   position: absolute;
   margin-left: -1.8rem;
   margin-top: -2.5rem;
-  padding: .2rem 1rem;
+  padding: 0.2rem 1rem;
   border: 1px solid rgba(204, 204, 204, 0.5);
-  border-radius: .3rem;
-  -webkit-box-shadow: 0 0 0.1rem 0.1rem rgba(5, 5, 5, 0.2);
-          box-shadow: 0 0 0.1rem 0.1rem rgba(5, 5, 5, 0.2);
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.1rem 0.1rem rgba(5, 5, 5, 0.2);
   content: attr(data-lang);
   color: black;
   background: #f0f0f0;
 }
-
 .entry-content .code-line {
-  counter-increment: linenumber;
-  /* code-lineクラスの数 */
+  counter-increment: linenumber; /* code-lineクラスの数 */
 }
-
 .entry-content .code-line:before {
   display: inline-block;
   width: 3rem;
   margin-right: 1rem;
-  padding-right: .6rem;
+  padding-right: 0.6rem;
   border-right: 1px solid rgba(204, 204, 204, 0.5);
   text-align: right;
-  content: counter(linenumber);
-  /* 擬似要素として行番号を表示 */
-  color: #cccccc;
+  content: counter(linenumber); /* 擬似要素として行番号を表示 */
+  color: rgb(204, 204, 204);
 }
-
 .entry-content .code-line:after {
   display: inline-block;
   margin-right: 1em;
-  content: "";
-  /* margin用 */
+  content: ""; /* margin用 */
 }
-
 .entry-content table {
   margin-left: 1rem;
-  margin-right: calc($side-margin + 3rem);
+  margin-right: 4rem;
   display: block;
   /* 横スクロール */
   overflow-x: scroll;
@@ -2952,28 +2507,22 @@ footer .comment-box {
   height: auto;
   max-width: 94rem;
   min-width: 10rem;
-  white-space: nowrap;
-  /* 自動改行をoff */
-  -webkit-overflow-scrolling: touch !important;
-  /* スマホでも滑らかに */
-  border-radius: .3rem;
+  white-space: nowrap; /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch !important; /* スマホでも滑らかに */
+  border-radius: 0.3rem;
   border: 1px solid rgba(5, 5, 5, 0.05);
 }
-
 .entry-content tbody {
   width: auto !important;
 }
-
 .entry-content th {
   background: rgba(5, 5, 5, 0.03) !important;
   line-height: 1.3em;
 }
-
 .entry-content td {
-  font-size: .9em;
+  font-size: 0.9em;
   line-height: 1.8em;
 }
-
 .entry-content hr {
   /* 一旦リセット */
   height: 0;
@@ -2986,32 +2535,27 @@ footer .comment-box {
   text-align: center;
   overflow: visible;
 }
-
 .entry-content hr:after {
   display: inline-block;
   position: relative;
   height: 2em;
   top: -1em;
   padding: 0 0.5em;
-  content: "\002702";
-  /* ハサミ記号✂（機種依存？） */
+  content: "✂"; /* ハサミ記号✂（機種依存？） */
   line-height: 2em;
-  color: #050505;
+  color: rgb(5, 5, 5);
 }
-
 .entry-content .footnote {
   margin: 0;
-  padding: .6rem;
+  padding: 0.6rem;
 }
-
 .entry-content .footnote > p {
-  margin: 0 .2rem 1rem;
+  margin: 0 0.2rem 1rem;
 }
-
 .entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
   position: relative;
-  top: -.4em;
-  font-size: .84em;
+  top: -0.4em;
+  font-size: 0.84em;
   font-weight: bold;
 }
 
@@ -3027,7 +2571,7 @@ footer .comment-box {
   width: 100%;
   max-width: 68rem;
   min-width: 10rem;
-  font-size: .85em;
+  font-size: 0.85em;
   /* 画像 */
   /* 商品概要 */
   /* 商品名 */
@@ -3038,7 +2582,6 @@ footer .comment-box {
   /* ------- リンクボタンここから ------- */
   /* ------------ リンクボタンここまで ------------ */
 }
-
 .booklink-box .booklink-image, .booklink-box .kaerebalink-image, .kaerebalink-box .booklink-image, .kaerebalink-box .kaerebalink-image {
   float: left;
   margin: 0 1.5rem 0 0;
@@ -3047,60 +2590,51 @@ footer .comment-box {
   min-width: 8rem;
   text-align: center;
 }
-
 .booklink-box .booklink-image img, .booklink-box .kaerebalink-image img, .kaerebalink-box .booklink-image img, .kaerebalink-box .kaerebalink-image img {
   margin: 0 auto;
   width: 100%;
   text-align: center;
 }
-
 .booklink-box .booklink-info, .booklink-box .kaerebalink-info, .kaerebalink-box .booklink-info, .kaerebalink-box .kaerebalink-info {
   margin: 0;
   overflow: hidden;
   line-height: 1.2em;
 }
-
 .booklink-box .booklink-name, .booklink-box .kaerebalink-name, .kaerebalink-box .booklink-name, .kaerebalink-box .kaerebalink-name {
   margin-bottom: 2.4rem;
   font-size: 1em;
   line-height: 1.5em;
 }
-
 .booklink-box .booklink-powered-date, .kaerebalink-box .booklink-powered-date {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   font-family: verdana;
-  font-size: .7em;
+  font-size: 0.7em;
   line-height: 1.2em;
 }
-
 .booklink-box .kaerebalink-powered-date, .kaerebalink-box .kaerebalink-powered-date {
   margin-top: 1rem;
-  font-size: .7em;
+  font-size: 0.7em;
   font-family: verdana;
   line-height: 1.2em;
 }
-
 .booklink-box .booklink-detail, .kaerebalink-box .booklink-detail {
   font-size: 1.2rem;
 }
-
 .booklink-box .kaerebalink-detail, .kaerebalink-box .kaerebalink-detail {
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
-
 .booklink-box .booklink-link2, .booklink-box .kaerebalink-link1, .kaerebalink-box .booklink-link2, .kaerebalink-box .kaerebalink-link1 {
   margin-top: 1rem;
   /* ボタン化 */
 }
-
 .booklink-box .booklink-link2 a, .booklink-box .kaerebalink-link1 a, .kaerebalink-box .booklink-link2 a, .kaerebalink-box .kaerebalink-link1 a {
   width: 30%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: inline-block;
-  margin: .5rem .2rem 0 0;
-  padding: 1rem .1rem;
+  margin: 0.5rem 0.2rem 0 0;
+  padding: 1rem 0.1rem;
   text-align: center;
   /*  float                : left; */
   text-decoration: none;
@@ -3108,215 +2642,174 @@ footer .comment-box {
   font-size: 1.2rem;
   color: #fff !important;
 }
-
 .booklink-box .shoplinkrakuten, .kaerebalink-box .shoplinkrakuten {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkrakuten a, .kaerebalink-box .shoplinkrakuten a {
   width: 100%;
   color: #c20004 !important;
   border: 1px solid #c20004 !important;
 }
-
 .booklink-box .shoplinkrakuten a:hover, .kaerebalink-box .shoplinkrakuten a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #c20004;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkrakuten a:active, .kaerebalink-box .shoplinkrakuten a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkrakuten img, .kaerebalink-box .shoplinkrakuten img {
   display: none;
 }
-
 .booklink-box .shoplinkamazon, .kaerebalink-box .shoplinkamazon {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkamazon a, .kaerebalink-box .shoplinkamazon a {
   width: 100%;
   color: #FF9901 !important;
   border: 1px solid #FF9901 !important;
 }
-
 .booklink-box .shoplinkamazon a:hover, .kaerebalink-box .shoplinkamazon a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #FF9901;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkamazon a:active, .kaerebalink-box .shoplinkamazon a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkamazon img, .kaerebalink-box .shoplinkamazon img {
   display: none;
 }
-
 .booklink-box .shoplinkkindle, .kaerebalink-box .shoplinkkindle {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkkindle a, .kaerebalink-box .shoplinkkindle a {
   width: 100%;
   color: #007dcd !important;
   border: 1px solid #007dcd !important;
 }
-
 .booklink-box .shoplinkkindle a:hover, .kaerebalink-box .shoplinkkindle a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #007dcd;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkkindle a:active, .kaerebalink-box .shoplinkkindle a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkkindle img, .kaerebalink-box .shoplinkkindle img {
   display: none;
 }
-
 .booklink-box .shoplinkkakakucom, .kaerebalink-box .shoplinkkakakucom {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkkakakucom a, .kaerebalink-box .shoplinkkakakucom a {
   width: 100%;
   color: #314995 !important;
   border: 1px solid #314995 !important;
 }
-
 .booklink-box .shoplinkkakakucom a:hover, .kaerebalink-box .shoplinkkakakucom a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #314995;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkkakakucom a:active, .kaerebalink-box .shoplinkkakakucom a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkkakakucom img, .kaerebalink-box .shoplinkkakakucom img {
   display: none;
 }
-
 .booklink-box .shoplinkyahoo, .kaerebalink-box .shoplinkyahoo {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkyahoo a, .kaerebalink-box .shoplinkyahoo a {
   width: 100%;
   color: #7b0099 !important;
   border: 1px solid #7b0099 !important;
 }
-
 .booklink-box .shoplinkyahoo a:hover, .kaerebalink-box .shoplinkyahoo a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #7b0099;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkyahoo a:active, .kaerebalink-box .shoplinkyahoo a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkyahoo img, .kaerebalink-box .shoplinkyahoo img {
   display: none;
 }
-
 .booklink-box .shoplinkrakukobo, .kaerebalink-box .shoplinkrakukobo {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkrakukobo a, .kaerebalink-box .shoplinkrakukobo a {
   width: 100%;
   color: #c20004 !important;
   border: 1px solid #c20004 !important;
 }
-
 .booklink-box .shoplinkrakukobo a:hover, .kaerebalink-box .shoplinkrakukobo a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #c20004;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkrakukobo a:active, .kaerebalink-box .shoplinkrakukobo a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkrakukobo img, .kaerebalink-box .shoplinkrakukobo img {
   display: none;
 }
-
 .booklink-box .shoplinkseven, .kaerebalink-box .shoplinkseven {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinkseven a, .kaerebalink-box .shoplinkseven a {
   width: 100%;
   color: #006e54 !important;
   border: 1px solid #006e54 !important;
 }
-
 .booklink-box .shoplinkseven a:hover, .kaerebalink-box .shoplinkseven a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #006e54;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinkseven a:active, .kaerebalink-box .shoplinkseven a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinkseven img, .kaerebalink-box .shoplinkseven img {
   display: none;
 }
-
 .booklink-box .shoplinktoshokan, .kaerebalink-box .shoplinktoshokan {
   margin: 0 auto !important;
 }
-
 .booklink-box .shoplinktoshokan a, .kaerebalink-box .shoplinktoshokan a {
   width: 100%;
   color: #888e7e !important;
   border: 1px solid #888e7e !important;
 }
-
 .booklink-box .shoplinktoshokan a:hover, .kaerebalink-box .shoplinktoshokan a:hover {
   color: #f0f0f0 !important;
   text-shadow: none;
   background: #888e7e;
-  border: 1px solid #050505 !important;
+  border: 1px solid rgb(5, 5, 5) !important;
 }
-
 .booklink-box .shoplinktoshokan a:active, .kaerebalink-box .shoplinktoshokan a:active {
   position: relative;
-  top: .1rem;
+  top: 0.1rem;
 }
-
 .booklink-box .shoplinktoshokan img, .kaerebalink-box .shoplinktoshokan img {
   display: none;
 }
-
 .booklink-box .booklink-footer, .kaerebalink-box .booklink-footer {
   display: none;
 }
@@ -3325,20 +2818,16 @@ footer .comment-box {
   コメント欄に「ブログ主」の表示
   https://www.foxism.jp/entry/2017/06/30/193115
 --------------------------------------*/
-.comment-nickname[data-user-name="yuricks7"]::after {
+.comment-nickname[data-user-name=yuricks7]::after {
   display: inline-block;
-  margin: 0  0 0 .3rem;
-  padding: 0 .3rem;
-  border-radius: .2rem;
-  /* 角丸 */
-  content: 'Author!';
-  /* 表示する言葉 */
-  font-size: .65rem;
+  margin: 0 0 0 0.3rem;
+  padding: 0 0.3rem;
+  border-radius: 0.2rem; /* 角丸 */
+  content: "Author!"; /* 表示する言葉 */
+  font-size: 0.65rem;
   line-height: 1.8;
-  color: #f0f0f0;
-  /* 文字色 */
-  background: #00008b;
-  /* 背景色 */
+  color: #f0f0f0; /* 文字色 */
+  background: #00008b; /* 背景色 */
 }
 
 /*--------------------------------------
@@ -3349,11 +2838,10 @@ footer .comment-box {
   cursor: pointer;
   margin: 0 2rem 2rem;
   padding: 1%;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   background-clip: padding-box;
-  background: #0a21e6;
-  -webkit-box-shadow: 0 0.4rem rgba(10, 33, 230, 0.5);
-          box-shadow: 0 0.4rem rgba(10, 33, 230, 0.5);
+  background: rgb(10, 33, 230);
+  box-shadow: 0 0.4rem rgba(10, 33, 230, 0.5);
   line-height: 2em;
   text-align: center;
   vertical-align: middle;
@@ -3361,22 +2849,17 @@ footer .comment-box {
   font-size: 1.6rem;
   font-weight: bold;
   text-decoration: none !important;
-  -webkit-transition: all .25s;
-  transition: all .25s;
+  transition: all 0.25s;
 }
-
 .leave-comment-title:before {
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   content: "\f009";
   font-family: "blogicon";
 }
-
 .leave-comment-title:hover {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  background: #0a21e6;
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: translateY(0.4rem);
+  background: rgb(10, 33, 230);
+  box-shadow: 0 0 #333;
   color: #f0f0f0;
 }
 
@@ -3389,36 +2872,20 @@ footer .comment-box {
  */
 /* モジュール */
 #stoc-module {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-
 #stoc-module .tracking {
   margin-bottom: 0;
 }
-
 #stoc-module .fixed {
   position: fixed;
 }
-
 #stoc-module .absolute {
   position: absolute;
 }
-
 #stoc-module .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -3427,10 +2894,8 @@ footer .comment-box {
     opacity: 1;
   }
 }
-
 #stoc-module .fade-in {
-  -webkit-animation: fadeIn 300ms;
-          animation: fadeIn 300ms;
+  animation: fadeIn 300ms;
 }
 
 /* コンテンツ */
@@ -3440,71 +2905,57 @@ footer .comment-box {
   /* Shadows */
   /* Shadow covers */
 }
-
 #stoc a:link {
-  color: #050505;
+  color: rgb(5, 5, 5);
   font-style: normal;
   text-decoration: none !important;
 }
-
 #stoc a:visited {
   color: #009130;
 }
-
 #stoc a:hover {
-  color: #0a21e6;
+  color: rgb(10, 33, 230);
   font-weight: bold;
 }
-
 #stoc .shadow {
   background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.17), transparent) top/100% 1.1rem, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.17), transparent) bottom/100% 1.1rem;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
-
 #stoc ol {
   margin: 0;
   padding: 0 0 0 1.2em;
   list-style-type: none;
 }
-
 #stoc > ol {
   padding-left: 0;
 }
-
 #stoc .shadow > ol {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fff), to(transparent)) top/100% 4rem, -webkit-gradient(linear, left top, left bottom, color-stop(70%, #fff), to(transparent)) bottom/100% 4rem;
   background: linear-gradient(#fff 30%, transparent) top/100% 4rem, linear-gradient(#fff 70%, transparent) bottom/100% 4rem;
   background-repeat: no-repeat;
   background-attachment: local;
   overflow-y: hidden;
 }
-
 #stoc a {
   display: block;
-  padding: .2rem .2rem .2rem .6rem;
-  color: #050505 !important;
+  padding: 0.2rem 0.2rem 0.2rem 0.6rem;
+  color: rgb(5, 5, 5) !important;
   text-decoration: none;
 }
-
 #stoc:not(.touch) a:hover {
   background: rgba(0, 0, 0, 0.1);
   text-decoration: underline;
 }
-
 #stoc .active {
   background: rgba(0, 0, 0, 0.07);
 }
-
 #stoc::-webkit-scrollbar-button {
   display: none;
 }
-
 #stoc::-webkit-scrollbar {
-  width: .8rem;
+  width: 0.8rem;
   background: #ececec;
 }
-
 #stoc::-webkit-scrollbar-thumb {
   background: #b1b1b1;
 }
@@ -3518,97 +2969,66 @@ footer .comment-box {
  */
 .header-share-btns .color-share-btns {
   margin: 1em 0 1.2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .header-share-btns .color-share-btns .share-btn-item {
   width: 13.5%;
   height: 2.4rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   color: #fff;
   font-size: 1.6rem;
   text-align: center;
   line-height: 2.4rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .header-share-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: translateY(0.4rem);
-          transform: translateY(0.4rem);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: translateY(0.4rem);
+  box-shadow: 0 0 #333;
 }
-
 .header-share-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .header-share-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .header-share-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .header-share-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .header-share-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .header-share-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .header-share-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .header-share-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .header-share-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .header-share-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .header-share-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
 
 /*--------------------------------------
@@ -3617,242 +3037,168 @@ footer .comment-box {
 .hatena-module-body .follow-blog-btns {
   /* 微調整 */
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0.8em auto;
   max-width: 70%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns a {
   padding: 0 !important;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item {
   overflow: hidden;
   width: 3.6rem;
   height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: #fff;
   font-size: 1.2em;
   text-align: center;
   line-height: 3.6rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item img {
   margin: 0;
-  padding: 0 0 .4rem;
+  padding: 0 0 0.4rem;
   vertical-align: middle;
   border-radius: 50%;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 0 #333;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .hatena-module-body .follow-blog-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
-
 .hatena-module-body .follow-blog-btns .hateblo i {
   font-size: 3.6rem;
   position: relative !important;
-  top: .4rem !important;
+  top: 0.4rem !important;
 }
-
 .hatena-module-body .follow-account-btns {
   /* 微調整 */
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0.8em auto;
   max-width: 80%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns a {
   padding: 0 !important;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item {
   overflow: hidden;
   width: 3.6rem;
   height: 3.6rem;
   /* 円形にする */
   border-radius: 50%;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   color: #fff;
   font-size: 1.2em;
   text-align: center;
   line-height: 3.6rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item img {
   margin: 0;
-  padding: 0 0 .4rem;
+  padding: 0 0 0.4rem;
   vertical-align: middle;
   border-radius: 50%;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .share-btn-item:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-  -webkit-box-shadow: 0 0 #333;
-          box-shadow: 0 0 #333;
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 0 #333;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .tumblr {
   background: #35465c;
-  -webkit-box-shadow: 0 0.4rem #010101;
-          box-shadow: 0 0.4rem #010101;
+  box-shadow: 0 0.4rem #010101;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .facebook {
   background: #1778F2;
-  -webkit-box-shadow: 0 0.4rem #1366ce;
-          box-shadow: 0 0.4rem #1366ce;
+  box-shadow: 0 0.4rem #1366ce;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .twitter {
   background: #1BA1F3;
-  -webkit-box-shadow: 0 0.4rem #1280c3;
-          box-shadow: 0 0.4rem #1280c3;
+  box-shadow: 0 0.4rem #1280c3;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .hatebu {
   background: #00A4DE;
-  -webkit-box-shadow: 0 0.4rem #038ebf;
-          box-shadow: 0 0.4rem #038ebf;
+  box-shadow: 0 0.4rem #038ebf;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .pocket {
   background: #EF4155;
-  -webkit-box-shadow: 0 0.4rem #c3293b;
-          box-shadow: 0 0.4rem #c3293b;
+  box-shadow: 0 0.4rem #c3293b;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .feedly {
-  -webkit-box-shadow: 0 0.4rem #176b2c;
-          box-shadow: 0 0.4rem #176b2c;
+  box-shadow: 0 0.4rem #176b2c;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .rss {
   background: #f26522;
-  -webkit-box-shadow: 0 0.4rem #9e531d;
-          box-shadow: 0 0.4rem #9e531d;
+  box-shadow: 0 0.4rem #9e531d;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .hateblo {
   background: #dfdfdf;
-  -webkit-box-shadow: 0 0.4rem #515151;
-          box-shadow: 0 0.4rem #515151;
+  box-shadow: 0 0.4rem #515151;
   color: #000;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .github {
   background: #fafafa;
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
   color: #333;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .amazon {
   background: #ff9900;
-  -webkit-box-shadow: 0 0.4rem #8a5300;
-          box-shadow: 0 0.4rem #8a5300;
+  box-shadow: 0 0.4rem #8a5300;
 }
-
 .hatena-module-body .follow-account-btns .color-share-btns .coconala {
-  -webkit-box-shadow: 0 0.4rem #989898;
-          box-shadow: 0 0.4rem #989898;
+  box-shadow: 0 0.4rem #989898;
 }
-
 .hatena-module-body .follow-account-btns .github i {
   font-size: 4.1rem;
   position: relative !important;
-  top: -.2rem !important;
-}
-/*# sourceMappingURL=style.css.map */
+  top: -0.2rem !important;
+}/*# sourceMappingURL=style.css.map */

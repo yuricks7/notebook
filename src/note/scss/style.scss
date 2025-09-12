@@ -863,11 +863,9 @@ footer {
   .hatena-fotolife {
     margin: 1.5rem auto 3rem;
 
-    max-width : 300px !important;
-    max-height: 500px !important;
+    max-width : 400px;
+    max-height: 800px;
     height: auto;
-    // max-width: 10rem;
-    // min-width: 10rem;
     overflow-x: scroll; // 効かないかも
     -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
 
