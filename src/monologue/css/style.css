@@ -16,78 +16,66 @@
 --------------------------------------*/
 .entry-content {
   /*--------------------------------------
-    フォント
-  --------------------------------------*/
-  font-family: 'Kosugi Maru';
+     フォント
+   --------------------------------------*/
+  font-family: "Kosugi Maru";
   font-size: 15px;
   line-height: 2.3em;
   color: #000000;
   /*--------------------------------------
-    文字サイズいろいろ
-  --------------------------------------*/
+     文字サイズいろいろ
+   --------------------------------------*/
   /*
-  【CSS】ブログの文章を下線だけ蛍光ペンを引いたように装飾する方法 | AffiliateLAB
-  https://gucciz03.com/keikoupen-5423
-  */
+   【CSS】ブログの文章を下線だけ蛍光ペンを引いたように装飾する方法 | AffiliateLAB
+   https://gucciz03.com/keikoupen-5423
+   */
   /* 文中の文字 */
   /*--------------------------------------
-    テキストボックス
-  --------------------------------------*/
+     テキストボックス
+   --------------------------------------*/
   /* カード形式リンク */
   /*--------------------------------------
-    ヨメレバ・カエレバ
-  --------------------------------------*/
+     ヨメレバ・カエレバ
+   --------------------------------------*/
   /* 色の追加 */
 }
-
 .entry-content b {
   font-weight: bold;
 }
-
 .entry-content strong {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(40%, #ffff99));
   background: linear-gradient(transparent 60%, #ffff99 40%);
   font-weight: bolder;
 }
-
 .entry-content .red {
   color: #d32f2f;
 }
-
 .entry-content .blue {
   color: darkblue;
 }
-
 .entry-content .green {
   color: #009130;
 }
-
 .entry-content .note {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
   color: #d32f2f;
 }
-
 .entry-content .additional-note {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
   color: #d32f2f;
   font-weight: bold;
 }
-
 .entry-content .small-chars {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
 }
-
 .entry-content .small-chars code {
   vertical-align: middle !important;
 }
-
 .entry-content .large-chars {
   font-size: 1.2em;
 }
-
 .entry-content .text-box-dashed {
   margin: 10px;
   padding: 10px;
@@ -95,12 +83,10 @@
   border: 1px dashed;
   border-radius: 5px;
 }
-
 .entry-content img[alt] {
   color: rgba(5, 5, 5, 0.5);
-  font-size: .8em;
+  font-size: 0.8em;
 }
-
 .entry-content .hatena-fotolife {
   margin: 15px auto;
   width: 100%;
@@ -108,59 +94,47 @@
   max-width: 680px;
   min-width: 100px;
 }
-
 .entry-content .hatena-fotolife:hover {
   opacity: 0.5;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 .entry-content iframe {
   margin-top: 20px !important;
   margin-bottom: 0 !important;
   min-width: 10rem;
 }
-
 .entry-content iframe:hover {
   opacity: 0.7;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 .entry-content iframe + a {
   display: block;
   margin-top: 0;
   width: 100%;
   min-width: 10rem;
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 1.6em;
   text-decoration: none;
 }
-
 .entry-content iframe + a:before {
-  margin-left: .4rem;
-  margin-right: .8rem;
+  margin-left: 0.4rem;
+  margin-right: 0.8rem;
   content: ">>";
   font-weight: bold;
 }
-
 .entry-content .shoplinkrakukobo a {
   background-color: #c20004 !important;
-  border: 1px solid #c20004 !important;
+  border: 1px solid #c20004 !important;
 }
-
 .entry-content .shoplinkseven a {
   background-color: #006e54 !important;
-  border: 1px solid #006e54 !important;
+  border: 1px solid #006e54 !important;
 }
-
 .entry-content .shoplinktoshokan a {
   background-color: #888e7e !important;
-  border: 1px solid #888e7e !important;
+  border: 1px solid #888e7e !important;
 }
-
 .entry-content .shoplinkkakakucom a {
   background-color: #051D93 !important;
-  border: 1px solid #051D93 !important;
-}
-/*# sourceMappingURL=style.css.map */
+  border: 1px solid #051D93 !important;
+}/*# sourceMappingURL=style.css.map */
