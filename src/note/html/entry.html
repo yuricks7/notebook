@@ -435,66 +435,64 @@
  *  はてなブログで使えるアイコンWebフォントの一覧と使い方まとめ - しろかい！
  *  https://shirokai.hatenablog.com/entry/hatenablog-icon-webfont
 ************************************************ -->
-                            <div class="header-share-btns">
-                              <div class="color-share-btns">
-                                <!-- Pocket -->
-                                <a class="share-btn-item pocket"
-                                  title="あとで読む"
-                                  href="http://getpocket.com/edit?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-                                  target="_blank">
+<div class="header-share-btns">
+  <div class="color-share-btns">
+    <!-- Pocket -->
+    <a class="share-btn-item pocket"
+      title="あとで読む"
+      href="http://getpocket.com/edit?url={URLEncodedPermalink}"
+      target="_blank">
       <i class="fa fa-get-pocket"></i>
     </a>
-                                <!-- facebook -->
-                                <a class="share-btn-item facebook"
-                                  href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-                                  title="Facebookでシェア"
-                                  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
-                                  target="_blank">
+    <!-- facebook -->
+    <a class="share-btn-item facebook"
+      href="http://www.facebook.com/sharer.php?u={URLEncodedPermalink}"
+      title="Facebookでシェア"
+      onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+      target="_blank">
       <i class="blogicon-facebook lg"></i>
     </a>
-                                <!-- Twitter -->
-                                <a class="share-btn-item twitter"
-                                  title="twitterでシェア"
-                                  href="http://twitter.com/intent/tweet?text=【Git勉強中】ブランチの移動を使い分けたい https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-                                  target="_blank">
-      <i class="blogicon-twitter lg"></i>
+    <!-- 𝕏（旧Twitter） -->
+    <a class="share-btn-item twitter"
+      title="twitterでシェア"
+      href="http://x.com/intent/tweet?text={URLEncodedTitle} {URLEncodedPermalink}h"
+      target="_blank">
+    𝕏
     </a>
-                                <!-- はてブ -->
-                                <a class="share-btn-item hatebu"
-                                  title="はてなブックマークに追加"
-                                  href="http://b.hatena.ne.jp/entry/https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-                                  data-hatena-bookmark-title="【Git勉強中】ブランチの移動を使い分けたい"
-                                  data-hatena-bookmark-layout="simple"
-                                  target="_blank">
+    <!-- はてブ -->
+    <a class="share-btn-item hatebu"
+      title="はてなブックマークに追加"
+      href="http://b.hatena.ne.jp/entry/{URLEncodedPermalink}"
+      data-hatena-bookmark-title="{URLEncodedTitle}"
+      data-hatena-bookmark-layout="simple"
+      target="_blank">
       <i class="blogicon-bookmark lg"></i>
     </a>
-                                <!-- Tumblr -->
-                                <a class="share-btn-item tumblr"
-                                  title="Tumblrでシェア"
-                                  href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=【Git勉強中】ブランチの移動を使い分けたい&amp;canonicalUrl=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-                                  target="_blank">
+    <!-- Tumblr -->
+    <a class="share-btn-item tumblr"
+      title="Tumblrでシェア"
+      href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={URLEncodedTitle}&amp;canonicalUrl={URLEncodedPermalink}"
+      target="_blank">
       <i class="fa fa-tumblr"
         aria-hidden="true"></i>
     </a>
-                                <!-- RSS -->
-                                <a class="share-btn-item rss"
-                                  href="//yuru-wota.hateblo.jp/feed"
-                                  target="_blank"
-                                  title="RSSで更新情報をフォロー"
-                                  rel="nofollow noopener noreferrer">
+    <!-- RSS -->
+    <a class="share-btn-item rss"
+      href="//yuru-wota.hateblo.jp/feed"
+      target="_blank"
+      title="RSSで更新情報をフォロー"
+      rel="nofollow noopener noreferrer">
       <i class="blogicon-rss lg"></i>
     </a>
-                                <!-- 読者登録 -->
-                                <a class="share-btn-item hateblo"
-                                  title="読者登録してみる"
-                                  href="//blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
-                                  target="_blank">
+    <!-- 読者登録 -->
+    <a class="share-btn-item hateblo"
+      title="読者登録してみる"
+      href="//blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
+      target="_blank">
       <i class="blogicon-hatenablog lg"></i>
     </a>
-
-                              </div>
-
-                            </div>
+  </div>
+</div>
 
                           </div>
 
@@ -1229,115 +1227,116 @@ clasp <span class="synSpecial">-v</span>
 
     <div class="entry-footer-html">
 
-      <!-- *********************************************
-      * サイトマップから最新の更新日を取得
-      * 【参考】
-      * 【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
-      * https://account-it-dentist.hatenablog.com/entry/blog-custom003
-      ************************************************ -->
-      <!-- jQuery (3.3.1)  -->
-      <script type="module" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-      <!-- main -->
-      <script type="module" src="../../shared/js/body/bodyFooter/index.js"></script>
+<!-- *********************************************
+* サイトマップから最新の更新日を取得
+* 【参考】
+* 【無料はてなブログ】【カスタマイズ】更新日の表示【Minimalism】【Brooklyn】【反映されない】【時刻を消す】 - 低所得の青色申告個人事業主のブログ
+* https://account-it-dentist.hatenablog.com/entry/blog-custom003
+************************************************ -->
+<!-- jQuery (3.3.1)  -->
+<script type="module" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- main -->
+<script type="module" src="../../shared/js/body/bodyFooter/index.js"></script>
 
-      <!-- <script type="module">
-        import { main } from "../../shared/js/body/bodyFooter/modifyDate.js";
-        (main($))(jQuery);
-      </script> -->
+<!-- <script type="module">
+  import { main } from "../../shared/js/body/bodyFooter/modifyDate.js";
+  (main($))(jQuery);
+</script> -->
 
-      <!-- *********************************************
-      * - コードブロックに行番号を追加
-      * 【参考】
-      * 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
-      * https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
+<!-- *********************************************
+* - コードブロックに行番号を追加
+* 【参考】
+* 【はてなブログ】コード部分に行番号を表示するカスタマイズ - そういうのがいいブログ
+* https://souiunogaii.hatenablog.com/entry/hatenablog-codeline
 
-      * - 目次（クリックで表示/非表示）
-      * 【参考】
-      * 『目次』をカスタム！【表示】【隠す】機能を追加する方法 - 人生RPG
-      * https://www.life-is-rpg.com/entry/2018/03/16/110000
+* - 目次（クリックで表示/非表示）
+* 【参考】
+* 『目次』をカスタム！【表示】【隠す】機能を追加する方法 - 人生RPG
+* https://www.life-is-rpg.com/entry/2018/03/16/110000
 
-      ************************************************ -->
-      <!-- main -->
-      <script type="module" src="../js/body/bodyFooter/index.js"></script>
+************************************************ -->
+<!-- main -->
+<script type="module" src="../js/body/bodyFooter/index.js"></script>
 
-      <!-- *********************************************
-      * シェアボタン
-      *
-      * - ボタン
-      *  はてなブログのSNSボタンをおしゃれにカスタマイズする方法｜パソコン・ブログガイド
-      *  https://www.gipsyjazznyumon.com/hatenablog-social-media-buttons-custmize/
-      *
-      * - はてなアイコン
-      *  はてなブログで使えるアイコンWebフォントの一覧と使い方まとめ - しろかい！
-      *  https://shirokai.hatenablog.com/entry/hatenablog-icon-webfont
-      ************************************************ -->
-      <div class="footer-share-btns">
-        <p>記事をシェア</p>
-        <div class="color-share-btns">
-          <!-- Pocket -->
-          <a class="share-btn-item pocket"
-            title="あとで読む"
-            href="http://getpocket.com/edit?url=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-            target="_blank">
-            <i class="fa fa-get-pocket"></i>
-          </a>
-          <!-- facebook -->
-          <a class="share-btn-item facebook"
-            href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-            title="Facebookでシェア"
-            onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
-            target="_blank">
-            <i class="blogicon-facebook lg"></i>
-          </a>
-          <!-- Twitter -->
-          <a class="share-btn-item twitter"
-            title="twitterでシェア"
-            href="http://twitter.com/intent/tweet?text=【Git勉強中】ブランチの移動を使い分けたい https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-            target="_blank">
-            <i class="blogicon-twitter lg"></i>
-          </a>
-          <!-- はてブ -->
-          <a class="share-btn-item hatebu"
-            title="はてなブックマークに追加"
-            href="http://b.hatena.ne.jp/entry/https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-            data-hatena-bookmark-title="【Git勉強中】ブランチの移動を使い分けたい"
-            data-hatena-bookmark-layout="simple"
-            target="_blank">
-            <i class="blogicon-bookmark lg"></i>
-          </a>
-          <!-- Tumblr -->
-          <a class="share-btn-item tumblr"
-            title="Tumblrでシェア"
-            href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=【Git勉強中】ブランチの移動を使い分けたい&amp;canonicalUrl=https%3A%2F%2Fwww.yuru-wota.com%2Fentry%2FGit%2Fhow-to-move-branch"
-            target="_blank">
-            <i class="fa fa-tumblr" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
+<!-- *********************************************
+* シェアボタン
+*
+* - ボタン
+*  はてなブログのSNSボタンをおしゃれにカスタマイズする方法｜パソコン・ブログガイド
+*  https://www.gipsyjazznyumon.com/hatenablog-social-media-buttons-custmize/
+*
+* - はてなアイコン
+*  はてなブログで使えるアイコンWebフォントの一覧と使い方まとめ - しろかい！
+*  https://shirokai.hatenablog.com/entry/hatenablog-icon-webfont
+************************************************ -->
+<div class="footer-share-btns">
+  <p>記事をシェア</p>
+  <div class="color-share-btns">
+    <!-- Pocket -->
+    <a class="share-btn-item pocket"
+      title="あとで読む"
+      href="http://getpocket.com/edit?url={URLEncodedPermalink}"
+      target="_blank">
+      <i class="fa fa-get-pocket"></i>
+    </a>
+    <!-- facebook -->
+    <a class="share-btn-item facebook"
+      href="https://www.facebook.com/sharer.php?u={URLEncodedPermalink}"
+      title="Facebookでシェア"
+      onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+      target="_blank">
+      <i class="blogicon-facebook lg"></i>
+    </a>
+    <!-- 𝕏（旧Twitter） -->
+    <a class="share-btn-item twitter"
+        href="https://twitter.com/intent/tweet?text={URLEncodedTitle} - {BlogTitle} {URLEncodedPermalink}"
+        title="𝕏でシェア"
+        target="_blank">
+      𝕏
+    </a>
+    <!-- はてブ -->
+    <a class="share-btn-item hatebu"
+      title="はてなブックマークに追加"
+      href="https://b.hatena.ne.jp/entry/{URLEncodedPermalink}"
+      data-hatena-bookmark-title="{Title}"
+      data-hatena-bookmark-layout="simple"
+      target="_blank">
+      <i class="blogicon-bookmark lg"></i>
+    </a>
 
-      <div class="footer-subscription-btns">
-        <p>ブログを購読する</p>
-        <div class="color-share-btns">
-          <!-- RSS -->
-          <a class="share-btn-item rss"
-            href="//yuru-wota.hateblo.jp/feed"
-            target="_blank"
-            title="RSSで更新情報をフォロー"
-            rel="nofollow noopener noreferrer">
-            <i class="blogicon-rss lg"></i>
-          </a>
-          <!-- 読者登録 -->
-          <a class="share-btn-item hateblo"
-            title="読者登録してみる"
-            href="//blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
-            target="_blank">
-            <i class="blogicon-hatenablog lg"></i>
-          </a>
-        </div><!-- color-share-btns -->
-      </div><!-- footer-subscription-btns -->
+    <!-- Tumblr -->
+    <a class="share-btn-item tumblr"
+      title="Tumblrでシェア"
+      href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={URLEncodedTitle}&amp;canonicalUrl={URLEncodedPermalink}"
+      target="_blank">
+      <i class="fa fa-tumblr" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
 
-    </div><!-- entry-footer-html -->
-  </div><!-- customized-footer -->
+<div class="footer-subscription-btns">
+  <p>ブログを購読する</p>
+  <div class="color-share-btns">
+    <!-- RSS -->
+    <a class="share-btn-item rss"
+      href="//yuru-wota.hateblo.jp/feed"
+      target="_blank"
+      title="RSSで更新情報をフォロー"
+      rel="nofollow noopener noreferrer">
+      <i class="blogicon-rss lg"></i>
+    </a>
+    <!-- 読者登録 -->
+    <a class="share-btn-item hateblo"
+      title="読者登録してみる"
+      href="//blog.hatena.ne.jp/yuricks7/yuru-wota.hateblo.jp/subscribe"
+      target="_blank">
+      <i class="blogicon-hatenablog lg"></i>
+    </a>
+  </div><!-- color-share-btns -->
+</div><!-- footer-subscription-btns -->
+
+  </div><!-- entry-footer-html -->
+</div><!-- customized-footer -->
 
   <div class="comment-box">
     <ul class="comment">
@@ -2442,6 +2441,14 @@ clasp <span class="synSpecial">-v</span>
     <script type="text/javascript"
       src="https://b.st-hatena.com/js/bookmark_button.js"
       charset="utf-8" async="async"></script>
+
+    <!-- 記事下のシェアボタン用 -->
+    <script>
+      var myFooter = document.getElementById("my-footer");
+      var temp = myFooter.cloneNode(true);
+      myFooter.parentNode.removeChild(myFooter);
+      document.getElementsByClassName("entry-content")[0].appendChild(temp);
+    </script>
 
     <!-- jQuery（はてな用） -->
     <script type="text/javascript"

@@ -1288,8 +1288,9 @@ header.archive-heading { /* 親セレクタ（=記事一覧ページ限定） */
   box-shadow: 0 0.4rem #1366ce;
 }
 .entry-footer-html .footer-share-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .entry-footer-html .footer-share-btns .color-share-btns .hatebu {
   background: #00A4DE;
@@ -1362,8 +1363,9 @@ header.archive-heading { /* 親セレクタ（=記事一覧ページ限定） */
   box-shadow: 0 0.4rem #1366ce;
 }
 .entry-footer-html .footer-subscription-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .entry-footer-html .footer-subscription-btns .color-share-btns .hatebu {
   background: #00A4DE;
@@ -1595,8 +1597,9 @@ footer .comment-box {
   box-shadow: 0 0.4rem #1366ce;
 }
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .hatena-module .hatena-module-body .follow-blog-btns .color-share-btns .hatebu {
   background: #00A4DE;
@@ -1688,8 +1691,9 @@ footer .comment-box {
   box-shadow: 0 0.4rem #1366ce;
 }
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .hatena-module .hatena-module-body .follow-account-btns .color-share-btns .hatebu {
   background: #00A4DE;
@@ -2995,8 +2999,9 @@ footer .comment-box {
   box-shadow: 0 0.4rem #1366ce;
 }
 .header-share-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .header-share-btns .color-share-btns .hatebu {
   background: #00A4DE;
@@ -3078,8 +3083,9 @@ footer .comment-box {
   box-shadow: 0 0.4rem #1366ce;
 }
 .hatena-module-body .follow-blog-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .hatena-module-body .follow-blog-btns .color-share-btns .hatebu {
   background: #00A4DE;
@@ -3162,8 +3168,9 @@ footer .comment-box {
   box-shadow: 0 0.4rem #1366ce;
 }
 .hatena-module-body .follow-account-btns .color-share-btns .twitter {
-  background: #1BA1F3;
-  box-shadow: 0 0.4rem #1280c3;
+  background: #0F1419;
+  box-shadow: 0 0.4rem #303030;
+  text-decoration: none;
 }
 .hatena-module-body .follow-account-btns .color-share-btns .hatebu {
   background: #00A4DE;
