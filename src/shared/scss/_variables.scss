@@ -412,11 +412,6 @@ $side-margin  :  1rem;
     text-decoration: none;
   }
 
-  // .twitter {
-  //   @include iconFont_($body  : #1BA1F3,
-  //                      $shadow: #1280c3);
-  // }
-
   .hatebu {
     @include iconFont_($body  : #00A4DE,
                        $shadow: #038ebf);
