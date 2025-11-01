@@ -1268,6 +1268,9 @@ clasp <span class="synSpecial">-v</span>
 * - はてなアイコン
 *  はてなブログで使えるアイコンWebフォントの一覧と使い方まとめ - しろかい！
 *  https://shirokai.hatenablog.com/entry/hatenablog-icon-webfont
+*
+* - シェアボタンに付けるリンク
+*   https://ruindig.hatenablog.jp/entry/customize-share-button
 ************************************************ -->
 <div class="footer-share-btns">
   <p>記事をシェア</p>
@@ -2443,14 +2446,6 @@ clasp <span class="synSpecial">-v</span>
     <script type="text/javascript"
       src="https://b.st-hatena.com/js/bookmark_button.js"
       charset="utf-8" async="async"></script>
-
-    <!-- 記事下のシェアボタン用 -->
-    <script>
-      var myFooter = document.getElementById("my-footer");
-      var temp = myFooter.cloneNode(true);
-      myFooter.parentNode.removeChild(myFooter);
-      document.getElementsByClassName("entry-content")[0].appendChild(temp);
-    </script>
 
     <!-- jQuery（はてな用） -->
     <script type="text/javascript"
