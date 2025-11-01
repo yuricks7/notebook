@@ -15,23 +15,23 @@
   パーツ
 --------------------------------------*/
 body {
-  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "M PLUS 1p", "Sawarabi Mincho", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
 }
 
 .hatena-module-body {
-  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "M PLUS 1p", "Sawarabi Mincho", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
 }
 
 /* プロフィール */
 .profile-description {
-  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "M PLUS 1p", "Sawarabi Mincho", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
 }
 
 /*--------------------------------------
   本文のフォント
 --------------------------------------*/
 .entry-content {
-  font-family: 'M PLUS 1p', 'Sawarabi Mincho', 'Noto Sans CJK JP Regular', 'Meiryo UI', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif' !important;
+  font-family: "M PLUS 1p", "Sawarabi Mincho", "Noto Sans CJK JP Regular", "Meiryo UI", "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif" !important;
   font-size: 17px;
   line-height: 1.8em;
   /* 文中の文字 */
@@ -49,91 +49,73 @@ body {
     テーブルの表示
   --------------------------------------*/
 }
-
 .entry-content .red {
   color: #d32f2f;
 }
-
 .entry-content .blue {
   color: darkblue;
 }
-
 .entry-content .green {
   color: #009130;
 }
-
 .entry-content .note {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
   color: #d32f2f;
 }
-
 .entry-content .additional-note {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
   color: #d32f2f;
   font-weight: bold;
 }
-
 .entry-content .small-chars {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 120%;
 }
-
 .entry-content .small-chars code {
   vertical-align: middle !important;
 }
-
 .entry-content .large-chars {
   font-size: 1.2em;
 }
-
 .entry-content .hatena-fotolife:hover {
   opacity: 0.7;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 .entry-content iframe {
   margin-top: 20px !important;
   margin-bottom: 0 !important;
   min-width: 10rem;
 }
-
 .entry-content iframe:hover {
   opacity: 0.7;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 .entry-content iframe + a {
   display: block;
   margin-top: 0;
   width: 100%;
   min-width: 10rem;
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 1.6em;
   text-decoration: none;
 }
-
 .entry-content iframe + a:before {
-  margin-left: .4rem;
-  margin-right: .8rem;
+  margin-left: 0.4rem;
+  margin-right: 0.8rem;
   content: ">>";
   font-weight: bold;
 }
-
 .entry-content .toc-switch {
   display: inline-block;
   cursor: pointer;
-  color: #0a21e6;
-  font-size: .9em;
+  color: rgb(10, 33, 230);
+  font-size: 0.9em;
 }
-
 .entry-content .toc-switch:hover {
   font-weight: bold;
 }
-
 .entry-content .table-of-contents {
   /* 外枠 */
   margin: 4px 10px 0;
@@ -142,82 +124,66 @@ body {
   border: dotted #1541a1 1.6px;
   /* 中身 */
 }
-
 .entry-content .table-of-contents:before {
-  content: "";
-  /* スクリプトで文字が追加されてしまうので消しておく */
+  content: ""; /* スクリプトで文字が追加されてしまうので消しておく */
 }
-
 .entry-content .table-of-contents li {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  font-size: .98em;
+  font-size: 0.98em;
 }
-
 .entry-content .table-of-contents ul, .entry-content .table-of-contents ol {
   margin: 0 !important;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
 }
-
 .entry-content table {
   /*
-      はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
-      https://qiita.com/ymeeto/items/f165576f49f37e28e253
-    */
+    はみ出たtableを横スクロールで滑らかに表示するCSS - Qiita
+    https://qiita.com/ymeeto/items/f165576f49f37e28e253
+  */
   display: block;
   /* 横スクロール */
   overflow-x: scroll;
   width: auto;
   max-width: 980px;
-  white-space: nowrap;
-  /* 自動改行をoff */
-  -webkit-overflow-scrolling: touch;
-  /* スマホでも滑らかに */
+  white-space: nowrap; /* 自動改行をoff */
+  -webkit-overflow-scrolling: touch; /* スマホでも滑らかに */
   /* 外枠 */
   border-radius: 3px;
   border: 2px solid #afb8ca;
-  font-size: .95em;
+  font-size: 0.95em;
 }
-
 .entry-content th {
   border: none !important;
 }
-
 .entry-content th:nth-child(2) {
   border-left: 2px solid #afb8ca !important;
 }
-
 .entry-content th:nth-child(3) {
   border-right: 2px solid #afb8ca !important;
 }
-
 .entry-content tr {
   border-bottom: 1px solid #afb8ca;
 }
-
 .entry-content td:nth-child(1) {
   text-align: center;
 }
-
 .entry-content td:nth-child(2) {
   border-left: 2px solid #afb8ca !important;
 }
-
 .entry-content td:nth-child(3) {
   border-right: 2px solid #afb8ca !important;
 }
-
 .entry-content .footnote {
   margin: 0;
   padding: 6px;
 }
-
 .entry-content .footnote .footnote-number, .entry-content .footnote .footnote-delimiter {
   position: relative;
-  top: -.4em;
-  font-size: .84em;
+  top: -0.4em;
+  font-size: 0.84em;
   font-weight: bold;
 }
 
@@ -226,5 +192,4 @@ body {
   .entry-content {
     font-size: 14px !important;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
