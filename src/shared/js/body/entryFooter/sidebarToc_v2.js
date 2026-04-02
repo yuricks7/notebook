@@ -7,88 +7,187 @@
  * https://gist.github.com/twilyze/30809fa76691983312dced621eb1040a
  */
 const index = () => {
-
   // -------------- ↓設定ここから↓ --------------
-  const PAGE_CATEGORIES = [{
-    class  : "page-entry",
-    title  : "目次",
-    display: true,
-  }, {
-    class  : "page-index",
-    title  : "このページの記事一覧",
-    display: true,
-    canListUpPages: true,
-  }, {
-    class  : "page-archive",
-    title  : "このカテゴリーの記事一覧",
-    display: true,
-    canListUpPages: true,
-  }, {
-    class  : "page-static_page",
-    title  : "entry-title",
-    display: false,
-  }];
+  class Page {
+    constructor() {
+      this.categories = [{
+        class  : "page-entry",
+        title  : "目次",
+        display: true,
+      }, {
+        class  : "page-index",
+        title  : "このページの記事一覧",
+        display: true,
+        canListUpPages: true,
+      }, {
+        class  : "page-archive",
+        title  : "このカテゴリーの記事一覧",
+        display: true,
+        canListUpPages: true,
+      }, {
+        class  : "page-static_page",
+        title  : "entry-title",
+        display: false,
+      }];
+    }
 
-  // メディアクエリ
-  const MEDIA_QUERY = {
-    canSet        : false,
-    queryToDisplay: "(min-width: 1138px)",
-  };
-
-  // モジュールのサイズ、位置
-  const MODULE_SIZE = {
-    marginTop   : 10,
-    marginBottom: 50,
-    maxHeight: 0, // モジュールのサイズ（0で設定off）
-    fixedTop : 0, // "最終手段"
-  };
-
-  // 出力する見出し
-  const HEADLINE = {
-    tag    : "ol",
-    min    : 1,
-    sources: ["h3", "h4", "h5", "h6"],
-  };
-
-  // スクロール
-  const SCROLL = {
-    reactionTime:  10,
-    timeForPc   : 200,
-    timeForTouch: 200,
-    canShowBarShadow: true,
-  };
-
-  // 追尾
-  const FOLLOW = {
-    switchPoint: 40, // 現在地を切り替えるポイント
-    canScrollOverBottom: true,
-    stop: {
-      whenNoSideBar   : true,
-      whenEntrySmaller: true,
+    getCategories() {
+      return this.categories;
     }
   }
 
+  class Css {
+    constructor() {
+      this.mediaQuery = {
+        canSet        : false,
+        queryToDisplay: "(min-width: 1138px)",
+      };
+
+      this.moduleSize = {
+        marginTop   : 10,
+        marginBottom: 50,
+        maxHeight: 0, // モジュールのサイズ（0で設定off）
+        fixedTop : 0, // "最終手段"
+      }
+
+      this.positions = {
+        static  : "static",
+        fixed   : "fixed",
+        absolute: "absolute",
+        sticky  : "sticky",
+      };
+
+      this.heightProps = {
+        margin  : [
+          "marginTop",
+          "marginBottom"
+        ],
+        padding: [
+          "paddingTop",
+          "borderTopWidth",
+          "paddingBottom",
+          "borderBottomWidth"
+        ],
+      };
+    }
+
+    getPositionValues() {
+      return this.positions;
+    }
+
+    getHeightProps() {
+      return this.heightProps;
+    }
+
+    /**
+     * 単位（px）を追加
+     *
+     * @param {number} num 数値
+     *
+     * @return {string} "●px"
+     */
+    addPixelUnit(num) {
+      return `${num}px`;
+    }
+  }
+
+  class HtmlElement {
+    constructor() {
+      this.headLine = {
+        tag    : "ol",
+        min    : 1,
+        sources: ["h3", "h4", "h5", "h6"],
+      };
+    }
+
+    getHeadlines() {
+      return this.headLine;
+    }
+
+    /**
+     * divブロックを追加
+     *
+     * @return {Element} 新しいElement
+     */
+    addDivBlock() {
+      return doc.createElement("div");
+    }
+
+    /**
+     * 特殊文字をエスケープシーケンスに置き換える
+     *
+     * @param {string} match - 検索条件
+     *
+     * @returns {string} 記号を表すコード
+     */
+    symbolsToEscapeSequense(match) {
+      const replaceObj = {
+        "&": "&amp;",
+        "'": "&#39;",
+        '"': "&quot;",
+        "<": "&lt;",
+        ">": "&gt;",
+      };
+
+      return replaceObj[match];
+    }
+  }
+
+  class Time {
+    constructor() {
+      this.scroll = {
+        reaction      :  10,
+        forPc         : 200,
+        forTouchDevice: 200,
+        containsBarShadow: true,
+      };
+
+      // 待ち時間
+      this.delay = {
+        canWaitDomLoading : true,
+        afterDomLoadeding :    0,
+        afterPageLoaded: 1000,
+      };
+    }
+  }
+
+  class Tracking {
+    constructor() {
+      this.pointWhereSwitch = 40;
+      this.canScrollPastEntryBottom = true;
+      this.canStop = {
+        whenNoSideBar:    true,
+        whenEntrySmaller: true,
+      };
+    }
+  }
+
+  class MouseEvent {
+    constructor() {
+      this.updateAterClick = {
+      selectors: [],
+      delayTime: 2000,
+      };
+
+      this.touch = {
+        device   : "ontouchstart" in window,
+        isDisable: false,
+      }
+    }
+  }
+
+  const page = new Page();
+  const css = new Css();
+  const positionValues = css.getPositionValues();
+  const heightProps    = css.getHeightProps();
+  const htmlElement = new HtmlElement();
+  const headLines = htmlElement.getHeadlines();
+  const time = new Time();
+  const tracking = new Tracking();
+  const mouseEvent = new MouseEvent();
+
   const CAN_LINK_MODULE_TITLE    = false;
   const CAN_RECORD_CLICK_HISTORY = true;
-
-  // 待ち時間
-  const DELAY = {
-    canWaitDomLoad : true,
-    afterDomLoaded :    0,
-    afterPageLoaded: 1000,
-  };
-
-  // クリック
-  const UPDATE_AFTER_CLICK = {
-    selectors: [],
-    delayTime: 2000,
-  };
-
-  // タッチ
-  const TOUCH = {
-    device   : "ontouchstart" in window,
-    isDisable: false,
-  };
 
   // その他
   const GLOBAL_HEADERS = ["#globalheader-container"]; // はてな仕様
@@ -100,124 +199,90 @@ const index = () => {
   const win = window;
   const doc = document;
 
-  const stocIds = {
-    toc     : "stoc",
-    module  : "stoc-module",
-    title   : "stoc-title",
-    body    : "stoc-body",
-    guide   : "stoc-guide",
-    subGuide: "stoc-sub-guide",
-  };
+  class HtmlQuery {
+    constructor() {
+      this.SideBarToc = {
+        toc     : "stoc",
+        module  : "stoc-module",
+        title   : "stoc-title",
+        body    : "stoc-body",
+        guide   : "stoc-guide",
+        subGuide: "stoc-sub-guide",
+      };
 
-  const classDefs = {
-    moduleTitle: "hatena-module-title",
-    entryTitle : "entry-title",
-    entryLink  : "entry-title-link",
-    fadeIn     : "fade-in",
-    touch      : "touch",
-    shadow     : "shadow",
-    active     : "active",
-    tracking   : "tracking",
-    fixed      : "fixed",
-    absolute   : "absolute",
-  };
+      this.hatena = {
+        moduleTitle: "hatena-module-title",
+        entryTitle : "entry-title",
+        entryLink  : "entry-title-link",
+        fadeIn     : "fade-in",
+        touch      : "touch",
+        shadow     : "shadow",
+        active     : "active",
+        tracking   : "tracking",
+        fixed      : "fixed",
+        absolute   : "absolute",
+      };
+    }
 
-  const positions = {
-    static  : "static",
-    fixed   : "fixed",
-    absolute: "absolute",
-    sticky  : "sticky",
-  };
+    getTocIds () {
+      return this.SideBarToc;
+    }
 
-  const heightProps = {
-    margin  : [
-      "marginTop",
-      "marginBottom"
-    ],
-    padding: [
-      "paddingTop",
-      "borderTopWidth",
-      "paddingBottom",
-      "borderBottomWidth"
-    ]
-  };
+    getHatenaClasses () {
+      return this.hatena;
+    }
+  }
 
-  const SCROLL_TIME = TOUCH.device ? SCROLL.timeForTouch : SCROLL.timeForPc;
-  const CAN_SMOOTH_SCROLL = SCROLL_TIME > 0 ? true : false;
+  const htmlQuery = new HtmlQuery();
+  const stocIds     = htmlQuery.getTocIds();
+  const hatenaClass = htmlQuery.getHatenaClasses();
+
+  const scrollTime = mouseEvent.touch.device ? time.scroll.forTouchDevice : time.scroll.forPc;
+  const canScrollSmoothly = scrollTime > 0 ? true : false;
 
   /*********************************************
    * 補助関数
    *********************************************/
 
   /**
-   * 単位（px）を追加
-   *
-   * @param {number} num 数値
-   *
-   * @return {string} "●px"
-   */
-  const toPixel = (num) => {
-    return `${num}px`;
-  }
-
-  /**
-   * divブロックを追加
-   *
-   * @return {Element} 新しいElement
-   */
-  const addDiv = () => {
-    return doc.createElement("div");
-  }
-
-  /**
    * HTML用の記号を除去
    *
    * @return {string} 除去後の文字列
    */
-  const escapeHtml = (function () {
+  const escapeHtmlSymbols = (function () {
 
     return function (str) {
       if (typeof str !== "string") return str;
 
       const regex = /[&'"<>]/g; // タグ関係の記号
-      return str.replace(regex, replaceSymbols());
+      return str.replace(regex, htmlElement.symbolsToEscapeSequense());
     };
   })();
-
-  const replaceSymbols = (match) => {
-    const replaceObj = {
-      "&": "&amp;",
-      "'": "&#39;",
-      '"': "&quot;",
-      "<": "&lt;",
-      ">": "&gt;",
-    };
-
-    return replaceObj[match];
-  }
 
   /**
    * 簡易シングルトンなgetComputedStyle
    * （IDが設定されてない場合は毎回取得する）
    *
-   * - `getComputedStyle`関数
+   * - 【参考】
+   *   - `getComputedStyle`関数
+   *     `jQuery.css()`の代わり
    *
-   *   `jQuery.css()`の代わり
+   *   - **シングルトン**とは…
+   *     > 一言でいうと、生成するインスタンスの数を1つに制限するデザインパターンです。
+   *     >
+   *     > <cite>[デザインパターン「Singleton」 - Qiita](https://qiita.com/shoheiyokoyama/items/c16fd547a77773c0ccc1)</cite>
    *
-   * - **シングルトン**とは…
+   * @param {Element} elem - HTML要素
    *
-   *   > 一言でいうと、生成するインスタンスの数を1つに制限するデザインパターンです。
-   *   >
-   *   > <cite>[デザインパターン「Singleton」 - Qiita](https://qiita.com/shoheiyokoyama/items/c16fd547a77773c0ccc1)</cite>
+   * @return {CSSStyleDeclaration}
    */
   const getComputedStyleWithWrap = (function () {
     const data = {};
-    return function (elem) {
-
+    return (elem) => {
       const id = hyphen2camel(elem.id);
       if (!data[id]) {
         console.assert(id, "No id：%o", elem);
-        const style = getComputedStyle(elem, null);
+        const style = getComputedStyle()(elem, null);
 
         if (!id) return style;
         data[id] = style;
@@ -228,13 +293,13 @@ const index = () => {
   })();
 
   /**
-   * 1文字目の記号からidかclass要素を取得する
+   * 1文字目の記号からid要素かclass要素を取得する
    *
    * @param {string} idOrClass 要素の種類を表す文字列
    *
-   * @return {Array} id要素かクラス要素の配列
+   * @return {Element[] | Element} id要素かクラス要素の配列
    */
-  function getElementsSelector(idOrClass) {
+  function getHtmlElements(idOrClass) {
     const elems = [];
     const first = idOrClass.charAt(0);
     const name  = idOrClass.slice(1);
@@ -263,7 +328,7 @@ const index = () => {
    *
    * @return {number} 浮動小数点値
    */
-  function style2FloatingNumber(elem, styleName) {
+  function getFloatingNumber(elem, styleName) {
     const style = getComputedStyleWithWrap(elem)[styleName];
     const ret   = parseFloat(style);
 
@@ -275,29 +340,29 @@ const index = () => {
    * 特定のクラスが設定されていない状態の値を取得
    *
    * @param {Element} elem
-   * @param {Array} styleNames
+   * @param {Array} cssProperties
    * @param {Array} srcClassNames
    *
    * @return {Array} 特定のクラスが設定されていない値の配列
    */
-  function getFloatByNoClassElement(elem, styleNames, srcClassNames) {
+  function getFloatByNoClassElement(elem, cssProperties, srcClassNames) {
     let ret = [];
-    const classList = elem.classList;
+    const classes = elem.classList;
 
-    const existingClassNames = srcClassNames.filter(function (e) {
-      return classList.contains(e);
+    const names = srcClassNames.filter((name) => {
+      return classes.contains(name);
     });
 
-    existingClassNames.forEach(function (e) {
-      classList.remove(e);
+    names.forEach((removingName) => {
+      classes.remove(removingName);
     });
 
-    styleNames.forEach(function (e) {
-      ret.push(style2FloatingNumber(elem, e));
+    cssProperties.forEach((prop) => {
+      ret.push(getFloatingNumber(elem, prop));
     });
 
-    existingClassNames.forEach(function (e) {
-      classList.add(e);
+    names.forEach((addingName) => {
+      classes.add(addingName);
     });
 
     return ret;
@@ -306,7 +371,7 @@ const index = () => {
   /**
    * ハイフン区切りからキャメルケースに変換
    *
-   * @param {string} str 変換前
+   * @param {string} str - 変換前
    *
    * @return {string} 変換後の文字列
    */
@@ -324,7 +389,7 @@ const index = () => {
    *
    * @return {number} ボックスの高さ
    */
-  function outerHeightJs(elem, margin) {
+  function getOuterHeight(elem, margin) {
     let ret = elem.offsetHeight;
     if (!margin) return ret;
 
@@ -339,17 +404,28 @@ const index = () => {
    *
    * @return {number} スクロール位置
    */
-  function scrollTopJs(elem, scrollTop) {
+  function getScrollTop(elem, scrollTop) {
     const boundaryTop = elem.getBoundingClientRect().top;
-    const offsetY     = (scrollTop !== void 0 ? scrollTop : win.pageYOffset); // 変数名が不適切かも…
+    const offsetY = (scrollTop !== void 0 ? scrollTop : win.pageYOffset);
 
     return boundaryTop + offsetY;
   }
 
   /**
+   * InOutQuadを容易にする(?)
+   *
+   * @param {number} t
+   *
+   * @return {number}
+   */
+  const easeInOutQuad = (t) => {
+    return (t < 0.5) ? (2 * t * t) : (-1 + (4 - 2 * t) * t);
+  }
+
+  /**
    * 縦方向のスムーズスクロール
    */
-  const smoothScrollY = (function () {
+  const smoothScrollY = (() => {
     const frameTime = 1000 / 30;
     const scrollTo  = win.scrollTo;
     const timer     = win.performance ? performance : Date;
@@ -357,7 +433,7 @@ const index = () => {
     let requestId, request, cancel, existRAF;
     {
       const strRAF = "requestAnimationFrame";
-      existRAF     = Object.prototype.hasOwnProperty.call(win, strRAF);
+      existRAF = Object.prototype.hasOwnProperty.call(win, strRAF);
       if (existRAF) {
         request = win[strRAF];
         cancel  = win.cancelAnimationFrame;
@@ -368,14 +444,7 @@ const index = () => {
       }
     }
 
-    /**
-     * InOutQuadを容易にする(?)
-     */
-    const easeInOutQuad = (t) => {
-      return (t < 0.5) ? (2 * t * t) : (-1 + (4 - 2 * t) * t);
-    }
-
-    return function (target, duration) {
+    return (target, duration) => {
       const startTime = timer.now();
       const startY = win.pageYOffset;
       const startX = win.pageXOffset;
@@ -383,7 +452,7 @@ const index = () => {
       let elapsedTime;
 
       cancel(requestId);
-      requestId = request(existRAF ? step01 : step02);
+      requestId = request(existRAF ? step01() : step02());
 
       /**
        * requestAnimationFrame
@@ -446,11 +515,11 @@ const index = () => {
    * メイン
    * =================================================== */
   const main = () => {
-    console.log(
-      "%c---sidebar toc---  DELAY.afterDomLoaded:" + DELAY.afterDomLoaded,
-      "color:blue"
-    );
-    console.time("sidebarToc add");
+    // console.log(
+    //   "%c---sidebar toc---  time.delay.afterDomLoaded:" + time.delay.afterDomLoaded,
+    //   "color:blue"
+    // );
+    // console.time("sidebarToc add");
 
     // 目次モジュール
     const elmStoc = doc.getElementById(stocIds.toc);
@@ -466,14 +535,15 @@ const index = () => {
     /*********************************************
      * ページの種類を判定
      *********************************************/
-    let currentPage;
+    let currentPage = {};
     const bodyClassList = doc.body.classList;
-    for (let i = 0; i < PAGE_CATEGORIES.length; i++) {
-      currentPage = PAGE_CATEGORIES[i];
+    const categories    = page.getCategories();
+    for (let i = 0; i < categories.length; i++) {
+      currentPage = categories[i];
       if (!bodyClassList.contains(currentPage.class)) continue;
       if (!currentPage.display) break;
 
-      console.log("page:" + currentPage.class);
+      // console.log("page:" + currentPage.class);
       break;
     }
 
@@ -508,7 +578,7 @@ const index = () => {
     }
 
     // タッチデバイスで動かさない設定の時は、「非表示」にして終了
-    if (TOUCH.isDisable) {
+    if (mouseEvent.touch.isDisable.isDisable) {
       hideStoc();
       return;
     }
@@ -525,7 +595,7 @@ const index = () => {
         if (elmContents.length > 1) break;
       }
 
-      const elems = elmMainInner.getElementsByClassName(classDefs.entryLink);
+      const elems = elmMainInner.getElementsByClassName(hatenaClass.entryLink);
       for (let i = 0, len = elems.length; i < len; i++) {
         elmContentTexts[i] = elems[i].textContent;
       }
@@ -533,10 +603,10 @@ const index = () => {
     } else {
       elmContents = elmMainInner.getElementsByClassName("hentry")[0]
                                 .getElementsByClassName("entry-content")[0]
-                                .querySelectorAll(HEADLINE.sources.join());
+                                .querySelectorAll(headLines.sources.join());
 
       // 見出しがn個以下なら目次を表示しない
-      if (elmContents.length <= HEADLINE.min) {
+      if (elmContents.length <= headLines.min) {
         hideStoc();
         return;
       }
@@ -566,12 +636,12 @@ const index = () => {
 
       }
 
-      line =`<li><a href="#${idName}">${escapeHtml(text)}</a>`;
+      line =`<li><a href="#${idName}">${escapeHtmlSymbols(text)}</a>`;
 
       // 階層を作成
       if (canListUpPages) continue; // 階層が必要ないページ
       const nodeName     = elem.nodeName.toLowerCase();
-      const headlineTags = HEADLINE.sources;
+      const headlineTags = headLines.sources;
       for (let j = 1; j < headlineTags.length; j++) {
         if (nodeName !== headlineTags[j]) continue;
 
@@ -580,12 +650,12 @@ const index = () => {
       }
 
       while (currentLevel < level) {
-        line = `<${HEADLINE.tag}>${line}`;
+        line = `<${headLines.tag}>${line}`;
         currentLevel++;
       }
 
       while (currentLevel > level) {
-        line = `</${HEADLINE.tag}></li>${line}`;
+        line = `</${headLines.tag}></li>${line}`;
         currentLevel--;
       }
 
@@ -599,9 +669,9 @@ const index = () => {
     const getModuleTitle = () => {
       let title = "";
       if (pageListTitle !== "") {
-        if ((!canListUpPages) && (pageListTitle === classDefs.entryTitle)) {
+        if ((!canListUpPages) && (pageListTitle === hatenaClass.entryTitle)) {
           title = elmMainInner
-                 .getElementsByClassName(classDefs.entryLink)[0]
+                 .getElementsByClassName(hatenaClass.entryLink)[0]
                  .textContent;
 
         } else {
@@ -616,7 +686,7 @@ const index = () => {
     let StocTitle = getModuleTitle();
 
     // 最初に設定されているタイトルを削除
-    const clsModuleTitle  = classDefs.moduleTitle;
+    const clsModuleTitle  = hatenaClass.moduleTitle;
     const elmModuleTitles = elmSidebarModule
                             .getElementsByClassName(clsModuleTitle);
     const elmModuleTitle  = elmModuleTitles[0];
@@ -624,10 +694,10 @@ const index = () => {
 
     let elmStocTitle = false;
     if (StocTitle) {
-      const title    = escapeHtml(StocTitle);
-      const titleDiv = addDiv();
+      const title    = escapeHtmlSymbols(StocTitle);
+      const titleDiv = htmlElement.addDivBlock();
       titleDiv.id        = stocIds.title;
-      titleDiv.className = classDefs.moduleTitle;
+      titleDiv.className = hatenaClass.moduleTitle;
       // リンクとスムーズスクロールも追加
       titleDiv.innerHTML = CAN_LINK_MODULE_TITLE ? `<a href="#">${title}</a>`: title;
 
@@ -644,8 +714,8 @@ const index = () => {
             e.preventDefault();
             e.stopPropagation();
 
-            if (CAN_SMOOTH_SCROLL) {
-              smoothScrollY(0, SCROLL_TIME);
+            if (canScrollSmoothly) {
+              smoothScrollY(0, scrollTime);
 
             } else {
               win.scrollTo(win.pageXOffset, 0);
@@ -665,7 +735,7 @@ const index = () => {
     elmStoc.appendChild(ol);
 
     elmSidebarModule.setAttribute("id", stocIds.module);
-    console.log("%c--add toc--", "color:blue");
+    // console.log("%c--add toc--", "color:blue");
 
     // a要素一覧の取得とスムーズスクロールの設定
     const elmStocAnchors = elmStoc.getElementsByTagName("a");
@@ -685,7 +755,7 @@ const index = () => {
 
     for (let i = 0; i < GLOBAL_HEADERS.length; i++) {
       const globalHeader = GLOBAL_HEADERS[i];
-      const globalElems  = getElementsSelector(globalHeader);
+      const globalElems  = getHtmlElements(globalHeader);
 
       if (!globalElems[0]) {
         console.error("GLOBAL_HEADERS: %s が見つかりません", globalHeader);
@@ -704,29 +774,29 @@ const index = () => {
     let prevScrollLeft;
 
     const tocModuleStyles = {};
-    tocModuleStyles[positions.absolute] = { left: "" };
-    tocModuleStyles[positions.fixed]    = {};
-    tocModuleStyles[positions.static]   = {};
+    tocModuleStyles[positionValues.absolute] = { left: "" };
+    tocModuleStyles[positionValues.fixed]    = {};
+    tocModuleStyles[positionValues.static]   = {};
 
     // スクロール可能か判別しやすくする
-    if (SCROLL.canShowBarShadow) elmStoc.classList.add(classDefs.shadow);
+    if (time.scroll.containsBarShadow) elmStoc.classList.add(hatenaClass.shadow);
 
     // タッチデバイス用の処理
-    if (TOUCH.device) {
+    if (mouseEvent.touch.device) {
       // 判定用のクラス追加
-      elmStoc.classList.add(classDefs.touch);
-      clsSidebarModule.add(classDefs.touch);
+      elmStoc.classList.add(hatenaClass.touch);
+      clsSidebarModule.add(hatenaClass.touch);
     }
 
     // ブラウザが position:sticky に対応していればクラス追加
     let isStickyMode = false;
-    if (TOUCH.device || IS_STICKY_MODE) {
-      const propNames = [`-webkit-${positions.sticky}`, positions.sticky];
-      const styDiv    = addDiv().style;
+    if (mouseEvent.touch.device || IS_STICKY_MODE) {
+      const propNames = [`-webkit-${positionValues.sticky}`, positionValues.sticky];
+      const divStyle  = htmlElement.addDivBlock().style;
 
       for (let i = 0; i < propNames.length; i++) {
-        styDiv.position = propNames[i];
-        isStickyMode   = styDiv.position.indexOf(positions.sticky) !== -1;
+        divStyle.position = propNames[i];
+        isStickyMode   = divStyle.position.indexOf(positionValues.sticky) !== -1;
         if (!isStickyMode) continue;
 
         clsSidebarModule.add("sticky");
@@ -737,7 +807,7 @@ const index = () => {
     /*********************************************
      * ガイド要素の作成と追加
      *********************************************/
-    const divGuide = addDiv();
+    const divGuide = htmlElement.addDivBlock();
     divGuide.id        = stocIds.guide;
     divGuide.className = "hatena-module";
     divGuide.style.cssText = [
@@ -761,7 +831,7 @@ const index = () => {
       elmGuide = elmBox2Inner.insertBefore(divGuide, elmSidebarModule);
       isLastModuleToc = true;
 
-      console.log("%csingleModule", "color:blue");
+      // console.log("%csingleModule", "color:blue");
 
     // 目次をサイドバーの最後に設置してる時はその一つ前に、
     // それ以外の時は最後にガイドを追加
@@ -790,7 +860,7 @@ const index = () => {
       "resize",
       function () {
         clearTimeout(timer);
-        timer = setTimeout(setTrackingPoint, 200);
+        timer = setTimeout(setTrackingPoint(), 200);
       },
       false
     );
@@ -799,7 +869,7 @@ const index = () => {
     elmSidebarModule.addEventListener(
       "animationend",
       function () {
-        clsSidebarModule.remove(classDefs.fadeId);
+        clsSidebarModule.remove(hatenaClass.fadeId);
       },
       false
     );
@@ -815,15 +885,15 @@ const index = () => {
       let active = -1;
       return function (i) {
         if (i === active) return;
-        if (active >= 0) clsStocAnchors[active].remove(classDefs.active);
+        if (active >= 0) clsStocAnchors[active].remove(hatenaClass.active);
 
         active = i;
         if (i < 0) return;
 
         let elmAnchor = elmStocAnchors[i];
-        clsStocAnchors[i].add(classDefs.active);
+        clsStocAnchors[i].add(hatenaClass.active);
 
-        if (!FOLLOW.canScrollOverBottom) return;
+        if (!tracking.canScrollPastEntryBottom) return;
         if (!canDrawScrollBar) return;
         if (!canTrackScroll)   return;
 
@@ -898,19 +968,16 @@ const index = () => {
 
       // 特定の要素をクリックした後に位置取得をやり直す
       let timer;
-      const selectors = UPDATE_AFTER_CLICK.selectors;
+      const selectors = mouseEvent.updateAterClick.selectors;
+      // const selectors = UPDATE_AFTER_CLICK.selectors;
       for (let i = 0; i < selectors.length; i++) {
-        const elems = getElementsSelector(selectors[i]);
+        const elems = getHtmlElements(selectors[i]);
 
         for (let j = 0; j < elems.length; j++) {
-          elems[j].addEventListener(
-            "click",
-            function () {
+          elems[j].addEventListener("click", () => {
               clearTimeout(timer);
-              timer = setTimeout(setTrackingPoint, UPDATE_AFTER_CLICK.delayTime);
-            },
-            false
-          );
+              timer = setTimeout(setTrackingPoint(), mouseEvent.updateAterClick.delayTime);
+          }, false);
         }
       }
 
@@ -919,13 +986,13 @@ const index = () => {
         "load",
         function () {
           console.timeEnd("Event:DOMContentLoaded -> load");
-          setTimeout(setTrackingPoint, DELAY.afterPageLoaded);
+          setTimeout(setTrackingPoint(), time.delay.afterPageLoaded);
         },
         false
       );
     }
 
-    if (!DELAY.canWaitDomLoad) {
+    if (!time.delay.canWaitDomLoading) {
       setDOMContentLoaded(startTracking);
 
     } else {
@@ -943,7 +1010,7 @@ const index = () => {
     function hideStoc() {
       stySidebarModule.display = "none";
 
-      console.log("%c---sidebar toc hide---", "color:blue");
+      // console.log("%c---sidebar toc hide---", "color:blue");
     }
 
     /**
@@ -952,11 +1019,11 @@ const index = () => {
     function clickEvent(e) {
       e.preventDefault();
       const hash   = decodeURIComponent(e.currentTarget.hash);
-      const target = scrollTopJs(doc.getElementById(hash.substr(1)))
-        - ghFixedHeight + SCROLL.reactionTime;
+      const target = getScrollTop(doc.getElementById(hash.substr(1)))
+        - ghFixedHeight + time.scroll.reaction;
 
-      if (CAN_SMOOTH_SCROLL) {
-        smoothScrollY(Math.min(target, scrollRange), SCROLL_TIME);
+      if (canScrollSmoothly) {
+        smoothScrollY(Math.min(target, scrollRange), scrollTime);
 
       } else {
         win.scrollTo(win.pageXOffset, target);
@@ -972,29 +1039,29 @@ const index = () => {
     function setTocScrollBar(canDraw) {
       canDrawScrollBar = canDraw;
 
-      elmStoc.style.maxHeight = canDraw ? toPixel(tocMaxHeight) : "";
+      elmStoc.style.maxHeight = canDraw ? css.addPixelUnit(tocMaxHeight) : "";
     }
 
     /**
      * 目次モジュールの設定
      */
     function setTocModuleOption(position) {
-      const style 　　= tocModuleStyles[position];
-      canTrackScroll = position !== positions.static ? true : false;
+      const style = tocModuleStyles[position];
+      canTrackScroll = position !== positionValues.static ? true : false;
 
       Object.keys(style).forEach(function (key) {
         stySidebarModule[key] = style[key];
       });
 
-      if (canTrackScroll) clsSidebarModule.add(classDefs.tracking);
-      else clsSidebarModule.remove(classDefs.tracking);
+      if (canTrackScroll) clsSidebarModule.add(hatenaClass.tracking);
+      else clsSidebarModule.remove(hatenaClass.tracking);
 
-      if (positions.fixed === position) clsSidebarModule.add(classDefs.fixed);
-      else clsSidebarModule.remove(classDefs.fixed);
+      if (positionValues.fixed === position) clsSidebarModule.add(hatenaClass.fixed);
+      else clsSidebarModule.remove(hatenaClass.fixed);
 
-      if (positions.absolute === position)
-        clsSidebarModule.add(classDefs.absolute);
-      else clsSidebarModule.remove(classDefs.absolute);
+      if (positionValues.absolute === position)
+        clsSidebarModule.add(hatenaClass.absolute);
+      else clsSidebarModule.remove(hatenaClass.absolute);
 
       setTocScrollBar(canTrackScroll);
     }
@@ -1008,7 +1075,7 @@ const index = () => {
        * サイドバーが横に表示されているか
        */
       const existSidebar = () => {
-        if (MEDIA_QUERY.canSet) return win.matchMedia(MEDIA_QUERY.queryToDisplay).matches;
+        if (css.mediaQuery.canSet) return win.matchMedia(css.mediaQuery.queryToDisplay).matches;
 
         return getComputedStyleWithWrap(elmBox2).cssFloat !== "none";
       }
@@ -1024,12 +1091,12 @@ const index = () => {
         setScrollEvent(hasEvent);
         followModule = canFollow;
 
-        console.log(
-          "%cscrollEvent:%s followModule:%s",
-          "color:blue",
-          hasEvent,
-          canFollow
-        );
+        // console.log(
+        //   "%cscrollEvent:%s followModule:%s",
+        //   "color:blue",
+        //   hasEvent,
+        //   canFollow
+        // );
 
         if (hasEvent && canFollow) {
           callback();
@@ -1037,12 +1104,12 @@ const index = () => {
         }
 
         setPosition(0);
-        setTocModuleOption(positions.static);
+        setTocModuleOption(positionValues.static);
         if (isStickyMode) elmBox2Inner.style.height = "";
 
         if (hasEvent) return;
         for (let i = 0; i < clsStocAnchors.length; i++) {
-          clsStocAnchors[i].remove(classDefs.active);
+          clsStocAnchors[i].remove(hatenaClass.active);
         }
       }
 
@@ -1060,7 +1127,7 @@ const index = () => {
         const mem   = style[styleName];
         style[styleName] = "";
 
-        let ret = outerHeightJs(getElem, true);
+        let ret = getOuterHeight(getElem, true);
         style[styleName] = mem;
 
         return ret;
@@ -1094,7 +1161,7 @@ const index = () => {
       const max = (elems, styleName) => {
         let arr = [];
         for (let i = 0; i < elems.length; i++) {
-          arr[i] = style2FloatingNumber(elems[i], styleName);
+          arr[i] = getFloatingNumber(elems[i], styleName);
         }
 
         return Math.max.apply(null, arr);
@@ -1123,17 +1190,17 @@ const index = () => {
         let num;
         for (let i = 0; i < maxIndex; i++) {
           for (let j = 0; j < 2; j++) {
-            num = style2FloatingNumber(elems[i], heightProps.padding[j + tbIndex]);
+            num = getFloatingNumber(elems[i], heightProps.padding[j + tbIndex]);
             if (num > 0) return elems.slice(0, i + 1);
           }
         }
       }
 
-      console.log(
-        "%c--setTrackingPoint %s--",
-        "color:blue",
-        Date().match(/\d\d:\d\d:\d\d/)[0]
-      );
+      // console.log(
+      //   "%c--setTrackingPoint %s--",
+      //   "color:blue",
+      //   Date().match(/\d\d:\d\d:\d\d/)[0]
+      // );
 
       /*********************************************
        * 
@@ -1141,8 +1208,8 @@ const index = () => {
       const winHeight  = win.innerHeight;
       const scrollbarX = winHeight - doc.documentElement.clientHeight;
       const mainHeight = Math.max(
-        outerHeightJs(doc.getElementById("wrapper")),
-        outerHeightJs(elmMain)
+        getOuterHeight(doc.getElementById("wrapper")),
+        getOuterHeight(elmMain)
       );
 
       scrollRange   = Math.max(doc.documentElement.scrollHeight - winHeight, 0);
@@ -1151,18 +1218,18 @@ const index = () => {
       let ghPosition;
       for (let i = 0; i < elmGhs.length; i++) {
         ghPosition = getComputedStyleWithWrap(elmGhs[i]).position;
-        ghFixedHeight += ghPosition === positions.fixed
-                       ? outerHeightJs(elmGhs[i])
+        ghFixedHeight += ghPosition === positionValues.fixed
+                       ? getOuterHeight(elmGhs[i])
                        : 0;
       }
-      console.log("ghFixedHeight:" + ghFixedHeight);
+      // console.log("ghFixedHeight:" + ghFixedHeight);
 
-      marginComp = ghFixedHeight + MODULE_SIZE.marginTop;
+      marginComp = ghFixedHeight + css.moduleSize.marginTop;
       leftMargin = elmGuide.getBoundingClientRect().left + win.pageXOffset;
 
       // 計測用に.trackingを付与。また後で戻せるように保存しておく。
-      const existTracking = clsSidebarModule.contains(classDefs.tracking);
-      if (!existTracking) clsSidebarModule.add(classDefs.tracking);
+      const existTracking = clsSidebarModule.contains(hatenaClass.tracking);
+      if (!existTracking) clsSidebarModule.add(hatenaClass.tracking);
 
       // 目次部分の高さを画面内に収まるように計算
       const moduleBlankSpaceHeight
@@ -1171,27 +1238,27 @@ const index = () => {
                       heightProps.padding.concat(heightProps.margin));
 
       const tocTitleHeight = elmStocTitle
-        ? outerHeightJs(elmStocTitle, true)
+        ? getOuterHeight(elmStocTitle, true)
           + getCollapsedMargin([elmSidebarModuleBody], [elmStocTitle])
         : 0;
       tocMaxHeight = winHeight
                    - scrollbarX
                    - marginComp
-                   - MODULE_SIZE.marginBottom
+                   - css.moduleSize.marginBottom
                    - moduleBlankSpaceHeight
                    - tocTitleHeight;
 
-      if (MODULE_SIZE.maxHeight) {
-        const maxHeight = MODULE_SIZE.maxHeight - moduleBlankSpaceHeight - tocTitleHeight;
+      if (css.moduleSize.maxHeight) {
+        const maxHeight = css.moduleSize.maxHeight - moduleBlankSpaceHeight - tocTitleHeight;
         if (tocMaxHeight > maxHeight) tocMaxHeight = maxHeight;
       }
 
       // .trackingでborder等を付与する時でもマージンの相殺が計測できるように外す
-      clsSidebarModule.remove(classDefs.tracking);
+      clsSidebarModule.remove(hatenaClass.tracking);
 
       // 各見出しの位置を保存
       for (let i = 0; i < elmContents.length; i++) {
-        headlineTops[i] = scrollTopJs(elmContents[i]) - ghFixedHeight;
+        headlineTops[i] = getScrollTop(elmContents[i]) - ghFixedHeight;
       }
 
       console.assert(
@@ -1210,13 +1277,13 @@ const index = () => {
        *********************************************/
       // サイドバーが横に表示されていない時
       if (!existSidebar()) {
-        setEventAndFollow(!FOLLOW.stop.whenNoSideBar, false);
-        if (FOLLOW.stop.whenNoSideBar) return;
+        setEventAndFollow(!tracking.canStop.whenNoSideBar, false);
+        if (tracking.canStop.whenNoSideBar) return;
 
       // サイドバーより記事の方が小さい時
       } else if (getStaticHeight(elmBox2, elmBox2Inner, "height") > mainHeight) {
-        setEventAndFollow(!FOLLOW.stop.whenEntrySmaller, false);
-        if (FOLLOW.stop.whenEntrySmaller) return;
+        setEventAndFollow(!tracking.canStop.whenEntrySmaller, false);
+        if (tracking.canStop.whenEntrySmaller) return;
 
       } else {
         setEventAndFollow(true, true, function () {
@@ -1224,27 +1291,27 @@ const index = () => {
           setPosition(-1);
           prevScrollLeft = 0;
 
-          const mainInnerHeight = outerHeightJs(elmMainInner);
+          const mainInnerHeight = getOuterHeight(elmMainInner);
           const margins = getFloatByNoClassElement(
             elmSidebarModule,
             ["marginTop", "marginLeft"],
-            [classDefs.tracking, classDefs.fixed, classDefs.absolute]
+            [hatenaClass.tracking, hatenaClass.fixed, hatenaClass.absolute]
           );
 
           const tocModuleMarginTopUnsetClass  = margins[0];
           const tocModuleMarginLeftUnsetClass = margins[1];
           leftMargin -= tocModuleMarginLeftUnsetClass;
 
-          // 親要素の高さを合わせるs
-          if (isStickyMode) elmBox2Inner.style.height = toPixel(mainInnerHeight);
+          // 親要素の高さを合わせる
+          if (isStickyMode) elmBox2Inner.style.height = css.addPixelUnit(mainInnerHeight);
 
           /*********************************************
            * ウィンドウに固定開始する位置
            *********************************************/
-          scrollFixed = scrollTopJs(elmGuide)
+          scrollFixed = getScrollTop(elmGuide)
                       - ghFixedHeight
                       + tocModuleMarginTopUnsetClass
-                      + MODULE_SIZE.fixedTop;
+                      + css.moduleSize.fixedTop;
 
           if (elmSubGuide) {
             scrollFixed -= getCollapsedMargin(
@@ -1256,7 +1323,7 @@ const index = () => {
           }
 
           if (isLastModuleToc) {
-            scrollFixed -= MODULE_SIZE.marginTop;
+            scrollFixed -= css.moduleSize.marginTop;
 
           } else if (canTrackScroll) {
             scrollFixed += getStaticHeight(
@@ -1271,34 +1338,34 @@ const index = () => {
            *********************************************/
           const tocModuleMaxHeight = Math.min(
             winHeight - marginComp,
-            outerHeightJs(elmSidebarModule)
+            getOuterHeight(elmSidebarModule)
           );
 
-          scrollAbsolute = scrollTopJs(elmMainInner)
+          scrollAbsolute = getScrollTop(elmMainInner)
                           + mainInnerHeight
                           - tocModuleMaxHeight
                           - marginComp;
 
           // 親要素にposition:relativeがあれば位置を保存する
           relativeOffset = elmGuide.offsetParent !== doc.body
-                          ? scrollTopJs(elmGuide.offsetParent)
+                          ? getScrollTop(elmGuide.offsetParent)
                           : 0;
 
           /*********************************************
            * モジュール固定位置
            *********************************************/
-          tocModuleStyles[positions.fixed].top = toPixel(
+          tocModuleStyles[positionValues.fixed].top = css.addPixelUnit(
             marginComp - tocModuleMarginTopUnsetClass
           );
 
-          tocModuleStyles[positions.absolute].top = toPixel(
+          tocModuleStyles[positionValues.absolute].top = css.addPixelUnit(
             scrollAbsolute
             - relativeOffset
             + marginComp
             - tocModuleMarginTopUnsetClass
           );
 
-          console.log("relativeOffset:" + relativeOffset);
+          // console.log("relativeOffset:" + relativeOffset);
 
           if (elmSubGuide) {
             const margin = getCollapsedMargin(
@@ -1308,20 +1375,20 @@ const index = () => {
               [elmSubGuide, elmSubGuide.children[1]]
             )
 
-            console.log("getCollapsedMargin:" + margin);
+            // console.log("getCollapsedMargin:" + margin);
           }
 
-          console.log("tocModuleMargin Top:%d Left:%d",
-                       tocModuleMarginTopUnsetClass,
-                       tocModuleMarginLeftUnsetClass);
-          console.log("SidebarToc.top:" + scrollTopJs(elmSidebarModule));
-          console.log("scrollFixed   :" + scrollFixed);
-          console.log("scrollAbsolute:" + scrollAbsolute);
+          // console.log("tocModuleMargin Top:%d Left:%d",
+          //              tocModuleMarginTopUnsetClass,
+          //              tocModuleMarginLeftUnsetClass);
+          // console.log("SidebarToc.top:" + getScrollTop(elmSidebarModule));
+          // console.log("scrollFixed   :" + scrollFixed);
+          // console.log("scrollAbsolute:" + scrollAbsolute);
         });
       }
 
       // .trackingを戻す
-      if (existTracking) clsSidebarModule.add(classDefs.tracking);
+      if (existTracking) clsSidebarModule.add(hatenaClass.tracking);
 
       updateScroll();
     }
@@ -1338,7 +1405,7 @@ const index = () => {
       // 固定解除(下)
       if (scrollAbsolute < scrollTop) {
         if (updatePosition(2)) {
-          setTocModuleOption(positions.absolute);
+          setTocModuleOption(positionValues.absolute);
           prevScrollLeft = 0;
         }
 
@@ -1347,36 +1414,36 @@ const index = () => {
         updatePosition(1, function (current) {
           // サイドバーの最後以外に設置されていて直前が初期位置の時はフェードインさせる
           if (!isLastModuleToc && current === 0) {
-            clsSidebarModule.add(classDefs.fadeId);
+            clsSidebarModule.add(hatenaClass.fadeId);
           }
 
-          setTocModuleOption(positions.fixed);
+          setTocModuleOption(positionValues.fixed);
         });
 
       // 初期位置
       } else {
-        if (updatePosition(0)) setTocModuleOption(positions.static);
+        if (updatePosition(0)) setTocModuleOption(positionValues.static);
 
       }
 
       // adjustScrollX(scrollLeft, prevScrollLeft);
 
       if (!isStickyMode && getPosition() === 1 && scrollLeft !== prevScrollLeft) {
-        stySidebarModule.left = toPixel(leftMargin - scrollLeft);
+        stySidebarModule.left = css.addPixelUnit(leftMargin - scrollLeft);
         prevScrollLeft = scrollLeft;
       }
 
       // setCurrentPositionClass(scrollTop);
 
-      if (scrollTop <= headlineTops[0] - FOLLOW.switchPoint) {
+      if (scrollTop <= headlineTops[0] - tracking.pointWhereSwitch) {
         activateFollow(0);
 
-      } else if (scrollRange - scrollTop <= FOLLOW.switchPoint) {
+      } else if (scrollRange - scrollTop <= tracking.pointWhereSwitch) {
         activateFollow(tocLastIndex);
 
       } else {
         for (let i = tocLastIndex; i >= 0; i--) {
-          if (scrollTop <= headlineTops[i] - FOLLOW.switchPoint) continue;
+          if (scrollTop <= headlineTops[i] - tracking.pointWhereSwitch) continue;
 
           activateFollow(i);
           break;
@@ -1391,7 +1458,7 @@ const index = () => {
       // 固定解除(下)
       if (scrollAbsolute < scrollTop) {
         if (updatePosition(2)) {
-          setTocModuleOption(positions.absolute);
+          setTocModuleOption(positionValues.absolute);
           prevScrollLeft = 0;
         }
 
@@ -1400,14 +1467,14 @@ const index = () => {
         updatePosition(1, function (current) {
           // サイドバーの最後以外に設置されていて直前が初期位置の時はフェードインさせる
           if (!isLastModuleToc && current === 0) {
-            clsSidebarModule.add(classDefs.fadeId);
+            clsSidebarModule.add(hatenaClass.fadeId);
           }
-          setTocModuleOption(positions.fixed);
+          setTocModuleOption(positionValues.fixed);
         });
 
       // 初期位置
       } else {
-        if (updatePosition(0)) setTocModuleOption(positions.static);
+        if (updatePosition(0)) setTocModuleOption(positionValues.static);
 
       }
     }
@@ -1420,7 +1487,7 @@ const index = () => {
           getPosition() === 1 &&
           scrollLeft !== prevScrollLeft) {
 
-        stySidebarModule.left = toPixel(leftMargin - scrollLeft);
+        stySidebarModule.left = css.addPixelUnit(leftMargin - scrollLeft);
         prevScrollLeft = scrollLeft;
       }
     }
@@ -1429,15 +1496,15 @@ const index = () => {
      * 現在位置のクラス設定
      */
     const setCurrentPositionClass = (scrollTop) => {
-      if (scrollTop <= headlineTops[0] - FOLLOW.switchPoint) {
+      if (scrollTop <= headlineTops[0] - tracking.pointWhereSwitch) {
         activateFollow(0);
 
-      } else if (scrollRange - scrollTop <= FOLLOW.switchPoint) {
+      } else if (scrollRange - scrollTop <= tracking.pointWhereSwitch) {
         activateFollow(tocLastIndex);
 
       } else {
         for (let i = tocLastIndex; i >= 0; i--) {
-          if (scrollTop <= headlineTops[i] - FOLLOW.switchPoint) continue;
+          if (scrollTop <= headlineTops[i] - tracking.pointWhereSwitch) continue;
 
           activateFollow(i);
           break;
@@ -1454,14 +1521,14 @@ const index = () => {
       "DOMContentLoaded",
       function () {
         console.time("Event:DOMContentLoaded -> load");
-        setTimeout(func, DELAY.afterDomLoaded);
+        setTimeout(func, time.delay.afterPageLoaded);
       },
       false
     );
   }
 
   // 見出しなどを取得するタイミングをHTMLが読み込まれたあとにする
-  if (DELAY.canWaitDomLoad) setDOMContentLoaded(main);
+  if (time.delay.afterPageLoaded) setDOMContentLoaded(main);
   else main();
 
   //# sourceURL=sidebar_toc.js
