@@ -15,7 +15,7 @@ function redirectTo(url) {
     location.href = url;
   }
 
-  setTimeout("redirect()", 3000); // = 3 sec
+  setTimeout(redirect(), 3000); // = 3 sec
 }
 
 export { redirectTo };
