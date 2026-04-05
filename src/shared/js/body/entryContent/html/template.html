@@ -1,0 +1,19 @@
+<!-- 新記事URLにリダイレクト -->
+<meta http-equiv="Refresh" content="0;URL=//●記事URL●">
+
+こちらの記事は、下記URLに移転しました。<br>
+約3秒後に自動的にリダイレクトします。
+
+ジャンプしない場合は、下記をクリックしてください。
+
+### 新記事はこちら
+
+<!-- 新記事リンク -->
+[https://●記事URL●:embed:title]
+
+<script type="module">
+  import { redirectTo } from "//yuricks7.github.io/notebook/src/shared/js/body/entryContent/redirect.js";
+
+  const url = "//●記事URL●";
+  redirectTo(url);
+</script>
